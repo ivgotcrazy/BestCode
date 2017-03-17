@@ -31,7 +31,12 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-	'bestcode',
+	'main.apps.MainConfig',
+	'polls.apps.PollsConfig',
+	'users.apps.UsersConfig',
+	'activities.apps.ActivitiesConfig',
+	'submit.apps.SubmitConfig',
+	'comment.apps.CommentConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
