@@ -15,13 +15,15 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-	url(r'main/', include('main.urls')),
-	url(r'polls/', include('polls.urls')),
-	url(r'users/', include('users.urls')),
-	url(r'comment/', include('comment.urls')),
-	url(r'submit/', include('submit.urls')),
-	url(r'activities/', include('activities.urls')),
+	url(r'^', include('users.urls')),
+	url(r'^main/', include('main.urls')),
+	url(r'^polls/', include('polls.urls')),
+	url(r'^users/', include('users.urls')),
+	url(r'^comment/', include('comment.urls')),
+	url(r'^submit/', include('submit.urls')),
+	url(r'^activities/', include('activities.urls')),
     url(r'^admin/', admin.site.urls),
 ]

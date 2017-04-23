@@ -1,9 +1,12 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+from comment import models as comment_models
 
-# Create your views here.
-def index(request):
+def main(request):
+	comments = comment_models.Comment.objects.filter(comment_type__comment_type_name='main')
+
 	context = { 
-		'nav_items': [{'path': 'main', 'text': '首页'}],
+		'nav_items': [{'path': '.', 'text': '首页'}],
 		'registered': False,
 		'activities': [
 			{"title": "2016年Q4最佳代码", 
@@ -27,5 +30,7 @@ def index(request):
 			"start_date": "2016年12月23日",
 			"browse_times": "843"}, 
 		],
+		'comments': comments,
+		'comment_path': '/comment/?comment_type=main&object_id=0'
  	}
-	return render(request, 'main/index.html', context)
+	return render(request, 'main/main.html', context)
