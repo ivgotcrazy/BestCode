@@ -1,0 +1,84 @@
+{% extends 'base-nav.html' %}
+
+{% load static %}
+
+<!-- banner -->
+{% block banner %}
+<div class="row" style="margin-bottom: 4px">
+	<div class="col-sm-12" style="height: 300px; padding: 0px">
+		<a href="#"><img src="{% static 'main/images/timg.jpg' %}" style="width: 100%; height: 100%" /></a>
+	</div>
+</div>
+{% endblock %}
+
+<!-- main body -->
+{% block main_body %}
+<div class="row">
+	<!-- left colum -->
+	<div class="col-sm-9" style="padding: 0px">
+		<!-- news -->
+		<div class="panel panel-default" style="margin-bottom: 4px; margin-right: 2px">
+			<div class="panel-heading">
+				<h3 class="panel-title">新闻动态</h3>
+			</div>
+			<div class="panel-body" style="height: 200px">
+			</div>
+		</div>
+		<!-- activity history -->
+		<div class="panel panel-default" style="margin-right: 2px">
+			<div class="panel-heading">
+				<h3 class="panel-title">历届活动</h3>
+			</div>
+			<div class="panel-body" style="">
+				<table cellspacing="0" cellpadding="0">
+				{% for activity in activities %}
+					<tr style="height: 110px">
+						<td style="width: 15%; height: 100px; padding-right: 10px">
+							<a href="#"><img style = "width: 120px; height: 150px" src="{% static activity.img_src %}" /></a>
+						</td>
+						<td style="width: 85%; word-break: keep-all;">
+							<h4>{{ activity.title }}</h4>
+							<h4><small>{{ activity.desc }}</small></h4>
+							<div style="float: left">
+								<small>{{ activity.start_date }}</small>&nbsp;&nbsp;
+							</div>
+							<div style="float: right">
+								<small>浏览: {{ activity.browse_times }}</small>
+							</div>
+						</td>
+					</tr>
+					<!-- divider -->
+					<tr>
+						<td colspan="2">
+							<hr style="margin: 8px" width="100%" color="red" size=2 />
+						</td>
+					</tr>
+				{% endfor %}
+				</table>
+			</div>
+		</div>
+	</div>
+	<!-- right colum -->
+	<div class="col-sm-3" style="height: 600px; padding: 0px">
+		<div class="panel panel-default" style="margin-bottom: 4px; margin-left: 2px">
+			<div class="panel-heading">
+				<h3 class="panel-title">流程制度</h3>
+			</div>
+			<div class="panel-body" style="height: 300px">
+			</div>
+		</div>
+		<div class="panel panel-default" style="margin-left: 2px">
+			<div class="panel-heading">
+				<h3 class="panel-title">最新评论</h3>
+			</div>
+			<div class="panel-body" style="height: 400px">
+			{% for comment in comments %}
+				<div>{{ comment.comment_author }}发表于{{ comment.comment_time }}</div>
+				<div>{{ comment.comment_text }}</div>
+			{% endfor %}
+				<a href="{{ comment_path }}">更多评论</a>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

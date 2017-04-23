@@ -1,0 +1,67 @@
+{% extends 'base-nav.html' %}			
+
+{% block main_body %}
+<div class="row">
+	<div class="col-sm-4 col-sm-offset-4">
+		<div class="panel panel-default">
+			<div class="panel-body">
+			{% if reg_error %}
+				<span style="color: red">{{ reg_error }}</span>
+			{% endif %}
+				<form method="post">
+				{% csrf_token %}
+					<div class="form-group">
+						<label for="">用户名</label>
+								<input class="form-control" name="user_name">
+					</div>
+					<div class="form-group">
+						<label for="">一级部门</label>
+						<select class="form-control" name="primary_dep">
+						{% for primary_dep in primary_deps %}
+							<option value="{{ primary_dep.primary_department_id }}">{{ primary_dep.department_name }}</option>
+						{% endfor %}
+						</select>
+					</div>
+					<div>
+						<label for="">二级部门</label>
+						<select class="form-control" name="secondary_dep">
+						{% for secondary_dep in secondary_deps %}
+							<option value="{{ secondary_dep.secondary_department_id }}">{{ secondary_dep.department_name }}</option>
+						{% endfor %}
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="">邮箱</label>
+						<input type="email" class="form-control" name="email">
+					</div>
+					<div class="form-group">
+						<label for="">擅长的编程语言</label>
+						<label class="form-control">
+						{% for programming_lan in programming_lans %}
+							<input type="checkbox" name="programming_lan" value="{{ programming_lan.programming_language_id }}">
+							<span>{{ programming_lan.language_name }}</span>
+						{% endfor %}
+						</label>
+					</div>
+					<div class="form-group">
+						<label for="">密码</label>
+						<input type="password" class="form-control" name="password">
+					</div>
+					<div class="form-group">
+						<label for="">确认密码</label>
+						<input type="password" class="form-control" name="confirm_pwd">
+					</div>
+					<div class="form-group">
+						<label for="">头像</label>
+						<img class="form-control" style="height: 64px; width: 64px" src="#" />
+						<input type="file" class="form-control" name="user_photo">
+					</div>
+					<div class="form-group" style="width: 100%; text-align: center">
+						<button type="submit" class="btn btn-primary">注册</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

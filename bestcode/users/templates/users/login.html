@@ -1,0 +1,33 @@
+{% extends 'base-nav.html' %}			
+
+{% block main_body %}
+<div class="row">
+	<div class="col-md-4 col-md-offset-4">
+		<div class="login-panel panel panel-default">
+			<div class="panel-body">
+			{% if login_error %}
+				<span style="color: red">{{ login_error }}</span>
+			{% endif %}
+				<form method="post" role="form">
+					<fieldset>
+					{% csrf_token %}
+						<div class="form-group">
+							<label for="">用户名</label>
+							<input class="form-control" name="user_name">
+						</div>
+						<div class="form-group">
+							<label for="">密码</label>
+							<input type="password" class="form-control" name="user_pwd">
+						</div>
+						<div style="width: 100%; text-align: center">
+							<button type="submit" class="btn btn-default">登录</button>
+							<span style="float: right"><a href="register">注册</a></span>
+						</div>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div> 
+{% endblock %}

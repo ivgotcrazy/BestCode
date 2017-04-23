@@ -1,0 +1,26 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='UTF-8'>
+      	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+      	<!-- import Bootstrap -->
+      	<link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		<title>BestCode - {{ sub_title }}</title>
+   	</head>
+   	<body>
+		{% load static %}
+		<div class="container">
+			<!-- navigator -->
+			{% block navigator %}{% endblock %}
+			<!-- banner -->
+			{% block banner %}{% endblock %}
+			<!-- main body -->
+			{% block main_body %}{% endblock %}
+		</div> 
+
+      	<!-- import jQuery -->
+      	<script src="https://code.jquery.com/jquery.js"></script>
+      	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   	</body>
+</html>
