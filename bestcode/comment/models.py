@@ -1,7 +1,9 @@
-from django.db import models
-from django.contrib.auth import models as auth_models
+import sys
+sys.path.append("..")
 
-# Create your models here.
+from django.db import models
+from users.models import ActivityUser
+
 
 class CommentType(models.Model):
 	comment_type_id = models.AutoField(primary_key=True)
@@ -12,7 +14,7 @@ class CommentType(models.Model):
 
 class Comment(models.Model):
 	comment_id = models.AutoField(primary_key=True)
-	comment_author = models.ForeignKey(auth_models.User)
+	comment_author = models.ForeignKey(ActivityUser, on_delete=models.CASCADE)
 	comment_type = models.ForeignKey(CommentType, on_delete=models.CASCADE)
 	object_id = models.IntegerField()
 	comment_time = models.DateTimeField("Comment Time")

@@ -1,323 +1,162 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Best Code</title>
-      	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-      	<!-- import Bootstrap -->
-      	<link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-      	<!--[if lt IE 9]>
-         	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-         	<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-      	<![endif]-->
-   	</head>
-   	<body>
-		{% load static %}
-		<div class="container">
-			<!-- navigator -->
-			<div class="row">
-				<div class="col-sm-12" style="margin-bottom: 4px; padding-top: 4px; padding-bottom: 4px; background: #abc">
-					<div style="float: left; text-align: left;i height: 30px; line-height: 30px;">
-						<small>当前位置: </small>
-					{% for nav_item in nav_items %}
-						<a href="/{{ nav_item.path }}">{{ nav_item.text }} /</a>
+{% extends 'base-nav.html' %}
+
+{% load static %}
+			
+{% block banner %}
+<!-- banner -->
+<div class="row" style="margin-bottom: 4px">
+	<div class="col-sm-12" style="height: 150px; padding: 0px">
+		<a href="#"><img src="{% static 'main/images/timg.jpg' %}" style="width: 100%; height: 100%" /></a>
+	</div>
+</div>
+{% endblock %}
+
+{% block main_body %}
+<!-- main body -->
+<div class="row">
+	<!-- left colum -->
+	<div class="col-sm-9" style="padding: 0px">
+		<!-- date arrange -->
+		<div class="panel panel-default" style="margin-bottom: 4px; margin-right: 2px">
+			<div class="panel-heading">
+				<h3 class="panel-title">活动时间安排</h3>
+			</div>
+			<div class="panel-body" style="">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>事项</th>
+							<th>开始时间</th>
+							<th>结束时间</th>
+						</tr>
+					</thead>
+					<tbody>
+					{% for plan in plans %}
+						<tr>
+							<td>{{ plan.plan_item_name }}</td>
+							<td>{{ plan.plan_item_start }}</td>
+							<td>{{ plan.plan_item_end }}</td>
+						</tr>
 					{% endfor %}
-					</div>
-
-					<div style="float: right; text-align: right; padding-right: -4px">
-						<small>欢迎访问</small>&nbsp;&nbsp;
-					{% if not registered %}
-						<button type="button" class="btn btn-default" style="height: 30px; line-height: 15px">登录</button>
-						<button type="button" class="btn btn-default" style="height: 30px; line-height: 15px">注册</button>
-					{% endif %}	
-					</div>
-				</div>
+					</tbody>
+				</table>
 			</div>
-			<!-- banner -->
-			<div class="row" style="margin-bottom: 4px">
-				<div class="col-sm-12" style="height: 150px; padding: 0px">
-					<a href="#"><img src="{% static 'main/images/timg.jpg' %}" style="width: 100%; height: 100%" /></a>
-				</div>
+		</div>
+		<!-- code reviewer arrange -->
+		<div class="panel panel-default" style="margin-bottom: 4px; margin-right: 2px">
+			<div class="panel-heading">
+				<h3 class="panel-title">代码评审委员</h3>
 			</div>
-			<!-- main body -->
-			<div class="row">
-				<!-- left colum -->
-				<div class="col-sm-9" style="padding: 0px">
-					<!-- date arrange -->
-					<div class="panel panel-default" style="margin-bottom: 4px; margin-right: 2px">
-						<div class="panel-heading">
-							<h3 class="panel-title">活动时间安排</h3>
-						</div>
-						<div class="panel-body" style="">
-							<table class="table table-striped">
-								<thead>
-									<tr>
-										<th>事项</th>
-										<th>开始时间</th>
-										<th>结束时间</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>活动启动</td>
-										<td>2017年4月1日</td>
-										<td>-</td>
-									</tr>
-									<tr>
-										<td>材料提交</td>
-										<td>2017年4月12日</td>
-										<td>2017年4月12日</td>
-									</tr>
-									<tr>
-										<td>评委代码评审</td>
-										<td>2017年4月15日</td>
-										<td>2017年4月15日</td>
-									</tr>
-									<tr>
-										<td>公开代码讲解</td>
-										<td>2017年4月19日</td>
-										<td>2017年4月19日</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-					<!-- code reviewer arrange -->
-					<div class="panel panel-default" style="margin-bottom: 4px; margin-right: 2px">
-						<div class="panel-heading">
-							<h3 class="panel-title">代码评审委员</h3>
-						</div>
-						<div class="panel-body" style="">
+			<div class="panel-body" style="">
+				<table>
+				{% for reviewer in reviewers %}
+					<tr>
+						<td>
 							<table>
 								<tr>
 									<td>
-										<table>
-											<tr>
-												<td>
-													<img src="" style="width: 100px; height: 120px" class="img-thumbnail">
-												</td>
-											</tr>
-											<tr><td><small style="margin-left: 6px">姓名：周华辉</small></td></tr>
-											<tr><td><small style="margin-left: 6px">部门：平台</small></td></tr>
-											<tr><td><small style="margin-left: 6px">语言：C++</small></td></tr>
-										</table>
-									</td>
-									<td style="width: 20px"/>
-									<td>
-										<table>
-											<tr>
-												<td>
-													<img src="" style="width: 100px; height: 120px" class="img-thumbnail">
-												</td>
-											</tr>
-											<tr><td><small style="margin-left: 6px">姓名：周华辉</small></td></tr>
-											<tr><td><small style="margin-left: 6px">部门：平台</small></td></tr>
-											<tr><td><small style="margin-left: 6px">语言：C++</small></td></tr>
-										</table>
-									</td>
-									<td style="width: 20px"/>
-									<td>
-										<table>
-											<tr>
-												<td>
-													<img src="" style="width: 100px; height: 120px" class="img-thumbnail">
-												</td>
-											</tr>
-											<tr><td><small style="margin-left: 6px">姓名：周华辉</small></td></tr>
-											<tr><td><small style="margin-left: 6px">部门：平台</small></td></tr>
-											<tr><td><small style="margin-left: 6px">语言：C++</small></td></tr>
-										</table>
-									</td>
-									<td style="width: 20px"/>
-									<td>
-										<table>
-											<tr>
-												<td>
-													<img src="" style="width: 100px; height: 120px" class="img-thumbnail">
-												</td>
-											</tr>
-											<tr><td><small style="margin-left: 6px">姓名：周华辉</small></td></tr>
-											<tr><td><small style="margin-left: 6px">部门：平台</small></td></tr>
-											<tr><td><small style="margin-left: 6px">语言：C++</small></td></tr>
-										</table>
-									</td>
-									<td style="width: 20px"/>
-									<td>
-										<table>
-											<tr>
-												<td>
-													<img src="" style="width: 100px; height: 120px" class="img-thumbnail">
-												</td>
-											</tr>
-											<tr><td><small style="margin-left: 6px">姓名：周华辉</small></td></tr>
-											<tr><td><small style="margin-left: 6px">部门：平台</small></td></tr>
-											<tr><td><small style="margin-left: 6px">语言：C++</small></td></tr>
-										</table>
-									</td>
-									<td style="width: 20px"/>
-									<td>
-										<table>
-											<tr>
-												<td>
-													<img src="" style="width: 100px; height: 120px" class="img-thumbnail">
-												</td>
-											</tr>
-											<tr><td><small style="margin-left: 6px">姓名：周华辉</small></td></tr>
-											<tr><td><small style="margin-left: 6px">部门：平台</small></td></tr>
-											<tr><td><small style="margin-left: 6px">语言：C++</small></td></tr>
-										</table>
+										<img src="{{ reviewer.photo.url }}" style="width: 100px; height: 120px" class="img-thumbnail">
 									</td>
 								</tr>
+								<tr><td><small style="margin-left: 6px">姓名：{{ reviewer.name }}</small></td></tr>
+								<tr><td><small style="margin-left: 6px">部门：{{ reviewer.department }}</small></td></tr>
+								<tr><td><small style="margin-left: 6px">语言：{{ reviewer.languages }}</small></td></tr>
 							</table>
-						</div>
-					</div>
-					<!-- code review arrange -->
-					<div class="panel panel-default" style="margin-bottom: 4px; margin-right: 2px">
-						<div class="panel-heading">
-							<h3 class="panel-title">代码讲解安排</h3>
-						</div>
-						<div class="panel-body" style="padding-top: 6px; padding-bottom: 0px">
-							<table class="table">
-								<thead>
-									<tr>
-										<th>日期</th>
-										<th>开始时间</th>
-										<th>结束时间</th>
-										<th>作者/评委</th>
-										<th>代码类别</th>
-										<th>作者部门</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>2017年4月1日</td>
-										<td>12:00</td>
-										<td>13:00</td>
-										<td>Kite/Teck</td>
-										<td>C++</td>
-										<td>平台产品线</td>
-									</tr>
-									<tr>
-										<td>2017年4月1日</td>
-										<td>12:00</td>
-										<td>13:00</td>
-										<td>Kite/Teck</td>
-										<td>C++</td>
-										<td>平台产品线</td>
-									</tr>
-									<tr>
-										<td>2017年4月1日</td>
-										<td>12:00</td>
-										<td>13:00</td>
-										<td>Kite/Teck</td>
-										<td>C++</td>
-										<td>平台产品线</td>
-									</tr>
-									<tr>
-										<td>2017年4月1日</td>
-										<td>12:00</td>
-										<td>13:00</td>
-										<td>Kite/Teck</td>
-										<td>C++</td>
-										<td>平台产品线</td>
-									</tr>
-									<tr>
-										<td>2017年4月1日</td>
-										<td>12:00</td>
-										<td>13:00</td>
-										<td>Kite/Teck</td>
-										<td>C++</td>
-										<td>平台产品线</td>
-									</tr>
-									<tr>
-										<td>2017年4月1日</td>
-										<td>12:00</td>
-										<td>13:00</td>
-										<td>Kite/Teck</td>
-										<td>C++</td>
-										<td>平台产品线</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-					<!-- activity candidates -->
-					<div class="panel panel-default" style="margin-right: 2px">
-						<div class="panel-heading">
-							<h3 class="panel-title">参选人员</h3>
-						</div>
-						<div class="panel-body" style="">
-							<table cellspacing="0" cellpadding="0">
-							{% for candidate in candidates %}
-								<tr style="height: 150px">
-									<td style=" height: 100px; padding-right: 10px">
-										<a href="#"><img style = "width: 120px; height: 150px" src="{% static candidate.photo %}" /></a>
-									</td>
-									<td width=20px></td>
-									<td style="word-break: keep-all;">
-										<table height="150px" style="padding: 0px">
-											<tr><td><h4>代码简介</h4><td></tr>
-											<tr><td><h4><small>{{ candidate.code_desc }}</small></h4><td></tr>
-											<tr>
-												<td>
-													<small>票数：{{ candidate.vote_count }}</small>&nbsp;&nbsp;
-													<small>赞数：{{ candidate.praise_count }}</small>&nbsp;&nbsp;
-													<small>评论：{{ candidate.comment_count }}</small>&nbsp;&nbsp;
-													<small>浏览: {{ activity.browse_times }}</small>
-												</td>
-											</tr>
-										</table>
-									</td>
-								</tr>
-								<!-- divider -->
-								<tr>
-									<td colspan="3">
-										<hr style="margin: 8px" width="100%" color="red" size=2 />
-									</td>
-								</tr>
-							{% endfor %}
-							</table>
-						</div>
-					</div>
-				</div>
-				<!-- right colum -->
-				<div class="col-sm-3" style="height: 600px; padding: 0px">
-					<div class="panel panel-default" style="margin-bottom: 4px; margin-left: 2px">
-						<div class="panel-heading">
-							<h3 class="panel-title">评选结果</h3>
-						</div>
-						<div class="panel-body" style="height: 200px">
-						</div>
-					</div>
-					<div class="panel panel-default" style="margin-left: 2px">
-						<div class="panel-heading">
-							<h3 class="panel-title">投票结果</h3>
-						</div>
-						<div class="panel-body" style="height: 400px">
-						</div>
-					</div>
-					<div class="panel panel-default" style="margin-left: 2px">
-						<div class="panel-heading">
-							<h3 class="panel-title">最新评论</h3>
-						</div>
-						<div class="panel-body" style="height: 600px">
-							<table>
-                                {% for comment in comments %}
-								<tr>
-									<td style="word-break: break-all">
-										<small>{{ comment.author_name }} 发表于 {{ comment.post_time }}</small><br/>
-                                        <span>{{ comment.content }}</span>
-									</td>
-								</tr>
-                                {% endfor %}
-							</table>
-						</div>
-					</div>
-				</div>
+						</td>
+						<td style="width: 20px"/>
+					</tr>
+				{% endfor %}
+				</table>
 			</div>
-		</div> 
-
-      	<!-- import jQuery -->
-      	<script src="https://code.jquery.com/jquery.js"></script>
-      	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-   	</body>
-</html>
+		</div>
+		<!-- code review arrange -->
+		<div class="panel panel-default" style="margin-bottom: 4px; margin-right: 2px">
+			<div class="panel-heading">
+				<h3 class="panel-title">代码讲解安排</h3>
+			</div>
+			<div class="panel-body" style="padding-top: 6px; padding-bottom: 0px">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>开始时间</th>
+							<th>结束时间</th>
+							<th>代码作者</th>
+							<th>检视评委</th>
+							<th>代码类别</th>
+							<th>作者部门</th>
+						</tr>
+					</thead>
+					<tbody>
+					{% for submit_review_plan in submit_review_plans %}
+						<tr>
+							<td>{{ submit_review_plan.plan_item_start }}</td>
+							<td>{{ submit_review_plan.plan_item_end }}</td>
+							<td>{{ submit_review_plan.submit.activity_user.user.username }}</td>
+							<td>{{ submit_review_plan.submit.submit_reviewer.user.username }}</td>
+							<td>{{ submit_review_plan.submit.programming_language.language_name }}</td>
+							<td>{{ submit_review_plan.submit.activity_user.primary_department.department_name }}</td>
+						</tr>
+					{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<!-- activity candidates -->
+		<div class="panel panel-default" style="margin-right: 2px">
+			<div class="panel-heading">
+				<h3 class="panel-title">参选人员</h3>
+			</div>
+			<div class="panel-body" style="">
+				<table cellspacing="0" cellpadding="0">
+				{% for submit in submits %}
+					<tr style="height: 150px">
+						<td style=" height: 100px; padding-right: 10px">
+							<a href="/submit/{{ submit.submit_id }}"><img style = "width: 120px; height: 150px" src="{{ submit.activity_user.photo.url }}" /></a>
+						</td>
+						<td width=20px></td>
+						<td style="word-break: keep-all;">
+							<table height="150px" style="padding: 0px">
+								<tr><td><h4>代码简介</h4><td></tr>
+								<tr><td><h4><small>{{ submit.code_desc }}</small></h4><td></tr>
+								<tr>
+									<td>
+										<small>票数：{{ submit.vote_count }}</small>&nbsp;&nbsp;
+										<small>赞数：{{ submit.praise_count }}</small>&nbsp;&nbsp;
+										<small>评论：{{ submit.comment_count }}</small>&nbsp;&nbsp;
+										<small>浏览: {{ submit.browse_times }}</small>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<!-- divider -->
+					<tr>
+						<td colspan="3">
+							<hr style="margin: 8px" width="100%" color="red" size=2 />
+						</td>
+					</tr>
+				{% endfor %}
+				</table>
+			</div>
+		</div>
+	</div>
+	<!-- right colum -->
+	<div class="col-sm-3" style="height: 600px; padding: 0px">
+		<div class="panel panel-default" style="margin-bottom: 4px; margin-left: 2px">
+			<div class="panel-heading">
+				<h3 class="panel-title">评选结果</h3>
+			</div>
+			<div class="panel-body" style="height: 200px">
+			</div>
+		</div>
+		<div class="panel panel-default" style="margin-left: 2px">
+			<div class="panel-heading">
+				<h3 class="panel-title">最新评论</h3>
+			</div>
+			<div class="panel-body">
+				{% include "newest-comment.html" %}
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends 'base-nav.html' %}
+
+{% load static %}
+			
+
+{% block main_body %}
+<!-- main body -->
+<div class="row">
+	<!-- left colum -->
+	<div class="col-sm-3" style="padding: 0px">
+		<div class="panel panel-default" style="margin-bottom: 4px; margin-right: 2px">
+			<div class="panel-heading">作者信息</div>
+			<div class="panel-body" style="height: 150px">
+				<div class="media-left">
+				<img src="{{ candidate.photo }}" style="height: 64px; width: 64px" />
+				</div>
+				<div class="media-body" style="line-height: 20px">
+					姓名：{{ candidate.name }}<br>
+					部门：{{ candidate.department }}<br>
+					代码：{{ candidate.code_programming_language }}<br>
+				</div>
+				<div style="padding-top: 4px">
+					<span class="glyphicon glyphicon-thumbs-up">访问：{{ submit.browse_times }}</span><br>
+					<span class="glyphicon glyphicon-thumbs-up">点赞：{{ submit.praise_count }}</span><br>
+					<span class="glyphicon glyphicon-thumbs-up">评论：{{ submit.praise_count }}</span>
+				</div>
+			</div>
+		</div>
+		<div class="panel panel-default" style="margin-bottom: 4px; margin-right: 2px">
+			<div class="panel-heading">提交文档</div>
+			<div class="panel-body" style="height: 300px">
+				代码介绍：<br>
+				<select multiple class="form-control" style="height: 40px">
+					<option><a href="#">main.cpp</a></option>
+				</select>	
+				<br>
+				源码文件：
+				<select multiple class="form-control" style="height: 175px">
+					<option><a href="#">main.cpp</a></option>
+					<option><a href="#">main.cpp</a></option>
+					<option><a href="#">main.cpp</a></option>
+					<option><a href="#">main.cpp</a></option>
+					<option><a href="#">main.cpp</a></option>
+					<option><a href="#">main.cpp</a></option>
+					<option><a href="#">main.cpp</a></option>
+					<option><a href="#">main.cpp</a></option>
+					<option><a href="#">main.cpp</a></option>
+				</select>
+			</div>
+		</div>
+		<div class="panel panel-default" style="margin-bottom: 4px; margin-right: 2px">
+			<div class="panel-heading">评委评审</div>
+			<div class="panel-body" style="height: 100px">
+				<a href="#">代码检视</a>
+				<br>
+				<a href="#">代码简评</a>
+			</div>
+		</div>
+	</div>
+	<!-- right colum -->
+	<div class="col-sm-9" style="padding: 0px">
+		<div class="panel panel-default" style="margin-bottom: 4px; margin-left: 2px">
+			<div class="panel-body" style="padding: 4px">
+				<iframe src="{{ tmp }}" style="width: 100%; height: 700px" frameborder="0">
+				</iframe>
+			</div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">评论</div>
+			<div class="panel-body">
+				{% include 'newest-comment.html' %}
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+<script>
+
+
+
+</script>

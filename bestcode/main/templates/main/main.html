@@ -34,10 +34,11 @@
 				{% for activity in activities %}
 					<tr style="height: 110px">
 						<td style="width: 15%; height: 100px; padding-right: 10px">
-							<a href="#"><img style = "width: 120px; height: 150px" src="{% static activity.img_src %}" /></a>
+							<a href="/activities/{{ activity.activity_id }}"><img style = "width: 120px; height: 150px" src="{% static activity.photo_static_url %}"></a>
+
 						</td>
 						<td style="width: 85%; word-break: keep-all;">
-							<h4>{{ activity.title }}</h4>
+							<h4>{{ activity.name }}</h4>
 							<h4><small>{{ activity.desc }}</small></h4>
 							<div style="float: left">
 								<small>{{ activity.start_date }}</small>&nbsp;&nbsp;
@@ -71,12 +72,8 @@
 			<div class="panel-heading">
 				<h3 class="panel-title">最新评论</h3>
 			</div>
-			<div class="panel-body" style="height: 400px">
-			{% for comment in comments %}
-				<div>{{ comment.comment_author }}发表于{{ comment.comment_time }}</div>
-				<div>{{ comment.comment_text }}</div>
-			{% endfor %}
-				<a href="{{ comment_path }}">更多评论</a>
+			<div class="panel-body">
+				{% include 'newest-comment.html' %}
 			</div>
 		</div>
 	</div>

@@ -2,8 +2,8 @@ import sys
 sys.path.append("..")
 
 from django.db import models
-from django.contrib.auth import models as auth_models
 from activities.models import Activity
+from users.models import ActivityUser
 
 # Create your models here.
 
@@ -21,7 +21,7 @@ class VoteItem(models.Model):
     vote_item_id = models.AutoField(primary_key=True)
     vote_item_name = models.CharField(max_length=64, default="none")
     vote = models.ForeignKey(Vote, on_delete=models.CASCADE)
-    user = models.ForeignKey(auth_models.User, on_delete=models.CASCADE)
+    user = models.ForeignKey(ActivityUser, on_delete=models.CASCADE)
     vote_users = models.CharField(max_length=4096)
 
     def __str__(self):

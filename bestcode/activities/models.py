@@ -1,10 +1,5 @@
-import sys
-sys.path.append("..")
-
 from django.db import models
-from django.contrib.auth import models as auth_models
 
-# Create your models here.
 
 class ActivityState(models.Model):
 	state_id = models.AutoField(primary_key=True)
@@ -15,13 +10,16 @@ class ActivityState(models.Model):
 
 class Activity(models.Model):
 	activity_id = models.AutoField(primary_key=True)
-	activity_name = models.CharField(max_length=64, default="none")
-	activity_desc = models.TextField(max_length=4096)
-	activity_result = models.TextField(max_length=4096)
-	state_id = models.ForeignKey(ActivityState, on_delete=models.CASCADE)
+	name = models.CharField(max_length=64, default="最佳代码")
+	desc = models.TextField(max_length=4096)
+	result = models.TextField(max_length=4096)
+	photo = models.FileField(upload_to="./activities/static/activities")
+	state = models.ForeignKey(ActivityState, on_delete=models.CASCADE)
+	start_date = models.DateTimeField('Start Time')
+	browse_times = models.IntegerField('Browse Times')
 
 	def __str__(self):
-		return self.activity_name 
+		return self.name 
 	
 class ActivityPlan(models.Model):
 	activity_plan_id = models.AutoField(primary_key=True)
