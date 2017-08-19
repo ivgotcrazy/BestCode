@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 } /* Comment.Preproc */
+body .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #888888 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0044DD } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #AA22FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+body .nf { color: #0000FF } /* Name.Function */
+body .nl { color: #A0A000 } /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mb { color: #666666 } /* Literal.Number.Bin */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sa { color: #BA2121 } /* Literal.String.Affix */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .dl { color: #BA2121 } /* Literal.String.Delimiter */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #BB6688 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .fm { color: #0000FF } /* Name.Function.Magic */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .vm { color: #19177C } /* Name.Variable.Magic */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="cp">#ifndef CLIENTSOCKET_H</span>
+<span class="cp">#define CLIENTSOCKET_H</span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;platform/types.h&quot;</span><span class="cp"></span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;IFileManager.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;IFileMP2.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;framework.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;isessionmanager.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;wbaseobject.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;wmsgqueue.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;wthread.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;IWMultiWhiteBoard.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;MultiWBMsgProcessor.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;kernel/core/EZWBDef.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;MsgHandler.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;MsgList.h&quot;</span><span class="cp"></span>
+
+<span class="n">using</span> <span class="n">namespace</span> <span class="n">WBASELIB</span><span class="p">;</span>
+<span class="n">using</span> <span class="n">namespace</span> <span class="n">eztalks</span><span class="p">;</span>
+
+<span class="n">class</span> <span class="nl">ClientSocket</span> <span class="p">:</span> <span class="n">public</span> <span class="n">WThread</span>
+        <span class="p">,</span><span class="n">public</span> <span class="n">MsgHandler</span>
+        <span class="p">,</span><span class="n">public</span> <span class="n">IXMLDocMsgReaderCallback</span>
+        <span class="p">,</span><span class="n">public</span> <span class="n">INetWorkRequest</span>
+<span class="p">{</span>
+<span class="nl">public</span><span class="p">:</span>
+    <span class="n">ClientSocket</span><span class="p">();</span>
+    <span class="n">virtual</span> <span class="o">~</span><span class="n">ClientSocket</span><span class="p">();</span>
+    <span class="n">BOOL</span> <span class="nf">Initialized</span><span class="p">(</span><span class="n">ISessionManager2</span> <span class="o">*</span><span class="n">pSessionManager</span><span class="p">,</span><span class="n">IComponentFactory</span> <span class="o">*</span><span class="n">pFactory</span><span class="p">,</span><span class="n">IFileManager</span> <span class="o">*</span><span class="n">pNetFileManager</span><span class="p">,</span><span class="k">const</span> <span class="n">WBASE_NOTIFY</span> <span class="o">&amp;</span><span class="n">notify</span><span class="p">,</span><span class="n">FUNC_MSGTOMAIN</span> <span class="n">funcMsgToMain</span><span class="p">);</span>
+    <span class="n">BOOL</span> <span class="nf">Create</span><span class="p">(</span><span class="k">const</span> <span class="n">GUID</span> <span class="o">*</span><span class="n">pGuid</span><span class="p">,</span><span class="n">DWORD</span> <span class="n">dwUserID</span><span class="p">,</span><span class="n">DWORD</span> <span class="n">dwCheckCode</span><span class="p">,</span><span class="n">WORD</span> <span class="n">wAppID</span><span class="p">,</span><span class="k">const</span> <span class="n">CHAR</span> <span class="o">*</span><span class="n">lpszSrvAddrLink</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">SetNetWorkResponse</span><span class="p">(</span><span class="n">INetWorkResponse</span> <span class="o">*</span><span class="n">pResponse</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">SetWBSinkSource</span><span class="p">(</span><span class="n">FUNC_WBSINK</span> <span class="n">funcWbSink</span><span class="p">);</span>
+    <span class="n">BOOL</span> <span class="nf">IsWBLogin</span><span class="p">();</span>
+    <span class="n">UINT</span> <span class="nf">GetWBServerStatus</span><span class="p">();</span>
+<span class="nl">public</span><span class="p">:</span>
+    <span class="n">virtual</span> <span class="kt">bool</span> <span class="n">handleMsg</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">pMsg</span><span class="p">);</span><span class="c1">//UI调用接口</span>
+    <span class="n">virtual</span> <span class="n">FS_UINT32</span>	<span class="nf">ThreadProcEx</span><span class="p">();</span>
+    <span class="n">virtual</span> <span class="n">LRESULT</span> <span class="nf">OnSessionNotify</span><span class="p">(</span><span class="n">UINT</span> <span class="n">nMsgID</span><span class="p">,</span><span class="n">WPARAM</span> <span class="n">wParam</span><span class="p">,</span><span class="n">LPARAM</span> <span class="n">lParam</span><span class="p">,</span><span class="n">FS_UINT32</span> <span class="n">dwReserved</span><span class="p">,</span><span class="n">FS_UINT</span> <span class="n">dwUserData</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">ProcessSessionEvent</span><span class="p">(</span><span class="n">SESSION_EVENT</span> <span class="o">*</span><span class="n">pEvent</span><span class="p">);</span>
+
+<span class="c1">///</span>
+<span class="c1">///\brief 响应接口，IXMLDocMsgReaderCallback，</span>
+<span class="c1">///</span>
+<span class="nl">public</span><span class="p">:</span>
+    <span class="n">virtual</span> <span class="n">BOOL</span>	<span class="n">OnLoginRep</span><span class="p">(</span> <span class="n">WORD</span> <span class="n">wResult</span> <span class="p">);</span>
+    <span class="n">virtual</span> <span class="n">BOOL</span>	<span class="nf">OnBye</span><span class="p">();</span>
+    <span class="n">virtual</span> <span class="n">BOOL</span>	<span class="nf">OnGetDocRep</span><span class="p">(</span> <span class="n">CHAR</span> <span class="o">*</span><span class="n">szDocData</span><span class="p">,</span><span class="n">DWORD</span> <span class="n">dwDataLen</span> <span class="p">);</span>
+    <span class="n">virtual</span> <span class="n">BOOL</span>	<span class="nf">OnClearDoc</span><span class="p">();</span>
+    <span class="n">virtual</span> <span class="n">BOOL</span>	<span class="nf">OnInsertDocNode</span><span class="p">(</span> <span class="n">BYTE</span> <span class="n">bInsertType</span><span class="p">,</span><span class="n">BYTE</span> <span class="n">bOnlyOne</span><span class="p">,</span><span class="n">CHAR</span><span class="o">*</span> <span class="n">szParentPath</span><span class="p">,</span><span class="n">CHAR</span><span class="o">*</span> <span class="n">szInsertPosPath</span><span class="p">,</span><span class="n">CHAR</span><span class="o">*</span> <span class="n">szNodeData</span> <span class="p">);</span>
+    <span class="n">virtual</span> <span class="n">BOOL</span>	<span class="nf">OnModifyDocNode</span><span class="p">(</span> <span class="n">CHAR</span> <span class="o">*</span><span class="n">szNodePath</span><span class="p">,</span><span class="n">CHAR</span> <span class="o">*</span><span class="n">szNodeData</span> <span class="p">);</span>
+    <span class="n">virtual</span> <span class="n">BOOL</span>	<span class="nf">OnDelDocNode</span><span class="p">(</span> <span class="n">CHAR</span> <span class="o">*</span><span class="n">szNodePath</span> <span class="p">);</span>
+
+
+<span class="nl">public</span><span class="p">:</span>
+    <span class="c1">///</span>
+    <span class="c1">///\brief 网络请求接口INetWorkRequest，供EZWhiteBoard调用。（主讲共享时请求服务器）</span>
+    <span class="c1">///</span>
+    <span class="c1">//添加白板</span>
+    <span class="n">virtual</span> <span class="kt">void</span> <span class="n">RequestAddWB</span><span class="p">(</span><span class="n">IContainerView</span> <span class="o">*</span><span class="n">pWB</span><span class="p">);</span>
+    <span class="c1">//添加图元</span>
+    <span class="n">virtual</span> <span class="kt">void</span> <span class="nf">RequestAddDrawObject</span><span class="p">(</span><span class="kt">int32_t</span> <span class="n">nWBId</span><span class="p">,</span><span class="kt">int</span> <span class="n">nPage</span><span class="p">,</span><span class="n">IDrawObject</span> <span class="o">*</span><span class="n">pDrawObj</span><span class="p">);</span>
+    <span class="c1">//激活白板</span>
+    <span class="n">virtual</span> <span class="kt">void</span> <span class="nf">RequestActiveWB</span><span class="p">(</span><span class="kt">int32_t</span> <span class="n">nWBId</span><span class="p">);</span>
+    <span class="c1">//修改图元</span>
+    <span class="n">virtual</span> <span class="kt">void</span> <span class="nf">RequestModifyDrawObject</span><span class="p">(</span><span class="kt">int32_t</span> <span class="n">nWBId</span><span class="p">,</span><span class="kt">int</span> <span class="n">nPage</span><span class="p">,</span><span class="n">IDrawObject</span> <span class="o">*</span><span class="n">pDrawObj</span><span class="p">);</span>
+    <span class="c1">//缩放白板</span>
+    <span class="n">virtual</span> <span class="kt">void</span> <span class="nf">RequestModifyZoom</span><span class="p">(</span><span class="kt">int32_t</span> <span class="n">nWBId</span><span class="p">,</span><span class="kt">int</span> <span class="n">nPage</span><span class="p">,</span><span class="kt">int</span> <span class="n">nZoom</span><span class="p">);</span>
+    <span class="c1">//指示器位置</span>
+    <span class="n">virtual</span> <span class="kt">void</span> <span class="nf">RequestModifyIndicator</span><span class="p">(</span><span class="kt">int32_t</span> <span class="n">nWBId</span><span class="p">,</span><span class="kt">int</span> <span class="n">nX</span><span class="p">,</span><span class="kt">int</span> <span class="n">nY</span><span class="p">);</span>
+    <span class="c1">//滚动条位置</span>
+    <span class="n">virtual</span> <span class="kt">void</span> <span class="nf">RequestModifyScroll</span><span class="p">(</span><span class="kt">int32_t</span> <span class="n">nWBId</span><span class="p">,</span><span class="kt">int</span> <span class="n">nX</span><span class="p">,</span><span class="kt">int</span> <span class="n">nY</span><span class="p">);</span>
+    <span class="c1">//旋转白板</span>
+    <span class="n">virtual</span> <span class="kt">void</span> <span class="nf">RequestRotate</span><span class="p">(</span><span class="kt">int32_t</span> <span class="n">nWBId</span><span class="p">,</span><span class="kt">int</span> <span class="n">nAngle</span><span class="p">);</span>
+    <span class="c1">//设置背景色</span>
+    <span class="n">virtual</span> <span class="kt">void</span> <span class="nf">RequestBkColor</span><span class="p">(</span><span class="kt">int32_t</span> <span class="n">nWBId</span><span class="p">,</span><span class="kt">int32_t</span> <span class="n">nRgbaColor</span><span class="p">);</span>
+    <span class="c1">//关闭白板</span>
+    <span class="n">virtual</span> <span class="kt">void</span> <span class="nf">RequestCloseWB</span><span class="p">(</span><span class="kt">int32_t</span> <span class="n">nWBId</span><span class="p">);</span>
+    <span class="c1">//关闭所有白板</span>
+    <span class="n">virtual</span> <span class="kt">void</span> <span class="nf">RequestCloseAllWB</span><span class="p">();</span>
+    <span class="c1">//删除图元</span>
+    <span class="n">virtual</span> <span class="kt">void</span> <span class="nf">RequestDelDrawObject</span><span class="p">(</span><span class="kt">int32_t</span> <span class="n">nWBId</span><span class="p">,</span><span class="kt">int</span> <span class="n">nPage</span><span class="p">,</span><span class="kt">int</span> <span class="n">nObjId</span><span class="p">);</span>
+
+
+<span class="nl">private</span><span class="p">:</span>
+    <span class="c1">///</span>
+    <span class="c1">///\brief 对服务器响应，私有，供服务器响应函数调用。INetWorkResponse</span>
+    <span class="c1">///</span>
+    <span class="kt">void</span> <span class="n">LoadActionElement</span><span class="p">(</span><span class="n">DWORD</span> <span class="n">dwWBID</span><span class="p">,</span> <span class="n">TiXmlElement</span> <span class="o">*</span><span class="n">pElement</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">LoadWBElement</span><span class="p">(</span><span class="n">TiXmlElement</span> <span class="o">*</span><span class="n">pElement</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">LoadSelElement</span><span class="p">(</span><span class="n">TiXmlElement</span> <span class="o">*</span><span class="n">pElement</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">LoadFileListElement</span><span class="p">(</span><span class="n">DWORD</span> <span class="n">dwWBID</span><span class="p">,</span> <span class="n">TiXmlElement</span> <span class="o">*</span><span class="n">pElement</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">LoadWBFileElement</span><span class="p">(</span><span class="n">DWORD</span> <span class="n">dwWBID</span><span class="p">,</span> <span class="n">TiXmlElement</span> <span class="o">*</span><span class="n">pElement</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">LoadToolElement</span><span class="p">(</span><span class="n">DWORD</span> <span class="n">dwWBID</span><span class="p">,</span> <span class="n">TiXmlElement</span> <span class="o">*</span><span class="n">pElement</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">LoadRotateElement</span><span class="p">(</span><span class="n">DWORD</span> <span class="n">dwWBID</span><span class="p">,</span> <span class="n">TiXmlElement</span> <span class="o">*</span><span class="n">pElement</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">LoadBkColorElement</span><span class="p">(</span><span class="n">DWORD</span> <span class="n">dwWBID</span><span class="p">,</span> <span class="n">TiXmlElement</span> <span class="o">*</span><span class="n">pElement</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">LoadScrollElement</span><span class="p">(</span><span class="n">DWORD</span> <span class="n">dwWBID</span><span class="p">,</span> <span class="n">TiXmlElement</span> <span class="o">*</span><span class="n">pElement</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">LoadDocElement</span><span class="p">(</span><span class="n">DWORD</span> <span class="n">dwWBID</span><span class="p">,</span> <span class="n">TiXmlElement</span> <span class="o">*</span><span class="n">pElement</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">LoadIndicatorElement</span><span class="p">(</span><span class="n">DWORD</span> <span class="n">dwWBID</span><span class="p">,</span> <span class="n">TiXmlElement</span> <span class="o">*</span><span class="n">pElement</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">LoadDrawObjectElement</span><span class="p">(</span><span class="n">DWORD</span> <span class="n">dwWBID</span><span class="p">,</span><span class="kt">int</span> <span class="n">nPage</span><span class="p">,</span> <span class="n">TiXmlElement</span> <span class="o">*</span><span class="n">pElement</span><span class="p">,</span><span class="n">BOOL</span> <span class="n">bModifyOrNew</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">);</span>
+
+<span class="nl">private</span><span class="p">:</span>
+    <span class="c1">///</span>
+    <span class="c1">///\brief 数据包协议相关</span>
+    <span class="c1">///</span>
+    <span class="kt">void</span> <span class="n">AppendToolElement</span><span class="p">(</span><span class="n">TiXmlElement</span><span class="o">*</span><span class="n">pElement</span><span class="p">,</span><span class="kt">int</span> <span class="n">nPage</span><span class="p">,</span><span class="kt">int</span> <span class="n">nZoom</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">AppendRotateElement</span><span class="p">(</span><span class="n">TiXmlElement</span><span class="o">*</span><span class="n">pElement</span><span class="p">,</span><span class="kt">int</span> <span class="n">nAngle</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">AppendBkColorElement</span><span class="p">(</span><span class="n">TiXmlElement</span><span class="o">*</span><span class="n">pElement</span><span class="p">,</span><span class="kt">int</span> <span class="n">nColor</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">AppendIndicatorElement</span><span class="p">(</span><span class="n">TiXmlElement</span><span class="o">*</span><span class="n">pElement</span><span class="p">,</span><span class="kt">int</span> <span class="n">nX</span><span class="p">,</span><span class="kt">int</span> <span class="n">nY</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">AppendDocElement</span><span class="p">(</span><span class="n">TiXmlElement</span><span class="o">*</span><span class="n">pElement</span><span class="p">,</span><span class="n">IDoc</span> <span class="o">*</span><span class="n">pDoc</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">AppendPageElement</span><span class="p">(</span><span class="n">TiXmlElement</span><span class="o">*</span><span class="n">pElement</span><span class="p">,</span><span class="kt">int</span> <span class="n">nIdx</span><span class="p">,</span><span class="n">IPage</span> <span class="o">*</span><span class="n">pPage</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">AppendDrawObjectElement</span><span class="p">(</span><span class="n">TiXmlElement</span><span class="o">*</span><span class="n">pElement</span><span class="p">,</span><span class="n">IDrawObject</span> <span class="o">*</span><span class="n">pDrawObj</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">AppendScrollElement</span><span class="p">(</span><span class="n">TiXmlElement</span><span class="o">*</span><span class="n">pElement</span><span class="p">,</span><span class="kt">int</span> <span class="n">nX</span><span class="p">,</span><span class="kt">int</span> <span class="n">nY</span><span class="p">,</span><span class="kt">int</span> <span class="n">nCxRate</span><span class="p">,</span><span class="kt">int</span> <span class="n">nCyRate</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">AppendActionElement</span><span class="p">(</span><span class="n">TiXmlElement</span><span class="o">*</span><span class="n">pElement</span><span class="p">,</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span><span class="n">szName</span><span class="p">);</span>
+
+<span class="nl">private</span><span class="p">:</span>
+    <span class="n">BOOL</span> <span class="n">CreateSession</span><span class="p">(</span><span class="n">WORD</span> <span class="n">wAppID</span><span class="p">,</span><span class="k">const</span> <span class="n">CHAR</span> <span class="o">*</span><span class="n">lpszSrvAddrLink</span><span class="p">);</span>
+    <span class="n">BOOL</span> <span class="nf">SendNotify</span><span class="p">(</span><span class="kt">int</span> <span class="n">nEvent</span><span class="p">);</span>
+    <span class="n">CHAR</span><span class="o">*</span><span class="nf">ParsePath</span><span class="p">(</span> <span class="n">CHAR</span><span class="o">*</span> <span class="n">szPath</span><span class="p">,</span><span class="n">CHAR</span><span class="o">**</span> <span class="n">szName</span><span class="p">,</span><span class="n">CHAR</span><span class="o">**</span> <span class="n">szAttributeName</span><span class="p">,</span><span class="n">CHAR</span><span class="o">**</span> <span class="n">szAttributeValue</span> <span class="p">);</span>
+<span class="nl">private</span><span class="p">:</span>
+    <span class="n">ISessionManager2</span>            <span class="o">*</span><span class="n">m_pSessionManager</span><span class="p">;</span><span class="c1">//白板组件的会控。接受服务器事件</span>
+    <span class="n">IComponentFactory</span>           <span class="o">*</span><span class="n">m_pFactory</span><span class="p">;</span>
+    <span class="n">IFileManager</span>                <span class="o">*</span><span class="n">m_pNetFileManager</span><span class="p">;</span>
+    <span class="n">WBASE_NOTIFY</span>                 <span class="n">m_Notify</span><span class="p">;</span>
+    <span class="n">FUNC_MSGTOMAIN</span>               <span class="n">m_fcMainThreadCall</span><span class="p">;</span>
+    <span class="n">FUNC_WBSINK</span>                  <span class="n">m_fcWbSink</span><span class="p">;</span>
+
+    <span class="n">GUID</span>                         <span class="n">m_guid</span><span class="p">;</span>
+    <span class="n">DWORD</span>                        <span class="n">m_dwUserID</span><span class="p">;</span>
+    <span class="n">DWORD</span>                        <span class="n">m_dwCheckCode</span><span class="p">;</span>
+    <span class="n">WORD</span>                         <span class="n">m_wSrvAppID</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span>                  <span class="n">m_strSrvAddrLink</span><span class="p">;</span>
+
+    <span class="n">WORD</span>                         <span class="n">m_wSessionID</span><span class="p">;</span>
+    <span class="n">BOOL</span>                         <span class="n">m_bRun</span><span class="p">;</span>
+
+    <span class="n">IMemoryAllocator</span>            <span class="o">*</span><span class="n">m_pMemoryAllocator</span><span class="p">;</span>
+    <span class="n">WElementAllocator</span><span class="o">&lt;</span><span class="n">CMsgMpNode</span><span class="o">&gt;</span><span class="n">m_NetMsgAllocator</span><span class="p">;</span>
+    <span class="n">WMsgQueue</span><span class="o">&lt;</span><span class="n">CMsgMpNode</span><span class="o">&gt;</span>        <span class="n">m_NetMsgQueue</span><span class="p">;</span>
+    <span class="n">CMultiWBMsgProcessor</span>         <span class="n">m_WBMsgProcessor</span><span class="p">;</span>
+
+
+    <span class="n">INetWorkResponse</span>            <span class="o">*</span><span class="n">m_pResponse</span><span class="p">;</span><span class="c1">//服务器事件响应器（白板）</span>
+    <span class="n">BOOL</span>                         <span class="n">m_bFirstWB</span><span class="p">;</span>
+    <span class="n">BOOL</span>                         <span class="n">m_bWbLogin</span><span class="p">;</span>
+    <span class="n">UINT</span>                         <span class="n">m_nWBServerStatus</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="cp">#endif </span><span class="c1">// CLIENTSOCKET_H</span>
+</pre></div>
+</body>
+</html>

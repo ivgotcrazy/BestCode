@@ -1,0 +1,14 @@
+{% for comment in comments %}
+	{% if forloop.counter <= 10 %}
+		<div style="word-wrap:break-word">{{ comment.comment_author }}&nbsp;发表于&nbsp;{{ comment.comment_time }}</div>
+		<div style="word-wrap:break-word">{{ comment.comment_text }}</div>
+		<br>
+	{% endif %}
+	{% if forloop.last %}
+		<a href="{{ comment_path }}">更多评论</a>
+	{% endif %}
+	{% empty %}
+	<div>暂无评论</div>
+	<br>
+	<div style="text-align: left"><a href="{{ comment_path }}">发表评论</a></div>
+{% endfor %}

@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 } /* Comment.Preproc */
+body .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #888888 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0044DD } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #AA22FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+body .nf { color: #0000FF } /* Name.Function */
+body .nl { color: #A0A000 } /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mb { color: #666666 } /* Literal.Number.Bin */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sa { color: #BA2121 } /* Literal.String.Affix */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .dl { color: #BA2121 } /* Literal.String.Delimiter */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #BB6688 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .fm { color: #0000FF } /* Name.Function.Magic */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .vm { color: #19177C } /* Name.Variable.Magic */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="cm">/*针对于查询页面的通用js*/</span>
+<span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">ko</span><span class="p">.</span><span class="nx">bindingViewModel</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">bindElement</span><span class="p">,</span> <span class="nx">definedMethod</span><span class="p">)</span> <span class="p">{</span>
+		<span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+		<span class="c1">//是否开启加密，开启参数加密后需要传入keyID，encryptionKeyCode 默认不开启</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">isEncryption</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nx">definedMethod</span><span class="p">.</span><span class="nx">isEncryption</span> <span class="o">!=</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+			<span class="k">this</span><span class="p">.</span><span class="nx">isEncryption</span> <span class="o">=</span> <span class="nx">definedMethod</span><span class="p">.</span><span class="nx">isEncryption</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="c1">//如果启动加密</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">isEncryption</span><span class="p">)</span> <span class="p">{</span>
+			<span class="k">this</span><span class="p">.</span><span class="nx">mainKey</span> <span class="o">=</span> <span class="nx">definedMethod</span><span class="p">.</span><span class="nx">mainKey</span><span class="p">;</span>
+			<span class="k">this</span><span class="p">.</span><span class="nx">encryptionKeyCode</span> <span class="o">=</span> <span class="nx">definedMethod</span><span class="p">.</span><span class="nx">encryptionKeyCode</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="c1">//查询参数监控已经监控绑定</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">queryCondition</span> <span class="o">=</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">mapping</span><span class="p">.</span><span class="nx">fromJS</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">queryCondition</span><span class="p">);</span>
+		<span class="c1">//自定义下拉数据监控绑定</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">selectData</span> <span class="o">=</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">mapping</span><span class="p">.</span><span class="nx">fromJS</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">selectData</span><span class="p">);</span>
+		<span class="c1">//默认查询参数</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">defaultQueryParams</span> <span class="o">=</span> <span class="p">{</span>
+			<span class="nx">queryParams</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">param</span><span class="p">)</span> <span class="p">{</span>
+				<span class="kd">var</span> <span class="nx">params</span> <span class="o">=</span> <span class="p">{};</span>
+				<span class="kd">var</span> <span class="nx">queryEncryptionCondition</span> <span class="o">=</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">mapping</span>
+						<span class="p">.</span><span class="nx">toJS</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">queryCondition</span><span class="p">);</span>
+				<span class="c1">//查询参数加密</span>
+				<span class="k">if</span> <span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">isEncryption</span><span class="p">)</span> <span class="p">{</span>
+					<span class="k">for</span> <span class="p">(</span> <span class="kd">var</span> <span class="nx">name</span> <span class="k">in</span> <span class="nx">queryEncryptionCondition</span><span class="p">)</span> <span class="p">{</span>
+						<span class="nx">queryEncryptionCondition</span><span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=</span> <span class="nx">DES3</span><span class="p">.</span><span class="nx">encrypt</span><span class="p">(</span>
+								<span class="nx">self</span><span class="p">.</span><span class="nx">encryptionKeyCode</span><span class="p">,</span>
+								<span class="nx">queryEncryptionCondition</span><span class="p">[</span><span class="nx">name</span><span class="p">]);</span>
+					<span class="p">}</span>
+				<span class="p">}</span>
+				<span class="c1">//加密自定义参数</span>
+				<span class="nx">params</span><span class="p">.</span><span class="nx">dynamicFields</span> <span class="o">=</span> <span class="nx">queryEncryptionCondition</span><span class="p">;</span>
+				<span class="c1">//查询参数加密</span>
+				<span class="k">if</span> <span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">isEncryption</span><span class="p">)</span> <span class="p">{</span>
+					<span class="nx">params</span><span class="p">.</span><span class="nx">pageNumber</span> <span class="o">=</span> <span class="nx">DES3</span><span class="p">.</span><span class="nx">encrypt</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">encryptionKeyCode</span><span class="p">,</span>
+							<span class="nx">param</span><span class="p">.</span><span class="nx">pageNumber</span><span class="p">);</span>
+					<span class="nx">params</span><span class="p">.</span><span class="nx">pageSize</span> <span class="o">=</span> <span class="nx">DES3</span><span class="p">.</span><span class="nx">encrypt</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">encryptionKeyCode</span><span class="p">,</span>
+							<span class="nx">param</span><span class="p">.</span><span class="nx">pageSize</span><span class="p">);</span>
+					<span class="nx">params</span><span class="p">.</span><span class="nx">sortName</span> <span class="o">=</span> <span class="nx">DES3</span><span class="p">.</span><span class="nx">encrypt</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">encryptionKeyCode</span><span class="p">,</span>
+							<span class="nx">data</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">sortName</span><span class="p">);</span>
+					<span class="nx">params</span><span class="p">.</span><span class="nx">sortOrder</span> <span class="o">=</span> <span class="nx">DES3</span><span class="p">.</span><span class="nx">encrypt</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">encryptionKeyCode</span><span class="p">,</span>
+							<span class="nx">data</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">sortOrder</span><span class="p">);</span>
+				<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+					<span class="nx">params</span><span class="p">.</span><span class="nx">pageNumber</span> <span class="o">=</span> <span class="nx">param</span><span class="p">.</span><span class="nx">pageNumber</span><span class="p">;</span>
+					<span class="nx">params</span><span class="p">.</span><span class="nx">pageSize</span> <span class="o">=</span> <span class="nx">param</span><span class="p">.</span><span class="nx">pageSize</span><span class="p">;</span>
+					<span class="nx">params</span><span class="p">.</span><span class="nx">sortName</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">sortName</span><span class="p">;</span>
+					<span class="nx">params</span><span class="p">.</span><span class="nx">sortOrder</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">sortOrder</span><span class="p">;</span>
+				<span class="p">}</span>
+				<span class="k">return</span> <span class="nx">params</span><span class="p">;</span>
+			<span class="p">}</span>
+		<span class="p">};</span>
+
+		<span class="c1">//将传入的参数与自定义参数进行合并，相同属性不同值的时候以后者为准</span>
+		<span class="kd">var</span> <span class="nx">tableParams</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">extend</span><span class="p">({},</span> <span class="k">this</span><span class="p">.</span><span class="nx">defaultQueryParams</span><span class="p">,</span>
+				<span class="nx">data</span><span class="p">.</span><span class="nx">tableParams</span> <span class="o">||</span> <span class="p">{});</span>
+		<span class="c1">//绑定表格数据对象</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">bootstrapTable</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">bootstrapTableViewModel</span><span class="p">(</span><span class="nx">tableParams</span><span class="p">);</span>
+
+		<span class="c1">//绑定清空清空事件</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">clearClick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+			<span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">queryCondition</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+				<span class="c1">//只有监控属性才清空</span>
+				<span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;function&quot;</span><span class="p">)</span> <span class="p">{</span>
+					<span class="k">this</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span> <span class="c1">//value(&#39;&#39;);</span>
+				<span class="p">}</span>
+			<span class="p">});</span>
+			<span class="c1">//清除自定义下拉</span>
+			<span class="k">if</span> <span class="p">(</span><span class="nx">ko</span><span class="p">.</span><span class="nx">mapping</span><span class="p">.</span><span class="nx">toJS</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">selectData</span><span class="p">)</span> <span class="o">!=</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+				<span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">selectData</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+					<span class="c1">//只有监控属性才清空</span>
+					<span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;function&quot;</span><span class="p">)</span> <span class="p">{</span>
+						<span class="k">this</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span> <span class="c1">//value(&#39;&#39;);</span>
+					<span class="p">}</span>
+				<span class="p">});</span>
+			<span class="p">}</span>
+			<span class="c1">//提供扩展定义了自定义清除事件</span>
+			<span class="k">if</span> <span class="p">(</span><span class="nx">definedMethod</span><span class="p">.</span><span class="nx">defineClear</span> <span class="o">!=</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+				<span class="nx">definedMethod</span><span class="p">.</span><span class="nx">defineClear</span><span class="p">();</span>
+			<span class="p">}</span>
+			<span class="c1">//表格的刷新</span>
+			<span class="nx">self</span><span class="p">.</span><span class="nx">bootstrapTable</span><span class="p">.</span><span class="nx">refresh</span><span class="p">();</span>
+		<span class="p">};</span>
+
+		<span class="c1">//监控绑定查询事件</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">queryClick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+			<span class="c1">//是否自定义了查询事件</span>
+			<span class="k">if</span> <span class="p">(</span><span class="nx">definedMethod</span><span class="p">.</span><span class="nx">defineQuery</span> <span class="o">!=</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+				<span class="nx">definedMethod</span><span class="p">.</span><span class="nx">defineQuery</span><span class="p">();</span>
+			<span class="p">}</span>
+			<span class="c1">//表格的刷新</span>
+			<span class="nx">self</span><span class="p">.</span><span class="nx">bootstrapTable</span><span class="p">.</span><span class="nx">refresh</span><span class="p">();</span>
+		<span class="p">};</span>
+
+		<span class="c1">//新增事件</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">addClick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+			<span class="c1">//申明默认的模态框（此处因为项目中只用到这种模态框，所以未做扩展）</span>
+			<span class="kd">var</span> <span class="nx">dialog</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;&lt;div class=&quot;modal&quot; id=&quot;myModal&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;myModalLabel&quot;&gt;&lt;/div&gt;&#39;</span><span class="p">);</span>
+			<span class="c1">//自定义点击新增前事件</span>
+			<span class="k">if</span> <span class="p">(</span><span class="nx">definedMethod</span><span class="p">.</span><span class="nx">defineAdd</span> <span class="o">!=</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+				<span class="nx">definedMethod</span><span class="p">.</span><span class="nx">defineAdd</span><span class="p">();</span>
+			<span class="p">}</span>
+
+			<span class="c1">//自定义点击新增传参事件</span>
+			<span class="k">if</span> <span class="p">(</span><span class="nx">definedMethod</span><span class="p">.</span><span class="nx">defineQueryAdd</span> <span class="o">!=</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+				<span class="c1">//自定义传参事件</span>
+				<span class="kd">var</span> <span class="nx">addQuery</span> <span class="o">=</span> <span class="nx">definedMethod</span><span class="p">.</span><span class="nx">defineQueryAdd</span><span class="p">();</span>
+				<span class="c1">//dialog加载页面</span>
+				<span class="nx">dialog</span><span class="p">.</span><span class="nx">load</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">urls</span><span class="p">.</span><span class="nx">add</span><span class="p">,</span> <span class="nx">addQuery</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+				<span class="p">});</span>
+			<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+				<span class="c1">//加载无参数请求</span>
+				<span class="nx">dialog</span><span class="p">.</span><span class="nx">load</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">urls</span><span class="p">.</span><span class="nx">add</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+				<span class="p">});</span>
+			<span class="p">}</span>
+			<span class="c1">//body标签下追加dialog</span>
+			<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;body&quot;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="nx">dialog</span><span class="p">);</span>
+			<span class="c1">//dialog的关闭事件</span>
+			<span class="nx">dialog</span><span class="p">.</span><span class="nx">modal</span><span class="p">().</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;hidden.bs.modal&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+				<span class="c1">//关闭弹出框的时候清除绑定(这个清空包括清空绑定和清空注册事件)</span>
+				<span class="nx">ko</span><span class="p">.</span><span class="nx">cleanNode</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;formEdit&quot;</span><span class="p">));</span>
+				<span class="nx">dialog</span><span class="p">.</span><span class="nx">remove</span><span class="p">();</span>
+				<span class="c1">//自定义点击新增后事件</span>
+				<span class="k">if</span> <span class="p">(</span><span class="nx">definedMethod</span><span class="p">.</span><span class="nx">defineAddAfter</span> <span class="o">!=</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+					<span class="nx">definedMethod</span><span class="p">.</span><span class="nx">defineAddAfter</span><span class="p">();</span>
+				<span class="p">}</span>
+				<span class="c1">//刷新table</span>
+				<span class="nx">self</span><span class="p">.</span><span class="nx">bootstrapTable</span><span class="p">.</span><span class="nx">refresh</span><span class="p">();</span>
+			<span class="p">});</span>
+		<span class="p">};</span>
+
+		<span class="c1">//编辑事件</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">editClick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+			<span class="c1">//申明默认的模态框（此处因为项目中只用到这种模态框，所以未做扩展）</span>
+			<span class="kd">var</span> <span class="nx">dialog</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;&lt;div class=&quot;modal&quot; id=&quot;myModal&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;myModalLabel&quot;&gt;&lt;/div&gt;&#39;</span><span class="p">);</span>
+			<span class="c1">//自定义点击编辑前事件</span>
+			<span class="k">if</span> <span class="p">(</span><span class="nx">definedMethod</span><span class="p">.</span><span class="nx">defineEdit</span> <span class="o">!=</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+				<span class="nx">definedMethod</span><span class="p">.</span><span class="nx">defineEdit</span><span class="p">();</span>
+			<span class="p">}</span>
+			<span class="c1">//获取表格数据的选中行</span>
+			<span class="kd">var</span> <span class="nx">arrselectedData</span> <span class="o">=</span> <span class="nx">self</span><span class="p">.</span><span class="nx">bootstrapTable</span><span class="p">.</span><span class="nx">getSelections</span><span class="p">();</span>
+			<span class="k">if</span> <span class="p">(</span><span class="nx">arrselectedData</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="o">||</span> <span class="nx">arrselectedData</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+				<span class="nx">alert</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s2">&quot;msg.common.onlyoneline&quot;</span><span class="p">));</span>
+				<span class="k">return</span><span class="p">;</span>
+			<span class="p">}</span>
+			<span class="c1">//自定义点击编辑自定义传参事件事件</span>
+			<span class="k">if</span> <span class="p">(</span><span class="nx">definedMethod</span><span class="p">.</span><span class="nx">defineQueryEdit</span> <span class="o">!=</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+				<span class="c1">//自定义处理传的参数</span>
+				<span class="kd">var</span> <span class="nx">editQuery</span> <span class="o">=</span> <span class="nx">definedMethod</span><span class="p">.</span><span class="nx">defineQueryEdit</span><span class="p">(</span><span class="nx">arrselectedData</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+				<span class="nx">dialog</span><span class="p">.</span><span class="nx">load</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">urls</span><span class="p">.</span><span class="nx">edit</span><span class="p">,</span> <span class="nx">editQuery</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+				<span class="p">});</span>
+			<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+				<span class="k">if</span> <span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">isEncryption</span><span class="p">)</span> <span class="p">{</span>
+					<span class="c1">//加密ID</span>
+					<span class="kd">var</span> <span class="nx">dinfineData</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">arrselectedData</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+					<span class="nx">dinfineData</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="nx">key</span> <span class="o">:</span> <span class="nx">DES3</span><span class="p">.</span><span class="nx">encrypt</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">encryptionKeyCode</span><span class="p">,</span><span class="nb">eval</span><span class="p">(</span><span class="s2">&quot;arrselectedData[0].&quot;</span> <span class="o">+</span> <span class="nx">self</span><span class="p">.</span><span class="nx">mainKey</span><span class="p">))};</span>
+					<span class="nx">arrselectedData</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nx">dinfineData</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+				<span class="p">}</span>
+				
+				<span class="nx">dialog</span><span class="p">.</span><span class="nx">load</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">urls</span><span class="p">.</span><span class="nx">edit</span><span class="p">,</span> <span class="nx">arrselectedData</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+				<span class="p">});</span>
+			<span class="p">}</span>
+
+			<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;body&quot;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="nx">dialog</span><span class="p">);</span>
+			<span class="nx">dialog</span><span class="p">.</span><span class="nx">modal</span><span class="p">().</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;hidden.bs.modal&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+				<span class="c1">//关闭弹出框的时候清除绑定(这个清空包括清空绑定和清空注册事件)</span>
+				<span class="nx">ko</span><span class="p">.</span><span class="nx">cleanNode</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;formEdit&quot;</span><span class="p">));</span>
+				<span class="nx">dialog</span><span class="p">.</span><span class="nx">remove</span><span class="p">();</span>
+				<span class="c1">//自定义点击修改后事件</span>
+				<span class="k">if</span> <span class="p">(</span><span class="nx">definedMethod</span><span class="p">.</span><span class="nx">defineEditAfter</span> <span class="o">!=</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+					<span class="nx">definedMethod</span><span class="p">.</span><span class="nx">defineEditAfter</span><span class="p">();</span>
+				<span class="p">}</span>
+				<span class="nx">self</span><span class="p">.</span><span class="nx">bootstrapTable</span><span class="p">.</span><span class="nx">refresh</span><span class="p">();</span>
+			<span class="p">});</span>
+		<span class="p">};</span>
+
+		<span class="c1">//删除事件</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">deleteClick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+			<span class="c1">//获取表格数据的选中行</span>
+			<span class="kd">var</span> <span class="nx">arrselectedData</span> <span class="o">=</span> <span class="nx">self</span><span class="p">.</span><span class="nx">bootstrapTable</span><span class="p">.</span><span class="nx">getSelections</span><span class="p">();</span>
+			<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">arrselectedData</span> <span class="o">||</span> <span class="nx">arrselectedData</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+				<span class="nx">alert</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s2">&quot;msg.common.leastoneline&quot;</span><span class="p">));</span>
+				<span class="k">return</span><span class="p">;</span>
+			<span class="p">}</span>
+			<span class="c1">//自定义点击删除前事件</span>
+			<span class="k">if</span> <span class="p">(</span><span class="nx">definedMethod</span><span class="p">.</span><span class="nx">defineDelete</span> <span class="o">!=</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+				<span class="c1">//自定义删除事件</span>
+				<span class="kd">var</span> <span class="nx">flag</span> <span class="o">=</span> <span class="nx">definedMethod</span><span class="p">.</span><span class="nx">defineDelete</span><span class="p">(</span><span class="nx">arrselectedData</span><span class="p">);</span>
+				<span class="k">if</span> <span class="p">(</span><span class="nx">flag</span> <span class="o">==</span> <span class="kc">false</span><span class="p">)</span> <span class="p">{</span>
+					<span class="k">return</span><span class="p">;</span>
+				<span class="p">}</span>
+			<span class="p">}</span>
+			<span class="c1">//如果启用了参数加密删除</span>
+			<span class="k">if</span> <span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">isEncryption</span><span class="p">)</span> <span class="p">{</span>
+				<span class="kd">var</span> <span class="nx">dinfineData</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">arrselectedData</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+				<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arrselectedData</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+					<span class="nx">dinfineData</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+						<span class="nx">key</span> <span class="o">:</span> <span class="nx">DES3</span><span class="p">.</span><span class="nx">encrypt</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">encryptionKeyCode</span><span class="p">,</span><span class="nb">eval</span><span class="p">(</span><span class="s2">&quot;arrselectedData[i].&quot;</span> <span class="o">+</span> <span class="nx">self</span><span class="p">.</span><span class="nx">mainKey</span><span class="p">))</span>
+					<span class="p">};</span>
+				<span class="p">}</span>
+				<span class="nx">arrselectedData</span> <span class="o">=</span> <span class="nx">dinfineData</span><span class="p">;</span>
+			<span class="p">}</span>
+
+			<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+				<span class="nx">url</span> <span class="o">:</span> <span class="nx">data</span><span class="p">.</span><span class="nx">urls</span><span class="p">.</span><span class="nx">Delete</span><span class="p">,</span>
+				<span class="nx">async</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+				<span class="nx">cache</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+				<span class="nx">type</span> <span class="o">:</span> <span class="s2">&quot;post&quot;</span><span class="p">,</span>
+				<span class="nx">contentType</span> <span class="o">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
+				<span class="nx">dataType</span> <span class="o">:</span> <span class="s1">&#39;json&#39;</span><span class="p">,</span>
+				<span class="nx">data</span> <span class="o">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">arrselectedData</span><span class="p">),</span>
+				<span class="nx">success</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+					<span class="nx">alert</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+					<span class="nx">self</span><span class="p">.</span><span class="nx">bootstrapTable</span><span class="p">.</span><span class="nx">refresh</span><span class="p">();</span>
+					<span class="k">if</span> <span class="p">(</span><span class="nx">definedMethod</span><span class="p">.</span><span class="nx">defineDeleteAfter</span> <span class="o">!=</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+						<span class="nx">definedMethod</span><span class="p">.</span><span class="nx">defineDeleteAfter</span><span class="p">();</span>
+					<span class="p">}</span>
+				<span class="p">},</span>
+                <span class="nx">error</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+                	<span class="nx">alert</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s2">&quot;msg.common.error&quot;</span><span class="p">));</span>
+                <span class="p">}</span>
+			<span class="p">});</span>
+		<span class="p">};</span>
+		<span class="c1">//扩展自定义方法</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">definedMethod</span> <span class="o">=</span> <span class="nx">definedMethod</span><span class="p">;</span>
+		<span class="nx">ko</span><span class="p">.</span><span class="nx">applyBindings</span><span class="p">(</span><span class="nx">self</span><span class="p">,</span> <span class="nx">bindElement</span><span class="p">);</span>
+	<span class="p">};</span>
+<span class="p">})(</span><span class="nx">jQuery</span><span class="p">);</span>
+</pre></div>
+</body>
+</html>

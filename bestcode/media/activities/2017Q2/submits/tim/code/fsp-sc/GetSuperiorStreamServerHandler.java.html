@@ -1,0 +1,422 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 } /* Comment.Preproc */
+body .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #888888 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0044DD } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #AA22FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+body .nf { color: #0000FF } /* Name.Function */
+body .nl { color: #A0A000 } /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mb { color: #666666 } /* Literal.Number.Bin */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sa { color: #BA2121 } /* Literal.String.Affix */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .dl { color: #BA2121 } /* Literal.String.Delimiter */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #BB6688 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .fm { color: #0000FF } /* Name.Function.Magic */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .vm { color: #19177C } /* Name.Variable.Magic */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * 文件名：GetSuperiorStreamServerHandler</span>
+<span class="cm"> * 版权：Copyright by www.fsmeeting.com</span>
+<span class="cm"> * 描述：</span>
+<span class="cm"> * 修改人：kezs</span>
+<span class="cm"> * 修改时间：2017/2/22</span>
+<span class="cm"> * 修改内容：</span>
+<span class="cm"> */</span>
+
+<span class="kn">package</span> <span class="nn">com.fsmeeting.fsp.sc.handler</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.fsmeeting.fsp.common.bean.LockState</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fsmeeting.fsp.common.bean.NodeCache2Listener</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fsmeeting.fsp.common.handler.IProtobuf</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fsmeeting.fsp.common.lock.Lock</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fsmeeting.fsp.common.util.NumberUtil</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fsmeeting.fsp.common.zookeeper.IZkStateCallback</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fsmeeting.fsp.common.zookeeper.NodeDeleteCallback</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fsmeeting.fsp.common.zookeeper.ZkListener</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fsmeeting.fsp.proto.common.CommonResponse</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fsmeeting.fsp.proto.common.ResponseCode</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fsmeeting.fsp.proto.common.StreamServer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fsmeeting.fsp.proto.cp.SelectStreamServer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fsmeeting.fsp.proto.sc.GetSuperiorStreamServer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fsmeeting.fsp.proto.sc.GetSuperiorStreamServerRsp</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fsmeeting.fsp.proto.sc.ProtoDictionary</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fsmeeting.fsp.sc.common.Common</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fsmeeting.fsp.sc.entry.RequestInfo</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fsmeeting.fsp.sc.request.SelectStreamServerReq</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fsmeeting.fsp.sc.service.CommonService</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fsmeeting.fsp.sc.service.MessageResponseService</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fsmeeting.fsp.sc.service.RequestCacheService</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fsmeeting.fsp.sc.service.RouterService</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.google.protobuf.InvalidProtocolBufferException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.stereotype.Service</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.HashMap</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Map</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.concurrent.ConcurrentHashMap</span><span class="o">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * 处理SS或者GS向SC请求上级SS节点的逻辑实现</span>
+<span class="cm"> *</span>
+<span class="cm"> * @author kezs tangyh</span>
+<span class="cm"> * @version 2017/2/22</span>
+<span class="cm"> * @see GetSuperiorStreamServerHandler</span>
+<span class="cm"> */</span>
+<span class="nd">@Service</span><span class="o">(</span><span class="s">&quot;getSuperiorStreamServerHandler&quot;</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">GetSuperiorStreamServerHandler</span> <span class="kd">extends</span> <span class="n">AbstractScHandler</span> <span class="kd">implements</span> <span class="n">IProtobuf</span><span class="o">&lt;</span><span class="n">GetSuperiorStreamServer</span><span class="o">&gt;</span> <span class="o">{</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">private</span> <span class="n">SelectStreamServerReq</span> <span class="n">selectStreamServerReq</span><span class="o">;</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">private</span> <span class="n">RouterService</span> <span class="n">routerService</span><span class="o">;</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">private</span> <span class="n">CommonService</span> <span class="n">commonService</span><span class="o">;</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">private</span> <span class="n">MessageResponseService</span> <span class="n">responseService</span><span class="o">;</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">private</span> <span class="n">RequestCacheService</span> <span class="n">requestCacheService</span><span class="o">;</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">private</span> <span class="n">Lock</span> <span class="n">lock</span><span class="o">;</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">private</span> <span class="n">ZkListener</span> <span class="n">zkListener</span><span class="o">;</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 缓存流id对应的锁节点监听对象</span>
+<span class="cm">     * */</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">NodeCache2Listener</span><span class="o">&gt;</span> <span class="n">cache2listenerMap</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConcurrentHashMap</span><span class="o">&lt;&gt;();</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 缓存流id对应的zk重连回调函数</span>
+<span class="cm">     * */</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">IZkStateCallback</span><span class="o">&gt;</span> <span class="n">streamId2ZkStateCallbackMap</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConcurrentHashMap</span><span class="o">&lt;&gt;();</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 缓存流id对应的请求</span>
+<span class="cm">     * */</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">RequestInfo</span><span class="o">&gt;&gt;</span> <span class="n">streamId2Requests</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">handle</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">GetSuperiorStreamServer</span> <span class="n">getSuperiorStreamServer</span> <span class="o">=</span> <span class="n">deserialize</span><span class="o">(</span><span class="n">messageData</span><span class="o">);</span>
+        <span class="n">String</span> <span class="n">streamId</span> <span class="o">=</span> <span class="n">getSuperiorStreamServer</span><span class="o">.</span><span class="na">getStreamId</span><span class="o">();</span>
+        <span class="n">String</span> <span class="n">serverInstanceId</span> <span class="o">=</span> <span class="n">getSuperiorStreamServer</span><span class="o">.</span><span class="na">getServiceInstanceId</span><span class="o">();</span>
+
+		<span class="c1">//锁的根目录：/sclock/streamId</span>
+        <span class="n">String</span> <span class="n">lockRootPath</span> <span class="o">=</span> <span class="n">Common</span><span class="o">.</span><span class="na">getGetSuperRootLockPath</span><span class="o">()</span> <span class="o">+</span> <span class="n">streamId</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">timeout</span> <span class="o">=</span> <span class="n">Common</span><span class="o">.</span><span class="na">getGetSuperLockTimeout</span><span class="o">();</span>
+        <span class="n">LockState</span> <span class="n">state</span> <span class="o">=</span> <span class="n">lock</span><span class="o">.</span><span class="na">tryLock</span><span class="o">(</span><span class="n">lockRootPath</span><span class="o">,</span> <span class="n">streamId</span><span class="o">,</span> <span class="n">timeout</span><span class="o">);</span>
+        <span class="n">String</span> <span class="n">lockPath</span> <span class="o">=</span> <span class="n">state</span><span class="o">.</span><span class="na">getLockPath</span><span class="o">();</span>
+        <span class="c1">//获得锁</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">state</span><span class="o">.</span><span class="na">isLocked</span><span class="o">())</span> <span class="o">{</span>
+            <span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&quot;===========================获得锁=================&quot;</span><span class="o">);</span>
+            <span class="n">String</span> <span class="n">superiorStreamServer</span> <span class="o">=</span> <span class="n">commonService</span><span class="o">.</span><span class="na">getSuperiorStreamServer</span><span class="o">(</span><span class="n">streamId</span><span class="o">,</span> <span class="n">serverInstanceId</span><span class="o">);</span>
+            <span class="c1">//如果没有上一级节点</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">superiorStreamServer</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="n">serverInstanceId</span> <span class="o">+</span> <span class="s">&quot;没有上一级节点,接下来判断流的发布端是否已经选择流服务器&quot;</span><span class="o">);</span>
+                <span class="n">String</span> <span class="n">sourceInstance</span> <span class="o">=</span> <span class="n">commonService</span><span class="o">.</span><span class="na">getSourceInstance</span><span class="o">(</span><span class="n">streamId</span><span class="o">);</span> 
+                <span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&quot;GetSuperiorStreamServerHandler,streamId:&quot;</span> <span class="o">+</span> <span class="n">streamId</span> <span class="o">+</span> <span class="s">&quot; serverInstanceId:&quot;</span>
+                        <span class="o">+</span> <span class="n">serverInstanceId</span> <span class="o">+</span> <span class="s">&quot; sourceInstance:&quot;</span> <span class="o">+</span> <span class="n">sourceInstance</span><span class="o">);</span>
+                <span class="c1">//如果流的源节点没有选择</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">sourceInstance</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&quot;No source instance，and no one request to select source server,&quot;</span>
+                            <span class="o">+</span> <span class="s">&quot;request publisher to select source server.&quot;</span><span class="o">);</span>
+                    <span class="c1">//请求流的发布者选择源服务器</span>
+                    <span class="n">requestSelectSource</span><span class="o">(</span><span class="n">streamId</span><span class="o">);</span>
+                <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                    <span class="n">superiorStreamServer</span> <span class="o">=</span> <span class="n">routerService</span><span class="o">.</span><span class="na">voteOptimalStreamServer</span><span class="o">(</span><span class="n">streamId</span><span class="o">,</span> <span class="n">sourceInstance</span><span class="o">,</span>
+                            <span class="n">serverInstanceId</span><span class="o">);</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+            <span class="c1">//如果有上一级节点</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">superiorStreamServer</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">superiorStreamServer</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span>
+                <span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&quot;上一级节点不为空，返回获得上一级节点请求&quot;</span><span class="o">);</span>
+                <span class="kt">byte</span><span class="o">[]</span> <span class="n">reqData</span><span class="o">;</span>
+                <span class="c1">//todo 异常处理</span>
+                <span class="n">StreamServer</span> <span class="n">streamServer</span> <span class="o">=</span> <span class="n">commonService</span><span class="o">.</span><span class="na">getStreamServerByInstanceId</span><span class="o">(</span><span class="n">superiorStreamServer</span><span class="o">);</span>
+                <span class="n">reqData</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">buildSuperiorStreamServerRsp</span><span class="o">(</span><span class="n">ResponseCode</span><span class="o">.</span><span class="na">EnumSuccess</span><span class="o">,</span> <span class="n">streamServer</span><span class="o">,</span>
+                        <span class="s">&quot;选择&quot;</span> <span class="o">+</span> <span class="n">superiorStreamServer</span> <span class="o">+</span> <span class="s">&quot;作为&quot;</span> <span class="o">+</span> <span class="n">serverInstanceId</span> <span class="o">+</span> <span class="s">&quot;的上一级节点&quot;</span><span class="o">);</span>
+                <span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&quot;选择&quot;</span> <span class="o">+</span> <span class="n">superiorStreamServer</span> <span class="o">+</span> <span class="s">&quot;作为&quot;</span> <span class="o">+</span> <span class="n">serverInstanceId</span> <span class="o">+</span> <span class="s">&quot;的上一级节点&quot;</span><span class="o">);</span>
+                <span class="n">responseService</span><span class="o">.</span><span class="na">response</span><span class="o">(</span><span class="n">messageSequence</span><span class="o">,</span> <span class="n">messageNumber</span><span class="o">,</span> <span class="n">msgTopic</span><span class="o">,</span> <span class="n">reqData</span><span class="o">);</span>
+                <span class="n">lock</span><span class="o">.</span><span class="na">unLock</span><span class="o">(</span><span class="n">lockPath</span><span class="o">);</span>
+                <span class="k">return</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="c1">//保存获取上一级节点请求</span>
+        <span class="n">saveGetSuperiorStreamRequest</span><span class="o">(</span><span class="n">streamId</span><span class="o">,</span> <span class="n">messageSequence</span><span class="o">,</span> <span class="n">msgTopic</span><span class="o">,</span> <span class="n">serverInstanceId</span><span class="o">);</span>
+
+        <span class="n">NodeCache2Listener</span> <span class="n">nodeCache2Listener</span> <span class="o">=</span> <span class="n">cache2listenerMap</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">streamId</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">nodeCache2Listener</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">listenLock</span><span class="o">(</span><span class="n">streamId</span><span class="o">,</span> <span class="n">lockPath</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="n">listenZkReconnect</span><span class="o">(</span><span class="n">streamId</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * Description:缓存请求到本地</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param streamId   流id</span>
+<span class="cm">     * @param sequence   请求序号</span>
+<span class="cm">     * @param topic      topic</span>
+<span class="cm">     * @param instanceId 服务实例</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">saveGetSuperiorStreamRequest</span><span class="o">(</span><span class="n">String</span> <span class="n">streamId</span><span class="o">,</span> <span class="kt">byte</span><span class="o">[]</span> <span class="n">sequence</span><span class="o">,</span> <span class="n">String</span> <span class="n">topic</span><span class="o">,</span> <span class="n">String</span> <span class="n">instanceId</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">RequestInfo</span><span class="o">&gt;</span> <span class="n">requestInfos</span> <span class="o">=</span> <span class="n">streamId2Requests</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">streamId</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">requestInfos</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">requestInfos</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+        <span class="o">}</span>
+
+        <span class="n">RequestInfo</span> <span class="n">requestInfo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RequestInfo</span><span class="o">();</span>
+        <span class="n">requestInfo</span><span class="o">.</span><span class="na">setSequence</span><span class="o">(</span><span class="n">sequence</span><span class="o">);</span>
+        <span class="n">requestInfo</span><span class="o">.</span><span class="na">setTopic</span><span class="o">(</span><span class="n">topic</span><span class="o">);</span>
+        <span class="n">requestInfo</span><span class="o">.</span><span class="na">setInstanceId</span><span class="o">(</span><span class="n">instanceId</span><span class="o">);</span>
+
+        <span class="n">requestInfos</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">requestInfo</span><span class="o">);</span>
+        <span class="n">streamId2Requests</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">streamId</span><span class="o">,</span> <span class="n">requestInfos</span><span class="o">);</span>
+    <span class="o">}</span>
+
+	<span class="cm">/**</span>
+<span class="cm">     * 请求客户端选择源节点</span>
+<span class="cm">     */</span>
+    <span class="kd">private</span> <span class="kd">synchronized</span> <span class="kt">void</span> <span class="nf">requestSelectSource</span><span class="o">(</span><span class="n">String</span> <span class="n">streamId</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">SelectStreamServer</span> <span class="n">streamServer</span> <span class="o">=</span> <span class="n">commonService</span><span class="o">.</span><span class="na">selectSourceServer</span><span class="o">(</span><span class="n">streamId</span><span class="o">);</span>
+        <span class="n">String</span> <span class="n">clientId</span> <span class="o">=</span> <span class="n">commonService</span><span class="o">.</span><span class="na">getSourceClient</span><span class="o">(</span><span class="n">streamId</span><span class="o">);</span>
+        <span class="n">String</span> <span class="n">cpServerInstance</span> <span class="o">=</span> <span class="n">commonService</span><span class="o">.</span><span class="na">getCPInstance</span><span class="o">(</span><span class="n">clientId</span><span class="o">);</span>
+        <span class="kt">byte</span><span class="o">[]</span> <span class="n">reqData</span> <span class="o">=</span> <span class="n">serialize</span><span class="o">(</span><span class="n">streamServer</span><span class="o">);</span>
+        <span class="n">selectStreamServerReq</span><span class="o">.</span><span class="na">resquest</span><span class="o">(</span><span class="n">cpServerInstance</span><span class="o">,</span> <span class="n">reqData</span><span class="o">);</span>
+        <span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&quot;save get superior stream request.&quot;</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 回复获得上一级服务器请求</span>
+<span class="cm">     */</span>
+    <span class="kd">private</span> <span class="kd">synchronized</span> <span class="kt">void</span> <span class="nf">rspGetSuperiorStreamServer</span><span class="o">(</span><span class="n">String</span> <span class="n">streamId</span><span class="o">,</span> <span class="n">String</span> <span class="n">serviceInstanceId</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&quot;======================回复获取上一级节点请求=====================================&quot;</span><span class="o">);</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">RequestInfo</span><span class="o">&gt;</span> <span class="n">requestInfos</span> <span class="o">=</span> <span class="n">streamId2Requests</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">streamId</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">requestInfos</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">for</span> <span class="o">(</span><span class="n">RequestInfo</span> <span class="n">requestInfo</span> <span class="o">:</span> <span class="n">requestInfos</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">String</span> <span class="n">destInstance</span> <span class="o">=</span> <span class="n">requestInfo</span><span class="o">.</span><span class="na">getInstanceId</span><span class="o">();</span>
+                <span class="n">String</span> <span class="n">superiorStreamServer</span> <span class="o">=</span> <span class="n">routerService</span><span class="o">.</span><span class="na">voteOptimalStreamServer</span><span class="o">(</span><span class="n">streamId</span><span class="o">,</span> <span class="n">serviceInstanceId</span><span class="o">,</span>
+                        <span class="n">destInstance</span><span class="o">);</span>
+                <span class="kt">byte</span><span class="o">[]</span> <span class="n">reqData</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">superiorStreamServer</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">superiorStreamServer</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span>
+                    <span class="c1">//todo 服务器类型不确定</span>
+                    <span class="n">StreamServer</span> <span class="n">streamServer</span> <span class="o">=</span> <span class="n">commonService</span><span class="o">.</span><span class="na">getStreamServerByInstanceId</span><span class="o">(</span><span class="n">superiorStreamServer</span><span class="o">);</span>
+                    <span class="n">reqData</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">buildSuperiorStreamServerRsp</span><span class="o">(</span><span class="n">ResponseCode</span><span class="o">.</span><span class="na">EnumSuccess</span><span class="o">,</span> <span class="n">streamServer</span><span class="o">,</span>
+                            <span class="s">&quot;选择&quot;</span> <span class="o">+</span> <span class="n">superiorStreamServer</span> <span class="o">+</span> <span class="s">&quot;作为&quot;</span> <span class="o">+</span> <span class="n">destInstance</span> <span class="o">+</span> <span class="s">&quot;的上一级节点&quot;</span><span class="o">);</span>
+                    <span class="kt">byte</span><span class="o">[]</span> <span class="n">sequence</span> <span class="o">=</span> <span class="n">requestInfo</span><span class="o">.</span><span class="na">getSequence</span><span class="o">();</span>
+                    <span class="n">String</span> <span class="n">topic</span> <span class="o">=</span> <span class="n">requestInfo</span><span class="o">.</span><span class="na">getTopic</span><span class="o">();</span>
+                    <span class="n">responseService</span><span class="o">.</span><span class="na">response</span><span class="o">(</span><span class="n">sequence</span><span class="o">,</span> <span class="n">messageNumber</span><span class="o">,</span> <span class="n">topic</span><span class="o">,</span> <span class="n">reqData</span><span class="o">);</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+            <span class="n">streamId2Requests</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">streamId</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="n">IZkStateCallback</span> <span class="n">zkStateCallback</span> <span class="o">=</span> <span class="n">streamId2ZkStateCallbackMap</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">streamId</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">zkStateCallback</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">streamId2ZkStateCallbackMap</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">streamId</span><span class="o">);</span>
+            <span class="n">zkListener</span><span class="o">.</span><span class="na">removeCallback</span><span class="o">(</span><span class="n">zkStateCallback</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * Description: 构建GetSuperiorStreamServerRsp对象</span>
+<span class="cm">     */</span>
+    <span class="kd">private</span> <span class="kt">byte</span><span class="o">[]</span> <span class="nf">buildSuperiorStreamServerRsp</span><span class="o">(</span><span class="n">ResponseCode</span> <span class="n">responseCode</span><span class="o">,</span> <span class="n">StreamServer</span> <span class="n">streamServer</span><span class="o">,</span> <span class="n">String</span> <span class="n">msg</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">CommonResponse</span><span class="o">.</span><span class="na">Builder</span> <span class="n">commonResponse</span> <span class="o">=</span> <span class="n">CommonResponse</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">();</span>
+        <span class="n">GetSuperiorStreamServerRsp</span><span class="o">.</span><span class="na">Builder</span> <span class="n">superiorStreamServer</span> <span class="o">=</span> <span class="n">GetSuperiorStreamServerRsp</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">();</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">responseCode</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">ResponseCode</span><span class="o">.</span><span class="na">EnumSuccess</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">superiorStreamServer</span><span class="o">.</span><span class="na">setStreamServer</span><span class="o">(</span><span class="n">streamServer</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="n">commonResponse</span><span class="o">.</span><span class="na">setResponseMsg</span><span class="o">(</span><span class="n">msg</span><span class="o">);</span>
+        <span class="n">commonResponse</span><span class="o">.</span><span class="na">setResponseCode</span><span class="o">(</span><span class="n">responseCode</span><span class="o">);</span>
+        <span class="n">superiorStreamServer</span><span class="o">.</span><span class="na">setResponse</span><span class="o">(</span><span class="n">commonResponse</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">serialize</span><span class="o">(</span><span class="n">superiorStreamServer</span><span class="o">.</span><span class="na">build</span><span class="o">());</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">GetSuperiorStreamServer</span> <span class="nf">deserialize</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">protoData</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">GetSuperiorStreamServer</span><span class="o">.</span><span class="na">parseFrom</span><span class="o">(</span><span class="n">protoData</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InvalidProtocolBufferException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">logger</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="n">ex</span><span class="o">.</span><span class="na">getMessage</span><span class="o">(),</span> <span class="n">ex</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="n">Integer</span> <span class="nf">getHandlerType</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">ProtoDictionary</span><span class="o">.</span><span class="na">Enum2GetSuperiorStreamServer_VALUE</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">byte</span><span class="o">[]</span> <span class="nf">getMessageNumber</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">NumberUtil</span><span class="o">.</span><span class="na">int2byte</span><span class="o">(</span><span class="n">ProtoDictionary</span><span class="o">.</span><span class="na">Enum2GetSuperiorStreamServerRsp_VALUE</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 监听锁节点的删除</span>
+<span class="cm">     */</span>
+    <span class="kd">private</span> <span class="kd">synchronized</span> <span class="kt">void</span> <span class="nf">listenLock</span><span class="o">(</span><span class="n">String</span> <span class="n">streamId</span><span class="o">,</span> <span class="n">String</span> <span class="n">lockPath</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">lockPath</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&quot;监听目录：&quot;</span> <span class="o">+</span> <span class="n">lockPath</span><span class="o">);</span>
+            <span class="n">LockDeleteEvent</span> <span class="n">lockDeleteEvent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LockDeleteEvent</span><span class="o">(</span><span class="n">streamId</span><span class="o">);</span>
+            <span class="n">NodeCache2Listener</span> <span class="n">nodeCache2Listener</span> <span class="o">=</span> <span class="n">lock</span><span class="o">.</span><span class="na">listenerLock</span><span class="o">(</span><span class="n">lockPath</span><span class="o">,</span> <span class="n">lockDeleteEvent</span><span class="o">);</span>
+            <span class="n">cache2listenerMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">streamId</span><span class="o">,</span> <span class="n">nodeCache2Listener</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 监听zookeeper的重连</span>
+<span class="cm">     */</span>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">listenZkReconnect</span><span class="o">(</span><span class="n">String</span> <span class="n">streamId</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">IZkStateCallback</span> <span class="n">zkStateCallback</span> <span class="o">=</span> <span class="n">streamId2ZkStateCallbackMap</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">streamId</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">zkStateCallback</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">zkStateCallback</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LockNodeReConnect</span><span class="o">(</span><span class="n">streamId</span><span class="o">);</span>
+            <span class="n">IZkStateCallback</span><span class="o">[]</span> <span class="n">callbacks</span> <span class="o">=</span> <span class="k">new</span> <span class="n">IZkStateCallback</span><span class="o">[]{</span><span class="n">zkStateCallback</span><span class="o">};</span>
+            <span class="n">zkListener</span><span class="o">.</span><span class="na">addCallback</span><span class="o">(</span><span class="n">callbacks</span><span class="o">);</span>
+            <span class="n">streamId2ZkStateCallbackMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">streamId</span><span class="o">,</span> <span class="n">zkStateCallback</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kd">synchronized</span> <span class="kt">void</span> <span class="nf">lockDelAction</span><span class="o">(</span><span class="n">String</span> <span class="n">streamId</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">String</span> <span class="n">sourceInstance</span> <span class="o">=</span> <span class="n">commonService</span><span class="o">.</span><span class="na">getSourceInstance</span><span class="o">(</span><span class="n">streamId</span><span class="o">);</span>
+        <span class="n">String</span> <span class="n">rootPath</span> <span class="o">=</span> <span class="n">Common</span><span class="o">.</span><span class="na">getGetSuperRootLockPath</span><span class="o">();</span>
+        <span class="n">String</span> <span class="n">lockRootPath</span> <span class="o">=</span> <span class="n">rootPath</span> <span class="o">+</span> <span class="n">streamId</span><span class="o">;</span>
+
+        <span class="c1">//流的源节点为空，则重新获得锁</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">sourceInstance</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&quot;源服务器为空。&quot;</span><span class="o">);</span>
+            <span class="kt">int</span> <span class="n">timout</span> <span class="o">=</span> <span class="n">Common</span><span class="o">.</span><span class="na">getGetSuperLockTimeout</span><span class="o">();</span>
+            <span class="n">LockState</span> <span class="n">state</span> <span class="o">=</span> <span class="n">lock</span><span class="o">.</span><span class="na">tryLock</span><span class="o">(</span><span class="n">lockRootPath</span><span class="o">,</span> <span class="n">streamId</span><span class="o">,</span> <span class="n">timout</span><span class="o">);</span>
+            <span class="n">String</span> <span class="n">lockPath</span> <span class="o">=</span> <span class="n">state</span><span class="o">.</span><span class="na">getLockPath</span><span class="o">();</span>
+            <span class="c1">//竞争到锁</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">state</span><span class="o">.</span><span class="na">isLocked</span><span class="o">())</span> <span class="o">{</span>
+                <span class="n">requestSelectSource</span><span class="o">(</span><span class="n">streamId</span><span class="o">);</span>
+            <span class="o">}</span>
+            <span class="n">listenLock</span><span class="o">(</span><span class="n">streamId</span><span class="o">,</span> <span class="n">lockPath</span><span class="o">);</span>
+            <span class="n">listenZkReconnect</span><span class="o">(</span><span class="n">streamId</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="n">rspGetSuperiorStreamServer</span><span class="o">(</span><span class="n">streamId</span><span class="o">,</span> <span class="n">sourceInstance</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 监听zookeeper的重连事件,如果zk断开连接，那么之前监听的</span>
+<span class="cm">     */</span>
+    <span class="kd">private</span> <span class="kd">class</span> <span class="nc">LockNodeReConnect</span> <span class="kd">implements</span> <span class="n">IZkStateCallback</span> <span class="o">{</span>
+
+        <span class="kd">private</span> <span class="n">String</span> <span class="n">streamId</span><span class="o">;</span>
+
+        <span class="n">LockNodeReConnect</span><span class="o">(</span><span class="n">String</span> <span class="n">streamId</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">streamId</span> <span class="o">=</span> <span class="n">streamId</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">reConnected</span><span class="o">()</span> <span class="o">{</span>
+            <span class="n">lockDelAction</span><span class="o">(</span><span class="n">streamId</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">lostConnection</span><span class="o">()</span> <span class="o">{</span>
+            <span class="n">lock</span><span class="o">.</span><span class="na">cleanNodeCacheListener</span><span class="o">(</span><span class="n">streamId</span><span class="o">,</span> <span class="n">cache2listenerMap</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 监听锁节点的删除事件</span>
+<span class="cm">     */</span>
+    <span class="kd">private</span> <span class="kd">class</span> <span class="nc">LockDeleteEvent</span> <span class="kd">implements</span> <span class="n">NodeDeleteCallback</span> <span class="o">{</span>
+        <span class="kd">private</span> <span class="n">String</span> <span class="n">streamId</span><span class="o">;</span>
+
+        <span class="kd">protected</span> <span class="nf">LockDeleteEvent</span><span class="o">(</span><span class="n">String</span> <span class="n">streamId</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">streamId</span> <span class="o">=</span> <span class="n">streamId</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">callback</span><span class="o">()</span> <span class="o">{</span>
+            <span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&quot;锁节点被删除。。。。。。。。。。。。。。。。。。&quot;</span><span class="o">);</span>
+            <span class="n">lock</span><span class="o">.</span><span class="na">cleanNodeCacheListener</span><span class="o">(</span><span class="n">streamId</span><span class="o">,</span> <span class="n">cache2listenerMap</span><span class="o">);</span>
+            <span class="n">lockDelAction</span><span class="o">(</span><span class="n">streamId</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</body>
+</html>

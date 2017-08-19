@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=latin1">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 } /* Comment.Preproc */
+body .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #888888 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0044DD } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #AA22FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+body .nf { color: #0000FF } /* Name.Function */
+body .nl { color: #A0A000 } /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mb { color: #666666 } /* Literal.Number.Bin */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sa { color: #BA2121 } /* Literal.String.Affix */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .dl { color: #BA2121 } /* Literal.String.Delimiter */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #BB6688 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .fm { color: #0000FF } /* Name.Function.Magic */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .vm { color: #19177C } /* Name.Variable.Magic */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">	Ê±¼ä£º2016/04/08</span>
+<span class="cm">*/</span>
+<span class="cp">#ifndef _KeyMainWnd_H_</span>
+<span class="cp">#define _KeyMainWnd_H_</span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;WindowImplBaseCtrl.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;BaseCallback.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;MarcoDefine.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;RetDefine.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;KeyAppDefine.h&quot;</span><span class="cp"></span>
+
+<span class="n">class</span> <span class="n">CBaseHttp</span><span class="p">;</span>
+<span class="n">class</span> <span class="n">CHttpUd</span><span class="p">;</span>
+<span class="n">class</span> <span class="n">CSshUDExec</span><span class="p">;</span>
+<span class="n">class</span> <span class="n">CKeyMainWnd</span><span class="p">;</span>
+
+<span class="c1">// ¼¤»î¶¯×÷º¯ÊýÉùÃ÷</span>
+<span class="k">typedef</span> <span class="nf">E_RetCode</span><span class="p">(</span><span class="n">CKeyMainWnd</span><span class="o">::*</span><span class="n">Active_Step_Fun</span><span class="p">)();</span>
+
+<span class="c1">// Ö÷½çÃæ</span>
+<span class="n">class</span> <span class="nl">CKeyMainWnd</span> <span class="p">:</span> <span class="n">public</span> <span class="n">CWindowImplBaseCtrl</span>
+<span class="p">{</span>
+<span class="nl">protected</span><span class="p">:</span>
+	<span class="c1">// DOWN - ÏÂÔØ £¬ UP - ÉÏ´« £¬ AHOST - Ðè¼¤»îÖ÷»ú £¬ KHOST - ÃÜÔ¿Ö÷»ú</span>
+	<span class="k">enum</span> <span class="n">Active_Step</span>
+	<span class="p">{</span>
+		<span class="n">STEP_START</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+		<span class="c1">// ÃÜÔ¿Ö÷»ú²Ù×÷</span>
+		<span class="n">STEP_DOWN_KHOST_CLIREG</span>		<span class="o">=</span> <span class="mi">11</span><span class="p">,</span>			<span class="c1">// ÏÂÔØCliRegÎÄ¼þ</span>
+		<span class="n">STEP_DOWN_KHOST_PUBKEY</span>		<span class="o">=</span> <span class="mi">12</span><span class="p">,</span>			<span class="c1">// ÏÂÔØ¹«Ô¿ÎÄ¼þ</span>
+		<span class="n">STEP_DOWN_KHOST_KEY</span>			<span class="o">=</span> <span class="mi">13</span><span class="p">,</span>			<span class="c1">// ÏÂÔØKeyÎÄ¼þ</span>
+		<span class="n">STEP_EXEC_KHOST_LICENSE</span>		<span class="o">=</span> <span class="mi">14</span><span class="p">,</span>			<span class="c1">// Ö´ÐÐ½Å±¾£¬Éú³ÉKeyÎÄ¼þ</span>
+		<span class="n">STEP_UP_KHOST_REG</span>			<span class="o">=</span> <span class="mi">15</span><span class="p">,</span>			<span class="c1">// ÉÏ´«RegÎÄ¼þ</span>
+		<span class="c1">// ¼¤»îÖ÷»ú²Ù×÷</span>
+		<span class="n">STEP_DOWN_AHOST_REG</span>			<span class="o">=</span> <span class="mi">21</span><span class="p">,</span>			<span class="c1">// ÏÂÔØRegÎÄ¼þ</span>
+		<span class="n">STEP_EXEC_AHOST_CLIREG</span>		<span class="o">=</span> <span class="mi">22</span><span class="p">,</span>			<span class="c1">// Ö´ÐÐ½Å±¾£¬Éú³ÉRegÎÄ¼þ</span>
+		<span class="n">STEP_EXEC_AHOST_CLEAR</span>		<span class="o">=</span> <span class="mi">23</span><span class="p">,</span>			<span class="c1">// ÇåÀíÁÙÊ±ÎÄ¼þ</span>
+		<span class="n">STEP_UP_AHOST_CLIREG</span>		<span class="o">=</span> <span class="mi">24</span><span class="p">,</span>			<span class="c1">// ÉÏ´«CliRegÎÄ¼þ</span>
+		<span class="n">STEP_UP_AHOST_PUBKEY</span>		<span class="o">=</span> <span class="mi">25</span><span class="p">,</span>			<span class="c1">// ÉÏ´«CliRegÎÄ¼þ</span>
+		<span class="n">STEP_UP_AHOST_KEY</span>			<span class="o">=</span> <span class="mi">26</span><span class="p">,</span>			<span class="c1">// ÉÏ´«KeyÎÄ¼þ</span>
+		<span class="n">STEP_UP_AHOST_VIDEOSTRATEGY</span> <span class="o">=</span> <span class="mi">27</span><span class="p">,</span>			<span class="c1">// ÉÏ´«videostrategyÎÄ¼þ</span>
+		<span class="n">STEP_UP_AHOST_SOFTDETECTION</span> <span class="o">=</span> <span class="mi">28</span><span class="p">,</span>			<span class="c1">// ÉÏ´«softdetectionÎÄ¼þ</span>
+		<span class="n">STEP_WEB_SEND_STREAMS</span>		<span class="o">=</span> <span class="mi">29</span><span class="p">,</span>			<span class="c1">// ÉèÖÃÁ÷ÐÅÏ¢</span>
+		<span class="c1">// ½áÊø</span>
+		<span class="n">STEP_END</span>  <span class="o">=</span> <span class="mi">100</span><span class="p">,</span>
+		<span class="c1">// ÏÂÒ»²½</span>
+		<span class="n">SETP_NEXT</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span>
+	<span class="p">};</span><span class="c1">// step 11-12-24-25-29-22-21-15-14-13-26-27-28</span>
+	<span class="k">typedef</span> <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">Active_Step</span><span class="p">,</span> <span class="n">Active_Step_Fun</span><span class="o">&gt;</span>	<span class="n">MapActiveStepFun</span><span class="p">;</span>
+	<span class="k">typedef</span> <span class="n">MapActiveStepFun</span><span class="o">::</span><span class="n">iterator</span>				<span class="n">MapActiveStepFunIt</span><span class="p">;;</span>
+	<span class="k">typedef</span> <span class="n">std</span><span class="o">::</span><span class="n">deque</span><span class="o">&lt;</span><span class="n">Active_Step</span><span class="o">&gt;</span>					<span class="n">ActiveStepScheme</span><span class="p">;</span>
+	<span class="k">typedef</span> <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="kt">uint32_t</span><span class="p">,</span> <span class="n">ActiveStepScheme</span><span class="o">&gt;</span>	<span class="n">MapActiveStepScheme</span><span class="p">;</span>
+
+<span class="nl">public</span><span class="p">:</span>
+	<span class="n">CKeyMainWnd</span><span class="p">();</span>
+	<span class="n">virtual</span> <span class="o">~</span><span class="n">CKeyMainWnd</span><span class="p">();</span>
+
+<span class="nl">public</span><span class="p">:</span>
+	<span class="n">virtual</span> <span class="n">UINT</span>	<span class="n">GetSkinResourceID</span><span class="p">();</span>
+	<span class="n">virtual</span> <span class="kt">void</span>	<span class="nf">Init</span><span class="p">();</span>
+	<span class="n">virtual</span> <span class="kt">void</span>	<span class="nf">Notify</span><span class="p">(</span><span class="n">DuiLib</span><span class="o">::</span><span class="n">TNotifyUI</span><span class="o">&amp;</span> <span class="n">msg</span><span class="p">);</span>
+	<span class="n">virtual</span> <span class="n">LRESULT</span> <span class="nf">HandleCustomMessage</span><span class="p">(</span><span class="n">UINT</span> <span class="n">uMsg</span><span class="p">,</span> <span class="n">WPARAM</span> <span class="n">wParam</span><span class="p">,</span> <span class="n">LPARAM</span> <span class="n">lParam</span><span class="p">,</span> <span class="n">BOOL</span><span class="o">&amp;</span> <span class="n">bHandled</span><span class="p">);</span>
+	<span class="n">virtual</span> <span class="n">LRESULT</span> <span class="nf">OnDestroy</span><span class="p">(</span><span class="n">UINT</span> <span class="n">uMsg</span><span class="p">,</span> <span class="n">WPARAM</span> <span class="n">wParam</span><span class="p">,</span> <span class="n">LPARAM</span> <span class="n">lParam</span><span class="p">,</span> <span class="n">BOOL</span><span class="o">&amp;</span> <span class="n">bHandled</span><span class="p">);</span>
+
+<span class="nl">protected</span><span class="p">:</span>
+	<span class="n">virtual</span> <span class="n">LRESULT</span> <span class="n">ResponseDefaultKeyEvent</span><span class="p">(</span><span class="n">WPARAM</span> <span class="n">wParam</span><span class="p">);</span>
+	<span class="n">virtual</span> <span class="kt">void</span>	<span class="nf">ShowOtherEdits</span><span class="p">(</span><span class="kt">bool</span> <span class="n">bShow</span> <span class="o">=</span> <span class="nb">true</span><span class="p">);</span>
+
+<span class="nl">protected</span><span class="p">:</span>
+	<span class="kt">void</span>			<span class="n">InitStep</span><span class="p">();</span>
+	<span class="kt">void</span>			<span class="nf">UnInitStep</span><span class="p">();</span>
+	<span class="kt">void</span>			<span class="nf">LoadConfig</span><span class="p">();</span>
+	<span class="kt">void</span>			<span class="nf">SaveConfig</span><span class="p">(</span><span class="kt">bool</span> <span class="n">bSaveToFile</span> <span class="o">=</span> <span class="nb">true</span><span class="p">);</span>
+	<span class="kt">void</span>            <span class="nf">OnActiveBtn</span><span class="p">();</span>
+	<span class="kt">void</span>			<span class="nf">OnActivedOkBtn</span><span class="p">();</span>
+	<span class="kt">void</span>            <span class="nf">OnReportError</span><span class="p">(</span><span class="kt">int</span> <span class="n">nResult</span><span class="p">);</span>
+	<span class="kt">void</span>			<span class="nf">OnActiveSuccess</span><span class="p">();</span>
+	<span class="kt">void</span>			<span class="nf">OnProductDetailConfigBtn</span><span class="p">();</span>
+	<span class="n">E_RetCode</span>		<span class="nf">Active_ExecCurStep</span><span class="p">();</span>
+	<span class="n">E_RetCode</span>		<span class="nf">Active_Ready</span><span class="p">();</span>
+	<span class="n">E_RetCode</span>		<span class="nf">Active_Step0</span><span class="p">();</span>
+	<span class="n">E_RetCode</span>		<span class="nf">Active_Step1</span><span class="p">();</span>
+	<span class="n">E_RetCode</span>		<span class="nf">Active_Step2</span><span class="p">();</span>
+	<span class="n">E_RetCode</span>		<span class="nf">Active_Step3</span><span class="p">();</span>
+	<span class="n">E_RetCode</span>		<span class="nf">Active_Step4</span><span class="p">();</span>
+	<span class="n">E_RetCode</span>		<span class="nf">Active_Step5</span><span class="p">();</span>
+	<span class="n">E_RetCode</span>		<span class="nf">Active_Step6</span><span class="p">();</span>
+	<span class="n">E_RetCode</span>		<span class="nf">Active_Step7</span><span class="p">();</span>
+	<span class="n">E_RetCode</span>		<span class="nf">Active_Step8</span><span class="p">();</span>
+	<span class="n">E_RetCode</span>		<span class="nf">Active_Step9</span><span class="p">();</span>
+	<span class="n">E_RetCode</span>		<span class="nf">Active_Step10</span><span class="p">();</span>
+	<span class="n">E_RetCode</span>		<span class="nf">Active_Step11</span><span class="p">();</span>
+	<span class="n">E_RetCode</span>		<span class="nf">Active_Step12</span><span class="p">();</span>
+	<span class="n">E_RetCode</span>		<span class="nf">Active_Step13</span><span class="p">();</span>
+	<span class="n">E_RetCode</span>		<span class="nf">Active_Step14</span><span class="p">();</span>
+	<span class="n">E_RetCode</span>		<span class="nf">RebootRemoteHost</span><span class="p">();</span>
+	<span class="kt">void</span>			<span class="nf">SetCurActiveStep</span><span class="p">(</span><span class="n">Active_Step</span> <span class="n">curActiveStep</span><span class="p">);</span>
+	<span class="kt">bool</span>			<span class="nf">CheckActiveParam</span><span class="p">();</span>
+	<span class="n">E_RetCode</span>		<span class="nf">GenerateSchemeFile</span><span class="p">();</span>
+	<span class="kt">void</span>			<span class="nf">DeleteTmpFile</span><span class="p">();</span>
+	<span class="kt">int</span>				<span class="nf">ResultFromJsonMsg</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">pMsgData</span><span class="p">,</span> <span class="kt">int</span> <span class="n">nMsgDataLen</span><span class="p">);</span>
+
+
+<span class="nl">private</span><span class="p">:</span>
+	<span class="n">BASECALLBACK_SINK</span><span class="p">(</span><span class="n">CKeyMainWnd</span><span class="p">,</span> <span class="n">NextStep</span><span class="p">);</span>
+	<span class="kt">void</span>            <span class="nf">OnNextStepCallback</span><span class="p">(</span><span class="kt">int</span> <span class="n">nResult</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">pData</span><span class="p">,</span> <span class="kt">int</span> <span class="n">nDataLen</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">pExtendData</span><span class="p">);</span>
+	<span class="n">BASECALLBACK_SINK</span><span class="p">(</span><span class="n">CKeyMainWnd</span><span class="p">,</span> <span class="n">SshExecReboot</span><span class="p">);</span>
+	<span class="kt">void</span>            <span class="nf">OnSshExecRebootCallback</span><span class="p">(</span><span class="kt">int</span> <span class="n">nResult</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">pData</span><span class="p">,</span> <span class="kt">int</span> <span class="n">nDataLen</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">pExtendData</span><span class="p">);</span>
+
+<span class="nl">private</span><span class="p">:</span>
+	<span class="kt">bool</span>                        <span class="n">m_bIsExitApp</span><span class="p">;</span>                       <span class="c1">// ÊÇ·ñÍË³öApp</span>
+	<span class="n">Active_Step</span>					<span class="n">m_curStep</span><span class="p">;</span>							<span class="c1">// µ±Ç°¼¤»î²½Öè</span>
+	<span class="kt">bool</span>						<span class="n">m_bSchemeConfigFinish</span><span class="p">;</span>				<span class="c1">// ÅäÖÃ·½°¸Íê³É</span>
+	<span class="n">string</span>						<span class="n">m_szWebStreamsJson</span><span class="p">;</span>					<span class="c1">// ÉèÖÃÁ÷ÐÅÏ¢µÄÖ¸Áî</span>
+	<span class="n">string</span>						<span class="n">m_szWebUrl</span><span class="p">;</span>							<span class="c1">// web½Ó¿ÚµØÖ·</span>
+	<span class="c1">// UI¶ÔÏó----------------------------------------------------------------</span>
+	<span class="n">CVerticalLayoutUI</span>			<span class="o">*</span><span class="n">m_pActivePage</span><span class="p">;</span>						<span class="c1">// ¼¤»îÇ°Ò³Ãæ</span>
+	<span class="n">CButtonUI</span>                   <span class="o">*</span><span class="n">m_pActiveBtn</span><span class="p">;</span>						<span class="c1">// ¼¤»î°´Å¥</span>
+	<span class="n">CComboUI</span>					<span class="o">*</span><span class="n">m_pDataSrcCbo</span><span class="p">;</span>						<span class="c1">// Êý¾ÝÔ´ÀàÐÍ</span>
+	<span class="n">CComboUI</span>					<span class="o">*</span><span class="n">m_pProductTypeCbo</span><span class="p">;</span>					<span class="c1">// ²úÆ·ÀàÐÍ</span>
+	<span class="n">CButtonUI</span>					<span class="o">*</span><span class="n">m_pProductDetailConfigBtn</span><span class="p">;</span>			<span class="c1">// ²úÆ·ÏêÏ¸ÅäÖÃ°´Å¥</span>
+	<span class="n">CEditUI</span>						<span class="o">*</span><span class="n">m_pRbsAddress</span><span class="p">;</span>						<span class="c1">// ¼¤»îÖ÷»úµØÖ·ÊäÈë¿ò</span>
+	<span class="n">CEditUI</span>						<span class="o">*</span><span class="n">m_pRbsUsername</span><span class="p">;</span>					<span class="c1">// ¼¤»îÖ÷»úµÇÂ¼ÓÃ»§ÃûÊäÈë¿ò</span>
+	<span class="n">CEditUI</span>						<span class="o">*</span><span class="n">m_pRbsPassword</span><span class="p">;</span>					<span class="c1">// ¼¤»îÖ÷»úµÇÂ¼ÃÜÂëÊäÈë¿ò</span>
+	<span class="n">CEditUI</span>						<span class="o">*</span><span class="n">m_pKeyAddress</span><span class="p">;</span>						<span class="c1">// ÃÜÔ¿Ö÷»úµØÖ·ÊäÈë¿ò</span>
+	<span class="n">CEditUI</span>						<span class="o">*</span><span class="n">m_pKeyUsername</span><span class="p">;</span>					<span class="c1">// ÃÜÔ¿Ö÷»úµÇÂ¼ÓÃ»§ÃûÊäÈë¿ò</span>
+	<span class="n">CEditUI</span>						<span class="o">*</span><span class="n">m_pKeyPassword</span><span class="p">;</span>					<span class="c1">// ÃÜÔ¿Ö÷»úµÇÂ¼ÃÜÂëÊäÈë¿ò</span>
+	<span class="n">CEditUI</span>						<span class="o">*</span><span class="n">m_pDevModel</span><span class="p">;</span>						<span class="c1">// Éè±¸ÐÍºÅÊäÈë¿ò</span>
+	<span class="n">CEditUI</span>						<span class="o">*</span><span class="n">m_pDevSerial</span><span class="p">;</span>						<span class="c1">// Éè±¸ÐòÁÐºÅÊäÈë¿ò</span>
+	<span class="n">CEditUI</span>						<span class="o">*</span><span class="n">m_pDevVer</span><span class="p">;</span>							<span class="c1">// Éè±¸°æ±¾ÊäÈë¿ò</span>
+	<span class="n">CCheckBoxUI</span>					<span class="o">*</span><span class="n">m_pRememberPwChk</span><span class="p">;</span>					<span class="c1">// ¼Ç×¡ÃÜÂë¸´Ñ¡¿ò</span>
+	<span class="n">CButtonUI</span>					<span class="o">*</span><span class="n">m_pShowOtherBtn</span><span class="p">;</span>					<span class="c1">// ÏÔÊ¾ÆäËûÊäÈë¿ò°´Å¥</span>
+	<span class="n">CButtonUI</span>					<span class="o">*</span><span class="n">m_pHideOtherBtn</span><span class="p">;</span>					<span class="c1">// Òþ²ØÆäËûÊäÈë¿ò°´Å¥</span>
+	<span class="n">CVerticalLayoutUI</span>			<span class="o">*</span><span class="n">m_pActivingPage</span><span class="p">;</span>					<span class="c1">// ¼¤»îÖÐÒ³Ãæ</span>
+	<span class="n">CLabelUI</span>					<span class="o">*</span><span class="n">m_pProgressTipLabel</span><span class="p">;</span>				<span class="c1">// ¼¤»î½ø¶ÈÎÄ×ÖÌáÊ¾</span>
+	<span class="n">CProgressUI</span>                 <span class="o">*</span><span class="n">m_pActiveProgress</span><span class="p">;</span>                 <span class="c1">// ¼¤»î½ø¶ÈÌõ</span>
+	<span class="n">CVerticalLayoutUI</span>			<span class="o">*</span><span class="n">m_pActivedPage</span><span class="p">;</span>					<span class="c1">// ¼¤»îºóÒ³Ãæ</span>
+	<span class="n">CButtonUI</span>                   <span class="o">*</span><span class="n">m_pActivedOkBtn</span><span class="p">;</span>					<span class="c1">// ¼¤»î³É¹¦È·ÈÏ°´Å¥</span>
+	<span class="n">CLabelUI</span>					<span class="o">*</span><span class="n">m_pRebootTipLabel</span><span class="p">;</span>					<span class="c1">// ÌáÊ¾Ö÷»ú´¦ÔÚÖØÆô×´Ì¬</span>
+	<span class="c1">// Êý¾Ý¶ÔÏó--------------------------------------------------------------</span>
+	<span class="n">MapActiveStepFun</span>			<span class="n">m_mapActiveStepFun</span><span class="p">;</span>					<span class="c1">// ¼¤»î²½ÖèÓ³Éä</span>
+	<span class="n">MapActiveStepScheme</span>			<span class="n">m_mapActiveStepScheme</span><span class="p">;</span>				<span class="c1">// ¼¤»î·½°¸Ó³Éä</span>
+	<span class="kt">uint32_t</span>					<span class="n">m_uCurSchemeIdx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>				<span class="c1">// µ±Ç°Ê¹ÓÃ·½°¸Ë÷Òý</span>
+	<span class="c1">// Âß¼­¶ÔÏó--------------------------------------------------------------</span>
+	<span class="n">CHttpUd</span>						<span class="o">*</span><span class="n">m_ptrHttpUd</span><span class="p">;</span>						<span class="c1">// HTTPÐ­ÒéÉÏ´«ÏÂÔØ¿ØÖÆ¶ÔÏó</span>
+	<span class="n">CBaseHttp</span>					<span class="o">*</span><span class="n">m_ptrWebHttp</span><span class="p">;</span>						<span class="c1">// »ùÓÚHTTPÐ­ÒéµÄWEBÍ¨ÐÅ¶ÔÏóÖ¸Õë</span>
+	<span class="n">CSshUDExec</span>					<span class="o">*</span><span class="n">m_ptrHostSshUdExec</span><span class="p">;</span>				<span class="c1">// ¼¤»îÖ÷»úSshÉÏ´«ÏÂÔØÖ´ÐÐ¿ØÖÆ¶ÔÏóÖ¸Õë</span>
+	<span class="n">CSshUDExec</span>					<span class="o">*</span><span class="n">m_ptrKeySshUdExec</span><span class="p">;</span>					<span class="c1">// ÃÜÔ¿Ö÷»úSshÉÏ´«ÏÂÔØÖ´ÐÐ¿ØÖÆ¶ÔÏóÖ¸Õë</span>
+<span class="p">};</span>
+
+<span class="cp">#endif </span><span class="c1">// _KeyMainWnd_H_</span>
+</pre></div>
+</body>
+</html>

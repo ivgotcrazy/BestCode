@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 } /* Comment.Preproc */
+body .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #888888 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0044DD } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #AA22FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+body .nf { color: #0000FF } /* Name.Function */
+body .nl { color: #A0A000 } /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mb { color: #666666 } /* Literal.Number.Bin */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sa { color: #BA2121 } /* Literal.String.Affix */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .dl { color: #BA2121 } /* Literal.String.Delimiter */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #BB6688 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .fm { color: #0000FF } /* Name.Function.Magic */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .vm { color: #19177C } /* Name.Variable.Magic */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="c1">//初始化</span>
+<span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+	<span class="c1">//向ko里面新增一个bootstrapTableViewModel方法</span>
+	<span class="nx">ko</span><span class="p">.</span><span class="nx">bootstrapTableViewModel</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+		<span class="kd">var</span> <span class="nx">that</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+		<span class="c1">//bootstarp默认参数设置</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">defaultSetting</span> <span class="o">=</span> <span class="p">{</span>
+			<span class="nx">toolbar</span><span class="o">:</span> <span class="s1">&#39;#toolbar&#39;</span><span class="p">,</span>                <span class="c1">//工具按钮用哪个容器</span>
+			<span class="nx">queryParamsType</span><span class="o">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>									<span class="c1">//数据查询l类型</span>
+			<span class="nx">pagination</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>                   <span class="c1">//是否显示分页（*）</span>
+			<span class="nx">sidePagination</span><span class="o">:</span> <span class="s2">&quot;server&quot;</span><span class="p">,</span>           <span class="c1">//分页方式：client客户端分页，server服务端分页（*）</span>
+			<span class="nx">pageNumber</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>                      <span class="c1">//初始化加载第一页，默认第一页</span>
+			<span class="nx">pageSize</span><span class="o">:</span> <span class="mi">15</span><span class="p">,</span>                       <span class="c1">//每页的记录行数（*）</span>
+			<span class="nx">pageList</span><span class="o">:</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>        <span class="c1">//可供选择的每页的行数（*）</span>
+			<span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;post&#39;</span><span class="p">,</span>											<span class="c1">//请求方式</span>
+			<span class="nx">search</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>                      <span class="c1">//是否显示表格搜索，此搜索是客户端搜索，不会进服务端，所以，个人感觉意义不大</span>
+			<span class="nx">strictSearch</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>									<span class="c1">//数据严格搜索,true启用全匹配搜索，否则为模糊搜索</span>
+			<span class="nx">showColumns</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>                  <span class="c1">//是否显示所有的列</span>
+			<span class="nx">cache</span><span class="o">:</span><span class="kc">false</span><span class="p">,</span>												<span class="c1">//设置为 false 禁用 AJAX 数据缓存</span>
+			<span class="nx">showRefresh</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>                  <span class="c1">//是否显示刷新按钮</span>
+			<span class="nx">minimumCountColumns</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>             <span class="c1">//最少允许的列数</span>
+			<span class="nx">clickToSelect</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>                <span class="c1">//是否启用点击选中行</span>
+			<span class="nx">showToggle</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>										<span class="c1">//数据显示，切换</span>
+			<span class="nx">striped</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>											<span class="c1">//各行变色</span>
+			<span class="nx">sortStable</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>										<span class="c1">//排序</span>
+		<span class="p">};</span>
+
+		<span class="c1">//将传进来的参数与默认参数做一个合并，相同属性不同值的时候以后者为准</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">params</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">extend</span><span class="p">({},</span> <span class="k">this</span><span class="p">.</span><span class="nx">defaultSetting</span><span class="p">,</span> <span class="nx">options</span> <span class="o">||</span> <span class="p">{});</span>
+
+		<span class="c1">//得到选中的记录</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">getSelections</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+			<span class="kd">var</span> <span class="nx">arrRes</span> <span class="o">=</span> <span class="nx">that</span><span class="p">.</span><span class="nx">bootstrapTable</span><span class="p">(</span><span class="s2">&quot;getSelections&quot;</span><span class="p">);</span>
+			<span class="nx">arrRes</span> <span class="o">=</span> <span class="nx">removeExtraFields</span><span class="p">(</span><span class="nx">arrRes</span><span class="p">);</span>
+			<span class="k">return</span> <span class="nx">arrRes</span><span class="p">;</span>
+		<span class="p">};</span>
+		
+		<span class="c1">//得到所有的选中的记录</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">getAllSelections</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+			<span class="kd">var</span> <span class="nx">arrRes</span> <span class="o">=</span> <span class="nx">that</span><span class="p">.</span><span class="nx">bootstrapTable</span><span class="p">(</span><span class="s2">&quot;getAllSelections&quot;</span><span class="p">);</span>
+			<span class="nx">arrRes</span> <span class="o">=</span> <span class="nx">removeExtraFields</span><span class="p">(</span><span class="nx">arrRes</span><span class="p">);</span>
+			<span class="k">return</span> <span class="nx">arrRes</span><span class="p">;</span>
+		<span class="p">};</span>
+		
+		<span class="c1">//得到回调数据</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">getAllData</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+			<span class="kd">var</span> <span class="nx">arrRes</span> <span class="o">=</span> <span class="nx">that</span><span class="p">.</span><span class="nx">bootstrapTable</span><span class="p">(</span><span class="s2">&quot;getData&quot;</span><span class="p">);</span>
+			
+			<span class="k">return</span> <span class="nx">arrRes</span><span class="p">;</span>
+		<span class="p">};</span>
+		
+		<span class="c1">//刷新</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">refresh</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+			<span class="nx">that</span><span class="p">.</span><span class="nx">bootstrapTable</span><span class="p">(</span><span class="s2">&quot;refresh&quot;</span><span class="p">);</span>
+		<span class="p">};</span>
+		<span class="c1">//prepend插入数据到表格在现有数据之前。</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">prepend</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+			<span class="nx">that</span><span class="p">.</span><span class="nx">bootstrapTable</span><span class="p">(</span><span class="s2">&quot;prepend&quot;</span><span class="p">,</span><span class="nx">data</span><span class="p">);</span>
+		<span class="p">};</span>
+		<span class="c1">//load加载数据到表格中，旧数据会被替换。</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">load</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+			<span class="nx">that</span><span class="p">.</span><span class="nx">bootstrapTable</span><span class="p">(</span><span class="s2">&quot;load&quot;</span><span class="p">,</span><span class="nx">data</span><span class="p">);</span>
+		<span class="p">};</span>
+		
+		<span class="c1">//removeAll删除表格所有数据。</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">removeAll</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+			<span class="nx">that</span><span class="p">.</span><span class="nx">bootstrapTable</span><span class="p">(</span><span class="s2">&quot;removeAll&quot;</span><span class="p">);</span>
+		<span class="p">};</span>
+		
+		<span class="c1">//remove删除表格指定数据。</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">remove</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+			<span class="nx">that</span><span class="p">.</span><span class="nx">bootstrapTable</span><span class="p">(</span><span class="s2">&quot;remove&quot;</span><span class="p">,</span><span class="nx">data</span><span class="p">);</span>
+		<span class="p">};</span>
+	<span class="p">};</span>
+
+	<span class="c1">//剔除选中列的值</span>
+	<span class="kd">function</span> <span class="nx">removeExtraFields</span><span class="p">(</span><span class="nx">arrRes</span><span class="p">){</span>
+		<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arrRes</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+			<span class="k">delete</span><span class="p">(</span><span class="nx">arrRes</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="s2">&quot;0&quot;</span><span class="p">]);</span>
+		<span class="p">}</span>
+		<span class="k">return</span> <span class="nx">arrRes</span><span class="p">;</span>
+	<span class="p">}</span>
+	
+<span class="c1">//添加ko自定义绑定</span>
+<span class="cm">/*element - 涉及此绑定的DOM元素</span>
+<span class="cm">valueAccessor - 一个JavaScript函数，您可以调用此函数来获取此绑定所涉及的当前模型属性。调用它而不传递任何参数（即调用valueAccessor()）来获取当前的模型属性值。</span>
+<span class="cm">allBindingsAccessor - 可用于访问绑定到此DOM元素的所有模型值的JavaScript对象</span>
+<span class="cm">*bindingContext- 保存绑定上下文可用于此元素绑定的对象。</span>
+<span class="cm">*/</span>
+<span class="nx">ko</span><span class="p">.</span><span class="nx">bindingHandlers</span><span class="p">.</span><span class="nx">bootstrapTable</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="nx">init</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">valueAccessor</span><span class="p">,</span> <span class="nx">allBindingsAccessor</span><span class="p">,</span> <span class="nx">viewModel</span><span class="p">,</span><span class="nx">bindingContext</span><span class="p">)</span> <span class="p">{</span><span class="kr">debugger</span>
+		<span class="c1">//这里的oParam就是绑定的viewmodel,valueAccessor()=ko.bootstrapTableViewModel</span>
+		<span class="kd">var</span> <span class="nx">oViewModel</span> <span class="o">=</span> <span class="nx">valueAccessor</span><span class="p">();</span>
+		<span class="c1">//根据参数执行查询方法</span>
+		<span class="kd">var</span> <span class="nx">$ele</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">element</span><span class="p">).</span><span class="nx">bootstrapTable</span><span class="p">(</span><span class="nx">oViewModel</span><span class="p">.</span><span class="nx">params</span><span class="p">);</span>
+		
+		<span class="c1">//劫持方式给oViewModel添加bootstrapTable方法</span>
+		<span class="nx">oViewModel</span><span class="p">.</span><span class="nx">bootstrapTable</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+			<span class="k">return</span> <span class="nx">$ele</span><span class="p">.</span><span class="nx">bootstrapTable</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">$ele</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">);</span>
+		<span class="p">}</span>
+	<span class="p">},</span>
+	<span class="nx">update</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">valueAccessor</span><span class="p">,</span> <span class="nx">allBindingsAccessor</span><span class="p">,</span> <span class="nx">viewModel</span><span class="p">,</span><span class="nx">bindingContext</span><span class="p">)</span> <span class="p">{</span>
+	<span class="p">}</span>
+<span class="p">};</span>
+
+<span class="p">})(</span><span class="nx">jQuery</span><span class="p">);</span>
+</pre></div>
+</body>
+</html>

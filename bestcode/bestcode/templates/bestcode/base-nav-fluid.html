@@ -1,0 +1,36 @@
+{% extends "base-fluid.html" %}
+
+<!-- header -->
+{% block header %}
+<div class="row" style="height: 60px; line-height:60px; background:#417690;">
+		<div style="float: left; padding-left:40px; vertical-align:middle">
+			<h1 style="font-weight:300; font-size:24px;">
+				<a href="#" style="color:#ffc;">研发中心最佳代码</a>
+			</h1>
+		</div>
+		<div style="float: right; font-weight:300; padding-right:40px">
+			<font style="font-size:14px; color:#fff">欢迎访问</font>&nbsp;&nbsp;
+			{% if not login %}
+				<a href="/users/login" style="font-size:16px; color:#fff">登录</a>&nbsp;&nbsp;
+				<a href="/users/register" style="font-size:16px; color:#fff">注册</a>
+			{% else %}
+				<a href="/users/{{ user.username }}" style="font-size:16px; color:#ffc">{{ user.username }}</a>&nbsp;&nbsp;
+				<a href="/users/logout" style="font-size:16px; color:#fff">注销</a>
+			{% endif %}	
+		</div>
+</div>
+{% endblock %}
+
+<!-- navigator -->
+{% block navigator %}
+<div class="row" style="height:40px; line-height:40px; margin-bottom:4px; background:#79aec8">
+	<div style="text-align:left; font-size:14px; color:#c4dce8;  padding-left:40px; padding-right:40px">
+		{% for nav_item in nav_items %}
+			<a href="{{ nav_item.url }}" style="color:#c4dce8">{{ nav_item.name }}</a>
+			{% if not forloop.last %}
+				<span>&nbsp;&gt;&nbsp;</span>
+			{% endif %}
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}

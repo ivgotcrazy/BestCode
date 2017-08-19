@@ -1,0 +1,599 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 } /* Comment.Preproc */
+body .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #888888 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0044DD } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #AA22FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+body .nf { color: #0000FF } /* Name.Function */
+body .nl { color: #A0A000 } /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mb { color: #666666 } /* Literal.Number.Bin */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sa { color: #BA2121 } /* Literal.String.Affix */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .dl { color: #BA2121 } /* Literal.String.Delimiter */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #BB6688 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .fm { color: #0000FF } /* Name.Function.Magic */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .vm { color: #19177C } /* Name.Variable.Magic */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="c1">// MultiWBMsgProcessor.cpp: implementation of the CMultiWBMsgProcessor class.</span>
+<span class="c1">//</span>
+<span class="c1">//////////////////////////////////////////////////////////////////////</span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;MultiWBMsgProcessor.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;XmlDocProtocol.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;macros.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;assert.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;QDebug&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">WBASELIB</span><span class="p">;</span>
+
+<span class="cp">#ifdef _DEBUG</span>
+<span class="cp">#undef THIS_FILE</span>
+<span class="k">static</span> <span class="kt">char</span> <span class="n">THIS_FILE</span><span class="p">[]</span><span class="o">=</span><span class="n">__FILE__</span><span class="p">;</span>
+<span class="cp">#define new DEBUG_NEW</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#define		SEND_BUFFER_SIZE		65000</span>
+<span class="c1">//////////////////////////////////////////////////////////////////////</span>
+<span class="c1">// Construction/Destruction</span>
+<span class="c1">//////////////////////////////////////////////////////////////////////</span>
+
+<span class="n">CMultiWBMsgProcessor</span><span class="o">::</span><span class="n">CMultiWBMsgProcessor</span><span class="p">()</span><span class="o">:</span>
+<span class="n">m_pSessionManager</span><span class="p">(</span> <span class="nb">NULL</span> <span class="p">),</span>
+<span class="n">m_pMemoryAllocator</span><span class="p">(</span> <span class="nb">NULL</span> <span class="p">),</span>
+<span class="n">m_wSessionID</span> <span class="p">(</span> <span class="mi">0</span> <span class="p">),</span>
+<span class="n">m_pReaderCallback</span><span class="p">(</span> <span class="nb">NULL</span> <span class="p">),</span>
+<span class="n">m_pRecvBuffer</span><span class="p">(</span> <span class="nb">NULL</span> <span class="p">),</span>
+<span class="n">m_pSendBuffer</span><span class="p">(</span> <span class="nb">NULL</span> <span class="p">),</span>
+<span class="n">m_bLogined</span><span class="p">(</span> <span class="n">FALSE</span> <span class="p">)</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="n">CMultiWBMsgProcessor</span><span class="o">::~</span><span class="n">CMultiWBMsgProcessor</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">SAFE_RELEASE</span><span class="p">(</span> <span class="n">m_pSendBuffer</span> <span class="p">);</span>
+	<span class="n">SAFE_RELEASE</span><span class="p">(</span> <span class="n">m_pRecvBuffer</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/********************************************************************************************************</span>
+<span class="cm"> * 描述：初始化白板管理器</span>
+<span class="cm"> * 参数：IXMLDocMsgReaderCallback 回调接口类、  ISessionManager2 可用的会话管理器、IMemoryAllocator 内存管理</span>
+<span class="cm"> * 环境：初始化白板组件，连接白板服务器成功时，才调用此初始化</span>
+<span class="cm"> ********************************************************************************************************/</span>
+<span class="n">BOOL</span> <span class="n">CMultiWBMsgProcessor</span><span class="o">::</span><span class="n">Init</span><span class="p">(</span> <span class="n">IXMLDocMsgReaderCallback</span> <span class="o">*</span><span class="n">pReaderCallback</span><span class="p">,</span><span class="n">ISessionManager2</span> <span class="o">*</span><span class="n">pSessionManager</span><span class="p">,</span> <span class="n">IMemoryAllocator</span> <span class="o">*</span><span class="n">pMemoryAllocator</span><span class="p">,</span><span class="n">WORD</span> <span class="n">wSessionID</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span><span class="p">(</span> <span class="nb">NULL</span> <span class="o">==</span> <span class="n">pSessionManager</span> <span class="o">||</span> <span class="nb">NULL</span> <span class="o">==</span> <span class="n">pMemoryAllocator</span> <span class="p">)</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span> <span class="o">!</span><span class="n">m_msgPack</span><span class="p">.</span><span class="n">Init</span><span class="p">(</span> <span class="n">pSessionManager</span> <span class="p">))</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+
+    <span class="n">m_pReaderCallback</span>  <span class="o">=</span> <span class="n">pReaderCallback</span><span class="p">;</span>
+	<span class="n">m_pSessionManager</span> <span class="o">=</span> <span class="n">pSessionManager</span><span class="p">;</span>
+	<span class="n">m_pMemoryAllocator</span> <span class="o">=</span> <span class="n">pMemoryAllocator</span><span class="p">;</span>
+	<span class="n">m_wSessionID</span> <span class="o">=</span> <span class="n">wSessionID</span><span class="p">;</span>
+	<span class="n">m_bLogined</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">;</span>
+
+	<span class="k">if</span><span class="p">(</span> <span class="n">FAILED</span><span class="p">(</span> <span class="n">m_pMemoryAllocator</span><span class="o">-&gt;</span><span class="n">Alloc</span><span class="p">(</span> <span class="n">SEND_BUFFER_SIZE</span><span class="p">,</span><span class="o">&amp;</span><span class="n">m_pSendBuffer</span> <span class="p">)))</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+	
+	<span class="k">return</span> <span class="n">TRUE</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/********************************************************************************************************</span>
+<span class="cm"> * 描述：处理来自白板服务器的消息</span>
+<span class="cm"> * 参数：PBYTE pbData 数据、DWORD dwDataLen 数据长度</span>
+<span class="cm"> * 环境：</span>
+<span class="cm"> * 依赖：供白板客户端调用，ClientSocket::ProcessSessionEvent（）</span>
+<span class="cm"> * 影响：需要回调客户端的接口</span>
+<span class="cm"> ********************************************************************************************************/</span>
+<span class="n">BOOL</span>	<span class="n">CMultiWBMsgProcessor</span><span class="o">::</span><span class="n">ProcessMsg</span><span class="p">(</span> <span class="n">PBYTE</span> <span class="n">pbData</span><span class="p">,</span><span class="n">DWORD</span> <span class="n">dwDataLen</span> <span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span><span class="p">(</span> <span class="nb">NULL</span> <span class="o">==</span> <span class="n">pbData</span> <span class="o">||</span> <span class="n">dwDataLen</span> <span class="o">&lt;=</span> <span class="mi">2</span> <span class="o">||</span> <span class="o">!</span><span class="n">m_pReaderCallback</span> <span class="p">)</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+	<span class="n">PBYTE</span> <span class="n">pbOut</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="n">FS_UINT32</span> <span class="n">dwOutLen</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span> <span class="o">!</span><span class="n">m_msgPack</span><span class="p">.</span><span class="n">UnPack</span><span class="p">(</span> <span class="n">pbData</span><span class="p">,</span><span class="n">dwDataLen</span><span class="p">,</span><span class="n">pbOut</span><span class="p">,</span><span class="n">dwOutLen</span> <span class="p">))</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+
+	<span class="n">BOOL</span> <span class="n">bResult</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">;</span>
+	<span class="n">WORD</span> <span class="n">wCommand</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="n">WORD</span><span class="o">*</span><span class="p">)</span><span class="n">pbOut</span><span class="p">;</span>
+	<span class="k">switch</span><span class="p">(</span> <span class="n">wCommand</span> <span class="p">)</span> <span class="p">{</span>
+	<span class="k">case</span> <span class="nl">XMLDOC_CMDID_LOGINREP</span><span class="p">:</span>
+		<span class="k">if</span><span class="p">(</span> <span class="n">dwOutLen</span> <span class="o">==</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">XMLDOC_CMD_LOGINREP</span><span class="p">)){</span>
+			<span class="n">XMLDOC_CMD_LOGINREP</span> <span class="o">*</span><span class="n">pLoginRep</span> <span class="o">=</span> <span class="p">(</span><span class="n">XMLDOC_CMD_LOGINREP</span><span class="o">*</span><span class="p">)</span><span class="n">pbOut</span><span class="p">;</span>
+			<span class="n">m_bLogined</span> <span class="o">=</span> <span class="n">pLoginRep</span><span class="o">-&gt;</span><span class="n">wResult</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>
+			<span class="n">bResult</span> <span class="o">=</span> <span class="n">m_pReaderCallback</span><span class="o">-&gt;</span><span class="n">OnLoginRep</span><span class="p">(</span> <span class="n">pLoginRep</span><span class="o">-&gt;</span><span class="n">wResult</span> <span class="p">);</span>
+		<span class="p">}</span>
+		<span class="k">break</span><span class="p">;</span>
+	<span class="k">case</span> <span class="nl">XMLDOC_CMDID_BYE</span><span class="p">:</span>
+		<span class="k">if</span><span class="p">(</span> <span class="n">dwOutLen</span> <span class="o">==</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">XMLDOC_CMD_BYE</span> <span class="p">)){</span>
+			<span class="n">XMLDOC_CMD_BYE</span> <span class="o">*</span><span class="n">pBye</span> <span class="o">=</span> <span class="p">(</span><span class="n">XMLDOC_CMD_BYE</span><span class="o">*</span><span class="p">)</span><span class="n">pbOut</span><span class="p">;</span>
+			<span class="n">bResult</span> <span class="o">=</span> <span class="n">m_pReaderCallback</span><span class="o">-&gt;</span><span class="n">OnBye</span><span class="p">();</span>
+		<span class="p">}</span>
+		<span class="k">break</span><span class="p">;</span>
+	<span class="k">case</span> <span class="nl">XMLDOC_CMDID_CLEARDOC</span><span class="p">:</span>
+		<span class="k">if</span><span class="p">(</span> <span class="n">dwOutLen</span> <span class="o">==</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">XMLDOC_CMD_CLEARDOC</span><span class="p">)){</span>
+			<span class="n">XMLDOC_CMD_CLEARDOC</span> <span class="o">*</span><span class="n">pClearDoc</span> <span class="o">=</span> <span class="p">(</span><span class="n">XMLDOC_CMD_CLEARDOC</span><span class="o">*</span><span class="p">)</span><span class="n">pbOut</span><span class="p">;</span>
+			<span class="n">bResult</span> <span class="o">=</span> <span class="n">m_pReaderCallback</span><span class="o">-&gt;</span><span class="n">OnClearDoc</span><span class="p">();</span>
+		<span class="p">}</span>
+		<span class="k">break</span><span class="p">;</span>
+	<span class="k">case</span> <span class="nl">XMLDOC_CMDID_GETDOCREP</span><span class="p">:</span>
+		<span class="n">bResult</span> <span class="o">=</span> <span class="n">ProcessGetDocRep</span><span class="p">(</span> <span class="n">pbOut</span><span class="p">,</span><span class="n">dwOutLen</span> <span class="p">);</span>
+		<span class="k">break</span><span class="p">;</span>
+	<span class="k">case</span> <span class="nl">XMLDOC_CMDID_INSERTDOCNODE</span><span class="p">:</span>
+		<span class="n">bResult</span> <span class="o">=</span> <span class="n">ProcessInsertDocNode</span><span class="p">(</span> <span class="n">pbOut</span><span class="p">,</span><span class="n">dwOutLen</span> <span class="p">);</span>
+		<span class="k">break</span><span class="p">;</span>
+	<span class="k">case</span> <span class="nl">XMLDOC_CMDID_MODIFYDOCNODE</span><span class="p">:</span>
+		<span class="n">bResult</span> <span class="o">=</span> <span class="n">ProcessModifyDocNode</span><span class="p">(</span> <span class="n">pbOut</span><span class="p">,</span><span class="n">dwOutLen</span> <span class="p">);</span>
+		<span class="k">break</span><span class="p">;</span>
+	<span class="k">case</span> <span class="nl">XMLDOC_CMDID_DELDOCNODE</span><span class="p">:</span>
+		<span class="k">if</span><span class="p">(</span> <span class="n">dwOutLen</span> <span class="o">&gt;=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">XMLDOC_CMD_DELDOCNODE</span><span class="p">)){</span>
+			<span class="n">XMLDOC_CMD_DELDOCNODE</span> <span class="o">*</span><span class="n">pDelNode</span> <span class="o">=</span> <span class="p">(</span><span class="n">XMLDOC_CMD_DELDOCNODE</span><span class="o">*</span><span class="p">)</span><span class="n">pbOut</span><span class="p">;</span>
+			<span class="k">if</span><span class="p">(</span> <span class="n">dwOutLen</span> <span class="o">==</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">XMLDOC_CMD_DELDOCNODE</span><span class="p">)</span><span class="o">+</span><span class="n">pDelNode</span><span class="o">-&gt;</span><span class="n">wNodePathLen</span> <span class="p">){</span>
+				<span class="n">CHAR</span> <span class="o">*</span><span class="n">szNodePath</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+				<span class="k">if</span><span class="p">(</span> <span class="n">pDelNode</span><span class="o">-&gt;</span><span class="n">wNodePathLen</span> <span class="o">&gt;</span><span class="mi">0</span> <span class="p">){</span>
+					<span class="n">szNodePath</span> <span class="o">=</span> <span class="n">pDelNode</span><span class="o">-&gt;</span><span class="n">szNodePath</span><span class="p">;</span>
+					<span class="n">szNodePath</span><span class="p">[</span><span class="n">pDelNode</span><span class="o">-&gt;</span><span class="n">wNodePathLen</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+				<span class="p">}</span>
+				<span class="n">bResult</span> <span class="o">=</span> <span class="n">m_pReaderCallback</span><span class="o">-&gt;</span><span class="n">OnDelDocNode</span><span class="p">(</span> <span class="n">szNodePath</span> <span class="p">);</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+		<span class="k">break</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="n">bResult</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cm">/********************************************************************************************************</span>
+<span class="cm"> * 描述：登录服务器请求</span>
+<span class="cm"> * 参数：</span>
+<span class="cm"> * 环境：</span>
+<span class="cm"> * 依赖：</span>
+<span class="cm"> * 影响：调用会话管理，发送请求</span>
+<span class="cm"> ********************************************************************************************************/</span>
+<span class="n">BOOL</span>	<span class="n">CMultiWBMsgProcessor</span><span class="o">::</span><span class="n">WriteLoginReq</span><span class="p">(</span> <span class="n">DWORD</span> <span class="n">dwUserID</span><span class="p">,</span><span class="n">DWORD</span> <span class="n">dwCheckCode</span><span class="p">,</span><span class="k">const</span> <span class="n">GUID</span><span class="o">&amp;</span> <span class="n">guid</span> <span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">XMLDOC_CMD_LOGINREQ</span> <span class="n">LoginReq</span><span class="p">;</span>
+	<span class="n">LoginReq</span><span class="p">.</span><span class="n">wCommand</span> <span class="o">=</span> <span class="n">XMLDOC_CMDID_LOGINREQ</span><span class="p">;</span>
+	<span class="n">LoginReq</span><span class="p">.</span><span class="n">bVersion</span> <span class="o">=</span> <span class="n">XMLDOC_PROTOCOL_VERSION</span><span class="p">;</span>
+	<span class="n">LoginReq</span><span class="p">.</span><span class="n">bReserved</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="n">LoginReq</span><span class="p">.</span><span class="n">dwUserID</span> <span class="o">=</span> <span class="n">dwUserID</span><span class="p">;</span>
+	<span class="n">LoginReq</span><span class="p">.</span><span class="n">dwCheckCode</span> <span class="o">=</span> <span class="n">dwCheckCode</span><span class="p">;</span>
+	<span class="n">LoginReq</span><span class="p">.</span><span class="n">guidDoc</span> <span class="o">=</span> <span class="n">guid</span><span class="p">;</span>
+
+    <span class="n">qDebug</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;[whiteboard] CMultiWBMsgProcessor::WriteLoginReq()&quot;</span><span class="p">;</span>
+
+	<span class="kt">bool</span> <span class="n">hr</span> <span class="o">=</span> <span class="n">Send</span><span class="p">(</span> <span class="n">m_wSessionID</span><span class="p">,(</span><span class="n">PBYTE</span><span class="p">)</span><span class="o">&amp;</span><span class="n">LoginReq</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">LoginReq</span><span class="p">));</span>
+    <span class="k">return</span> <span class="n">hr</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cm">/********************************************************************************************************</span>
+<span class="cm"> * 描述：</span>
+<span class="cm"> * 参数：</span>
+<span class="cm"> * 环境：</span>
+<span class="cm"> * 依赖：</span>
+<span class="cm"> * 影响：调用会话管理，发送请求</span>
+<span class="cm"> ********************************************************************************************************/</span>
+<span class="n">BOOL</span>	<span class="n">CMultiWBMsgProcessor</span><span class="o">::</span><span class="n">WriteBye</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="k">if</span><span class="p">(</span> <span class="o">!</span><span class="n">m_bLogined</span> <span class="p">)</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+	<span class="n">XMLDOC_CMD_BYE</span> <span class="n">bye</span><span class="p">;</span>
+	<span class="n">bye</span><span class="p">.</span><span class="n">wCmdID</span> <span class="o">=</span> <span class="n">XMLDOC_CMDID_BYE</span><span class="p">;</span>
+	<span class="n">bye</span><span class="p">.</span><span class="n">wReserved</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="n">qDebug</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;[whiteboard] CMultiWBMsgProcessor::WriteBye()&quot;</span><span class="p">;</span>
+
+	<span class="k">return</span> <span class="nf">Send</span><span class="p">(</span> <span class="n">m_wSessionID</span><span class="p">,(</span><span class="n">PBYTE</span><span class="p">)</span><span class="o">&amp;</span><span class="n">bye</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">bye</span><span class="p">));</span>
+<span class="p">}</span>
+<span class="cm">/********************************************************************************************************</span>
+<span class="cm"> * 描述：获取文档请求</span>
+<span class="cm"> * 参数：</span>
+<span class="cm"> * 环境：</span>
+<span class="cm"> * 依赖：</span>
+<span class="cm"> * 影响：调用会话管理，发送请求</span>
+<span class="cm"> ********************************************************************************************************/</span>
+<span class="n">BOOL</span>	<span class="n">CMultiWBMsgProcessor</span><span class="o">::</span><span class="n">WriteGetDocReq</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="k">if</span><span class="p">(</span> <span class="o">!</span><span class="n">m_bLogined</span> <span class="p">)</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+	<span class="n">XMLDOC_CMD_GETDOCREQ</span> <span class="n">DocReq</span><span class="p">;</span>
+	<span class="n">DocReq</span><span class="p">.</span><span class="n">wCmdID</span> <span class="o">=</span> <span class="n">XMLDOC_CMDID_GETDOCREQ</span><span class="p">;</span>
+	<span class="n">DocReq</span><span class="p">.</span><span class="n">wReserved</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="n">qDebug</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;[whiteboard] CMultiWBMsgProcessor::WriteGetDocReq()&quot;</span><span class="p">;</span>
+
+	<span class="k">return</span> <span class="nf">Send</span><span class="p">(</span> <span class="n">m_wSessionID</span><span class="p">,(</span><span class="n">PBYTE</span><span class="p">)</span><span class="o">&amp;</span><span class="n">DocReq</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">DocReq</span><span class="p">));</span>
+<span class="p">}</span>
+<span class="cm">/********************************************************************************************************</span>
+<span class="cm"> * 描述：清除文档请求</span>
+<span class="cm"> * 参数：</span>
+<span class="cm"> * 环境：</span>
+<span class="cm"> * 依赖：</span>
+<span class="cm"> * 影响：调用会话管理，发送请求</span>
+<span class="cm"> ********************************************************************************************************/</span>
+<span class="n">BOOL</span>	<span class="n">CMultiWBMsgProcessor</span><span class="o">::</span><span class="n">WriteClearDoc</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="k">if</span><span class="p">(</span> <span class="o">!</span><span class="n">m_bLogined</span> <span class="p">)</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+	<span class="n">XMLDOC_CMD_CLEARDOC</span> <span class="n">ClearDoc</span><span class="p">;</span>
+	<span class="n">ClearDoc</span><span class="p">.</span><span class="n">wCmdID</span> <span class="o">=</span> <span class="n">XMLDOC_CMDID_CLEARDOC</span><span class="p">;</span>
+	<span class="n">ClearDoc</span><span class="p">.</span><span class="n">wReserved</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="n">qDebug</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;[whiteboard] CMultiWBMsgProcessor::WriteClearDoc()&quot;</span><span class="p">;</span>
+
+	<span class="k">return</span> <span class="nf">Send</span><span class="p">(</span> <span class="n">m_wSessionID</span><span class="p">,(</span><span class="n">PBYTE</span><span class="p">)</span><span class="o">&amp;</span><span class="n">ClearDoc</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">ClearDoc</span><span class="p">));</span>
+<span class="p">}</span>
+<span class="cm">/********************************************************************************************************</span>
+<span class="cm"> * 描述：加入文档节点请求</span>
+<span class="cm"> * 参数：</span>
+<span class="cm"> * 环境：</span>
+<span class="cm"> * 依赖：</span>
+<span class="cm"> * 影响：调用会话管理，发送请求</span>
+<span class="cm"> ********************************************************************************************************/</span>
+<span class="n">BOOL</span>	<span class="n">CMultiWBMsgProcessor</span><span class="o">::</span><span class="n">WriteInsertDocNode</span><span class="p">(</span> <span class="n">BYTE</span> <span class="n">bInsertType</span><span class="p">,</span><span class="n">BYTE</span> <span class="n">bOnlyOne</span><span class="p">,</span><span class="n">CHAR</span><span class="o">*</span> <span class="n">szParentPath</span><span class="p">,</span><span class="n">CHAR</span><span class="o">*</span> <span class="n">szInsertPosPath</span><span class="p">,</span><span class="n">CHAR</span><span class="o">*</span> <span class="n">szNodeData</span> <span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span><span class="p">(</span> <span class="o">!</span><span class="n">m_bLogined</span> <span class="p">)</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span> <span class="nb">NULL</span> <span class="o">==</span> <span class="n">m_pSendBuffer</span> <span class="p">)</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+
+	<span class="kt">int</span> <span class="n">nSize</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">XMLDOC_CMD_INSERTDOCNODE</span><span class="p">)</span><span class="o">+</span><span class="mi">4</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">szParentPath</span> <span class="p">)</span>
+		<span class="n">nSize</span> <span class="o">+=</span> <span class="n">strlen</span><span class="p">(</span> <span class="n">szParentPath</span> <span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">szInsertPosPath</span><span class="p">)</span>
+		<span class="n">nSize</span> <span class="o">+=</span> <span class="n">strlen</span><span class="p">(</span> <span class="n">szInsertPosPath</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">szNodeData</span> <span class="p">)</span>
+		<span class="n">nSize</span> <span class="o">+=</span> <span class="n">strlen</span><span class="p">(</span> <span class="n">szNodeData</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">nSize</span> <span class="o">&gt;</span> <span class="n">SEND_BUFFER_SIZE</span> <span class="p">)</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+	
+	<span class="n">PBYTE</span> <span class="n">pbBuffer</span><span class="p">;</span>
+	<span class="n">m_pSendBuffer</span><span class="o">-&gt;</span><span class="n">GetBuffer</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">pbBuffer</span> <span class="p">);</span>
+
+	<span class="n">nSize</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="n">XMLDOC_CMD_INSERTDOCNODE</span> <span class="o">*</span><span class="n">pInsertNode</span> <span class="o">=</span> <span class="p">(</span><span class="n">XMLDOC_CMD_INSERTDOCNODE</span><span class="o">*</span><span class="p">)</span><span class="n">pbBuffer</span><span class="p">;</span>
+	<span class="n">pInsertNode</span><span class="o">-&gt;</span><span class="n">wCmdID</span> <span class="o">=</span> <span class="n">XMLDOC_CMDID_INSERTDOCNODE</span><span class="p">;</span>
+	<span class="n">pInsertNode</span><span class="o">-&gt;</span><span class="n">bInsertType</span> <span class="o">=</span> <span class="n">bInsertType</span><span class="p">;</span>
+	<span class="n">pInsertNode</span><span class="o">-&gt;</span><span class="n">bOnlyOne</span> <span class="o">=</span> <span class="n">bOnlyOne</span><span class="p">;</span>
+	<span class="n">pInsertNode</span><span class="o">-&gt;</span><span class="n">wParentPathLen</span> <span class="o">=</span> <span class="n">szParentPath</span><span class="o">?</span><span class="n">strlen</span><span class="p">(</span> <span class="n">szParentPath</span> <span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="o">:</span><span class="mi">0</span><span class="p">;</span>
+
+	<span class="n">nSize</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">XMLDOC_CMD_INSERTDOCNODE</span><span class="p">);</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">szParentPath</span> <span class="p">){</span>
+		<span class="n">strcpy</span><span class="p">(</span> <span class="n">pInsertNode</span><span class="o">-&gt;</span><span class="n">szParentPath</span><span class="p">,</span><span class="n">szParentPath</span> <span class="p">);</span>
+		<span class="n">nSize</span> <span class="o">+=</span> <span class="n">pInsertNode</span><span class="o">-&gt;</span><span class="n">wParentPathLen</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="n">WORD</span> <span class="n">wLen</span> <span class="o">=</span> <span class="n">szInsertPosPath</span><span class="o">?</span><span class="n">strlen</span><span class="p">(</span> <span class="n">szInsertPosPath</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="o">:</span><span class="mi">0</span><span class="p">;</span>
+	<span class="o">*</span><span class="p">(</span><span class="n">WORD</span><span class="o">*</span><span class="p">)(</span><span class="n">pbBuffer</span><span class="o">+</span><span class="n">nSize</span><span class="p">)</span> <span class="o">=</span> <span class="n">wLen</span><span class="p">;</span>
+	<span class="n">nSize</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">szInsertPosPath</span> <span class="p">){</span>
+		<span class="n">strcpy</span><span class="p">(</span> <span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)(</span><span class="n">pbBuffer</span><span class="o">+</span><span class="n">nSize</span><span class="p">),</span><span class="n">szInsertPosPath</span> <span class="p">);</span>
+		<span class="n">nSize</span> <span class="o">+=</span> <span class="n">wLen</span><span class="p">;</span>
+	<span class="p">}</span>
+	
+	<span class="n">wLen</span> <span class="o">=</span> <span class="n">szNodeData</span><span class="o">?</span><span class="n">strlen</span><span class="p">(</span> <span class="n">szNodeData</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="o">:</span><span class="mi">0</span><span class="p">;</span>
+	<span class="o">*</span><span class="p">(</span><span class="n">WORD</span><span class="o">*</span><span class="p">)(</span><span class="n">pbBuffer</span><span class="o">+</span><span class="n">nSize</span><span class="p">)</span> <span class="o">=</span> <span class="n">wLen</span><span class="p">;</span>
+	<span class="n">nSize</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">szNodeData</span> <span class="p">){</span>
+		<span class="n">strcpy</span><span class="p">((</span><span class="kt">char</span><span class="o">*</span><span class="p">)(</span><span class="n">pbBuffer</span><span class="o">+</span><span class="n">nSize</span><span class="p">),</span><span class="n">szNodeData</span> <span class="p">);</span>
+		<span class="n">nSize</span> <span class="o">+=</span> <span class="n">wLen</span><span class="p">;</span>
+	<span class="p">}</span>
+
+    <span class="n">qDebug</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;[whiteboard] CMultiWBMsgProcessor::WriteInsertDocNode() &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">szNodeData</span><span class="p">;</span>
+	
+	<span class="k">return</span> <span class="nf">Send</span><span class="p">(</span> <span class="n">m_wSessionID</span><span class="p">,</span><span class="n">pbBuffer</span><span class="p">,</span><span class="n">nSize</span> <span class="p">);</span> 
+<span class="p">}</span>
+<span class="cm">/********************************************************************************************************</span>
+<span class="cm"> * 描述：修改文档节点通知请求</span>
+<span class="cm"> * 参数：</span>
+<span class="cm"> * 环境：</span>
+<span class="cm"> * 依赖：</span>
+<span class="cm"> * 影响：调用会话管理，发送请求</span>
+<span class="cm"> ********************************************************************************************************/</span>
+<span class="n">BOOL</span>	<span class="n">CMultiWBMsgProcessor</span><span class="o">::</span><span class="n">WriteModifyDocNode</span><span class="p">(</span> <span class="n">CHAR</span> <span class="o">*</span><span class="n">szNodePath</span><span class="p">,</span><span class="n">CHAR</span> <span class="o">*</span><span class="n">szNodeData</span> <span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span><span class="p">(</span> <span class="o">!</span><span class="n">m_bLogined</span> <span class="p">)</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span> <span class="nb">NULL</span> <span class="o">==</span> <span class="n">m_pSendBuffer</span> <span class="p">)</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+
+	<span class="kt">int</span> <span class="n">nSize</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">XMLDOC_CMD_MODIFYDOCNODE</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">szNodePath</span> <span class="p">)</span>
+		<span class="n">nSize</span> <span class="o">+=</span> <span class="n">strlen</span><span class="p">(</span> <span class="n">szNodePath</span> <span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">szNodeData</span> <span class="p">)</span>
+		<span class="n">nSize</span> <span class="o">+=</span> <span class="n">strlen</span><span class="p">(</span> <span class="n">szNodeData</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">nSize</span> <span class="o">&gt;</span> <span class="n">SEND_BUFFER_SIZE</span> <span class="p">)</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+	
+	<span class="n">PBYTE</span> <span class="n">pbBuffer</span><span class="p">;</span>
+	<span class="n">m_pSendBuffer</span><span class="o">-&gt;</span><span class="n">GetBuffer</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">pbBuffer</span> <span class="p">);</span>
+	
+	<span class="n">nSize</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="n">XMLDOC_CMD_MODIFYDOCNODE</span> <span class="o">*</span><span class="n">pModifyNode</span> <span class="o">=</span> <span class="p">(</span><span class="n">XMLDOC_CMD_MODIFYDOCNODE</span><span class="o">*</span><span class="p">)</span><span class="n">pbBuffer</span><span class="p">;</span>
+	<span class="n">pModifyNode</span><span class="o">-&gt;</span><span class="n">wCmdID</span> <span class="o">=</span> <span class="n">XMLDOC_CMDID_MODIFYDOCNODE</span><span class="p">;</span>
+	<span class="n">pModifyNode</span><span class="o">-&gt;</span><span class="n">wNodePathLen</span> <span class="o">=</span> <span class="n">szNodePath</span><span class="o">?</span><span class="n">strlen</span><span class="p">(</span> <span class="n">szNodePath</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="o">:</span><span class="mi">0</span><span class="p">;</span>
+
+	<span class="n">nSize</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">XMLDOC_CMD_MODIFYDOCNODE</span><span class="p">);</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">szNodePath</span> <span class="p">){</span>
+		<span class="n">strcpy</span><span class="p">(</span> <span class="n">pModifyNode</span><span class="o">-&gt;</span><span class="n">szNodePath</span><span class="p">,</span><span class="n">szNodePath</span> <span class="p">);</span>
+		<span class="n">nSize</span> <span class="o">+=</span> <span class="n">pModifyNode</span><span class="o">-&gt;</span><span class="n">wNodePathLen</span><span class="p">;</span>
+	<span class="p">}</span>
+		
+	<span class="n">WORD</span> <span class="n">wLen</span> <span class="o">=</span> <span class="n">szNodeData</span><span class="o">?</span><span class="n">strlen</span><span class="p">(</span> <span class="n">szNodeData</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="o">:</span><span class="mi">0</span><span class="p">;</span>
+	<span class="o">*</span><span class="p">(</span><span class="n">WORD</span><span class="o">*</span><span class="p">)(</span><span class="n">pbBuffer</span><span class="o">+</span><span class="n">nSize</span><span class="p">)</span> <span class="o">=</span> <span class="n">wLen</span><span class="p">;</span>
+	<span class="n">nSize</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">szNodeData</span> <span class="p">){</span>
+		<span class="n">strcpy</span><span class="p">((</span><span class="kt">char</span><span class="o">*</span><span class="p">)(</span><span class="n">pbBuffer</span><span class="o">+</span><span class="n">nSize</span><span class="p">),</span><span class="n">szNodeData</span> <span class="p">);</span>
+		<span class="n">nSize</span> <span class="o">+=</span> <span class="n">wLen</span><span class="p">;</span>
+	<span class="p">}</span>
+	
+	<span class="k">return</span> <span class="n">Send</span><span class="p">(</span> <span class="n">m_wSessionID</span><span class="p">,</span><span class="n">pbBuffer</span><span class="p">,</span><span class="n">nSize</span> <span class="p">);</span> 
+<span class="p">}</span>
+<span class="cm">/********************************************************************************************************</span>
+<span class="cm"> * 描述：删除文档节点请求</span>
+<span class="cm"> * 参数：</span>
+<span class="cm"> * 环境：</span>
+<span class="cm"> * 依赖：</span>
+<span class="cm"> * 影响：调用会话管理，发送请求</span>
+<span class="cm"> ********************************************************************************************************/</span>
+<span class="n">BOOL</span>	<span class="n">CMultiWBMsgProcessor</span><span class="o">::</span><span class="n">WriteDelDocNode</span><span class="p">(</span> <span class="n">CHAR</span> <span class="o">*</span><span class="n">szNodePath</span> <span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span><span class="p">(</span> <span class="o">!</span><span class="n">m_bLogined</span> <span class="p">)</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span> <span class="nb">NULL</span> <span class="o">==</span> <span class="n">m_pSendBuffer</span> <span class="p">)</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+	<span class="n">PBYTE</span> <span class="n">pbBuffer</span><span class="p">;</span>
+	<span class="n">m_pSendBuffer</span><span class="o">-&gt;</span><span class="n">GetBuffer</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">pbBuffer</span> <span class="p">);</span>
+
+	<span class="n">XMLDOC_CMD_DELDOCNODE</span> <span class="o">*</span><span class="n">pDelNode</span> <span class="o">=</span> <span class="p">(</span><span class="n">XMLDOC_CMD_DELDOCNODE</span><span class="o">*</span><span class="p">)</span><span class="n">pbBuffer</span><span class="p">;</span>
+	<span class="n">pDelNode</span><span class="o">-&gt;</span><span class="n">wCmdID</span> <span class="o">=</span> <span class="n">XMLDOC_CMDID_DELDOCNODE</span><span class="p">;</span>
+	<span class="n">pDelNode</span><span class="o">-&gt;</span><span class="n">wNodePathLen</span> <span class="o">=</span> <span class="n">szNodePath</span><span class="o">?</span><span class="n">strlen</span><span class="p">(</span> <span class="n">szNodePath</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="o">:</span><span class="mi">0</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">szNodePath</span> <span class="p">)</span>
+		<span class="n">strcpy</span><span class="p">(</span> <span class="n">pDelNode</span><span class="o">-&gt;</span><span class="n">szNodePath</span><span class="p">,</span><span class="n">szNodePath</span> <span class="p">);</span>
+	
+    <span class="n">qDebug</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;[whiteboard] CMultiWBMsgProcessor::WriteInsertDocNode() &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">szNodePath</span><span class="p">;</span>
+	<span class="k">return</span> <span class="nf">Send</span><span class="p">(</span> <span class="n">m_wSessionID</span><span class="p">,</span><span class="n">pbBuffer</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">XMLDOC_CMD_DELDOCNODE</span><span class="p">)</span><span class="o">+</span><span class="n">pDelNode</span><span class="o">-&gt;</span><span class="n">wNodePathLen</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">///</span>
+<span class="c1">///\brief 以下是响应服务器请求</span>
+<span class="c1">///</span>
+
+<span class="cm">/********************************************************************************************************</span>
+<span class="cm"> * 描述：处理获取文档请求</span>
+<span class="cm"> * 参数：</span>
+<span class="cm"> * 环境：</span>
+<span class="cm"> * 依赖：回调客户端的相关协议接口</span>
+<span class="cm"> * 影响：</span>
+<span class="cm"> ********************************************************************************************************/</span>
+<span class="n">BOOL</span> <span class="n">CMultiWBMsgProcessor</span><span class="o">::</span><span class="n">ProcessGetDocRep</span><span class="p">(</span><span class="n">PBYTE</span> <span class="n">pbData</span><span class="p">,</span> <span class="n">DWORD</span> <span class="n">dwDataLen</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">dwDataLen</span> <span class="o">&lt;=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">XMLDOC_CMD_GETDOCREP</span><span class="p">))</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+	<span class="n">XMLDOC_CMD_GETDOCREP</span> <span class="o">*</span><span class="n">pDocRep</span> <span class="o">=</span> <span class="p">(</span><span class="n">XMLDOC_CMD_GETDOCREP</span><span class="o">*</span><span class="p">)</span><span class="n">pbData</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">dwDataLen</span> <span class="o">!=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">XMLDOC_CMD_GETDOCREP</span><span class="p">)</span><span class="o">+</span><span class="n">pDocRep</span><span class="o">-&gt;</span><span class="n">wSubLength</span> <span class="p">)</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+
+	<span class="n">assert</span><span class="p">(</span> <span class="o">!</span><span class="n">m_pRecvBuffer</span> <span class="o">||</span> <span class="n">pDocRep</span><span class="o">-&gt;</span><span class="n">wSubSeqnum</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">);</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">m_pRecvBuffer</span> <span class="o">&amp;&amp;</span> <span class="n">pDocRep</span><span class="o">-&gt;</span><span class="n">wSubSeqnum</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">)</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+	<span class="n">assert</span><span class="p">(</span> <span class="n">m_pRecvBuffer</span> <span class="o">||</span> <span class="n">pDocRep</span><span class="o">-&gt;</span><span class="n">wSubSeqnum</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">);</span>
+	<span class="k">if</span><span class="p">(</span> <span class="nb">NULL</span> <span class="o">==</span> <span class="n">m_pRecvBuffer</span> <span class="o">&amp;&amp;</span> <span class="n">pDocRep</span><span class="o">-&gt;</span><span class="n">wSubSeqnum</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">)</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">m_pRecvBuffer</span> <span class="p">){</span>
+        <span class="n">FS_UINT32</span> <span class="n">dwBufferSize</span><span class="p">;</span>
+		<span class="n">m_pRecvBuffer</span><span class="o">-&gt;</span><span class="n">GetBufferSize</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">dwBufferSize</span> <span class="p">);</span>
+		<span class="n">assert</span><span class="p">(</span> <span class="n">dwBufferSize</span> <span class="o">&gt;=</span> <span class="n">pDocRep</span><span class="o">-&gt;</span><span class="n">dwDocSize</span> <span class="p">);</span>
+		<span class="k">if</span><span class="p">(</span> <span class="n">pDocRep</span><span class="o">-&gt;</span><span class="n">dwDocSize</span> <span class="o">&gt;</span> <span class="n">dwBufferSize</span> <span class="p">)</span>
+			<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+
+        <span class="n">FS_UINT32</span> <span class="n">dwRecvedLen</span><span class="p">;</span>
+		<span class="n">m_pRecvBuffer</span><span class="o">-&gt;</span><span class="n">GetLength</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">dwRecvedLen</span> <span class="p">);</span>
+		<span class="n">assert</span><span class="p">(</span> <span class="n">dwRecvedLen</span><span class="o">+</span><span class="n">pDocRep</span><span class="o">-&gt;</span><span class="n">wSubLength</span> <span class="o">&lt;=</span> <span class="n">pDocRep</span><span class="o">-&gt;</span><span class="n">dwDocSize</span> <span class="p">);</span>
+		<span class="k">if</span><span class="p">(</span> <span class="n">dwRecvedLen</span><span class="o">+</span><span class="n">pDocRep</span><span class="o">-&gt;</span><span class="n">wSubLength</span> <span class="o">&gt;</span> <span class="n">pDocRep</span><span class="o">-&gt;</span><span class="n">dwDocSize</span> <span class="p">)</span>
+			<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">if</span><span class="p">(</span> <span class="nb">NULL</span> <span class="o">==</span> <span class="n">m_pRecvBuffer</span> <span class="p">){</span>
+		<span class="n">m_pMemoryAllocator</span><span class="o">-&gt;</span><span class="n">Alloc</span><span class="p">(</span> <span class="n">pDocRep</span><span class="o">-&gt;</span><span class="n">dwDocSize</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="o">&amp;</span><span class="n">m_pRecvBuffer</span> <span class="p">);</span>
+		<span class="n">assert</span><span class="p">(</span> <span class="n">m_pRecvBuffer</span> <span class="p">);</span>
+		<span class="k">if</span><span class="p">(</span> <span class="nb">NULL</span> <span class="o">==</span> <span class="n">m_pRecvBuffer</span> <span class="p">)</span>
+			<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>		
+		<span class="n">m_pRecvBuffer</span><span class="o">-&gt;</span><span class="n">SetLength</span><span class="p">(</span> <span class="mi">0</span> <span class="p">);</span>
+	<span class="p">}</span>
+	<span class="n">m_pRecvBuffer</span><span class="o">-&gt;</span><span class="n">Append</span><span class="p">(</span> <span class="p">(</span><span class="n">PBYTE</span><span class="p">)</span><span class="n">pDocRep</span><span class="o">-&gt;</span><span class="n">szDocData</span><span class="p">,</span><span class="n">pDocRep</span><span class="o">-&gt;</span><span class="n">wSubLength</span> <span class="p">);</span>
+
+    <span class="n">FS_UINT32</span> <span class="n">dwRecvLen</span><span class="p">;</span>
+	<span class="n">m_pRecvBuffer</span><span class="o">-&gt;</span><span class="n">GetLength</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">dwRecvLen</span> <span class="p">);</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">dwRecvLen</span> <span class="o">==</span> <span class="n">pDocRep</span><span class="o">-&gt;</span><span class="n">dwDocSize</span> <span class="p">){</span>
+		<span class="n">PBYTE</span> <span class="n">pbBuffer</span><span class="p">;</span>
+		<span class="n">m_pRecvBuffer</span><span class="o">-&gt;</span><span class="n">GetBuffer</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">pbBuffer</span> <span class="p">);</span>
+		<span class="n">pbBuffer</span><span class="p">[</span><span class="n">pDocRep</span><span class="o">-&gt;</span><span class="n">dwDocSize</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="n">m_pReaderCallback</span><span class="o">-&gt;</span><span class="n">OnGetDocRep</span><span class="p">(</span> <span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">pbBuffer</span><span class="p">,</span><span class="n">pDocRep</span><span class="o">-&gt;</span><span class="n">dwDocSize</span> <span class="p">);</span>
+		<span class="n">m_pRecvBuffer</span><span class="o">-&gt;</span><span class="n">SetLength</span><span class="p">(</span> <span class="mi">0</span> <span class="p">);</span>
+		<span class="n">SAFE_RELEASE</span><span class="p">(</span> <span class="n">m_pRecvBuffer</span> <span class="p">);</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="n">TRUE</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cm">/********************************************************************************************************</span>
+<span class="cm"> * 描述：处理加入文档节点请求</span>
+<span class="cm"> * 参数：</span>
+<span class="cm"> * 环境：</span>
+<span class="cm"> * 依赖：回调客户端的相关协议接口</span>
+<span class="cm"> * 影响：</span>
+<span class="cm"> ********************************************************************************************************/</span>
+<span class="n">BOOL</span> <span class="n">CMultiWBMsgProcessor</span><span class="o">::</span><span class="n">ProcessInsertDocNode</span><span class="p">(</span><span class="n">PBYTE</span> <span class="n">pbData</span><span class="p">,</span> <span class="n">DWORD</span> <span class="n">dwDataLen</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">dwDataLen</span> <span class="o">&lt;</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">XMLDOC_CMD_INSERTDOCNODE</span><span class="p">))</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+		
+	<span class="n">XMLDOC_CMD_INSERTDOCNODE</span> <span class="o">*</span><span class="n">pInsertNode</span> <span class="o">=</span> <span class="p">(</span><span class="n">XMLDOC_CMD_INSERTDOCNODE</span><span class="o">*</span><span class="p">)</span><span class="n">pbData</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">dwDataLen</span> <span class="o">&lt;</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">XMLDOC_CMD_INSERTDOCNODE</span><span class="p">)</span><span class="o">+</span><span class="n">pInsertNode</span><span class="o">-&gt;</span><span class="n">wParentPathLen</span> <span class="p">)</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+		
+	<span class="n">CHAR</span> <span class="o">*</span><span class="n">szParentPath</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="n">CHAR</span> <span class="o">*</span><span class="n">szInsertNodePath</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="n">CHAR</span> <span class="o">*</span><span class="n">szNodeData</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">pInsertNode</span><span class="o">-&gt;</span><span class="n">wParentPathLen</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">){</span>
+		<span class="n">pInsertNode</span><span class="o">-&gt;</span><span class="n">szParentPath</span><span class="p">[</span><span class="n">pInsertNode</span><span class="o">-&gt;</span><span class="n">wParentPathLen</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="n">szParentPath</span> <span class="o">=</span> <span class="n">pInsertNode</span><span class="o">-&gt;</span><span class="n">szParentPath</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="kt">int</span>	 <span class="n">nPos</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">XMLDOC_CMD_INSERTDOCNODE</span><span class="p">)</span><span class="o">+</span><span class="n">pInsertNode</span><span class="o">-&gt;</span><span class="n">wParentPathLen</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">dwDataLen</span> <span class="o">&lt;</span> <span class="n">nPos</span><span class="o">+</span><span class="mi">2</span> <span class="p">)</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+	<span class="n">WORD</span> <span class="n">wLen</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="n">WORD</span><span class="o">*</span><span class="p">)(</span><span class="n">pbData</span><span class="o">+</span><span class="n">nPos</span><span class="p">);</span>
+	<span class="n">nPos</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">dwDataLen</span> <span class="o">&lt;</span><span class="n">nPos</span><span class="o">+</span><span class="n">wLen</span> <span class="p">)</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">wLen</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">){</span>
+		<span class="n">szInsertNodePath</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)(</span><span class="n">pbData</span><span class="o">+</span><span class="n">nPos</span><span class="p">);</span>
+		<span class="n">szInsertNodePath</span><span class="p">[</span><span class="n">wLen</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="n">nPos</span> <span class="o">+=</span> <span class="n">wLen</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="k">if</span><span class="p">(</span> <span class="n">dwDataLen</span> <span class="o">&lt;</span> <span class="n">nPos</span><span class="o">+</span><span class="mi">2</span> <span class="p">)</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+	<span class="n">wLen</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="n">WORD</span><span class="o">*</span><span class="p">)(</span><span class="n">pbData</span><span class="o">+</span><span class="n">nPos</span><span class="p">);</span>
+	<span class="n">nPos</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">dwDataLen</span> <span class="o">&lt;</span> <span class="n">nPos</span><span class="o">+</span><span class="n">wLen</span> <span class="p">)</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">wLen</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">){</span>
+		<span class="n">szNodeData</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)(</span><span class="n">pbData</span><span class="o">+</span><span class="n">nPos</span><span class="p">);</span>
+		<span class="n">szNodeData</span><span class="p">[</span><span class="n">wLen</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="n">nPos</span> <span class="o">+=</span> <span class="n">wLen</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="n">m_pReaderCallback</span><span class="o">-&gt;</span><span class="n">OnInsertDocNode</span><span class="p">(</span> <span class="n">pInsertNode</span><span class="o">-&gt;</span><span class="n">bInsertType</span><span class="p">,</span><span class="n">pInsertNode</span><span class="o">-&gt;</span><span class="n">bOnlyOne</span><span class="p">,</span><span class="n">szParentPath</span><span class="p">,</span><span class="n">szInsertNodePath</span><span class="p">,</span><span class="n">szNodeData</span> <span class="p">);</span>
+<span class="p">}</span>
+<span class="cm">/********************************************************************************************************</span>
+<span class="cm"> * 描述：处理加入文档节点请求</span>
+<span class="cm"> * 参数：</span>
+<span class="cm"> * 环境：</span>
+<span class="cm"> * 依赖：回调客户端的相关协议接口</span>
+<span class="cm"> * 影响：</span>
+<span class="cm"> ********************************************************************************************************/</span>
+<span class="n">BOOL</span> <span class="n">CMultiWBMsgProcessor</span><span class="o">::</span><span class="n">ProcessModifyDocNode</span><span class="p">(</span><span class="n">PBYTE</span> <span class="n">pbData</span><span class="p">,</span> <span class="n">DWORD</span> <span class="n">dwDataLen</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">dwDataLen</span> <span class="o">&lt;</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">XMLDOC_CMD_MODIFYDOCNODE</span><span class="p">))</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+	
+	<span class="n">XMLDOC_CMD_MODIFYDOCNODE</span> <span class="o">*</span><span class="n">pModifyNode</span> <span class="o">=</span> <span class="p">(</span><span class="n">XMLDOC_CMD_MODIFYDOCNODE</span><span class="o">*</span><span class="p">)</span><span class="n">pbData</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">dwDataLen</span> <span class="o">&lt;</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">XMLDOC_CMD_MODIFYDOCNODE</span><span class="p">)</span><span class="o">+</span><span class="n">pModifyNode</span><span class="o">-&gt;</span><span class="n">wNodePathLen</span> <span class="p">)</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+	
+	<span class="n">CHAR</span> <span class="o">*</span><span class="n">szNodePath</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="n">CHAR</span> <span class="o">*</span><span class="n">szNodeData</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">pModifyNode</span><span class="o">-&gt;</span><span class="n">wNodePathLen</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">){</span>
+		<span class="n">szNodePath</span> <span class="o">=</span> <span class="n">pModifyNode</span><span class="o">-&gt;</span><span class="n">szNodePath</span><span class="p">;</span>
+		<span class="n">szNodePath</span><span class="p">[</span><span class="n">pModifyNode</span><span class="o">-&gt;</span><span class="n">wNodePathLen</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="kt">int</span>	 <span class="n">nPos</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">XMLDOC_CMD_MODIFYDOCNODE</span><span class="p">)</span><span class="o">+</span><span class="n">pModifyNode</span><span class="o">-&gt;</span><span class="n">wNodePathLen</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">dwDataLen</span> <span class="o">&lt;</span> <span class="n">nPos</span><span class="o">+</span><span class="mi">2</span> <span class="p">)</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+	<span class="n">WORD</span> <span class="n">wLen</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="n">WORD</span><span class="o">*</span><span class="p">)(</span><span class="n">pbData</span><span class="o">+</span><span class="n">nPos</span><span class="p">);</span>
+	<span class="n">nPos</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">dwDataLen</span> <span class="o">&lt;</span><span class="n">nPos</span><span class="o">+</span><span class="n">wLen</span> <span class="p">)</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">wLen</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">){</span>
+		<span class="n">szNodeData</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)(</span><span class="n">pbData</span><span class="o">+</span><span class="n">nPos</span><span class="p">);</span>
+		<span class="n">szNodeData</span><span class="p">[</span><span class="n">wLen</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="n">nPos</span> <span class="o">+=</span> <span class="n">wLen</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="n">m_pReaderCallback</span><span class="o">-&gt;</span><span class="n">OnModifyDocNode</span><span class="p">(</span> <span class="n">szNodePath</span><span class="p">,</span><span class="n">szNodeData</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/********************************************************************************************************</span>
+<span class="cm"> * 描述：释放</span>
+<span class="cm"> * 参数：</span>
+<span class="cm"> * 环境：</span>
+<span class="cm"> * 依赖：回调客户端的相关协议接口</span>
+<span class="cm"> * 影响：</span>
+<span class="cm"> ********************************************************************************************************/</span>
+<span class="kt">void</span> <span class="n">CMultiWBMsgProcessor</span><span class="o">::</span><span class="n">Release</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">m_msgPack</span><span class="p">.</span><span class="n">Release</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="cm">/********************************************************************************************************</span>
+<span class="cm"> * 描述：发送数据</span>
+<span class="cm"> * 参数：</span>
+<span class="cm"> * 环境：</span>
+<span class="cm"> * 依赖：</span>
+<span class="cm"> * 影响：调用会话管理器</span>
+<span class="cm"> ********************************************************************************************************/</span>
+<span class="n">BOOL</span> <span class="n">CMultiWBMsgProcessor</span><span class="o">::</span><span class="n">Send</span><span class="p">(</span><span class="n">WORD</span> <span class="n">wSessionID</span><span class="p">,</span> <span class="n">PBYTE</span> <span class="n">pbData</span><span class="p">,</span> <span class="n">DWORD</span> <span class="n">dwDataLen</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">PBYTE</span> <span class="n">pbOut</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="n">FS_UINT32</span> <span class="n">dwOutLen</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span> <span class="o">!</span><span class="n">m_msgPack</span><span class="p">.</span><span class="n">Pack</span><span class="p">(</span> <span class="n">pbData</span><span class="p">,</span><span class="n">dwDataLen</span><span class="p">,</span><span class="n">pbOut</span><span class="p">,</span><span class="n">dwOutLen</span> <span class="p">))</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+	<span class="k">return</span> <span class="n">m_pSessionManager</span><span class="o">-&gt;</span><span class="n">Send</span><span class="p">(</span> <span class="n">wSessionID</span><span class="p">,</span><span class="n">pbOut</span><span class="p">,</span><span class="n">dwOutLen</span> <span class="p">)</span> <span class="o">==</span> <span class="n">S_OK</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 } /* Comment.Preproc */
+body .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #888888 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0044DD } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #AA22FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+body .nf { color: #0000FF } /* Name.Function */
+body .nl { color: #A0A000 } /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mb { color: #666666 } /* Literal.Number.Bin */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sa { color: #BA2121 } /* Literal.String.Affix */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .dl { color: #BA2121 } /* Literal.String.Delimiter */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #BB6688 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .fm { color: #0000FF } /* Name.Function.Magic */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .vm { color: #19177C } /* Name.Variable.Magic */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * 文件名：ChannelConnectedHandler</span>
+<span class="cm"> * 版权：Copyright by www.fsmeeting.com</span>
+<span class="cm"> * 描述：</span>
+<span class="cm"> * 修改人：kezs</span>
+<span class="cm"> * 修改时间：2017/2/22</span>
+<span class="cm"> * 修改内容：</span>
+<span class="cm"> */</span>
+
+<span class="kn">package</span> <span class="nn">com.fsmeeting.fsp.sc.handler</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.fsmeeting.fsp.common.handler.IProtobuf</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fsmeeting.fsp.common.lock.Lock</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fsmeeting.fsp.common.util.NumberUtil</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fsmeeting.fsp.proto.common.CommonResponse</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fsmeeting.fsp.proto.common.DataDirection</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fsmeeting.fsp.proto.common.ResponseCode</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fsmeeting.fsp.proto.sc.ChannelConnected</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fsmeeting.fsp.proto.sc.ChannelConnectedRsp</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fsmeeting.fsp.proto.sc.ProtoDictionary</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fsmeeting.fsp.sc.common.Common</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fsmeeting.fsp.sc.service.CommonService</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fsmeeting.fsp.sc.service.MessageResponseService</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fsmeeting.fsp.sc.service.RequestCacheService</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fsmeeting.fsp.sc.service.RouterService</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.google.protobuf.InvalidProtocolBufferException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.stereotype.Service</span><span class="o">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * 处理SS通知SC已经和NC建立通道连接</span>
+<span class="cm"> *</span>
+<span class="cm"> * @author kezs tangyh</span>
+<span class="cm"> * @version 2017/2/22</span>
+<span class="cm"> * @see ChannelConnectedHandler</span>
+<span class="cm"> */</span>
+<span class="nd">@Service</span><span class="o">(</span><span class="s">&quot;channelConnectedHandler&quot;</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ChannelConnectedHandler</span> <span class="kd">extends</span> <span class="n">AbstractScHandler</span> <span class="kd">implements</span> <span class="n">IProtobuf</span><span class="o">&lt;</span><span class="n">ChannelConnected</span><span class="o">&gt;</span> <span class="o">{</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">private</span> <span class="n">CommonService</span> <span class="n">commonService</span><span class="o">;</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">private</span> <span class="n">RouterService</span> <span class="n">routerService</span><span class="o">;</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">private</span> <span class="n">MessageResponseService</span> <span class="n">responseService</span><span class="o">;</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">private</span> <span class="n">RequestCacheService</span> <span class="n">requestCacheService</span><span class="o">;</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">private</span> <span class="n">Lock</span> <span class="n">lock</span><span class="o">;</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">handle</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">ChannelConnected</span> <span class="n">channelConnected</span> <span class="o">=</span> <span class="n">deserialize</span><span class="o">(</span><span class="n">messageData</span><span class="o">);</span>
+        <span class="n">DataDirection</span> <span class="n">direction</span> <span class="o">=</span> <span class="n">channelConnected</span><span class="o">.</span><span class="na">getDirection</span><span class="o">();</span>
+        <span class="n">String</span> <span class="n">streamId</span> <span class="o">=</span> <span class="n">channelConnected</span><span class="o">.</span><span class="na">getStreamId</span><span class="o">();</span>
+        <span class="n">String</span> <span class="n">serviceInstanceId</span> <span class="o">=</span> <span class="n">channelConnected</span><span class="o">.</span><span class="na">getServiceInstanceId</span><span class="o">();</span>
+        <span class="n">String</span> <span class="n">clientId</span> <span class="o">=</span> <span class="n">channelConnected</span><span class="o">.</span><span class="na">getClientId</span><span class="o">();</span>
+
+        <span class="n">String</span> <span class="n">rspMsg</span> <span class="o">=</span> <span class="s">&quot;Saving channel connect info failed&quot;</span><span class="o">;</span>
+        <span class="kt">byte</span><span class="o">[]</span> <span class="n">result</span><span class="o">;</span>
+        <span class="kt">boolean</span> <span class="n">flag</span> <span class="o">=</span> <span class="n">saveChannelConnected</span><span class="o">(</span><span class="n">clientId</span><span class="o">,</span> <span class="n">serviceInstanceId</span><span class="o">,</span> <span class="n">streamId</span><span class="o">,</span> <span class="n">direction</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">flag</span><span class="o">)</span> <span class="o">{</span>
+            <span class="c1">//流的发布客户端登录源流服务器（nc发布端连接ss的时候）</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">direction</span><span class="o">.</span><span class="na">getNumber</span><span class="o">()</span> <span class="o">==</span> <span class="n">DataDirection</span><span class="o">.</span><span class="na">Sending_VALUE</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&quot;数据方向为发送，释放锁&quot;</span><span class="o">);</span>
+                <span class="n">String</span> <span class="n">rootPath</span> <span class="o">=</span> <span class="n">Common</span><span class="o">.</span><span class="na">getGetSuperRootLockPath</span><span class="o">();</span>
+                <span class="n">String</span> <span class="n">lockRootPath</span> <span class="o">=</span> <span class="n">rootPath</span> <span class="o">+</span> <span class="n">streamId</span><span class="o">;</span>
+                <span class="n">lock</span><span class="o">.</span><span class="na">unLock</span><span class="o">(</span><span class="n">lockRootPath</span><span class="o">);</span>
+            <span class="o">}</span>
+            <span class="n">rspMsg</span> <span class="o">=</span> <span class="n">clientId</span> <span class="o">+</span> <span class="s">&quot; connected &quot;</span> <span class="o">+</span> <span class="n">serviceInstanceId</span> <span class="o">+</span> <span class="s">&quot;,streamId:&quot;</span> <span class="o">+</span> <span class="n">streamId</span><span class="o">;</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">builtResponseResult</span><span class="o">(</span><span class="n">ResponseCode</span><span class="o">.</span><span class="na">EnumSuccess</span><span class="o">,</span> <span class="n">rspMsg</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">builtResponseResult</span><span class="o">(</span><span class="n">ResponseCode</span><span class="o">.</span><span class="na">EnumError</span><span class="o">,</span> <span class="n">rspMsg</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="n">responseService</span><span class="o">.</span><span class="na">response</span><span class="o">(</span><span class="n">messageSequence</span><span class="o">,</span> <span class="n">messageNumber</span><span class="o">,</span> <span class="n">msgTopic</span><span class="o">,</span> <span class="n">result</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * Description: 保存通道连接信息</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param clientId          客户端id</span>
+<span class="cm">     * @param serviceInstanceId 服务实例</span>
+<span class="cm">     * @param streamId          流id</span>
+<span class="cm">     * @param direction         流方向</span>
+<span class="cm">     * @return 返回是否保存成功</span>
+<span class="cm">     */</span>
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">saveChannelConnected</span><span class="o">(</span><span class="n">String</span> <span class="n">clientId</span><span class="o">,</span> <span class="n">String</span> <span class="n">serviceInstanceId</span><span class="o">,</span> <span class="n">String</span> <span class="n">streamId</span><span class="o">,</span>
+                                         <span class="n">DataDirection</span> <span class="n">direction</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">fsp</span><span class="o">.</span><span class="na">sss</span><span class="o">.</span><span class="na">DataDirection</span> <span class="n">dataDirection</span> <span class="o">=</span> <span class="o">(</span><span class="n">direction</span> <span class="o">==</span> <span class="n">DataDirection</span><span class="o">.</span><span class="na">Receiving</span>
+                <span class="o">?</span> <span class="n">fsp</span><span class="o">.</span><span class="na">sss</span><span class="o">.</span><span class="na">DataDirection</span><span class="o">.</span><span class="na">Recv</span> <span class="o">:</span> <span class="n">fsp</span><span class="o">.</span><span class="na">sss</span><span class="o">.</span><span class="na">DataDirection</span><span class="o">.</span><span class="na">Send</span><span class="o">);</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="n">clientId</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">2</span><span class="o">).</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;0;&quot;</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">clientId</span> <span class="o">=</span> <span class="n">clientId</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">iceProxy</span><span class="o">.</span><span class="na">saveChannelConnect</span><span class="o">(</span><span class="n">clientId</span><span class="o">,</span> <span class="n">serviceInstanceId</span><span class="o">,</span> <span class="n">streamId</span><span class="o">,</span> <span class="n">dataDirection</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * Description: 构建处理返回结果</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param code:返回状态，msg：返回信息</span>
+<span class="cm">     */</span>
+    <span class="kd">private</span> <span class="kt">byte</span><span class="o">[]</span> <span class="nf">builtResponseResult</span><span class="o">(</span><span class="n">ResponseCode</span> <span class="n">code</span><span class="o">,</span> <span class="n">String</span> <span class="n">msg</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">ChannelConnectedRsp</span><span class="o">.</span><span class="na">Builder</span> <span class="n">rsp</span> <span class="o">=</span> <span class="n">ChannelConnectedRsp</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">();</span>
+        <span class="n">CommonResponse</span> <span class="n">response</span> <span class="o">=</span> <span class="n">responseService</span><span class="o">.</span><span class="na">buildCommonResponse</span><span class="o">(</span><span class="n">code</span><span class="o">,</span> <span class="n">msg</span><span class="o">);</span>
+        <span class="n">rsp</span><span class="o">.</span><span class="na">setResponse</span><span class="o">(</span><span class="n">response</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">serialize</span><span class="o">(</span><span class="n">rsp</span><span class="o">.</span><span class="na">build</span><span class="o">());</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">ChannelConnected</span> <span class="nf">deserialize</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">protoData</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">ChannelConnected</span><span class="o">.</span><span class="na">parseFrom</span><span class="o">(</span><span class="n">protoData</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InvalidProtocolBufferException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">logger</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="s">&quot;deserialize error&quot;</span><span class="o">,</span> <span class="n">ex</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="n">Integer</span> <span class="nf">getHandlerType</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">ProtoDictionary</span><span class="o">.</span><span class="na">Enum2ChannelConnected_VALUE</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">byte</span><span class="o">[]</span> <span class="nf">getMessageNumber</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">NumberUtil</span><span class="o">.</span><span class="na">int2byte</span><span class="o">(</span><span class="n">ProtoDictionary</span><span class="o">.</span><span class="na">Enum2ChannelConnectedRsp_VALUE</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</body>
+</html>

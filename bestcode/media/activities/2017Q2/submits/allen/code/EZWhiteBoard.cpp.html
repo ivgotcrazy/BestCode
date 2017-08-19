@@ -1,0 +1,729 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 } /* Comment.Preproc */
+body .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #888888 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0044DD } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #AA22FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+body .nf { color: #0000FF } /* Name.Function */
+body .nl { color: #A0A000 } /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mb { color: #666666 } /* Literal.Number.Bin */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sa { color: #BA2121 } /* Literal.String.Affix */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .dl { color: #BA2121 } /* Literal.String.Delimiter */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #BB6688 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .fm { color: #0000FF } /* Name.Function.Magic */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .vm { color: #19177C } /* Name.Variable.Magic */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;EZWhiteBoard.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;EZDoc.h&quot;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">eztalks</span><span class="p">;</span>
+
+<span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">CEZWhiteBoard</span><span class="p">()</span>
+	<span class="o">:</span><span class="n">m_nActiveWBId</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="p">,</span><span class="n">m_pParentView</span><span class="p">(</span><span class="nb">NULL</span><span class="p">)</span>
+    <span class="p">,</span><span class="n">m_nViewWidth</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="p">,</span><span class="n">m_nViewHeight</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="p">,</span><span class="n">m_pNetworkRequest</span><span class="p">(</span><span class="nb">NULL</span><span class="p">)</span>
+    <span class="p">,</span><span class="n">m_nCurTool</span><span class="p">(</span><span class="n">TOOLTYPE_DRAW</span><span class="p">)</span>
+    <span class="p">,</span><span class="n">m_AccessMode</span><span class="p">(</span><span class="n">WBM_ACCESS_READ</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">m_Pen</span><span class="p">.</span><span class="n">color</span><span class="p">.</span><span class="n">fromARGB</span><span class="p">(</span><span class="mh">0xff000000</span><span class="p">);</span>
+    <span class="n">m_Pen</span><span class="p">.</span><span class="n">nWidth</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="n">m_Pen</span><span class="p">.</span><span class="n">lineStyle</span> <span class="o">=</span> <span class="n">SolidLine</span><span class="p">;</span>
+    <span class="n">m_Pen</span><span class="p">.</span><span class="n">bFill</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="n">m_Pen</span><span class="p">.</span><span class="n">nFontSize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">CEZWhiteBoard</span><span class="o">::~</span><span class="n">CEZWhiteBoard</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">m_pParentView</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="n">m_pDelegate</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="k">this</span><span class="o">-&gt;</span><span class="n">CloseAllWB</span><span class="p">();</span>
+    <span class="n">m_pNetworkRequest</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">SetRequestNetWork</span><span class="p">(</span><span class="n">INetWorkRequest</span> <span class="o">*</span><span class="n">pRequest</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">this</span><span class="o">-&gt;</span><span class="n">m_pNetworkRequest</span> <span class="o">=</span> <span class="n">pRequest</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">IWhiteBoardPlatformDelegate</span><span class="o">*</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">GetPlatformDelegate</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">m_pDelegate</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">//设置背景色</span>
+<span class="kt">void</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">SetBackgroundColor</span><span class="p">(</span><span class="n">Color_t</span> <span class="n">color</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">WhiteBoardMap</span><span class="o">::</span><span class="n">iterator</span> <span class="n">it</span><span class="p">;</span>
+	<span class="k">for</span> <span class="p">(</span><span class="n">it</span> <span class="o">=</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">it</span><span class="o">++</span><span class="p">){</span>
+		<span class="n">IContainerView</span> <span class="o">*</span><span class="n">pView</span> <span class="o">=</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span>
+		<span class="n">pView</span><span class="o">-&gt;</span><span class="n">SetBackgroundColor</span><span class="p">(</span><span class="n">color</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">//设置白板保存文件夹</span>
+<span class="kt">void</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">SetWBSaveDir</span><span class="p">(</span><span class="k">const</span> <span class="kt">wchar_t</span> <span class="o">*</span><span class="n">wszSaveDir</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">m_strSaveDir</span> <span class="o">=</span> <span class="n">wszSaveDir</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">//打开本地白板,同步到远端</span>
+<span class="kt">int32_t</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">OpenLocalWB</span><span class="p">(</span><span class="k">const</span> <span class="kt">wchar_t</span> <span class="o">*</span><span class="n">wszFilePath</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">m_pDelegate</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int32_t</span> <span class="n">nWBId</span> <span class="o">=</span> <span class="n">m_pDelegate</span><span class="o">-&gt;</span><span class="n">GenerateWBID</span><span class="p">();</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">nWBId</span><span class="p">)</span> <span class="o">!=</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">nWBId</span> <span class="o">=</span> <span class="n">m_pDelegate</span><span class="o">-&gt;</span><span class="n">GenerateWBID</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="n">IDoc</span> <span class="o">*</span><span class="n">pDoc</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CEZDoc</span><span class="p">();</span>
+        <span class="n">pDoc</span><span class="o">-&gt;</span><span class="n">Initialized</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+        <span class="n">pDoc</span><span class="o">-&gt;</span><span class="n">SetWBId</span><span class="p">(</span><span class="n">nWBId</span><span class="p">);</span>
+        <span class="n">pDoc</span><span class="o">-&gt;</span><span class="n">SetTitleName</span><span class="p">(</span><span class="sa">L</span><span class="s">&quot;NewWhiteBoard&quot;</span><span class="p">);</span>
+
+        <span class="n">IContainerView</span> <span class="o">*</span><span class="n">pContainerView</span> <span class="o">=</span> <span class="n">m_pDelegate</span><span class="o">-&gt;</span><span class="n">CreateContainerView</span><span class="p">();</span>
+        <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">SetDoc</span><span class="p">(</span><span class="n">pDoc</span><span class="p">);</span>
+        <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">Initialized</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="n">m_pParentView</span><span class="p">,</span><span class="n">m_nViewWidth</span><span class="p">,</span><span class="n">m_nViewHeight</span><span class="p">);</span>
+        <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">CreateView</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span><span class="mi">1024</span><span class="p">);</span>
+        <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">SetAccessMode</span><span class="p">(</span><span class="n">WBM_ACCESS_ALL</span><span class="p">);</span>
+        <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">Active</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+
+        <span class="n">m_kvWhiteBoards</span><span class="p">[</span><span class="n">pDoc</span><span class="o">-&gt;</span><span class="n">GetWBId</span><span class="p">()]</span> <span class="o">=</span> <span class="n">pContainerView</span><span class="p">;</span>
+
+        <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">SetDrawTool</span><span class="p">(</span><span class="n">m_nCurTool</span><span class="p">);</span>
+        <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">SetLineStyle</span><span class="p">(</span><span class="n">m_Pen</span><span class="p">.</span><span class="n">lineStyle</span><span class="p">);</span>
+        <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">SetColorRgba</span><span class="p">(</span><span class="n">m_Pen</span><span class="p">.</span><span class="n">color</span><span class="p">.</span><span class="n">r</span><span class="p">,</span><span class="n">m_Pen</span><span class="p">.</span><span class="n">color</span><span class="p">.</span><span class="n">g</span><span class="p">,</span><span class="n">m_Pen</span><span class="p">.</span><span class="n">color</span><span class="p">.</span><span class="n">b</span><span class="p">,</span><span class="n">m_Pen</span><span class="p">.</span><span class="n">color</span><span class="p">.</span><span class="n">a</span><span class="p">);</span>
+        <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">SetLineWidth</span><span class="p">(</span><span class="n">m_Pen</span><span class="p">.</span><span class="n">nWidth</span><span class="p">);</span>
+        <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">SetFontSize</span><span class="p">(</span><span class="n">m_Pen</span><span class="p">.</span><span class="n">nFontSize</span><span class="p">);</span>
+        <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">SetFillMode</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">m_pNetworkRequest</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">m_pNetworkRequest</span><span class="o">-&gt;</span><span class="n">RequestAddWB</span><span class="p">(</span><span class="n">pContainerView</span><span class="p">);</span>
+            <span class="n">m_pNetworkRequest</span><span class="o">-&gt;</span><span class="n">RequestActiveWB</span><span class="p">(</span><span class="n">pDoc</span><span class="o">-&gt;</span><span class="n">GetWBId</span><span class="p">());</span>
+        <span class="p">}</span>
+        <span class="n">m_nActiveWBId</span> <span class="o">=</span> <span class="n">pDoc</span><span class="o">-&gt;</span><span class="n">GetWBId</span><span class="p">();</span>
+        <span class="k">return</span> <span class="n">pDoc</span><span class="o">-&gt;</span><span class="n">GetWBId</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">//打开远端白板，同步到本地</span>
+<span class="kt">int32_t</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">OpenRemoteWB</span><span class="p">(</span><span class="kt">int32_t</span> <span class="n">nWBId</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">m_nActiveWBId</span> <span class="o">=</span> <span class="n">nWBId</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">m_pDelegate</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">IDoc</span> <span class="o">*</span><span class="n">pDoc</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CEZDoc</span><span class="p">();</span>
+        <span class="n">pDoc</span><span class="o">-&gt;</span><span class="n">Initialized</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+        <span class="n">pDoc</span><span class="o">-&gt;</span><span class="n">SetWBId</span><span class="p">(</span><span class="n">nWBId</span><span class="p">);</span>
+        <span class="n">pDoc</span><span class="o">-&gt;</span><span class="n">SetTitleName</span><span class="p">(</span><span class="sa">L</span><span class="s">&quot;NewWhiteBoard&quot;</span><span class="p">);</span>
+
+        <span class="n">IContainerView</span> <span class="o">*</span><span class="n">pContainerView</span> <span class="o">=</span> <span class="n">m_pDelegate</span><span class="o">-&gt;</span><span class="n">CreateContainerView</span><span class="p">();</span>
+        <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">SetDoc</span><span class="p">(</span><span class="n">pDoc</span><span class="p">);</span>
+        <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">Initialized</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="n">m_pParentView</span><span class="p">,</span><span class="n">m_nViewWidth</span><span class="p">,</span><span class="n">m_nViewHeight</span><span class="p">);</span>
+        <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">CreateView</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span><span class="mi">1024</span><span class="p">);</span>
+        <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">SetAccessMode</span><span class="p">(</span><span class="n">m_AccessMode</span><span class="p">);</span>
+        <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">Active</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+
+        <span class="n">m_kvWhiteBoards</span><span class="p">[</span><span class="n">pDoc</span><span class="o">-&gt;</span><span class="n">GetWBId</span><span class="p">()]</span> <span class="o">=</span> <span class="n">pContainerView</span><span class="p">;</span>
+
+        <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">SetDrawTool</span><span class="p">(</span><span class="n">m_nCurTool</span><span class="p">);</span>
+        <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">SetLineStyle</span><span class="p">(</span><span class="n">m_Pen</span><span class="p">.</span><span class="n">lineStyle</span><span class="p">);</span>
+        <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">SetColorRgba</span><span class="p">(</span><span class="n">m_Pen</span><span class="p">.</span><span class="n">color</span><span class="p">.</span><span class="n">r</span><span class="p">,</span><span class="n">m_Pen</span><span class="p">.</span><span class="n">color</span><span class="p">.</span><span class="n">g</span><span class="p">,</span><span class="n">m_Pen</span><span class="p">.</span><span class="n">color</span><span class="p">.</span><span class="n">b</span><span class="p">,</span><span class="n">m_Pen</span><span class="p">.</span><span class="n">color</span><span class="p">.</span><span class="n">a</span><span class="p">);</span>
+        <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">SetLineWidth</span><span class="p">(</span><span class="n">m_Pen</span><span class="p">.</span><span class="n">nWidth</span><span class="p">);</span>
+        <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">SetFontSize</span><span class="p">(</span><span class="n">m_Pen</span><span class="p">.</span><span class="n">nFontSize</span><span class="p">);</span>
+        <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">SetFillMode</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="n">pDoc</span><span class="o">-&gt;</span><span class="n">GetWBId</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">//关闭白板</span>
+<span class="kt">void</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">CloseWB</span><span class="p">(</span><span class="kt">int32_t</span> <span class="n">nWBId</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">nWBId</span><span class="p">)</span> <span class="o">!=</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">IContainerView</span> <span class="o">*</span><span class="n">pContainerView</span> <span class="o">=</span> <span class="n">m_kvWhiteBoards</span><span class="p">[</span><span class="n">nWBId</span><span class="p">];</span>
+        <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">Active</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">m_pNetworkRequest</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">m_pNetworkRequest</span><span class="o">-&gt;</span><span class="n">RequestCloseWB</span><span class="p">(</span><span class="n">nWBId</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">nWBId</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">//关闭所有白板</span>
+<span class="kt">void</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">CloseAllWB</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="c1">//    WhiteBoardMap::iterator it;</span>
+<span class="c1">//    for(it = m_kvWhiteBoards.begin();it != m_kvWhiteBoards.end();it++)</span>
+<span class="c1">//    {</span>
+<span class="c1">//        IContainerView *pContainerView = it-&gt;second;</span>
+<span class="c1">//        pContainerView-&gt;Active(false);</span>
+<span class="c1">//    }</span>
+    <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+
+<span class="c1">//    if(m_pNetworkRequest &amp;&amp; m_AccessMode &gt;= WBM_ACCESS_ALL)</span>
+<span class="c1">//    {</span>
+<span class="c1">//        m_pNetworkRequest-&gt;RequestCloseAllWB();</span>
+<span class="c1">//    }</span>
+<span class="p">}</span>
+
+<span class="c1">//保存白板</span>
+<span class="kt">bool</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">SaveWB</span><span class="p">(</span><span class="kt">int32_t</span> <span class="n">nWBId</span><span class="p">,</span><span class="k">const</span> <span class="kt">wchar_t</span> <span class="o">*</span><span class="n">wszSavePath</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">nWBId</span><span class="p">)</span> <span class="o">!=</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">IDoc</span> <span class="o">*</span><span class="n">pDoc</span> <span class="o">=</span> <span class="n">m_kvWhiteBoards</span><span class="p">[</span><span class="n">m_nActiveWBId</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">GetDoc</span><span class="p">();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">pDoc</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">wszSavePath</span><span class="p">){</span>
+                <span class="k">return</span> <span class="n">pDoc</span><span class="o">-&gt;</span><span class="n">Save</span><span class="p">(</span><span class="n">wszSavePath</span><span class="p">);</span>
+            <span class="p">}</span>
+
+            <span class="n">std</span><span class="o">::</span><span class="n">wstring</span> <span class="n">strFilePath</span><span class="p">;</span>
+            <span class="n">strFilePath</span> <span class="o">+=</span> <span class="n">m_strSaveDir</span><span class="p">;</span>
+            <span class="n">strFilePath</span> <span class="o">+=</span> <span class="sa">L</span><span class="s">&quot;/&quot;</span><span class="p">;</span>
+            <span class="n">strFilePath</span> <span class="o">+=</span> <span class="n">pDoc</span><span class="o">-&gt;</span><span class="n">GetTitleName</span><span class="p">();</span>
+            <span class="k">return</span> <span class="n">pDoc</span><span class="o">-&gt;</span><span class="n">Save</span><span class="p">(</span><span class="n">strFilePath</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">//设置白板访问权限</span>
+<span class="kt">void</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">SetAccessMode</span><span class="p">(</span><span class="n">WBAccessMode</span> <span class="n">mode</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">m_AccessMode</span> <span class="o">=</span> <span class="n">mode</span><span class="p">;</span>
+    <span class="n">WhiteBoardMap</span><span class="o">::</span><span class="n">iterator</span> <span class="n">it</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">it</span> <span class="o">=</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">it</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">IContainerView</span> <span class="o">*</span><span class="n">pView</span> <span class="o">=</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span>
+        <span class="n">pView</span><span class="o">-&gt;</span><span class="n">SetAccessMode</span><span class="p">(</span><span class="n">mode</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">//设置缩放</span>
+<span class="kt">void</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">SetZoom</span><span class="p">(</span><span class="kt">int32_t</span> <span class="n">nWBId</span><span class="p">,</span><span class="kt">int</span> <span class="n">nZoom</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">nWBId</span><span class="p">)</span><span class="o">!=</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">m_kvWhiteBoards</span><span class="p">[</span><span class="n">nWBId</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">SetZoom</span><span class="p">(</span><span class="n">nZoom</span><span class="p">);</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">m_pNetworkRequest</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">m_pNetworkRequest</span><span class="o">-&gt;</span><span class="n">RequestModifyZoom</span><span class="p">(</span><span class="n">nWBId</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">nZoom</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">//获取缩放</span>
+<span class="kt">int</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">GetZoom</span><span class="p">(</span><span class="kt">int32_t</span> <span class="n">nWBId</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">nWBId</span><span class="p">)</span> <span class="o">!=</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">m_kvWhiteBoards</span><span class="p">[</span><span class="n">nWBId</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">GetZoom</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">//设置当前绘图工具</span>
+<span class="kt">void</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">SetDrawTool</span><span class="p">(</span><span class="kt">int</span> <span class="n">nTool</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">m_nCurTool</span> <span class="o">=</span> <span class="n">nTool</span><span class="p">;</span>
+    <span class="n">WhiteBoardMap</span><span class="o">::</span><span class="n">iterator</span> <span class="n">it</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">it</span> <span class="o">=</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">it</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">IContainerView</span> <span class="o">*</span><span class="n">pView</span> <span class="o">=</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span>
+        <span class="n">pView</span><span class="o">-&gt;</span><span class="n">SetDrawTool</span><span class="p">(</span><span class="n">nTool</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">GetDrawTool</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">m_nCurTool</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">//设置线条宽度</span>
+<span class="kt">void</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">SetLineWidth</span><span class="p">(</span><span class="kt">int</span> <span class="n">nWidth</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">m_Pen</span><span class="p">.</span><span class="n">nWidth</span> <span class="o">=</span> <span class="n">nWidth</span><span class="p">;</span>
+    <span class="n">WhiteBoardMap</span><span class="o">::</span><span class="n">iterator</span> <span class="n">it</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">it</span> <span class="o">=</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">it</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">IContainerView</span> <span class="o">*</span><span class="n">pView</span> <span class="o">=</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span>
+        <span class="n">pView</span><span class="o">-&gt;</span><span class="n">SetLineWidth</span><span class="p">(</span><span class="n">nWidth</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">//设置字体大小</span>
+<span class="kt">void</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">SetFontSize</span><span class="p">(</span><span class="kt">int</span> <span class="n">nFontSize</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">m_Pen</span><span class="p">.</span><span class="n">nFontSize</span> <span class="o">=</span> <span class="n">nFontSize</span><span class="p">;</span>
+    <span class="n">WhiteBoardMap</span><span class="o">::</span><span class="n">iterator</span> <span class="n">it</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">it</span> <span class="o">=</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">it</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">IContainerView</span> <span class="o">*</span><span class="n">pView</span> <span class="o">=</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span>
+        <span class="n">pView</span><span class="o">-&gt;</span><span class="n">SetFontSize</span><span class="p">(</span><span class="n">nFontSize</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">//设置颜色</span>
+<span class="kt">void</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">SetColorRgba</span><span class="p">(</span><span class="kt">int</span> <span class="n">r</span><span class="p">,</span><span class="kt">int</span> <span class="n">g</span><span class="p">,</span><span class="kt">int</span> <span class="n">b</span><span class="p">,</span><span class="kt">int</span> <span class="n">a</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">m_Pen</span><span class="p">.</span><span class="n">color</span><span class="p">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">r</span><span class="p">;</span>
+    <span class="n">m_Pen</span><span class="p">.</span><span class="n">color</span><span class="p">.</span><span class="n">g</span> <span class="o">=</span> <span class="n">g</span><span class="p">;</span>
+    <span class="n">m_Pen</span><span class="p">.</span><span class="n">color</span><span class="p">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+    <span class="n">m_Pen</span><span class="p">.</span><span class="n">color</span><span class="p">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+    <span class="n">WhiteBoardMap</span><span class="o">::</span><span class="n">iterator</span> <span class="n">it</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">it</span> <span class="o">=</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">it</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">IContainerView</span> <span class="o">*</span><span class="n">pView</span> <span class="o">=</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span>
+        <span class="n">pView</span><span class="o">-&gt;</span><span class="n">SetColorRgba</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">//设置填充</span>
+<span class="kt">void</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">SetFillMode</span><span class="p">(</span><span class="kt">bool</span> <span class="n">bFill</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">m_Pen</span><span class="p">.</span><span class="n">bFill</span> <span class="o">=</span> <span class="n">bFill</span><span class="p">;</span>
+    <span class="n">WhiteBoardMap</span><span class="o">::</span><span class="n">iterator</span> <span class="n">it</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">it</span> <span class="o">=</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">it</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">IContainerView</span> <span class="o">*</span><span class="n">pView</span> <span class="o">=</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span>
+        <span class="n">pView</span><span class="o">-&gt;</span><span class="n">SetFillMode</span><span class="p">(</span><span class="n">bFill</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">//设置线条样式</span>
+<span class="kt">void</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">SetLineStyle</span><span class="p">(</span><span class="n">LineStyle</span> <span class="n">lineStyle</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">m_Pen</span><span class="p">.</span><span class="n">lineStyle</span> <span class="o">=</span> <span class="n">lineStyle</span><span class="p">;</span>
+    <span class="n">WhiteBoardMap</span><span class="o">::</span><span class="n">iterator</span> <span class="n">it</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">it</span> <span class="o">=</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">it</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">IContainerView</span> <span class="o">*</span><span class="n">pView</span> <span class="o">=</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span>
+        <span class="n">pView</span><span class="o">-&gt;</span><span class="n">SetLineStyle</span><span class="p">(</span><span class="n">lineStyle</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">//获取线宽度</span>
+<span class="kt">int</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">GetLineWidth</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">m_Pen</span><span class="p">.</span><span class="n">nWidth</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">//获取字体大小</span>
+<span class="kt">int</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">GetFontSize</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">m_Pen</span><span class="p">.</span><span class="n">nFontSize</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">//获取颜色</span>
+<span class="kt">int32_t</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">GetColorRgba</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">m_Pen</span><span class="p">.</span><span class="n">color</span><span class="p">.</span><span class="n">toRGBA</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">//是否填充</span>
+<span class="kt">bool</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">GetFillMode</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">m_Pen</span><span class="p">.</span><span class="n">bFill</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">//获取线条样式</span>
+<span class="n">LineStyle</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">GetLineStyle</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">m_Pen</span><span class="p">.</span><span class="n">lineStyle</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="c1">//保存激活的白板</span>
+<span class="kt">bool</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">SaveActiveWB</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">m_nActiveWBId</span><span class="p">)</span> <span class="o">!=</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+	<span class="p">{</span>
+		<span class="n">IDoc</span> <span class="o">*</span><span class="n">pDoc</span> <span class="o">=</span> <span class="n">m_kvWhiteBoards</span><span class="p">[</span><span class="n">m_nActiveWBId</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">GetDoc</span><span class="p">();</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pDoc</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">std</span><span class="o">::</span><span class="n">wstring</span> <span class="n">strFilePath</span><span class="p">;</span>
+			<span class="n">strFilePath</span> <span class="o">+=</span> <span class="n">m_strSaveDir</span><span class="p">;</span>
+			<span class="n">strFilePath</span> <span class="o">+=</span> <span class="sa">L</span><span class="s">&quot;/&quot;</span><span class="p">;</span>
+			<span class="n">strFilePath</span> <span class="o">+=</span> <span class="n">pDoc</span><span class="o">-&gt;</span><span class="n">GetTitleName</span><span class="p">();</span>
+            <span class="k">return</span> <span class="n">pDoc</span><span class="o">-&gt;</span><span class="n">Save</span><span class="p">(</span><span class="n">strFilePath</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">//设置激活哪个白板</span>
+ <span class="kt">void</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">SetActiveWB</span><span class="p">(</span><span class="kt">int32_t</span> <span class="n">nWBId</span><span class="p">)</span>
+ <span class="p">{</span>
+     <span class="n">m_nActiveWBId</span> <span class="o">=</span> <span class="n">nWBId</span><span class="p">;</span>
+	 <span class="n">WhiteBoardMap</span><span class="o">::</span><span class="n">iterator</span> <span class="n">it</span><span class="p">;</span>
+     <span class="k">for</span> <span class="p">(</span><span class="n">it</span> <span class="o">=</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="n">it</span><span class="o">++</span><span class="p">)</span>
+	 <span class="p">{</span>
+		 <span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span><span class="o">-&gt;</span><span class="n">Active</span><span class="p">(</span><span class="n">nWBId</span> <span class="o">==</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">first</span><span class="p">);</span>
+
+         <span class="k">if</span><span class="p">(</span><span class="n">m_pNetworkRequest</span> <span class="o">&amp;&amp;</span> <span class="n">nWBId</span> <span class="o">==</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">first</span><span class="p">)</span>
+         <span class="p">{</span>
+            <span class="n">m_pNetworkRequest</span><span class="o">-&gt;</span><span class="n">RequestActiveWB</span><span class="p">(</span><span class="n">nWBId</span><span class="p">);</span>
+         <span class="p">}</span>
+	 <span class="p">}</span>
+ <span class="p">}</span>
+
+<span class="c1">//获取激活的白板是哪一个</span>
+ <span class="kt">int32_t</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">GetActiveWB</span><span class="p">()</span>
+ <span class="p">{</span>
+	 <span class="k">return</span> <span class="n">m_nActiveWBId</span><span class="p">;</span>
+ <span class="p">}</span>
+
+<span class="c1">//获取一个白板内有多少页</span>
+ <span class="kt">int</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">GetWBPageCount</span><span class="p">(</span><span class="kt">int32_t</span> <span class="n">nWBId</span><span class="p">)</span>
+ <span class="p">{</span>
+	 <span class="k">if</span> <span class="p">(</span><span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">nWBId</span><span class="p">)</span> <span class="o">!=</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+	 <span class="p">{</span>
+		 <span class="k">return</span> <span class="n">m_kvWhiteBoards</span><span class="p">[</span><span class="n">nWBId</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">GetDoc</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetPageCount</span><span class="p">();</span>
+	 <span class="p">}</span>
+	 <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+ <span class="p">}</span>
+
+<span class="c1">//获取一共有多少个白板</span>
+ <span class="kt">int</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">GetWBCount</span><span class="p">()</span>
+ <span class="p">{</span>
+	 <span class="k">return</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+ <span class="p">}</span>
+
+ <span class="kt">void</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">Initialized</span><span class="p">(</span><span class="n">IWhiteBoardPlatformDelegate</span> <span class="o">*</span><span class="n">pDelegate</span><span class="p">,</span><span class="kt">void</span><span class="o">*</span> <span class="n">pParentView</span><span class="p">,</span><span class="kt">int</span> <span class="n">nWidth</span><span class="p">,</span><span class="kt">int</span> <span class="n">nHeight</span><span class="p">)</span>
+ <span class="p">{</span>
+    <span class="n">m_pParentView</span> <span class="o">=</span> <span class="n">pParentView</span><span class="p">;</span>
+    <span class="n">m_nViewWidth</span> <span class="o">=</span> <span class="n">nWidth</span><span class="p">;</span>
+    <span class="n">m_nViewHeight</span> <span class="o">=</span> <span class="n">nHeight</span><span class="p">;</span>
+    <span class="n">m_pDelegate</span> <span class="o">=</span> <span class="n">pDelegate</span><span class="p">;</span>
+ <span class="p">}</span>
+
+ <span class="c1">//消息分发</span>
+ <span class="kt">void</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">DispatchNotifyMessage</span><span class="p">()</span>
+ <span class="p">{</span>
+    <span class="n">m_NotifyDispatch</span><span class="p">.</span><span class="n">DispatchNotifyMessage</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+ <span class="p">}</span>
+
+ <span class="c1">//注册消息监听</span>
+ <span class="kt">void</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">RegNotifyMessage</span><span class="p">(</span><span class="n">INotifyMessageListener</span> <span class="o">*</span><span class="n">pListener</span><span class="p">)</span>
+ <span class="p">{</span>
+    <span class="n">m_NotifyDispatch</span><span class="p">.</span><span class="n">RegNotifyMessage</span><span class="p">(</span><span class="n">pListener</span><span class="p">);</span>
+ <span class="p">}</span>
+
+ <span class="c1">//注销消息监听</span>
+ <span class="kt">void</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">UnRegNotifyMessage</span><span class="p">(</span><span class="n">INotifyMessageListener</span> <span class="o">*</span><span class="n">pListener</span><span class="p">)</span>
+ <span class="p">{</span>
+    <span class="n">m_NotifyDispatch</span><span class="p">.</span><span class="n">UnRegNotifyMessage</span><span class="p">(</span><span class="n">pListener</span><span class="p">);</span>
+ <span class="p">}</span>
+
+ <span class="c1">//投递消息</span>
+ <span class="kt">void</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">PostNotifyMessage</span><span class="p">(</span><span class="kt">int32_t</span> <span class="n">nWBId</span><span class="p">,</span><span class="kt">int32_t</span> <span class="n">nMsgId</span><span class="p">,</span><span class="kt">int64_t</span> <span class="n">nParam1</span><span class="p">,</span><span class="kt">int64_t</span> <span class="n">nParam2</span><span class="p">)</span>
+ <span class="p">{</span>
+    <span class="n">m_NotifyDispatch</span><span class="p">.</span><span class="n">PostNotifyMessage</span><span class="p">(</span><span class="n">nWBId</span><span class="p">,</span><span class="n">nMsgId</span><span class="p">,</span><span class="n">nParam1</span><span class="p">,</span><span class="n">nParam2</span><span class="p">);</span>
+    <span class="k">this</span><span class="o">-&gt;</span><span class="n">DispatchNotifyMessage</span><span class="p">();</span>
+ <span class="p">}</span>
+
+ <span class="kt">bool</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">OnNotifyMessageRecv</span><span class="p">(</span><span class="kt">int32_t</span> <span class="n">nWBId</span><span class="p">,</span><span class="kt">int32_t</span> <span class="n">nMsgId</span><span class="p">,</span><span class="kt">int64_t</span> <span class="n">nParam1</span><span class="p">,</span><span class="kt">int64_t</span> <span class="n">nParam2</span><span class="p">)</span>
+ <span class="p">{</span>
+     <span class="k">if</span><span class="p">(</span><span class="n">m_pNetworkRequest</span><span class="p">)</span>
+     <span class="p">{</span>
+         <span class="k">switch</span> <span class="p">(</span><span class="n">nMsgId</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">case</span> <span class="nl">MSGID_ADD_OBJECT</span><span class="p">:</span>
+             <span class="n">m_pNetworkRequest</span><span class="o">-&gt;</span><span class="n">RequestAddDrawObject</span><span class="p">(</span><span class="n">nWBId</span><span class="p">,</span><span class="n">nParam1</span><span class="p">,(</span><span class="n">IDrawObject</span><span class="o">*</span><span class="p">)</span><span class="n">nParam2</span><span class="p">);</span>
+             <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+         <span class="k">case</span> <span class="nl">MSGID_MODIFY_OBJECT</span><span class="p">:</span>
+             <span class="n">m_pNetworkRequest</span><span class="o">-&gt;</span><span class="n">RequestModifyDrawObject</span><span class="p">(</span><span class="n">nWBId</span><span class="p">,</span><span class="n">nParam1</span><span class="p">,(</span><span class="n">IDrawObject</span><span class="o">*</span><span class="p">)</span><span class="n">nParam2</span><span class="p">);</span>
+             <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+         <span class="k">case</span> <span class="nl">MSGID_MODIFY_INDICATOR</span><span class="p">:</span>
+             <span class="n">m_pNetworkRequest</span><span class="o">-&gt;</span><span class="n">RequestModifyIndicator</span><span class="p">(</span><span class="n">nWBId</span><span class="p">,</span><span class="n">nParam1</span><span class="p">,</span><span class="n">nParam2</span><span class="p">);</span>
+             <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+         <span class="k">case</span> <span class="nl">MSGID_MODIFY_SCROLL</span><span class="p">:</span>
+             <span class="n">m_pNetworkRequest</span><span class="o">-&gt;</span><span class="n">RequestModifyScroll</span><span class="p">(</span><span class="n">nWBId</span><span class="p">,</span><span class="n">nParam1</span><span class="p">,</span><span class="n">nParam2</span><span class="p">);</span>
+             <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+         <span class="k">case</span> <span class="nl">MSGID_DEL_OBJECT</span><span class="p">:</span>
+             <span class="n">m_pNetworkRequest</span><span class="o">-&gt;</span><span class="n">RequestDelDrawObject</span><span class="p">(</span><span class="n">nWBId</span><span class="p">,</span><span class="n">nParam1</span><span class="p">,</span><span class="n">nParam2</span><span class="p">);</span>
+             <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+         <span class="p">}</span>
+     <span class="p">}</span>
+
+     <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+ <span class="p">}</span>
+
+
+ <span class="c1">//------------------------------------- 服务器响应 --------------------------------------------------------------</span>
+
+ <span class="c1">//激活白板</span>
+ <span class="kt">void</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">ResponseActiveWB</span><span class="p">(</span><span class="kt">int32_t</span> <span class="n">nWBId</span><span class="p">)</span>
+ <span class="p">{</span>
+     <span class="n">m_nActiveWBId</span> <span class="o">=</span> <span class="n">nWBId</span><span class="p">;</span>
+
+     <span class="k">if</span><span class="p">(</span><span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">nWBId</span><span class="p">)</span> <span class="o">==</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">end</span><span class="p">()){</span>
+        <span class="k">return</span><span class="p">;</span>
+     <span class="p">}</span>
+
+     <span class="n">WhiteBoardMap</span><span class="o">::</span><span class="n">iterator</span> <span class="n">it</span><span class="p">;</span>
+     <span class="k">for</span> <span class="p">(</span><span class="n">it</span> <span class="o">=</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="n">it</span><span class="o">++</span><span class="p">)</span>
+     <span class="p">{</span>
+         <span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span><span class="o">-&gt;</span><span class="n">Active</span><span class="p">(</span><span class="n">nWBId</span> <span class="o">==</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">first</span><span class="p">);</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+
+ <span class="c1">//关闭所有白板</span>
+ <span class="kt">void</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">ResponseClearAllWB</span><span class="p">()</span>
+ <span class="p">{</span>
+     <span class="n">WhiteBoardMap</span><span class="o">::</span><span class="n">iterator</span> <span class="n">it</span><span class="p">;</span>
+     <span class="k">for</span><span class="p">(</span><span class="n">it</span> <span class="o">=</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="n">it</span> <span class="o">!=</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="n">it</span><span class="o">++</span><span class="p">)</span>
+     <span class="p">{</span>
+         <span class="n">IContainerView</span> <span class="o">*</span><span class="n">pContainerView</span> <span class="o">=</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span>
+         <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">Active</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+     <span class="p">}</span>
+     <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+ <span class="p">}</span>
+
+ <span class="c1">//关闭白板</span>
+ <span class="kt">void</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">ResponseCloseWB</span><span class="p">(</span><span class="kt">int32_t</span> <span class="n">nWBId</span><span class="p">)</span>
+ <span class="p">{</span>
+     <span class="k">if</span><span class="p">(</span><span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">nWBId</span><span class="p">)</span> <span class="o">!=</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+     <span class="p">{</span>
+         <span class="n">IContainerView</span> <span class="o">*</span><span class="n">pContainerView</span> <span class="o">=</span> <span class="n">m_kvWhiteBoards</span><span class="p">[</span><span class="n">nWBId</span><span class="p">];</span>
+         <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">Active</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+         <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">nWBId</span><span class="p">);</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+
+ <span class="c1">//删除图元</span>
+ <span class="kt">void</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">ResponseDelDrawObj</span><span class="p">(</span><span class="kt">int32_t</span> <span class="n">nWBId</span><span class="p">,</span><span class="kt">int</span> <span class="n">nPage</span><span class="p">,</span><span class="kt">int32_t</span> <span class="n">nObjId</span><span class="p">)</span>
+ <span class="p">{</span>
+     <span class="k">if</span><span class="p">(</span><span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">nWBId</span><span class="p">)</span> <span class="o">!=</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+     <span class="p">{</span>
+         <span class="n">IContainerView</span> <span class="o">*</span><span class="n">pContainerView</span> <span class="o">=</span> <span class="n">m_kvWhiteBoards</span><span class="p">[</span><span class="n">nWBId</span><span class="p">];</span>
+         <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">GetDoc</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetPage</span><span class="p">(</span><span class="n">nPage</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">DelDrawObject</span><span class="p">(</span><span class="n">nObjId</span><span class="p">);</span>
+         <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">InValidate</span><span class="p">();</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+
+ <span class="c1">//添加白板</span>
+ <span class="kt">void</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">ResponseAddWB</span><span class="p">(</span><span class="kt">int32_t</span> <span class="n">nWBId</span><span class="p">,</span><span class="kt">int</span> <span class="n">nDocType</span><span class="p">,</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">szWBName</span><span class="p">)</span>
+ <span class="p">{</span>
+    <span class="k">this</span><span class="o">-&gt;</span><span class="n">OpenRemoteWB</span><span class="p">(</span><span class="n">nWBId</span><span class="p">);</span>
+ <span class="p">}</span>
+
+ <span class="c1">//缩放白板</span>
+ <span class="kt">void</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">ResponseZoomWB</span><span class="p">(</span><span class="kt">int32_t</span> <span class="n">nWBId</span><span class="p">,</span><span class="kt">int</span> <span class="n">nPage</span><span class="p">,</span><span class="kt">int</span> <span class="n">nZoom</span><span class="p">)</span>
+ <span class="p">{</span>
+     <span class="k">if</span> <span class="p">(</span><span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">nWBId</span><span class="p">)</span> <span class="o">!=</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">end</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">nZoom</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+     <span class="p">{</span>
+         <span class="n">IContainerView</span> <span class="o">*</span><span class="n">pContainer</span> <span class="o">=</span> <span class="n">m_kvWhiteBoards</span><span class="p">[</span><span class="n">nWBId</span><span class="p">];</span>
+         <span class="n">pContainer</span><span class="o">-&gt;</span><span class="n">SetCurView</span><span class="p">(</span><span class="n">nPage</span><span class="p">);</span>
+         <span class="n">pContainer</span><span class="o">-&gt;</span><span class="n">SetZoom</span><span class="p">(</span><span class="n">nZoom</span><span class="p">);</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+
+ <span class="c1">//旋转白板</span>
+ <span class="kt">void</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">ResponseAngleWB</span><span class="p">(</span><span class="kt">int32_t</span> <span class="n">nWBId</span><span class="p">,</span><span class="kt">int</span> <span class="n">nAngle</span><span class="p">)</span>
+ <span class="p">{</span>
+
+ <span class="p">}</span>
+
+ <span class="c1">//白板背景色</span>
+ <span class="kt">void</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">ResponseWBBackgroundColor</span><span class="p">(</span><span class="kt">int32_t</span> <span class="n">nWBId</span><span class="p">,</span><span class="kt">int</span> <span class="n">r</span><span class="p">,</span><span class="kt">int</span> <span class="n">g</span><span class="p">,</span><span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+ <span class="p">{</span>
+
+ <span class="p">}</span>
+
+ <span class="c1">//滚动条同步</span>
+ <span class="kt">void</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">ResponseScroll</span><span class="p">(</span><span class="kt">int32_t</span> <span class="n">nWBId</span><span class="p">,</span><span class="kt">int</span> <span class="n">nX</span><span class="p">,</span><span class="kt">int</span> <span class="n">nY</span><span class="p">)</span>
+ <span class="p">{</span>
+     <span class="k">if</span> <span class="p">(</span><span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">nWBId</span><span class="p">)</span> <span class="o">!=</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+     <span class="p">{</span>
+          <span class="n">m_kvWhiteBoards</span><span class="p">[</span><span class="n">nWBId</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">OnNetScroll</span><span class="p">(</span><span class="n">nX</span><span class="p">,</span><span class="n">nY</span><span class="p">);</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+
+ <span class="c1">//指示器(光标)同步位置</span>
+ <span class="kt">void</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">ResponseIndicatorPos</span><span class="p">(</span><span class="kt">int32_t</span> <span class="n">nWBId</span><span class="p">,</span><span class="kt">int</span> <span class="n">nX</span><span class="p">,</span><span class="kt">int</span> <span class="n">nY</span><span class="p">)</span>
+ <span class="p">{</span>
+
+ <span class="p">}</span>
+
+ <span class="c1">//添加图元</span>
+ <span class="kt">void</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">ResponseAddDrawObject</span><span class="p">(</span><span class="kt">int32_t</span> <span class="n">nWBId</span><span class="p">,</span><span class="kt">int</span> <span class="n">nPage</span><span class="p">,</span><span class="kt">int</span> <span class="n">nObjId</span><span class="p">,</span><span class="kt">int</span> <span class="n">nObjType</span><span class="p">,</span><span class="kt">int</span> <span class="n">nLineStyle</span><span class="p">,</span><span class="kt">int</span> <span class="n">nLineWidth</span><span class="p">,</span><span class="kt">int32_t</span> <span class="n">nRgbaLineColor</span><span class="p">,</span><span class="n">std</span><span class="o">::</span><span class="n">deque</span><span class="o">&lt;</span><span class="n">Point_t</span><span class="o">&gt;&amp;</span> <span class="n">dqPoints</span><span class="p">)</span>
+ <span class="p">{</span>
+     <span class="k">if</span><span class="p">(</span><span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">nWBId</span><span class="p">)</span> <span class="o">!=</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+     <span class="p">{</span>
+         <span class="n">IContainerView</span> <span class="o">*</span><span class="n">pContainerView</span> <span class="o">=</span> <span class="n">m_kvWhiteBoards</span><span class="p">[</span><span class="n">nWBId</span><span class="p">];</span>
+         <span class="n">IPage</span> <span class="o">*</span><span class="n">pPage</span> <span class="o">=</span> <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">GetDoc</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetPage</span><span class="p">(</span><span class="n">nPage</span><span class="p">);</span>
+         <span class="k">if</span><span class="p">(</span><span class="n">pPage</span><span class="p">)</span>
+         <span class="p">{</span>
+            <span class="n">IDrawObject</span> <span class="o">*</span><span class="n">pDrawObj</span> <span class="o">=</span> <span class="n">pPage</span><span class="o">-&gt;</span><span class="n">NewDrawObject</span><span class="p">(</span><span class="n">nObjType</span><span class="p">);</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">pDrawObj</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">pPage</span><span class="o">-&gt;</span><span class="n">AddDrawObject</span><span class="p">(</span><span class="n">pDrawObj</span><span class="p">);</span>
+                <span class="n">pDrawObj</span><span class="o">-&gt;</span><span class="n">SetObjectId</span><span class="p">(</span><span class="n">nObjId</span><span class="p">);</span>
+                <span class="n">pDrawObj</span><span class="o">-&gt;</span><span class="n">SetLineWidth</span><span class="p">(</span><span class="n">nLineWidth</span><span class="p">);</span>
+                <span class="n">Color_t</span> <span class="n">cr</span><span class="p">;</span>
+                <span class="n">cr</span><span class="p">.</span><span class="n">fromRGBA</span><span class="p">(</span><span class="n">nRgbaLineColor</span><span class="p">);</span>
+                <span class="n">pDrawObj</span><span class="o">-&gt;</span><span class="n">SetColorRgba</span><span class="p">(</span><span class="n">cr</span><span class="p">.</span><span class="n">r</span><span class="p">,</span><span class="n">cr</span><span class="p">.</span><span class="n">g</span><span class="p">,</span><span class="n">cr</span><span class="p">.</span><span class="n">b</span><span class="p">,</span><span class="n">cr</span><span class="p">.</span><span class="n">a</span><span class="p">);</span>
+                <span class="n">pDrawObj</span><span class="o">-&gt;</span><span class="n">SetLineStyle</span><span class="p">((</span><span class="n">LineStyle</span><span class="p">)</span><span class="n">nLineStyle</span><span class="p">);</span>
+                <span class="n">std</span><span class="o">::</span><span class="n">deque</span><span class="o">&lt;</span><span class="n">Point_t</span><span class="o">&gt;*</span> <span class="n">pDqData</span> <span class="o">=</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">deque</span><span class="o">&lt;</span><span class="n">Point_t</span><span class="o">&gt;*</span><span class="p">)</span><span class="n">pDrawObj</span><span class="o">-&gt;</span><span class="n">GetData</span><span class="p">();</span>
+
+                <span class="k">if</span><span class="p">(</span><span class="n">pDqData</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">pDqData</span><span class="o">-&gt;</span><span class="n">assign</span><span class="p">(</span><span class="n">dqPoints</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">dqPoints</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+                <span class="p">}</span>
+
+                <span class="n">pDrawObj</span><span class="o">-&gt;</span><span class="n">RefreshBodyRect</span><span class="p">();</span>
+                <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">InValidate</span><span class="p">();</span>
+            <span class="p">}</span>
+
+         <span class="p">}</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+
+ <span class="c1">//修改图元</span>
+ <span class="kt">void</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">ResponseModifyDrawObject</span><span class="p">(</span><span class="kt">int32_t</span> <span class="n">nWBId</span><span class="p">,</span><span class="kt">int</span> <span class="n">nPage</span><span class="p">,</span><span class="kt">int</span> <span class="n">nObjId</span><span class="p">,</span><span class="kt">int</span> <span class="n">nObjType</span><span class="p">,</span><span class="kt">int</span> <span class="n">nLineStyle</span><span class="p">,</span><span class="kt">int</span> <span class="n">nLineWidth</span><span class="p">,</span><span class="kt">int32_t</span> <span class="n">nRgbaLineColor</span><span class="p">,</span><span class="n">std</span><span class="o">::</span><span class="n">deque</span><span class="o">&lt;</span><span class="n">Point_t</span><span class="o">&gt;&amp;</span> <span class="n">dqPoints</span><span class="p">)</span>
+ <span class="p">{</span>
+     <span class="k">if</span><span class="p">(</span><span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">nWBId</span><span class="p">)</span> <span class="o">!=</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+     <span class="p">{</span>
+         <span class="n">IContainerView</span> <span class="o">*</span><span class="n">pContainerView</span> <span class="o">=</span> <span class="n">m_kvWhiteBoards</span><span class="p">[</span><span class="n">nWBId</span><span class="p">];</span>
+         <span class="n">IPage</span> <span class="o">*</span><span class="n">pPage</span> <span class="o">=</span> <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">GetDoc</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetPage</span><span class="p">(</span><span class="n">nPage</span><span class="p">);</span>
+         <span class="k">if</span><span class="p">(</span><span class="n">pPage</span><span class="p">)</span>
+         <span class="p">{</span>
+            <span class="n">IDrawObject</span> <span class="o">*</span><span class="n">pDrawObj</span> <span class="o">=</span> <span class="n">pPage</span><span class="o">-&gt;</span><span class="n">GetDrawObject</span><span class="p">(</span><span class="n">nObjId</span><span class="p">);</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">pDrawObj</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">pDrawObj</span><span class="o">-&gt;</span><span class="n">SetObjectId</span><span class="p">(</span><span class="n">nObjId</span><span class="p">);</span>
+                <span class="n">pDrawObj</span><span class="o">-&gt;</span><span class="n">SetLineWidth</span><span class="p">(</span><span class="n">nLineWidth</span><span class="p">);</span>
+                <span class="n">Color_t</span> <span class="n">cr</span><span class="p">;</span>
+                <span class="n">cr</span><span class="p">.</span><span class="n">fromRGBA</span><span class="p">(</span><span class="n">nRgbaLineColor</span><span class="p">);</span>
+                <span class="n">pDrawObj</span><span class="o">-&gt;</span><span class="n">SetColorRgba</span><span class="p">(</span><span class="n">cr</span><span class="p">.</span><span class="n">r</span><span class="p">,</span><span class="n">cr</span><span class="p">.</span><span class="n">g</span><span class="p">,</span><span class="n">cr</span><span class="p">.</span><span class="n">b</span><span class="p">,</span><span class="n">cr</span><span class="p">.</span><span class="n">a</span><span class="p">);</span>
+                <span class="n">pDrawObj</span><span class="o">-&gt;</span><span class="n">SetLineStyle</span><span class="p">((</span><span class="n">LineStyle</span><span class="p">)</span><span class="n">nLineStyle</span><span class="p">);</span>
+                <span class="n">std</span><span class="o">::</span><span class="n">deque</span><span class="o">&lt;</span><span class="n">Point_t</span><span class="o">&gt;*</span> <span class="n">pDqData</span> <span class="o">=</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">deque</span><span class="o">&lt;</span><span class="n">Point_t</span><span class="o">&gt;*</span><span class="p">)</span><span class="n">pDrawObj</span><span class="o">-&gt;</span><span class="n">GetData</span><span class="p">();</span>
+
+                <span class="k">if</span><span class="p">(</span><span class="n">pDqData</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">pDqData</span><span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+                    <span class="n">pDqData</span><span class="o">-&gt;</span><span class="n">assign</span><span class="p">(</span><span class="n">dqPoints</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">dqPoints</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+                <span class="p">}</span>
+                <span class="n">pDrawObj</span><span class="o">-&gt;</span><span class="n">RefreshBodyRect</span><span class="p">();</span>
+                <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">InValidate</span><span class="p">();</span>
+            <span class="p">}</span>
+
+         <span class="p">}</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+
+ <span class="c1">//关闭指定白板的所有页</span>
+ <span class="kt">void</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">ResponseCloseAllPage</span><span class="p">(</span><span class="kt">int32_t</span> <span class="n">nWBId</span><span class="p">)</span>
+ <span class="p">{</span>
+     <span class="k">if</span><span class="p">(</span><span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">nWBId</span><span class="p">)</span> <span class="o">!=</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+     <span class="p">{</span>
+        <span class="n">IContainerView</span> <span class="o">*</span><span class="n">pContainerView</span> <span class="o">=</span> <span class="n">m_kvWhiteBoards</span><span class="p">[</span><span class="n">nWBId</span><span class="p">];</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">GetViewsCount</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">DelView</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">GetDoc</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetPageCount</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+            <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">GetDoc</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">DelPage</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+        <span class="p">}</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+
+ <span class="c1">//给指定白板增加页</span>
+ <span class="kt">void</span> <span class="n">CEZWhiteBoard</span><span class="o">::</span><span class="n">ResponseAddPage</span><span class="p">(</span><span class="kt">int32_t</span> <span class="n">nWBId</span><span class="p">,</span><span class="kt">int</span> <span class="n">nWidth</span><span class="p">,</span><span class="kt">int</span> <span class="n">nHeight</span><span class="p">,</span><span class="kt">int</span> <span class="n">nPageType</span><span class="p">)</span>
+ <span class="p">{</span>
+     <span class="k">if</span><span class="p">(</span><span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">nWBId</span><span class="p">)</span> <span class="o">!=</span> <span class="n">m_kvWhiteBoards</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+     <span class="p">{</span>
+        <span class="n">IContainerView</span> <span class="o">*</span><span class="n">pContainerView</span> <span class="o">=</span> <span class="n">m_kvWhiteBoards</span><span class="p">[</span><span class="n">nWBId</span><span class="p">];</span>
+        <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">CreateView</span><span class="p">(</span><span class="n">nWidth</span><span class="p">,</span><span class="n">nHeight</span><span class="p">);</span>
+        <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">Active</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+        <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">SetAccessMode</span><span class="p">(</span><span class="n">m_AccessMode</span><span class="p">);</span>
+
+        <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">SetDrawTool</span><span class="p">(</span><span class="n">m_nCurTool</span><span class="p">);</span>
+        <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">SetLineStyle</span><span class="p">(</span><span class="n">m_Pen</span><span class="p">.</span><span class="n">lineStyle</span><span class="p">);</span>
+        <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">SetColorRgba</span><span class="p">(</span><span class="n">m_Pen</span><span class="p">.</span><span class="n">color</span><span class="p">.</span><span class="n">r</span><span class="p">,</span><span class="n">m_Pen</span><span class="p">.</span><span class="n">color</span><span class="p">.</span><span class="n">g</span><span class="p">,</span><span class="n">m_Pen</span><span class="p">.</span><span class="n">color</span><span class="p">.</span><span class="n">b</span><span class="p">,</span><span class="n">m_Pen</span><span class="p">.</span><span class="n">color</span><span class="p">.</span><span class="n">a</span><span class="p">);</span>
+        <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">SetLineWidth</span><span class="p">(</span><span class="n">m_Pen</span><span class="p">.</span><span class="n">nWidth</span><span class="p">);</span>
+        <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">SetFontSize</span><span class="p">(</span><span class="n">m_Pen</span><span class="p">.</span><span class="n">nFontSize</span><span class="p">);</span>
+        <span class="n">pContainerView</span><span class="o">-&gt;</span><span class="n">SetFillMode</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+</pre></div>
+</body>
+</html>

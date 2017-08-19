@@ -1,0 +1,521 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 } /* Comment.Preproc */
+body .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #888888 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0044DD } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #AA22FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+body .nf { color: #0000FF } /* Name.Function */
+body .nl { color: #A0A000 } /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mb { color: #666666 } /* Literal.Number.Bin */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sa { color: #BA2121 } /* Literal.String.Affix */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .dl { color: #BA2121 } /* Literal.String.Delimiter */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #BB6688 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .fm { color: #0000FF } /* Name.Function.Magic */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .vm { color: #19177C } /* Name.Variable.Magic */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">definedEditMethod</span><span class="o">=</span><span class="p">{</span>
+		
+	<span class="c1">//数据保存成功后</span>
+	<span class="nx">returnSuccess</span><span class="o">:</span><span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">alert</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#myModal&quot;</span><span class="p">).</span><span class="nx">modal</span><span class="p">(</span><span class="s2">&quot;hide&quot;</span><span class="p">);</span>
+	<span class="p">},</span>
+	<span class="c1">//数据保存失败后</span>
+	<span class="nx">returnFail</span><span class="o">:</span><span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#formEdit&#39;</span><span class="p">).</span><span class="nx">bootstrapValidator</span><span class="p">(</span><span class="s1">&#39;disableSubmitButtons&#39;</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+	<span class="p">},</span>
+	<span class="c1">//提交前校验</span>
+	<span class="nx">submitCheck</span><span class="o">:</span><span class="kd">function</span> <span class="p">(</span><span class="nx">model</span><span class="p">)</span> <span class="p">{</span>
+		<span class="c1">//验证会议室名是否为空</span>
+		<span class="k">if</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">roomName</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(^\s+|\s+$)/g</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">){</span>
+			<span class="nx">alert</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.roomnameempty&#39;</span><span class="p">));</span>
+			<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;[name=txt_roomName]&quot;</span><span class="p">).</span><span class="nx">focus</span><span class="p">();</span>
+			<span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="c1">//验证会议室名规则与长度是否合法</span>
+		<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">checkRoomName</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">roomName</span><span class="p">)){</span>
+			<span class="nx">alert</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.roomnameformaterror&#39;</span><span class="p">));</span>
+			<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;[name=txt_roomName]&quot;</span><span class="p">).</span><span class="nx">focus</span><span class="p">();</span>
+			<span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="c1">//验证会议室最大人数是否为空</span>
+		<span class="k">if</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">maxUserCount</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">){</span>
+			<span class="nx">alert</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.maxusercountempty&#39;</span><span class="p">));</span>
+			<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;[name=txt_maxUserCount]&quot;</span><span class="p">).</span><span class="nx">focus</span><span class="p">();</span>
+			<span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="c1">//验证最大人数规则与大小是否合法</span>
+		<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">checkMaxUserCount</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">maxUserCount</span><span class="p">)){</span>
+			<span class="nx">alert</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.maxusercountformaterror&#39;</span><span class="p">));</span>
+			<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;[name=txt_maxUserCount]&quot;</span><span class="p">).</span><span class="nx">focus</span><span class="p">();</span>
+			<span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="c1">//如果启用主席密码不为空验证主席密码</span>
+		<span class="k">if</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">enableChairPwd</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(^\s+|\s+$)/g</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">){</span>
+			<span class="c1">//验证会议室主席密码是否为空</span>
+			<span class="k">if</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">chairPassword</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(^\s+|\s+$)/g</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">){</span>
+				<span class="nx">alert</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.chairpasswordempty&#39;</span><span class="p">));</span>
+				<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;[name=txt_chairPassword]&quot;</span><span class="p">).</span><span class="nx">focus</span><span class="p">();</span>
+				<span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+			<span class="p">}</span>
+			<span class="c1">//验证主席密码规则与大小是否合法</span>
+			<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">checkChairPassword</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">chairPassword</span><span class="p">)){</span>
+				<span class="nx">alert</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.chairpasswordformaterror&#39;</span><span class="p">));</span>
+				<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;[name=txt_chairPassword]&quot;</span><span class="p">).</span><span class="nx">focus</span><span class="p">();</span>
+				<span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+		<span class="c1">//如果登录校验模型为会议室密码登录校验会议室密码</span>
+		<span class="k">if</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">verifymode</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">){</span>
+			<span class="c1">//验证会议室密码是否为空</span>
+			<span class="k">if</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">password</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(^\s+|\s+$)/g</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">){</span>
+				<span class="nx">alert</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.passwordempty&#39;</span><span class="p">));</span>
+				<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;[name=txt_password]&quot;</span><span class="p">).</span><span class="nx">focus</span><span class="p">();</span>
+				<span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+			<span class="p">}</span>
+			<span class="c1">//验证密码规则与大小是否合法</span>
+			<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">checkPassword</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">password</span><span class="p">)){</span>
+				<span class="nx">alert</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.passwordformaterror&#39;</span><span class="p">));</span>
+				<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;[name=txt_password]&quot;</span><span class="p">).</span><span class="nx">focus</span><span class="p">();</span>
+				<span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+		<span class="c1">//校验会议室描述长度是否符合规则</span>
+		<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">checkLength</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">roomDesc</span><span class="p">,</span><span class="nx">roomDescLengthRule</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="nx">roomDescLengthRule</span><span class="p">[</span><span class="mi">1</span><span class="p">])){</span>
+			<span class="nx">alert</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.roomdesclengtherror&#39;</span><span class="p">));</span>
+			<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;[name=txt_roomDesc]&quot;</span><span class="p">).</span><span class="nx">focus</span><span class="p">();</span>
+			<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#formEdit&#39;</span><span class="p">).</span><span class="nx">bootstrapValidator</span><span class="p">(</span><span class="s1">&#39;disableSubmitButtons&#39;</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+			<span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+		<span class="p">}</span>
+		
+		<span class="c1">//如果登录校验模型为会议室密码登录校验会议室密码</span>
+		<span class="k">if</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">useDefaultFlag</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">){</span>
+			<span class="c1">//验证会议室码流是否为空</span>
+			<span class="k">if</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">defaultVideoBitrate</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">){</span>
+				<span class="nx">alert</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.defaultvideobitrateempty&#39;</span><span class="p">));</span>
+				<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;[name=txt_defaultVideoBitrate]&quot;</span><span class="p">).</span><span class="nx">focus</span><span class="p">();</span>
+				<span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+			<span class="p">}</span>
+			<span class="c1">//验证码流规则与大小是否合法</span>
+			<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">checkDefaultVideoBitrate</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">defaultVideoBitrate</span><span class="p">)){</span>
+				<span class="nx">alert</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.defaultvideobitrateformaterror&#39;</span><span class="p">));</span>
+				<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;[name=txt_defaultVideoBitrate]&quot;</span><span class="p">).</span><span class="nx">focus</span><span class="p">();</span>
+				<span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+		
+		<span class="c1">//如果会议室类型为周例会议室 并且循环模式为每月几号</span>
+		<span class="k">if</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">roomType</span> <span class="o">==</span> <span class="s2">&quot;4&quot;</span> <span class="o">&amp;&amp;</span> <span class="nx">model</span><span class="p">.</span><span class="nx">cycleFlag</span> <span class="o">==</span> <span class="s2">&quot;3&quot;</span><span class="p">){</span>
+			<span class="c1">//验证会议室每月几号是否为空</span>
+			<span class="k">if</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">dateEveyMonth</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">){</span>
+				<span class="nx">alert</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.dateeveymonthempty&#39;</span><span class="p">));</span>
+				<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;[name=txt_dateEveyMonth]&quot;</span><span class="p">).</span><span class="nx">focus</span><span class="p">();</span>
+				<span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+			<span class="p">}</span>
+			<span class="c1">//验证码流规则与大小是否合法</span>
+			<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">checkDateEveyMonth</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">dateEveyMonth</span><span class="p">)){</span>
+				<span class="nx">alert</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.dateeveymonthlengtherror&#39;</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.dateeveymontherror&#39;</span><span class="p">));</span>
+				<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;[name=txt_dateEveyMonth]&quot;</span><span class="p">).</span><span class="nx">focus</span><span class="p">();</span>
+				<span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+		
+		<span class="c1">//如果会议室类型为周例会议室 </span>
+		<span class="k">if</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">roomType</span> <span class="o">==</span> <span class="s2">&quot;4&quot;</span><span class="p">){</span>
+			<span class="c1">//验证会议室预约开始时间是否为空</span>
+			<span class="k">if</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">weekStartTime</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(^\s+|\s+$)/g</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">){</span>
+				<span class="nx">alert</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.weekstarttimeempty&#39;</span><span class="p">));</span>
+				<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;[name=txt_weekStartTime]&quot;</span><span class="p">).</span><span class="nx">focus</span><span class="p">();</span>
+				<span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+			<span class="p">}</span>
+			<span class="c1">//验证会议室预约结束时间是否为空</span>
+			<span class="k">if</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">weekEndTime</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(^\s+|\s+$)/g</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">){</span>
+				<span class="nx">alert</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.weekendtimeempty&#39;</span><span class="p">));</span>
+				<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;[name=txt_weekEndTime]&quot;</span><span class="p">).</span><span class="nx">focus</span><span class="p">();</span>
+				<span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+			<span class="p">}</span>
+			<span class="c1">//验证结束时间是否大于开始时间</span>
+			<span class="k">if</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="s2">&quot;1970/01/01&quot;</span><span class="o">+</span><span class="nx">model</span><span class="p">.</span><span class="nx">weekStartTime</span><span class="p">)</span> <span class="o">&gt;</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="s2">&quot;1970/01/01&quot;</span><span class="o">+</span><span class="nx">model</span><span class="p">.</span><span class="nx">weekEndTime</span><span class="p">)){</span>
+				<span class="nx">alert</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.weektimeunreasonable&#39;</span><span class="p">));</span>
+				<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;[name=txt_weekEndTime]&quot;</span><span class="p">).</span><span class="nx">focus</span><span class="p">();</span>
+				<span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+		
+		<span class="c1">//如果会议室类型为预约会议室 </span>
+		<span class="k">if</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">roomType</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">){</span>
+			<span class="c1">//验证会议室预约开始时间是否为空</span>
+			<span class="k">if</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">hopeStartTime</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(^\s+|\s+$)/g</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">){</span>
+				<span class="nx">alert</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.hopestarttimeempty&#39;</span><span class="p">));</span>
+				<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;[name=txt_hopeStartTime]&quot;</span><span class="p">).</span><span class="nx">focus</span><span class="p">();</span>
+				<span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+			<span class="p">}</span>
+			<span class="c1">//验证会议室预约结束时间是否为空</span>
+			<span class="k">if</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">hopeEndTime</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(^\s+|\s+$)/g</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">){</span>
+				<span class="nx">alert</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.hopeendtimeempty&#39;</span><span class="p">));</span>
+				<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;[name=txt_hopeEndTime]&quot;</span><span class="p">).</span><span class="nx">focus</span><span class="p">();</span>
+				<span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+			<span class="p">}</span>
+			<span class="c1">//验证结束时间是否大于开始时间</span>
+			<span class="k">if</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">hopeStartTime</span><span class="p">)</span> <span class="o">&gt;</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">model</span><span class="p">.</span><span class="nx">hopeEndTime</span><span class="p">)){</span>
+				<span class="nx">alert</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.hopetimeunreasonable&#39;</span><span class="p">));</span>
+				<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;[name=txt_hopeEndTime]&quot;</span><span class="p">).</span><span class="nx">focus</span><span class="p">();</span>
+				<span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+		
+		
+		<span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">//自定义数组转对象arrayToObject(defaultVideoWindEnum)</span>
+<span class="kd">function</span> <span class="nx">defineArrayToObjectArray</span><span class="p">(</span><span class="nx">arrayEnum</span><span class="p">,</span><span class="nx">definePremise</span><span class="p">){</span>
+	<span class="kd">var</span> <span class="nx">objArray</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">();</span>
+	<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arrayEnum</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+		<span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span>
+		<span class="nx">obj</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="nx">arrayEnum</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span>
+		<span class="nx">obj</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">arrayEnum</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="mi">1</span><span class="p">];</span>
+		<span class="k">if</span><span class="p">(</span><span class="nx">arrayEnum</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="mi">1</span><span class="p">].</span><span class="nx">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nx">arrayEnum</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="mi">1</span><span class="p">].</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">))</span> <span class="o">&lt;=</span> <span class="nx">definePremise</span><span class="p">){</span>
+			<span class="nx">objArray</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">obj</span><span class="p">;</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+	
+	<span class="k">return</span> <span class="nx">objArray</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+	<span class="c1">//组织级别下拉model</span>
+	<span class="kd">var</span> <span class="nx">verifyModeModel</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">items</span> <span class="o">=</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observableArray</span><span class="p">(</span> <span class="nx">arrayToObjectArray</span><span class="p">(</span><span class="nx">roomVerifyModeEnum</span><span class="p">)</span> <span class="p">);</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">selected</span> <span class="o">=</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observable</span><span class="p">();</span>
+	<span class="p">};</span>
+	<span class="kd">var</span> <span class="nx">verifyModeData</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">verifyModeModel</span><span class="p">();</span>
+
+	<span class="c1">//会议室类型下拉model</span>
+	<span class="kd">var</span> <span class="nx">roomTypeModel</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">items</span> <span class="o">=</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observableArray</span><span class="p">(</span><span class="nx">arrayToObjectArray</span><span class="p">(</span><span class="nx">roomTypeEnum</span><span class="p">));</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">selected</span> <span class="o">=</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observable</span><span class="p">();</span>
+	<span class="p">};</span>
+	<span class="kd">var</span> <span class="nx">roomTypeModelData</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">roomTypeModel</span><span class="p">();</span>
+	
+	<span class="c1">//会议室状态下拉</span>
+	<span class="kd">var</span> <span class="nx">roomStatusModel</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">items</span> <span class="o">=</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observableArray</span><span class="p">(</span><span class="nx">arrayToObjectArray</span><span class="p">(</span><span class="nx">roomStatusEnum</span><span class="p">));</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">selected</span> <span class="o">=</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observable</span><span class="p">();</span>
+	<span class="p">};</span>
+	<span class="kd">var</span> <span class="nx">roomStatusData</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">roomStatusModel</span><span class="p">();</span>
+	
+	<span class="c1">//会议室默认视频解码下拉model</span>
+	<span class="kd">var</span> <span class="nx">defaultVideoCodecModel</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">items</span> <span class="o">=</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observableArray</span><span class="p">(</span><span class="nx">arrayToObjectArray</span><span class="p">(</span><span class="nx">defaultVideoCodecEnum</span><span class="p">));</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">selected</span> <span class="o">=</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observable</span><span class="p">();</span>
+	<span class="p">};</span>
+	<span class="kd">var</span> <span class="nx">defaultVideoCodecData</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">defaultVideoCodecModel</span><span class="p">();</span>
+	<span class="c1">//会议室视频分辨率下拉model</span>
+	<span class="kd">var</span> <span class="nx">defaultVideoWindModel</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">items</span> <span class="o">=</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observableArray</span><span class="p">(</span><span class="nx">defineArrayToObjectArray</span><span class="p">(</span><span class="nx">defaultVideoWindEnum</span><span class="p">,</span><span class="nx">maxVideoStr</span><span class="p">));</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">selected</span> <span class="o">=</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observable</span><span class="p">();</span>
+	<span class="p">};</span>
+	<span class="kd">var</span> <span class="nx">defaultVideoWindData</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">defaultVideoWindModel</span><span class="p">();</span>
+	
+	<span class="c1">//会议室开会的角色下拉model</span>
+	<span class="kd">var</span> <span class="nx">meetingRoleModel</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">items</span> <span class="o">=</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observableArray</span><span class="p">(</span><span class="nx">arrayToObjectArray</span><span class="p">(</span><span class="nx">meetingRoleEnum</span><span class="p">));</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">selected</span> <span class="o">=</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observable</span><span class="p">();</span>
+	<span class="p">};</span>
+	<span class="kd">var</span> <span class="nx">meetingRoleData</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">meetingRoleModel</span><span class="p">();</span>
+	
+	<span class="c1">//上级组织model</span>
+	<span class="kd">var</span> <span class="nx">parentModel</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">items</span> <span class="o">=</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observableArray</span><span class="p">(</span><span class="nx">subDepartList</span><span class="p">);</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">selected</span> <span class="o">=</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observable</span><span class="p">();</span>
+	<span class="p">};</span>
+	<span class="kd">var</span> <span class="nx">parentData</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">parentModel</span><span class="p">();</span>
+
+	<span class="c1">//下拉对象</span>
+	<span class="kd">var</span> <span class="nx">selectData</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="nx">verifyModeData</span> <span class="o">:</span> <span class="nx">verifyModeData</span><span class="p">,</span>
+		<span class="nx">roomTypeModelData</span><span class="o">:</span><span class="nx">roomTypeModelData</span><span class="p">,</span>
+		<span class="nx">roomStatusData</span><span class="o">:</span><span class="nx">roomStatusData</span><span class="p">,</span>
+		<span class="nx">defaultVideoCodecData</span><span class="o">:</span><span class="nx">defaultVideoCodecData</span><span class="p">,</span>
+		<span class="nx">defaultVideoWindData</span><span class="o">:</span><span class="nx">defaultVideoWindData</span><span class="p">,</span>
+		<span class="nx">meetingRoleData</span><span class="o">:</span><span class="nx">meetingRoleData</span><span class="p">,</span>
+		<span class="nx">parent</span> <span class="o">:</span> <span class="nx">parentData</span>
+	<span class="p">};</span>
+
+	<span class="c1">//新建组织model</span>
+	<span class="kd">var</span> <span class="nx">editModel</span> <span class="o">=</span> <span class="nx">room</span><span class="p">;</span>
+	<span class="kd">var</span> <span class="nx">urls</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="nx">submit</span> <span class="o">:</span> <span class="nx">room</span><span class="p">.</span><span class="nx">roomID</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">?</span> <span class="nb">window</span><span class="p">.</span><span class="nx">BIZCTX_PATH</span>
+				<span class="o">+</span> <span class="s2">&quot;/room/addRoom.do&quot;</span> <span class="o">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">BIZCTX_PATH</span>
+				<span class="o">+</span> <span class="s2">&quot;/room/editRoom.do&quot;</span>
+	<span class="p">};</span>
+	<span class="kd">var</span> <span class="nx">editData</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="nx">editModel</span> <span class="o">:</span> <span class="nx">editModel</span><span class="p">,</span>
+		<span class="nx">urls</span> <span class="o">:</span> <span class="nx">urls</span><span class="p">,</span>
+		<span class="nx">selectData</span> <span class="o">:</span> <span class="nx">selectData</span>
+	<span class="p">};</span>
+
+	<span class="kd">var</span> <span class="nx">addDepartValidator</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="nx">txt_roomName</span> <span class="o">:</span> <span class="p">{</span>
+			<span class="nx">validators</span> <span class="o">:</span> <span class="p">{</span>
+				<span class="nx">notEmpty</span> <span class="o">:</span> <span class="p">{</span>
+					<span class="nx">message</span> <span class="o">:</span> <span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.roomnameempty&#39;</span><span class="p">)</span>
+				<span class="p">},</span>
+				<span class="nx">stringLength</span> <span class="o">:</span> <span class="p">{</span>
+					<span class="nx">min</span> <span class="o">:</span> <span class="nx">roomNameLengthRule</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+					<span class="nx">max</span> <span class="o">:</span> <span class="nx">roomNameLengthRule</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+					<span class="nx">message</span> <span class="o">:</span> <span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.roomnamelengtherror&#39;</span><span class="p">)</span>
+				<span class="p">},</span>
+				<span class="nx">regexp</span> <span class="o">:</span> <span class="p">{</span>
+					<span class="nx">regexp</span> <span class="o">:</span> <span class="nx">roomNameRule</span><span class="p">,</span>
+					<span class="nx">message</span> <span class="o">:</span> <span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.roomnameformaterror&#39;</span><span class="p">)</span>
+				<span class="p">}</span>
+			<span class="p">}</span>
+		<span class="p">},</span>
+		<span class="nx">txt_maxUserCount</span> <span class="o">:</span> <span class="p">{</span>
+			<span class="nx">validators</span> <span class="o">:</span> <span class="p">{</span>
+				<span class="nx">notEmpty</span> <span class="o">:</span> <span class="p">{</span>
+					<span class="nx">message</span> <span class="o">:</span> <span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.maxusercountempty&#39;</span><span class="p">)</span>
+				<span class="p">},</span>
+				<span class="nx">between</span> <span class="o">:</span> <span class="p">{</span>
+					<span class="nx">min</span> <span class="o">:</span> <span class="nx">maxUserCountLengthRule</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+					<span class="nx">max</span> <span class="o">:</span> <span class="nx">maxUserCountLengthRule</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+					<span class="nx">message</span> <span class="o">:</span> <span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.maxusercountlengtherror&#39;</span><span class="p">)</span>
+				<span class="p">},</span>
+				<span class="nx">regexp</span> <span class="o">:</span> <span class="p">{</span>
+					<span class="nx">regexp</span> <span class="o">:</span> <span class="nx">maxUserCountRule</span><span class="p">,</span>
+					<span class="nx">message</span> <span class="o">:</span> <span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.maxusercountformaterror&#39;</span><span class="p">)</span>
+				<span class="p">}</span>
+			<span class="p">}</span>
+		<span class="p">},</span>
+		<span class="nx">txt_chairPassword</span> <span class="o">:</span> <span class="p">{</span>
+			<span class="nx">validators</span> <span class="o">:</span> <span class="p">{</span>
+				<span class="nx">notEmpty</span> <span class="o">:</span> <span class="p">{</span>
+					<span class="nx">message</span> <span class="o">:</span> <span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.chairpasswordempty&#39;</span><span class="p">)</span>
+				<span class="p">},</span>
+				<span class="nx">stringLength</span> <span class="o">:</span> <span class="p">{</span>
+					<span class="nx">min</span> <span class="o">:</span> <span class="nx">chairPasswordLengthRule</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+					<span class="nx">max</span> <span class="o">:</span> <span class="nx">chairPasswordLengthRule</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+					<span class="nx">message</span> <span class="o">:</span> <span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.chairpasswordlengtherror&#39;</span><span class="p">)</span>
+				<span class="p">},</span>
+				<span class="nx">regexp</span> <span class="o">:</span> <span class="p">{</span>
+					<span class="nx">regexp</span> <span class="o">:</span> <span class="nx">chairPasswordRule</span><span class="p">,</span>
+					<span class="nx">message</span> <span class="o">:</span> <span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.chairpasswordformaterror&#39;</span><span class="p">)</span>
+				<span class="p">}</span>
+			<span class="p">}</span>
+		<span class="p">},</span>
+		<span class="nx">txt_password</span> <span class="o">:</span> <span class="p">{</span>
+			<span class="nx">validators</span> <span class="o">:</span> <span class="p">{</span>
+				<span class="nx">notEmpty</span> <span class="o">:</span> <span class="p">{</span>
+					<span class="nx">message</span> <span class="o">:</span> <span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.passwordempty&#39;</span><span class="p">)</span>
+				<span class="p">},</span>
+				<span class="nx">stringLength</span> <span class="o">:</span> <span class="p">{</span>
+					<span class="nx">min</span> <span class="o">:</span> <span class="nx">passwordLengthRule</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+					<span class="nx">max</span> <span class="o">:</span> <span class="nx">passwordLengthRule</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+					<span class="nx">message</span> <span class="o">:</span> <span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.passwordlengtherror&#39;</span><span class="p">)</span>
+				<span class="p">},</span>
+				<span class="nx">regexp</span> <span class="o">:</span> <span class="p">{</span>
+					<span class="nx">regexp</span> <span class="o">:</span> <span class="nx">passwordRule</span><span class="p">,</span>
+					<span class="nx">message</span> <span class="o">:</span> <span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.passwordformaterror&#39;</span><span class="p">)</span>
+				<span class="p">}</span>
+			<span class="p">}</span>
+		<span class="p">},</span>
+		<span class="nx">txt_roomDesc</span> <span class="o">:</span> <span class="p">{</span>
+			<span class="nx">validators</span> <span class="o">:</span> <span class="p">{</span>
+				<span class="nx">stringLength</span> <span class="o">:</span> <span class="p">{</span>
+					<span class="nx">min</span> <span class="o">:</span> <span class="nx">roomDescLengthRule</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+					<span class="nx">max</span> <span class="o">:</span> <span class="nx">roomDescLengthRule</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+					<span class="nx">message</span> <span class="o">:</span> <span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.roomdesclengtherror&#39;</span><span class="p">)</span>
+				<span class="p">}</span>
+			<span class="p">}</span>
+		<span class="p">},</span>
+		<span class="nx">txt_defaultVideoBitrate</span> <span class="o">:</span> <span class="p">{</span>
+			<span class="nx">validators</span> <span class="o">:</span> <span class="p">{</span>
+				<span class="nx">notEmpty</span> <span class="o">:</span> <span class="p">{</span>
+					<span class="nx">message</span> <span class="o">:</span> <span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.defaultvideobitrateempty&#39;</span><span class="p">)</span>
+				<span class="p">},</span>
+				<span class="nx">between</span> <span class="o">:</span> <span class="p">{</span>
+					<span class="nx">min</span> <span class="o">:</span> <span class="nx">defaultVideoBitrateLengthRule</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+					<span class="nx">max</span> <span class="o">:</span> <span class="nx">defaultVideoBitrateLengthRule</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+					<span class="nx">message</span> <span class="o">:</span> <span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.defaultvideobitratelengtherror&#39;</span><span class="p">)</span>
+				<span class="p">},</span>
+				<span class="nx">regexp</span> <span class="o">:</span> <span class="p">{</span>
+					<span class="nx">regexp</span> <span class="o">:</span> <span class="nx">defaultVideoBitrateRule</span><span class="p">,</span>
+					<span class="nx">message</span> <span class="o">:</span> <span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.defaultvideobitrateformaterror&#39;</span><span class="p">)</span>
+				<span class="p">}</span>
+			<span class="p">}</span>
+		<span class="p">},</span>
+		<span class="nx">txt_dateEveyMonth</span> <span class="o">:</span> <span class="p">{</span>
+			<span class="nx">validators</span> <span class="o">:</span> <span class="p">{</span>
+				<span class="nx">notEmpty</span> <span class="o">:</span> <span class="p">{</span>
+					<span class="nx">message</span> <span class="o">:</span> <span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.dateeveymonthempty&#39;</span><span class="p">)</span>
+				<span class="p">},</span>
+				<span class="nx">between</span> <span class="o">:</span> <span class="p">{</span>
+					<span class="nx">min</span> <span class="o">:</span> <span class="nx">dateEveyMonthLengthRule</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+					<span class="nx">max</span> <span class="o">:</span> <span class="nx">dateEveyMonthLengthRule</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+					<span class="nx">message</span> <span class="o">:</span> <span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.dateeveymonthlengtherror&#39;</span><span class="p">)</span>
+				<span class="p">},</span>
+				<span class="nx">regexp</span> <span class="o">:</span> <span class="p">{</span>
+					<span class="nx">regexp</span> <span class="o">:</span> <span class="nx">dateEveyMonthRule</span><span class="p">,</span>
+					<span class="nx">message</span> <span class="o">:</span> <span class="nx">$</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">prop</span><span class="p">(</span><span class="s1">&#39;msg.room.dateeveymontherror&#39;</span><span class="p">)</span>
+				<span class="p">}</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+	<span class="p">};</span>
+	<span class="nx">ko</span><span class="p">.</span><span class="nx">bindingEditViewModel</span><span class="p">(</span><span class="nx">editData</span><span class="p">,</span> <span class="nx">addDepartValidator</span><span class="p">,</span><span class="nx">definedEditMethod</span><span class="p">);</span>
+	
+	<span class="nx">changeChairPasswordStatus</span><span class="p">();</span>
+	<span class="nx">changePasswordStatus</span><span class="p">();</span>
+<span class="p">});</span>
+
+
+
+<span class="c1">//手动赋值给预约开始时间</span>
+<span class="kd">function</span> <span class="nx">pickedhopeStartTime</span><span class="p">(</span><span class="nx">dp</span><span class="p">){</span>
+	<span class="nx">ko</span><span class="p">.</span><span class="nx">editModel</span><span class="p">.</span><span class="nx">hopeStartTime</span><span class="p">(</span><span class="nx">dp</span><span class="p">.</span><span class="nx">cal</span><span class="p">.</span><span class="nx">getNewDateStr</span><span class="p">());</span>
+<span class="p">}</span>
+<span class="c1">//手动赋值给预约结束时间</span>
+<span class="kd">function</span> <span class="nx">pickedhopeEndTime</span><span class="p">(</span><span class="nx">dp</span><span class="p">){</span>
+	<span class="nx">ko</span><span class="p">.</span><span class="nx">editModel</span><span class="p">.</span><span class="nx">hopeEndTime</span><span class="p">(</span><span class="nx">dp</span><span class="p">.</span><span class="nx">cal</span><span class="p">.</span><span class="nx">getNewDateStr</span><span class="p">());</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">pickedweekStartTime</span><span class="p">(</span><span class="nx">dp</span><span class="p">){</span>
+	<span class="nx">ko</span><span class="p">.</span><span class="nx">editModel</span><span class="p">.</span><span class="nx">weekStartTime</span><span class="p">(</span><span class="nx">dp</span><span class="p">.</span><span class="nx">cal</span><span class="p">.</span><span class="nx">getNewDateStr</span><span class="p">());</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">pickedweekEndTime</span><span class="p">(</span><span class="nx">dp</span><span class="p">){</span>
+	<span class="nx">ko</span><span class="p">.</span><span class="nx">editModel</span><span class="p">.</span><span class="nx">weekEndTime</span><span class="p">(</span><span class="nx">dp</span><span class="p">.</span><span class="nx">cal</span><span class="p">.</span><span class="nx">getNewDateStr</span><span class="p">());</span>
+<span class="p">}</span>
+<span class="c1">//改变是否启动会议室密码</span>
+<span class="kd">function</span> <span class="nx">changeChairPasswordStatus</span><span class="p">(){</span>
+	<span class="kr">debugger</span>
+	<span class="kd">var</span> <span class="nx">flag</span> <span class="o">=</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">mapping</span><span class="p">.</span><span class="nx">toJS</span><span class="p">(</span><span class="nx">ko</span><span class="p">.</span><span class="nx">editModel</span><span class="p">.</span><span class="nx">enableChairPwd</span><span class="p">);</span>
+	
+
+		<span class="k">if</span> <span class="p">(</span><span class="nx">flag</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#pwd_chairPassword&quot;</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;disabled&quot;</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+		<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#pwd_chairPassword&quot;</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;disabled&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+		<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#formEdit&#39;</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;bootstrapValidator&#39;</span><span class="p">).</span><span class="nx">updateStatus</span><span class="p">(</span>
+				<span class="s1">&#39;txt_chairPassword&#39;</span><span class="p">,</span> <span class="s1">&#39;NOT_VALIDATED&#39;</span><span class="p">,</span> <span class="kc">null</span><span class="p">).</span><span class="nx">validateField</span><span class="p">(</span>
+				<span class="s1">&#39;txt_chairPassword&#39;</span><span class="p">);</span>
+		<span class="nx">ko</span><span class="p">.</span><span class="nx">editModel</span><span class="p">.</span><span class="nx">chairPassword</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+	<span class="p">}</span>
+	
+<span class="p">};</span>
+<span class="c1">//改变是否启动会议室密码</span>
+<span class="kd">function</span> <span class="nx">changePasswordStatus</span><span class="p">(){</span>
+	
+	<span class="kd">var</span> <span class="nx">flag</span> <span class="o">=</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">mapping</span><span class="p">.</span><span class="nx">toJS</span><span class="p">(</span><span class="nx">ko</span><span class="p">.</span><span class="nx">editModel</span><span class="p">.</span><span class="nx">verifyMode</span><span class="p">);</span>
+	
+	<span class="k">if</span><span class="p">(</span><span class="nx">flag</span> <span class="o">==</span> <span class="mi">2</span><span class="p">){</span>
+		<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#pwd_password&quot;</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;disabled&quot;</span><span class="p">,</span><span class="kc">false</span><span class="p">);</span>
+	<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+		<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#pwd_password&quot;</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;disabled&quot;</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
+		<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#formEdit&#39;</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;bootstrapValidator&#39;</span><span class="p">).</span><span class="nx">updateStatus</span><span class="p">(</span>
+				<span class="s1">&#39;txt_password&#39;</span><span class="p">,</span> <span class="s1">&#39;NOT_VALIDATED&#39;</span><span class="p">,</span> <span class="kc">null</span><span class="p">).</span><span class="nx">validateField</span><span class="p">(</span>
+				<span class="s1">&#39;txt_password&#39;</span><span class="p">);</span>
+		<span class="nx">ko</span><span class="p">.</span><span class="nx">editModel</span><span class="p">.</span><span class="nx">password</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+	<span class="p">}</span>
+	
+<span class="p">};</span>
+<span class="c1">//改变默认视频默认设置参数是否</span>
+<span class="kd">function</span> <span class="nx">changeDefaultSetStatus</span><span class="p">(){</span>
+	
+	<span class="kd">var</span> <span class="nx">flag</span> <span class="o">=</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">mapping</span><span class="p">.</span><span class="nx">toJS</span><span class="p">(</span><span class="nx">ko</span><span class="p">.</span><span class="nx">editModel</span><span class="p">.</span><span class="nx">useDefaultFlag</span><span class="p">);</span>
+	<span class="k">if</span><span class="p">(</span><span class="nx">flag</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">){</span>
+		<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#formEdit&#39;</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;bootstrapValidator&#39;</span><span class="p">).</span><span class="nx">updateStatus</span><span class="p">(</span>
+				<span class="s1">&#39;txt_defaultVideoBitrate&#39;</span><span class="p">,</span> <span class="s1">&#39;NOT_VALIDATED&#39;</span><span class="p">,</span> <span class="kc">null</span><span class="p">).</span><span class="nx">validateField</span><span class="p">(</span>
+				<span class="s1">&#39;txt_defaultVideoBitrate&#39;</span><span class="p">);</span>
+		<span class="nx">ko</span><span class="p">.</span><span class="nx">editModel</span><span class="p">.</span><span class="nx">defaultVideoBitrate</span><span class="p">(</span><span class="mi">512</span><span class="p">);</span>
+	<span class="p">}</span>
+	
+<span class="p">};</span>
+<span class="c1">//改变周例会议室固定定期</span>
+<span class="kd">function</span> <span class="nx">changeCycleFlagStatus</span><span class="p">(){</span>
+	
+	<span class="kd">var</span> <span class="nx">flag</span> <span class="o">=</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">mapping</span><span class="p">.</span><span class="nx">toJS</span><span class="p">(</span><span class="nx">ko</span><span class="p">.</span><span class="nx">editModel</span><span class="p">.</span><span class="nx">cycleFlag</span><span class="p">);</span>
+	<span class="k">if</span><span class="p">(</span><span class="nx">flag</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">){</span>
+		<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#formEdit&#39;</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;bootstrapValidator&#39;</span><span class="p">).</span><span class="nx">updateStatus</span><span class="p">(</span>
+				<span class="s1">&#39;txt_dateEveyMonth&#39;</span><span class="p">,</span> <span class="s1">&#39;NOT_VALIDATED&#39;</span><span class="p">,</span> <span class="kc">null</span><span class="p">).</span><span class="nx">validateField</span><span class="p">(</span>
+				<span class="s1">&#39;txt_dateEveyMonth&#39;</span><span class="p">);</span>
+		<span class="nx">ko</span><span class="p">.</span><span class="nx">editModel</span><span class="p">.</span><span class="nx">dateEveyMonth</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+	<span class="p">}</span>
+	
+<span class="p">};</span>
+</pre></div>
+</body>
+</html>

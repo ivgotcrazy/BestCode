@@ -1,0 +1,33 @@
+{% extends 'base-nav.html' %}
+
+{% load static %}
+
+{% block main_body %}
+<!-- main body -->
+<div class="row">
+	<div class="col-sm-12" style="padding: 0px">
+		<div class="panel panel-info" style="margin-bottom: 4px; margin-right: 2px">
+			<div class="panel-heading">我的信息</div>
+			<div class="panel-body" style="padding: 4px; height: 200px">
+				<img src="{{ user.photo }}" style="height:128px; width:96px" />
+			</div>
+		</div>
+		<div class="panel panel-info" style="margin-bottom: 4px; margin-right: 2px">
+			<div class="panel-heading">我参与的活动</div>
+			<div class="panel-body" style="padding: 4px; height: 200px">
+			</div>
+		</div>
+		<div class="panel panel-info" style="margin-bottom: 4px; margin-right: 2px">
+			<div class="panel-heading">我发表的评论</div>
+			<div class="panel-body" style="padding: 4px; height: 200px">
+			</div>
+		</div>
+		<div class="panel panel-info" style="margin-bottom: 4px; margin-right: 2px">
+			<div class="panel-heading">评论</div>
+			<div class="panel-body">
+				{% include 'simple_comment.html' %}
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

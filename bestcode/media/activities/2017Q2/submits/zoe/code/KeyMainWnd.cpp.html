@@ -1,0 +1,1257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=latin1">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 } /* Comment.Preproc */
+body .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #888888 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0044DD } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #AA22FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+body .nf { color: #0000FF } /* Name.Function */
+body .nl { color: #A0A000 } /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mb { color: #666666 } /* Literal.Number.Bin */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sa { color: #BA2121 } /* Literal.String.Affix */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .dl { color: #BA2121 } /* Literal.String.Delimiter */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #BB6688 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .fm { color: #0000FF } /* Name.Function.Magic */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .vm { color: #19177C } /* Name.Variable.Magic */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;stdafx.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;resource.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;KeyMainWnd.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;AppExit.h&quot;</span><span class="cp"></span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;BaseLog.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;KeyConfig.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;HttpUd.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;SshUDExec.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;StringUtil.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;RegexUtil.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;TipOkWnd.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;SchemeConfig.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;ProductConfigWnd.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;RbsConfigHelper.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;InterJsonParse.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;MarcoDefine.h&quot;</span><span class="cp"></span>
+
+<span class="c1">// ¿Ø¼þÃû³ÆÉùÃ÷</span>
+<span class="k">const</span> <span class="kt">wchar_t</span> <span class="n">Name_wszActivePage</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">L</span><span class="s">&quot;ActivePage&quot;</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">wchar_t</span> <span class="n">Name_wszActivingPage</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">L</span><span class="s">&quot;ActivingPage&quot;</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">wchar_t</span> <span class="n">Name_wszActivedPage</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">L</span><span class="s">&quot;ActivedPage&quot;</span><span class="p">;</span>
+
+<span class="k">const</span> <span class="kt">wchar_t</span> <span class="n">Name_wszActivedOkBtn</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">L</span><span class="s">&quot;ActivedOkBtn&quot;</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">wchar_t</span> <span class="n">Name_wszRebootTipLabel</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">L</span><span class="s">&quot;RebootTipLabel&quot;</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">wchar_t</span> <span class="n">Name_wszActiveProgress</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">L</span><span class="s">&quot;ActiveProgressBar&quot;</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">wchar_t</span> <span class="n">Name_wszActiveBtn</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">L</span><span class="s">&quot;ActiveBtn&quot;</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">wchar_t</span> <span class="n">Name_wszDataSrcTypeCbo</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">L</span><span class="s">&quot;DataSrcTypeCombo&quot;</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">wchar_t</span> <span class="n">Name_wszProductTypeCbo</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">L</span><span class="s">&quot;ProductTypeCombo&quot;</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">wchar_t</span> <span class="n">Name_wszProductDetailConfigBtn</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">L</span><span class="s">&quot;ProductDetailConfigBtn&quot;</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">wchar_t</span> <span class="n">Name_wszRbsAddressEdit</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">L</span><span class="s">&quot;RBSAddressEdit&quot;</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">wchar_t</span> <span class="n">Name_wszRbsUsernameEdit</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">L</span><span class="s">&quot;RBSUsernameEdit&quot;</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">wchar_t</span> <span class="n">Name_wszRbsPasswordEdit</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">L</span><span class="s">&quot;RBSPasswordEdit&quot;</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">wchar_t</span> <span class="n">Name_wszKeyAddressEdit</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">L</span><span class="s">&quot;KeyAddressEdit&quot;</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">wchar_t</span> <span class="n">Name_wszKeyUsernameEdit</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">L</span><span class="s">&quot;KeyUsernameEdit&quot;</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">wchar_t</span> <span class="n">Name_wszKeyPasswordEdit</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">L</span><span class="s">&quot;KeyPasswordEdit&quot;</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">wchar_t</span> <span class="n">Name_wszDevModelEdit</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">L</span><span class="s">&quot;DevModelEdit&quot;</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">wchar_t</span> <span class="n">Name_wszDevSerialEdit</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">L</span><span class="s">&quot;DevSerialEdit&quot;</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">wchar_t</span> <span class="n">Name_wszDevVersionEdit</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">L</span><span class="s">&quot;DevVersionEdit&quot;</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">wchar_t</span> <span class="n">Name_wszRememberPwChk</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">L</span><span class="s">&quot;RememberPwChk&quot;</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">wchar_t</span> <span class="n">Name_wszShowOthersEditBtn</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">L</span><span class="s">&quot;ShowOthersBtn&quot;</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">wchar_t</span> <span class="n">Name_wszHideOthersEditBtn</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">L</span><span class="s">&quot;HideOthersBtn&quot;</span><span class="p">;</span>
+
+<span class="k">const</span> <span class="kt">wchar_t</span> <span class="n">Name_wszRbsUsernameSH</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">L</span><span class="s">&quot;RBSUsernameSH&quot;</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">wchar_t</span> <span class="n">Name_wszRbsPasswordSH</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">L</span><span class="s">&quot;RBSPasswordSH&quot;</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">wchar_t</span> <span class="n">Name_wszKeyAddressSH</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">L</span><span class="s">&quot;KeyAddressSH&quot;</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">wchar_t</span> <span class="n">Name_wszKeyUsernameSH</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">L</span><span class="s">&quot;KeyUsernameSH&quot;</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">wchar_t</span> <span class="n">Name_wszKeyPasswordSH</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">L</span><span class="s">&quot;KeyPasswordSH&quot;</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">wchar_t</span> <span class="n">Name_wszDevModelSH</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">L</span><span class="s">&quot;DevModelSH&quot;</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">wchar_t</span> <span class="n">Name_wszDevSerialSH</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">L</span><span class="s">&quot;DevSerialSH&quot;</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">wchar_t</span> <span class="n">Name_wszDevVersionSH</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">L</span><span class="s">&quot;DevVersionSH&quot;</span><span class="p">;</span> 
+<span class="k">const</span> <span class="kt">wchar_t</span> <span class="n">Name_wszOptionSetSH</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">L</span><span class="s">&quot;OptionSetSH&quot;</span><span class="p">;</span>
+
+<span class="k">const</span> <span class="kt">wchar_t</span> <span class="n">Name_wszActiveTipLabel</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">L</span><span class="s">&quot;ActiveTipLabel&quot;</span><span class="p">;</span>
+
+<span class="k">const</span> <span class="kt">char</span> <span class="n">Name_szCliReg</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;./cli_reg&quot;</span><span class="p">;</span>
+<span class="cp">#ifdef TEST_MYKEYSERVER</span>
+<span class="k">const</span> <span class="kt">char</span> <span class="n">Name_szLicenseCmd</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;./exec.sh&quot;</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">char</span> <span class="n">Name_szCmdExecDir</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;/home/yuan/share/&quot;</span><span class="p">;</span>
+<span class="cp">#else</span>
+<span class="k">const</span> <span class="kt">char</span> <span class="n">Name_szLicenseCmd</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;./license.sh&quot;</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">char</span> <span class="n">Name_szCmdExecDir</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;/home/MakeLicense/&quot;</span><span class="p">;</span>
+<span class="cp">#endif</span>
+<span class="k">const</span> <span class="kt">char</span> <span class="n">Name_szRebootCmd</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;reboot&quot;</span><span class="p">;</span> <span class="c1">//&quot;shutdown -r now &quot;;</span>
+
+<span class="k">const</span> <span class="kt">char</span> <span class="n">Name_szVideoStrategyFile</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;VideoStrategy.json&quot;</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">char</span> <span class="n">Name_szSoftDetectionFile</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;SoftDetection.json&quot;</span><span class="p">;</span>
+
+<span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">CKeyMainWnd</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">m_bIsExitApp</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+	<span class="n">m_bSchemeConfigFinish</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+	<span class="n">m_pActiveProgress</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="n">m_pActiveBtn</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+	<span class="n">m_ptrHttpUd</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="n">m_ptrWebHttp</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="n">m_ptrHostSshUdExec</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="n">m_ptrKeySshUdExec</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">CKeyMainWnd</span><span class="o">::~</span><span class="n">CKeyMainWnd</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">UnInitStep</span><span class="p">();</span>
+	<span class="n">SAFE_RELEASE</span><span class="p">(</span><span class="n">m_ptrHttpUd</span><span class="p">);</span>
+	<span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">m_ptrWebHttp</span><span class="p">);</span>
+	<span class="n">SAFE_RELEASE</span><span class="p">(</span><span class="n">m_ptrHostSshUdExec</span><span class="p">);</span>
+	<span class="n">SAFE_RELEASE</span><span class="p">(</span><span class="n">m_ptrKeySshUdExec</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">UINT</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">GetSkinResourceID</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="k">return</span> <span class="n">IDR_MAINWND_XML</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">Init</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">__super</span><span class="o">::</span><span class="n">Init</span><span class="p">();</span>
+
+	<span class="n">SetProp</span><span class="p">(</span><span class="n">m_hWnd</span><span class="p">,</span> <span class="sa">L</span><span class="s">&quot;KeyApp&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">HANDLE</span><span class="p">)</span><span class="mi">1</span><span class="p">);</span>
+
+	<span class="cm">/* ²éÕÒ¿Ø¼þ */</span>
+	<span class="c1">// ¼¤»îÇ°Ò³Ãæ</span>
+	<span class="n">m_pDataSrcCbo</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">CComboUI</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">paint_manager_</span><span class="p">.</span><span class="n">FindControl</span><span class="p">(</span><span class="n">Name_wszDataSrcTypeCbo</span><span class="p">));</span>
+	<span class="n">assert</span><span class="p">(</span><span class="n">m_pDataSrcCbo</span><span class="p">);</span>
+	<span class="n">m_pDataSrcCbo</span><span class="o">-&gt;</span><span class="n">AddStringItem</span><span class="p">(</span><span class="sa">L</span><span class="s">&quot;ÈíÑ¹²É¼¯¿¨&quot;</span><span class="p">);</span>
+	<span class="n">m_pDataSrcCbo</span><span class="o">-&gt;</span><span class="n">AddStringItem</span><span class="p">(</span><span class="sa">L</span><span class="s">&quot;Ó²Ñ¹²É¼¯¿¨&quot;</span><span class="p">);</span>
+	<span class="n">m_pDataSrcCbo</span><span class="o">-&gt;</span><span class="n">AddStringItem</span><span class="p">(</span><span class="sa">L</span><span class="s">&quot;ÍøÂçÊý¾ÝÔ´&quot;</span><span class="p">);</span>
+	<span class="n">m_pProductTypeCbo</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">CComboUI</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">paint_manager_</span><span class="p">.</span><span class="n">FindControl</span><span class="p">(</span><span class="n">Name_wszProductTypeCbo</span><span class="p">));</span>
+	<span class="n">assert</span><span class="p">(</span><span class="n">m_pProductTypeCbo</span><span class="p">);</span>
+	<span class="n">VecStrType</span> <span class="n">schemeVec</span> <span class="o">=</span> <span class="n">CSchemeConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetSchemeList</span><span class="p">();</span>
+	<span class="k">for</span> <span class="p">(</span><span class="n">VecStrTypeIt</span> <span class="n">it</span> <span class="o">=</span> <span class="n">schemeVec</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">schemeVec</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">it</span><span class="o">++</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">wstring</span> <span class="n">wszItem</span> <span class="o">=</span> <span class="n">CStringUtil</span><span class="o">::</span><span class="n">CharToWChar</span><span class="p">((</span><span class="o">*</span><span class="n">it</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
+		<span class="n">m_pProductTypeCbo</span><span class="o">-&gt;</span><span class="n">AddStringItem</span><span class="p">(</span><span class="n">wszItem</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+	<span class="p">}</span>
+	<span class="n">m_pProductDetailConfigBtn</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">CButtonUI</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">paint_manager_</span><span class="p">.</span><span class="n">FindControl</span><span class="p">(</span><span class="n">Name_wszProductDetailConfigBtn</span><span class="p">));</span>
+	<span class="n">ASSERT</span><span class="p">(</span><span class="n">m_pProductDetailConfigBtn</span><span class="p">);</span>
+	<span class="n">m_pActivePage</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">CVerticalLayoutUI</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">paint_manager_</span><span class="p">.</span><span class="n">FindControl</span><span class="p">(</span><span class="n">Name_wszActivePage</span><span class="p">));</span>
+	<span class="n">ASSERT</span><span class="p">(</span><span class="n">m_pActivePage</span><span class="p">);</span>
+	<span class="n">m_pActivePage</span><span class="o">-&gt;</span><span class="n">SetVisible</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+	<span class="n">m_pActiveBtn</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">CButtonUI</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">paint_manager_</span><span class="p">.</span><span class="n">FindControl</span><span class="p">(</span><span class="n">Name_wszActiveBtn</span><span class="p">));</span>
+	<span class="n">ASSERT</span><span class="p">(</span><span class="n">m_pActiveBtn</span><span class="p">);</span>
+	<span class="n">m_pRbsAddress</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">CEditUI</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">paint_manager_</span><span class="p">.</span><span class="n">FindControl</span><span class="p">(</span><span class="n">Name_wszRbsAddressEdit</span><span class="p">));</span>
+	<span class="n">ASSERT</span><span class="p">(</span><span class="n">m_pRbsAddress</span><span class="p">);</span>
+	<span class="n">m_pRbsAddress</span><span class="o">-&gt;</span><span class="n">SetFocus</span><span class="p">();</span>
+	<span class="n">m_pRbsUsername</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">CEditUI</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">paint_manager_</span><span class="p">.</span><span class="n">FindControl</span><span class="p">(</span><span class="n">Name_wszRbsUsernameEdit</span><span class="p">));</span>
+	<span class="n">ASSERT</span><span class="p">(</span><span class="n">m_pRbsUsername</span><span class="p">);</span>
+	<span class="n">m_pRbsPassword</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">CEditUI</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">paint_manager_</span><span class="p">.</span><span class="n">FindControl</span><span class="p">(</span><span class="n">Name_wszRbsPasswordEdit</span><span class="p">));</span>
+	<span class="n">ASSERT</span><span class="p">(</span><span class="n">m_pRbsPassword</span><span class="p">);</span>
+	<span class="n">m_pKeyAddress</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">CEditUI</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">paint_manager_</span><span class="p">.</span><span class="n">FindControl</span><span class="p">(</span><span class="n">Name_wszKeyAddressEdit</span><span class="p">));</span>
+	<span class="n">ASSERT</span><span class="p">(</span><span class="n">m_pKeyAddress</span><span class="p">);</span>
+	<span class="n">m_pKeyUsername</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">CEditUI</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">paint_manager_</span><span class="p">.</span><span class="n">FindControl</span><span class="p">(</span><span class="n">Name_wszKeyUsernameEdit</span><span class="p">));</span>
+	<span class="n">ASSERT</span><span class="p">(</span><span class="n">m_pKeyUsername</span><span class="p">);</span>
+	<span class="n">m_pKeyPassword</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">CEditUI</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">paint_manager_</span><span class="p">.</span><span class="n">FindControl</span><span class="p">(</span><span class="n">Name_wszKeyPasswordEdit</span><span class="p">));</span>
+	<span class="n">ASSERT</span><span class="p">(</span><span class="n">m_pKeyPassword</span><span class="p">);</span>
+	<span class="n">m_pDevModel</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">CEditUI</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">paint_manager_</span><span class="p">.</span><span class="n">FindControl</span><span class="p">(</span><span class="n">Name_wszDevModelEdit</span><span class="p">));</span>
+	<span class="n">ASSERT</span><span class="p">(</span><span class="n">m_pDevModel</span><span class="p">);</span>
+	<span class="n">m_pDevSerial</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">CEditUI</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">paint_manager_</span><span class="p">.</span><span class="n">FindControl</span><span class="p">(</span><span class="n">Name_wszDevSerialEdit</span><span class="p">));</span>
+	<span class="n">ASSERT</span><span class="p">(</span><span class="n">m_pDevSerial</span><span class="p">);</span>
+	<span class="n">m_pDevVer</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">CEditUI</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">paint_manager_</span><span class="p">.</span><span class="n">FindControl</span><span class="p">(</span><span class="n">Name_wszDevVersionEdit</span><span class="p">));</span>
+	<span class="n">ASSERT</span><span class="p">(</span><span class="n">m_pDevVer</span><span class="p">);</span>
+	<span class="n">m_pRememberPwChk</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">CCheckBoxUI</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">paint_manager_</span><span class="p">.</span><span class="n">FindControl</span><span class="p">(</span><span class="n">Name_wszRememberPwChk</span><span class="p">));</span>
+	<span class="n">ASSERT</span><span class="p">(</span><span class="n">m_pRememberPwChk</span><span class="p">);</span>
+	<span class="n">m_pShowOtherBtn</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">CButtonUI</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">paint_manager_</span><span class="p">.</span><span class="n">FindControl</span><span class="p">(</span><span class="n">Name_wszShowOthersEditBtn</span><span class="p">));</span>
+	<span class="n">ASSERT</span><span class="p">(</span><span class="n">m_pShowOtherBtn</span><span class="p">);</span>
+	<span class="n">m_pHideOtherBtn</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">CButtonUI</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">paint_manager_</span><span class="p">.</span><span class="n">FindControl</span><span class="p">(</span><span class="n">Name_wszHideOthersEditBtn</span><span class="p">));</span>
+	<span class="n">ASSERT</span><span class="p">(</span><span class="n">m_pHideOtherBtn</span><span class="p">);</span>
+
+	<span class="c1">// ¼¤»îÖÐÒ³Ãæ</span>
+	<span class="n">m_pActivingPage</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">CVerticalLayoutUI</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">paint_manager_</span><span class="p">.</span><span class="n">FindControl</span><span class="p">(</span><span class="n">Name_wszActivingPage</span><span class="p">));</span>
+	<span class="n">ASSERT</span><span class="p">(</span><span class="n">m_pActivingPage</span><span class="p">);</span>
+	<span class="n">m_pActivingPage</span><span class="o">-&gt;</span><span class="n">SetVisible</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+	<span class="n">m_pProgressTipLabel</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">CLabelUI</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">paint_manager_</span><span class="p">.</span><span class="n">FindControl</span><span class="p">(</span><span class="n">Name_wszActiveTipLabel</span><span class="p">));</span>
+	<span class="n">ASSERT</span><span class="p">(</span><span class="n">m_pProgressTipLabel</span><span class="p">);</span>
+	<span class="n">m_pActiveProgress</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">CProgressUI</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">paint_manager_</span><span class="p">.</span><span class="n">FindControl</span><span class="p">(</span><span class="n">Name_wszActiveProgress</span><span class="p">));</span>
+	<span class="n">ASSERT</span><span class="p">(</span><span class="n">m_pActiveProgress</span><span class="p">);</span>
+
+	<span class="c1">// ¼¤»îºóÒ³Ãæ</span>
+	<span class="n">m_pActivedPage</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">CVerticalLayoutUI</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">paint_manager_</span><span class="p">.</span><span class="n">FindControl</span><span class="p">(</span><span class="n">Name_wszActivedPage</span><span class="p">));</span>
+	<span class="n">ASSERT</span><span class="p">(</span><span class="n">m_pActivedPage</span><span class="p">);</span>
+	<span class="n">m_pActivedPage</span><span class="o">-&gt;</span><span class="n">SetVisible</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+	<span class="n">m_pActivedOkBtn</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">CButtonUI</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">paint_manager_</span><span class="p">.</span><span class="n">FindControl</span><span class="p">(</span><span class="n">Name_wszActivedOkBtn</span><span class="p">));</span>
+	<span class="n">ASSERT</span><span class="p">(</span><span class="n">m_pActivedOkBtn</span><span class="p">);</span>
+	<span class="n">m_pRebootTipLabel</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">CLabelUI</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">paint_manager_</span><span class="p">.</span><span class="n">FindControl</span><span class="p">(</span><span class="n">Name_wszRebootTipLabel</span><span class="p">));</span>
+	<span class="n">ASSERT</span><span class="p">(</span><span class="n">m_pRebootTipLabel</span><span class="p">);</span>
+	<span class="n">m_pRebootTipLabel</span><span class="o">-&gt;</span><span class="n">SetVisible</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+
+	<span class="cm">/* ³õÊ¼»¯ÆäËû */</span>
+	<span class="n">ShowOtherEdits</span><span class="p">(</span><span class="o">!</span><span class="n">m_pShowOtherBtn</span><span class="o">-&gt;</span><span class="n">IsVisible</span><span class="p">());</span>
+	<span class="n">LoadConfig</span><span class="p">();</span>
+	<span class="n">CheckActiveParam</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">Notify</span><span class="p">(</span><span class="n">DuiLib</span><span class="o">::</span><span class="n">TNotifyUI</span><span class="o">&amp;</span> <span class="n">msg</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">msg</span><span class="p">.</span><span class="n">sType</span> <span class="o">==</span> <span class="sa">L</span><span class="s">&quot;windowinit&quot;</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">m_pActiveBtn</span><span class="o">-&gt;</span><span class="n">SetFocus</span><span class="p">();</span>
+		<span class="n">InitStep</span><span class="p">();</span>
+		<span class="n">SetCurActiveStep</span><span class="p">(</span><span class="n">STEP_START</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">msg</span><span class="p">.</span><span class="n">sType</span> <span class="o">==</span> <span class="sa">L</span><span class="s">&quot;click&quot;</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">msg</span><span class="p">.</span><span class="n">pSender</span> <span class="o">==</span> <span class="n">m_pActiveBtn</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">OnActiveBtn</span><span class="p">();</span>
+		<span class="p">}</span>
+		<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">msg</span><span class="p">.</span><span class="n">pSender</span> <span class="o">==</span> <span class="n">m_pActivedOkBtn</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">OnActivedOkBtn</span><span class="p">();</span>
+		<span class="p">}</span>
+		<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">msg</span><span class="p">.</span><span class="n">pSender</span> <span class="o">==</span> <span class="n">m_pShowOtherBtn</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">m_pShowOtherBtn</span><span class="o">-&gt;</span><span class="n">SetVisible</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+			<span class="n">ShowOtherEdits</span><span class="p">(</span><span class="o">!</span><span class="n">m_pShowOtherBtn</span><span class="o">-&gt;</span><span class="n">IsVisible</span><span class="p">());</span>
+		<span class="p">}</span>
+		<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">msg</span><span class="p">.</span><span class="n">pSender</span> <span class="o">==</span> <span class="n">m_pHideOtherBtn</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">m_pShowOtherBtn</span><span class="o">-&gt;</span><span class="n">SetVisible</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+			<span class="n">ShowOtherEdits</span><span class="p">(</span><span class="o">!</span><span class="n">m_pShowOtherBtn</span><span class="o">-&gt;</span><span class="n">IsVisible</span><span class="p">());</span>
+		<span class="p">}</span>
+		<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">msg</span><span class="p">.</span><span class="n">pSender</span> <span class="o">==</span> <span class="n">m_pProductDetailConfigBtn</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">OnProductDetailConfigBtn</span><span class="p">();</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+	<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">msg</span><span class="p">.</span><span class="n">sType</span> <span class="o">==</span> <span class="sa">L</span><span class="s">&quot;itemselect&quot;</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">msg</span><span class="p">.</span><span class="n">pSender</span> <span class="o">==</span> <span class="n">m_pProductTypeCbo</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">string</span> <span class="n">curSchemeName</span> <span class="o">=</span> <span class="n">CStringUtil</span><span class="o">::</span><span class="n">WCharToChar</span><span class="p">(</span><span class="n">m_pProductTypeCbo</span><span class="o">-&gt;</span><span class="n">GetItemAt</span><span class="p">(</span><span class="n">m_pProductTypeCbo</span><span class="o">-&gt;</span><span class="n">GetCurSel</span><span class="p">())</span><span class="o">-&gt;</span><span class="n">GetText</span><span class="p">());</span>
+			<span class="n">CSchemeConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">SetCurSchemeName</span><span class="p">(</span><span class="n">curSchemeName</span><span class="p">);</span>
+			<span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">SetConfigInt</span><span class="p">(</span><span class="n">Key_szSchemeType</span><span class="p">,</span> <span class="n">m_pProductTypeCbo</span><span class="o">-&gt;</span><span class="n">GetCurSel</span><span class="p">());</span>
+			<span class="n">CSchemeDetail</span><span class="o">*</span> <span class="n">pSchemeDetail</span> <span class="o">=</span> <span class="n">CSchemeConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetSchemeDetail</span><span class="p">(</span><span class="n">CSchemeConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetCurSchemeName</span><span class="p">());</span>
+			<span class="n">assert</span><span class="p">(</span><span class="n">pSchemeDetail</span><span class="p">);</span>
+			<span class="n">m_pDevModel</span><span class="o">-&gt;</span><span class="n">SetText</span><span class="p">(</span><span class="n">CStringUtil</span><span class="o">::</span><span class="n">CharToWChar</span><span class="p">(</span><span class="n">pSchemeDetail</span><span class="o">-&gt;</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">Key_szSchemeModel</span><span class="p">).</span><span class="n">c_str</span><span class="p">()).</span><span class="n">c_str</span><span class="p">());</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+	<span class="n">__super</span><span class="o">::</span><span class="n">Notify</span><span class="p">(</span><span class="n">msg</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">LRESULT</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">HandleCustomMessage</span><span class="p">(</span><span class="n">UINT</span> <span class="n">uMsg</span><span class="p">,</span> <span class="n">WPARAM</span> <span class="n">wParam</span><span class="p">,</span> <span class="n">LPARAM</span> <span class="n">lParam</span><span class="p">,</span> <span class="n">BOOL</span><span class="o">&amp;</span> <span class="n">bHandled</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">uMsg</span> <span class="o">==</span> <span class="n">WM_U_EXEC_NEXT_STEP</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">E_RetCode</span> <span class="n">emRet</span> <span class="o">=</span> <span class="n">Active_ExecCurStep</span><span class="p">();</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">emRet</span> <span class="o">!=</span> <span class="n">emRC_OK</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">OnReportError</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="n">emRet</span><span class="p">);</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+	<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">uMsg</span> <span class="o">==</span> <span class="n">WM_U_CREATE_TIPOK_WND</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">OnActivedOkBtn</span><span class="p">();</span>
+		<span class="n">bHandled</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+		<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="n">__super</span><span class="o">::</span><span class="n">HandleCustomMessage</span><span class="p">(</span><span class="n">uMsg</span><span class="p">,</span> <span class="n">wParam</span><span class="p">,</span> <span class="n">lParam</span><span class="p">,</span> <span class="n">bHandled</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">LRESULT</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">OnDestroy</span><span class="p">(</span><span class="n">UINT</span> <span class="n">uMsg</span><span class="p">,</span> <span class="n">WPARAM</span> <span class="n">wParam</span><span class="p">,</span> <span class="n">LPARAM</span> <span class="n">lParam</span><span class="p">,</span> <span class="n">BOOL</span><span class="o">&amp;</span> <span class="n">bHandled</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="c1">// Ïú»Ù´°¿Ú</span>
+	<span class="n">__super</span><span class="o">::</span><span class="n">OnDestroy</span><span class="p">(</span><span class="n">uMsg</span><span class="p">,</span> <span class="n">wParam</span><span class="p">,</span> <span class="n">lParam</span><span class="p">,</span> <span class="n">bHandled</span><span class="p">);</span>
+
+	<span class="n">RemoveProp</span><span class="p">(</span><span class="n">m_hWnd</span><span class="p">,</span> <span class="sa">L</span><span class="s">&quot;KeyApp&quot;</span><span class="p">);</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">m_bIsExitApp</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">CAppExit</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">ExitApp</span><span class="p">();</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">LRESULT</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">ResponseDefaultKeyEvent</span><span class="p">(</span><span class="n">WPARAM</span> <span class="n">wParam</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">wParam</span> <span class="o">==</span> <span class="n">VK_RETURN</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">m_pActivePage</span><span class="o">-&gt;</span><span class="n">IsVisible</span><span class="p">())</span>
+		<span class="p">{</span>
+			<span class="n">OnActiveBtn</span><span class="p">();</span>
+		<span class="p">}</span>
+		<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">m_pActivedPage</span><span class="o">-&gt;</span><span class="n">IsVisible</span><span class="p">())</span>
+		<span class="p">{</span>
+			<span class="n">OnActivedOkBtn</span><span class="p">();</span>
+		<span class="p">}</span>
+
+		<span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="k">return</span> <span class="n">__super</span><span class="o">::</span><span class="n">ResponseDefaultKeyEvent</span><span class="p">(</span><span class="n">wParam</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">ShowOtherEdits</span><span class="p">(</span><span class="kt">bool</span> <span class="n">bShow</span><span class="cm">/* = true*/</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">const</span> <span class="kt">wchar_t</span><span class="o">*</span>	<span class="n">items</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="n">Name_wszRbsUsernameSH</span><span class="p">,</span> <span class="n">Name_wszRbsPasswordSH</span><span class="p">,</span> 
+								<span class="n">Name_wszKeyAddressSH</span><span class="p">,</span> <span class="n">Name_wszKeyUsernameSH</span><span class="p">,</span> <span class="n">Name_wszKeyPasswordSH</span><span class="p">,</span> 
+								<span class="n">Name_wszDevModelSH</span><span class="p">,</span> <span class="n">Name_wszDevSerialSH</span><span class="p">,</span> <span class="n">Name_wszDevVersionSH</span><span class="p">,</span> <span class="n">Name_wszOptionSetSH</span> <span class="p">};</span>
+	<span class="kt">int</span> <span class="n">itemcount</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="o">/</span> <span class="k">sizeof</span><span class="p">(</span><span class="k">const</span> <span class="kt">wchar_t</span><span class="o">*</span><span class="p">);</span>
+	<span class="n">CHorizontalLayoutUI</span> <span class="o">*</span><span class="n">pHUI</span><span class="p">;</span>
+	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">itemcount</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">pHUI</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">CHorizontalLayoutUI</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">paint_manager_</span><span class="p">.</span><span class="n">FindControl</span><span class="p">(</span><span class="n">items</span><span class="p">[</span><span class="n">i</span><span class="p">]));</span>
+		<span class="n">ASSERT</span><span class="p">(</span><span class="n">pHUI</span><span class="p">);</span>
+		<span class="c1">// Òþ²ØÉè±¸°æ±¾ºÅÊäÈë¿ò</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">items</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">Name_wszDevVersionSH</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="k">continue</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="n">pHUI</span><span class="o">-&gt;</span><span class="n">SetVisible</span><span class="p">(</span><span class="n">bShow</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="n">m_pShowOtherBtn</span><span class="o">-&gt;</span><span class="n">SetVisible</span><span class="p">(</span><span class="o">!</span><span class="n">bShow</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">InitStep</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="c1">// ³õÊ¼»¯¼¤»î²½ÖèÓ³Éä</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">m_mapActiveStepFun</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+	<span class="p">{</span>
+		<span class="n">m_mapActiveStepFun</span><span class="p">[</span><span class="n">STEP_DOWN_KHOST_CLIREG</span><span class="p">]</span>		<span class="o">=</span> <span class="o">&amp;</span><span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">Active_Step9</span><span class="p">;</span>
+		<span class="n">m_mapActiveStepFun</span><span class="p">[</span><span class="n">STEP_DOWN_KHOST_PUBKEY</span><span class="p">]</span>		<span class="o">=</span> <span class="o">&amp;</span><span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">Active_Step10</span><span class="p">;</span>
+		<span class="n">m_mapActiveStepFun</span><span class="p">[</span><span class="n">STEP_DOWN_KHOST_KEY</span><span class="p">]</span>			<span class="o">=</span> <span class="o">&amp;</span><span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">Active_Step4</span><span class="p">;</span><span class="c1">//</span>
+		<span class="n">m_mapActiveStepFun</span><span class="p">[</span><span class="n">STEP_EXEC_KHOST_LICENSE</span><span class="p">]</span>		<span class="o">=</span> <span class="o">&amp;</span><span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">Active_Step3</span><span class="p">;</span><span class="c1">//</span>
+		<span class="n">m_mapActiveStepFun</span><span class="p">[</span><span class="n">STEP_UP_KHOST_REG</span><span class="p">]</span>			<span class="o">=</span> <span class="o">&amp;</span><span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">Active_Step2</span><span class="p">;</span><span class="c1">//</span>
+		<span class="n">m_mapActiveStepFun</span><span class="p">[</span><span class="n">STEP_DOWN_AHOST_REG</span><span class="p">]</span>			<span class="o">=</span> <span class="o">&amp;</span><span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">Active_Step1</span><span class="p">;</span><span class="c1">//</span>
+		<span class="n">m_mapActiveStepFun</span><span class="p">[</span><span class="n">STEP_EXEC_AHOST_CLIREG</span><span class="p">]</span>		<span class="o">=</span> <span class="o">&amp;</span><span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">Active_Step13</span><span class="p">;</span>
+		<span class="n">m_mapActiveStepFun</span><span class="p">[</span><span class="n">STEP_EXEC_AHOST_CLEAR</span><span class="p">]</span>		<span class="o">=</span> <span class="o">&amp;</span><span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">Active_Step14</span><span class="p">;</span>
+		<span class="n">m_mapActiveStepFun</span><span class="p">[</span><span class="n">STEP_UP_AHOST_CLIREG</span><span class="p">]</span>		<span class="o">=</span> <span class="o">&amp;</span><span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">Active_Step11</span><span class="p">;</span>
+		<span class="n">m_mapActiveStepFun</span><span class="p">[</span><span class="n">STEP_UP_AHOST_PUBKEY</span><span class="p">]</span>		<span class="o">=</span> <span class="o">&amp;</span><span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">Active_Step12</span><span class="p">;</span>
+		<span class="n">m_mapActiveStepFun</span><span class="p">[</span><span class="n">STEP_UP_AHOST_KEY</span><span class="p">]</span>			<span class="o">=</span> <span class="o">&amp;</span><span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">Active_Step5</span><span class="p">;</span><span class="c1">//</span>
+		<span class="n">m_mapActiveStepFun</span><span class="p">[</span><span class="n">STEP_UP_AHOST_VIDEOSTRATEGY</span><span class="p">]</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">Active_Step6</span><span class="p">;</span><span class="c1">//</span>
+		<span class="n">m_mapActiveStepFun</span><span class="p">[</span><span class="n">STEP_UP_AHOST_SOFTDETECTION</span><span class="p">]</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">Active_Step7</span><span class="p">;</span><span class="c1">//</span>
+		<span class="n">m_mapActiveStepFun</span><span class="p">[</span><span class="n">STEP_WEB_SEND_STREAMS</span><span class="p">]</span>		<span class="o">=</span> <span class="o">&amp;</span><span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">Active_Step0</span><span class="p">;</span><span class="c1">//</span>
+		<span class="n">m_mapActiveStepFun</span><span class="p">[</span><span class="n">STEP_END</span><span class="p">]</span>					<span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span><span class="c1">//</span>
+	<span class="p">}</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">m_mapActiveStepScheme</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+	<span class="p">{</span>
+		<span class="kt">uint32_t</span> <span class="n">uIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="n">ActiveStepScheme</span> <span class="n">activeStepSchemeTmp</span><span class="p">;</span>
+		<span class="n">activeStepSchemeTmp</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">STEP_START</span><span class="p">);</span>
+		<span class="n">activeStepSchemeTmp</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">STEP_DOWN_KHOST_CLIREG</span><span class="p">);</span>
+		<span class="n">activeStepSchemeTmp</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">STEP_DOWN_KHOST_PUBKEY</span><span class="p">);</span>
+		<span class="n">activeStepSchemeTmp</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">STEP_UP_AHOST_CLIREG</span><span class="p">);</span>
+		<span class="n">activeStepSchemeTmp</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">STEP_UP_AHOST_PUBKEY</span><span class="p">);</span>
+		<span class="n">activeStepSchemeTmp</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">STEP_WEB_SEND_STREAMS</span><span class="p">);</span>
+		<span class="n">activeStepSchemeTmp</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">STEP_EXEC_AHOST_CLIREG</span><span class="p">);</span>
+		<span class="n">activeStepSchemeTmp</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">STEP_DOWN_AHOST_REG</span><span class="p">);</span>
+		<span class="n">activeStepSchemeTmp</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">STEP_UP_KHOST_REG</span><span class="p">);</span>
+		<span class="n">activeStepSchemeTmp</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">STEP_EXEC_KHOST_LICENSE</span><span class="p">);</span>
+		<span class="n">activeStepSchemeTmp</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">STEP_DOWN_KHOST_KEY</span><span class="p">);</span>
+		<span class="n">activeStepSchemeTmp</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">STEP_UP_AHOST_KEY</span><span class="p">);</span>
+		<span class="n">activeStepSchemeTmp</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">STEP_UP_AHOST_VIDEOSTRATEGY</span><span class="p">);</span>
+		<span class="n">activeStepSchemeTmp</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">STEP_UP_AHOST_SOFTDETECTION</span><span class="p">);</span>
+		<span class="n">activeStepSchemeTmp</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">STEP_EXEC_AHOST_CLEAR</span><span class="p">);</span>
+		<span class="n">activeStepSchemeTmp</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">STEP_END</span><span class="p">);</span>
+		<span class="n">m_mapActiveStepScheme</span><span class="p">[</span><span class="n">uIndex</span><span class="p">]</span> <span class="o">=</span> <span class="n">activeStepSchemeTmp</span><span class="p">;</span>
+		<span class="n">uIndex</span><span class="o">++</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="n">assert</span><span class="p">(</span><span class="n">m_mapActiveStepScheme</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">UnInitStep</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">m_mapActiveStepFun</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+	<span class="n">m_mapActiveStepScheme</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">LoadConfig</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="k">const</span> <span class="kt">char</span><span class="o">*</span>	<span class="n">szKeyItems</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>	<span class="n">Key_szHostAddress</span><span class="p">,</span> <span class="n">Key_szHostUsername</span><span class="p">,</span> <span class="n">Key_szHostPassword</span><span class="p">,</span> 
+									<span class="n">Key_szKeyserverAddress</span><span class="p">,</span> <span class="n">Key_szKeyserverUsername</span><span class="p">,</span> <span class="n">Key_szKeyserverPassword</span><span class="p">,</span>
+									<span class="n">Key_szDevModel</span><span class="p">,</span> <span class="n">Key_szDevSerial</span><span class="p">,</span> <span class="n">Key_szDevVer</span> <span class="p">};</span>
+	<span class="n">CEditUI</span><span class="o">*</span> <span class="n">ptrEditUIArray</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>	<span class="n">m_pRbsAddress</span><span class="p">,</span> <span class="n">m_pRbsUsername</span><span class="p">,</span> <span class="n">m_pRbsPassword</span><span class="p">,</span>
+									<span class="n">m_pKeyAddress</span><span class="p">,</span> <span class="n">m_pKeyUsername</span><span class="p">,</span> <span class="n">m_pKeyPassword</span><span class="p">,</span>
+									<span class="n">m_pDevModel</span><span class="p">,</span> <span class="n">m_pDevSerial</span><span class="p">,</span> <span class="n">m_pDevVer</span> <span class="p">};</span>
+	<span class="kt">int</span> <span class="n">itemCount</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">szKeyItems</span><span class="p">)</span> <span class="o">/</span> <span class="k">sizeof</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span><span class="p">);</span>
+	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">itemCount</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">string</span> <span class="n">szKeyValue</span> <span class="o">=</span> <span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">szKeyItems</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+		<span class="n">CEditUI</span><span class="o">*</span> <span class="n">ptrEditUI</span> <span class="o">=</span> <span class="n">ptrEditUIArray</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+		<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">szKeyValue</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">ptrEditUI</span><span class="o">-&gt;</span><span class="n">IsVisible</span><span class="p">())</span>
+		<span class="p">{</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">ptrEditUI</span><span class="o">-&gt;</span><span class="n">IsPasswordMode</span><span class="p">())</span>
+			<span class="p">{</span>
+				<span class="n">szKeyValue</span> <span class="o">=</span> <span class="n">CStringUtil</span><span class="o">::</span><span class="n">SimpleDecryption</span><span class="p">(</span><span class="n">szKeyValue</span><span class="p">);</span>
+			<span class="p">}</span>
+			<span class="n">ptrEditUI</span><span class="o">-&gt;</span><span class="n">SetText</span><span class="p">(</span><span class="n">CStringUtil</span><span class="o">::</span><span class="n">CharToWChar</span><span class="p">(</span><span class="n">szKeyValue</span><span class="p">.</span><span class="n">c_str</span><span class="p">()).</span><span class="n">c_str</span><span class="p">());</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+
+	<span class="c1">// Éè±¸ÐòÁÐºÅÉú³É</span>
+	<span class="n">SYSTEMTIME</span> <span class="n">sys</span><span class="p">;</span>
+	<span class="o">::</span><span class="n">GetLocalTime</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sys</span><span class="p">);</span>
+	<span class="n">CStdString</span> <span class="n">strDevSerial</span><span class="p">;</span>
+	<span class="n">strDevSerial</span><span class="p">.</span><span class="n">Format</span><span class="p">(</span><span class="sa">L</span><span class="s">&quot;%04d%02d%02d%02d%02d%02d&quot;</span><span class="p">,</span> <span class="n">sys</span><span class="p">.</span><span class="n">wYear</span><span class="p">,</span> <span class="n">sys</span><span class="p">.</span><span class="n">wMonth</span><span class="p">,</span> <span class="n">sys</span><span class="p">.</span><span class="n">wDay</span><span class="p">,</span> <span class="n">sys</span><span class="p">.</span><span class="n">wHour</span><span class="p">,</span> <span class="n">sys</span><span class="p">.</span><span class="n">wMinute</span><span class="p">,</span> <span class="n">sys</span><span class="p">.</span><span class="n">wSecond</span><span class="p">);</span>
+	<span class="n">m_pDevSerial</span><span class="o">-&gt;</span><span class="n">SetText</span><span class="p">(</span><span class="n">strDevSerial</span><span class="p">);</span>
+
+	<span class="kt">int</span> <span class="n">nRememberPw</span> <span class="o">=</span> <span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfigInt</span><span class="p">(</span><span class="n">Key_nRememberPw</span><span class="p">);</span>
+	<span class="n">m_pRememberPwChk</span><span class="o">-&gt;</span><span class="n">SetCheck</span><span class="p">(</span><span class="n">nRememberPw</span><span class="o">==</span><span class="mi">0</span><span class="o">?</span><span class="nb">false</span><span class="o">:</span><span class="nb">true</span><span class="p">);</span>
+	<span class="kt">int</span> <span class="n">nSchemeIndex</span> <span class="o">=</span> <span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfigInt</span><span class="p">(</span><span class="n">Key_szSchemeType</span><span class="p">);</span>
+	<span class="n">m_pProductTypeCbo</span><span class="o">-&gt;</span><span class="n">SelectItem</span><span class="p">(</span><span class="n">nSchemeIndex</span><span class="p">);</span>
+	<span class="kt">int</span> <span class="n">nDataSrcType</span> <span class="o">=</span> <span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfigInt</span><span class="p">(</span><span class="n">Key_szDataSrcType</span><span class="p">);</span>
+	<span class="n">m_pDataSrcCbo</span><span class="o">-&gt;</span><span class="n">SelectItem</span><span class="p">(</span><span class="n">nDataSrcType</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">SaveConfig</span><span class="p">(</span><span class="kt">bool</span> <span class="n">bSaveToFile</span><span class="cm">/* = true*/</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">const</span> <span class="kt">char</span><span class="o">*</span>	<span class="n">szKeyItems</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>	<span class="n">Key_szHostAddress</span><span class="p">,</span> <span class="n">Key_szHostUsername</span><span class="p">,</span> <span class="n">Key_szHostPassword</span><span class="p">,</span>
+									<span class="n">Key_szKeyserverAddress</span><span class="p">,</span> <span class="n">Key_szKeyserverUsername</span><span class="p">,</span> <span class="n">Key_szKeyserverPassword</span><span class="p">,</span>
+									<span class="n">Key_szDevModel</span><span class="p">,</span> <span class="n">Key_szDevSerial</span><span class="p">,</span> <span class="n">Key_szDevVer</span> <span class="p">};</span>
+	<span class="n">CEditUI</span><span class="o">*</span> <span class="n">ptrEditUIArray</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>	<span class="n">m_pRbsAddress</span><span class="p">,</span> <span class="n">m_pRbsUsername</span><span class="p">,</span> <span class="n">m_pRbsPassword</span><span class="p">,</span>
+									<span class="n">m_pKeyAddress</span><span class="p">,</span> <span class="n">m_pKeyUsername</span><span class="p">,</span> <span class="n">m_pKeyPassword</span><span class="p">,</span>
+									<span class="n">m_pDevModel</span><span class="p">,</span> <span class="n">m_pDevSerial</span><span class="p">,</span> <span class="n">m_pDevVer</span> <span class="p">};</span>
+	<span class="kt">int</span> <span class="n">itemCount</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">szKeyItems</span><span class="p">)</span> <span class="o">/</span> <span class="k">sizeof</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span><span class="p">);</span>
+	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">itemCount</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">CEditUI</span><span class="o">*</span> <span class="n">ptrEditUI</span> <span class="o">=</span> <span class="n">ptrEditUIArray</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+		<span class="n">string</span> <span class="n">szKeyValue</span> <span class="o">=</span> <span class="n">CStringUtil</span><span class="o">::</span><span class="n">WCharToChar</span><span class="p">(</span><span class="n">ptrEditUI</span><span class="o">-&gt;</span><span class="n">GetText</span><span class="p">());</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">ptrEditUI</span><span class="o">-&gt;</span><span class="n">IsVisible</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">szKeyValue</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+		<span class="p">{</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">ptrEditUI</span><span class="o">-&gt;</span><span class="n">IsPasswordMode</span><span class="p">())</span>
+			<span class="p">{</span>
+				<span class="n">szKeyValue</span> <span class="o">=</span> <span class="n">CStringUtil</span><span class="o">::</span><span class="n">SimpleEncryption</span><span class="p">(</span><span class="n">szKeyValue</span><span class="p">);</span>
+			<span class="p">}</span>
+			<span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">SetConfig</span><span class="p">(</span><span class="n">szKeyItems</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">szKeyValue</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+
+	<span class="n">string</span> <span class="n">szRememberPw</span> <span class="o">=</span> <span class="n">m_pRememberPwChk</span><span class="o">-&gt;</span><span class="n">GetCheck</span><span class="p">()</span> <span class="o">?</span> <span class="s">&quot;1&quot;</span> <span class="o">:</span> <span class="s">&quot;0&quot;</span><span class="p">;</span>
+	<span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">SetConfig</span><span class="p">(</span><span class="n">Key_nRememberPw</span><span class="p">,</span> <span class="n">szRememberPw</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+	<span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">SetConfigInt</span><span class="p">(</span><span class="n">Key_szSchemeType</span><span class="p">,</span> <span class="n">m_pProductTypeCbo</span><span class="o">-&gt;</span><span class="n">GetCurSel</span><span class="p">());</span>
+	<span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">SetConfigInt</span><span class="p">(</span><span class="n">Key_szDataSrcType</span><span class="p">,</span> <span class="n">m_pDataSrcCbo</span><span class="o">-&gt;</span><span class="n">GetCurSel</span><span class="p">());</span>
+	<span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">SetConfigInt</span><span class="p">(</span><span class="n">Key_szSchemeType</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">bSaveToFile</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">SaveConfig</span><span class="p">();</span>
+		<span class="c1">//CSchemeConfig::Instance(m_pProductTypeCbo-&gt;GetCurSel()).SaveConfig();</span>
+	<span class="p">}</span>
+
+	<span class="c1">// ÐÂÉè±¸ÐòÁÐºÅÉú³É</span>
+	<span class="n">SYSTEMTIME</span> <span class="n">sys</span><span class="p">;</span>
+	<span class="o">::</span><span class="n">GetLocalTime</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sys</span><span class="p">);</span>
+	<span class="n">CStdString</span> <span class="n">strDevSerial</span><span class="p">;</span>
+	<span class="n">strDevSerial</span><span class="p">.</span><span class="n">Format</span><span class="p">(</span><span class="sa">L</span><span class="s">&quot;%04d%02d%02d%02d%02d%02d&quot;</span><span class="p">,</span> <span class="n">sys</span><span class="p">.</span><span class="n">wYear</span><span class="p">,</span> <span class="n">sys</span><span class="p">.</span><span class="n">wMonth</span><span class="p">,</span> <span class="n">sys</span><span class="p">.</span><span class="n">wDay</span><span class="p">,</span> <span class="n">sys</span><span class="p">.</span><span class="n">wHour</span><span class="p">,</span> <span class="n">sys</span><span class="p">.</span><span class="n">wMinute</span><span class="p">,</span> <span class="n">sys</span><span class="p">.</span><span class="n">wSecond</span><span class="p">);</span>
+	<span class="n">m_pDevSerial</span><span class="o">-&gt;</span><span class="n">SetText</span><span class="p">(</span><span class="n">strDevSerial</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">OnActiveBtn</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="c1">// ¿ªÊ¼¼¤»î</span>
+	<span class="n">E_RetCode</span> <span class="n">emResult</span> <span class="o">=</span> <span class="n">emRC_OK</span><span class="p">;</span>
+
+	<span class="n">CHECK_RETURN</span><span class="p">(</span><span class="o">!</span><span class="n">CheckActiveParam</span><span class="p">());</span>
+	<span class="n">SaveConfig</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+
+	<span class="k">do</span> 
+	<span class="p">{</span>
+		<span class="n">m_pActivePage</span><span class="o">-&gt;</span><span class="n">SetVisible</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+		<span class="n">m_pActivingPage</span><span class="o">-&gt;</span><span class="n">SetVisible</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+
+		<span class="n">emResult</span> <span class="o">=</span> <span class="n">Active_Ready</span><span class="p">();</span>
+		<span class="n">CHECK_BREAK</span><span class="p">(</span><span class="n">emResult</span> <span class="o">!=</span> <span class="n">emRC_OK</span><span class="p">);</span>
+		<span class="n">SetCurActiveStep</span><span class="p">(</span><span class="n">SETP_NEXT</span><span class="p">);</span>
+		<span class="n">emResult</span> <span class="o">=</span> <span class="n">Active_ExecCurStep</span><span class="p">();</span>
+		<span class="n">CHECK_BREAK</span><span class="p">(</span><span class="n">emResult</span> <span class="o">!=</span> <span class="n">emRC_OK</span><span class="p">);</span>
+	<span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+
+	<span class="k">if</span> <span class="p">(</span><span class="n">emResult</span> <span class="o">!=</span> <span class="n">emRC_OK</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">OnReportError</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="n">emResult</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">OnActivedOkBtn</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="kt">bool</span> <span class="n">bNotReboot</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+	<span class="k">do</span> 
+	<span class="p">{</span>
+		<span class="n">string</span> <span class="n">szUsername</span> <span class="o">=</span> <span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">Key_szHostUsername</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">szUsername</span><span class="p">.</span><span class="n">compare</span><span class="p">(</span><span class="s">&quot;root&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="k">break</span><span class="p">;</span>
+		<span class="p">}</span>
+
+		<span class="n">CTipOkWnd</span><span class="o">*</span> <span class="n">pTipOkWnd</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CTipOkWnd</span><span class="p">();</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pTipOkWnd</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="k">break</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="n">pTipOkWnd</span><span class="o">-&gt;</span><span class="n">Create</span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">m_hWnd</span><span class="p">,</span> <span class="sa">L</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">UI_WNDSTYLE_DIALOG</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+		<span class="n">pTipOkWnd</span><span class="o">-&gt;</span><span class="n">CenterWindow</span><span class="p">();</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">IDYES</span> <span class="o">==</span> <span class="n">pTipOkWnd</span><span class="o">-&gt;</span><span class="n">ShowModal</span><span class="p">())</span>
+		<span class="p">{</span>
+			<span class="n">E_RetCode</span> <span class="n">nResult</span> <span class="o">=</span> <span class="n">RebootRemoteHost</span><span class="p">();</span>
+			<span class="n">bNotReboot</span> <span class="o">=</span> <span class="p">(</span><span class="n">nResult</span> <span class="o">==</span> <span class="n">emRC_OK</span><span class="p">)</span> <span class="o">?</span> <span class="nb">false</span> <span class="o">:</span> <span class="nb">true</span><span class="p">;</span>
+		<span class="p">}</span>
+	<span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+	
+	<span class="k">if</span> <span class="p">(</span><span class="n">bNotReboot</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">LOG_ERROR</span><span class="p">(</span><span class="s">&quot;Do not reboot actived host.&quot;</span><span class="p">);</span>
+		<span class="n">m_pActivePage</span><span class="o">-&gt;</span><span class="n">SetVisible</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+		<span class="n">m_pActivingPage</span><span class="o">-&gt;</span><span class="n">SetVisible</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+		<span class="n">m_pActivedPage</span><span class="o">-&gt;</span><span class="n">SetVisible</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">OnReportError</span><span class="p">(</span><span class="kt">int</span> <span class="n">nResult</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">CAtlString</span> <span class="n">wszMsg</span><span class="p">(</span><span class="sa">L</span><span class="s">&quot;&quot;</span><span class="p">);</span>
+	<span class="n">wszMsg</span><span class="p">.</span><span class="n">Format</span><span class="p">(</span><span class="sa">L</span><span class="s">&quot;¼¤»îÖ÷»úÊ§°Ü:[%d].&quot;</span><span class="p">,</span> <span class="n">nResult</span><span class="p">);</span>
+	<span class="n">MessageBoxW</span><span class="p">(</span><span class="n">m_hWnd</span><span class="p">,</span> <span class="n">wszMsg</span><span class="p">,</span> <span class="sa">L</span><span class="s">&quot;´íÎó&quot;</span><span class="p">,</span> <span class="n">MB_ICONERROR</span><span class="p">);</span>
+
+	<span class="n">LOG_ERROR</span><span class="p">(</span><span class="s">&quot;Active Host Fail:[%d].&quot;</span><span class="p">,</span> <span class="n">nResult</span><span class="p">);</span>
+
+	<span class="n">DeleteTmpFile</span><span class="p">();</span>
+
+	<span class="n">Sleep</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+
+	<span class="n">m_pActivePage</span><span class="o">-&gt;</span><span class="n">SetVisible</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+	<span class="n">m_pActivingPage</span><span class="o">-&gt;</span><span class="n">SetVisible</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+	<span class="n">SetCurActiveStep</span><span class="p">(</span><span class="n">STEP_START</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">OnActiveSuccess</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">m_pRememberPwChk</span><span class="o">-&gt;</span><span class="n">GetCheck</span><span class="p">())</span>
+	<span class="p">{</span>
+		<span class="n">SaveConfig</span><span class="p">();</span>
+	<span class="p">}</span>
+
+	<span class="n">Sleep</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+
+	<span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Active Host Success.&quot;</span><span class="p">);</span>
+
+	<span class="n">m_pActivePage</span><span class="o">-&gt;</span><span class="n">SetVisible</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+	<span class="n">m_pActivingPage</span><span class="o">-&gt;</span><span class="n">SetVisible</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+	<span class="n">m_pActivedOkBtn</span><span class="o">-&gt;</span><span class="n">SetVisible</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+	<span class="n">m_pRebootTipLabel</span><span class="o">-&gt;</span><span class="n">SetVisible</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+	<span class="n">m_pActivedPage</span><span class="o">-&gt;</span><span class="n">SetVisible</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+
+	<span class="n">Sleep</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+
+	<span class="n">SetCurActiveStep</span><span class="p">(</span><span class="n">STEP_START</span><span class="p">);</span>
+
+	<span class="n">DeleteTmpFile</span><span class="p">();</span>
+
+	<span class="n">PostMessage</span><span class="p">(</span><span class="n">WM_U_CREATE_TIPOK_WND</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">OnProductDetailConfigBtn</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="k">do</span>
+	<span class="p">{</span>
+		<span class="kt">int</span> <span class="n">curSchemeIndex</span> <span class="o">=</span> <span class="n">m_pProductTypeCbo</span><span class="o">-&gt;</span><span class="n">GetCurSel</span><span class="p">();</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">curSchemeIndex</span><span class="o">&lt;</span><span class="mi">0</span> <span class="o">||</span> <span class="n">curSchemeIndex</span><span class="o">&gt;</span><span class="n">m_pProductTypeCbo</span><span class="o">-&gt;</span><span class="n">GetCount</span><span class="p">())</span>
+		<span class="p">{</span>
+			<span class="n">m_pProductTypeCbo</span><span class="o">-&gt;</span><span class="n">SetFocus</span><span class="p">();</span>
+			<span class="k">break</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="n">CProductConfigWnd</span><span class="o">*</span> <span class="n">pProductConfigWnd</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CProductConfigWnd</span><span class="p">();</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pProductConfigWnd</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="k">break</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="n">pProductConfigWnd</span><span class="o">-&gt;</span><span class="n">Create</span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">m_hWnd</span><span class="p">,</span> <span class="sa">L</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">UI_WNDSTYLE_DIALOG</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+		<span class="n">pProductConfigWnd</span><span class="o">-&gt;</span><span class="n">CenterWindow</span><span class="p">();</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">IDYES</span> <span class="o">==</span> <span class="n">pProductConfigWnd</span><span class="o">-&gt;</span><span class="n">ShowModal</span><span class="p">())</span>
+		<span class="p">{</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">m_pProductTypeCbo</span><span class="o">-&gt;</span><span class="n">GetCurSel</span><span class="p">()</span> <span class="o">!=</span> <span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfigInt</span><span class="p">(</span><span class="n">Key_szSchemeType</span><span class="p">))</span>
+			<span class="p">{</span>
+				<span class="n">m_pProductTypeCbo</span><span class="o">-&gt;</span><span class="n">SelectItem</span><span class="p">(</span><span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfigInt</span><span class="p">(</span><span class="n">Key_szSchemeType</span><span class="p">));</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+	<span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">SetCurActiveStep</span><span class="p">(</span><span class="n">Active_Step</span> <span class="n">curActiveStep</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">ActiveStepScheme</span> <span class="n">curActiveStepScheme</span> <span class="o">=</span> <span class="n">m_mapActiveStepScheme</span><span class="p">[</span><span class="n">m_uCurSchemeIdx</span><span class="p">];</span>
+	<span class="kt">uint32_t</span> <span class="n">curStepIdx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">for</span> <span class="p">(;</span> <span class="n">curStepIdx</span> <span class="o">&lt;</span> <span class="n">curActiveStepScheme</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">curStepIdx</span><span class="o">++</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">CHECK_BREAK</span><span class="p">(</span><span class="n">m_curStep</span> <span class="o">==</span> <span class="n">curActiveStepScheme</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">curStepIdx</span><span class="p">));</span>
+	<span class="p">}</span>
+	<span class="n">Active_Step</span> <span class="n">nextStep</span> <span class="o">=</span> <span class="n">curStepIdx</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="n">curActiveStepScheme</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">?</span> <span class="nl">m_curStep</span> <span class="p">:</span> <span class="n">curActiveStepScheme</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">curStepIdx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+	<span class="n">m_curStep</span> <span class="o">=</span> <span class="p">(</span><span class="n">curActiveStep</span> <span class="o">==</span> <span class="n">SETP_NEXT</span><span class="p">)</span> <span class="o">?</span> <span class="nl">nextStep</span> <span class="p">:</span> <span class="n">curActiveStep</span><span class="p">;</span>
+	<span class="k">for</span> <span class="p">(</span><span class="n">curStepIdx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">curStepIdx</span> <span class="o">&lt;</span> <span class="n">curActiveStepScheme</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">curStepIdx</span><span class="o">++</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">CHECK_BREAK</span><span class="p">(</span><span class="n">m_curStep</span> <span class="o">==</span> <span class="n">curActiveStepScheme</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">curStepIdx</span><span class="p">));</span>
+	<span class="p">}</span>
+	<span class="kt">int</span> <span class="n">curProgress</span> <span class="o">=</span> <span class="p">(</span><span class="n">m_pActiveProgress</span><span class="o">-&gt;</span><span class="n">GetMaxValue</span><span class="p">()</span> <span class="o">-</span> <span class="n">m_pActiveProgress</span><span class="o">-&gt;</span><span class="n">GetMinValue</span><span class="p">())</span> <span class="o">*</span> <span class="n">curStepIdx</span> <span class="o">/</span> <span class="p">(</span><span class="n">curActiveStepScheme</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+	<span class="n">m_pActiveProgress</span><span class="o">-&gt;</span><span class="n">SetValue</span><span class="p">(</span><span class="n">m_pActiveProgress</span><span class="o">-&gt;</span><span class="n">GetMinValue</span><span class="p">()</span> <span class="o">+</span> <span class="n">curProgress</span><span class="p">);</span>
+	<span class="n">CStdString</span> <span class="n">stdStr</span><span class="p">;</span>
+	<span class="n">stdStr</span><span class="p">.</span><span class="n">Format</span><span class="p">(</span><span class="sa">L</span><span class="s">&quot;%d/%d&quot;</span><span class="p">,</span> <span class="n">curStepIdx</span><span class="p">,</span> <span class="p">(</span><span class="n">curActiveStepScheme</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">));</span>
+	<span class="n">m_pProgressTipLabel</span><span class="o">-&gt;</span><span class="n">SetText</span><span class="p">(</span><span class="n">stdStr</span><span class="p">);</span>
+
+	<span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Current step is: %d &quot;</span><span class="p">,</span> <span class="n">m_curStep</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">CheckActiveParam</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="kt">bool</span> <span class="n">bRet</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+
+	<span class="n">CEditUI</span><span class="o">*</span> <span class="n">ptrEditUIArray</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>	<span class="n">m_pRbsAddress</span><span class="p">,</span> <span class="n">m_pRbsUsername</span><span class="p">,</span> <span class="n">m_pRbsPassword</span><span class="p">,</span>
+									<span class="n">m_pKeyAddress</span><span class="p">,</span> <span class="n">m_pKeyUsername</span><span class="p">,</span> <span class="n">m_pKeyPassword</span><span class="p">,</span>
+									<span class="n">m_pDevModel</span><span class="p">,</span> <span class="n">m_pDevSerial</span><span class="p">,</span> <span class="n">m_pDevVer</span> <span class="p">};</span>
+	<span class="kt">int</span> <span class="n">itemCount</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">ptrEditUIArray</span><span class="p">)</span> <span class="o">/</span> <span class="k">sizeof</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span><span class="p">);</span>
+	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">itemCount</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">CStdString</span> <span class="n">wszValue</span> <span class="o">=</span> <span class="n">ptrEditUIArray</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">GetText</span><span class="p">();</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">wszValue</span><span class="p">.</span><span class="n">IsEmpty</span><span class="p">())</span>
+		<span class="p">{</span>
+			<span class="n">ptrEditUIArray</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">SetFocus</span><span class="p">();</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+			<span class="p">{</span>
+				<span class="n">ShowOtherEdits</span><span class="p">();</span>
+			<span class="p">}</span>
+			<span class="n">bRet</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+			<span class="k">break</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="k">else</span>
+		<span class="p">{</span>
+			<span class="n">ASSERT</span><span class="p">(</span><span class="n">itemCount</span> <span class="o">==</span> <span class="mi">9</span><span class="p">);</span>
+			<span class="c1">// ¼ì²éIPºÍÉè±¸°æ±¾</span>
+			<span class="n">string</span> <span class="n">szValue</span> <span class="o">=</span> <span class="n">CStringUtil</span><span class="o">::</span><span class="n">WCharToChar</span><span class="p">(</span><span class="n">wszValue</span><span class="p">);</span>
+			<span class="k">switch</span> <span class="p">(</span><span class="n">i</span><span class="p">)</span>
+			<span class="p">{</span>
+			<span class="k">case</span> <span class="mi">0</span><span class="o">:</span><span class="p">;</span>
+			<span class="k">case</span> <span class="mi">3</span><span class="o">:</span> <span class="n">bRet</span> <span class="o">=</span> <span class="n">CRegexUtil</span><span class="o">::</span><span class="n">IsIp</span><span class="p">(</span><span class="n">szValue</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+				<span class="k">break</span><span class="p">;</span>
+			<span class="k">case</span> <span class="mi">8</span><span class="o">:</span> <span class="n">bRet</span> <span class="o">=</span> <span class="n">CRegexUtil</span><span class="o">::</span><span class="n">IsDevVer</span><span class="p">(</span><span class="n">szValue</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+				<span class="k">break</span><span class="p">;</span>
+			<span class="k">default</span><span class="o">:</span>
+				<span class="k">break</span><span class="p">;</span>
+			<span class="p">}</span>
+			<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">bRet</span><span class="p">)</span>
+			<span class="p">{</span>
+				<span class="n">ptrEditUIArray</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">SetFocus</span><span class="p">();</span>
+				<span class="k">break</span><span class="p">;</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+	<span class="cm">/*int customSchemeIndex = m_pProductTypeCbo-&gt;GetCount() - 1;</span>
+<span class="cm">	int curSchemeIndex = m_pProductTypeCbo-&gt;GetCurSel();</span>
+<span class="cm">	if (!(curSchemeIndex &gt;=0 &amp;&amp; curSchemeIndex &lt; customSchemeIndex) &amp;&amp; !(curSchemeIndex == customSchemeIndex &amp;&amp; m_bSchemeConfigFinish))</span>
+<span class="cm">	{</span>
+<span class="cm">		m_pProductTypeCbo-&gt;SetFocus();</span>
+<span class="cm">		OnProductDetailConfigBtn();</span>
+<span class="cm">		bRet = false;</span>
+<span class="cm">	}*/</span>
+
+	<span class="k">return</span> <span class="n">bRet</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">E_RetCode</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">GenerateSchemeFile</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">CRbsConfigHelper</span> <span class="n">rbsconfigHelper</span><span class="p">;</span>
+	<span class="n">E_RetCode</span> <span class="n">nResult</span> <span class="o">=</span> <span class="n">emRC_OK</span><span class="p">;</span>
+	<span class="n">VIDEO_STRATEGY_INFO</span> <span class="n">stVideoStrategyInfo</span><span class="p">;</span>
+
+	<span class="k">do</span>
+	<span class="p">{</span>
+		<span class="kt">int</span> <span class="n">curSchemeIndex</span> <span class="o">=</span> <span class="n">m_pProductTypeCbo</span><span class="o">-&gt;</span><span class="n">GetCurSel</span><span class="p">();</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">curSchemeIndex</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">curSchemeIndex</span> <span class="o">&gt;=</span> <span class="n">m_pProductTypeCbo</span><span class="o">-&gt;</span><span class="n">GetCount</span><span class="p">())</span>
+		<span class="p">{</span>
+			<span class="n">nResult</span> <span class="o">=</span> <span class="n">emRC_UNKNOW</span><span class="p">;</span>
+			<span class="k">break</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="n">nResult</span> <span class="o">=</span> <span class="n">rbsconfigHelper</span><span class="p">.</span><span class="n">InitConfigParam</span><span class="p">();</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">nResult</span> <span class="o">!=</span> <span class="n">emRC_OK</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="k">break</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="n">CSchemeDetail</span><span class="o">*</span> <span class="n">pSchemeDetail</span> <span class="o">=</span> <span class="n">CSchemeConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetSchemeDetail</span><span class="p">(</span><span class="n">CSchemeConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetCurSchemeName</span><span class="p">());</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pSchemeDetail</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">nResult</span> <span class="o">=</span> <span class="n">emRC_UNKNOW</span><span class="p">;</span>
+			<span class="k">break</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="n">VecVideoSrcInfoType</span> <span class="n">allVideoSrcInfo</span> <span class="o">=</span> <span class="n">CSchemeConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetAllVideoSrc</span><span class="p">();</span>
+		<span class="n">VecStrType</span> <span class="n">videoSrcVec</span> <span class="o">=</span> <span class="n">pSchemeDetail</span><span class="o">-&gt;</span><span class="n">GetVideoSrc</span><span class="p">();</span>
+		<span class="k">for</span> <span class="p">(</span><span class="n">VecStrTypeIt</span> <span class="n">it</span> <span class="o">=</span> <span class="n">videoSrcVec</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">videoSrcVec</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">it</span><span class="o">++</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">nResult</span> <span class="o">=</span> <span class="n">rbsconfigHelper</span><span class="p">.</span><span class="n">GetVideoResource</span><span class="p">((</span><span class="o">*</span><span class="n">it</span><span class="p">).</span><span class="n">c_str</span><span class="p">(),</span> <span class="o">&amp;</span><span class="n">stVideoStrategyInfo</span><span class="p">);</span>
+			<span class="k">for</span> <span class="p">(</span><span class="n">VecVideoSrcInfoType</span><span class="o">::</span><span class="n">size_type</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">allVideoSrcInfo</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+			<span class="p">{</span>
+				<span class="n">string</span> <span class="n">szKeyPrefix</span> <span class="o">=</span> <span class="n">allVideoSrcInfo</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="n">szVideoSrcPrefix</span><span class="p">;</span>
+				<span class="n">string</span> <span class="n">szKeyname</span><span class="p">;</span>
+				<span class="k">if</span> <span class="p">(</span><span class="o">*</span><span class="n">it</span> <span class="o">==</span> <span class="n">allVideoSrcInfo</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="n">szVideoSrcName</span><span class="p">)</span>
+				<span class="p">{</span>
+					<span class="n">stVideoStrategyInfo</span><span class="p">.</span><span class="n">uVideoID</span> <span class="o">=</span> <span class="n">allVideoSrcInfo</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="n">uVideoID</span><span class="p">;</span>
+					<span class="n">stVideoStrategyInfo</span><span class="p">.</span><span class="n">stStrategyParam</span><span class="p">.</span><span class="n">uVideoID</span> <span class="o">=</span> <span class="n">stVideoStrategyInfo</span><span class="p">.</span><span class="n">uVideoID</span><span class="p">;</span>
+					<span class="k">if</span> <span class="p">(</span><span class="n">allVideoSrcInfo</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="n">szVideoSettinsNode</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+					<span class="p">{</span>
+						<span class="c1">// ÔÆÌ¨µØÖ·</span>
+						<span class="n">szKeyname</span> <span class="o">=</span> <span class="n">szKeyPrefix</span> <span class="o">+</span> <span class="n">Key_szPTZAddress</span><span class="p">;</span>
+						<span class="kt">int</span> <span class="n">nValue</span> <span class="o">=</span> <span class="n">pSchemeDetail</span><span class="o">-&gt;</span><span class="n">GetConfigInt</span><span class="p">(</span><span class="n">szKeyname</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+						<span class="k">if</span> <span class="p">(</span><span class="n">nValue</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+						<span class="p">{</span>
+							<span class="n">stVideoStrategyInfo</span><span class="p">.</span><span class="n">uPtzAddress</span> <span class="o">=</span> <span class="n">nValue</span><span class="p">;</span>
+						<span class="p">}</span>
+						<span class="c1">// ÔÆÌ¨ÐòÁÐºÅ</span>
+						<span class="n">szKeyname</span> <span class="o">=</span> <span class="n">szKeyPrefix</span> <span class="o">+</span> <span class="n">Key_szPTZSerail</span><span class="p">;</span>
+						<span class="n">nValue</span> <span class="o">=</span> <span class="n">pSchemeDetail</span><span class="o">-&gt;</span><span class="n">GetConfigInt</span><span class="p">(</span><span class="n">szKeyname</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+						<span class="k">if</span> <span class="p">(</span><span class="n">nValue</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+						<span class="p">{</span>
+							<span class="n">stVideoStrategyInfo</span><span class="p">.</span><span class="n">uPtzSerail</span> <span class="o">=</span> <span class="n">nValue</span><span class="p">;</span>
+						<span class="p">}</span>
+						<span class="c1">// ÊÇ·ñ¼ì²â</span>
+						<span class="n">szKeyname</span> <span class="o">=</span> <span class="n">szKeyPrefix</span> <span class="o">+</span> <span class="n">Key_szDetectionSW</span><span class="p">;</span>
+						<span class="n">nValue</span> <span class="o">=</span> <span class="n">pSchemeDetail</span><span class="o">-&gt;</span><span class="n">GetConfigInt</span><span class="p">(</span><span class="n">szKeyname</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+						<span class="k">if</span> <span class="p">(</span><span class="n">nValue</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+						<span class="p">{</span>
+							<span class="n">stVideoStrategyInfo</span><span class="p">.</span><span class="n">stStrategyParam</span><span class="p">.</span><span class="n">bIsDetection</span> <span class="o">=</span> <span class="p">(</span><span class="n">nValue</span><span class="o">!=</span><span class="mi">0</span><span class="p">);</span>
+						<span class="p">}</span>
+						<span class="c1">// ¼ì²âÄ£Ê½</span>
+						<span class="n">szKeyname</span> <span class="o">=</span> <span class="n">szKeyPrefix</span> <span class="o">+</span> <span class="n">Key_szDetectMode</span><span class="p">;</span>
+						<span class="n">nValue</span> <span class="o">=</span> <span class="n">pSchemeDetail</span><span class="o">-&gt;</span><span class="n">GetConfigInt</span><span class="p">(</span><span class="n">szKeyname</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+						<span class="k">if</span> <span class="p">(</span><span class="n">nValue</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+						<span class="p">{</span>
+							<span class="n">stVideoStrategyInfo</span><span class="p">.</span><span class="n">stStrategyParam</span><span class="p">.</span><span class="n">bIsSoftDetection</span> <span class="o">=</span> <span class="p">(</span><span class="n">nValue</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>
+						<span class="p">}</span>
+						<span class="c1">// ³¬Ê±</span>
+						<span class="n">szKeyname</span> <span class="o">=</span> <span class="n">szKeyPrefix</span> <span class="o">+</span> <span class="n">Key_szTimeout</span><span class="p">;</span>
+						<span class="n">nValue</span> <span class="o">=</span> <span class="n">pSchemeDetail</span><span class="o">-&gt;</span><span class="n">GetConfigInt</span><span class="p">(</span><span class="n">szKeyname</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+						<span class="k">if</span> <span class="p">(</span><span class="n">nValue</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+						<span class="p">{</span>
+							<span class="n">stVideoStrategyInfo</span><span class="p">.</span><span class="n">stStrategyParam</span><span class="p">.</span><span class="n">uTimeOut</span> <span class="o">=</span> <span class="n">nValue</span><span class="p">;</span>
+						<span class="p">}</span>
+						<span class="c1">// ÇÐ»»ÖÁ</span>
+						<span class="n">szKeyname</span> <span class="o">=</span> <span class="n">szKeyPrefix</span> <span class="o">+</span> <span class="n">Key_szTriggerTo</span><span class="p">;</span>
+						<span class="n">nValue</span> <span class="o">=</span> <span class="n">pSchemeDetail</span><span class="o">-&gt;</span><span class="n">GetConfigInt</span><span class="p">(</span><span class="n">szKeyname</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+						<span class="k">if</span> <span class="p">(</span><span class="n">nValue</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span><span class="p">)</span><span class="n">nValue</span> <span class="o">&lt;</span> <span class="n">videoSrcVec</span><span class="p">.</span><span class="n">size</span><span class="p">())</span>
+						<span class="p">{</span>
+							<span class="k">for</span> <span class="p">(</span><span class="n">VecVideoSrcInfoType</span><span class="o">::</span><span class="n">size_type</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">allVideoSrcInfo</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span>
+							<span class="p">{</span>
+								<span class="k">if</span> <span class="p">(</span><span class="n">allVideoSrcInfo</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">k</span><span class="p">).</span><span class="n">szVideoSrcName</span> <span class="o">==</span> <span class="n">videoSrcVec</span><span class="p">[</span><span class="n">nValue</span><span class="p">])</span>
+								<span class="p">{</span>
+									<span class="n">stVideoStrategyInfo</span><span class="p">.</span><span class="n">stStrategyParam</span><span class="p">.</span><span class="n">uJoinVideoID</span> <span class="o">=</span> <span class="n">allVideoSrcInfo</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">k</span><span class="p">).</span><span class="n">uVideoID</span><span class="p">;</span>
+									<span class="k">break</span><span class="p">;</span>
+								<span class="p">}</span>
+							<span class="p">}</span>
+						<span class="p">}</span>
+						<span class="c1">// ÇÐ»»Ô¤ÖÃÎ»</span>
+						<span class="n">szKeyname</span> <span class="o">=</span> <span class="n">szKeyPrefix</span> <span class="o">+</span> <span class="n">Key_szTriggerPreset</span><span class="p">;</span>
+						<span class="n">nValue</span> <span class="o">=</span> <span class="n">pSchemeDetail</span><span class="o">-&gt;</span><span class="n">GetConfigInt</span><span class="p">(</span><span class="n">szKeyname</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+						<span class="k">if</span> <span class="p">(</span><span class="n">nValue</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+						<span class="p">{</span>
+							<span class="n">stVideoStrategyInfo</span><span class="p">.</span><span class="n">stStrategyParam</span><span class="p">.</span><span class="n">uJoinVideoPreset</span> <span class="o">=</span> <span class="n">nValue</span><span class="p">;</span>
+						<span class="p">}</span>
+						<span class="c1">// ÓÅÏÈ¼¶</span>
+						<span class="n">szKeyname</span> <span class="o">=</span> <span class="n">szKeyPrefix</span> <span class="o">+</span> <span class="n">Key_szPriority</span><span class="p">;</span>
+						<span class="n">nValue</span> <span class="o">=</span> <span class="n">pSchemeDetail</span><span class="o">-&gt;</span><span class="n">GetConfigInt</span><span class="p">(</span><span class="n">szKeyname</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+						<span class="k">if</span> <span class="p">(</span><span class="n">nValue</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+						<span class="p">{</span>
+							<span class="n">stVideoStrategyInfo</span><span class="p">.</span><span class="n">stStrategyParam</span><span class="p">.</span><span class="n">uDirectorPriority</span> <span class="o">=</span> <span class="n">nValue</span><span class="p">;</span>
+						<span class="p">}</span>
+						<span class="c1">// ¹²ÓÃÉãÏñÍ·</span>
+						<span class="n">szKeyname</span> <span class="o">=</span> <span class="n">szKeyPrefix</span> <span class="o">+</span> <span class="n">Key_szShareVideoSrcIndex</span><span class="p">;</span>
+						<span class="n">nValue</span> <span class="o">=</span> <span class="n">pSchemeDetail</span><span class="o">-&gt;</span><span class="n">GetConfigInt</span><span class="p">(</span><span class="n">szKeyname</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+						<span class="k">if</span> <span class="p">(</span><span class="n">nValue</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span><span class="p">)</span><span class="n">nValue</span> <span class="o">&lt;</span> <span class="n">videoSrcVec</span><span class="p">.</span><span class="n">size</span><span class="p">())</span>
+						<span class="p">{</span>
+							<span class="k">for</span> <span class="p">(</span><span class="n">VecVideoSrcInfoType</span><span class="o">::</span><span class="n">size_type</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">allVideoSrcInfo</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span>
+							<span class="p">{</span>
+								<span class="k">if</span> <span class="p">(</span><span class="n">allVideoSrcInfo</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">k</span><span class="p">).</span><span class="n">szVideoSrcName</span> <span class="o">==</span> <span class="n">videoSrcVec</span><span class="p">[</span><span class="n">nValue</span><span class="p">])</span>
+								<span class="p">{</span>
+									<span class="n">stVideoStrategyInfo</span><span class="p">.</span><span class="n">stStrategyParam</span><span class="p">.</span><span class="n">uShareVideoID</span> <span class="o">=</span> <span class="n">allVideoSrcInfo</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">k</span><span class="p">).</span><span class="n">uVideoID</span><span class="p">;</span>
+									<span class="k">break</span><span class="p">;</span>
+								<span class="p">}</span>
+							<span class="p">}</span>
+						<span class="p">}</span>
+					<span class="p">}</span>
+					<span class="k">if</span> <span class="p">(</span><span class="n">allVideoSrcInfo</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="n">szSoftDetectionSettinsNode</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+					<span class="p">{</span>
+						<span class="c1">// ×îÐ¡±ä»¯ãÐÖµ¿í¶È</span>
+						<span class="n">szKeyname</span> <span class="o">=</span> <span class="n">szKeyPrefix</span> <span class="o">+</span> <span class="n">Key_szMinChangeThresholdWidth</span><span class="p">;</span>
+						<span class="kt">int</span> <span class="n">nValue</span> <span class="o">=</span> <span class="n">pSchemeDetail</span><span class="o">-&gt;</span><span class="n">GetConfigInt</span><span class="p">(</span><span class="n">szKeyname</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+						<span class="k">if</span> <span class="p">(</span><span class="n">nValue</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+						<span class="p">{</span>
+							<span class="n">stVideoStrategyInfo</span><span class="p">.</span><span class="n">stSoftDetectionParam</span><span class="p">.</span><span class="n">uMinTargetsWidth</span> <span class="o">=</span> <span class="n">nValue</span><span class="p">;</span>
+						<span class="p">}</span>
+						<span class="c1">// ×îÐ¡±ä»¯ãÐÖµ¸ß¶È</span>
+						<span class="n">szKeyname</span> <span class="o">=</span> <span class="n">szKeyPrefix</span> <span class="o">+</span> <span class="n">Key_szMinChangeThresholdHeight</span><span class="p">;</span>
+						<span class="n">nValue</span> <span class="o">=</span> <span class="n">pSchemeDetail</span><span class="o">-&gt;</span><span class="n">GetConfigInt</span><span class="p">(</span><span class="n">szKeyname</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+						<span class="k">if</span> <span class="p">(</span><span class="n">nValue</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+						<span class="p">{</span>
+							<span class="n">stVideoStrategyInfo</span><span class="p">.</span><span class="n">stSoftDetectionParam</span><span class="p">.</span><span class="n">uMinTargetsHeight</span> <span class="o">=</span> <span class="n">nValue</span><span class="p">;</span>
+						<span class="p">}</span>
+						<span class="c1">// ×îÐ¡¶ÔÏó´óÐ¡ãÐÖµ</span>
+						<span class="n">szKeyname</span> <span class="o">=</span> <span class="n">szKeyPrefix</span> <span class="o">+</span> <span class="n">Key_szMinTargetSizeThreshold</span><span class="p">;</span>
+						<span class="n">nValue</span> <span class="o">=</span> <span class="n">pSchemeDetail</span><span class="o">-&gt;</span><span class="n">GetConfigInt</span><span class="p">(</span><span class="n">szKeyname</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+						<span class="k">if</span> <span class="p">(</span><span class="n">nValue</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+						<span class="p">{</span>
+							<span class="n">stVideoStrategyInfo</span><span class="p">.</span><span class="n">stSoftDetectionParam</span><span class="p">.</span><span class="n">uObjectThreshold</span> <span class="o">=</span> <span class="n">nValue</span><span class="p">;</span>
+						<span class="p">}</span>
+						<span class="c1">// ¼ì²â·Ö¸ôÏß¸ß¶ÈÆ«ÒÆ</span>
+						<span class="n">szKeyname</span> <span class="o">=</span> <span class="n">szKeyPrefix</span> <span class="o">+</span> <span class="n">Key_szSepLineHeightOffset</span><span class="p">;</span>
+						<span class="n">nValue</span> <span class="o">=</span> <span class="n">pSchemeDetail</span><span class="o">-&gt;</span><span class="n">GetConfigInt</span><span class="p">(</span><span class="n">szKeyname</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+						<span class="k">if</span> <span class="p">(</span><span class="n">nValue</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+						<span class="p">{</span>
+							<span class="n">stVideoStrategyInfo</span><span class="p">.</span><span class="n">stSoftDetectionParam</span><span class="p">.</span><span class="n">fDetectionLineY</span> <span class="o">=</span> <span class="n">nValue</span> <span class="o">/</span> <span class="mf">100.0f</span><span class="p">;</span>
+						<span class="p">}</span>
+						<span class="c1">// ¼ì²âÖ¡¼ä¸ô</span>
+						<span class="n">szKeyname</span> <span class="o">=</span> <span class="n">szKeyPrefix</span> <span class="o">+</span> <span class="n">Key_szFrameSpace</span><span class="p">;</span>
+						<span class="n">nValue</span> <span class="o">=</span> <span class="n">pSchemeDetail</span><span class="o">-&gt;</span><span class="n">GetConfigInt</span><span class="p">(</span><span class="n">szKeyname</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+						<span class="k">if</span> <span class="p">(</span><span class="n">nValue</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+						<span class="p">{</span>
+							<span class="n">stVideoStrategyInfo</span><span class="p">.</span><span class="n">stSoftDetectionParam</span><span class="p">.</span><span class="n">uDetectionFrameInterval</span> <span class="o">=</span> <span class="n">nValue</span><span class="p">;</span>
+						<span class="p">}</span>
+					<span class="p">}</span>
+					<span class="k">break</span><span class="p">;</span>
+				<span class="p">}</span>
+			<span class="p">}</span>
+			<span class="n">rbsconfigHelper</span><span class="p">.</span><span class="n">AddVideoResource</span><span class="p">(</span><span class="o">&amp;</span><span class="n">stVideoStrategyInfo</span><span class="p">);</span>
+		<span class="p">}</span>
+
+		<span class="c1">// ¸÷¸ö·½°¸µÄÄ¬ÈÏÖµ</span>
+		<span class="n">DEFAULT_VALUE</span> <span class="n">stDefaultValue</span><span class="p">;</span>
+		<span class="kt">int</span> <span class="n">nValue</span> <span class="o">=</span> <span class="n">pSchemeDetail</span><span class="o">-&gt;</span><span class="n">GetConfigInt</span><span class="p">(</span><span class="n">Key_szDirectorVideoIndex</span><span class="p">);</span>
+		<span class="k">for</span> <span class="p">(</span><span class="n">VecVideoSrcInfoType</span><span class="o">::</span><span class="n">size_type</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">allVideoSrcInfo</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">allVideoSrcInfo</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">k</span><span class="p">).</span><span class="n">szVideoSrcName</span> <span class="o">==</span> <span class="n">videoSrcVec</span><span class="p">[</span><span class="n">nValue</span><span class="p">])</span>
+			<span class="p">{</span>
+				<span class="n">stDefaultValue</span><span class="p">.</span><span class="n">uDirectorVideoID</span> <span class="o">=</span> <span class="n">allVideoSrcInfo</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">k</span><span class="p">).</span><span class="n">uVideoID</span><span class="p">;</span>
+				<span class="k">break</span><span class="p">;</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+		<span class="n">nValue</span> <span class="o">=</span> <span class="n">pSchemeDetail</span><span class="o">-&gt;</span><span class="n">GetConfigInt</span><span class="p">(</span><span class="n">Key_szSubDirectorVideoIndex</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">nValue</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">stDefaultValue</span><span class="p">.</span><span class="n">uSubDirectorVideoID</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="k">else</span>
+		<span class="p">{</span>
+			<span class="k">for</span> <span class="p">(</span><span class="n">VecVideoSrcInfoType</span><span class="o">::</span><span class="n">size_type</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">allVideoSrcInfo</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span>
+			<span class="p">{</span>
+				<span class="k">if</span> <span class="p">((</span><span class="n">nValue</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span><span class="p">)</span><span class="n">nValue</span> <span class="o">&lt;</span> <span class="n">videoSrcVec</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="o">&amp;&amp;</span> <span class="n">allVideoSrcInfo</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">k</span><span class="p">).</span><span class="n">szVideoSrcName</span> <span class="o">==</span> <span class="n">videoSrcVec</span><span class="p">[</span><span class="n">nValue</span><span class="p">])</span>
+				<span class="p">{</span>
+					<span class="n">stDefaultValue</span><span class="p">.</span><span class="n">uSubDirectorVideoID</span> <span class="o">=</span> <span class="n">allVideoSrcInfo</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">k</span><span class="p">).</span><span class="n">uVideoID</span><span class="p">;</span>
+					<span class="k">break</span><span class="p">;</span>
+				<span class="p">}</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+		<span class="n">stDefaultValue</span><span class="p">.</span><span class="n">uDataSrcType</span> <span class="o">=</span> <span class="n">m_pDataSrcCbo</span><span class="o">-&gt;</span><span class="n">GetCurSel</span><span class="p">();</span>
+		<span class="n">rbsconfigHelper</span><span class="p">.</span><span class="n">AddDefaultValue</span><span class="p">(</span><span class="o">&amp;</span><span class="n">stDefaultValue</span><span class="p">);</span>
+
+		<span class="n">nResult</span> <span class="o">=</span> <span class="n">rbsconfigHelper</span><span class="p">.</span><span class="n">BuildConfigFile</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_szWebStreamsJson</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">nResult</span> <span class="o">!=</span> <span class="n">emRC_OK</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="k">break</span><span class="p">;</span>
+		<span class="p">}</span>
+	<span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+
+	<span class="k">return</span> <span class="n">nResult</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">DeleteTmpFile</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">string</span> <span class="n">szBinPath</span> <span class="o">=</span> <span class="n">CAppParam</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetExecDir</span><span class="p">();</span>
+	<span class="k">const</span> <span class="kt">char</span><span class="o">*</span>	<span class="n">szItems1</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="n">Key_szCliRegFilename</span><span class="p">,</span> <span class="n">Key_szPubKeyFilename</span><span class="p">,</span> <span class="n">Key_szRegFilename</span><span class="p">,</span> <span class="n">Key_szKeyFilename</span> <span class="p">};</span>
+	<span class="kt">int</span> <span class="n">itemCount</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">szItems1</span><span class="p">)</span> <span class="o">/</span> <span class="k">sizeof</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span><span class="p">);</span>
+	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">itemCount</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">string</span> <span class="n">szPathTmp</span> <span class="o">=</span> <span class="n">szBinPath</span> <span class="o">+</span> <span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">szItems1</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+		<span class="n">remove</span><span class="p">(</span><span class="n">szPathTmp</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+	<span class="p">}</span>
+	<span class="n">string</span> <span class="n">szCurPath</span> <span class="o">=</span> <span class="s">&quot;./&quot;</span><span class="p">;</span>
+	<span class="k">const</span> <span class="kt">char</span><span class="o">*</span>	<span class="n">szItems2</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="n">Name_szVideoStrategyFile</span><span class="p">,</span> <span class="n">Name_szSoftDetectionFile</span><span class="p">,</span> <span class="n">SYSCONFIG_JSON_FILENAME</span> <span class="p">};</span>
+	<span class="n">itemCount</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">szItems2</span><span class="p">)</span> <span class="o">/</span> <span class="k">sizeof</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span><span class="p">);</span>
+	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">itemCount</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">string</span> <span class="n">szPathTmp</span> <span class="o">=</span> <span class="n">szCurPath</span> <span class="o">+</span> <span class="n">szItems2</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+		<span class="n">remove</span><span class="p">(</span><span class="n">szPathTmp</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span>	<span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">ResultFromJsonMsg</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">pMsgData</span><span class="p">,</span> <span class="kt">int</span> <span class="n">nMsgDataLen</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="kt">int</span> <span class="n">nResult</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+	<span class="k">do</span> 
+	<span class="p">{</span>
+		<span class="n">CInterJsonParse</span> <span class="n">JsonParse</span><span class="p">;</span>
+		<span class="n">nResult</span> <span class="o">=</span> <span class="n">JsonParse</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">pMsgData</span><span class="p">,</span> <span class="n">nMsgDataLen</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+		<span class="n">CHECK_BREAK</span><span class="p">(</span><span class="n">IS_FAILED</span><span class="p">(</span><span class="n">nResult</span><span class="p">));</span>
+		<span class="n">nResult</span> <span class="o">=</span> <span class="n">JsonParse</span><span class="p">.</span><span class="n">GetResult</span><span class="p">();</span>
+	<span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+
+	<span class="k">return</span> <span class="n">nResult</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">E_RetCode</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">Active_ExecCurStep</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">E_RetCode</span> <span class="n">emRet</span> <span class="o">=</span> <span class="n">emRC_OK</span><span class="p">;</span>
+	<span class="n">MapActiveStepFunIt</span> <span class="n">it</span> <span class="o">=</span> <span class="n">m_mapActiveStepFun</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">m_curStep</span><span class="p">);</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">it</span><span class="o">-&gt;</span><span class="n">first</span> <span class="o">==</span> <span class="n">STEP_END</span> <span class="o">||</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">OnActiveSuccess</span><span class="p">();</span>
+	<span class="p">}</span>
+	<span class="k">else</span>
+	<span class="p">{</span>
+		<span class="n">emRet</span> <span class="o">=</span> <span class="p">(</span><span class="k">this</span><span class="o">-&gt;*</span><span class="p">(</span><span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">))();</span>
+	<span class="p">}</span>
+
+	<span class="k">return</span> <span class="n">emRet</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">E_RetCode</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">Active_Ready</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">E_RetCode</span> <span class="n">emResult</span> <span class="o">=</span> <span class="n">emRC_OK</span><span class="p">;</span>
+
+	<span class="k">do</span>
+	<span class="p">{</span>
+		<span class="c1">// WEBÍ¨ÐÅ¶ÔÏó</span>
+		<span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">m_ptrWebHttp</span><span class="p">);</span>
+		<span class="n">m_ptrWebHttp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CBaseHttp</span><span class="p">;</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">m_ptrWebHttp</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="k">break</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="n">m_ptrWebHttp</span><span class="o">-&gt;</span><span class="n">SetRequestCallback</span><span class="p">(</span><span class="n">m_spNextStepCallback</span><span class="p">);</span>
+		<span class="c1">// ¼¤»îÖ÷»úSSHÍ¨ÐÅ¶ÔÏó</span>
+		<span class="n">SAFE_RELEASE</span><span class="p">(</span><span class="n">m_ptrHostSshUdExec</span><span class="p">);</span>
+		<span class="n">emResult</span> <span class="o">=</span> <span class="n">CSshUDExec</span><span class="o">::</span><span class="n">Create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_ptrHostSshUdExec</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">emResult</span> <span class="o">!=</span> <span class="n">emRC_OK</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="k">break</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="n">string</span> <span class="n">szPassword</span> <span class="o">=</span> <span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">Key_szHostPassword</span><span class="p">);</span>
+		<span class="n">emResult</span> <span class="o">=</span> <span class="n">m_ptrHostSshUdExec</span><span class="o">-&gt;</span><span class="n">SetHostParam</span><span class="p">(</span><span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">Key_szHostAddress</span><span class="p">),</span> <span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfigInt</span><span class="p">(</span><span class="n">Key_nHostPort</span><span class="p">),</span>
+			<span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">Key_szHostUsername</span><span class="p">),</span> <span class="n">CStringUtil</span><span class="o">::</span><span class="n">SimpleDecryption</span><span class="p">(</span><span class="n">szPassword</span><span class="p">));</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">emResult</span> <span class="o">!=</span> <span class="n">emRC_OK</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="k">break</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="c1">// ÃÜÔ¿Ö÷»úSSHÍ¨ÐÅ¶ÔÏó</span>
+		<span class="n">SAFE_RELEASE</span><span class="p">(</span><span class="n">m_ptrKeySshUdExec</span><span class="p">);</span>
+		<span class="n">emResult</span> <span class="o">=</span> <span class="n">CSshUDExec</span><span class="o">::</span><span class="n">Create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_ptrKeySshUdExec</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">emResult</span> <span class="o">!=</span> <span class="n">emRC_OK</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="k">break</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="n">szPassword</span> <span class="o">=</span> <span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">Key_szKeyserverPassword</span><span class="p">);</span>
+		<span class="n">emResult</span> <span class="o">=</span> <span class="n">m_ptrKeySshUdExec</span><span class="o">-&gt;</span><span class="n">SetHostParam</span><span class="p">(</span><span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">Key_szKeyserverAddress</span><span class="p">),</span> <span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfigInt</span><span class="p">(</span><span class="n">Key_nKeyserverPort</span><span class="p">),</span>
+			<span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">Key_szKeyserverUsername</span><span class="p">),</span> <span class="n">CStringUtil</span><span class="o">::</span><span class="n">SimpleDecryption</span><span class="p">(</span><span class="n">szPassword</span><span class="p">));</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">emResult</span> <span class="o">!=</span> <span class="n">emRC_OK</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="k">break</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="c1">// Éú³ÉÅäÖÃÎÄ¼þºÍÉèÖÃÊý¾ÝÔ´ÄÚÈÝ</span>
+		<span class="n">emResult</span> <span class="o">=</span> <span class="n">GenerateSchemeFile</span><span class="p">();</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">emResult</span> <span class="o">!=</span> <span class="n">emRC_OK</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="k">break</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="c1">// Éú³ÉWebUrl</span>
+		<span class="n">m_szWebUrl</span> <span class="o">=</span> <span class="s">&quot;http://&quot;</span><span class="p">;</span>
+		<span class="n">m_szWebUrl</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">Key_szHostAddress</span><span class="p">));</span>
+		<span class="n">m_szWebUrl</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;/index.php/unifiedInterface&quot;</span><span class="p">);</span>
+	<span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+
+	<span class="k">return</span> <span class="n">emResult</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">E_RetCode</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">Active_Step0</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">Sleep</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+	<span class="n">E_RetCode</span> <span class="n">emResult</span> <span class="o">=</span> <span class="n">m_ptrWebHttp</span><span class="o">-&gt;</span><span class="n">SendRequest</span><span class="p">(</span><span class="n">m_szWebUrl</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">m_szWebStreamsJson</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">m_szWebStreamsJson</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">emResult</span> <span class="o">!=</span> <span class="n">emRC_OK</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">LOG_ERROR</span><span class="p">(</span><span class="s">&quot;Send Web Request Fail Data:</span><span class="se">\r\n</span><span class="s">%s&quot;</span><span class="p">,</span> <span class="n">m_szWebStreamsJson</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+	<span class="p">}</span>
+	<span class="k">else</span>
+	<span class="p">{</span>
+		<span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Send Web Request Succeed Data:</span><span class="se">\r\n</span><span class="s">%s&quot;</span><span class="p">,</span> <span class="n">m_szWebStreamsJson</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+	<span class="p">}</span>
+
+	<span class="k">return</span> <span class="n">emResult</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">E_RetCode</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">Active_Step1</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">Sleep</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+	<span class="n">E_RetCode</span> <span class="n">emResult</span> <span class="o">=</span> <span class="n">m_ptrHostSshUdExec</span><span class="o">-&gt;</span><span class="n">DownloadFile</span><span class="p">(</span><span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">Key_szRegFilename</span><span class="p">),</span>
+												<span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">Key_szHostDownloadDir</span><span class="p">),</span>
+												<span class="n">CAppParam</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetExecDir</span><span class="p">(),</span> <span class="n">m_spNextStepCallback</span><span class="p">);</span>
+
+	<span class="k">return</span> <span class="n">emResult</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">E_RetCode</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">Active_Step2</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">Sleep</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+	<span class="n">E_RetCode</span> <span class="n">emResult</span> <span class="o">=</span> <span class="n">m_ptrKeySshUdExec</span><span class="o">-&gt;</span><span class="n">UploadFile</span><span class="p">(</span><span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">Key_szRegFilename</span><span class="p">),</span> <span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">Key_szKeyserverUploadDir</span><span class="p">),</span>
+														<span class="n">CAppParam</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetExecDir</span><span class="p">(),</span> <span class="n">m_spNextStepCallback</span><span class="p">);</span>
+
+	<span class="k">return</span> <span class="n">emResult</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">E_RetCode</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">Active_Step3</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">E_RetCode</span> <span class="n">emResult</span> <span class="o">=</span> <span class="n">emRC_OK</span><span class="p">;</span>
+
+	<span class="kt">char</span> <span class="n">szMakeNrssetupFileCmd</span><span class="p">[</span><span class="mi">1024</span> <span class="o">*</span> <span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span> <span class="p">};</span>
+	<span class="n">string</span> <span class="n">szDevModel</span> <span class="o">=</span> <span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">Key_szDevModel</span><span class="p">);</span>
+	<span class="n">string</span> <span class="n">szDevSerial</span> <span class="o">=</span> <span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">Key_szDevSerial</span><span class="p">);;</span>
+	<span class="n">string</span> <span class="n">szDevVer</span> <span class="o">=</span> <span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">Key_szDevVer</span><span class="p">);;</span>
+	<span class="n">sprintf_s</span><span class="p">(</span><span class="n">szMakeNrssetupFileCmd</span><span class="p">,</span> <span class="n">DEVINFO_FILE_FORMAT</span><span class="p">,</span> <span class="n">szDevModel</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">szDevModel</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">szDevSerial</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">szDevVer</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+	<span class="n">string</span> <span class="n">szCmd</span> <span class="o">=</span> <span class="s">&quot;echo </span><span class="se">\&quot;</span><span class="s">&quot;</span><span class="p">;</span>
+	<span class="n">szCmd</span> <span class="o">+=</span> <span class="n">szMakeNrssetupFileCmd</span><span class="p">;</span>
+	<span class="n">szCmd</span> <span class="o">+=</span> <span class="s">&quot;</span><span class="se">\&quot;</span><span class="s"> &gt; &quot;</span><span class="p">;</span>
+	<span class="n">szCmd</span> <span class="o">+=</span> <span class="n">DEVINFO_FILENAME</span><span class="p">;</span>
+	<span class="n">szCmd</span> <span class="o">+=</span> <span class="s">&quot; &amp;&amp; &quot;</span><span class="p">;</span>
+	<span class="n">szCmd</span> <span class="o">+=</span> <span class="n">Name_szLicenseCmd</span><span class="p">;</span>
+	<span class="n">emResult</span> <span class="o">=</span> <span class="n">m_ptrKeySshUdExec</span><span class="o">-&gt;</span><span class="n">ExecCmd</span><span class="p">(</span><span class="n">szCmd</span><span class="p">,</span> <span class="n">Name_szCmdExecDir</span><span class="p">,</span> <span class="n">m_spNextStepCallback</span><span class="p">);</span>
+
+	<span class="k">return</span> <span class="n">emResult</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">E_RetCode</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">Active_Step4</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">E_RetCode</span> <span class="n">emResult</span> <span class="o">=</span> <span class="n">m_ptrKeySshUdExec</span><span class="o">-&gt;</span><span class="n">DownloadFile</span><span class="p">(</span><span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">Key_szKeyFilename</span><span class="p">),</span> <span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">Key_szKeyserverDownloadDir</span><span class="p">),</span>
+														<span class="n">CAppParam</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetExecDir</span><span class="p">(),</span> <span class="n">m_spNextStepCallback</span><span class="p">);</span>
+
+	<span class="k">return</span> <span class="n">emResult</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">E_RetCode</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">Active_Step5</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">E_RetCode</span> <span class="n">emResult</span> <span class="o">=</span> <span class="n">m_ptrHostSshUdExec</span><span class="o">-&gt;</span><span class="n">UploadFile</span><span class="p">(</span><span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">Key_szKeyFilename</span><span class="p">),</span>
+											<span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">Key_szHostUpload</span><span class="p">),</span>
+											<span class="n">CAppParam</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetExecDir</span><span class="p">(),</span> <span class="n">m_spNextStepCallback</span><span class="p">);</span>
+
+	<span class="k">return</span> <span class="n">emResult</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">E_RetCode</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">Active_Step6</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">Sleep</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+	<span class="n">E_RetCode</span> <span class="n">emResult</span> <span class="o">=</span> <span class="n">m_ptrHostSshUdExec</span><span class="o">-&gt;</span><span class="n">UploadFile</span><span class="p">(</span><span class="n">Name_szVideoStrategyFile</span><span class="p">,</span>
+		<span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">Key_szHostUpload</span><span class="p">),</span>
+		<span class="n">CAppParam</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetExecDir</span><span class="p">(),</span> <span class="n">m_spNextStepCallback</span><span class="p">);</span>
+
+	<span class="k">return</span> <span class="n">emResult</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">E_RetCode</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">Active_Step7</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">Sleep</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+	<span class="n">E_RetCode</span> <span class="n">emResult</span> <span class="o">=</span> <span class="n">m_ptrHostSshUdExec</span><span class="o">-&gt;</span><span class="n">UploadFile</span><span class="p">(</span><span class="n">Name_szSoftDetectionFile</span><span class="p">,</span>
+		<span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">Key_szHostUpload</span><span class="p">),</span>
+		<span class="n">CAppParam</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetExecDir</span><span class="p">(),</span> <span class="n">m_spNextStepCallback</span><span class="p">);</span>
+
+	<span class="k">return</span> <span class="n">emResult</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">E_RetCode</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">Active_Step8</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">Sleep</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+	<span class="n">E_RetCode</span> <span class="n">emResult</span> <span class="o">=</span> <span class="n">m_ptrHostSshUdExec</span><span class="o">-&gt;</span><span class="n">UploadFile</span><span class="p">(</span><span class="n">SYSCONFIG_JSON_FILENAME</span><span class="p">,</span>
+			<span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">Key_szHostUpload</span><span class="p">),</span>
+			<span class="n">CAppParam</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetExecDir</span><span class="p">(),</span> <span class="n">m_spNextStepCallback</span><span class="p">);</span>
+
+	<span class="k">return</span> <span class="n">emResult</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">E_RetCode</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">Active_Step9</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">Sleep</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+	<span class="n">E_RetCode</span> <span class="n">emResult</span> <span class="o">=</span> <span class="n">m_ptrKeySshUdExec</span><span class="o">-&gt;</span><span class="n">DownloadFile</span><span class="p">(</span><span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">Key_szCliRegFilename</span><span class="p">),</span> <span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">Key_szKeyserverDownloadDir</span><span class="p">),</span>
+														<span class="n">CAppParam</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetExecDir</span><span class="p">(),</span> <span class="n">m_spNextStepCallback</span><span class="p">);</span>
+
+	<span class="k">return</span> <span class="n">emResult</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">E_RetCode</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">Active_Step10</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">Sleep</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+	<span class="n">E_RetCode</span> <span class="n">emResult</span> <span class="o">=</span> <span class="n">m_ptrKeySshUdExec</span><span class="o">-&gt;</span><span class="n">DownloadFile</span><span class="p">(</span><span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">Key_szPubKeyFilename</span><span class="p">),</span> <span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">Key_szKeyserverDownloadDir</span><span class="p">),</span>
+														<span class="n">CAppParam</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetExecDir</span><span class="p">(),</span> <span class="n">m_spNextStepCallback</span><span class="p">);</span>
+
+	<span class="k">return</span> <span class="n">emResult</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">E_RetCode</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">Active_Step11</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">Sleep</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+	<span class="n">E_RetCode</span> <span class="n">emResult</span> <span class="o">=</span> <span class="n">m_ptrHostSshUdExec</span><span class="o">-&gt;</span><span class="n">UploadFile</span><span class="p">(</span><span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">Key_szCliRegFilename</span><span class="p">),</span> <span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">Key_szHostUpload</span><span class="p">),</span>
+														<span class="n">CAppParam</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetExecDir</span><span class="p">(),</span> <span class="n">m_spNextStepCallback</span><span class="p">);</span>
+
+	<span class="k">return</span> <span class="n">emResult</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">E_RetCode</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">Active_Step12</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">Sleep</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+	<span class="n">E_RetCode</span> <span class="n">emResult</span> <span class="o">=</span> <span class="n">m_ptrHostSshUdExec</span><span class="o">-&gt;</span><span class="n">UploadFile</span><span class="p">(</span><span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">Key_szPubKeyFilename</span><span class="p">),</span> <span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">Key_szHostUpload</span><span class="p">),</span>
+														<span class="n">CAppParam</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetExecDir</span><span class="p">(),</span> <span class="n">m_spNextStepCallback</span><span class="p">);</span>
+
+	<span class="k">return</span> <span class="n">emResult</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">E_RetCode</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">Active_Step13</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">Sleep</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+	<span class="kt">char</span> <span class="n">szCliRegBuf</span><span class="p">[</span><span class="mi">1024</span> <span class="o">*</span> <span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span> <span class="p">};</span>
+	<span class="n">string</span> <span class="n">szCliReg</span> <span class="o">=</span> <span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">Key_szCliRegFilename</span><span class="p">);</span>
+	<span class="n">sprintf_s</span><span class="p">(</span><span class="n">szCliRegBuf</span><span class="p">,</span> <span class="s">&quot;%s&quot;</span><span class="p">,</span> <span class="n">szCliReg</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+	<span class="n">string</span> <span class="n">szCmd</span> <span class="o">=</span> <span class="s">&quot;chmod 777 &quot;</span><span class="p">;</span>
+	<span class="n">szCmd</span> <span class="o">+=</span> <span class="n">szCliRegBuf</span><span class="p">;</span>
+	<span class="n">szCmd</span> <span class="o">+=</span> <span class="s">&quot; &amp;&amp; ./&quot;</span><span class="p">;</span>
+	<span class="n">szCmd</span> <span class="o">+=</span> <span class="n">szCliRegBuf</span><span class="p">;</span>
+	<span class="n">E_RetCode</span> <span class="n">emResult</span> <span class="o">=</span> <span class="n">m_ptrHostSshUdExec</span><span class="o">-&gt;</span><span class="n">ExecCmd</span><span class="p">(</span><span class="n">szCmd</span><span class="p">,</span> <span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">Key_szHostUpload</span><span class="p">),</span> <span class="n">m_spNextStepCallback</span><span class="p">);</span>
+
+	<span class="k">return</span> <span class="n">emResult</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">E_RetCode</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">Active_Step14</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">Sleep</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+	<span class="kt">char</span> <span class="n">szCmdBuf</span><span class="p">[</span><span class="mi">1024</span> <span class="o">*</span> <span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span> <span class="p">};</span>
+	<span class="n">string</span> <span class="n">szCliReg</span> <span class="o">=</span> <span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">Key_szCliRegFilename</span><span class="p">);</span>
+	<span class="n">string</span> <span class="n">szPubKey</span> <span class="o">=</span> <span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">Key_szPubKeyFilename</span><span class="p">);</span>
+	<span class="n">string</span> <span class="n">szReg</span><span class="o">=</span> <span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">Key_szRegFilename</span><span class="p">);</span>
+	<span class="n">sprintf_s</span><span class="p">(</span><span class="n">szCmdBuf</span><span class="p">,</span> <span class="s">&quot;rm -f %s %s %s&quot;</span><span class="p">,</span> <span class="n">szCliReg</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">szPubKey</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">szReg</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+	<span class="n">E_RetCode</span> <span class="n">emResult</span> <span class="o">=</span> <span class="n">m_ptrHostSshUdExec</span><span class="o">-&gt;</span><span class="n">ExecCmd</span><span class="p">(</span><span class="n">szCmdBuf</span><span class="p">,</span> <span class="n">CKeyConfig</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetConfig</span><span class="p">(</span><span class="n">Key_szHostUpload</span><span class="p">),</span> <span class="n">m_spNextStepCallback</span><span class="p">);</span>
+
+	<span class="k">return</span> <span class="n">emResult</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">E_RetCode</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">RebootRemoteHost</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">E_RetCode</span> <span class="n">emResult</span> <span class="o">=</span> <span class="n">emRC_OK</span><span class="p">;</span>
+
+	<span class="k">if</span> <span class="p">(</span><span class="n">m_ptrHostSshUdExec</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">string</span> <span class="n">szCmd</span><span class="p">;</span><span class="c1">// = &quot;date &gt;&gt; ~/date.txt &amp;&amp; &quot;;</span>
+		<span class="n">szCmd</span> <span class="o">+=</span> <span class="n">Name_szRebootCmd</span><span class="p">;</span>
+		<span class="n">string</span> <span class="n">szCmdDir</span> <span class="o">=</span> <span class="s">&quot;/sbin/&quot;</span><span class="p">;</span>
+		<span class="n">emResult</span> <span class="o">=</span> <span class="n">m_ptrHostSshUdExec</span><span class="o">-&gt;</span><span class="n">ExecCmd</span><span class="p">(</span><span class="n">szCmd</span><span class="p">,</span> <span class="n">szCmdDir</span><span class="p">,</span> <span class="n">m_spSshExecRebootCallback</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">emResult</span> <span class="o">==</span> <span class="n">emRC_OK</span><span class="p">)</span>
+		<span class="p">{</span>
+
+		<span class="p">}</span>
+	<span class="p">}</span>
+	<span class="k">else</span>
+	<span class="p">{</span>
+		<span class="n">OnSshExecRebootCallback</span><span class="p">(</span><span class="n">emRC_PARAM_ERR</span><span class="p">,</span> <span class="k">nullptr</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">this</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="k">return</span> <span class="n">emResult</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">OnNextStepCallback</span><span class="p">(</span><span class="kt">int</span> <span class="n">nResult</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">pData</span><span class="p">,</span> <span class="kt">int</span> <span class="n">nDataLen</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">pExtendData</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">nResult</span> <span class="o">==</span> <span class="n">emRC_OK</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">SetCurActiveStep</span><span class="p">(</span><span class="n">SETP_NEXT</span><span class="p">);</span>
+		<span class="k">this</span><span class="o">-&gt;</span><span class="n">PostMessage</span><span class="p">(</span><span class="n">WM_U_EXEC_NEXT_STEP</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">nResult</span> <span class="o">!=</span> <span class="n">emRC_OK</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">OnReportError</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="n">nResult</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">CKeyMainWnd</span><span class="o">::</span><span class="n">OnSshExecRebootCallback</span><span class="p">(</span><span class="kt">int</span> <span class="n">nResult</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">pData</span><span class="p">,</span> <span class="kt">int</span> <span class="n">nDataLen</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">pExtendData</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">nResult</span> <span class="o">==</span> <span class="n">emRC_OK</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="c1">// ÌáÊ¾³É¹¦Æô¶¯ÖØÆô</span>
+		<span class="n">m_pActivedOkBtn</span><span class="o">-&gt;</span><span class="n">SetVisible</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+		<span class="n">m_pRebootTipLabel</span><span class="o">-&gt;</span><span class="n">SetVisible</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+		<span class="n">Sleep</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">nResult</span> <span class="o">!=</span> <span class="n">emRC_OK</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">CAtlString</span> <span class="n">wszMsg</span><span class="p">(</span><span class="sa">L</span><span class="s">&quot;&quot;</span><span class="p">);</span>
+		<span class="n">wszMsg</span><span class="p">.</span><span class="n">Format</span><span class="p">(</span><span class="sa">L</span><span class="s">&quot;ÖØÆô¼¤»îÖ÷»úÊ§°Ü.&quot;</span><span class="p">);</span>
+		<span class="n">MessageBoxW</span><span class="p">(</span><span class="n">m_hWnd</span><span class="p">,</span> <span class="n">wszMsg</span><span class="p">,</span> <span class="sa">L</span><span class="s">&quot;´íÎó&quot;</span><span class="p">,</span> <span class="n">MB_ICONERROR</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="n">m_pActivePage</span><span class="o">-&gt;</span><span class="n">SetVisible</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+	<span class="n">m_pActivingPage</span><span class="o">-&gt;</span><span class="n">SetVisible</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+	<span class="n">m_pActivedPage</span><span class="o">-&gt;</span><span class="n">SetVisible</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</body>
+</html>
