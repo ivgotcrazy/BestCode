@@ -1,0 +1,18 @@
+{% extends "base-head.html" %}
+
+<!-- navigator -->
+{% block navigator %}
+<div class="row" style="margin-top:8px">
+	<div style="">
+		<ol class="breadcrumb">
+		{% for nav_item in nav_items %}
+			{% if not forloop.last %}
+				<li><a href="{{ nav_item.url }}">{{ nav_item.name }}</a></li>
+			{% else %}
+				<li class="active"><a href="{{ nav_item.url }}">{{ nav_item.name }}</a></li>
+			{% endif %}
+		{% endfor %}
+		</ol>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+<!-- header -->
+{% block header %}
+<div class="row" style="line-height:60px; background:#3e3e3e;">
+	<div style="float: left; padding-left:40px;">
+		<a href="/main" style="font-weight:300; font-size:24px; text-decoration:none; color:#fff"><strong>研发中心最佳代码</strong></a>
+	</div>
+	<div style="float: right; font-weight:300; padding-right:40px">
+		<font style="font-size:14px; color:#fff">欢迎访问</font>&nbsp;&nbsp;
+		{% if not login %}
+			<a href="/users/login" style="font-size:16px; color:#fff">登录</a>&nbsp;&nbsp;
+			<a href="/users/register" style="font-size:16px; color:#fff">注册</a>
+		{% else %}
+			<a href="/users/{{ user.username }}" style="font-size:16px; color:#ffc">{{ user.username }}</a>&nbsp;&nbsp;
+			<a href="/users/logout" style="font-size:16px; color:#fff">注销</a>
+		{% endif %}	
+	</div>
+</div>
+{% endblock %}

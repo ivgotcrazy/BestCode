@@ -1,0 +1,46 @@
+.nav > li > a:hover,
+.nav > li > a:focus {
+	text-decoration: none;
+	background-color: #d9edf7
+}
+
+.nav > li.active > a {
+	background-color: #79aec8
+}
+
+.nav > li.active > a:hover {
+	text-decoration: none;
+	background-color: #79aec8
+}
+
+.panel-default {
+	border-color: #ECECEC;
+}
+
+.panel {
+	margin-bottom: 20px;
+	background-color: #fff;
+	border: 1px solid transparent;
+	border-radius: 0px;
+	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+	box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
+.panel-default > .panel-heading {
+	color: #555;
+	border-color: #FFF;
+	font-weight: bold;
+	background: #FFFFFF;
+	font-size: 16px;
+	text-shadow: none;
+}
+
+.breadcrumb {
+	padding: 12px 10px 12px 20px;
+	margin-bottom: 8px;
+	list-style: none;
+	border-radius: 0;
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+	box-shadow: 0px 1px 1px rgba(0,0,0,0.05);
+	background: #fff;
+}
