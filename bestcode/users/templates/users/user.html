@@ -1,33 +1,122 @@
-{% extends 'base-nav.html' %}
+{% extends 'base-head-nav.html' %}
 
 {% load static %}
 
 {% block main_body %}
 <!-- main body -->
 <div class="row">
-	<div class="col-sm-12" style="padding: 0px">
-		<div class="panel panel-info" style="margin-bottom: 4px; margin-right: 2px">
+	<div class="col-sm-3" style="padding-left:0px; padding-right:0px">
+		<div class="panel panel-default" style="padding:0px; margin:0px">
+			<div class="panel-body" style="">
+				<ul class="nav nav-pills nav-stacked" style="">
+					<li id="info-item" role="presentation" onclick="onNavItemClick('info-item')" style=""><a>我的信息</a></li>
+					<li class="nav-divider"></li>
+					<li id="acti-item" role="presentation" onclick="onNavItemClick('acti-item')"><a>我参与的活动</a></li>
+					<li class="nav-divider"></li>
+					<li id="comm-item" role="presentation" onclick="onNavItemClick('comm-item')"><a>我发表的评论</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-9" style="padding: 0px">
+		<div id="my-info" class="panel panel-default" style="margin-bottom: 8px; margin-left: 8px">
 			<div class="panel-heading">我的信息</div>
-			<div class="panel-body" style="padding: 4px; height: 200px">
-				<img src="{{ user.photo }}" style="height:128px; width:96px" />
+			<div class="panel-body" style="padding: 4px;">
+				<table>
+					<tr>
+						<td width="160px"><img src="{{ acti_user.photo }}" style="padding:4px; margin:8px; height:164px; width:128px" class="img-thumbnail"/></td>
+						<td width="100px" valign="top" style="padding:8px; text-align:right">
+							<span style="line-height:25px">英文名：</span><br>
+							<span style="line-height:25px">中文名：</span><br>
+							<span style="line-height:25px">一级部门：</span><br>
+							<span style="line-height:25px">二级部门：</span><br>
+							<span style="line-height:25px">电子邮箱：</span><br>
+							<span style="line-height:25px">编程语言：</span><br>
+						</td>
+						<td valign="top" style="padding:8px; text-align:left">
+							<span style="line-height:25px">{{ acti_user.user.username }}</span><br>
+							<span style="line-height:25px">{{ acti_user.chinese_name }}</span><br>
+							<span style="line-height:25px">{{ acti_user.primary_department.department_name }}</span><br>
+							<span style="line-height:25px">{{ acti_user.secondary_department.department_name }}</span><br>
+							<span style="line-height:25px">{{ acti_user.user.email }}</span><br>
+							<span style="line-height:25px">
+							{% for language in acti_user.programming_languages.all %}
+								{{ language.language_name }}&nbsp;
+							{% endfor %}
+							</span>
+						</td>	
+					</tr>
+				</table>
 			</div>
 		</div>
-		<div class="panel panel-info" style="margin-bottom: 4px; margin-right: 2px">
-			<div class="panel-heading">我参与的活动</div>
+		<div id="candidate-acti" class="panel panel-default" style="margin-bottom: 8px; margin-left: 8px">
+			<div class="panel-heading">作为选手参与的活动</div>
 			<div class="panel-body" style="padding: 4px; height: 200px">
+			{% for user_submit in user_submits %}
+				<div class="thumbnail col-sm-2" style="margin-left:8px">
+					<a href="/activities/{{ user_submit.activity.activity_id }}">
+						<img src="{{ user_submit.activity.img_path }}" style="height:100px; width:100%"></img>
+					</a>
+					<div class="caption">
+						<span>{{ user_submit.activity.name }}</span>
+					</div>
+				</div>
+			{% endfor %}
 			</div>
 		</div>
-		<div class="panel panel-info" style="margin-bottom: 4px; margin-right: 2px">
+		<div id="reviewer-acti" class="panel panel-default" style="margin-bottom: 8px; margin-left: 8px">
+			<div class="panel-heading">作为评委参与的活动</div>
+			<div class="panel-body" style="padding: 4px; height: 200px">
+			{% for reviewer_submit in reviewer_submits %}
+				<div class="thumbnail col-sm-2" style="margin-left:8px">
+					<a href="/activities/{{ reviewer_submit.activity.activity_id }}">
+						<img src="{{ reviewer_submit.activity.img_path }}" style="height:100px; width:100%"></img>
+					</a>
+					<div class="caption">
+						<span>{{ reviewer_submit.activity.name }}</span>
+					</div>
+				</div>
+			{% endfor %}
+			</div>
+		</div>
+		<div id="my-comm" class="panel panel-default" style="margin-bottom: 8px; margin-left: 8px">
 			<div class="panel-heading">我发表的评论</div>
-			<div class="panel-body" style="padding: 4px; height: 200px">
+			<div class="panel-body" style="padding:4px;">
+				<div style="margin-left:8px">{% include 'my_comment.html' %}</div>
 			</div>
 		</div>
-		<div class="panel panel-info" style="margin-bottom: 4px; margin-right: 2px">
+		<div class="panel panel-default" style="margin-bottom: 8px; margin-left: 8px">
 			<div class="panel-heading">评论</div>
-			<div class="panel-body">
-				{% include 'simple_comment.html' %}
+			<div class="panel-body" style="padding:4px">
+				<div style="margin-left:8px">{% include 'simple_comment.html' %}</div>
 			</div>
 		</div>
 	</div>
 </div>
+<script>
+	window.onload = function() {
+		onNavItemClick("info-item");
+	};
+
+	function updateState(item, panels, li_state, panel_state) {
+		document.getElementById(item).className = li_state;
+		for (var panel in panels) {
+			document.getElementById(panels[panel]).style.display = panel_state;
+		}
+	}
+
+	function onNavItemClick(nav_item) {
+		var items = new Array();
+		items["info-item"] = ["my-info"];
+		items["acti-item"] = ["candidate-acti", "reviewer-acti"];
+		items["comm-item"] = ["my-comm"];
+
+		for (item in items) {
+			if (item == nav_item)
+				updateState(item, items[item], "active", "block");
+			else
+				updateState(item, items[item], "", "none");
+		}
+	}
+</script>
 {% endblock %}

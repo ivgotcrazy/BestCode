@@ -13,7 +13,7 @@ class Activity(models.Model):
 	name = models.CharField(max_length=64, default="最佳代码")
 	desc = models.TextField(max_length=4096)
 	result = models.TextField(max_length=4096)
-	photo = models.FileField(upload_to="./activities/static/activities")
+	img_path = models.CharField(max_length=256, default="")
 	state = models.ForeignKey(ActivityState, on_delete=models.CASCADE)
 	start_date = models.DateTimeField('Start Time')
 	browse_times = models.IntegerField('Browse Times')

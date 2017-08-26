@@ -1,4 +1,4 @@
-{% extends 'base-nav.html' %}
+{% extends 'base-head-nav.html' %}
 
 {% load static %}
 			
@@ -8,75 +8,123 @@
 <div class="row">
 	<!-- left colum -->
 	<div class="col-sm-3" style="padding: 0px">
-		<div class="panel panel-default" style="margin-bottom: 4px; margin-right: 2px">
+		<div class="panel panel-default" style="margin-bottom: 0px; margin-right: 0px">
 			<div class="panel-heading">作者信息</div>
-			<div class="panel-body" style="height: 150px">
+			<div class="panel-body">
 				<div class="media-left">
-				<img src="{{ candidate.photo }}" style="height: 64px; width: 64px" />
+					<img src="{{ submit_user.photo }}" style="height: 96px; width:80px" />
 				</div>
 				<div class="media-body" style="line-height: 20px">
-					姓名：{{ candidate.name }}<br>
-					部门：{{ candidate.department }}<br>
-					代码：{{ candidate.code_programming_language }}<br>
+					<span style="line-height:25px">英文名：{{ submit_user.user.username }}</span><br>
+					<span style="line-height:25px">中文名：{{ submit_user.chinese_name }}</span><br>
+					<span style="line-height:25px">部门一：{{ submit_user.primary_department.department_name }}</span><br>
+					<span style="line-height:25px">部门二：{{ submit_user.secondary_department.department_name}}</span><br>
 				</div>
-				<div style="padding-top: 4px">
-					<span class="glyphicon glyphicon-thumbs-up">访问：{{ submit.browse_times }}</span><br>
-					<span class="glyphicon glyphicon-thumbs-up">点赞：{{ submit.praise_count }}</span><br>
-					<span class="glyphicon glyphicon-thumbs-up">评论：{{ submit.praise_count }}</span>
+				<div style="line-height:40px">
+					<table>
+						<tr valign="middle" height="50px">
+							<td width="10%" valign="top">
+								<a href="#">
+									<img onclick="onAddSubmitPraise({{ submit.submit_id }})" src="/media/common/img/thumb.jpg" style="height:22px; width:28px" />
+								</a>
+							</td>
+							<td width="20%" valign="middle"><span>点赞：</span></td>
+							<td width="20%" align="left"><span id="submit_praise_count">{{ submit.praise_count }}</span></td>
+							<td width="20%" valign="middle"><span>浏览：</span><td>
+							<td width="30%" align="left">{{ submit.browse_times }}</span></td>
+						</tr>
+					</table>
 				</div>
 			</div>
 		</div>
-		<div class="panel panel-default" style="margin-bottom: 4px; margin-right: 2px">
-			<div class="panel-heading">提交文档</div>
-			<div class="panel-body" style="height: 300px">
-				代码介绍：<br>
-				<select multiple class="form-control" style="height: 40px">
-					<option><a href="#">main.cpp</a></option>
-				</select>	
-				<br>
-				源码文件：
-				<select multiple class="form-control" style="height: 175px">
-					<option><a href="#">main.cpp</a></option>
-					<option><a href="#">main.cpp</a></option>
-					<option><a href="#">main.cpp</a></option>
-					<option><a href="#">main.cpp</a></option>
-					<option><a href="#">main.cpp</a></option>
-					<option><a href="#">main.cpp</a></option>
-					<option><a href="#">main.cpp</a></option>
-					<option><a href="#">main.cpp</a></option>
-					<option><a href="#">main.cpp</a></option>
-				</select>
+		<div class="panel panel-default" style="margin-bottom: 0px; margin-right: 0px">
+			<div class="panel-heading">评委信息</div>
+			<div class="panel-body">
+				<div class="media-left">
+					<img src="{{ reviewer.photo }}" style="height: 96px; width: 80px" />
+				</div>
+				<div class="media-body" style="line-height: 20px">
+					<span style="line-height:25px">英文名：{{ reviewer.user.username }}</span><br>
+					<span style="line-height:25px">中文名：{{ reviewer.chinese_name }}</span><br>
+					<span style="line-height:25px">部门一：{{ reviewer.primary_department.department_name }}</span><br>
+					<span style="line-height:25px">部门二：{{ reviewer.secondary_department.department_name}}</span><br>
+				</div>
 			</div>
 		</div>
-		<div class="panel panel-default" style="margin-bottom: 4px; margin-right: 2px">
-			<div class="panel-heading">评委评审</div>
-			<div class="panel-body" style="height: 100px">
-				<a href="#">代码检视</a>
+		<div class="panel panel-default" style="margin-bottom: 0px; margin-right: 0px">
+			<div class="panel-heading">代码说明</div>
+			<div class="panel-body">
+				{% if code_desc_file.file_name %}
+				<a id="code-desc" onclick="onSelectFile('{{ code_desc_file.file_path }}')" href="#">{{ code_desc_file.file_name }}</a>
+				<span style="float:right">&nbsp;-&nbsp;【<a href="{{ code_desc_file.file_path }}">新窗口</a>】</span>
+				{% endif %}
+			</div>
+		</div>
+		<div class="panel panel-default" style="margin-bottom: 0px; margin-right: 0px">
+			<div class="panel-heading">源代码</div>
+			<div class="panel-body" >
+				{% for src_code_file in src_code_files %}
+					<a onclick="onSelectFile('{{ src_code_file.file_path }}')" href="#">{{ src_code_file.file_name }}</a>
+					<span style="float:right">&nbsp;-&nbsp;【<a href="{{ src_code_file.file_path }}">新窗口</a>】</span>
+					<br>
+				{% endfor %}
+			</div>
+		</div>
+		<div class="panel panel-default" style="margin-bottom: 0px; margin-right: 0px">
+			<div class="panel-heading">评审结果</div>
+			<div class="panel-body">
+				{% if code_review_file.file_name %}
+				<a onclick="onSelectFile('{{ code_review_file.file_path }}')" href="#">{{ code_review_file.file_name }}</a>
+				<span style="float:right">&nbsp;-&nbsp;【<a href="{{ code_review_file.file_path }}">新窗口</a>】</span>
+				{% endif %}
 				<br>
-				<a href="#">代码简评</a>
+				{% if code_comment_file.file_name %}
+				<a href="#" onclick="onSelectFile('{{ code_comment_file.file_path }}')">{{ code_comment_file.file_name }}</a>
+				<span style="float:right">&nbsp;-&nbsp;【<a href="{{ code_comment_file.file_path }}">新窗口</a>】</span>
+				{% endif %}
 			</div>
 		</div>
 	</div>
 	<!-- right colum -->
 	<div class="col-sm-9" style="padding: 0px">
-		<div class="panel panel-default" style="margin-bottom: 4px; margin-left: 2px">
-			<div class="panel-body" style="padding: 4px">
-				<iframe src="{{ tmp }}" style="width: 100%; height: 700px" frameborder="0">
+		<div class="panel panel-default" style="margin-bottom:8px; margin-left:8px">
+			<div class="panel-body" style="padding: 0px">
+				<iframe id="file_browser" style="width: 100%; height: 700px; padding:0px" frameborder="0">
 				</iframe>
 			</div>
 		</div>
-		<div class="panel panel-default">
+		<div class="panel panel-default" style="margin-left:8px">
 			<div class="panel-heading">评论</div>
 			<div class="panel-body">
-				{% include 'newest-comment.html' %}
+				{% include 'simple_comment.html' %}
 			</div>
 		</div>
 	</div>
 </div>
+<script>
+	window.onload = function() {
+		document.getElementById("code-desc").click();
+	}
+
+	function onSelectFile(url) {
+		var frame = document.getElementById("file_browser");
+		frame.src = url
+	}
+
+	function onAddSubmitPraise(submit_id) {
+		// 通知后台
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+			if (xmlhttp.readyState == 4 && xmlhttp.status == 200 && xmlhttp.responseText == "success") {
+				// 更新前端
+				var submit = parseInt(document.getElementById("submit_praise_count").innerHTML);
+				submit += 1
+				document.getElementById("submit_praise_count").innerHTML = submit.toString();
+			}
+		}
+		xmlhttp.open("GET", "/submit/praise?submit_id=" + submit_id, true);
+		xmlhttp.send();
+	}
+</script>
 {% endblock %}
 
-<script>
-
-
-
-</script>

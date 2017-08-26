@@ -1,62 +1,106 @@
-{% extends 'base-nav.html' %}			
+{% extends 'base-head.html' %}			
 
 {% block main_body %}
-<div class="row">
-	<div class="col-sm-4 col-sm-offset-4">
+<div class="row" style="margin-top:20px">
+	<div class="col-sm-6 col-sm-offset-3">
 		<div class="panel panel-default">
+			<div class="panel-heading" style="text-align:center; margin-top:8px">
+				<h1 class="panel-title" style="font-size:20pt">注册</h1>
+			</div>
 			<div class="panel-body">
 			{% if reg_error %}
 				<span style="color: red">{{ reg_error }}</span>
 			{% endif %}
-				<form method="post">
+				<form method="post" enctype="multipart/form-data">
 				{% csrf_token %}
-					<div class="form-group">
-						<label for="">用户名</label>
+					<table>
+						<tr height="45px">
+							<td width="28%" align="right">
+								<label for="" style="padding-right:8px">英文名</label>
+							</td>
+							<td width="72%">
 								<input class="form-control" name="user_name">
-					</div>
-					<div class="form-group">
-						<label for="">一级部门</label>
-						<select class="form-control" name="primary_dep">
-						{% for primary_dep in primary_deps %}
-							<option value="{{ primary_dep.primary_department_id }}">{{ primary_dep.department_name }}</option>
-						{% endfor %}
-						</select>
-					</div>
-					<div>
-						<label for="">二级部门</label>
-						<select class="form-control" name="secondary_dep">
-						{% for secondary_dep in secondary_deps %}
-							<option value="{{ secondary_dep.secondary_department_id }}">{{ secondary_dep.department_name }}</option>
-						{% endfor %}
-						</select>
-					</div>
-					<div class="form-group">
-						<label for="">邮箱</label>
-						<input type="email" class="form-control" name="email">
-					</div>
-					<div class="form-group">
-						<label for="">擅长的编程语言</label>
-						<label class="form-control">
-						{% for programming_lan in programming_lans %}
-							<input type="checkbox" name="programming_lan" value="{{ programming_lan.programming_language_id }}">
-							<span>{{ programming_lan.language_name }}</span>
-						{% endfor %}
-						</label>
-					</div>
-					<div class="form-group">
-						<label for="">密码</label>
-						<input type="password" class="form-control" name="password">
-					</div>
-					<div class="form-group">
-						<label for="">确认密码</label>
-						<input type="password" class="form-control" name="confirm_pwd">
-					</div>
-					<div class="form-group">
-						<label for="">头像</label>
-						<img class="form-control" style="height: 64px; width: 64px" src="#" />
-						<input type="file" class="form-control" name="user_photo">
-					</div>
-					<div class="form-group" style="width: 100%; text-align: center">
+							</td>
+						</tr>
+						<tr height="45px">
+							<td width="28%" align="right">
+								<label for="" style="padding-right:8px">中文名</label>
+							</td>
+							<td width="72%">
+								<input class="form-control" name="chinese_name">
+							</td>
+						</tr>
+						<tr height="45px">
+							<td width="28%" align="right">
+								<label for="" style="padding-right:8px">一级部门</label>
+							</td>
+							<td width="72%">
+								<select class="form-control" name="primary_dep">
+								{% for primary_dep in primary_deps %}
+									<option value="{{ primary_dep.primary_department_id }}">{{ primary_dep.department_name }}</option>
+								{% endfor %}
+								</select>
+							</td>
+						</tr>
+						<tr height="45px">
+							<td width="28%" align="right">
+								<label for="" style="padding-right:8px">二级部门</label>
+							</td>
+							<td width="72%">
+								<select class="form-control" name="secondary_dep">
+								{% for secondary_dep in secondary_deps %}
+									<option value="{{ secondary_dep.secondary_department_id }}">{{ secondary_dep.department_name }}</option>
+								{% endfor %}
+								</select>
+							</td>
+						</tr>
+						<tr height="45px">
+							<td width="28%" align="right">
+								<label for="" style="padding-right:8px">电子邮箱</label>
+							</td>
+							<td width="72%">
+								<input type="email" class="form-control" name="email">
+							</td>
+						</tr>
+						<tr height="45px">
+							<td width="28%" align="right">
+								<label for="" style="padding-right:8px">编程语言</label>
+							</td>
+							<td width="72%">
+								<label class="form-control" style="word-break: break-word">
+								{% for programming_lan in programming_lans %}
+									<input type="checkbox" name="programming_lan" value="{{ programming_lan.programming_language_id }}">
+									<span>{{ programming_lan.language_name }}</span>
+								{% endfor %}
+								</label>
+							</td>
+						</tr>
+						<tr height="45px">
+							<td width="28%" align="right">
+								<label for="" style="padding-right:8px">账号密码</label>
+							</td>
+							<td width="72%">
+								<input type="password" class="form-control" name="password">
+							</td>
+						</tr>
+						<tr height="45px">
+							<td width="28%" align="right">
+								<label for="" style="padding-right:8px">确认密码</label>
+							</td>
+							<td width="72%">
+								<input type="password" class="form-control" name="confirm_pwd">
+							</td>
+						</tr>
+						<tr height="45px">
+							<td width="28%" align="right">
+								<label for="" style="padding-right:8px">个人头像</label>
+							</td>
+							<td width="72%">
+								<input type="file" style="height:40px" class="form-control" name="user_photo">
+							</td>
+						</tr>
+					</table>
+					<div class="form-group" style="width: 100%; text-align: center; margin-top:10px">
 						<button type="submit" class="btn btn-primary">注册</button>
 					</div>
 				</form>

@@ -9,16 +9,17 @@ class News(models.Model):
 	def __str__(self):
 		return self.news_title
 
-class Rules(models.Model):
-	rules_name = models.CharField(max_length=128)
-	rules_file = models.CharField(max_length=256)
+class Rule(models.Model):
+	rule_name = models.CharField(max_length=128)
+	rule_file = models.CharField(max_length=256)
 
 	def __str__(self):
-		return self.rules_file
+		return self.rule_file
 
-class Banners(models.Model):
+class Banner(models.Model):
 	banner_name = models.CharField(max_length=64)
 	banner_file = models.CharField(max_length=256)
+	banner_url = models.CharField(max_length=256, default="")
 	
 	def __str__(self):
 		return self.banner_name	

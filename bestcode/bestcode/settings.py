@@ -25,6 +25,7 @@ SECRET_KEY = '9i#^_ey)^7ilgzmvg7q8%_!kje02kpv&$ejhi%(=zfc!0@utdb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
 ALLOWED_HOSTS = []
 
 
@@ -60,7 +61,7 @@ ROOT_URLCONF = 'bestcode.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ["bestcode/templates/bestcode"],
+        'DIRS': ["bestcode/templates/bestcode", "comment/templates/comment"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -133,6 +134,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
+	os.path.join(STATIC_ROOT, 'common/css'),
+	BASE_DIR,
 ]
 
 # Media files

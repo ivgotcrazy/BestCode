@@ -1,12 +1,14 @@
-{% extends 'base-nav.html' %}
+{% extends 'base-head-nav.html' %}
 
 {% load static %}
 
 <!-- banner -->
 {% block banner %}
-<div class="row" style="margin-bottom: 4px">
+<div class="row" style="margin-bottom: 8px">
 	<div class="col-sm-12" style="height: 300px; padding: 0px">
-		<a href="#"><img src="{% static 'main/images/timg.jpg' %}" style="width: 100%; height: 100%" /></a>
+		{% for banner in banners %}
+			<a href="{{ banner.banner_url }}"><img src="{{ banner.banner_file }}" style="width: 100%; height: 100%" /></a>
+		{% endfor %}
 	</div>
 </div>
 {% endblock %}
@@ -16,25 +18,17 @@
 <div class="row">
 	<!-- left colum -->
 	<div class="col-sm-9" style="padding: 0px">
-		<!-- news -->
-		<div class="panel panel-default" style="margin-bottom: 4px; margin-right: 2px">
+		<!-- all activities -->
+		<div class="panel panel-default" style="margin-right: 8px">
 			<div class="panel-heading">
-				<h3 class="panel-title">新闻动态</h3>
-			</div>
-			<div class="panel-body" style="height: 200px">
-			</div>
-		</div>
-		<!-- activity history -->
-		<div class="panel panel-default" style="margin-right: 2px">
-			<div class="panel-heading">
-				<h3 class="panel-title">历届活动</h3>
+				<h3 class="panel-title">所有活动</h3>
 			</div>
 			<div class="panel-body" style="">
 				<table cellspacing="0" cellpadding="0">
 				{% for activity in activities %}
 					<tr style="height: 110px">
 						<td style="width: 15%; height: 100px; padding-right: 10px">
-							<a href="/activities/{{ activity.activity_id }}"><img style = "width: 120px; height: 150px" src="{% static activity.photo_static_url %}"></a>
+							<a href="/activities/{{ activity.activity_id }}"><img style = "width: 120px; height: 150px" src="{{ activity.img_path }}"></a>
 
 						</td>
 						<td style="width: 85%; word-break: keep-all;">
@@ -61,19 +55,33 @@
 	</div>
 	<!-- right colum -->
 	<div class="col-sm-3" style="height: 600px; padding: 0px">
-		<div class="panel panel-default" style="margin-bottom: 4px; margin-left: 2px">
+		<!-- notify -->
+		<div class="panel panel-default" style="margin-bottom:8px;">
+			<div class="panel-heading">
+				<h3 class="panel-title">通知公告</h3>
+			</div>
+			<div class="panel-body" style="">
+				{% for news in newses %}
+					<small>{{ news.news_text }}</small>
+				{% endfor %}
+			</div>
+		</div>
+		<div class="panel panel-default" style="margin-bottom:8px;">
 			<div class="panel-heading">
 				<h3 class="panel-title">流程制度</h3>
 			</div>
-			<div class="panel-body" style="height: 300px">
+			<div class="panel-body">
+			{% for rule in rules %}
+				<a href="{{ rule.rule_file }}">{{ rule.rule_name }}</a><br>
+			{% endfor %}
 			</div>
 		</div>
-		<div class="panel panel-default" style="margin-left: 2px">
+		<div class="panel panel-default" style="">
 			<div class="panel-heading">
 				<h3 class="panel-title">最新评论</h3>
 			</div>
 			<div class="panel-body">
-				{% include 'newest-comment.html' %}
+				{% include 'simple_comment.html' %}
 			</div>
 		</div>
 	</div>

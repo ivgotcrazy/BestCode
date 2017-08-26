@@ -1,91 +1,82 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Best Code</title>
-      	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-      	<!-- import Bootstrap -->
-      	<link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-      	<!--[if lt IE 9]>
-         	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-         	<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-      	<![endif]-->
-   	</head>
-   	<body>
-		{% load static %}
-		<div class="container">
-			<!-- navigator -->
-			<div class="row">
-				<div class="col-sm-12" style="margin-bottom: 4px; padding-top: 4px; padding-bottom: 4px; background: #abc">
-					<div style="float: left; text-align: left; height: 30px; line-height: 30px;">
-						<small>当前位置: </small>
-					{% for nav_item in nav_items %}
-						<a href="/{{ nav_item.path }}">{{ nav_item.text }} /</a>
-					{% endfor %}
-					</div>
+{% extends 'base-head-nav.html' %}
 
-					<div style="float: right; text-align: right; padding-right: -4px; text-valign: middle">
-					{% if not login %}
-						<small>欢迎访问</small>&nbsp;&nbsp;
-						<button type="button" class="btn btn-default" style="height: 30px; line-height: 15px">登录</button>
-						<button type="button" class="btn btn-default" style="height: 30px; line-height: 15px">注册</button>
-					{% else %}
-						<small>欢迎访问&nbsp;&nbsp;{{ user_name }}</small>
-					{% endif %}	
+{% load static %}
+
+{% block main_body %}
+
+<!-- post comment form -->
+<div class="row">
+	<div class="col-sm-12" style="padding: 0px">
+		<div class="panel panel-default" style="margin-bottom: 8px; margin-right: 0px">
+			<div class="panel-heading">发表评论</div>
+			<div class="panel-body panel-subtile" style="">
+			{% if login %}
+				<form method='POST'>
+				{% csrf_token %}
+					<textarea class="form-control" rows="6" name="comment_text"></textarea>
+					<div style="text-align: right; margin-top: 8px">
+						<button type="submit" class="btn btn-primary">提交</button>
 					</div>
-				</div>
+				</form>
+			{% else %}
+				<span>您还未登录，不能发表评论！</span>
+			{% endif %}
 			</div>
-			<!-- post comment form -->
-			<div class="row">
-				<div class="col-sm-12" style="padding: 0px">
-					<div class="panel panel-default" style="margin-bottom: 4px; margin-right: 2px">
-                        <div class="panel-heading">发表评论</div>
-						<div class="panel-body panel-subtile" style="">
-							{% if login %}
-                            <form method='POST'>
-                                {% csrf_token %}
-                                <textarea class="form-control" rows="6" name="comment_text"></textarea>
-                                <div style="text-align: right; margin-top: 8px">
-                                    <button type="submit" class="btn btn-primary">提交</button>
-                                </div>
-                            </form>
-							{% else %}
-								<span>您还未登录，不能发表评论！</span>
-							{% endif %}
+		</div>
+	</div>
+</div>
+      
+<!-- all comment -->
+<div class="row" style="">
+	<div class="col-sm-12" style="padding: 0px">
+		<div class="panel panel-default" style="margin-bottom: 4px;">
+			<div class="panel-heading">最新评论</div>
+			<div class="panel-body" style="">
+			{% for comment in comments %}
+				<div class="media">
+					<div class="media-left">
+					    <a href="#">
+						      <img class="media-object img-circle" src="{{ comment.comment_author.photo }}" alt="..." style="height:64px; width:64px">
+					      </a>
+					</div>
+					<div class="media-body">
+						<h5 class="media-heading">
+							<a href="/users/{{ comment.comment_author }}" style="text-decoration:none">{{ comment.comment_author  }}</a>
+							<span> 发表于 {{ comment.comment_time }}</span>
+						</h5>
+						<div style="word-break:break-all">{{ comment.comment_text }}</div><br>
+						<div style="text-align: right">
+							<a href="#" onclick="onAgreeComment('agree', {{ comment.comment_id }}, 'agree_count')">
+								<span class="glyphicon glyphicon-thumbs-up"></span>
+							</a>
+							<span>支持: <span id="agree_count">{{ comment.agree_count }}</span></span>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<a href="#" onclick="onAgreeComment('disagree', {{ comment.comment_id }}, 'disagree_count')">
+								<span class="glyphicon glyphicon-thumbs-down"></span>
+							</a>
+							<span>反对：<span id="disagree_count">{{ comment.disagree_count }}</span></span>
 						</div>
 					</div>
 				</div>
-            </div>
-            <!-- all comment -->
-			<div class="row" style="padding-top: 8px">
-				<div class="col-sm-12" style="padding: 0px">
-					<div class="panel panel-default" style="margin-bottom: 4px; margin-right: 2px">
-                        <div class="panel-heading">最新评论</div>
-						<div class="panel-body" style="">
-                            <table style="table-layout: inherit">
-                            {% for comment in comments %}
-                                <tr>
-                                    <td valign="top" style="width: 80px"><img src="{{ comment.author_photo  }}" style="height: 64px; width: 64px" /></td>
-                                    <td style="padding-left: 10px; width: 100%">
-                                        <table style="width: 100%">
-                                            <tr><td>{{ comment.comment_author  }} 发表于 {{ comment.comment_time }}<td></tr>
-                                            <tr><td><hr style="margin-top: 0px" width="100%" color="red" size=2 /></td></tr>
-                                            <tr><td>{{ comment.comment_text }}</td></tr>
-                                            <tr><td><div style="text-align: right">支持: {{ comment.agree_count }}  反对：{{ comment.disagree_count }}<div></td></tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                                <!-- comment divider -->
-                                <tr><td colspan="2"><hr style="margin: 8px" width="100%" color="red" size=2 /></td></tr>
-                            {% endfor %}
-                            </table>
-						</div>
-					</div>
-				</div>
-            </div>
-		</div> 
-
-      	<!-- import jQuery -->
-      	<script src="https://code.jquery.com/jquery.js"></script>
-      	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-   	</body>
-</html>
+				<!-- comment divider -->
+				<hr style="margin-top: 8px" width="100%" size=2 />
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div> 
+<script>
+	function onAgreeComment(type, comment_id, element_id) {
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+			if (xmlhttp.readyState == 4 && xmlhttp.status == 200 && xmlhttp.responseText == "success") {
+				var count = parseInt(document.getElementById(element_id).innerHTML);
+				count += 1;
+				document.getElementById(element_id).innerHTML = count.toString();
+			}
+		}
+		xmlhttp.open("GET", "/comment/agree?comment_id=" + comment_id + "&type=" + type, true);
+		xmlhttp.send();
+	}
+</script>
+{% endblock %}

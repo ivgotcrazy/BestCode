@@ -19,7 +19,7 @@ class Submit(models.Model):
 	browse_times = models.IntegerField(default=0)
 
 	def __str__(self):
-		return "%s's submit for %s" % (self.activity_user.user.username, self.activity.name)
+		return "%s%s的提交" % (self.activity.name, self.activity_user.user.username)
 
 class SubmitFileType(models.Model):
 	submit_file_type_id = models.AutoField(primary_key=True)
@@ -33,6 +33,7 @@ class SubmitFile(models.Model):
 	submit_file_type = models.ForeignKey(SubmitFileType, on_delete=models.CASCADE)
 	submit = models.ForeignKey(Submit, on_delete=models.CASCADE)
 	file_path = models.CharField(max_length=256)
+	file_name = models.CharField(max_length=128, default='')
 	
 	def __str__(self):
 		return self.file_path	

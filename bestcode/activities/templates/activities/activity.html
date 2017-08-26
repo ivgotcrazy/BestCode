@@ -1,23 +1,14 @@
-{% extends 'base-nav.html' %}
+{% extends 'base-head-nav.html' %}
 
 {% load static %}
 			
-{% block banner %}
-<!-- banner -->
-<div class="row" style="margin-bottom: 4px">
-	<div class="col-sm-12" style="height: 150px; padding: 0px">
-		<a href="#"><img src="{% static 'main/images/timg.jpg' %}" style="width: 100%; height: 100%" /></a>
-	</div>
-</div>
-{% endblock %}
-
 {% block main_body %}
 <!-- main body -->
 <div class="row">
 	<!-- left colum -->
 	<div class="col-sm-9" style="padding: 0px">
 		<!-- date arrange -->
-		<div class="panel panel-default" style="margin-bottom: 4px; margin-right: 2px">
+		<div class="panel panel-default" style="margin-bottom: 8px; margin-right: 8px">
 			<div class="panel-heading">
 				<h3 class="panel-title">活动时间安排</h3>
 			</div>
@@ -43,36 +34,38 @@
 			</div>
 		</div>
 		<!-- code reviewer arrange -->
-		<div class="panel panel-default" style="margin-bottom: 4px; margin-right: 2px">
+		<div class="panel panel-default" style="margin-bottom: 8px; margin-right: 8px">
 			<div class="panel-heading">
 				<h3 class="panel-title">代码评审委员</h3>
 			</div>
 			<div class="panel-body" style="">
 				<table>
-				{% for reviewer in reviewers %}
 					<tr>
+					{% for submit in submits %}
 						<td>
 							<table>
 								<tr>
 									<td>
-										<img src="{{ reviewer.photo.url }}" style="width: 100px; height: 120px" class="img-thumbnail">
+										<a href="/users/{{ submit.submit_reviewer.user.username }}">
+											<img src="{{ submit.submit_reviewer.photo }}" style="width: 100px; height: 120px" class="img-thumbnail">
+										</a>
 									</td>
 								</tr>
-								<tr><td><small style="margin-left: 6px">姓名：{{ reviewer.name }}</small></td></tr>
-								<tr><td><small style="margin-left: 6px">部门：{{ reviewer.department }}</small></td></tr>
-								<tr><td><small style="margin-left: 6px">语言：{{ reviewer.languages }}</small></td></tr>
+								<tr><td><small style="margin-left: 6px">英文名：{{ submit.submit_reviewer.user.username }}</small></td></tr>
+								<tr><td><small style="margin-left: 6px">中文名：{{ submit.submit_reviewer.chinese_name }}</small></td></tr>
+								<tr><td><small style="margin-left: 6px">{{ submit.submit_reviewer.primary_department.department_name }}</small></td></tr>
 							</table>
 						</td>
 						<td style="width: 20px"/>
+					{% endfor %}
 					</tr>
-				{% endfor %}
 				</table>
 			</div>
 		</div>
 		<!-- code review arrange -->
-		<div class="panel panel-default" style="margin-bottom: 4px; margin-right: 2px">
+		<div class="panel panel-default" style="margin-bottom: 8px; margin-right: 8px">
 			<div class="panel-heading">
-				<h3 class="panel-title">代码讲解安排</h3>
+				<h3 class="panel-title">代码评审安排</h3>
 			</div>
 			<div class="panel-body" style="padding-top: 6px; padding-bottom: 0px">
 				<table class="table">
@@ -91,8 +84,8 @@
 						<tr>
 							<td>{{ submit_review_plan.plan_item_start }}</td>
 							<td>{{ submit_review_plan.plan_item_end }}</td>
-							<td>{{ submit_review_plan.submit.activity_user.user.username }}</td>
-							<td>{{ submit_review_plan.submit.submit_reviewer.user.username }}</td>
+							<td>{{ submit_review_plan.submit.activity_user.chinese_name }}</td>
+							<td>{{ submit_review_plan.submit.submit_reviewer.chinese_name }}</td>
 							<td>{{ submit_review_plan.submit.programming_language.language_name }}</td>
 							<td>{{ submit_review_plan.submit.activity_user.primary_department.department_name }}</td>
 						</tr>
@@ -102,7 +95,7 @@
 			</div>
 		</div>
 		<!-- activity candidates -->
-		<div class="panel panel-default" style="margin-right: 2px">
+		<div class="panel panel-default" style="margin-right: 8px">
 			<div class="panel-heading">
 				<h3 class="panel-title">参选人员</h3>
 			</div>
@@ -111,16 +104,15 @@
 				{% for submit in submits %}
 					<tr style="height: 150px">
 						<td style=" height: 100px; padding-right: 10px">
-							<a href="/submit/{{ submit.submit_id }}"><img style = "width: 120px; height: 150px" src="{{ submit.activity_user.photo.url }}" /></a>
+							<a href="/submit/{{ submit.submit_id }}"><img style = "width: 120px; height: 150px" src="{{ submit.activity_user.photo }}" /></a>
 						</td>
 						<td width=20px></td>
-						<td style="word-break: keep-all;">
+						<td style="word-break: bread-word;">
 							<table height="150px" style="padding: 0px">
 								<tr><td><h4>代码简介</h4><td></tr>
 								<tr><td><h4><small>{{ submit.code_desc }}</small></h4><td></tr>
 								<tr>
 									<td>
-										<small>票数：{{ submit.vote_count }}</small>&nbsp;&nbsp;
 										<small>赞数：{{ submit.praise_count }}</small>&nbsp;&nbsp;
 										<small>评论：{{ submit.comment_count }}</small>&nbsp;&nbsp;
 										<small>浏览: {{ submit.browse_times }}</small>
@@ -142,19 +134,19 @@
 	</div>
 	<!-- right colum -->
 	<div class="col-sm-3" style="height: 600px; padding: 0px">
-		<div class="panel panel-default" style="margin-bottom: 4px; margin-left: 2px">
+		<div class="panel panel-default" style="margin-bottom: 8px;">
 			<div class="panel-heading">
 				<h3 class="panel-title">评选结果</h3>
 			</div>
 			<div class="panel-body" style="height: 200px">
 			</div>
 		</div>
-		<div class="panel panel-default" style="margin-left: 2px">
+		<div class="panel panel-default" style="">
 			<div class="panel-heading">
 				<h3 class="panel-title">最新评论</h3>
 			</div>
 			<div class="panel-body">
-				{% include "newest-comment.html" %}
+				{% include "simple_comment.html" %}
 			</div>
 		</div>
 	</div>

@@ -27,10 +27,11 @@ class ProgrammingLanguage(models.Model):
 class ActivityUser(models.Model):
 	activity_user_id = models.AutoField(primary_key=True)
 	user = models.OneToOneField(auth_models.User, on_delete=models.CASCADE)
+	chinese_name = models.CharField(max_length=32, default="未指定")
 	primary_department = models.ForeignKey(PrimaryDepartment, on_delete=models.CASCADE)
 	secondary_department = models.ForeignKey(SecondaryDepartment, on_delete=models.CASCADE)
 	programming_languages = models.ManyToManyField(ProgrammingLanguage)
-	photo = models.FileField(upload_to="users/photos") # photo file path
+	photo = models.ImageField(upload_to="users/photos") # photo file path
 	
 	def __str__(self):
 		return self.user.username

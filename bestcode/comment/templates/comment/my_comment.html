@@ -1,0 +1,13 @@
+{% for my_comment in my_comments %}
+	<span>
+		<small>于&nbsp;{{ my_comment.comment_time }}</small>&nbsp;
+		发表了对&nbsp;
+		<a href="{{ my_comment.target_url }}">{{ my_comment.target_name }}</a>
+		&nbsp;的评论
+	</span>
+	<div style="word-wrap:break-word">{{ my_comment.comment_text }}</div>
+	<br>
+	
+	{% empty %}
+	<div>暂无评论</div>
+{% endfor %}

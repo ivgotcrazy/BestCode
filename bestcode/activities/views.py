@@ -3,40 +3,38 @@ from django.shortcuts import render
 from submit import models as submit_models
 from polls import models as polls_models
 from users import models as users_models
+from comment import models as comment_models
 from . import models
 from django.db import connection
+from bestcode import breadcrumbs
 
 def activity(request, activity_id):
 	submits = submit_models.Submit.objects.filter(activity_id=activity_id)
 	plans = models.ActivityPlan.objects.filter(activity_id=activity_id)
 	submit_review_plans = submit_models.SubmitReviewPlan.objects.filter(submit__activity_id=activity_id)
+	cur_activity = models.Activity.objects.get(activity_id=activity_id)
+	comments = comment_models.Comment.objects.filter(comment_type__comment_type_name='activity').filter(object_id=activity_id)
+
+	# add activity browse times
+	cur_activity.browse_times += 1
+	cur_activity.save()
+
+	# set breadcrumbs nav
+	breadcrumbs.JumpTo(request, cur_activity.name, request.get_full_path())
+	request.session.modified = True
+
+	# calc submit comment count
+	for submit in submits:
+		submit_comments = comment_models.Comment.objects.filter(comment_type__comment_type_name="submit").filter(object_id=submit.submit_id)
+		submit.comment_count = len(submit_comments)
+
 	context = {
-		'nav_items': [{'path': 'activities', 'text': '活动'}],
+		'nav_items': breadcrumbs.GetNavItems(request),
 		'login': request.user.is_authenticated,
 		'submits': submits,
 		'plans': plans,
-		'reviewers': __getActivityReviewers(activity_id, submits),
-		'submit_review_plans': submit_review_plans
+		'submit_review_plans': submit_review_plans,
+		'comments': comments, 
+		'comment_path': "/comment/?comment_type=activity&object_id=%s&next='/activity/%s'" % (activity_id, activity_id),
 	}
 	return render(request, 'activities/activity.html', context)	
-
-# It's ugly, what I really want is a anonymous class
-class Reviewer:
-	pass
-
-def __getActivityReviewers(activity_id, submits):
-	activity_reviewers = []
-	for submit in submits:
-		activity_reviewer = Reviewer()
-		activity_reviewer.name = submit.submit_reviewer.user.username
-		activity_reviewer.department = submit.submit_reviewer.primary_department.department_name
-		activity_reviewer.photo = submit.submit_reviewer.photo
-		languages = []
-		for language in submit.submit_reviewer.programming_languages.all():
-			languages.append(language.language_name)
-
-		activity_reviewer.languages = ""
-		activity_reviewer.languages = ",".join(languages)
-		activity_reviewers.append(activity_reviewer)
-
-	return activity_reviewers

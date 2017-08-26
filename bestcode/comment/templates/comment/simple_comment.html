@@ -1,6 +1,7 @@
 {% for comment in comments %}
-	{% if forloop.counter <= 10 %}
-		<div style="word-wrap:break-word">{{ comment.comment_author }}&nbsp;发表于&nbsp;{{ comment.comment_time }}</div>
+	{% if forloop.counter <= 5 %}
+		<a href="/users/{{ comment.comment_author }}">{{ comment.comment_author }}</a>
+		<span>&nbsp;发表于&nbsp;<small>{{ comment.comment_time }}</small></span>
 		<div style="word-wrap:break-word">{{ comment.comment_text }}</div>
 		<br>
 	{% endif %}

@@ -1,9 +1,12 @@
-{% extends 'base-nav.html' %}			
+{% extends 'base-head.html' %}			
 
 {% block main_body %}
-<div class="row">
+<div class="row" style="margin-top:20px">
 	<div class="col-md-4 col-md-offset-4">
 		<div class="login-panel panel panel-default">
+			<div class="panel-heading" style="text-align:center; margin-top:8px">
+				<h1 class="panel-title" style="font-size:20pt">登录</h1>
+			</div>
 			<div class="panel-body">
 			{% if login_error %}
 				<span style="color: red">{{ login_error }}</span>
@@ -20,8 +23,7 @@
 							<input type="password" class="form-control" name="user_pwd">
 						</div>
 						<div style="width: 100%; text-align: center">
-							<button type="submit" class="btn btn-default">登录</button>
-							<span style="float: right"><a href="register">注册</a></span>
+							<button type="submit" class="btn btn-primary">登录</button>
 						</div>
 						</fieldset>
 					</form>
