@@ -44,6 +44,8 @@ def user(request, user_name):
 			my_comment.target_name = my_comment.object_id
 			my_comment.target_url = "/user/" + my_comment.object_id
 
+	print(user_name)
+
 	# get user object
 	try:
 		auth_user = auth_models.User.objects.get(username=user_name)

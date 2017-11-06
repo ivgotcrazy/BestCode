@@ -12,13 +12,13 @@
 			<div class="panel-heading">作者信息</div>
 			<div class="panel-body">
 				<div class="media-left">
-					<img src="{{ submit_user.photo }}" style="height: 96px; width:80px" />
+					<a href="/users/{{ submit_user.user.username }}"><img src="{{ submit_user.photo }}" style="height: 96px; width:80px" /></a>
 				</div>
 				<div class="media-body" style="line-height: 20px">
-					<span style="line-height:25px">英文名：{{ submit_user.user.username }}</span><br>
-					<span style="line-height:25px">中文名：{{ submit_user.chinese_name }}</span><br>
-					<span style="line-height:25px">部门一：{{ submit_user.primary_department.department_name }}</span><br>
-					<span style="line-height:25px">部门二：{{ submit_user.secondary_department.department_name}}</span><br>
+					<span style="line-height:25px">英文名字：{{ submit_user.user.username }}</span><br>
+					<span style="line-height:25px">中文名字：{{ submit_user.chinese_name }}</span><br>
+					<span style="line-height:25px">一级部门：{{ submit_user.primary_department.department_name }}</span><br>
+					<span style="line-height:25px">二级部门：{{ submit_user.secondary_department.department_name}}</span><br>
 				</div>
 				<div style="line-height:40px">
 					<table>
@@ -41,13 +41,13 @@
 			<div class="panel-heading">评委信息</div>
 			<div class="panel-body">
 				<div class="media-left">
-					<img src="{{ reviewer.photo }}" style="height: 96px; width: 80px" />
+					<a href="/users/{{ reviewer.user.username }}"><img src="{{ reviewer.photo }}" style="height: 96px; width: 80px" /></a>
 				</div>
 				<div class="media-body" style="line-height: 20px">
-					<span style="line-height:25px">英文名：{{ reviewer.user.username }}</span><br>
-					<span style="line-height:25px">中文名：{{ reviewer.chinese_name }}</span><br>
-					<span style="line-height:25px">部门一：{{ reviewer.primary_department.department_name }}</span><br>
-					<span style="line-height:25px">部门二：{{ reviewer.secondary_department.department_name}}</span><br>
+					<span style="line-height:25px">英文名字：{{ reviewer.user.username }}</span><br>
+					<span style="line-height:25px">中文名字：{{ reviewer.chinese_name }}</span><br>
+					<span style="line-height:25px">一级部门：{{ reviewer.primary_department.department_name }}</span><br>
+					<span style="line-height:25px">二级部门：{{ reviewer.secondary_department.department_name}}</span><br>
 				</div>
 			</div>
 		</div>

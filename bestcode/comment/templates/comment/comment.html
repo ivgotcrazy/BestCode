@@ -41,7 +41,7 @@
 					</div>
 					<div class="media-body">
 						<h5 class="media-heading">
-							<a href="/users/{{ comment.comment_author }}" style="text-decoration:none">{{ comment.comment_author  }}</a>
+							<a href="/users/{{ comment.comment_author }}" style="text-decoration:none">{{ comment.comment_author.chinese_name }}</a>
 							<span> 发表于 {{ comment.comment_time }}</span>
 						</h5>
 						<div style="word-break:break-all">{{ comment.comment_text }}</div><br>

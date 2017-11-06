@@ -1,12 +1,14 @@
 {% for comment in comments %}
 	{% if forloop.counter <= 5 %}
-		<a href="/users/{{ comment.comment_author }}">{{ comment.comment_author }}</a>
-		<span>&nbsp;发表于&nbsp;<small>{{ comment.comment_time }}</small></span>
+		<a href="/users/{{ comment.comment_author }}">{{ comment.comment_author.chinese_name }}</a>
+		<small>&nbsp;发表于&nbsp;{{ comment.comment_time }}</small>
 		<div style="word-wrap:break-word">{{ comment.comment_text }}</div>
-		<br>
 	{% endif %}
 	{% if forloop.last %}
+		<br>
 		<a href="{{ comment_path }}">更多评论</a>
+	{% else %}
+		<hr style="margin-top:4px; margin-bottom:4px" width="100%" size=2 />
 	{% endif %}
 	{% empty %}
 	<div>暂无评论</div>

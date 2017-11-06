@@ -21,7 +21,7 @@
 		<!-- all activities -->
 		<div class="panel panel-default" style="margin-right: 8px">
 			<div class="panel-heading">
-				<h3 class="panel-title">所有活动</h3>
+				<span class="panel-title">所有活动</span>
 			</div>
 			<div class="panel-body" style="">
 				<table cellspacing="0" cellpadding="0">
@@ -42,12 +42,14 @@
 							</div>
 						</td>
 					</tr>
+					{% if not forloop.last %}
 					<!-- divider -->
 					<tr>
 						<td colspan="2">
-							<hr style="margin: 8px" width="100%" color="red" size=2 />
+							<hr style="margin: 8px" width="100%" size=2 />
 						</td>
 					</tr>
+					{% endif %}
 				{% endfor %}
 				</table>
 			</div>
@@ -58,7 +60,7 @@
 		<!-- notify -->
 		<div class="panel panel-default" style="margin-bottom:8px;">
 			<div class="panel-heading">
-				<h3 class="panel-title">通知公告</h3>
+				<span class="panel-title">通知公告</span>
 			</div>
 			<div class="panel-body" style="">
 				{% for news in newses %}
@@ -68,7 +70,7 @@
 		</div>
 		<div class="panel panel-default" style="margin-bottom:8px;">
 			<div class="panel-heading">
-				<h3 class="panel-title">流程制度</h3>
+				<span class="panel-title">流程制度</span>
 			</div>
 			<div class="panel-body">
 			{% for rule in rules %}
@@ -78,7 +80,7 @@
 		</div>
 		<div class="panel panel-default" style="">
 			<div class="panel-heading">
-				<h3 class="panel-title">最新评论</h3>
+				<span class="panel-title">最新评论</span>
 			</div>
 			<div class="panel-body">
 				{% include 'simple_comment.html' %}

@@ -1,13 +1,16 @@
 {% for my_comment in my_comments %}
-	<span>
-		<small>于&nbsp;{{ my_comment.comment_time }}</small>&nbsp;
-		发表了对&nbsp;
+	<small>
+		于&nbsp;{{ my_comment.comment_time }}
+		&nbsp;发表了对&nbsp;
 		<a href="{{ my_comment.target_url }}">{{ my_comment.target_name }}</a>
 		&nbsp;的评论
-	</span>
+	</small>
 	<div style="word-wrap:break-word">{{ my_comment.comment_text }}</div>
-	<br>
 	
+	{% if not forloop.last %}
+	<hr style="margin-top:8px; margin-bottom:8px" width="100%" size=2 />
+	{% endif %}
+
 	{% empty %}
 	<div>暂无评论</div>
 {% endfor %}

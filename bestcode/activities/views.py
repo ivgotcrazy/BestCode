@@ -11,7 +11,9 @@ from bestcode import breadcrumbs
 def activity(request, activity_id):
 	submits = submit_models.Submit.objects.filter(activity_id=activity_id)
 	plans = models.ActivityPlan.objects.filter(activity_id=activity_id)
-	submit_review_plans = submit_models.SubmitReviewPlan.objects.filter(submit__activity_id=activity_id)
+	
+	# review plan
+	submit_review_plans = submit_models.SubmitReviewPlan.objects.filter(submit__activity_id=activity_id).order_by("plan_item_start")
 	cur_activity = models.Activity.objects.get(activity_id=activity_id)
 	comments = comment_models.Comment.objects.filter(comment_type__comment_type_name='activity').filter(object_id=activity_id)
 
@@ -31,6 +33,7 @@ def activity(request, activity_id):
 	context = {
 		'nav_items': breadcrumbs.GetNavItems(request),
 		'login': request.user.is_authenticated,
+		'result': cur_activity.result,
 		'submits': submits,
 		'plans': plans,
 		'submit_review_plans': submit_review_plans,

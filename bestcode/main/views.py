@@ -8,7 +8,7 @@ from . import models
 
 def main(request):
 	comments = comment_models.Comment.objects.filter(comment_type__comment_type_name='main')
-	activities = activity_models.Activity.objects.all()
+	activities = activity_models.Activity.objects.order_by("-start_date").all()
 
 	breadcrumbs.Clear(request)
 	breadcrumbs.JumpTo(request, '首页', request.get_full_path())

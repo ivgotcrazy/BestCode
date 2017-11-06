@@ -9,25 +9,25 @@
 		<div class="panel panel-default" style="padding:0px; margin:0px">
 			<div class="panel-body" style="">
 				<ul class="nav nav-pills nav-stacked" style="">
-					<li id="info-item" role="presentation" onclick="onNavItemClick('info-item')" style=""><a>我的信息</a></li>
+					<li id="info-item" role="presentation" onclick="onNavItemClick('info-item')" style=""><a>基本信息</a></li>
 					<li class="nav-divider"></li>
-					<li id="acti-item" role="presentation" onclick="onNavItemClick('acti-item')"><a>我参与的活动</a></li>
+					<li id="acti-item" role="presentation" onclick="onNavItemClick('acti-item')"><a>参与的活动</a></li>
 					<li class="nav-divider"></li>
-					<li id="comm-item" role="presentation" onclick="onNavItemClick('comm-item')"><a>我发表的评论</a></li>
+					<li id="comm-item" role="presentation" onclick="onNavItemClick('comm-item')"><a>发表的评论</a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
 	<div class="col-sm-9" style="padding: 0px">
 		<div id="my-info" class="panel panel-default" style="margin-bottom: 8px; margin-left: 8px">
-			<div class="panel-heading">我的信息</div>
-			<div class="panel-body" style="padding: 4px;">
+			<div class="panel-heading">基本信息</div>
+			<div class="panel-body" style="padding:8px;">
 				<table>
 					<tr>
 						<td width="160px"><img src="{{ acti_user.photo }}" style="padding:4px; margin:8px; height:164px; width:128px" class="img-thumbnail"/></td>
 						<td width="100px" valign="top" style="padding:8px; text-align:right">
-							<span style="line-height:25px">英文名：</span><br>
-							<span style="line-height:25px">中文名：</span><br>
+							<span style="line-height:25px">英文名字：</span><br>
+							<span style="line-height:25px">中文名字：</span><br>
 							<span style="line-height:25px">一级部门：</span><br>
 							<span style="line-height:25px">二级部门：</span><br>
 							<span style="line-height:25px">电子邮箱：</span><br>
@@ -51,7 +51,7 @@
 		</div>
 		<div id="candidate-acti" class="panel panel-default" style="margin-bottom: 8px; margin-left: 8px">
 			<div class="panel-heading">作为选手参与的活动</div>
-			<div class="panel-body" style="padding: 4px; height: 200px">
+			<div class="panel-body" style="padding:8px; height: 200px">
 			{% for user_submit in user_submits %}
 				<div class="thumbnail col-sm-2" style="margin-left:8px">
 					<a href="/activities/{{ user_submit.activity.activity_id }}">
@@ -66,7 +66,7 @@
 		</div>
 		<div id="reviewer-acti" class="panel panel-default" style="margin-bottom: 8px; margin-left: 8px">
 			<div class="panel-heading">作为评委参与的活动</div>
-			<div class="panel-body" style="padding: 4px; height: 200px">
+			<div class="panel-body" style="padding:8px; height: 200px">
 			{% for reviewer_submit in reviewer_submits %}
 				<div class="thumbnail col-sm-2" style="margin-left:8px">
 					<a href="/activities/{{ reviewer_submit.activity.activity_id }}">
@@ -80,14 +80,14 @@
 			</div>
 		</div>
 		<div id="my-comm" class="panel panel-default" style="margin-bottom: 8px; margin-left: 8px">
-			<div class="panel-heading">我发表的评论</div>
-			<div class="panel-body" style="padding:4px;">
+			<div class="panel-heading">发表的评论</div>
+			<div class="panel-body" style="padding:8px;">
 				<div style="margin-left:8px">{% include 'my_comment.html' %}</div>
 			</div>
 		</div>
 		<div class="panel panel-default" style="margin-bottom: 8px; margin-left: 8px">
 			<div class="panel-heading">评论</div>
-			<div class="panel-body" style="padding:4px">
+			<div class="panel-body" style="padding:8px">
 				<div style="margin-left:8px">{% include 'simple_comment.html' %}</div>
 			</div>
 		</div>

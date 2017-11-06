@@ -10,7 +10,7 @@
 		<!-- date arrange -->
 		<div class="panel panel-default" style="margin-bottom: 8px; margin-right: 8px">
 			<div class="panel-heading">
-				<h3 class="panel-title">活动时间安排</h3>
+				<span class="panel-title">活动时间安排</span>
 			</div>
 			<div class="panel-body" style="">
 				<table class="table table-striped">
@@ -36,7 +36,7 @@
 		<!-- code reviewer arrange -->
 		<div class="panel panel-default" style="margin-bottom: 8px; margin-right: 8px">
 			<div class="panel-heading">
-				<h3 class="panel-title">代码评审委员</h3>
+				<span class="panel-title">代码评审委员</span>
 			</div>
 			<div class="panel-body" style="">
 				<table>
@@ -65,7 +65,7 @@
 		<!-- code review arrange -->
 		<div class="panel panel-default" style="margin-bottom: 8px; margin-right: 8px">
 			<div class="panel-heading">
-				<h3 class="panel-title">代码评审安排</h3>
+				<span class="panel-title">代码评审安排</span>
 			</div>
 			<div class="panel-body" style="padding-top: 6px; padding-bottom: 0px">
 				<table class="table">
@@ -97,7 +97,7 @@
 		<!-- activity candidates -->
 		<div class="panel panel-default" style="margin-right: 8px">
 			<div class="panel-heading">
-				<h3 class="panel-title">参选人员</h3>
+				<span class="panel-title">参选人员</span>
 			</div>
 			<div class="panel-body" style="">
 				<table cellspacing="0" cellpadding="0">
@@ -121,12 +121,14 @@
 							</table>
 						</td>
 					</tr>
+					{% if not forloop.last %}
 					<!-- divider -->
 					<tr>
 						<td colspan="3">
 							<hr style="margin: 8px" width="100%" color="red" size=2 />
 						</td>
 					</tr>
+					{% endif %}
 				{% endfor %}
 				</table>
 			</div>
@@ -136,14 +138,15 @@
 	<div class="col-sm-3" style="height: 600px; padding: 0px">
 		<div class="panel panel-default" style="margin-bottom: 8px;">
 			<div class="panel-heading">
-				<h3 class="panel-title">评选结果</h3>
+				<span class="panel-title">评选结果</span>
 			</div>
 			<div class="panel-body" style="height: 200px">
+				<span>{{ result }}</span>
 			</div>
 		</div>
 		<div class="panel panel-default" style="">
 			<div class="panel-heading">
-				<h3 class="panel-title">最新评论</h3>
+				<span class="panel-title">最新评论</span>
 			</div>
 			<div class="panel-body">
 				{% include "simple_comment.html" %}
