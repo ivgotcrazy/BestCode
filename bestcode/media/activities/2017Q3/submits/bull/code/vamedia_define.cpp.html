@@ -1,0 +1,874 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #333333 }
+body  { background: #111111; color: #ffffff }
+body .c { color: #008800; font-style: italic; background-color: #0f140f } /* Comment */
+body .err { color: #ffffff } /* Error */
+body .esc { color: #ffffff } /* Escape */
+body .g { color: #ffffff } /* Generic */
+body .k { color: #fb660a; font-weight: bold } /* Keyword */
+body .l { color: #ffffff } /* Literal */
+body .n { color: #ffffff } /* Name */
+body .o { color: #ffffff } /* Operator */
+body .x { color: #ffffff } /* Other */
+body .p { color: #ffffff } /* Punctuation */
+body .ch { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Hashbang */
+body .cm { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Multiline */
+body .cp { color: #ff0007; font-weight: bold; font-style: italic; background-color: #0f140f } /* Comment.Preproc */
+body .cpf { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.PreprocFile */
+body .c1 { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Single */
+body .cs { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Special */
+body .gd { color: #ffffff } /* Generic.Deleted */
+body .ge { color: #ffffff } /* Generic.Emph */
+body .gr { color: #ffffff } /* Generic.Error */
+body .gh { color: #ffffff; font-weight: bold } /* Generic.Heading */
+body .gi { color: #ffffff } /* Generic.Inserted */
+body .go { color: #444444; background-color: #222222 } /* Generic.Output */
+body .gp { color: #ffffff } /* Generic.Prompt */
+body .gs { color: #ffffff } /* Generic.Strong */
+body .gu { color: #ffffff; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #ffffff } /* Generic.Traceback */
+body .kc { color: #fb660a; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #fb660a; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #fb660a; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #fb660a } /* Keyword.Pseudo */
+body .kr { color: #fb660a; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #cdcaa9; font-weight: bold } /* Keyword.Type */
+body .ld { color: #ffffff } /* Literal.Date */
+body .m { color: #0086f7; font-weight: bold } /* Literal.Number */
+body .s { color: #0086d2 } /* Literal.String */
+body .na { color: #ff0086; font-weight: bold } /* Name.Attribute */
+body .nb { color: #ffffff } /* Name.Builtin */
+body .nc { color: #ffffff } /* Name.Class */
+body .no { color: #0086d2 } /* Name.Constant */
+body .nd { color: #ffffff } /* Name.Decorator */
+body .ni { color: #ffffff } /* Name.Entity */
+body .ne { color: #ffffff } /* Name.Exception */
+body .nf { color: #ff0086; font-weight: bold } /* Name.Function */
+body .nl { color: #ffffff } /* Name.Label */
+body .nn { color: #ffffff } /* Name.Namespace */
+body .nx { color: #ffffff } /* Name.Other */
+body .py { color: #ffffff } /* Name.Property */
+body .nt { color: #fb660a; font-weight: bold } /* Name.Tag */
+body .nv { color: #fb660a } /* Name.Variable */
+body .ow { color: #ffffff } /* Operator.Word */
+body .w { color: #888888 } /* Text.Whitespace */
+body .mb { color: #0086f7; font-weight: bold } /* Literal.Number.Bin */
+body .mf { color: #0086f7; font-weight: bold } /* Literal.Number.Float */
+body .mh { color: #0086f7; font-weight: bold } /* Literal.Number.Hex */
+body .mi { color: #0086f7; font-weight: bold } /* Literal.Number.Integer */
+body .mo { color: #0086f7; font-weight: bold } /* Literal.Number.Oct */
+body .sa { color: #0086d2 } /* Literal.String.Affix */
+body .sb { color: #0086d2 } /* Literal.String.Backtick */
+body .sc { color: #0086d2 } /* Literal.String.Char */
+body .dl { color: #0086d2 } /* Literal.String.Delimiter */
+body .sd { color: #0086d2 } /* Literal.String.Doc */
+body .s2 { color: #0086d2 } /* Literal.String.Double */
+body .se { color: #0086d2 } /* Literal.String.Escape */
+body .sh { color: #0086d2 } /* Literal.String.Heredoc */
+body .si { color: #0086d2 } /* Literal.String.Interpol */
+body .sx { color: #0086d2 } /* Literal.String.Other */
+body .sr { color: #0086d2 } /* Literal.String.Regex */
+body .s1 { color: #0086d2 } /* Literal.String.Single */
+body .ss { color: #0086d2 } /* Literal.String.Symbol */
+body .bp { color: #ffffff } /* Name.Builtin.Pseudo */
+body .fm { color: #ff0086; font-weight: bold } /* Name.Function.Magic */
+body .vc { color: #fb660a } /* Name.Variable.Class */
+body .vg { color: #fb660a } /* Name.Variable.Global */
+body .vi { color: #fb660a } /* Name.Variable.Instance */
+body .vm { color: #fb660a } /* Name.Variable.Magic */
+body .il { color: #0086f7; font-weight: bold } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="cm">/*******************************************************************************</span>
+<span class="cm">* 文  件: VAMediaDefine.cpp</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">* 创  建: 2015年12月09日</span>
+<span class="cm">* 版  权: CopyRight(C) 2015 Fsmeeting.com. All rights reserved.</span>
+<span class="cm">* 描  述:</span>
+<span class="cm">********************************************************************************/</span>
+
+<span class="cm">/**************************** 条件编译选项和头文件 ****************************/</span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;vamedia_define.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;AutoLock.h&quot;</span><span class="cp"></span>
+
+<span class="cm">/********************************** 常量和宏 **********************************/</span>
+
+<span class="cm">/********************************** 数据类型 **********************************/</span>
+
+<span class="n">VAProfile</span> <span class="n">g_va_profile_list</span><span class="p">[]</span> <span class="o">=</span>
+<span class="p">{</span>
+    <span class="n">VAProfileH264Baseline</span><span class="p">,</span>
+    <span class="n">VAProfileH264Main</span><span class="p">,</span>
+    <span class="n">VAProfileH264High</span><span class="p">,</span>
+    <span class="n">VAProfileH264High</span><span class="p">,</span>
+    <span class="n">VAProfileNone</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="n">g_va_rate_control</span><span class="p">[]</span> <span class="o">=</span>
+<span class="p">{</span>
+    <span class="n">VA_RC_CBR</span><span class="p">,</span>
+    <span class="n">VA_RC_CQP</span><span class="p">,</span>
+    <span class="n">VA_RC_NONE</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="n">TFourccMap</span> <span class="n">g_fourcc_map</span><span class="p">[]</span> <span class="o">=</span>
+<span class="p">{</span>
+    <span class="p">{</span> <span class="s">&quot;I420&quot;</span><span class="p">,</span> <span class="n">EM_YUV_FORMAT_I420</span><span class="p">,</span> <span class="n">VA_FOURCC_YV12</span> <span class="p">},</span>  <span class="c1">// 测试发现没有I420格式</span>
+    <span class="p">{</span> <span class="s">&quot;YV12&quot;</span><span class="p">,</span> <span class="n">EM_YUV_FORMAT_YV12</span><span class="p">,</span> <span class="n">VA_FOURCC_YV12</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s">&quot;NV12&quot;</span><span class="p">,</span> <span class="n">EM_YUV_FORMAT_NV12</span><span class="p">,</span> <span class="n">VA_FOURCC_NV12</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s">&quot;NV21&quot;</span><span class="p">,</span> <span class="n">EM_YUV_FORMAT_NV21</span><span class="p">,</span> <span class="n">VA_FOURCC_NV12</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s">&quot;I422&quot;</span><span class="p">,</span> <span class="n">EM_YUV_FORMAT_I422</span><span class="p">,</span> <span class="mi">0</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s">&quot;YV16&quot;</span><span class="p">,</span> <span class="n">EM_YUV_FORMAT_YV16</span><span class="p">,</span> <span class="mi">0</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s">&quot;NV16&quot;</span><span class="p">,</span> <span class="n">EM_YUV_FORMAT_NV16</span><span class="p">,</span> <span class="mi">0</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s">&quot;NV61&quot;</span><span class="p">,</span> <span class="n">EM_YUV_FORMAT_NV61</span><span class="p">,</span> <span class="mi">0</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s">&quot;YUYV&quot;</span><span class="p">,</span> <span class="n">EM_YUV_FORMAT_YUYV</span><span class="p">,</span> <span class="n">VA_FOURCC_YUY2</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s">&quot;UYVY&quot;</span><span class="p">,</span> <span class="n">EM_YUV_FORMAT_UYVY</span><span class="p">,</span> <span class="n">VA_FOURCC_UYVY</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s">&quot;YUY2&quot;</span><span class="p">,</span> <span class="n">EM_YUV_FORMAT_YVYU</span><span class="p">,</span> <span class="n">VA_FOURCC_YUY2</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s">&quot;UYVY&quot;</span><span class="p">,</span> <span class="n">EM_YUV_FORMAT_VYUY</span><span class="p">,</span> <span class="n">VA_FOURCC_UYVY</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="cm">/**********************************   变量   **********************************/</span>
+
+<span class="cm">/********************************** 函数实现 **********************************/</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：查找图片格式字符串</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：非nullptr 成功/nullptr 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="nf">GetStringFromFormat</span><span class="p">(</span><span class="n">EYUVFormat</span> <span class="n">i_format</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">g_fourcc_map</span><span class="p">)</span> <span class="o">/</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">TFourccMap</span><span class="p">));</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">g_fourcc_map</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">format</span> <span class="o">==</span> <span class="n">i_format</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">g_fourcc_map</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">ac_string</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：查找图片格式字符串</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：非nullptr 成功/nullptr 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="nf">GetStringFromFourcc</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">i_fourcc</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">g_fourcc_map</span><span class="p">)</span> <span class="o">/</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">TFourccMap</span><span class="p">));</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">g_fourcc_map</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">fourcc</span> <span class="o">==</span> <span class="n">i_fourcc</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">g_fourcc_map</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">ac_string</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：查找图片格式枚举</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：格式 成功/超大值 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">EYUVFormat</span> <span class="nf">GetFormatFromFourcc</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">i_fourcc</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">g_fourcc_map</span><span class="p">)</span> <span class="o">/</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">TFourccMap</span><span class="p">));</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">g_fourcc_map</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">fourcc</span> <span class="o">==</span> <span class="n">i_fourcc</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">g_fourcc_map</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">format</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">EM_YUV_FORMAT_MAX</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: GetFourccFromFormat</span>
+<span class="cm">* 描  述: 获取Fourcc</span>
+<span class="cm">* 参  数: i_eFmt</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年03月20日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="kt">uint32_t</span> <span class="nf">GetFourccFromFormat</span><span class="p">(</span><span class="n">EYUVFormat</span> <span class="n">i_fmt</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">g_fourcc_map</span><span class="p">)</span> <span class="o">/</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">TFourccMap</span><span class="p">));</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">g_fourcc_map</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">format</span> <span class="o">==</span> <span class="n">i_fmt</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">g_fourcc_map</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">fourcc</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: VACreateDisplayDrm</span>
+<span class="cm">* 描  述: 通过drm来启动va</span>
+<span class="cm">* 时  间: 2016年06月15日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">********************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="nf">VACreateDisplayDrm</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">ac_drm_device_paths</span><span class="p">[]</span> <span class="o">=</span>
+    <span class="p">{</span>
+        <span class="s">&quot;/dev/dri/card0&quot;</span><span class="p">,</span>
+        <span class="s">&quot;/dev/dri/renderD128&quot;</span><span class="p">,</span>
+        <span class="k">nullptr</span><span class="p">,</span>
+    <span class="p">};</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">ac_drm_device_paths</span><span class="p">[</span><span class="n">i</span><span class="p">];</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">fd_drm</span> <span class="o">=</span> <span class="n">open</span><span class="p">(</span><span class="n">ac_drm_device_paths</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">O_RDWR</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">fd_drm</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">LOG_ERROR</span><span class="p">(</span><span class="s">&quot;Open %s Fail!&quot;</span><span class="p">,</span> <span class="n">ac_drm_device_paths</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+            <span class="k">continue</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="n">g_va_display</span> <span class="o">=</span> <span class="n">vaGetDisplayDRM</span><span class="p">(</span><span class="n">fd_drm</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">g_va_display</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">close</span><span class="p">(</span><span class="n">fd_drm</span><span class="p">);</span>
+            <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Init VADisplay With[%s] Success!&quot;</span><span class="p">,</span> <span class="n">ac_drm_device_paths</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+            <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">close</span><span class="p">(</span><span class="n">fd_drm</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">EM_RC_INITED_ERR</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: VACreateDisplayX11</span>
+<span class="cm">* 描  述: 通过x11启动</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年03月02日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="nf">VACreateDisplayX11</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">CAutoLock</span> <span class="n">lock</span><span class="p">(</span><span class="n">g_display_mtx</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">g_display_ptr</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">XInitThreads</span><span class="p">();</span>
+        <span class="n">g_display_ptr</span> <span class="o">=</span> <span class="n">XOpenDisplay</span><span class="p">(</span><span class="k">nullptr</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">g_display_ptr</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">LOG_ERROR</span><span class="p">(</span><span class="s">&quot;Can&#39;t Connect XServer, Error[%d], Info: %s&quot;</span><span class="p">,</span> <span class="n">errno</span><span class="p">,</span> <span class="n">strerror</span><span class="p">(</span><span class="n">errno</span><span class="p">));</span>
+            <span class="k">return</span> <span class="n">EM_RC_INIT_ERR</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">g_va_display</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">g_va_display</span> <span class="o">=</span> <span class="n">vaGetDisplay</span><span class="p">(</span><span class="n">g_display_ptr</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">g_va_display</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">LOG_ERROR</span><span class="p">(</span><span class="s">&quot;Create VADisplay Failed!&quot;</span><span class="p">);</span>
+            <span class="k">return</span> <span class="n">EM_RC_INIT_ERR</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="kt">int</span> <span class="n">iMajorVer</span><span class="p">,</span> <span class="n">iMinorVer</span><span class="p">;</span>
+        <span class="n">VAStatus</span> <span class="n">vaStatus</span> <span class="o">=</span> <span class="n">vaInitialize</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">iMajorVer</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">iMinorVer</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">vaStatus</span> <span class="o">!=</span> <span class="n">VA_STATUS_SUCCESS</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">LOG_ERROR</span><span class="p">(</span><span class="s">&quot;Init Vaapi Fail[%d]&quot;</span><span class="p">,</span> <span class="n">vaStatus</span><span class="p">);</span>
+            <span class="k">return</span> <span class="n">EM_RC_INIT_ERR</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">g_ref</span><span class="o">++</span><span class="p">;</span>
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Init VADisplay Success, Ref[%d]&quot;</span><span class="p">,</span> <span class="n">g_ref</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: VADestroyDisplay</span>
+<span class="cm">* 描  述: 销毁va句柄</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年03月04日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="nf">VADestroyDisplay</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">CAutoLock</span> <span class="n">lock</span><span class="p">(</span><span class="n">g_display_mtx</span><span class="p">);</span>
+
+    <span class="n">g_ref</span><span class="o">--</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">g_ref</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">g_display_ptr</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">XCloseDisplay</span><span class="p">(</span><span class="n">g_display_ptr</span><span class="p">);</span>
+            <span class="n">g_display_ptr</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">g_va_display</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">vaTerminate</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">);</span>
+            <span class="n">g_va_display</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;UnInit VADisplay, Ref[%d]&quot;</span><span class="p">,</span> <span class="n">g_ref</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: VAGetProfile</span>
+<span class="cm">* 描  述: 转换E_profile为VAprofile</span>
+<span class="cm">* 参  数: i_eProfile</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 2015年12月08日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">********************************************************************************/</span>
+<span class="n">VAProfile</span> <span class="nf">VAGetProfile</span><span class="p">(</span><span class="n">EProfile</span> <span class="n">i_eProfile</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">g_va_profile_list</span><span class="p">)</span> <span class="o">/</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">g_va_profile_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]));</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">i_eProfile</span> <span class="o">==</span> <span class="n">i</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">g_va_profile_list</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">VAProfileNone</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: VAGetRateControl</span>
+<span class="cm">* 描  述: 获得码率控制模式</span>
+<span class="cm">* 参  数: i_eMode</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 2015年12月09日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">********************************************************************************/</span>
+<span class="kt">int</span> <span class="nf">VAGetRateControl</span><span class="p">(</span><span class="n">EEncodeMode</span> <span class="n">i_mode</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">g_va_rate_control</span><span class="p">)</span> <span class="o">/</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">g_va_rate_control</span><span class="p">[</span><span class="mi">0</span><span class="p">]));</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">i_mode</span> <span class="o">==</span> <span class="n">i</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">g_va_rate_control</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">VA_RC_NONE</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">AlignSize</span><span class="p">(</span><span class="kt">int</span> <span class="n">i_size</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">iSize</span> <span class="o">=</span> <span class="p">(</span><span class="n">i_size</span> <span class="o">+</span> <span class="mi">31</span><span class="p">)</span> <span class="o">/</span> <span class="mi">32</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">iSize</span> <span class="o">*</span> <span class="mi">32</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: DownDataFromSurface</span>
+<span class="cm">* 描  述: down解码数据</span>
+<span class="cm">* 参  数: i_vaDisplay</span>
+<span class="cm">* 参  数: i_vaSurfID</span>
+<span class="cm">* 参  数: i_sSize</span>
+<span class="cm">* 参  数: o_pDst</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 2015年12月09日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">********************************************************************************/</span>
+<span class="kt">int</span> <span class="nf">DownYUVDataFromImage</span><span class="p">(</span><span class="n">VAImage</span><span class="o">*</span> <span class="n">i_va_image_ptr</span><span class="p">,</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">o_data_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">surf_ptr</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+    <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">y_start_ptr</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">,</span> <span class="o">*</span><span class="n">u_start_ptr</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">y_pitch</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">u_pitch</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">width</span> <span class="o">=</span> <span class="n">i_va_image_ptr</span><span class="o">-&gt;</span><span class="n">width</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">height</span> <span class="o">=</span> <span class="n">i_va_image_ptr</span><span class="o">-&gt;</span><span class="n">height</span><span class="p">;</span>
+
+    <span class="n">VAStatus</span> <span class="n">va_status</span> <span class="o">=</span> <span class="n">vaMapBuffer</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">i_va_image_ptr</span><span class="o">-&gt;</span><span class="n">buf</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span> <span class="o">**</span><span class="p">)</span><span class="o">&amp;</span><span class="n">surf_ptr</span><span class="p">);</span>
+    <span class="n">CHECK_VASTATUS</span><span class="p">(</span><span class="n">va_status</span><span class="p">,</span> <span class="s">&quot;vaMapBuffer(download_surface&quot;</span><span class="p">);</span>
+
+    <span class="n">y_start_ptr</span> <span class="o">=</span> <span class="n">surf_ptr</span><span class="p">;</span>
+    <span class="n">y_pitch</span> <span class="o">=</span> <span class="n">i_va_image_ptr</span><span class="o">-&gt;</span><span class="n">pitches</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="n">u_start_ptr</span> <span class="o">=</span> <span class="n">surf_ptr</span> <span class="o">+</span> <span class="n">i_va_image_ptr</span><span class="o">-&gt;</span><span class="n">offsets</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+    <span class="n">u_pitch</span> <span class="o">=</span> <span class="n">i_va_image_ptr</span><span class="o">-&gt;</span><span class="n">pitches</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">row</span> <span class="o">&lt;</span> <span class="n">height</span><span class="p">;</span> <span class="n">row</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">pYRow</span> <span class="o">=</span> <span class="n">y_start_ptr</span> <span class="o">+</span> <span class="n">row</span> <span class="o">*</span> <span class="n">y_pitch</span><span class="p">;</span>
+        <span class="n">memcpy</span><span class="p">(</span><span class="n">o_data_ptr</span> <span class="o">+</span> <span class="n">row</span><span class="o">*</span><span class="n">width</span><span class="p">,</span> <span class="n">pYRow</span><span class="p">,</span> <span class="n">width</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kt">int</span> <span class="n">uv_height</span> <span class="o">=</span> <span class="n">height</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">u_row_ptr</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">dst_u_ptr</span> <span class="o">=</span> <span class="n">o_data_ptr</span> <span class="o">+</span> <span class="n">width</span><span class="o">*</span><span class="n">height</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">row</span> <span class="o">&lt;</span> <span class="n">uv_height</span><span class="p">;</span> <span class="n">row</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">u_row_ptr</span> <span class="o">=</span> <span class="n">u_start_ptr</span> <span class="o">+</span> <span class="n">row</span> <span class="o">*</span> <span class="n">u_pitch</span><span class="p">;</span>
+        <span class="n">memcpy</span><span class="p">(</span><span class="n">dst_u_ptr</span> <span class="o">+</span> <span class="n">row</span> <span class="o">*</span> <span class="n">width</span><span class="p">,</span> <span class="n">u_row_ptr</span><span class="p">,</span> <span class="n">width</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">vaUnmapBuffer</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">i_va_image_ptr</span><span class="o">-&gt;</span><span class="n">buf</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：下载Y数据</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="kt">int</span> <span class="nf">DownYDataFromImage</span><span class="p">(</span><span class="n">VAImage</span><span class="o">*</span> <span class="n">i_va_image_ptr</span><span class="p">,</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">o_data_dst</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">surf_ptr</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">y_pitch</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">width</span> <span class="o">=</span> <span class="n">i_va_image_ptr</span><span class="o">-&gt;</span><span class="n">width</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">height</span> <span class="o">=</span> <span class="n">i_va_image_ptr</span><span class="o">-&gt;</span><span class="n">height</span><span class="p">;</span>
+
+    <span class="n">VAStatus</span> <span class="n">va_status</span> <span class="o">=</span> <span class="n">vaMapBuffer</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">i_va_image_ptr</span><span class="o">-&gt;</span><span class="n">buf</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span> <span class="o">**</span><span class="p">)</span><span class="o">&amp;</span><span class="n">surf_ptr</span><span class="p">);</span>
+    <span class="n">CHECK_VASTATUS</span><span class="p">(</span><span class="n">va_status</span><span class="p">,</span> <span class="s">&quot;vaMapBuffer(download_surface&quot;</span><span class="p">);</span>
+
+    <span class="n">y_pitch</span> <span class="o">=</span> <span class="n">i_va_image_ptr</span><span class="o">-&gt;</span><span class="n">pitches</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">row</span> <span class="o">&lt;</span> <span class="n">height</span><span class="p">;</span> <span class="n">row</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">memcpy</span><span class="p">(</span><span class="n">o_data_dst</span> <span class="o">+</span> <span class="n">row</span><span class="o">*</span><span class="n">width</span><span class="p">,</span> <span class="n">surf_ptr</span> <span class="o">+</span> <span class="n">row</span><span class="o">*</span><span class="n">y_pitch</span><span class="p">,</span> <span class="n">width</span><span class="p">);</span>
+
+    <span class="n">vaUnmapBuffer</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">i_va_image_ptr</span><span class="o">-&gt;</span><span class="n">buf</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：上传数据到VAImage</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">ERetCode</span> <span class="nf">UploadDataToImage</span><span class="p">(</span><span class="n">VAImage</span><span class="o">*</span> <span class="n">i_va_image_ptr</span><span class="p">,</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">i_surf_ptr</span><span class="p">,</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">i_src_data_ptr</span><span class="p">,</span> 
+    <span class="n">EYUVFormat</span> <span class="n">i_format</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_src_width</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_src_height</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">y_start_ptr</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">,</span> <span class="o">*</span><span class="n">u_start_ptr</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">y_pitch</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">u_pitch</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ii</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">src_width</span> <span class="o">=</span> <span class="n">i_src_width</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">src_height</span> <span class="o">=</span> <span class="n">i_src_height</span><span class="p">;</span>
+
+    <span class="n">y_start_ptr</span> <span class="o">=</span> <span class="n">i_surf_ptr</span><span class="p">;</span>
+    <span class="n">u_start_ptr</span> <span class="o">=</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="p">)</span><span class="n">i_surf_ptr</span> <span class="o">+</span> <span class="n">i_va_image_ptr</span><span class="o">-&gt;</span><span class="n">offsets</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+    <span class="n">y_pitch</span> <span class="o">=</span> <span class="n">i_va_image_ptr</span><span class="o">-&gt;</span><span class="n">pitches</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="n">u_pitch</span> <span class="o">=</span> <span class="n">i_va_image_ptr</span><span class="o">-&gt;</span><span class="n">pitches</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">i_format</span> <span class="o">==</span> <span class="n">EM_YUV_FORMAT_YUYV</span><span class="p">)</span>
+    <span class="p">{</span><span class="c1">//422  </span>
+        <span class="kt">int</span> <span class="n">src_align_width</span> <span class="o">=</span> <span class="n">src_width</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">pixel_width</span> <span class="o">=</span> <span class="n">src_width</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">pixel_height</span> <span class="o">=</span> <span class="n">src_height</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">pYUYVBuffer</span> <span class="o">=</span> <span class="n">i_src_data_ptr</span><span class="p">;</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="n">ii</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">ii</span> <span class="o">&lt;</span> <span class="n">pixel_height</span><span class="p">;</span> <span class="o">++</span><span class="n">ii</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">dest_y</span> <span class="o">=</span> <span class="n">y_start_ptr</span> <span class="o">+</span> <span class="p">(</span><span class="n">ii</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">y_pitch</span><span class="p">;</span>
+            <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">dest_uv</span> <span class="o">=</span> <span class="n">u_start_ptr</span> <span class="o">+</span> <span class="n">ii</span><span class="o">*</span><span class="n">u_pitch</span><span class="p">;</span>
+            <span class="k">for</span> <span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">pixel_width</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="kt">int</span> <span class="n">u</span><span class="p">;</span>
+                <span class="kt">int</span> <span class="n">v</span><span class="p">;</span>
+                <span class="kt">int</span> <span class="n">sub_j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span><span class="p">;</span>
+                <span class="kt">int</span> <span class="n">z_j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">;</span>
+
+                <span class="c1">//422的U数据，取1、2行同列的U平均值作为420的U数据。</span>
+                <span class="n">u</span> <span class="o">=</span> <span class="n">pYUYVBuffer</span><span class="p">[</span><span class="n">sub_j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
+                <span class="n">u</span> <span class="o">+=</span> <span class="n">pYUYVBuffer</span><span class="p">[</span><span class="n">sub_j</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">src_align_width</span><span class="p">];</span>
+                <span class="n">dest_uv</span><span class="p">[</span><span class="n">z_j</span><span class="p">]</span> <span class="o">=</span> <span class="n">u</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span>
+
+                <span class="c1">//422的V数据，取1、2行同列的V平均值作为420的V数据。</span>
+                <span class="n">v</span> <span class="o">=</span> <span class="n">pYUYVBuffer</span><span class="p">[</span><span class="n">sub_j</span> <span class="o">+</span> <span class="mi">3</span><span class="p">];</span>
+                <span class="n">v</span> <span class="o">+=</span> <span class="n">pYUYVBuffer</span><span class="p">[</span><span class="n">sub_j</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">+</span> <span class="n">src_align_width</span><span class="p">];</span>
+                <span class="n">dest_uv</span><span class="p">[</span><span class="n">z_j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span>
+
+                <span class="c1">//COPY两行Y数据</span>
+                <span class="n">dest_y</span><span class="p">[</span><span class="n">z_j</span><span class="p">]</span> <span class="o">=</span> <span class="n">pYUYVBuffer</span><span class="p">[</span><span class="n">sub_j</span><span class="p">];</span>
+                <span class="n">dest_y</span><span class="p">[</span><span class="n">z_j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">pYUYVBuffer</span><span class="p">[</span><span class="n">sub_j</span> <span class="o">+</span> <span class="mi">2</span><span class="p">];</span>
+                <span class="n">dest_y</span><span class="p">[</span><span class="n">y_pitch</span> <span class="o">+</span> <span class="n">z_j</span><span class="p">]</span> <span class="o">=</span> <span class="n">pYUYVBuffer</span><span class="p">[</span><span class="n">sub_j</span> <span class="o">+</span> <span class="n">src_align_width</span><span class="p">];</span>
+                <span class="n">dest_y</span><span class="p">[</span><span class="n">y_pitch</span> <span class="o">+</span> <span class="n">z_j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">pYUYVBuffer</span><span class="p">[</span><span class="n">sub_j</span> <span class="o">+</span> <span class="n">src_align_width</span> <span class="o">+</span> <span class="mi">2</span><span class="p">];</span>
+            <span class="p">}</span>
+            <span class="c1">// 一次循环从422中读取4*W的数据，计算得到W*2的Y数据、W/2的U数据、W/2的V数据，</span>
+            <span class="c1">// 共得到2行420数据:W*3.</span>
+            <span class="c1">// 源数据指针移动W*4,继续计算，共H/2次。</span>
+            <span class="n">pYUYVBuffer</span> <span class="o">+=</span> <span class="p">(</span><span class="n">src_width</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span><span class="c1">//420</span>
+        <span class="kt">int</span> <span class="n">y_size</span> <span class="o">=</span> <span class="n">src_width</span><span class="o">*</span><span class="n">src_height</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">uv_size</span> <span class="o">=</span> <span class="n">y_size</span> <span class="o">&gt;&gt;</span> <span class="mi">2</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">ii</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">ii</span> <span class="o">&lt;</span> <span class="n">src_height</span><span class="p">;</span> <span class="n">ii</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span><span class="c1">//按pitch，每次copy一行数据到NV12数组中</span>
+            <span class="n">memcpy</span><span class="p">(</span><span class="n">y_start_ptr</span> <span class="o">+</span> <span class="n">ii</span><span class="o">*</span><span class="n">y_pitch</span><span class="p">,</span> <span class="n">i_src_data_ptr</span> <span class="o">+</span> <span class="n">ii</span><span class="o">*</span><span class="n">src_width</span><span class="p">,</span> <span class="n">src_width</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">i_format</span> <span class="o">==</span> <span class="n">EM_YUV_FORMAT_NV12</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="n">ii</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">ii</span> <span class="o">&lt;</span> <span class="n">src_height</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span> <span class="n">ii</span><span class="o">++</span><span class="p">)</span>
+            <span class="p">{</span><span class="c1">//按pitch，每次copy一行数据到NV12数组中</span>
+                <span class="n">memcpy</span><span class="p">(</span><span class="n">u_start_ptr</span> <span class="o">+</span> <span class="n">ii</span><span class="o">*</span><span class="n">u_pitch</span><span class="p">,</span> <span class="n">i_src_data_ptr</span> <span class="o">+</span> <span class="n">y_size</span> <span class="o">+</span> <span class="n">ii</span><span class="o">*</span><span class="n">src_width</span><span class="p">,</span> <span class="n">src_width</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">i_format</span> <span class="o">==</span> <span class="n">EM_YUV_FORMAT_I420</span> <span class="o">||</span> <span class="n">i_format</span> <span class="o">==</span> <span class="n">EM_YUV_FORMAT_YV12</span><span class="p">)</span>
+        <span class="p">{</span><span class="c1">//IYUV和YV12的格式一样，指示U/V数据的位置互换。</span>
+            <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">pUData</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">,</span> <span class="o">*</span><span class="n">pVData</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">i_format</span> <span class="o">==</span> <span class="n">EM_YUV_FORMAT_I420</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">pUData</span> <span class="o">=</span> <span class="n">i_src_data_ptr</span> <span class="o">+</span> <span class="n">y_size</span><span class="p">;</span>
+                <span class="n">pVData</span> <span class="o">=</span> <span class="n">pUData</span> <span class="o">+</span> <span class="n">uv_size</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="n">pVData</span> <span class="o">=</span> <span class="n">i_src_data_ptr</span> <span class="o">+</span> <span class="n">y_size</span><span class="p">;</span>
+                <span class="n">pUData</span> <span class="o">=</span> <span class="n">pVData</span> <span class="o">+</span> <span class="n">uv_size</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">for</span> <span class="p">(</span><span class="n">ii</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">ii</span> <span class="o">&lt;</span> <span class="n">src_height</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span> <span class="n">ii</span><span class="o">++</span><span class="p">)</span>
+            <span class="p">{</span><span class="c1">//因为NV12是UV数据交替存放在大小为W*H的数组中，所以需要循环赋值。</span>
+                <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">pURow</span> <span class="o">=</span> <span class="n">u_start_ptr</span> <span class="o">+</span> <span class="n">ii</span> <span class="o">*</span> <span class="n">u_pitch</span><span class="p">;</span>
+                <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">pUPtr</span> <span class="o">=</span> <span class="n">pUData</span> <span class="o">+</span> <span class="n">ii</span> <span class="o">*</span> <span class="p">(</span><span class="n">src_width</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">);</span>
+                <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">pVPtr</span> <span class="o">=</span> <span class="n">pVData</span> <span class="o">+</span> <span class="n">ii</span> <span class="o">*</span> <span class="p">(</span><span class="n">src_width</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">);</span>
+                <span class="k">for</span> <span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">src_width</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">pURow</span><span class="p">[</span><span class="n">j</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">pUPtr</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+                    <span class="n">pURow</span><span class="p">[(</span><span class="n">j</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">pVPtr</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="n">LOG_ERROR</span><span class="p">(</span><span class="s">&quot;Not Support Format: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">GetStringFromFormat</span><span class="p">(</span><span class="n">i_format</span><span class="p">));</span>
+            <span class="k">return</span> <span class="n">EM_RC_YUV_FORMAT_ERR</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span><span class="c1">// NOLINT(readability/fn_size)</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：上传IYUV数据到VAImage</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="kt">int</span> <span class="nf">UploadIYUVToImage</span><span class="p">(</span><span class="n">VAImage</span><span class="o">*</span> <span class="n">i_va_image_ptr</span><span class="p">,</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">i_surf_ptr</span><span class="p">,</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">i_src_data_ptr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_src_width</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_src_height</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">y_start_ptr</span> <span class="o">=</span> <span class="n">i_surf_ptr</span><span class="p">;</span>
+    <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">u_start_ptr</span> <span class="o">=</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="p">)</span><span class="n">i_surf_ptr</span> <span class="o">+</span> <span class="n">i_va_image_ptr</span><span class="o">-&gt;</span><span class="n">offsets</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+    <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">v_start_ptr</span> <span class="o">=</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="p">)</span><span class="n">i_surf_ptr</span> <span class="o">+</span> <span class="n">i_va_image_ptr</span><span class="o">-&gt;</span><span class="n">offsets</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+
+    <span class="kt">int</span> <span class="n">y_size</span> <span class="o">=</span> <span class="n">i_src_width</span><span class="o">*</span><span class="n">i_src_height</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">u_size</span> <span class="o">=</span> <span class="n">y_size</span> <span class="o">&gt;&gt;</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">uv_width</span> <span class="o">=</span> <span class="n">i_src_width</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">uv_height</span> <span class="o">=</span> <span class="n">i_src_height</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span>
+
+    <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">u_src_data_ptr</span> <span class="o">=</span> <span class="n">i_src_data_ptr</span> <span class="o">+</span> <span class="n">y_size</span><span class="p">;</span>
+    <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">v_src_data_ptr</span> <span class="o">=</span> <span class="n">u_src_data_ptr</span> <span class="o">+</span> <span class="n">u_size</span><span class="p">;</span>
+
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">i_src_height</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="c1">//y</span>
+        <span class="n">memcpy</span><span class="p">(</span><span class="n">y_start_ptr</span> <span class="o">+</span> <span class="n">i_va_image_ptr</span><span class="o">-&gt;</span><span class="n">pitches</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">i</span><span class="p">,</span> <span class="n">i_src_data_ptr</span> <span class="o">+</span> <span class="n">i_src_width</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="n">i_src_width</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">uv_height</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="c1">//u</span>
+        <span class="n">memcpy</span><span class="p">(</span><span class="n">u_start_ptr</span> <span class="o">+</span> <span class="n">i_va_image_ptr</span><span class="o">-&gt;</span><span class="n">pitches</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">i</span><span class="p">,</span> <span class="n">u_src_data_ptr</span> <span class="o">+</span> <span class="n">uv_width</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="n">uv_width</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">uv_height</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="c1">//v</span>
+        <span class="n">memcpy</span><span class="p">(</span><span class="n">v_start_ptr</span> <span class="o">+</span> <span class="n">i_va_image_ptr</span><span class="o">-&gt;</span><span class="n">pitches</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">i</span><span class="p">,</span> <span class="n">v_src_data_ptr</span> <span class="o">+</span> <span class="n">uv_width</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="n">uv_width</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：上传YV12数据到VAImage</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="kt">int</span> <span class="nf">UploadYV12ToImage</span><span class="p">(</span><span class="n">VAImage</span><span class="o">*</span> <span class="n">i_va_image_ptr</span><span class="p">,</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">i_surf_ptr</span><span class="p">,</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">i_src_data_ptr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_src_width</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_src_height</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">y_start_ptr</span> <span class="o">=</span> <span class="n">i_surf_ptr</span><span class="p">;</span>
+    <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">u_start_ptr</span> <span class="o">=</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="p">)</span><span class="n">i_surf_ptr</span> <span class="o">+</span> <span class="n">i_va_image_ptr</span><span class="o">-&gt;</span><span class="n">offsets</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+    <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">v_start_ptr</span> <span class="o">=</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="p">)</span><span class="n">i_surf_ptr</span> <span class="o">+</span> <span class="n">i_va_image_ptr</span><span class="o">-&gt;</span><span class="n">offsets</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+
+    <span class="kt">int</span> <span class="n">y_size</span> <span class="o">=</span> <span class="n">i_src_width</span><span class="o">*</span><span class="n">i_src_height</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">u_size</span> <span class="o">=</span> <span class="n">y_size</span> <span class="o">&gt;&gt;</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">uv_width</span> <span class="o">=</span> <span class="n">i_src_width</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">uv_height</span> <span class="o">=</span> <span class="n">i_src_height</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span>
+
+    <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">v_src_data_ptr</span> <span class="o">=</span> <span class="n">i_src_data_ptr</span> <span class="o">+</span> <span class="n">y_size</span><span class="p">;</span>
+    <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">u_src_data_ptr</span> <span class="o">=</span> <span class="n">v_src_data_ptr</span> <span class="o">+</span> <span class="n">u_size</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">i_src_height</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">memcpy</span><span class="p">(</span><span class="n">y_start_ptr</span> <span class="o">+</span> <span class="n">i_va_image_ptr</span><span class="o">-&gt;</span><span class="n">pitches</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">i</span><span class="p">,</span> <span class="n">i_src_data_ptr</span> <span class="o">+</span> <span class="n">i_src_width</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="n">i_src_width</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">uv_height</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">memcpy</span><span class="p">(</span><span class="n">u_start_ptr</span> <span class="o">+</span> <span class="n">i_va_image_ptr</span><span class="o">-&gt;</span><span class="n">pitches</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">i</span><span class="p">,</span> <span class="n">v_src_data_ptr</span> <span class="o">+</span> <span class="n">uv_width</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="n">uv_width</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">uv_height</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">memcpy</span><span class="p">(</span><span class="n">v_start_ptr</span> <span class="o">+</span> <span class="n">i_va_image_ptr</span><span class="o">-&gt;</span><span class="n">pitches</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">i</span><span class="p">,</span> <span class="n">u_src_data_ptr</span> <span class="o">+</span> <span class="n">uv_width</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="n">uv_width</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：上传NV12数据到VAImage</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="kt">int</span> <span class="nf">UploadNV12ToImage</span><span class="p">(</span><span class="n">VAImage</span><span class="o">*</span> <span class="n">i_va_image_ptr</span><span class="p">,</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">i_surf_ptr</span><span class="p">,</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">i_src_data_ptr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_src_width</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_src_height</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">y_start_ptr</span> <span class="o">=</span> <span class="n">i_surf_ptr</span><span class="p">;</span>
+    <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">uv_start_ptr</span> <span class="o">=</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="p">)</span><span class="n">i_surf_ptr</span> <span class="o">+</span> <span class="n">i_va_image_ptr</span><span class="o">-&gt;</span><span class="n">offsets</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+
+    <span class="kt">int</span> <span class="n">y_size</span> <span class="o">=</span> <span class="n">i_src_width</span><span class="o">*</span><span class="n">i_src_height</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">uv_width</span> <span class="o">=</span> <span class="n">i_src_width</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">uv_height</span> <span class="o">=</span> <span class="n">i_src_height</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">i_src_height</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">memcpy</span><span class="p">(</span><span class="n">y_start_ptr</span> <span class="o">+</span> <span class="n">i_va_image_ptr</span><span class="o">-&gt;</span><span class="n">pitches</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">i</span><span class="p">,</span> <span class="n">i_src_data_ptr</span> <span class="o">+</span> <span class="n">i_src_width</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="n">i_src_width</span><span class="p">);</span>
+
+    <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">uv_src_data_ptr</span> <span class="o">=</span> <span class="n">i_src_data_ptr</span> <span class="o">+</span> <span class="n">y_size</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">uv_height</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">memcpy</span><span class="p">(</span><span class="n">uv_start_ptr</span> <span class="o">+</span> <span class="n">i_va_image_ptr</span><span class="o">-&gt;</span><span class="n">pitches</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">i</span><span class="p">,</span> <span class="n">uv_src_data_ptr</span> <span class="o">+</span> <span class="n">uv_width</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="n">uv_width</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：上传YUYV数据到VAImage</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="kt">int</span> <span class="nf">UploadYUYVToImage</span><span class="p">(</span><span class="n">VAImage</span><span class="o">*</span> <span class="n">i_va_image_ptr</span><span class="p">,</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">i_surf_ptr</span><span class="p">,</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">i_src_data_ptr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_src_width</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_src_height</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">memcpy</span><span class="p">(</span><span class="n">i_surf_ptr</span><span class="p">,</span> <span class="n">i_src_data_ptr</span><span class="p">,</span> <span class="n">i_src_width</span><span class="o">*</span><span class="n">i_src_height</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="kt">uint32_t</span> <span class="nf">VASWAP32</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">i_val</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">val_ptr</span> <span class="o">=</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">i_val</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="p">((</span><span class="n">val_ptr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="mi">24</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">val_ptr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="mi">16</span><span class="p">)</span> <span class="o">|</span>
+        <span class="p">(</span><span class="n">val_ptr</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">val_ptr</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="mi">0</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：无</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="kt">void</span> <span class="nf">BitStreamStart</span><span class="p">(</span><span class="n">BitStream</span> <span class="o">*</span><span class="n">i_bs_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">i_bs_ptr</span><span class="o">-&gt;</span><span class="n">max_size_in_dword</span> <span class="o">=</span> <span class="n">BITSTREAM_ALLOCATE_STEPPING</span><span class="p">;</span>
+    <span class="n">i_bs_ptr</span><span class="o">-&gt;</span><span class="n">buffer</span> <span class="o">=</span> <span class="p">(</span><span class="kt">uint32_t</span><span class="o">*</span><span class="p">)</span><span class="n">calloc</span><span class="p">(</span><span class="n">i_bs_ptr</span><span class="o">-&gt;</span><span class="n">max_size_in_dword</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">i_bs_ptr</span><span class="o">-&gt;</span><span class="n">bit_offset</span><span class="p">),</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="n">i_bs_ptr</span><span class="o">-&gt;</span><span class="n">bit_offset</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：无</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="kt">void</span> <span class="nf">BitStreamEnd</span><span class="p">(</span><span class="n">BitStream</span> <span class="o">*</span><span class="n">i_bs_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">pos</span> <span class="o">=</span> <span class="p">(</span><span class="n">i_bs_ptr</span><span class="o">-&gt;</span><span class="n">bit_offset</span> <span class="o">&gt;&gt;</span> <span class="mi">5</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">bit_offset</span> <span class="o">=</span> <span class="p">(</span><span class="n">i_bs_ptr</span><span class="o">-&gt;</span><span class="n">bit_offset</span> <span class="o">&amp;</span> <span class="mh">0x1f</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">bit_left</span> <span class="o">=</span> <span class="mi">32</span> <span class="o">-</span> <span class="n">bit_offset</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">bit_offset</span><span class="p">)</span> 
+        <span class="n">i_bs_ptr</span><span class="o">-&gt;</span><span class="n">buffer</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">=</span> <span class="n">VASWAP32</span><span class="p">((</span><span class="n">i_bs_ptr</span><span class="o">-&gt;</span><span class="n">buffer</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">bit_left</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：无</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="kt">void</span> <span class="nf">BitStreamPutUI</span><span class="p">(</span><span class="n">BitStream</span> <span class="o">*</span><span class="n">i_bs_ptr</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">i_val</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_size_in_bits</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">pos</span> <span class="o">=</span> <span class="p">(</span><span class="n">i_bs_ptr</span><span class="o">-&gt;</span><span class="n">bit_offset</span> <span class="o">&gt;&gt;</span> <span class="mi">5</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">bit_offset</span> <span class="o">=</span> <span class="p">(</span><span class="n">i_bs_ptr</span><span class="o">-&gt;</span><span class="n">bit_offset</span> <span class="o">&amp;</span> <span class="mh">0x1f</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">bit_left</span> <span class="o">=</span> <span class="mi">32</span> <span class="o">-</span> <span class="n">bit_offset</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">i_size_in_bits</span><span class="p">)</span>
+        <span class="k">return</span><span class="p">;</span>
+
+    <span class="n">i_bs_ptr</span><span class="o">-&gt;</span><span class="n">bit_offset</span> <span class="o">+=</span> <span class="n">i_size_in_bits</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">bit_left</span> <span class="o">&gt;</span> <span class="n">i_size_in_bits</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">i_bs_ptr</span><span class="o">-&gt;</span><span class="n">buffer</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">i_bs_ptr</span><span class="o">-&gt;</span><span class="n">buffer</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">i_size_in_bits</span> <span class="o">|</span> <span class="n">i_val</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="n">i_size_in_bits</span> <span class="o">-=</span> <span class="n">bit_left</span><span class="p">;</span>
+        <span class="n">i_bs_ptr</span><span class="o">-&gt;</span><span class="n">buffer</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">i_bs_ptr</span><span class="o">-&gt;</span><span class="n">buffer</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">bit_left</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">i_val</span> <span class="o">&gt;&gt;</span> <span class="n">i_size_in_bits</span><span class="p">);</span>
+        <span class="n">i_bs_ptr</span><span class="o">-&gt;</span><span class="n">buffer</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">=</span> <span class="n">VASWAP32</span><span class="p">(</span><span class="n">i_bs_ptr</span><span class="o">-&gt;</span><span class="n">buffer</span><span class="p">[</span><span class="n">pos</span><span class="p">]);</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">pos</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">==</span> <span class="n">i_bs_ptr</span><span class="o">-&gt;</span><span class="n">max_size_in_dword</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">i_bs_ptr</span><span class="o">-&gt;</span><span class="n">max_size_in_dword</span> <span class="o">+=</span> <span class="n">BITSTREAM_ALLOCATE_STEPPING</span><span class="p">;</span>
+            <span class="n">i_bs_ptr</span><span class="o">-&gt;</span><span class="n">buffer</span> <span class="o">=</span> <span class="p">(</span><span class="kt">uint32_t</span><span class="o">*</span><span class="p">)</span><span class="n">realloc</span><span class="p">(</span><span class="n">i_bs_ptr</span><span class="o">-&gt;</span><span class="n">buffer</span><span class="p">,</span> <span class="n">i_bs_ptr</span><span class="o">-&gt;</span><span class="n">max_size_in_dword</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">uint32_t</span><span class="p">));</span>
+        <span class="p">}</span>
+
+        <span class="n">i_bs_ptr</span><span class="o">-&gt;</span><span class="n">buffer</span><span class="p">[</span><span class="n">pos</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">i_val</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：无</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="kt">void</span> <span class="nf">BitStreamPutUE</span><span class="p">(</span><span class="n">BitStream</span> <span class="o">*</span><span class="n">i_bs_ptr</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">i_val</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">size_in_bits</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">tmp_val</span> <span class="o">=</span> <span class="o">++</span><span class="n">i_val</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">tmp_val</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">tmp_val</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="n">size_in_bits</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">BitStreamPutUI</span><span class="p">(</span><span class="n">i_bs_ptr</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">size_in_bits</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// leading zero</span>
+    <span class="n">BitStreamPutUI</span><span class="p">(</span><span class="n">i_bs_ptr</span><span class="p">,</span> <span class="n">i_val</span><span class="p">,</span> <span class="n">size_in_bits</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：无</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="kt">void</span> <span class="nf">BitStreamPutSE</span><span class="p">(</span><span class="n">BitStream</span> <span class="o">*</span><span class="n">i_bs_ptr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_val</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">uint32_t</span> <span class="n">new_val</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">i_val</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">new_val</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">i_val</span><span class="p">;</span>
+    <span class="k">else</span>
+        <span class="n">new_val</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">i_val</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+
+    <span class="n">BitStreamPutUE</span><span class="p">(</span><span class="n">i_bs_ptr</span><span class="p">,</span> <span class="n">new_val</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：无</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="kt">void</span> <span class="nf">BitStreamByteAligning</span><span class="p">(</span><span class="n">BitStream</span> <span class="o">*</span><span class="n">i_bs_ptr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_bit</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">bit_offset</span> <span class="o">=</span> <span class="p">(</span><span class="n">i_bs_ptr</span><span class="o">-&gt;</span><span class="n">bit_offset</span> <span class="o">&amp;</span> <span class="mh">0x7</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">bit_left</span> <span class="o">=</span> <span class="mi">8</span> <span class="o">-</span> <span class="n">bit_offset</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">new_val</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">bit_offset</span><span class="p">)</span>
+        <span class="k">return</span><span class="p">;</span>
+
+    <span class="n">assert</span><span class="p">(</span><span class="n">i_bit</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">i_bit</span> <span class="o">==</span> <span class="mi">1</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">i_bit</span><span class="p">)</span>
+        <span class="n">new_val</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">bit_left</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">else</span>
+        <span class="n">new_val</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="n">BitStreamPutUI</span><span class="p">(</span><span class="n">i_bs_ptr</span><span class="p">,</span> <span class="n">new_val</span><span class="p">,</span> <span class="n">bit_left</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：无</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="kt">void</span>  <span class="nf">RBSPTrailingBits</span><span class="p">(</span><span class="n">BitStream</span> <span class="o">*</span><span class="n">i_bs_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">BitStreamPutUI</span><span class="p">(</span><span class="n">i_bs_ptr</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="n">BitStreamByteAligning</span><span class="p">(</span><span class="n">i_bs_ptr</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：无</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="kt">void</span>  <span class="nf">NalStartCodePrefix</span><span class="p">(</span><span class="n">BitStream</span> <span class="o">*</span><span class="n">i_bs_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">BitStreamPutUI</span><span class="p">(</span><span class="n">i_bs_ptr</span><span class="p">,</span> <span class="mh">0x00000001</span><span class="p">,</span> <span class="mi">32</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：无</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="kt">void</span>  <span class="nf">NalHeader</span><span class="p">(</span><span class="n">BitStream</span> <span class="o">*</span><span class="n">i_bs_ptr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_nal_ref_idc</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_nal_unit_type</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">BitStreamPutUI</span><span class="p">(</span><span class="n">i_bs_ptr</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>                <span class="cm">/* forbidden_zero_bit: 0 */</span>
+    <span class="n">BitStreamPutUI</span><span class="p">(</span><span class="n">i_bs_ptr</span><span class="p">,</span> <span class="n">i_nal_ref_idc</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="n">BitStreamPutUI</span><span class="p">(</span><span class="n">i_bs_ptr</span><span class="p">,</span> <span class="n">i_nal_unit_type</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：无</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="kt">void</span> <span class="nf">SortOne</span><span class="p">(</span><span class="n">VAPictureH264</span> <span class="n">ref</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">i_left</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_right</span><span class="p">,</span>
+    <span class="kt">int</span> <span class="n">i_ascending</span><span class="p">,</span> <span class="kt">int</span> <span class="n">frame_idx</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i_left</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i_right</span><span class="p">;</span>
+    <span class="kt">uint32_t</span> <span class="n">key</span><span class="p">;</span>
+    <span class="n">VAPictureH264</span> <span class="n">pic_tmp</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">frame_idx</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="n">ref</span><span class="p">[(</span><span class="n">i_left</span> <span class="o">+</span> <span class="n">i_right</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">].</span><span class="n">frame_idx</span><span class="p">;</span>
+        <span class="n">PARTITION</span><span class="p">(</span><span class="n">ref</span><span class="p">,</span> <span class="n">frame_idx</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">i_ascending</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="n">ref</span><span class="p">[(</span><span class="n">i_left</span> <span class="o">+</span> <span class="n">i_right</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">].</span><span class="n">TopFieldOrderCnt</span><span class="p">;</span>
+        <span class="n">PARTITION</span><span class="p">(</span><span class="n">ref</span><span class="p">,</span> <span class="n">TopFieldOrderCnt</span><span class="p">,</span> <span class="p">(</span><span class="kt">signed</span> <span class="kt">int</span><span class="p">)</span><span class="n">key</span><span class="p">,</span> <span class="n">i_ascending</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="cm">/* recursion */</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">i_left</span> <span class="o">&lt;</span> <span class="n">j</span><span class="p">)</span>
+        <span class="n">SortOne</span><span class="p">(</span><span class="n">ref</span><span class="p">,</span> <span class="n">i_left</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">i_ascending</span><span class="p">,</span> <span class="n">frame_idx</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">i_right</span><span class="p">)</span>
+        <span class="n">SortOne</span><span class="p">(</span><span class="n">ref</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">i_right</span><span class="p">,</span> <span class="n">i_ascending</span><span class="p">,</span> <span class="n">frame_idx</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：无</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="kt">void</span> <span class="nf">SortTwo</span><span class="p">(</span><span class="n">VAPictureH264</span> <span class="n">ref</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">i_left</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_right</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">i_key</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">frame_idx</span><span class="p">,</span>
+    <span class="kt">int</span> <span class="n">i_partition_ascending</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_list0_ascending</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_list1_ascending</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i_left</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i_right</span><span class="p">;</span>
+    <span class="n">VAPictureH264</span> <span class="n">tmp</span><span class="p">;</span>
+
+	<span class="k">if</span> <span class="p">(</span><span class="n">frame_idx</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">PARTITION</span><span class="p">(</span><span class="n">ref</span><span class="p">,</span> <span class="n">frame_idx</span><span class="p">,</span> <span class="n">i_key</span><span class="p">,</span> <span class="n">i_partition_ascending</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="k">else</span>
+	<span class="p">{</span>
+		<span class="n">PARTITION</span><span class="p">(</span><span class="n">ref</span><span class="p">,</span> <span class="n">TopFieldOrderCnt</span><span class="p">,</span> <span class="p">(</span><span class="kt">signed</span> <span class="kt">int</span><span class="p">)</span><span class="n">i_key</span><span class="p">,</span> <span class="n">i_partition_ascending</span><span class="p">);</span>
+	<span class="p">}</span>
+
+    <span class="n">SortOne</span><span class="p">(</span><span class="n">ref</span><span class="p">,</span> <span class="n">i_left</span><span class="p">,</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i_list0_ascending</span><span class="p">,</span> <span class="n">frame_idx</span><span class="p">);</span>
+    <span class="n">SortOne</span><span class="p">(</span><span class="n">ref</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i_right</span><span class="p">,</span> <span class="n">i_list1_ascending</span><span class="p">,</span> <span class="n">frame_idx</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</body>
+</html>

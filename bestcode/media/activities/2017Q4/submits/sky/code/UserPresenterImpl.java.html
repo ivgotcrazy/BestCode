@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #333333 }
+body  { background: #111111; color: #ffffff }
+body .c { color: #008800; font-style: italic; background-color: #0f140f } /* Comment */
+body .err { color: #ffffff } /* Error */
+body .esc { color: #ffffff } /* Escape */
+body .g { color: #ffffff } /* Generic */
+body .k { color: #fb660a; font-weight: bold } /* Keyword */
+body .l { color: #ffffff } /* Literal */
+body .n { color: #ffffff } /* Name */
+body .o { color: #ffffff } /* Operator */
+body .x { color: #ffffff } /* Other */
+body .p { color: #ffffff } /* Punctuation */
+body .ch { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Hashbang */
+body .cm { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Multiline */
+body .cp { color: #ff0007; font-weight: bold; font-style: italic; background-color: #0f140f } /* Comment.Preproc */
+body .cpf { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.PreprocFile */
+body .c1 { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Single */
+body .cs { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Special */
+body .gd { color: #ffffff } /* Generic.Deleted */
+body .ge { color: #ffffff } /* Generic.Emph */
+body .gr { color: #ffffff } /* Generic.Error */
+body .gh { color: #ffffff; font-weight: bold } /* Generic.Heading */
+body .gi { color: #ffffff } /* Generic.Inserted */
+body .go { color: #444444; background-color: #222222 } /* Generic.Output */
+body .gp { color: #ffffff } /* Generic.Prompt */
+body .gs { color: #ffffff } /* Generic.Strong */
+body .gu { color: #ffffff; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #ffffff } /* Generic.Traceback */
+body .kc { color: #fb660a; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #fb660a; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #fb660a; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #fb660a } /* Keyword.Pseudo */
+body .kr { color: #fb660a; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #cdcaa9; font-weight: bold } /* Keyword.Type */
+body .ld { color: #ffffff } /* Literal.Date */
+body .m { color: #0086f7; font-weight: bold } /* Literal.Number */
+body .s { color: #0086d2 } /* Literal.String */
+body .na { color: #ff0086; font-weight: bold } /* Name.Attribute */
+body .nb { color: #ffffff } /* Name.Builtin */
+body .nc { color: #ffffff } /* Name.Class */
+body .no { color: #0086d2 } /* Name.Constant */
+body .nd { color: #ffffff } /* Name.Decorator */
+body .ni { color: #ffffff } /* Name.Entity */
+body .ne { color: #ffffff } /* Name.Exception */
+body .nf { color: #ff0086; font-weight: bold } /* Name.Function */
+body .nl { color: #ffffff } /* Name.Label */
+body .nn { color: #ffffff } /* Name.Namespace */
+body .nx { color: #ffffff } /* Name.Other */
+body .py { color: #ffffff } /* Name.Property */
+body .nt { color: #fb660a; font-weight: bold } /* Name.Tag */
+body .nv { color: #fb660a } /* Name.Variable */
+body .ow { color: #ffffff } /* Operator.Word */
+body .w { color: #888888 } /* Text.Whitespace */
+body .mb { color: #0086f7; font-weight: bold } /* Literal.Number.Bin */
+body .mf { color: #0086f7; font-weight: bold } /* Literal.Number.Float */
+body .mh { color: #0086f7; font-weight: bold } /* Literal.Number.Hex */
+body .mi { color: #0086f7; font-weight: bold } /* Literal.Number.Integer */
+body .mo { color: #0086f7; font-weight: bold } /* Literal.Number.Oct */
+body .sa { color: #0086d2 } /* Literal.String.Affix */
+body .sb { color: #0086d2 } /* Literal.String.Backtick */
+body .sc { color: #0086d2 } /* Literal.String.Char */
+body .dl { color: #0086d2 } /* Literal.String.Delimiter */
+body .sd { color: #0086d2 } /* Literal.String.Doc */
+body .s2 { color: #0086d2 } /* Literal.String.Double */
+body .se { color: #0086d2 } /* Literal.String.Escape */
+body .sh { color: #0086d2 } /* Literal.String.Heredoc */
+body .si { color: #0086d2 } /* Literal.String.Interpol */
+body .sx { color: #0086d2 } /* Literal.String.Other */
+body .sr { color: #0086d2 } /* Literal.String.Regex */
+body .s1 { color: #0086d2 } /* Literal.String.Single */
+body .ss { color: #0086d2 } /* Literal.String.Symbol */
+body .bp { color: #ffffff } /* Name.Builtin.Pseudo */
+body .fm { color: #ff0086; font-weight: bold } /* Name.Function.Magic */
+body .vc { color: #fb660a } /* Name.Variable.Class */
+body .vg { color: #fb660a } /* Name.Variable.Global */
+body .vi { color: #fb660a } /* Name.Variable.Instance */
+body .vm { color: #fb660a } /* Name.Variable.Magic */
+body .il { color: #0086f7; font-weight: bold } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * 用户列表业务presenter类</span>
+<span class="cm"> * Created by Sky on 2017/2/16.</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">UserPresenterImpl</span> <span class="kd">implements</span> <span class="n">IUserPresenter</span><span class="o">,</span> <span class="n">Observer</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">TAG</span> <span class="o">=</span> <span class="s">&quot;UserPresenterImpl&quot;</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="n">IUserView</span> <span class="n">userView</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">UserModel</span> <span class="n">userModel</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">keyword</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">backCalled</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+    <span class="c1">// 当正在滑动列表时不刷新用户列表</span>
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">scrolling</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">userUpdatedUnrefreshed</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+
+
+    <span class="cm">/**</span>
+<span class="cm">     * 构造器</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="nf">UserPresenterImpl</span><span class="o">(</span><span class="n">IUserView</span> <span class="n">view</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">userView</span> <span class="o">=</span> <span class="n">view</span><span class="o">;</span>
+        <span class="n">userView</span><span class="o">.</span><span class="na">setPresenter</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+
+        <span class="n">userModel</span> <span class="o">=</span> <span class="n">UserModel</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">start</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">EventBus</span><span class="o">.</span><span class="na">getDefault</span><span class="o">().</span><span class="na">register</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onStop</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">EventBus</span><span class="o">.</span><span class="na">getDefault</span><span class="o">().</span><span class="na">unregister</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onBack</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(!</span><span class="n">backCalled</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">EventBus</span><span class="o">.</span><span class="na">getDefault</span><span class="o">().</span><span class="na">post</span><span class="o">(</span><span class="k">new</span> <span class="n">BaseDto</span><span class="o">(</span><span class="n">BaseDto</span><span class="o">.</span><span class="na">MEETINGACTIVITY_HIDE_POP_FRAGMENT</span><span class="o">));</span>
+            <span class="n">backCalled</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onUserViewVisible</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">visible</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// 当界面不可见时不更新列表，减少主线程压力</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">visible</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">UmsAgent</span><span class="o">.</span><span class="na">onEvent</span><span class="o">(</span><span class="n">HstApplication</span><span class="o">.</span><span class="na">getContext</span><span class="o">(),</span> <span class="n">UmsUtils</span><span class="o">.</span><span class="na">EVENT_ATTENDEES_LIST_LOAD</span><span class="o">);</span>
+
+            <span class="n">backCalled</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+            <span class="n">userModel</span><span class="o">.</span><span class="na">addObserver</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+            <span class="n">refreshUserListAndResetUnrefreshed</span><span class="o">(</span><span class="n">userModel</span><span class="o">.</span><span class="na">getUsers</span><span class="o">());</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="n">userModel</span><span class="o">.</span><span class="na">deleteObserver</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onUserSearchDialogDismissed</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">keyword</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="n">refreshUserListAndResetUnrefreshed</span><span class="o">(</span><span class="n">userModel</span><span class="o">.</span><span class="na">getUsers</span><span class="o">());</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onUserListScroll</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">isScrolling</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">shouldRefreshUserList</span><span class="o">(</span><span class="n">isScrolling</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">refreshUserListAndResetUnrefreshed</span><span class="o">(</span><span class="n">userModel</span><span class="o">.</span><span class="na">getUsers</span><span class="o">());</span>
+        <span class="o">}</span>
+
+        <span class="n">scrolling</span> <span class="o">=</span> <span class="n">isScrolling</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onUserViewSearchClick</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">userView</span><span class="o">.</span><span class="na">showUserSearchDialog</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onUserSearchViewSearchClick</span><span class="o">(</span><span class="n">String</span> <span class="n">keyword</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// 不区分大小写</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">keyword</span> <span class="o">=</span> <span class="n">keyword</span><span class="o">.</span><span class="na">toLowerCase</span><span class="o">();</span>
+        <span class="n">onUserSearch</span><span class="o">(</span><span class="n">userModel</span><span class="o">.</span><span class="na">getUsers</span><span class="o">());</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onUserItemClick</span><span class="o">(</span><span class="n">BaseUser</span> <span class="n">user</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// 主讲或者主席点击并且当前用户有音视频权限才可以显示菜单</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">shouldShowUserMenu</span><span class="o">(</span><span class="n">user</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">userView</span><span class="o">.</span><span class="na">showUserMenu</span><span class="o">(</span><span class="n">user</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 处理视频接收状态改变事件</span>
+<span class="cm">     */</span>
+    <span class="nd">@Subscribe</span><span class="o">(</span><span class="n">threadMode</span> <span class="o">=</span> <span class="n">ThreadMode</span><span class="o">.</span><span class="na">MAIN</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onEventMainThread</span><span class="o">(</span><span class="n">BaseDto</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">event</span><span class="o">.</span><span class="na">getType</span><span class="o">()</span> <span class="o">==</span> <span class="n">BaseDto</span><span class="o">.</span><span class="na">VIDEO_ENABLE_CHANGED</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">userView</span><span class="o">.</span><span class="na">userSearchDialogShowing</span><span class="o">())</span> <span class="o">{</span>
+                <span class="n">updateKeywordUsers</span><span class="o">(</span><span class="n">userModel</span><span class="o">.</span><span class="na">getUsers</span><span class="o">());</span>
+            <span class="o">}</span>
+            <span class="n">onUserListRefreshByScrollState</span><span class="o">(</span><span class="n">userModel</span><span class="o">.</span><span class="na">getUsers</span><span class="o">());</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="nd">@SuppressWarnings</span><span class="o">(</span><span class="s">&quot;unchecked&quot;</span><span class="o">)</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">update</span><span class="o">(</span><span class="n">Observable</span> <span class="n">observable</span><span class="o">,</span> <span class="n">Object</span> <span class="n">data</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// 当参会人搜索界面可见时只刷新搜索界面，不刷新参会人界面</span>
+        <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">BaseUser</span><span class="o">&gt;</span> <span class="n">newUsers</span> <span class="o">=</span> <span class="o">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">BaseUser</span><span class="o">&gt;)</span> <span class="n">data</span><span class="o">;</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="n">userView</span><span class="o">.</span><span class="na">userSearchDialogShowing</span><span class="o">())</span> <span class="o">{</span>
+            <span class="n">updateKeywordUsers</span><span class="o">(</span><span class="n">newUsers</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="n">onUserListRefreshByScrollState</span><span class="o">(</span><span class="n">newUsers</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="n">userView</span><span class="o">.</span><span class="na">userMenuDialogShowing</span><span class="o">())</span> <span class="o">{</span>
+            <span class="n">BaseUser</span> <span class="n">user</span> <span class="o">=</span> <span class="n">userView</span><span class="o">.</span><span class="na">getMenuDialogUser</span><span class="o">();</span>
+            <span class="k">if</span> <span class="o">(!</span><span class="n">newUsers</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">user</span><span class="o">))</span> <span class="o">{</span>
+                <span class="n">userView</span><span class="o">.</span><span class="na">dismissUserMenu</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">int</span> <span class="nf">updateKeywordUsers</span><span class="o">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">BaseUser</span><span class="o">&gt;</span> <span class="n">newUsers</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">BaseUser</span><span class="o">&gt;</span> <span class="n">keywordUsers</span> <span class="o">=</span> <span class="n">getSortedKeyWordUsers</span><span class="o">(</span><span class="n">newUsers</span><span class="o">);</span>
+        <span class="n">userView</span><span class="o">.</span><span class="na">refreshUserSearchList</span><span class="o">(</span><span class="n">keywordUsers</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">keywordUsers</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">onUserListRefreshByScrollState</span><span class="o">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">BaseUser</span><span class="o">&gt;</span> <span class="n">newUsers</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(!</span><span class="n">scrolling</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">refreshUserListAndResetUnrefreshed</span><span class="o">(</span><span class="n">newUsers</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="n">userUpdatedUnrefreshed</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 刷新用户列表，重置未刷新标志位。</span>
+<span class="cm">     */</span>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">refreshUserListAndResetUnrefreshed</span><span class="o">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">BaseUser</span><span class="o">&gt;</span> <span class="n">newUsers</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">userView</span><span class="o">.</span><span class="na">refreshUserList</span><span class="o">(</span><span class="n">sortUserList</span><span class="o">(</span><span class="n">newUsers</span><span class="o">));</span>
+        <span class="n">userUpdatedUnrefreshed</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 当前为不滑动状态，并且记录前状态为滑动状态，且未刷新标志位为true时，才返回true。</span>
+<span class="cm">     */</span>
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">shouldRefreshUserList</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">isScrolling</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="o">!</span><span class="n">isScrolling</span> <span class="o">&amp;&amp;</span> <span class="n">scrolling</span> <span class="o">&amp;&amp;</span> <span class="n">userUpdatedUnrefreshed</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">onUserSearch</span><span class="o">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">BaseUser</span><span class="o">&gt;</span> <span class="n">srcUsers</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// 如果没有搜索到用户提示未搜索到用户的Toast</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">updateKeywordUsers</span><span class="o">(</span><span class="n">srcUsers</span><span class="o">)</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">userView</span><span class="o">.</span><span class="na">showMatchUserEmptyToast</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">BaseUser</span><span class="o">&gt;</span> <span class="nf">getSortedKeyWordUsers</span><span class="o">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">BaseUser</span><span class="o">&gt;</span> <span class="n">srcUsers</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">BaseUser</span><span class="o">&gt;</span> <span class="n">keywordUsers</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+        <span class="n">findKeyWordUsers</span><span class="o">(</span><span class="n">srcUsers</span><span class="o">,</span> <span class="n">keywordUsers</span><span class="o">);</span>
+        <span class="n">sortUserList</span><span class="o">(</span><span class="n">keywordUsers</span><span class="o">);</span>
+
+        <span class="k">return</span> <span class="n">keywordUsers</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">findKeyWordUsers</span><span class="o">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">BaseUser</span><span class="o">&gt;</span> <span class="n">srcUsers</span><span class="o">,</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">BaseUser</span><span class="o">&gt;</span> <span class="n">keywordUsers</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(!</span><span class="n">TextUtils</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">keyword</span><span class="o">))</span> <span class="o">{</span>
+            <span class="k">for</span> <span class="o">(</span><span class="n">BaseUser</span> <span class="n">user</span> <span class="o">:</span> <span class="n">srcUsers</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">String</span> <span class="n">nickName</span> <span class="o">=</span> <span class="n">user</span><span class="o">.</span><span class="na">getNickName</span><span class="o">().</span><span class="na">toLowerCase</span><span class="o">();</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">nickName</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">keyword</span><span class="o">))</span> <span class="o">{</span>
+                    <span class="n">keywordUsers</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">user</span><span class="o">);</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">BaseUser</span><span class="o">&gt;</span> <span class="nf">sortUserList</span><span class="o">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">BaseUser</span><span class="o">&gt;</span> <span class="n">srcUsers</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Collections</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">srcUsers</span><span class="o">,</span> <span class="k">new</span> <span class="n">UserComparator</span><span class="o">());</span>
+        <span class="k">return</span> <span class="n">srcUsers</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 只有当前用户有权限申请主讲（且不是电话用户）并且本地用户有授予主讲权限时，才返回true。</span>
+<span class="cm">     */</span>
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">shouldShowUserMenu</span><span class="o">(</span><span class="n">BaseUser</span> <span class="n">user</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">user</span><span class="o">.</span><span class="na">checkMainSpeakPermission</span><span class="o">()</span> 
+                            <span class="o">&amp;&amp;</span> <span class="n">userModel</span><span class="o">.</span><span class="na">getLocalUser</span><span class="o">().</span><span class="na">checkHighestPermission</span><span class="o">()</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">user</span><span class="o">.</span><span class="na">isTelephoneUser</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #333333 }
+body  { background: #111111; color: #ffffff }
+body .c { color: #008800; font-style: italic; background-color: #0f140f } /* Comment */
+body .err { color: #ffffff } /* Error */
+body .esc { color: #ffffff } /* Escape */
+body .g { color: #ffffff } /* Generic */
+body .k { color: #fb660a; font-weight: bold } /* Keyword */
+body .l { color: #ffffff } /* Literal */
+body .n { color: #ffffff } /* Name */
+body .o { color: #ffffff } /* Operator */
+body .x { color: #ffffff } /* Other */
+body .p { color: #ffffff } /* Punctuation */
+body .ch { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Hashbang */
+body .cm { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Multiline */
+body .cp { color: #ff0007; font-weight: bold; font-style: italic; background-color: #0f140f } /* Comment.Preproc */
+body .cpf { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.PreprocFile */
+body .c1 { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Single */
+body .cs { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Special */
+body .gd { color: #ffffff } /* Generic.Deleted */
+body .ge { color: #ffffff } /* Generic.Emph */
+body .gr { color: #ffffff } /* Generic.Error */
+body .gh { color: #ffffff; font-weight: bold } /* Generic.Heading */
+body .gi { color: #ffffff } /* Generic.Inserted */
+body .go { color: #444444; background-color: #222222 } /* Generic.Output */
+body .gp { color: #ffffff } /* Generic.Prompt */
+body .gs { color: #ffffff } /* Generic.Strong */
+body .gu { color: #ffffff; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #ffffff } /* Generic.Traceback */
+body .kc { color: #fb660a; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #fb660a; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #fb660a; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #fb660a } /* Keyword.Pseudo */
+body .kr { color: #fb660a; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #cdcaa9; font-weight: bold } /* Keyword.Type */
+body .ld { color: #ffffff } /* Literal.Date */
+body .m { color: #0086f7; font-weight: bold } /* Literal.Number */
+body .s { color: #0086d2 } /* Literal.String */
+body .na { color: #ff0086; font-weight: bold } /* Name.Attribute */
+body .nb { color: #ffffff } /* Name.Builtin */
+body .nc { color: #ffffff } /* Name.Class */
+body .no { color: #0086d2 } /* Name.Constant */
+body .nd { color: #ffffff } /* Name.Decorator */
+body .ni { color: #ffffff } /* Name.Entity */
+body .ne { color: #ffffff } /* Name.Exception */
+body .nf { color: #ff0086; font-weight: bold } /* Name.Function */
+body .nl { color: #ffffff } /* Name.Label */
+body .nn { color: #ffffff } /* Name.Namespace */
+body .nx { color: #ffffff } /* Name.Other */
+body .py { color: #ffffff } /* Name.Property */
+body .nt { color: #fb660a; font-weight: bold } /* Name.Tag */
+body .nv { color: #fb660a } /* Name.Variable */
+body .ow { color: #ffffff } /* Operator.Word */
+body .w { color: #888888 } /* Text.Whitespace */
+body .mb { color: #0086f7; font-weight: bold } /* Literal.Number.Bin */
+body .mf { color: #0086f7; font-weight: bold } /* Literal.Number.Float */
+body .mh { color: #0086f7; font-weight: bold } /* Literal.Number.Hex */
+body .mi { color: #0086f7; font-weight: bold } /* Literal.Number.Integer */
+body .mo { color: #0086f7; font-weight: bold } /* Literal.Number.Oct */
+body .sa { color: #0086d2 } /* Literal.String.Affix */
+body .sb { color: #0086d2 } /* Literal.String.Backtick */
+body .sc { color: #0086d2 } /* Literal.String.Char */
+body .dl { color: #0086d2 } /* Literal.String.Delimiter */
+body .sd { color: #0086d2 } /* Literal.String.Doc */
+body .s2 { color: #0086d2 } /* Literal.String.Double */
+body .se { color: #0086d2 } /* Literal.String.Escape */
+body .sh { color: #0086d2 } /* Literal.String.Heredoc */
+body .si { color: #0086d2 } /* Literal.String.Interpol */
+body .sx { color: #0086d2 } /* Literal.String.Other */
+body .sr { color: #0086d2 } /* Literal.String.Regex */
+body .s1 { color: #0086d2 } /* Literal.String.Single */
+body .ss { color: #0086d2 } /* Literal.String.Symbol */
+body .bp { color: #ffffff } /* Name.Builtin.Pseudo */
+body .fm { color: #ff0086; font-weight: bold } /* Name.Function.Magic */
+body .vc { color: #fb660a } /* Name.Variable.Class */
+body .vg { color: #fb660a } /* Name.Variable.Global */
+body .vi { color: #fb660a } /* Name.Variable.Instance */
+body .vm { color: #fb660a } /* Name.Variable.Magic */
+body .il { color: #0086f7; font-weight: bold } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="cm">/*##############################################################################</span>
+<span class="cm">* 文件：encode_video.h</span>
+<span class="cm">* 描述：编码H264视频的头文件声明</span>
+<span class="cm">* 作者：bull</span>
+<span class="cm">* 时间：2017年9月14日</span>
+<span class="cm">* 版权：Copyright(C) 2017 Fsmeeting.com. All rights reserved.</span>
+<span class="cm">#############################################################################*/</span>
+
+<span class="cp">#pragma once</span>
+
+<span class="cm">/**************************** 条件编译选项和头文件 ****************************/</span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;iencoder.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;MediaConfig.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;BaseThread.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;MediaTool.h&quot;</span><span class="cp"></span>
+
+
+<span class="cm">/**********************************  类声明  ***********************************/</span>
+
+<span class="n">class</span> <span class="nl">EncodeVideo</span> <span class="p">:</span> <span class="n">public</span> <span class="n">IEncoder</span><span class="p">,</span> <span class="n">public</span> <span class="n">BaseThread</span>
+<span class="p">{</span>
+<span class="nl">public</span><span class="p">:</span>
+
+	<span class="n">EncodeVideo</span><span class="p">(){};</span>
+	<span class="n">virtual</span> <span class="o">~</span><span class="n">EncodeVideo</span><span class="p">(){};</span>
+
+	<span class="c1">// 创建、并启动</span>
+	<span class="n">ERetCode</span> <span class="nf">CreateEncoder</span><span class="p">(</span><span class="n">TEncInfo</span><span class="o">*</span> <span class="n">i_enc_props_ptr</span><span class="p">);</span>
+
+	<span class="c1">//编码数据（回调接口回调或者o_pData输出）</span>
+	<span class="n">ERetCode</span> <span class="nf">EncodeData</span><span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span> <span class="n">i_data_ptr</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">i_data_len</span><span class="p">,</span> <span class="n">TOutFrame</span><span class="o">*</span> <span class="n">o_data_ptr</span> <span class="o">=</span> <span class="n">nullptr</span><span class="p">);</span>
+
+	<span class="c1">// 设置编码数据回调对象</span>
+	<span class="n">ERetCode</span> <span class="nf">SetEncDataCallBack</span><span class="p">(</span><span class="n">IVCallBack</span><span class="o">*</span> <span class="n">i_callback_ptr</span><span class="p">);</span>
+
+	<span class="c1">// 设置输入源， 如果已存在，会覆盖原有的输入源</span>
+	<span class="n">ERetCode</span> <span class="nf">SetDataSource</span><span class="p">(</span><span class="n">ISource</span><span class="o">*</span> <span class="n">i_source_ptr</span><span class="p">);</span>
+
+	<span class="c1">// 关闭</span>
+	<span class="n">ERetCode</span> <span class="nf">DestroyEncoder</span><span class="p">();</span>
+
+<span class="nl">private</span><span class="p">:</span>
+	<span class="n">ERetCode</span> <span class="n">ThreadFuncProc</span><span class="p">();</span>
+
+<span class="nl">private</span><span class="p">:</span>
+
+    <span class="n">AVCodec</span><span class="o">*</span>				    <span class="n">m_codec_ptr</span> <span class="o">=</span> <span class="n">nullptr</span><span class="p">;</span>         <span class="c1">//编码器</span>
+    <span class="n">AVCodecContext</span><span class="o">*</span>	            <span class="n">m_codec_ctx_ptr</span> <span class="o">=</span> <span class="n">nullptr</span><span class="p">;</span>	   <span class="c1">//编码器上下文</span>
+    <span class="n">AVFrame</span><span class="o">*</span>				    <span class="n">m_frame_ptr</span> <span class="o">=</span> <span class="n">nullptr</span><span class="p">;</span>         <span class="c1">//编码帧</span>
+    <span class="kt">uint8_t</span><span class="o">*</span>                    <span class="n">m_frame_buffer_ptr</span> <span class="o">=</span> <span class="n">nullptr</span><span class="p">;</span>  <span class="c1">//编码帧缓冲</span>
+
+	<span class="n">IVCallBack</span><span class="o">*</span>                 <span class="n">m_callBack_ptr</span> <span class="o">=</span> <span class="n">nullptr</span><span class="p">;</span>      <span class="c1">//编码数据回调对象</span>
+	<span class="n">ISource</span><span class="o">*</span>                    <span class="n">m_source_ptr</span> <span class="o">=</span> <span class="n">nullptr</span><span class="p">;</span>        <span class="c1">//数据源</span>
+
+	<span class="n">MediaTool</span><span class="o">*</span>                  <span class="n">m_media_tool_ptr</span> <span class="o">=</span> <span class="n">nullptr</span><span class="p">;</span>    <span class="c1">//媒体工具</span>
+
+	<span class="kt">uint8_t</span><span class="o">*</span>                    <span class="n">m_buffer_ptr</span> <span class="o">=</span> <span class="n">nullptr</span><span class="p">;</span>        <span class="c1">//缩放缓冲</span>
+
+	<span class="n">TOutFrame</span>                   <span class="n">m_enc_frame</span><span class="p">;</span>                   <span class="c1">//编码帧</span>
+	<span class="n">TOutFrame</span>                   <span class="n">m_yuv_frame</span><span class="p">;</span>                   <span class="c1">//YUV缓冲帧</span>
+
+    <span class="n">TEncInfo</span>			        <span class="n">m_enc_props</span><span class="p">;</span>	               <span class="c1">//编码器属性</span>
+    <span class="kt">int</span>						    <span class="n">m_is_inited</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>               <span class="c1">//是否初始化</span>
+    <span class="kt">int</span>						    <span class="n">m_enc_count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>               <span class="c1">//编码计数</span>
+<span class="p">};</span>
+</pre></div>
+</body>
+</html>

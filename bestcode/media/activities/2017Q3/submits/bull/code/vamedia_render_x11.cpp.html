@@ -1,0 +1,1110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #333333 }
+body  { background: #111111; color: #ffffff }
+body .c { color: #008800; font-style: italic; background-color: #0f140f } /* Comment */
+body .err { color: #ffffff } /* Error */
+body .esc { color: #ffffff } /* Escape */
+body .g { color: #ffffff } /* Generic */
+body .k { color: #fb660a; font-weight: bold } /* Keyword */
+body .l { color: #ffffff } /* Literal */
+body .n { color: #ffffff } /* Name */
+body .o { color: #ffffff } /* Operator */
+body .x { color: #ffffff } /* Other */
+body .p { color: #ffffff } /* Punctuation */
+body .ch { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Hashbang */
+body .cm { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Multiline */
+body .cp { color: #ff0007; font-weight: bold; font-style: italic; background-color: #0f140f } /* Comment.Preproc */
+body .cpf { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.PreprocFile */
+body .c1 { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Single */
+body .cs { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Special */
+body .gd { color: #ffffff } /* Generic.Deleted */
+body .ge { color: #ffffff } /* Generic.Emph */
+body .gr { color: #ffffff } /* Generic.Error */
+body .gh { color: #ffffff; font-weight: bold } /* Generic.Heading */
+body .gi { color: #ffffff } /* Generic.Inserted */
+body .go { color: #444444; background-color: #222222 } /* Generic.Output */
+body .gp { color: #ffffff } /* Generic.Prompt */
+body .gs { color: #ffffff } /* Generic.Strong */
+body .gu { color: #ffffff; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #ffffff } /* Generic.Traceback */
+body .kc { color: #fb660a; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #fb660a; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #fb660a; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #fb660a } /* Keyword.Pseudo */
+body .kr { color: #fb660a; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #cdcaa9; font-weight: bold } /* Keyword.Type */
+body .ld { color: #ffffff } /* Literal.Date */
+body .m { color: #0086f7; font-weight: bold } /* Literal.Number */
+body .s { color: #0086d2 } /* Literal.String */
+body .na { color: #ff0086; font-weight: bold } /* Name.Attribute */
+body .nb { color: #ffffff } /* Name.Builtin */
+body .nc { color: #ffffff } /* Name.Class */
+body .no { color: #0086d2 } /* Name.Constant */
+body .nd { color: #ffffff } /* Name.Decorator */
+body .ni { color: #ffffff } /* Name.Entity */
+body .ne { color: #ffffff } /* Name.Exception */
+body .nf { color: #ff0086; font-weight: bold } /* Name.Function */
+body .nl { color: #ffffff } /* Name.Label */
+body .nn { color: #ffffff } /* Name.Namespace */
+body .nx { color: #ffffff } /* Name.Other */
+body .py { color: #ffffff } /* Name.Property */
+body .nt { color: #fb660a; font-weight: bold } /* Name.Tag */
+body .nv { color: #fb660a } /* Name.Variable */
+body .ow { color: #ffffff } /* Operator.Word */
+body .w { color: #888888 } /* Text.Whitespace */
+body .mb { color: #0086f7; font-weight: bold } /* Literal.Number.Bin */
+body .mf { color: #0086f7; font-weight: bold } /* Literal.Number.Float */
+body .mh { color: #0086f7; font-weight: bold } /* Literal.Number.Hex */
+body .mi { color: #0086f7; font-weight: bold } /* Literal.Number.Integer */
+body .mo { color: #0086f7; font-weight: bold } /* Literal.Number.Oct */
+body .sa { color: #0086d2 } /* Literal.String.Affix */
+body .sb { color: #0086d2 } /* Literal.String.Backtick */
+body .sc { color: #0086d2 } /* Literal.String.Char */
+body .dl { color: #0086d2 } /* Literal.String.Delimiter */
+body .sd { color: #0086d2 } /* Literal.String.Doc */
+body .s2 { color: #0086d2 } /* Literal.String.Double */
+body .se { color: #0086d2 } /* Literal.String.Escape */
+body .sh { color: #0086d2 } /* Literal.String.Heredoc */
+body .si { color: #0086d2 } /* Literal.String.Interpol */
+body .sx { color: #0086d2 } /* Literal.String.Other */
+body .sr { color: #0086d2 } /* Literal.String.Regex */
+body .s1 { color: #0086d2 } /* Literal.String.Single */
+body .ss { color: #0086d2 } /* Literal.String.Symbol */
+body .bp { color: #ffffff } /* Name.Builtin.Pseudo */
+body .fm { color: #ff0086; font-weight: bold } /* Name.Function.Magic */
+body .vc { color: #fb660a } /* Name.Variable.Class */
+body .vg { color: #fb660a } /* Name.Variable.Global */
+body .vi { color: #fb660a } /* Name.Variable.Instance */
+body .vm { color: #fb660a } /* Name.Variable.Magic */
+body .il { color: #0086f7; font-weight: bold } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="cm">/*******************************************************************************</span>
+<span class="cm">* 文  件: VARenderX11.cpp</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">* 创  建: 2015年12月16日</span>
+<span class="cm">* 版  权: CopyRight(C) 2015 Fsmeeting.com. All rights reserved.</span>
+<span class="cm">* 描  述:</span>
+<span class="cm">********************************************************************************/</span>
+
+<span class="cm">/**************************** 条件编译选项和头文件 ****************************/</span>
+<span class="cp">#include</span> <span class="cpf">&quot;vamedia_render_x11.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;libudev.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;AutoLock.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;BaseFileFunction.h&quot;</span><span class="cp"></span>
+
+
+<span class="cm">/********************************** 常量和宏 **********************************/</span>
+
+<span class="cm">/********************************** 数据类型 **********************************/</span>
+
+<span class="cm">/**********************************   变量   **********************************/</span>
+
+<span class="cm">/********************************** 函数实现 **********************************/</span>
+
+<span class="cm">/********************************** 类实现 ***********************************/</span>
+
+<span class="n">VARenderX11</span><span class="o">::</span><span class="n">VARenderX11</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">pthread_mutex_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_render_mtx</span><span class="p">,</span> <span class="k">nullptr</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">VARenderX11</span><span class="o">::~</span><span class="n">VARenderX11</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">pthread_mutex_destroy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_render_mtx</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: Init</span>
+<span class="cm">* 描  述: 初始化创建窗口</span>
+<span class="cm">* 参  数: i_pRect</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 2015年12月16日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">********************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VARenderX11</span><span class="o">::</span><span class="n">CreateRender</span><span class="p">(</span><span class="n">TMediaRenderProps</span><span class="o">*</span> <span class="n">i_render_props_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">i_render_props_ptr</span><span class="p">,</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">);</span>
+    <span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">EM_RC_UNINIT_ERR</span><span class="p">);</span>
+
+    <span class="n">m_tmp_size</span> <span class="o">=</span> <span class="n">m_render_size</span> <span class="o">=</span> <span class="n">i_render_props_ptr</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">i_render_props_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">width</span> <span class="o">!=</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">i_render_props_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">height</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+		<span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_tmp_rect</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">i_render_props_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">i_render_props_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">));</span>
+
+    <span class="n">m_yuv_format</span> <span class="o">=</span> <span class="n">i_render_props_ptr</span><span class="o">-&gt;</span><span class="n">format</span><span class="p">;</span>
+
+    <span class="kt">int</span> <span class="n">screen_id</span> <span class="o">=</span> <span class="n">DefaultScreen</span><span class="p">(</span><span class="n">g_display_ptr</span><span class="p">);</span>
+    <span class="n">m_wnd_root</span> <span class="o">=</span> <span class="n">RootWindow</span><span class="p">(</span><span class="n">g_display_ptr</span><span class="p">,</span> <span class="n">screen_id</span><span class="p">);</span>
+
+    <span class="c1">//启动检测线程</span>
+    <span class="n">StartHotPlugMonitor</span><span class="p">();</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">==</span> <span class="n">GetOutputConnectionCount</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">LOG_WARN</span><span class="p">(</span><span class="s">&quot;has no screen connected, do not start the render thread now&quot;</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">ERetCode</span> <span class="n">er</span> <span class="o">=</span> <span class="n">CreateRenderWindow</span><span class="p">(</span><span class="o">&amp;</span><span class="n">i_render_props_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">er</span> <span class="o">!=</span> <span class="n">EM_RC_OK</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">LOG_ERROR</span><span class="p">(</span><span class="s">&quot;Create Render Window Fail[%d]&quot;</span><span class="p">,</span> <span class="n">er</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">er</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">VASurfaceAttrib</span> <span class="n">va_surf_attr</span><span class="p">;</span>
+    <span class="n">va_surf_attr</span><span class="p">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">VASurfaceAttribPixelFormat</span><span class="p">;</span>
+    <span class="n">va_surf_attr</span><span class="p">.</span><span class="n">flags</span> <span class="o">=</span> <span class="n">VA_SURFACE_ATTRIB_SETTABLE</span><span class="p">;</span>
+    <span class="n">va_surf_attr</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">VAGenericValueTypeInteger</span><span class="p">;</span>
+    <span class="n">va_surf_attr</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">i</span> <span class="o">=</span> <span class="n">VA_FOURCC_NV12</span><span class="p">;</span>
+    <span class="n">vaCreateSurfaces</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">VA_RT_FORMAT_YUV420</span><span class="p">,</span> <span class="n">m_render_size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">m_render_size</span><span class="p">.</span><span class="n">height</span><span class="p">,</span>
+        <span class="o">&amp;</span><span class="n">m_va_surface_id</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">COMMON_SIZE_4</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">va_surf_attr</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+    
+    <span class="n">m_is_inited</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Init VARenderX11 Success, Size[%dx%d]&quot;</span><span class="p">,</span> <span class="n">i_render_props_ptr</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">i_render_props_ptr</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">.</span><span class="n">height</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nf">StartThread</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: UnInit</span>
+<span class="cm">* 描  述:</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 2015年12月16日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">********************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VARenderX11</span><span class="o">::</span><span class="n">DestroyRender</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">//停止监控线程</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_monitor_thread_state</span> <span class="o">==</span> <span class="n">EM_TS_RUN</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">m_monitor_thread_state</span> <span class="o">=</span> <span class="n">EM_TS_STOPING</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">m_monitor_thread_state</span> <span class="o">!=</span> <span class="n">EM_TS_STOP</span><span class="p">)</span>
+            <span class="n">usleep</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="c1">//停止渲染线程</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_exit_code</span> <span class="o">==</span> <span class="n">EM_TS_RUN</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">m_exit_code</span> <span class="o">=</span> <span class="n">EM_TS_STOPING</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">m_exit_code</span> <span class="o">!=</span> <span class="n">EM_TS_STOP</span><span class="p">)</span>
+            <span class="n">usleep</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_va_surface_id</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">vaDestroySurfaces</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m_va_surface_id</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">COMMON_SIZE_4</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">g_va_display</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">m_wnd_render</span> <span class="o">!=</span> <span class="n">None</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">XUnmapWindow</span><span class="p">(</span><span class="n">g_display_ptr</span><span class="p">,</span> <span class="n">m_wnd_render</span><span class="p">);</span>
+            <span class="n">XDestroyWindow</span><span class="p">(</span><span class="n">g_display_ptr</span><span class="p">,</span> <span class="n">m_wnd_render</span><span class="p">);</span>
+            <span class="n">m_wnd_render</span> <span class="o">=</span> <span class="n">None</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">auto</span> <span class="n">node_map</span> <span class="o">=</span> <span class="n">m_render_map</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+    <span class="k">for</span> <span class="p">(;</span> <span class="n">node_map</span> <span class="o">!=</span> <span class="n">m_render_map</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">node_map</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">TRenderMember</span><span class="o">*</span> <span class="n">member_ptr</span> <span class="o">=</span> <span class="n">node_map</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span>
+        <span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">tmp_ptr</span><span class="p">);</span>
+        <span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">member_ptr</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">m_render_map</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_is_inited</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;UnInit Render!&quot;</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: CreateRenderWindow</span>
+<span class="cm">* 描  述: 创建渲染窗口</span>
+<span class="cm">* 参  数: i_pRect: 渲染位置</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年06月20日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VARenderX11</span><span class="o">::</span><span class="n">CreateRenderWindow</span><span class="p">(</span><span class="n">TRect</span><span class="o">*</span> <span class="n">i_rect_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">screen_id</span> <span class="o">=</span> <span class="n">DefaultScreen</span><span class="p">(</span><span class="n">g_display_ptr</span><span class="p">);</span>
+    <span class="kt">uint32_t</span> <span class="n">uiBlackPixel</span> <span class="o">=</span> <span class="n">BlackPixel</span><span class="p">(</span><span class="n">g_display_ptr</span><span class="p">,</span> <span class="n">screen_id</span><span class="p">);</span>
+
+    <span class="n">XWindowAttributes</span> <span class="n">xw_attr</span><span class="p">;</span>
+    <span class="n">XGetWindowAttributes</span><span class="p">(</span><span class="n">g_display_ptr</span><span class="p">,</span> <span class="n">m_wnd_root</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">xw_attr</span><span class="p">);</span>
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;RootWindow Size[%dx%d]&quot;</span><span class="p">,</span> <span class="n">xw_attr</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">xw_attr</span><span class="p">.</span><span class="n">height</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">i_rect_ptr</span> <span class="o">==</span> <span class="k">nullptr</span> <span class="o">||</span> <span class="n">i_rect_ptr</span><span class="o">-&gt;</span><span class="n">width</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">i_rect_ptr</span><span class="o">-&gt;</span><span class="n">height</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span><span class="c1">//</span>
+        <span class="n">m_render_rect</span><span class="p">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">xw_attr</span><span class="p">.</span><span class="n">width</span><span class="p">;</span>
+        <span class="n">m_render_rect</span><span class="p">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">xw_attr</span><span class="p">.</span><span class="n">height</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span><span class="c1">// 如果设置了输出位置，使用输出位置</span>
+        <span class="n">m_render_rect</span> <span class="o">=</span> <span class="o">*</span><span class="n">i_rect_ptr</span><span class="p">;</span>
+
+    <span class="n">m_root_wnd_size</span><span class="p">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">xw_attr</span><span class="p">.</span><span class="n">width</span><span class="p">;</span>
+    <span class="n">m_root_wnd_size</span><span class="p">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">xw_attr</span><span class="p">.</span><span class="n">height</span><span class="p">;</span>
+    <span class="n">m_wnd_render</span> <span class="o">=</span> <span class="n">XCreateSimpleWindow</span><span class="p">(</span><span class="n">g_display_ptr</span><span class="p">,</span> <span class="n">m_wnd_root</span><span class="p">,</span> <span class="n">m_render_rect</span><span class="p">.</span><span class="n">iX</span><span class="p">,</span> <span class="n">m_render_rect</span><span class="p">.</span><span class="n">iY</span><span class="p">,</span>
+        <span class="n">m_render_rect</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">m_render_rect</span><span class="p">.</span><span class="n">height</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">uiBlackPixel</span><span class="p">,</span> <span class="n">uiBlackPixel</span><span class="p">);</span>
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Create Window, Pos[%dx%d], Size[%dx%d]&quot;</span><span class="p">,</span>
+        <span class="n">m_render_rect</span><span class="p">.</span><span class="n">iX</span><span class="p">,</span> <span class="n">m_render_rect</span><span class="p">.</span><span class="n">iY</span><span class="p">,</span> <span class="n">m_render_rect</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">m_render_rect</span><span class="p">.</span><span class="n">height</span><span class="p">);</span>
+
+    <span class="n">XMapWindow</span><span class="p">(</span><span class="n">g_display_ptr</span><span class="p">,</span> <span class="n">m_wnd_render</span><span class="p">);</span>
+    <span class="n">XSync</span><span class="p">(</span><span class="n">g_display_ptr</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: AddSource</span>
+<span class="cm">* 描  述: 添加渲染源</span>
+<span class="cm">* 参  数: i_iSrcID: 源ID</span>
+<span class="cm">* 参  数: i_pItem: 源属性</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年06月13日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VARenderX11</span><span class="o">::</span><span class="n">AddSource</span><span class="p">(</span><span class="kt">int</span> <span class="n">i_src_id</span><span class="p">,</span> <span class="n">TProcItem</span><span class="o">*</span> <span class="n">i_item_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">i_item_ptr</span><span class="p">,</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">);</span>
+    <span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">EM_RC_UNINIT_ERR</span><span class="p">);</span>
+
+    <span class="n">CAutoLock</span> <span class="nf">lock</span><span class="p">(</span><span class="n">m_render_mtx</span><span class="p">);</span>
+    <span class="n">TRenderMember</span><span class="o">*</span> <span class="n">member_ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TRenderMember</span><span class="p">;</span>
+    <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">tmp_ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TRenderMember</span><span class="p">;</span>
+    <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span> <span class="o">=</span> <span class="n">i_item_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">;</span>
+    <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">source_ptr</span> <span class="o">=</span> <span class="n">i_item_ptr</span><span class="o">-&gt;</span><span class="n">source_ptr</span><span class="p">;</span>
+    <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">level</span> <span class="o">=</span> <span class="n">i_item_ptr</span><span class="o">-&gt;</span><span class="n">level</span><span class="p">;</span>
+    <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">render_state</span> <span class="o">=</span> <span class="n">EM_SS_ACTIVING</span><span class="p">;</span>
+
+    <span class="n">m_render_map</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">MapRenderMember</span><span class="o">::</span><span class="n">value_type</span><span class="p">(</span><span class="n">i_src_id</span><span class="p">,</span> <span class="n">member_ptr</span><span class="p">));</span>
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Add Source[%d], Level[%d], Pos[%d,%d], Size[%dx%d]&quot;</span><span class="p">,</span> <span class="n">i_src_id</span><span class="p">,</span>
+        <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">level</span><span class="p">,</span> <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">iX</span><span class="p">,</span> <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">iY</span><span class="p">,</span> <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">height</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: DelSource</span>
+<span class="cm">* 描  述:</span>
+<span class="cm">* 参  数: i_iSrcID</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年06月13日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VARenderX11</span><span class="o">::</span><span class="n">DelSource</span><span class="p">(</span><span class="kt">int</span> <span class="n">i_src_id</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">auto</span> <span class="n">node_map</span> <span class="o">=</span> <span class="n">m_render_map</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">i_src_id</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">node_map</span> <span class="o">==</span> <span class="n">m_render_map</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">EM_RC_XML_NODE_NOTEXIST</span><span class="p">;</span>
+
+    <span class="n">CAutoLock</span> <span class="nf">lock</span><span class="p">(</span><span class="n">m_render_mtx</span><span class="p">);</span>
+    <span class="n">TRenderMember</span><span class="o">*</span> <span class="n">member_ptr</span> <span class="o">=</span> <span class="n">node_map</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span>
+    <span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">tmp_ptr</span><span class="p">);</span>
+    <span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">member_ptr</span><span class="p">);</span>
+
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Render Remove Source[%d]&quot;</span><span class="p">,</span> <span class="n">i_src_id</span><span class="p">);</span>
+    <span class="n">m_render_map</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">node_map</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: ModifyRenderSize</span>
+<span class="cm">* 描  述: 修改渲染背景大小</span>
+<span class="cm">* 参  数: i_pSize</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年06月20日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VARenderX11</span><span class="o">::</span><span class="n">ModifyRenderSize</span><span class="p">(</span><span class="n">TSize</span><span class="o">*</span> <span class="n">i_size_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">i_size_ptr</span><span class="p">,</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">i_size_ptr</span><span class="o">-&gt;</span><span class="n">width</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">i_size_ptr</span><span class="o">-&gt;</span><span class="n">height</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">;</span>
+
+    <span class="n">m_update_size</span> <span class="o">=</span> <span class="o">*</span><span class="n">i_size_ptr</span><span class="p">;</span>
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Render Ready Change RenderSize[%dx%d]&quot;</span><span class="p">,</span> <span class="n">i_size_ptr</span><span class="o">-&gt;</span><span class="n">width</span><span class="p">,</span> <span class="n">i_size_ptr</span><span class="o">-&gt;</span><span class="n">height</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">ERetCode</span> <span class="n">VARenderX11</span><span class="o">::</span><span class="n">RenderData</span><span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span> <span class="n">i_data_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">i_data_ptr</span><span class="p">,</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">);</span>
+	<span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">EM_RC_UNINIT_ERR</span><span class="p">);</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">m_wnd_render</span> <span class="o">==</span> <span class="n">None</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">EM_RC_UNINIT_ERR</span><span class="p">;</span>
+
+	<span class="n">std</span><span class="o">::</span><span class="n">unique_lock</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lock</span><span class="p">(</span><span class="n">m_render_surface_mtx</span><span class="p">);</span>
+
+	<span class="n">VAImage</span> <span class="n">va_image</span><span class="p">;</span>
+	<span class="kt">uint8_t</span><span class="o">*</span> <span class="n">img_buf_ptr</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+
+	<span class="n">VAStatus</span> <span class="n">va_status</span> <span class="o">=</span> <span class="n">vaDeriveImage</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">m_va_surface_id</span><span class="p">[</span><span class="n">m_use_surf_id</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">va_image</span><span class="p">);</span>
+	<span class="n">CHECK_VASTATUS</span><span class="p">(</span><span class="n">va_status</span><span class="p">,</span> <span class="s">&quot;vaDeriveImage&quot;</span><span class="p">);</span>
+	<span class="n">va_status</span> <span class="o">=</span> <span class="n">vaMapBuffer</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">va_image</span><span class="p">.</span><span class="n">buf</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span> <span class="o">**</span><span class="p">)</span><span class="o">&amp;</span><span class="n">img_buf_ptr</span><span class="p">);</span>
+	<span class="n">CHECK_VASTATUS</span><span class="p">(</span><span class="n">va_status</span><span class="p">,</span> <span class="s">&quot;MapRenderImage&quot;</span><span class="p">);</span>
+
+	<span class="n">CheckRootWindowSize</span><span class="p">();</span>
+	<span class="c1">// </span>
+	<span class="c1">//     LOG_INFO(&quot;this[%x] Image Format: %s, Surface[%d] ID[%d]&quot;,this, GetStringFromFourcc(vaImage.format.fourcc), m_iUseSurfID,m_vaSurfaceID[m_iUseSurfID]);</span>
+	<span class="c1">//     UploadIYUVToImage(&amp;vaImage, pImgBuf, i_pData,m_sRenderSize.iW, m_sRenderSize.iH);</span>
+	<span class="n">UploadDataToImage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">va_image</span><span class="p">,</span> <span class="n">img_buf_ptr</span><span class="p">,</span> <span class="n">i_data_ptr</span><span class="p">,</span> <span class="n">m_yuv_format</span><span class="p">,</span> <span class="n">m_render_size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">m_render_size</span><span class="p">.</span><span class="n">height</span><span class="p">);</span>
+
+	<span class="n">vaPutSurface</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">m_va_surface_id</span><span class="p">[</span><span class="n">m_use_surf_id</span><span class="p">],</span> <span class="n">m_wnd_render</span><span class="p">,</span>
+		<span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">m_render_size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">m_render_size</span><span class="p">.</span><span class="n">height</span><span class="p">,</span>
+		<span class="n">m_render_rect</span><span class="p">.</span><span class="n">iX</span><span class="p">,</span> <span class="n">m_render_rect</span><span class="p">.</span><span class="n">iY</span><span class="p">,</span>
+		<span class="n">m_render_rect</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">m_render_rect</span><span class="p">.</span><span class="n">height</span><span class="p">,</span>
+		<span class="k">nullptr</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">VA_FRAME_PICTURE</span><span class="p">);</span>
+
+	<span class="n">vaUnmapBuffer</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">va_image</span><span class="p">.</span><span class="n">buf</span><span class="p">);</span>
+	<span class="n">vaDestroyImage</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">va_image</span><span class="p">.</span><span class="n">image_id</span><span class="p">);</span>
+
+	<span class="n">m_use_surf_id</span><span class="o">++</span><span class="p">;</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">m_use_surf_id</span> <span class="o">&gt;=</span> <span class="n">COMMON_SIZE_4</span><span class="p">)</span>
+		<span class="n">m_use_surf_id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: ModifySrcOutRect</span>
+<span class="cm">* 描  述: 修改输入源的合成输出位置</span>
+<span class="cm">* 参  数: i_iSrcID</span>
+<span class="cm">* 参  数: i_pOutRect</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年06月13日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VARenderX11</span><span class="o">::</span><span class="n">ModifySrcOutRect</span><span class="p">(</span><span class="kt">int</span> <span class="n">i_src_id</span><span class="p">,</span> <span class="n">TRect</span><span class="o">*</span> <span class="n">i_rect_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">auto</span> <span class="n">node_map</span> <span class="o">=</span> <span class="n">m_render_map</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">i_src_id</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">node_map</span> <span class="o">==</span> <span class="n">m_render_map</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">EM_RC_XML_NODE_NOTEXIST</span><span class="p">;</span>
+
+    <span class="n">TRenderMember</span><span class="o">*</span> <span class="n">member_ptr</span> <span class="o">=</span> <span class="n">node_map</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">render_state</span> <span class="o">==</span> <span class="n">EM_SS_NONE</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">;</span>
+
+    <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">tmp_ptr</span><span class="o">-&gt;</span><span class="n">rect</span> <span class="o">=</span> <span class="o">*</span><span class="n">i_rect_ptr</span><span class="p">;</span>
+    <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">render_state</span> <span class="o">|=</span> <span class="n">EM_SS_MODIFY_POS</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: ModifySrcLevel</span>
+<span class="cm">* 描  述: 修改输入源的合成层级</span>
+<span class="cm">* 参  数: i_iSrcID</span>
+<span class="cm">* 参  数: i_eLevel</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年06月13日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VARenderX11</span><span class="o">::</span><span class="n">ModifySrcLevel</span><span class="p">(</span><span class="kt">int</span> <span class="n">i_src_id</span><span class="p">,</span> <span class="n">EVMixLevel</span> <span class="n">i_level</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">auto</span> <span class="n">node_map</span> <span class="o">=</span> <span class="n">m_render_map</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">i_src_id</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">node_map</span> <span class="o">==</span> <span class="n">m_render_map</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">EM_RC_XML_NODE_NOTEXIST</span><span class="p">;</span>
+
+    <span class="n">TRenderMember</span><span class="o">*</span> <span class="n">member_ptr</span> <span class="o">=</span> <span class="n">node_map</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">render_state</span> <span class="o">==</span> <span class="n">EM_SS_NONE</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">;</span>
+
+    <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">tmp_ptr</span><span class="o">-&gt;</span><span class="n">level</span> <span class="o">=</span> <span class="n">i_level</span><span class="p">;</span>
+    <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">render_state</span> <span class="o">|=</span> <span class="n">EM_SS_MODIFY_LEVEL</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: ModifySrcSource</span>
+<span class="cm">* 描  述:</span>
+<span class="cm">* 参  数: i_iSrcID</span>
+<span class="cm">* 参  数: i_pSource</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年06月13日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VARenderX11</span><span class="o">::</span><span class="n">ModifySrcSource</span><span class="p">(</span><span class="kt">int</span> <span class="n">i_iSrcID</span><span class="p">,</span> <span class="n">ISource</span><span class="o">*</span> <span class="n">i_pSource</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">auto</span> <span class="n">node_map</span> <span class="o">=</span> <span class="n">m_render_map</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">i_iSrcID</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">node_map</span> <span class="o">==</span> <span class="n">m_render_map</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">EM_RC_XML_NODE_NOTEXIST</span><span class="p">;</span>
+
+    <span class="c1">// 修改source需要加锁，保证线程没有在渲染</span>
+    <span class="n">CAutoLock</span> <span class="nf">lock</span><span class="p">(</span><span class="n">m_render_mtx</span><span class="p">);</span>
+    <span class="n">TRenderMember</span><span class="o">*</span> <span class="n">member_ptr</span> <span class="o">=</span> <span class="n">node_map</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">render_state</span> <span class="o">==</span> <span class="n">EM_SS_NONE</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">;</span>
+
+    <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">source_ptr</span> <span class="o">=</span> <span class="n">i_pSource</span><span class="p">;</span>
+    <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">render_state</span> <span class="o">=</span> <span class="n">EM_SS_ACTIVING</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: ThreadFuncProc</span>
+<span class="cm">* 描  述: 定时线程</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年03月02日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VARenderX11</span><span class="o">::</span><span class="n">ThreadFuncProc</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">uint64_t</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">uint64_t</span> <span class="n">tick</span> <span class="o">=</span> <span class="n">stGetCurrentMicroSecond</span><span class="p">();</span>
+    <span class="kt">uint64_t</span> <span class="n">frame_timestamp</span> <span class="o">=</span> <span class="n">COMMON_TICK_BASE</span> <span class="o">/</span> <span class="n">COMMON_DEFAULT_FPS</span><span class="p">;</span>
+
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Start RenderThread!&quot;</span><span class="p">);</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">m_exit_code</span> <span class="o">==</span> <span class="n">EM_TS_RUN</span><span class="p">)</span>
+    <span class="p">{</span>
+		<span class="p">{</span>
+			<span class="n">std</span><span class="o">::</span><span class="n">unique_lock</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lock</span><span class="p">(</span><span class="n">m_render_surface_mtx</span><span class="p">);</span>
+
+			<span class="k">if</span> <span class="p">(</span><span class="n">m_update_size</span> <span class="o">==</span> <span class="n">m_render_size</span><span class="p">)</span>
+				<span class="n">m_update_size</span><span class="p">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">m_update_size</span><span class="p">.</span><span class="n">height</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">m_update_size</span><span class="p">.</span><span class="n">width</span> <span class="o">&amp;&amp;</span> <span class="n">m_update_size</span><span class="p">.</span><span class="n">height</span><span class="p">)</span>
+			<span class="p">{</span>
+				<span class="n">m_render_size</span> <span class="o">=</span> <span class="n">m_update_size</span><span class="p">;</span>
+				<span class="n">m_update_size</span><span class="p">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">m_update_size</span><span class="p">.</span><span class="n">height</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+				<span class="n">vaDestroySurfaces</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m_va_surface_id</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">COMMON_SIZE_4</span><span class="p">);</span>
+
+				<span class="n">VASurfaceAttrib</span> <span class="n">va_surf_attr</span><span class="p">;</span>
+				<span class="n">va_surf_attr</span><span class="p">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">VASurfaceAttribPixelFormat</span><span class="p">;</span>
+				<span class="n">va_surf_attr</span><span class="p">.</span><span class="n">flags</span> <span class="o">=</span> <span class="n">VA_SURFACE_ATTRIB_SETTABLE</span><span class="p">;</span>
+				<span class="n">va_surf_attr</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">VAGenericValueTypeInteger</span><span class="p">;</span>
+				<span class="n">va_surf_attr</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">i</span> <span class="o">=</span> <span class="n">VA_FOURCC_NV12</span><span class="p">;</span>
+				<span class="n">vaCreateSurfaces</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">VA_RT_FORMAT_YUV420</span><span class="p">,</span> <span class="n">m_render_size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">m_render_size</span><span class="p">.</span><span class="n">height</span><span class="p">,</span>
+					<span class="o">&amp;</span><span class="n">m_va_surface_id</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">COMMON_SIZE_4</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">va_surf_attr</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+				<span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Change RenderSize[%dx%d]&quot;</span><span class="p">,</span> <span class="n">m_render_size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">m_render_size</span><span class="p">.</span><span class="n">height</span><span class="p">);</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+
+        <span class="n">pthread_mutex_lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_render_mtx</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">m_render_map</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">pthread_mutex_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_render_mtx</span><span class="p">);</span>
+            <span class="n">usleep</span><span class="p">(</span><span class="n">COMMON_TICK_SECOND</span><span class="p">);</span>
+            <span class="k">continue</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="n">CheckRootWindowSize</span><span class="p">();</span>
+        <span class="n">CheckSourceState</span><span class="p">();</span>
+        <span class="n">RunRenderTask</span><span class="p">();</span>
+
+        <span class="n">pthread_mutex_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_render_mtx</span><span class="p">);</span>
+
+        <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">stGetCurrentMicroSecond</span><span class="p">()</span> <span class="o">-</span> <span class="n">tick</span> <span class="o">&lt;</span> <span class="n">count</span> <span class="o">*</span> <span class="n">frame_timestamp</span><span class="p">)</span>
+            <span class="n">usleep</span><span class="p">(</span><span class="n">COMMON_TICK_SECOND</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">m_exit_code</span> <span class="o">=</span> <span class="n">EM_TS_STOP</span><span class="p">;</span>
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Stop RenderThread!&quot;</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: CheckRootWindowSize</span>
+<span class="cm">* 描  述: 检查屏幕分辨率是否变化</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年06月14日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VARenderX11</span><span class="o">::</span><span class="n">CheckRootWindowSize</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">XWindowAttributes</span> <span class="n">xw_attr</span><span class="p">;</span>
+    <span class="n">XGetWindowAttributes</span><span class="p">(</span><span class="n">g_display_ptr</span><span class="p">,</span> <span class="n">m_wnd_root</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">xw_attr</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">xw_attr</span><span class="p">.</span><span class="n">width</span> <span class="o">!=</span> <span class="n">m_root_wnd_size</span><span class="p">.</span><span class="n">width</span> <span class="o">||</span> <span class="n">xw_attr</span><span class="p">.</span><span class="n">height</span> <span class="o">!=</span> <span class="n">m_root_wnd_size</span><span class="p">.</span><span class="n">height</span><span class="p">)</span>
+    <span class="p">{</span><span class="c1">// 屏幕分辨率变化        </span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">m_render_rect</span><span class="p">.</span><span class="n">iX</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">m_render_rect</span><span class="p">.</span><span class="n">iY</span> <span class="o">&amp;&amp;</span>
+            <span class="n">m_root_wnd_size</span><span class="p">.</span><span class="n">width</span> <span class="o">==</span> <span class="n">m_render_rect</span><span class="p">.</span><span class="n">width</span> <span class="o">&amp;&amp;</span>
+            <span class="n">m_root_wnd_size</span><span class="p">.</span><span class="n">height</span> <span class="o">==</span> <span class="n">m_render_rect</span><span class="p">.</span><span class="n">height</span><span class="p">)</span>
+        <span class="p">{</span><span class="c1">// 全屏输出</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">m_wnd_render</span> <span class="o">!=</span> <span class="n">None</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;resize render window from %dx%d to %dx%d&quot;</span><span class="p">,</span> <span class="n">m_render_rect</span><span class="p">.</span><span class="n">width</span><span class="p">,</span><span class="n">m_render_rect</span><span class="p">.</span><span class="n">height</span><span class="p">,</span> 
+					<span class="n">xw_attr</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">xw_attr</span><span class="p">.</span><span class="n">height</span><span class="p">);</span>
+                <span class="n">m_render_rect</span><span class="p">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">xw_attr</span><span class="p">.</span><span class="n">width</span><span class="p">;</span>
+                <span class="n">m_render_rect</span><span class="p">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">xw_attr</span><span class="p">.</span><span class="n">height</span><span class="p">;</span>
+                <span class="n">XResizeWindow</span><span class="p">(</span><span class="n">g_display_ptr</span><span class="p">,</span> <span class="n">m_wnd_render</span><span class="p">,</span> <span class="n">xw_attr</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">xw_attr</span><span class="p">.</span><span class="n">height</span><span class="p">);</span>
+                <span class="n">XFlush</span><span class="p">(</span><span class="n">g_display_ptr</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="n">m_root_wnd_size</span><span class="p">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">xw_attr</span><span class="p">.</span><span class="n">width</span><span class="p">;</span>
+        <span class="n">m_root_wnd_size</span><span class="p">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">xw_attr</span><span class="p">.</span><span class="n">height</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: CheckSourceState</span>
+<span class="cm">* 描  述: 检查输入源参数是否修改</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年06月08日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VARenderX11</span><span class="o">::</span><span class="n">CheckSourceState</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">src_id</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="n">TRenderMember</span><span class="o">*</span> <span class="n">member_ptr</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+    <span class="k">auto</span> <span class="n">node_map</span> <span class="o">=</span> <span class="n">m_render_map</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+    <span class="k">for</span> <span class="p">(;</span> <span class="n">node_map</span> <span class="o">!=</span> <span class="n">m_render_map</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">node_map</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">member_ptr</span> <span class="o">=</span> <span class="n">node_map</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">render_state</span> <span class="o">==</span> <span class="n">EM_SS_ACTIVING</span><span class="p">)</span>
+            <span class="k">continue</span><span class="p">;</span>
+
+        <span class="n">src_id</span> <span class="o">=</span> <span class="n">node_map</span><span class="o">-&gt;</span><span class="n">first</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">render_state</span> <span class="o">&amp;</span> <span class="n">EM_SS_MODIFY_LEVEL</span><span class="p">)</span>
+        <span class="p">{</span><span class="c1">// 需要修改输出层级</span>
+            <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">level</span> <span class="o">=</span> <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">tmp_ptr</span><span class="o">-&gt;</span><span class="n">level</span><span class="p">;</span>
+            <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Render Modify Source[%d] Level[%d]&quot;</span><span class="p">,</span> <span class="n">src_id</span><span class="p">,</span> <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">level</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">render_state</span> <span class="o">&amp;</span> <span class="n">EM_SS_MODIFY_POS</span><span class="p">)</span>
+        <span class="p">{</span><span class="c1">// 需要修改输出位置</span>
+            <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span> <span class="o">=</span> <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">tmp_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">;</span>
+            <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Render Modify Source[%d] Pos[%dx%d], Size[%dx%d]&quot;</span><span class="p">,</span> <span class="n">src_id</span><span class="p">,</span>
+                <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">iX</span><span class="p">,</span> <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">iY</span><span class="p">,</span> <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">height</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">render_state</span> <span class="o">=</span> <span class="n">EM_SS_ACTIVING</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: RunRenderTask</span>
+<span class="cm">* 描  述: 渲染</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 2016年07月12日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">********************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VARenderX11</span><span class="o">::</span><span class="n">RunRenderTask</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">TRenderMember</span><span class="o">*</span> <span class="n">member_ptr</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+    <span class="k">auto</span> <span class="n">node_map</span> <span class="o">=</span> <span class="n">m_render_map</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+    <span class="k">for</span> <span class="p">(;</span> <span class="n">node_map</span> <span class="o">!=</span> <span class="n">m_render_map</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">node_map</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">member_ptr</span> <span class="o">=</span> <span class="n">node_map</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">render_state</span> <span class="o">==</span> <span class="n">EM_SS_ACTIVING</span> <span class="o">&amp;&amp;</span>
+            <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">source_ptr</span> <span class="o">!=</span> <span class="k">nullptr</span> <span class="o">&amp;&amp;</span> <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">level</span> <span class="o">==</span> <span class="n">EM_VML_BOTTOM</span><span class="p">)</span>
+        <span class="p">{</span><span class="c1">// 输入底层源image</span>
+            <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">source_ptr</span><span class="o">-&gt;</span><span class="n">LockReadyImage</span><span class="p">();</span>
+            <span class="n">VAImage</span><span class="o">*</span> <span class="n">image_ptr</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">VAImage</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">source_ptr</span><span class="o">-&gt;</span><span class="n">GetReadyImage</span><span class="p">());</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">image_ptr</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+                <span class="n">vaPutImage</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">m_va_surface_id</span><span class="p">[</span><span class="n">m_use_surf_id</span><span class="p">],</span> <span class="n">image_ptr</span><span class="o">-&gt;</span><span class="n">image_id</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">image_ptr</span><span class="o">-&gt;</span><span class="n">width</span><span class="p">,</span>
+                <span class="n">image_ptr</span><span class="o">-&gt;</span><span class="n">height</span><span class="p">,</span> <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">iX</span><span class="p">,</span> <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">iY</span><span class="p">,</span> <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">height</span><span class="p">);</span>
+            <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">source_ptr</span><span class="o">-&gt;</span><span class="n">UnLockReadyImage</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">node_map</span> <span class="o">=</span> <span class="n">m_render_map</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+    <span class="k">for</span> <span class="p">(;</span> <span class="n">node_map</span> <span class="o">!=</span> <span class="n">m_render_map</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">node_map</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">member_ptr</span> <span class="o">=</span> <span class="n">node_map</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">render_state</span> <span class="o">==</span> <span class="n">EM_SS_ACTIVING</span> <span class="o">&amp;&amp;</span>
+            <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">source_ptr</span> <span class="o">!=</span> <span class="k">nullptr</span> <span class="o">&amp;&amp;</span> <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">level</span> <span class="o">==</span> <span class="n">EM_VML_TOP</span><span class="p">)</span>
+        <span class="p">{</span><span class="c1">// 输入顶层源image</span>
+            <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">source_ptr</span><span class="o">-&gt;</span><span class="n">LockReadyImage</span><span class="p">();</span>
+            <span class="n">VAImage</span><span class="o">*</span> <span class="n">image_ptr</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">VAImage</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">source_ptr</span><span class="o">-&gt;</span><span class="n">GetReadyImage</span><span class="p">());</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">image_ptr</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+                <span class="n">vaPutImage</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">m_va_surface_id</span><span class="p">[</span><span class="n">m_use_surf_id</span><span class="p">],</span> <span class="n">image_ptr</span><span class="o">-&gt;</span><span class="n">image_id</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">image_ptr</span><span class="o">-&gt;</span><span class="n">width</span><span class="p">,</span>
+                <span class="n">image_ptr</span><span class="o">-&gt;</span><span class="n">height</span><span class="p">,</span> <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">iX</span><span class="p">,</span> <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">iY</span><span class="p">,</span> <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">height</span><span class="p">);</span>
+            <span class="n">member_ptr</span><span class="o">-&gt;</span><span class="n">source_ptr</span><span class="o">-&gt;</span><span class="n">UnLockReadyImage</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">vaPutSurface</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">m_va_surface_id</span><span class="p">[</span><span class="n">m_use_surf_id</span><span class="p">],</span> <span class="n">m_wnd_render</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">m_render_size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">m_render_size</span><span class="p">.</span><span class="n">height</span><span class="p">,</span> <span class="n">m_render_rect</span><span class="p">.</span><span class="n">iX</span><span class="p">,</span> <span class="n">m_render_rect</span><span class="p">.</span><span class="n">iY</span><span class="p">,</span>
+        <span class="n">m_render_rect</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">m_render_rect</span><span class="p">.</span><span class="n">height</span><span class="p">,</span> <span class="k">nullptr</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">VA_FRAME_PICTURE</span><span class="p">);</span>
+
+    <span class="n">m_use_surf_id</span><span class="o">++</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_use_surf_id</span> <span class="o">&gt;=</span> <span class="n">COMMON_SIZE_4</span><span class="p">)</span>
+        <span class="n">m_use_surf_id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">XRRModeInfo</span><span class="o">*</span> <span class="n">VARenderX11</span><span class="o">::</span><span class="n">FindModeByXID</span><span class="p">(</span><span class="n">XRRScreenResources</span> <span class="o">*</span><span class="n">i_screen_res_ptr</span><span class="p">,</span> <span class="n">RRMode</span> <span class="n">i_xid_mode</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">XRRModeInfo</span> <span class="o">*</span><span class="n">tmp_ptr</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">i_screen_res_ptr</span><span class="o">-&gt;</span><span class="n">nmode</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">i_screen_res_ptr</span><span class="o">-&gt;</span><span class="n">modes</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">id</span> <span class="o">==</span> <span class="n">i_xid_mode</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">tmp_ptr</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">i_screen_res_ptr</span><span class="o">-&gt;</span><span class="n">modes</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">tmp_ptr</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">XRRCrtcInfo</span><span class="o">*</span> <span class="n">VARenderX11</span><span class="o">::</span><span class="n">GetCrtcByXID</span><span class="p">(</span><span class="n">XRRScreenResources</span> <span class="o">*</span><span class="n">i_screen_res_ptr</span><span class="p">,</span> <span class="n">RRCrtc</span> <span class="n">i_xid_crtc</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">XRRCrtcInfo</span> <span class="o">*</span><span class="n">tmp_ptr</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">i_screen_res_ptr</span><span class="o">-&gt;</span><span class="n">ncrtc</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">i_screen_res_ptr</span><span class="o">-&gt;</span><span class="n">crtcs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">i_xid_crtc</span><span class="p">)</span>
+            <span class="n">tmp_ptr</span> <span class="o">=</span> <span class="n">XRRGetCrtcInfo</span><span class="p">(</span><span class="n">g_display_ptr</span><span class="p">,</span> <span class="n">i_screen_res_ptr</span><span class="p">,</span> <span class="n">i_xid_crtc</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">tmp_ptr</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">VARenderX11</span><span class="o">::</span><span class="n">FreeCrtcInfo</span><span class="p">(</span><span class="n">XRRCrtcInfo</span> <span class="o">*</span><span class="n">i_crtc_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">XRRFreeCrtcInfo</span><span class="p">(</span><span class="n">i_crtc_ptr</span><span class="p">);</span>
+    <span class="n">i_crtc_ptr</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: GetSurportResolutionList</span>
+<span class="cm">* 描  述: 获取显示器支持的分辨率列表</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 2017年08月25日</span>
+<span class="cm">* 作  者: 邓旭光(skye)</span>
+<span class="cm">********************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VARenderX11</span><span class="o">::</span><span class="n">GetSurportResolutionList</span><span class="p">(</span><span class="n">TOutputResolutions</span> <span class="o">**</span><span class="n">o_resolution_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">ERetCode</span> <span class="n">er</span> <span class="o">=</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">output_count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">TResolutionInfo</span> <span class="o">*</span><span class="n">temp_list_ptr</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+
+    <span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">o_resolution_ptr</span><span class="p">,</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">);</span>
+
+    <span class="n">output_count</span> <span class="o">=</span> <span class="n">GetOutputConnectionCount</span><span class="p">();</span>
+    <span class="c1">//没有显示器接入,直接返回</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">output_count</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">LOG_ERROR</span><span class="p">(</span><span class="s">&quot;has no output connected&quot;</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">EM_RC_NO_SCREEN_CONNECTION</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">temp_list_ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TResolutionInfo</span><span class="p">[</span><span class="n">output_count</span><span class="p">];</span>
+    <span class="n">XRRScreenResources</span> <span class="o">*</span><span class="n">ccreen_res_ptr</span> <span class="o">=</span> <span class="n">XRRGetScreenResources</span><span class="p">(</span><span class="n">g_display_ptr</span><span class="p">,</span> <span class="n">m_wnd_root</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">ccreen_res_ptr</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">LOG_ERROR</span><span class="p">(</span><span class="s">&quot;could not get screen resource</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">EM_RC_OP_NOT_SUPPORT</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">//一个screen可以对应多个output(output可以理解为显示器)</span>
+    <span class="c1">//一个output对应多个mode (分辨率), output中只保存mode id</span>
+    <span class="c1">//多个output 的mode都保存在screen modes里面</span>
+    <span class="n">output_count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">ccreen_res_ptr</span><span class="o">-&gt;</span><span class="n">noutput</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">XRROutputInfo</span>	<span class="o">*</span><span class="n">pOutputInfo</span> <span class="o">=</span> <span class="n">XRRGetOutputInfo</span><span class="p">(</span><span class="n">g_display_ptr</span><span class="p">,</span> <span class="n">ccreen_res_ptr</span><span class="p">,</span> <span class="n">ccreen_res_ptr</span><span class="o">-&gt;</span><span class="n">outputs</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">pOutputInfo</span><span class="o">-&gt;</span><span class="n">connection</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">//拷贝output名字</span>
+            <span class="n">snprintf</span><span class="p">(</span><span class="n">temp_list_ptr</span><span class="p">[</span><span class="n">output_count</span><span class="p">].</span><span class="n">name</span><span class="p">,</span> <span class="n">COMMON_SIZE_256</span><span class="p">,</span> <span class="s">&quot;%s&quot;</span><span class="p">,</span> <span class="n">pOutputInfo</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">);</span>
+
+            <span class="c1">//获取output当前的分辨率</span>
+            <span class="n">XRRCrtcInfo</span> <span class="o">*</span><span class="n">crtc_info_ptr</span> <span class="o">=</span> <span class="n">GetCrtcByXID</span><span class="p">(</span><span class="n">ccreen_res_ptr</span><span class="p">,</span> <span class="n">pOutputInfo</span><span class="o">-&gt;</span><span class="n">crtc</span><span class="p">);</span>
+            <span class="n">temp_list_ptr</span><span class="p">[</span><span class="n">output_count</span><span class="p">].</span><span class="n">cur_resolution</span><span class="p">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">crtc_info_ptr</span><span class="o">-&gt;</span><span class="n">width</span><span class="p">;</span>
+            <span class="n">temp_list_ptr</span><span class="p">[</span><span class="n">output_count</span><span class="p">].</span><span class="n">cur_resolution</span><span class="p">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">crtc_info_ptr</span><span class="o">-&gt;</span><span class="n">height</span><span class="p">;</span>
+            <span class="n">FreeCrtcInfo</span><span class="p">(</span><span class="n">crtc_info_ptr</span><span class="p">);</span>
+            <span class="c1">//获取output支持的分辨率</span>
+            <span class="kt">int</span> <span class="o">*</span><span class="n">repeat_mode_ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="n">pOutputInfo</span><span class="o">-&gt;</span><span class="n">nmode</span><span class="p">];</span>
+            <span class="n">TSize</span> <span class="o">*</span><span class="n">size_list_ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TSize</span><span class="p">[</span><span class="n">pOutputInfo</span><span class="o">-&gt;</span><span class="n">nmode</span><span class="p">];</span>
+            <span class="kt">int</span> <span class="n">resolution_count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="n">memset</span><span class="p">(</span><span class="n">repeat_mode_ptr</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pOutputInfo</span><span class="o">-&gt;</span><span class="n">nmode</span><span class="o">*</span><span class="k">sizeof</span><span class="p">(</span><span class="n">repeat_mode_ptr</span><span class="p">[</span><span class="mi">0</span><span class="p">]));</span>
+
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">pOutputInfo</span><span class="o">-&gt;</span><span class="n">nmode</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">XRRModeInfo</span> <span class="o">*</span><span class="n">jMode</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+                <span class="n">XRRModeInfo</span> <span class="o">*</span><span class="n">kMode</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+
+                <span class="c1">//跳过重复的mode</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">repeat_mode_ptr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+                    <span class="k">continue</span><span class="p">;</span>
+                <span class="n">jMode</span> <span class="o">=</span> <span class="n">FindModeByXID</span><span class="p">(</span><span class="n">ccreen_res_ptr</span><span class="p">,</span> <span class="n">pOutputInfo</span><span class="o">-&gt;</span><span class="n">modes</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span>
+
+                <span class="c1">//查找之后的mode是否有和jMode重复的</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="n">j</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">pOutputInfo</span><span class="o">-&gt;</span><span class="n">nmode</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">kMode</span> <span class="o">=</span> <span class="n">FindModeByXID</span><span class="p">(</span><span class="n">ccreen_res_ptr</span><span class="p">,</span> <span class="n">pOutputInfo</span><span class="o">-&gt;</span><span class="n">modes</span><span class="p">[</span><span class="n">k</span><span class="p">]);</span>
+                    <span class="c1">//不重复则继续查找</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">jMode</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">,</span> <span class="n">kMode</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+                        <span class="k">continue</span><span class="p">;</span>
+                    <span class="k">else</span>
+                        <span class="n">repeat_mode_ptr</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="c1">//过滤掉隔行扫描的(1920x1080i 模式)</span>
+                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">strchr</span><span class="p">(</span><span class="n">jMode</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">,</span> <span class="sc">&#39;i&#39;</span><span class="p">))</span>
+                <span class="p">{</span>
+                    <span class="n">size_list_ptr</span><span class="p">[</span><span class="n">resolution_count</span><span class="p">].</span><span class="n">width</span> <span class="o">=</span> <span class="n">jMode</span><span class="o">-&gt;</span><span class="n">width</span><span class="p">;</span>
+                    <span class="n">size_list_ptr</span><span class="p">[</span><span class="n">resolution_count</span><span class="p">].</span><span class="n">height</span> <span class="o">=</span> <span class="n">jMode</span><span class="o">-&gt;</span><span class="n">height</span><span class="p">;</span>
+                    <span class="n">resolution_count</span><span class="o">++</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="n">temp_list_ptr</span><span class="p">[</span><span class="n">output_count</span><span class="p">].</span><span class="n">count</span> <span class="o">=</span> <span class="n">resolution_count</span><span class="p">;</span>
+            <span class="n">temp_list_ptr</span><span class="p">[</span><span class="n">output_count</span><span class="p">].</span><span class="n">resolution_ptr</span> <span class="o">=</span> <span class="n">size_list_ptr</span><span class="p">;</span>
+            <span class="n">output_count</span><span class="o">++</span><span class="p">;</span>
+            <span class="n">SAFE_DELETE_ARRAY</span><span class="p">(</span><span class="n">repeat_mode_ptr</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">XRRFreeScreenResources</span><span class="p">(</span><span class="n">ccreen_res_ptr</span><span class="p">);</span>
+
+    <span class="n">TOutputResolutions</span> <span class="o">*</span><span class="n">res_ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TOutputResolutions</span><span class="p">;</span>
+
+    <span class="n">res_ptr</span><span class="o">-&gt;</span><span class="n">output_count</span> <span class="o">=</span> <span class="n">output_count</span><span class="p">;</span>
+    <span class="n">res_ptr</span><span class="o">-&gt;</span><span class="n">resolution_info_ptr</span> <span class="o">=</span> <span class="n">temp_list_ptr</span><span class="p">;</span>
+    <span class="o">*</span><span class="n">o_resolution_ptr</span> <span class="o">=</span> <span class="n">res_ptr</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="n">er</span><span class="p">;</span>
+<span class="p">}</span><span class="c1">// NOLINT(readability/fn_size)</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: FreeSurportResolutionList</span>
+<span class="cm">* 描  述: 释放分辨率列表</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 2017年08月25日</span>
+<span class="cm">* 作  者: 邓旭光(skye)</span>
+<span class="cm">********************************************************************************/</span>
+<span class="kt">void</span> <span class="n">VARenderX11</span><span class="o">::</span><span class="n">FreeSurportResolutionList</span><span class="p">(</span><span class="n">TOutputResolutions</span> <span class="o">*</span><span class="n">i_resolutions_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">i_resolutions_ptr</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">i_resolutions_ptr</span><span class="o">-&gt;</span><span class="n">output_count</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+            <span class="n">SAFE_DELETE_ARRAY</span><span class="p">(</span><span class="n">i_resolutions_ptr</span><span class="o">-&gt;</span><span class="n">resolution_info_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">resolution_ptr</span><span class="p">);</span>
+
+        <span class="n">SAFE_DELETE_ARRAY</span><span class="p">(</span><span class="n">i_resolutions_ptr</span><span class="o">-&gt;</span><span class="n">resolution_info_ptr</span><span class="p">);</span>
+        <span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">i_resolutions_ptr</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">ERetCode</span> <span class="n">VARenderX11</span><span class="o">::</span><span class="n">SetScreenSize</span><span class="p">(</span><span class="n">XRROutputInfo</span> <span class="o">*</span><span class="n">i_output_info_ptr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_width</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_height</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">output_count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">screen_w</span> <span class="o">=</span> <span class="n">i_width</span><span class="p">,</span> <span class="n">screen_h</span> <span class="o">=</span> <span class="n">i_height</span><span class="p">,</span> <span class="n">screen_mw</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">screen_mh</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="c1">//没有显示器接入,直接返回</span>
+    <span class="n">output_count</span> <span class="o">=</span> <span class="n">GetOutputConnectionCount</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">output_count</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">LOG_ERROR</span><span class="p">(</span><span class="s">&quot;has no output connected&quot;</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">EM_RC_NO_SCREEN_CONNECTION</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">XRRScreenResources</span> <span class="o">*</span><span class="n">screen_res_ptr</span> <span class="o">=</span> <span class="n">XRRGetScreenResources</span><span class="p">(</span><span class="n">g_display_ptr</span><span class="p">,</span> <span class="n">m_wnd_root</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">screen_res_ptr</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">LOG_ERROR</span><span class="p">(</span><span class="s">&quot;could not get screen resource</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">EM_RC_OP_NOT_SUPPORT</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">screen_res_ptr</span><span class="o">-&gt;</span><span class="n">noutput</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">XRROutputInfo</span>	<span class="o">*</span><span class="n">output_info_ptr</span> <span class="o">=</span> <span class="n">XRRGetOutputInfo</span><span class="p">(</span><span class="n">g_display_ptr</span><span class="p">,</span> <span class="n">screen_res_ptr</span><span class="p">,</span> <span class="n">screen_res_ptr</span><span class="o">-&gt;</span><span class="n">outputs</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">output_info_ptr</span><span class="o">-&gt;</span><span class="n">connection</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">strcmp</span><span class="p">(</span><span class="n">i_output_info_ptr</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">,</span> <span class="n">output_info_ptr</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">))</span>
+        <span class="p">{</span>
+
+            <span class="c1">//获取output当前的分辨率</span>
+            <span class="n">XRRCrtcInfo</span> <span class="o">*</span><span class="n">crtc_info_ptr</span> <span class="o">=</span> <span class="n">GetCrtcByXID</span><span class="p">(</span><span class="n">screen_res_ptr</span><span class="p">,</span> <span class="n">output_info_ptr</span><span class="o">-&gt;</span><span class="n">crtc</span><span class="p">);</span>
+            <span class="n">screen_w</span> <span class="o">=</span> <span class="n">screen_w</span> <span class="o">&gt;</span> <span class="n">crtc_info_ptr</span><span class="o">-&gt;</span><span class="n">width</span> <span class="o">?</span> <span class="nl">screen_w</span> <span class="p">:</span> <span class="n">crtc_info_ptr</span><span class="o">-&gt;</span><span class="n">width</span><span class="p">;</span>
+            <span class="n">screen_h</span> <span class="o">=</span> <span class="n">screen_h</span> <span class="o">&gt;</span> <span class="n">crtc_info_ptr</span><span class="o">-&gt;</span><span class="n">height</span> <span class="o">?</span> <span class="nl">screen_h</span> <span class="p">:</span> <span class="n">crtc_info_ptr</span><span class="o">-&gt;</span><span class="n">height</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">XRRSetCrtcConfig</span><span class="p">(</span><span class="n">g_display_ptr</span><span class="p">,</span> <span class="n">screen_res_ptr</span><span class="p">,</span> <span class="n">i_output_info_ptr</span><span class="o">-&gt;</span><span class="n">crtc</span><span class="p">,</span> <span class="n">CurrentTime</span><span class="p">,</span>
+        <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">None</span><span class="p">,</span> <span class="n">RR_Rotate_0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="kt">int</span> <span class="n">screen_id</span> <span class="o">=</span> <span class="n">DefaultScreen</span><span class="p">(</span><span class="n">g_display_ptr</span><span class="p">);</span>
+    <span class="kt">double</span> <span class="n">dpi</span> <span class="o">=</span> <span class="p">(</span><span class="mf">25.4</span> <span class="o">*</span> <span class="p">(</span><span class="kt">double</span><span class="p">)(</span><span class="n">DisplayHeight</span><span class="p">(</span><span class="n">g_display_ptr</span><span class="p">,</span> <span class="n">screen_id</span><span class="p">)))</span> <span class="o">/</span>
+        <span class="p">(</span><span class="kt">double</span><span class="p">)(</span><span class="n">DisplayHeightMM</span><span class="p">(</span><span class="n">g_display_ptr</span><span class="p">,</span> <span class="n">screen_id</span><span class="p">));</span>
+
+    <span class="n">screen_mw</span> <span class="o">=</span> <span class="p">(</span><span class="mf">25.4</span> <span class="o">*</span> <span class="p">((</span><span class="kt">double</span><span class="p">)</span><span class="n">screen_w</span><span class="p">))</span> <span class="o">/</span> <span class="n">dpi</span><span class="p">;</span>
+    <span class="n">screen_mh</span> <span class="o">=</span> <span class="p">(</span><span class="mf">25.4</span> <span class="o">*</span> <span class="p">((</span><span class="kt">double</span><span class="p">)</span><span class="n">screen_h</span><span class="p">))</span> <span class="o">/</span> <span class="n">dpi</span><span class="p">;</span>
+
+    <span class="n">XRRSetScreenSize</span><span class="p">(</span><span class="n">g_display_ptr</span><span class="p">,</span> <span class="n">m_wnd_root</span><span class="p">,</span> <span class="n">screen_w</span><span class="p">,</span> <span class="n">screen_h</span><span class="p">,</span>
+        <span class="n">screen_mw</span><span class="p">,</span> <span class="n">screen_mh</span><span class="p">);</span>
+
+    <span class="n">XRRFreeScreenResources</span><span class="p">(</span><span class="n">screen_res_ptr</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: SetCurResolution</span>
+<span class="cm">* 描  述: 设置显示器的分辨率</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 2017年08月25日</span>
+<span class="cm">* 作  者: 邓旭光(skye)</span>
+<span class="cm">********************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VARenderX11</span><span class="o">::</span><span class="n">SetCurResolution</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">i_output_name_ptr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_width</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_height</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">ERetCode</span> <span class="n">er</span> <span class="o">=</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">i_output_name_ptr</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">;</span>
+
+    <span class="n">XRRScreenResources</span> <span class="o">*</span><span class="n">screen_res_ptr</span> <span class="o">=</span> <span class="n">XRRGetScreenResources</span><span class="p">(</span><span class="n">g_display_ptr</span><span class="p">,</span> <span class="n">m_wnd_root</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">screen_res_ptr</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">LOG_ERROR</span><span class="p">(</span><span class="s">&quot;could not get screen resource</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">EM_RC_OP_NOT_SUPPORT</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">screen_res_ptr</span><span class="o">-&gt;</span><span class="n">noutput</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">XRROutputInfo</span>	<span class="o">*</span><span class="n">output_info_ptr</span> <span class="o">=</span> <span class="n">XRRGetOutputInfo</span><span class="p">(</span><span class="n">g_display_ptr</span><span class="p">,</span> <span class="n">screen_res_ptr</span><span class="p">,</span> <span class="n">screen_res_ptr</span><span class="o">-&gt;</span><span class="n">outputs</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">output_info_ptr</span><span class="o">-&gt;</span><span class="n">connection</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">strcmp</span><span class="p">(</span><span class="n">i_output_name_ptr</span><span class="p">,</span> <span class="n">output_info_ptr</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="n">XRRCrtcInfo</span> <span class="o">*</span><span class="n">crtc_info_ptr</span> <span class="o">=</span> <span class="n">GetCrtcByXID</span><span class="p">(</span><span class="n">screen_res_ptr</span><span class="p">,</span> <span class="n">output_info_ptr</span><span class="o">-&gt;</span><span class="n">crtc</span><span class="p">);</span>
+                <span class="n">RRMode</span> <span class="n">xid_mode</span><span class="p">;</span>
+                <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+                <span class="k">for</span> <span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">output_info_ptr</span><span class="o">-&gt;</span><span class="n">nmode</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">XRRModeInfo</span> <span class="o">*</span><span class="n">mode_info_ptr</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+                    <span class="n">mode_info_ptr</span> <span class="o">=</span> <span class="n">FindModeByXID</span><span class="p">(</span><span class="n">screen_res_ptr</span><span class="p">,</span> <span class="n">output_info_ptr</span><span class="o">-&gt;</span><span class="n">modes</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">mode_info_ptr</span><span class="o">-&gt;</span><span class="n">height</span> <span class="o">==</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span><span class="p">)</span><span class="n">i_height</span> <span class="o">&amp;&amp;</span> <span class="n">mode_info_ptr</span><span class="o">-&gt;</span><span class="n">width</span> <span class="o">==</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span><span class="p">)</span><span class="n">i_width</span><span class="p">)</span>
+                    <span class="p">{</span>
+                        <span class="n">xid_mode</span> <span class="o">=</span> <span class="n">mode_info_ptr</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">;</span>
+                        <span class="k">break</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">==</span> <span class="n">output_info_ptr</span><span class="o">-&gt;</span><span class="n">nmode</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">LOG_ERROR</span><span class="p">(</span><span class="s">&quot;unsurport resolution:%dx%d&quot;</span><span class="p">,</span> <span class="n">i_width</span><span class="p">,</span> <span class="n">i_height</span><span class="p">);</span>
+                    <span class="n">er</span> <span class="o">=</span> <span class="n">EM_RC_UNSUPORT_RESOLUTION</span><span class="p">;</span>
+                    <span class="k">break</span><span class="p">;</span>
+                <span class="p">}</span>
+
+                <span class="n">SetScreenSize</span><span class="p">(</span><span class="n">output_info_ptr</span><span class="p">,</span> <span class="n">i_width</span><span class="p">,</span> <span class="n">i_height</span><span class="p">);</span>
+
+                <span class="n">Status</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">XRRSetCrtcConfig</span><span class="p">(</span><span class="n">g_display_ptr</span><span class="p">,</span> <span class="n">screen_res_ptr</span><span class="p">,</span> <span class="n">output_info_ptr</span><span class="o">-&gt;</span><span class="n">crtc</span><span class="p">,</span> <span class="n">CurrentTime</span><span class="p">,</span>
+                    <span class="n">crtc_info_ptr</span><span class="o">-&gt;</span><span class="n">x</span><span class="p">,</span> <span class="n">crtc_info_ptr</span><span class="o">-&gt;</span><span class="n">y</span><span class="p">,</span> <span class="n">xid_mode</span><span class="p">,</span> <span class="n">RR_Rotate_0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">screen_res_ptr</span><span class="o">-&gt;</span><span class="n">outputs</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">1</span><span class="p">);</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">ret</span> <span class="o">!=</span> <span class="n">RRSetConfigSuccess</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">er</span> <span class="o">=</span> <span class="n">EM_RC_OP_NOT_SUPPORT</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">screen_res_ptr</span><span class="o">-&gt;</span><span class="n">noutput</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">LOG_ERROR</span><span class="p">(</span><span class="s">&quot;no output connection&quot;</span><span class="p">);</span>
+        <span class="n">er</span> <span class="o">=</span> <span class="n">EM_RC_NO_SCREEN_CONNECTION</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">XRRFreeScreenResources</span><span class="p">(</span><span class="n">screen_res_ptr</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">er</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: GetOutputConnectionCount</span>
+<span class="cm">* 描  述: 获取接入的显示器数量,如果有显示器接入则打开monitor</span>
+<span class="cm">* 返回值: 接入的显示器数量</span>
+<span class="cm">* 时  间: 2017年08月25日</span>
+<span class="cm">* 作  者: 邓旭光(skye)</span>
+<span class="cm">********************************************************************************/</span>
+<span class="kt">int</span> <span class="n">VARenderX11</span><span class="o">::</span><span class="n">GetOutputConnectionCount</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">output_count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">XRRScreenResources</span> <span class="o">*</span><span class="n">screen_res_ptr</span> <span class="o">=</span> <span class="n">XRRGetScreenResources</span><span class="p">(</span><span class="n">g_display_ptr</span><span class="p">,</span> <span class="n">m_wnd_root</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">screen_res_ptr</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">LOG_ERROR</span><span class="p">(</span><span class="s">&quot;could not get screen resource</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">EM_RC_OP_NOT_SUPPORT</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">screen_res_ptr</span><span class="o">-&gt;</span><span class="n">noutput</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">XRROutputInfo</span>	<span class="o">*</span><span class="n">output_info_ptr</span> <span class="o">=</span> <span class="n">XRRGetOutputInfo</span><span class="p">(</span><span class="n">g_display_ptr</span><span class="p">,</span> <span class="n">screen_res_ptr</span><span class="p">,</span> <span class="n">screen_res_ptr</span><span class="o">-&gt;</span><span class="n">outputs</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">output_info_ptr</span><span class="o">-&gt;</span><span class="n">connection</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;%s connected&quot;</span><span class="p">,</span> <span class="n">output_info_ptr</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">);</span>
+            <span class="n">output_count</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">XRRFreeScreenResources</span><span class="p">(</span><span class="n">screen_res_ptr</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">output_count</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">VARenderX11</span><span class="o">::</span><span class="n">OpenConnectedMonitor</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">XRRScreenResources</span> <span class="o">*</span><span class="n">screen_res_ptr</span> <span class="o">=</span> <span class="n">XRRGetScreenResources</span><span class="p">(</span><span class="n">g_display_ptr</span><span class="p">,</span> <span class="n">m_wnd_root</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">screen_res_ptr</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">LOG_ERROR</span><span class="p">(</span><span class="s">&quot;could not get screen resource</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">screen_res_ptr</span><span class="o">-&gt;</span><span class="n">noutput</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">XRROutputInfo</span>	<span class="o">*</span><span class="n">output_info_ptr</span> <span class="o">=</span> <span class="n">XRRGetOutputInfo</span><span class="p">(</span><span class="n">g_display_ptr</span><span class="p">,</span> <span class="n">screen_res_ptr</span><span class="p">,</span> <span class="n">screen_res_ptr</span><span class="o">-&gt;</span><span class="n">outputs</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">output_info_ptr</span><span class="o">-&gt;</span><span class="n">connection</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">char</span> <span class="n">cmd_str</span><span class="p">[</span><span class="mi">256</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span> <span class="p">};</span>
+            <span class="n">sprintf</span><span class="p">(</span><span class="n">cmd_str</span><span class="p">,</span> <span class="s">&quot;xrandr --output %s --auto&quot;</span><span class="p">,</span> <span class="n">output_info_ptr</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">);</span>
+            <span class="n">system</span><span class="p">(</span><span class="n">cmd_str</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">XRRFreeScreenResources</span><span class="p">(</span><span class="n">screen_res_ptr</span><span class="p">);</span>
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">VARenderX11</span><span class="o">::</span><span class="n">CloseUnConnectedMonitor</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">XRRScreenResources</span> <span class="o">*</span><span class="n">screen_res_ptr</span> <span class="o">=</span> <span class="n">XRRGetScreenResources</span><span class="p">(</span><span class="n">g_display_ptr</span><span class="p">,</span> <span class="n">m_wnd_root</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">screen_res_ptr</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">LOG_ERROR</span><span class="p">(</span><span class="s">&quot;could not get screen resource</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">screen_res_ptr</span><span class="o">-&gt;</span><span class="n">noutput</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">XRROutputInfo</span>	<span class="o">*</span><span class="n">output_info_ptr</span> <span class="o">=</span> <span class="n">XRRGetOutputInfo</span><span class="p">(</span><span class="n">g_display_ptr</span><span class="p">,</span> <span class="n">screen_res_ptr</span><span class="p">,</span> <span class="n">screen_res_ptr</span><span class="o">-&gt;</span><span class="n">outputs</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">output_info_ptr</span><span class="o">-&gt;</span><span class="n">connection</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">char</span> <span class="n">cmd_str</span><span class="p">[</span><span class="mi">256</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span> <span class="p">};</span>
+            <span class="n">sprintf</span><span class="p">(</span><span class="n">cmd_str</span><span class="p">,</span> <span class="s">&quot;xrandr --output %s --off&quot;</span><span class="p">,</span> <span class="n">output_info_ptr</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">);</span>
+            <span class="n">system</span><span class="p">(</span><span class="n">cmd_str</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">XRRFreeScreenResources</span><span class="p">(</span><span class="n">screen_res_ptr</span><span class="p">);</span>
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">VARenderX11</span><span class="o">::</span><span class="n">StartHotPlugMonitor</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_monitor_thread_state</span> <span class="o">==</span> <span class="n">EM_TS_RUN</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">LOG_WARN</span><span class="p">(</span><span class="s">&quot;the monitor thread has been started&quot;</span><span class="p">);</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">m_monitor_thread_state</span> <span class="o">=</span> <span class="n">EM_TS_RUN</span><span class="p">;</span>
+    <span class="n">StartThreadEx</span><span class="p">(</span><span class="n">HotPlugMonitorThreadAdapter</span><span class="p">,</span> <span class="k">this</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: HotPlugMonitorThreadAdapter</span>
+<span class="cm">* 描  述: 显示设备热插拔监测</span>
+<span class="cm">* 返回值: 接入的显示器数量</span>
+<span class="cm">* 时  间: 2017年08月25日</span>
+<span class="cm">* 作  者: 邓旭光(skye)</span>
+<span class="cm">********************************************************************************/</span>
+<span class="kt">void</span> <span class="o">*</span><span class="n">VARenderX11</span><span class="o">::</span><span class="n">HotPlugMonitorThreadAdapter</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">i_thread_arg_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">i_thread_arg_ptr</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">LOG_ERROR</span><span class="p">(</span><span class="s">&quot;invalid parameter&quot;</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">VARenderX11</span> <span class="o">*</span><span class="n">obj_ptr</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">VARenderX11</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">i_thread_arg_ptr</span><span class="p">);</span>
+    <span class="n">obj_ptr</span><span class="o">-&gt;</span><span class="n">HotPlugMonitorThread</span><span class="p">();</span>
+    <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/******************************************************************************</span>
+<span class="cm">* 函  数: HotPlugMonitorThread</span>
+<span class="cm">* 描  述: 显示设备热插拔监测线程</span>
+<span class="cm">* 返回值: N/A</span>
+<span class="cm">* 时  间: 2016年08月22日</span>
+<span class="cm">* 作  者: 邓旭光(skye)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="kt">void</span> <span class="n">VARenderX11</span><span class="o">::</span><span class="n">HotPlugMonitorThread</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">udev</span> <span class="o">*</span><span class="n">udev_ptr</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">fd</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="n">fd_set</span> <span class="n">fd_reads</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">udev_monitor</span> <span class="o">*</span><span class="n">monitor_ptr</span><span class="p">;</span> <span class="c1">//NOLINT(legal/name)</span>
+    <span class="k">struct</span> <span class="n">udev_device</span> <span class="o">*</span><span class="n">device_ptr</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span> <span class="c1">//NOLINT(legal/name)</span>
+    <span class="kt">int</span> <span class="n">connect_count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">ret</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">timeval</span> <span class="n">time_out</span><span class="p">;</span>
+
+    <span class="n">udev_ptr</span> <span class="o">=</span> <span class="n">udev_new</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">udev_ptr</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">LOG_ERROR</span><span class="p">(</span><span class="s">&quot;Can&#39;t create udev</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;HotPlugMonitorThread begin...&quot;</span><span class="p">);</span>
+
+    <span class="n">monitor_ptr</span> <span class="o">=</span> <span class="n">udev_monitor_new_from_netlink</span><span class="p">(</span><span class="n">udev_ptr</span><span class="p">,</span> <span class="s">&quot;udev&quot;</span><span class="p">);</span>
+    <span class="n">udev_monitor_filter_add_match_subsystem_devtype</span><span class="p">(</span><span class="n">monitor_ptr</span><span class="p">,</span> <span class="s">&quot;drm&quot;</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+    <span class="n">udev_monitor_enable_receiving</span><span class="p">(</span><span class="n">monitor_ptr</span><span class="p">);</span>
+    <span class="n">fd</span> <span class="o">=</span> <span class="n">udev_monitor_get_fd</span><span class="p">(</span><span class="n">monitor_ptr</span><span class="p">);</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">m_monitor_thread_state</span> <span class="o">==</span> <span class="n">EM_TS_RUN</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">time_out</span><span class="p">.</span><span class="n">tv_sec</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="n">time_out</span><span class="p">.</span><span class="n">tv_usec</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">FD_ZERO</span><span class="p">(</span><span class="o">&amp;</span><span class="n">fd_reads</span><span class="p">);</span>
+        <span class="n">FD_SET</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">fd_reads</span><span class="p">);</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="n">select</span><span class="p">(</span><span class="n">fd</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">fd_reads</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">time_out</span><span class="p">);</span>
+        <span class="k">switch</span> <span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+        <span class="p">{</span>
+        <span class="k">case</span> <span class="mi">0</span><span class="o">:</span>
+        <span class="k">case</span> <span class="o">-</span><span class="mi">1</span><span class="o">:</span>
+            <span class="k">continue</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">default</span><span class="o">:</span>
+            <span class="n">device_ptr</span> <span class="o">=</span> <span class="n">udev_monitor_receive_device</span><span class="p">(</span><span class="n">monitor_ptr</span><span class="p">);</span>
+            <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">action_ptr</span> <span class="o">=</span> <span class="n">udev_device_get_action</span><span class="p">(</span><span class="n">device_ptr</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">strcmp</span><span class="p">(</span><span class="n">action_ptr</span><span class="p">,</span> <span class="s">&quot;change&quot;</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="n">connect_count</span> <span class="o">=</span> <span class="n">GetOutputConnectionCount</span><span class="p">();</span>
+                <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;screen changed, ConnectionCount[%d]&quot;</span><span class="p">,</span> <span class="n">connect_count</span><span class="p">);</span>
+                <span class="c1">//如果没有显示器接入,则停止渲染</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">connect_count</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">StopThread</span><span class="p">();</span>
+                <span class="p">}</span>
+                <span class="k">else</span>
+                <span class="p">{</span>
+                    <span class="c1">//使能monitor</span>
+                    <span class="n">OpenConnectedMonitor</span><span class="p">();</span>
+                    <span class="c1">//关闭没有连接的monitor</span>
+                    <span class="n">CloseUnConnectedMonitor</span><span class="p">();</span>
+
+                    <span class="c1">//判断是否已经初始化,如果没有，则进行初始化操作</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">m_is_inited</span><span class="p">)</span>
+                    <span class="p">{</span>
+                        <span class="n">TMediaRenderProps</span> <span class="n">render_props</span><span class="p">;</span>
+                        <span class="n">render_props</span><span class="p">.</span><span class="n">media_mode</span> <span class="o">=</span> <span class="n">EM_MEDIA_MODE_HARD</span><span class="p">;</span>
+                        <span class="n">render_props</span><span class="p">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">m_tmp_size</span><span class="p">;</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">m_tmp_rect</span><span class="p">.</span><span class="n">height</span> <span class="o">!=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">m_tmp_rect</span><span class="p">.</span><span class="n">width</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+                        <span class="p">{</span>
+                            <span class="n">render_props</span><span class="p">.</span><span class="n">rect</span> <span class="o">=</span> <span class="n">m_tmp_rect</span><span class="p">;</span>
+                            <span class="n">CreateRender</span><span class="p">(</span><span class="o">&amp;</span><span class="n">render_props</span><span class="p">);</span>
+                        <span class="p">}</span>
+                        <span class="k">else</span>
+                            <span class="n">CreateRender</span><span class="p">(</span><span class="o">&amp;</span><span class="n">render_props</span><span class="p">);</span>
+                    <span class="p">}</span>
+                    <span class="c1">//有显示器接入，开始渲染</span>
+                    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">m_exit_code</span> <span class="o">==</span> <span class="n">EM_TS_STOP</span><span class="p">)</span>
+                        <span class="n">StartThread</span><span class="p">();</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">udev_unref</span><span class="p">(</span><span class="n">udev_ptr</span><span class="p">);</span>
+    <span class="n">m_monitor_thread_state</span> <span class="o">=</span> <span class="n">EM_TS_STOP</span><span class="p">;</span>
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;HotPlugMonitorThread end...&quot;</span><span class="p">);</span>
+<span class="p">}</span><span class="c1">// NOLINT(readability/fn_size)</span>
+</pre></div>
+</body>
+</html>

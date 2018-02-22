@@ -1,0 +1,438 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #333333 }
+body  { background: #111111; color: #ffffff }
+body .c { color: #008800; font-style: italic; background-color: #0f140f } /* Comment */
+body .err { color: #ffffff } /* Error */
+body .esc { color: #ffffff } /* Escape */
+body .g { color: #ffffff } /* Generic */
+body .k { color: #fb660a; font-weight: bold } /* Keyword */
+body .l { color: #ffffff } /* Literal */
+body .n { color: #ffffff } /* Name */
+body .o { color: #ffffff } /* Operator */
+body .x { color: #ffffff } /* Other */
+body .p { color: #ffffff } /* Punctuation */
+body .ch { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Hashbang */
+body .cm { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Multiline */
+body .cp { color: #ff0007; font-weight: bold; font-style: italic; background-color: #0f140f } /* Comment.Preproc */
+body .cpf { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.PreprocFile */
+body .c1 { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Single */
+body .cs { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Special */
+body .gd { color: #ffffff } /* Generic.Deleted */
+body .ge { color: #ffffff } /* Generic.Emph */
+body .gr { color: #ffffff } /* Generic.Error */
+body .gh { color: #ffffff; font-weight: bold } /* Generic.Heading */
+body .gi { color: #ffffff } /* Generic.Inserted */
+body .go { color: #444444; background-color: #222222 } /* Generic.Output */
+body .gp { color: #ffffff } /* Generic.Prompt */
+body .gs { color: #ffffff } /* Generic.Strong */
+body .gu { color: #ffffff; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #ffffff } /* Generic.Traceback */
+body .kc { color: #fb660a; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #fb660a; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #fb660a; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #fb660a } /* Keyword.Pseudo */
+body .kr { color: #fb660a; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #cdcaa9; font-weight: bold } /* Keyword.Type */
+body .ld { color: #ffffff } /* Literal.Date */
+body .m { color: #0086f7; font-weight: bold } /* Literal.Number */
+body .s { color: #0086d2 } /* Literal.String */
+body .na { color: #ff0086; font-weight: bold } /* Name.Attribute */
+body .nb { color: #ffffff } /* Name.Builtin */
+body .nc { color: #ffffff } /* Name.Class */
+body .no { color: #0086d2 } /* Name.Constant */
+body .nd { color: #ffffff } /* Name.Decorator */
+body .ni { color: #ffffff } /* Name.Entity */
+body .ne { color: #ffffff } /* Name.Exception */
+body .nf { color: #ff0086; font-weight: bold } /* Name.Function */
+body .nl { color: #ffffff } /* Name.Label */
+body .nn { color: #ffffff } /* Name.Namespace */
+body .nx { color: #ffffff } /* Name.Other */
+body .py { color: #ffffff } /* Name.Property */
+body .nt { color: #fb660a; font-weight: bold } /* Name.Tag */
+body .nv { color: #fb660a } /* Name.Variable */
+body .ow { color: #ffffff } /* Operator.Word */
+body .w { color: #888888 } /* Text.Whitespace */
+body .mb { color: #0086f7; font-weight: bold } /* Literal.Number.Bin */
+body .mf { color: #0086f7; font-weight: bold } /* Literal.Number.Float */
+body .mh { color: #0086f7; font-weight: bold } /* Literal.Number.Hex */
+body .mi { color: #0086f7; font-weight: bold } /* Literal.Number.Integer */
+body .mo { color: #0086f7; font-weight: bold } /* Literal.Number.Oct */
+body .sa { color: #0086d2 } /* Literal.String.Affix */
+body .sb { color: #0086d2 } /* Literal.String.Backtick */
+body .sc { color: #0086d2 } /* Literal.String.Char */
+body .dl { color: #0086d2 } /* Literal.String.Delimiter */
+body .sd { color: #0086d2 } /* Literal.String.Doc */
+body .s2 { color: #0086d2 } /* Literal.String.Double */
+body .se { color: #0086d2 } /* Literal.String.Escape */
+body .sh { color: #0086d2 } /* Literal.String.Heredoc */
+body .si { color: #0086d2 } /* Literal.String.Interpol */
+body .sx { color: #0086d2 } /* Literal.String.Other */
+body .sr { color: #0086d2 } /* Literal.String.Regex */
+body .s1 { color: #0086d2 } /* Literal.String.Single */
+body .ss { color: #0086d2 } /* Literal.String.Symbol */
+body .bp { color: #ffffff } /* Name.Builtin.Pseudo */
+body .fm { color: #ff0086; font-weight: bold } /* Name.Function.Magic */
+body .vc { color: #fb660a } /* Name.Variable.Class */
+body .vg { color: #fb660a } /* Name.Variable.Global */
+body .vi { color: #fb660a } /* Name.Variable.Instance */
+body .vm { color: #fb660a } /* Name.Variable.Magic */
+body .il { color: #0086f7; font-weight: bold } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="cp">#pragma once</span>
+
+<span class="cp">#include</span> <span class="cpf">&lt;functional&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;map&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;xmlprotocolparser.h&quot;</span><span class="cp"></span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;component_mgr.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;kafka_msg_mgr.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;thread.h&quot;</span><span class="cp"></span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;context_def.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;group_mgr.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;media_mgr.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;timer_mgr.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;mutex&gt;</span><span class="cp"></span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;logger/printers/trace_printer.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;fsp-common.pb.h&quot;</span><span class="cp"></span>
+<span class="cp">#define MAX_SESSION_RETRY_REQ_TIMES 3</span>
+
+<span class="n">namespace</span> <span class="n">fsp</span>
+<span class="p">{</span>
+<span class="n">namespace</span> <span class="n">sss</span>
+<span class="p">{</span>
+<span class="n">namespace</span> <span class="n">gs</span>
+<span class="p">{</span>
+<span class="n">using</span> <span class="n">common</span><span class="o">::</span><span class="n">KafkaMsgMgr</span><span class="p">;</span>
+<span class="n">using</span> <span class="n">common</span><span class="o">::</span><span class="n">KafkaMsg</span><span class="p">;</span>
+<span class="n">constexpr</span> <span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span> <span class="n">SESSION_REQUEST_TIMEOUT</span><span class="p">{</span><span class="mi">60</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">};</span>
+
+
+<span class="c1">// TODO: send sending_start/sending_stop req when necessary</span>
+<span class="c1">// TODO: close the sessions to superior when necessary</span>
+<span class="c1">// (note: OnSessionClosed, OnLogout, OnLoginRecvChannelRsp)</span>
+<span class="n">class</span> <span class="n">SessionMsgProcessor</span> <span class="n">final</span>
+<span class="p">{</span>
+<span class="nl">public</span><span class="p">:</span>
+    <span class="n">SessionMsgProcessor</span><span class="p">(</span><span class="n">util</span><span class="o">::</span><span class="n">Thread</span> <span class="o">&amp;</span><span class="kr">thread</span><span class="p">,</span> <span class="c1">// NOLINT(runtime/references)</span>
+                        <span class="n">WBASE_NOTIFY</span> <span class="o">&amp;</span><span class="n">notify</span><span class="p">,</span> <span class="c1">// NOLINT(runtime/references)</span>
+                        <span class="n">util</span><span class="o">::</span><span class="n">TracePrinter</span> <span class="o">&amp;</span><span class="n">trace</span><span class="p">)</span> <span class="c1">// NOLINT(runtime/references)</span>
+        <span class="o">:</span> <span class="n">m_thread</span><span class="p">(</span><span class="kr">thread</span><span class="p">),</span>
+          <span class="n">m_notify</span><span class="p">(</span><span class="n">notify</span><span class="p">),</span>
+          <span class="n">m_trace</span><span class="p">(</span><span class="n">trace</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">InitMsgHandlers</span><span class="p">();</span>
+        <span class="n">m_media_mgr</span><span class="p">.</span><span class="n">SetProcessor</span><span class="p">(</span><span class="n">this</span><span class="p">);</span>
+        <span class="n">m_timer_mgr</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>
+    <span class="p">}</span>
+
+<span class="nl">public</span><span class="p">:</span>
+    <span class="kt">void</span> <span class="n">OnSessionEvent</span><span class="p">(</span><span class="k">const</span> <span class="n">SESSION_EVENT</span> <span class="o">&amp;</span><span class="n">event</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnKafkaMsg</span><span class="p">(</span><span class="n">KafkaMsg</span> <span class="o">&amp;&amp;</span><span class="n">msg</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">DestroyClientSrc</span><span class="p">(</span><span class="k">const</span> <span class="n">MediaTuple</span> <span class="o">&amp;</span><span class="n">media_tuple</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">,</span>
+                               <span class="kt">uint32_t</span> <span class="n">channel_id</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">channel_check_code</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">DestroySSSrc</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">StatisticsConcurrency</span><span class="p">();</span>
+
+<span class="nl">private</span><span class="p">:</span>
+    <span class="n">using</span> <span class="n">OnSessionResp</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">()</span><span class="o">&gt;</span><span class="p">;</span>
+    <span class="n">using</span> <span class="n">OnChannelResp</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">()</span><span class="o">&gt;</span><span class="p">;</span>
+    <span class="k">enum</span> <span class="n">SessionStates</span>
+    <span class="p">{</span>
+        <span class="n">SESSION_STATES_CREATED</span><span class="p">,</span>
+        <span class="n">SESSION_STATES_LOGGING_IN</span><span class="p">,</span>
+        <span class="n">SESSION_STATES_JOINED_GROUP</span><span class="p">,</span>
+        <span class="n">SESSION_STATES_CLIENT_CONNECTED</span><span class="p">,</span>
+        <span class="n">SESSION_STATES_LOGGED_IN</span><span class="p">,</span>
+    <span class="p">};</span>
+    <span class="k">struct</span> <span class="n">SessionData</span> <span class="n">final</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">stream_id</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">client_id</span><span class="p">;</span>
+        <span class="n">SessionStates</span> <span class="n">session_state</span> <span class="o">=</span> <span class="n">SESSION_STATES_CREATED</span><span class="p">;</span>
+    <span class="p">};</span>
+    <span class="k">struct</span> <span class="n">SignalSessionData</span> <span class="n">final</span>
+    <span class="p">{</span>
+        <span class="kt">uint32_t</span> <span class="n">user_id</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">group_id</span><span class="p">;</span>
+        <span class="n">SessionStates</span> <span class="n">session_state</span> <span class="o">=</span> <span class="n">SESSION_STATES_CREATED</span><span class="p">;</span>
+    <span class="p">};</span>
+    <span class="k">struct</span> <span class="n">MediaSessionData</span> <span class="n">final</span>
+    <span class="p">{</span>
+        <span class="n">SessionStates</span> <span class="n">session_state</span> <span class="o">=</span> <span class="n">SESSION_STATES_CREATED</span><span class="p">;</span>
+    <span class="p">};</span>
+    <span class="k">struct</span> <span class="n">StreamInfo</span> <span class="n">final</span>
+    <span class="p">{</span>
+        <span class="n">MediaTuple</span> <span class="n">media_tuple</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="cm">/*client_id*/</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="cm">/*channel_id*/</span><span class="o">&gt;</span> <span class="n">channel_table</span><span class="p">;</span>
+        <span class="kt">uint64_t</span> <span class="n">seq</span><span class="p">;</span>
+        <span class="kt">uint16_t</span> <span class="n">session_id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">};</span>
+    <span class="k">struct</span> <span class="n">RecvLoginChannelInfo</span> <span class="n">final</span>
+    <span class="p">{</span>
+        <span class="kt">uint16_t</span> <span class="n">channel_session_id</span><span class="p">;</span>
+        <span class="n">ChannelType2</span>  <span class="n">channel_type</span><span class="p">;</span>
+        <span class="kt">uint64_t</span> <span class="n">seq</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">src</span><span class="p">;</span>
+    <span class="p">};</span>
+    <span class="k">struct</span> <span class="n">SrcChannelInfo</span> <span class="n">final</span>
+    <span class="p">{</span>
+        <span class="kt">uint16_t</span> <span class="n">superior_session_id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">uint32_t</span> <span class="n">src_channel_id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">};</span>
+    <span class="k">struct</span> <span class="n">ChannelTimerInfo</span> <span class="n">final</span>
+    <span class="p">{</span>
+        <span class="kt">int64_t</span> <span class="n">timer_id</span><span class="p">;</span>
+        <span class="n">OnChannelResp</span> <span class="n">onResp</span><span class="p">;</span>
+    <span class="p">};</span>
+    <span class="k">struct</span> <span class="n">SessionTimerInfo</span> <span class="n">final</span>
+    <span class="p">{</span>
+        <span class="kt">int64_t</span> <span class="n">timer_id</span><span class="p">;</span>
+        <span class="n">OnSessionResp</span> <span class="n">onResp</span><span class="p">;</span>
+    <span class="p">};</span>
+
+    <span class="n">using</span> <span class="n">SessionMsgHandler</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">,</span> <span class="k">const</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span>
+                                                 <span class="kt">uint32_t</span> <span class="n">len</span><span class="p">,</span> <span class="kt">uint64_t</span><span class="p">,</span> <span class="kt">uint64_t</span><span class="p">)</span><span class="o">&gt;</span><span class="p">;</span>
+    <span class="n">using</span> <span class="n">KafkaMsgHandler</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="n">KafkaMsg</span> <span class="o">&amp;&amp;</span><span class="n">msg</span><span class="p">)</span><span class="o">&gt;</span><span class="p">;</span>
+
+<span class="nl">private</span><span class="p">:</span>
+    <span class="kt">void</span> <span class="n">InitMsgHandlers</span><span class="p">();</span>
+
+<span class="nl">private</span><span class="p">:</span>
+    <span class="kt">void</span> <span class="n">OnSessionCreated</span><span class="p">(</span><span class="k">const</span> <span class="n">SESSION_EVENT</span> <span class="o">&amp;</span><span class="n">event</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnSessionCreateFailed</span><span class="p">(</span><span class="k">const</span> <span class="n">SESSION_EVENT</span> <span class="o">&amp;</span><span class="n">event</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnSessionClosed</span><span class="p">(</span><span class="k">const</span> <span class="n">SESSION_EVENT</span> <span class="o">&amp;</span><span class="n">event</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnSessionMsg</span><span class="p">(</span><span class="k">const</span> <span class="n">SESSION_EVENT</span> <span class="o">&amp;</span><span class="n">event</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnSessionReconnecting</span><span class="p">(</span><span class="k">const</span> <span class="n">SESSION_EVENT</span> <span class="o">&amp;</span><span class="n">event</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnSessionReconnected</span><span class="p">(</span><span class="k">const</span> <span class="n">SESSION_EVENT</span> <span class="o">&amp;</span><span class="n">event</span><span class="p">);</span>
+
+    <span class="c1">// PB msg handlers</span>
+<span class="nl">private</span><span class="p">:</span>
+    <span class="kt">void</span> <span class="n">OnLoginRecvChannelReq</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">,</span> <span class="k">const</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">len</span><span class="p">,</span> <span class="kt">uint64_t</span><span class="p">,</span>
+                               <span class="kt">uint64_t</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnLoginRecvChannelRsp</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">,</span> <span class="k">const</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">len</span><span class="p">,</span> <span class="kt">uint64_t</span><span class="p">,</span>
+                               <span class="kt">uint64_t</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnLogout</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">,</span> <span class="k">const</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">len</span><span class="p">,</span> <span class="kt">uint64_t</span> <span class="n">channel_id</span><span class="p">,</span>
+                  <span class="kt">uint64_t</span> <span class="n">channel_type</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnStreamData</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">,</span> <span class="k">const</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">len</span><span class="p">,</span>
+                      <span class="kt">uint64_t</span> <span class="n">channel_id</span><span class="p">,</span> <span class="kt">uint64_t</span> <span class="n">channel_type</span><span class="p">);</span>
+
+    <span class="c1">// XML msg handlers</span>
+<span class="nl">private</span><span class="p">:</span>
+    <span class="kt">void</span> <span class="n">OnLoginReq</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">,</span> <span class="k">const</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">len</span><span class="p">,</span> <span class="kt">uint64_t</span><span class="p">,</span> <span class="kt">uint64_t</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnRecvReq</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">,</span> <span class="k">const</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">len</span><span class="p">,</span> <span class="kt">uint64_t</span><span class="p">,</span> <span class="kt">uint64_t</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnSendEnableRsp</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">,</span> <span class="k">const</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">len</span><span class="p">,</span> <span class="kt">uint64_t</span><span class="p">,</span>
+                         <span class="kt">uint64_t</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnPauseRecvReq</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">,</span> <span class="k">const</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">len</span><span class="p">,</span> <span class="kt">uint64_t</span><span class="p">,</span>
+                        <span class="kt">uint64_t</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnBye</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">,</span> <span class="k">const</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">len</span><span class="p">,</span> <span class="kt">uint64_t</span><span class="p">,</span> <span class="kt">uint64_t</span><span class="p">);</span>
+
+    <span class="c1">// raw msg handlers</span>
+<span class="nl">private</span><span class="p">:</span>
+    <span class="kt">void</span> <span class="n">OnSendLoginReq</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">,</span> <span class="k">const</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">len</span><span class="p">,</span> <span class="kt">uint64_t</span><span class="p">,</span>
+                        <span class="kt">uint64_t</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnRecvLoginReq</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">,</span> <span class="k">const</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">len</span><span class="p">,</span> <span class="kt">uint64_t</span><span class="p">,</span>
+                        <span class="kt">uint64_t</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnSendBye</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">,</span> <span class="k">const</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">len</span><span class="p">,</span> <span class="kt">uint64_t</span> <span class="n">channel_id</span><span class="p">,</span>
+                   <span class="kt">uint64_t</span> <span class="n">channel_type</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnRecvBye</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">,</span> <span class="k">const</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">len</span><span class="p">,</span> <span class="kt">uint64_t</span> <span class="n">channel_id</span><span class="p">,</span>
+                   <span class="kt">uint64_t</span> <span class="n">channel_type</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnAVData</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">,</span> <span class="k">const</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">len</span><span class="p">,</span> <span class="kt">uint64_t</span> <span class="n">channel_id</span><span class="p">,</span>
+                  <span class="kt">uint64_t</span> <span class="n">channel_type</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnQOSData</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">,</span> <span class="k">const</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">len</span><span class="p">,</span> <span class="kt">uint64_t</span> <span class="n">channel_id</span><span class="p">,</span>
+                   <span class="kt">uint64_t</span> <span class="n">channel_type</span><span class="p">);</span>
+
+<span class="nl">private</span><span class="p">:</span>
+    <span class="kt">void</span> <span class="n">OnNotifyStreamSendingStart</span><span class="p">(</span><span class="n">KafkaMsg</span> <span class="o">&amp;&amp;</span><span class="n">msg</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnNotifyStreamSendingStop</span><span class="p">(</span><span class="n">KafkaMsg</span> <span class="o">&amp;&amp;</span><span class="n">msg</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnNotifyPublishStream</span><span class="p">(</span><span class="n">KafkaMsg</span> <span class="o">&amp;&amp;</span><span class="n">msg</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnNotifyStreamDestroied</span><span class="p">(</span><span class="n">KafkaMsg</span> <span class="o">&amp;&amp;</span><span class="n">msg</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnNotifyStreamSourceChanged</span><span class="p">(</span><span class="n">KafkaMsg</span> <span class="o">&amp;&amp;</span><span class="n">msg</span><span class="p">);</span>
+
+<span class="nl">private</span><span class="p">:</span>
+    <span class="kt">void</span> <span class="n">SendCheckPublishTokenReq</span><span class="p">(</span><span class="n">KafkaMsgMgr</span><span class="o">::</span><span class="n">OnResp</span> <span class="o">&amp;&amp;</span><span class="n">on_resp</span><span class="p">,</span>
+                                  <span class="n">LoginContextHandler</span> <span class="n">context_handler</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnCheckPublishTokenRsp</span><span class="p">(</span><span class="n">KafkaMsgMgr</span><span class="o">::</span><span class="n">RespErrno</span> <span class="n">err</span><span class="p">,</span> <span class="k">const</span> <span class="n">KafkaMsg</span> <span class="o">&amp;</span><span class="n">msg</span><span class="p">,</span>
+                                <span class="n">LoginContextHandler</span> <span class="n">context_handler</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">SendCheckSubscribeTokenReq</span><span class="p">(</span><span class="n">KafkaMsgMgr</span><span class="o">::</span><span class="n">OnResp</span> <span class="o">&amp;&amp;</span><span class="n">on_resp</span><span class="p">,</span>
+                                    <span class="n">LoginContextHandler</span> <span class="n">context_handler</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnCheckSubscribeTokenRsp</span><span class="p">(</span><span class="n">KafkaMsgMgr</span><span class="o">::</span><span class="n">RespErrno</span> <span class="n">err</span><span class="p">,</span> <span class="k">const</span> <span class="n">KafkaMsg</span> <span class="o">&amp;</span><span class="n">msg</span><span class="p">,</span>
+                                  <span class="n">LoginContextHandler</span> <span class="n">context_handler</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">SendGetStreamTypeReq</span><span class="p">(</span><span class="n">KafkaMsgMgr</span><span class="o">::</span><span class="n">OnResp</span> <span class="o">&amp;&amp;</span><span class="n">on_resp</span><span class="p">,</span>
+                              <span class="n">LoginContextHandler</span> <span class="n">context_handler</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnGetStreamTypeRsp</span><span class="p">(</span><span class="n">KafkaMsgMgr</span><span class="o">::</span><span class="n">RespErrno</span> <span class="n">err</span><span class="p">,</span> <span class="k">const</span> <span class="n">KafkaMsg</span> <span class="o">&amp;</span><span class="n">msg</span><span class="p">,</span>
+                            <span class="n">LoginContextHandler</span> <span class="n">context_handler</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">SendChannelConnectedReq</span><span class="p">(</span><span class="n">KafkaMsgMgr</span><span class="o">::</span><span class="n">OnResp</span> <span class="o">&amp;&amp;</span><span class="n">on_resp</span><span class="p">,</span>
+                                 <span class="n">LoginContextHandler</span> <span class="n">context_handler</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnChannelConnectedRsp</span><span class="p">(</span><span class="n">KafkaMsgMgr</span><span class="o">::</span><span class="n">RespErrno</span> <span class="n">err</span><span class="p">,</span> <span class="k">const</span> <span class="n">KafkaMsg</span> <span class="o">&amp;</span><span class="n">msg</span><span class="p">,</span>
+                               <span class="n">LoginContextHandler</span> <span class="n">context_handler</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">SendChannelDisconnectedReq</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">stream_id</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">client_id</span><span class="p">,</span>
+                                    <span class="n">KafkaMsgMgr</span><span class="o">::</span><span class="n">OnResp</span> <span class="o">&amp;&amp;</span><span class="n">on_resp</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnChannelDisconnectedRsp</span><span class="p">(</span><span class="n">KafkaMsgMgr</span><span class="o">::</span><span class="n">RespErrno</span> <span class="n">err</span><span class="p">,</span> <span class="k">const</span> <span class="n">KafkaMsg</span> <span class="o">&amp;</span><span class="n">msg</span><span class="p">,</span>
+                                  <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">stream_id</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">client_id</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">SendSendingStartReq</span><span class="p">(</span><span class="n">KafkaMsgMgr</span><span class="o">::</span><span class="n">OnResp</span> <span class="o">&amp;&amp;</span><span class="n">on_resp</span><span class="p">,</span> <span class="n">RecvContextHandler</span> <span class="n">context_handler</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnSendingStartRsp</span><span class="p">(</span><span class="n">KafkaMsgMgr</span><span class="o">::</span><span class="n">RespErrno</span> <span class="n">err</span><span class="p">,</span> <span class="k">const</span> <span class="n">KafkaMsg</span> <span class="o">&amp;</span><span class="n">msg</span><span class="p">,</span>
+                           <span class="n">RecvContextHandler</span> <span class="n">context_handler</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">SendPublishStreamReq</span><span class="p">(</span><span class="n">KafkaMsgMgr</span><span class="o">::</span><span class="n">OnResp</span> <span class="o">&amp;&amp;</span><span class="n">on_resp</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">stream_id</span><span class="p">,</span>
+                              <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">group_id</span><span class="p">,</span> <span class="k">const</span> <span class="kt">uint32_t</span> <span class="n">user_id</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnPublishStreamRsp</span><span class="p">(</span><span class="n">KafkaMsgMgr</span><span class="o">::</span><span class="n">RespErrno</span> <span class="n">err</span><span class="p">,</span> <span class="k">const</span> <span class="n">KafkaMsg</span> <span class="o">&amp;</span><span class="n">msg</span><span class="p">,</span>
+                            <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">stream_id</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">SendSetStreamSourceServerReq</span><span class="p">(</span><span class="n">KafkaMsgMgr</span><span class="o">::</span><span class="n">OnResp</span> <span class="o">&amp;&amp;</span><span class="n">on_resp</span><span class="p">,</span>
+                                      <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">stream_id</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnSetStreamSourceServerRsp</span><span class="p">(</span><span class="n">KafkaMsgMgr</span><span class="o">::</span><span class="n">RespErrno</span> <span class="n">err</span><span class="p">,</span> <span class="k">const</span> <span class="n">KafkaMsg</span> <span class="o">&amp;</span><span class="n">msg</span><span class="p">,</span>
+                                    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">stream_id</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">SendNotifyStreamPublishedReq</span><span class="p">(</span>         <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">stream_id</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnNotifyStreamPublishedRsp</span><span class="p">(</span><span class="n">KafkaMsgMgr</span><span class="o">::</span><span class="n">RespErrno</span> <span class="n">err</span><span class="p">,</span> <span class="k">const</span> <span class="n">KafkaMsg</span> <span class="o">&amp;</span><span class="n">msg</span><span class="p">,</span>
+                                    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">stream_id</span><span class="p">);</span>
+
+<span class="nl">private</span><span class="p">:</span>
+    <span class="kt">void</span> <span class="n">PrepareToCreateSrcChannel</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">channel_id</span><span class="p">,</span> <span class="cm">/*bool is_src_server,*/</span>
+                                   <span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">SendJoinGroupReq</span><span class="p">(</span><span class="n">KafkaMsgMgr</span><span class="o">::</span><span class="n">OnResp</span> <span class="o">&amp;&amp;</span><span class="n">on_resp</span><span class="p">,</span>
+                          <span class="n">UserLoginContextHandler</span> <span class="n">context_handler</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnJoinGroupRsp</span><span class="p">(</span><span class="n">KafkaMsgMgr</span><span class="o">::</span><span class="n">RespErrno</span> <span class="n">err</span><span class="p">,</span> <span class="k">const</span> <span class="n">KafkaMsg</span> <span class="o">&amp;</span><span class="n">msg</span><span class="p">,</span>
+                        <span class="n">UserLoginContextHandler</span> <span class="n">context_handler</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">SendClientConnectedReq</span><span class="p">(</span><span class="n">KafkaMsgMgr</span><span class="o">::</span><span class="n">OnResp</span> <span class="o">&amp;&amp;</span><span class="n">on_resp</span><span class="p">,</span>
+                                <span class="n">UserLoginContextHandler</span> <span class="n">context_handler</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnClientConnectedRsp</span><span class="p">(</span><span class="n">KafkaMsgMgr</span><span class="o">::</span><span class="n">RespErrno</span> <span class="n">err</span><span class="p">,</span> <span class="k">const</span> <span class="n">KafkaMsg</span> <span class="o">&amp;</span><span class="n">msg</span><span class="p">,</span>
+                              <span class="n">UserLoginContextHandler</span> <span class="n">context_handler</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">SendGetStreamReq</span><span class="p">(</span><span class="n">KafkaMsgMgr</span><span class="o">::</span><span class="n">OnResp</span> <span class="o">&amp;&amp;</span><span class="n">on_resp</span><span class="p">,</span> <span class="n">RecvContextHandler</span> <span class="n">context_handler</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnGetStreamRsp</span><span class="p">(</span><span class="n">KafkaMsgMgr</span><span class="o">::</span><span class="n">RespErrno</span> <span class="n">err</span><span class="p">,</span> <span class="k">const</span> <span class="n">KafkaMsg</span> <span class="o">&amp;</span><span class="n">msg</span><span class="p">,</span>
+                        <span class="n">RecvContextHandler</span> <span class="n">context_handler</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnCreateMediaSessionTimeOut</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">SendGetSuperiorReq</span><span class="p">(</span><span class="n">KafkaMsgMgr</span><span class="o">::</span><span class="n">OnResp</span> <span class="o">&amp;&amp;</span><span class="n">on_resp</span><span class="p">,</span> <span class="n">RecvContextHandler</span> <span class="n">context_handler</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnGetSuperiorRsp</span><span class="p">(</span><span class="n">KafkaMsgMgr</span><span class="o">::</span><span class="n">RespErrno</span> <span class="n">err</span><span class="p">,</span> <span class="k">const</span> <span class="n">KafkaMsg</span> <span class="o">&amp;</span><span class="n">msg</span><span class="p">,</span>
+                          <span class="n">RecvContextHandler</span> <span class="n">context_handler</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">SendStreamDestroiesReq</span><span class="p">(</span><span class="n">KafkaMsgMgr</span><span class="o">::</span><span class="n">OnResp</span> <span class="o">&amp;&amp;</span><span class="n">on_resp</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">stream_id</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnSendStreamDestroiesRsp</span><span class="p">(</span><span class="n">KafkaMsgMgr</span><span class="o">::</span><span class="n">RespErrno</span> <span class="n">err</span><span class="p">,</span> <span class="k">const</span> <span class="n">KafkaMsg</span> <span class="o">&amp;</span><span class="n">msg</span><span class="p">,</span>
+                        <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">stream_id</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">SendQuitGroupReq</span><span class="p">(</span><span class="n">KafkaMsgMgr</span><span class="o">::</span><span class="n">OnResp</span> <span class="o">&amp;&amp;</span><span class="n">on_resp</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnQuitGroupRsp</span><span class="p">(</span><span class="n">KafkaMsgMgr</span><span class="o">::</span><span class="n">RespErrno</span> <span class="n">err</span><span class="p">,</span> <span class="k">const</span> <span class="n">KafkaMsg</span> <span class="o">&amp;</span><span class="n">msg</span><span class="p">,</span>
+                        <span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">SendClientDisConnectedReq</span><span class="p">(</span><span class="n">KafkaMsgMgr</span><span class="o">::</span><span class="n">OnResp</span> <span class="o">&amp;&amp;</span><span class="n">on_resp</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnClientDisConnectedRsp</span><span class="p">(</span><span class="n">KafkaMsgMgr</span><span class="o">::</span><span class="n">RespErrno</span> <span class="n">err</span><span class="p">,</span> <span class="k">const</span> <span class="n">KafkaMsg</span> <span class="o">&amp;</span><span class="n">msg</span><span class="p">,</span>
+                        <span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">);</span>
+
+<span class="nl">private</span><span class="p">:</span>
+    <span class="kt">void</span> <span class="n">SendLoginRecvChannelReq</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">stream_id</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">WaitForLoginRecvChannelRspTimeOut</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">SendLoginSendChannelRsp</span><span class="p">(</span><span class="n">ResponseCode</span> <span class="n">err_code</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">SendLoginRecvChannelRsp</span><span class="p">(</span><span class="n">ResponseCode</span> <span class="n">err_code</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">SendLoginRsp</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">group_id</span><span class="p">,</span> <span class="kt">int32_t</span> <span class="n">user_id</span><span class="p">,</span> <span class="n">ResponseCode</span> <span class="n">err_code</span><span class="p">,</span>
+                      <span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">SendRecvRsp</span><span class="p">(</span><span class="k">const</span> <span class="n">MediaTuple</span> <span class="o">&amp;</span><span class="n">media_tuple</span><span class="p">,</span> <span class="kt">int32_t</span> <span class="n">user_id</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">channel_id</span><span class="p">,</span>
+                     <span class="kt">uint32_t</span> <span class="n">channel_check_code</span><span class="p">,</span> <span class="kt">int32_t</span> <span class="n">recv</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">,</span> <span class="kt">int32_t</span> <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">SendRecvLoginRsp</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">channel_id</span><span class="p">,</span> <span class="n">ResponseCode</span> <span class="n">err_code</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">SendSendLoginRsp</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">channel_id</span><span class="p">,</span> <span class="n">ResponseCode</span> <span class="n">err_code</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">SendPauseRecvRsp</span><span class="p">(</span><span class="k">const</span> <span class="n">MediaTuple</span> <span class="o">&amp;</span><span class="n">media_tuple</span><span class="p">,</span> <span class="kt">int32_t</span> <span class="n">user_id</span><span class="p">,</span>
+                                    <span class="kt">int32_t</span> <span class="n">pause</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">,</span> <span class="kt">int32_t</span> <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span><span class="p">);</span>
+<span class="nl">private</span><span class="p">:</span>
+    <span class="kt">void</span> <span class="n">SendNotifyStreamSendingStartRsp</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">msg_src</span><span class="p">,</span> <span class="kt">uint64_t</span> <span class="n">msg_seq</span><span class="p">,</span>
+                                         <span class="n">ResponseCode</span> <span class="n">err_code</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">SendNotifyStreamSendingStopRsp</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">msg_src</span><span class="p">,</span> <span class="kt">uint64_t</span> <span class="n">msg_seq</span><span class="p">,</span>
+                                        <span class="n">ResponseCode</span> <span class="n">err_code</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">SendSendEnableReq</span><span class="p">(</span><span class="k">const</span> <span class="n">MediaTuple</span> <span class="o">&amp;</span><span class="n">media_tuple</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">channel_id</span><span class="p">,</span>
+                           <span class="kt">uint32_t</span> <span class="n">channel_check_code</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">send</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">WaitForSendLoginReqTimeOut</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">channel_id</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">SendStreamDestroiesRsp</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">msg_src</span><span class="p">,</span> <span class="kt">uint64_t</span> <span class="n">msg_seq</span><span class="p">,</span>
+                                <span class="n">ResponseCode</span> <span class="n">err_code</span><span class="p">);</span>
+
+<span class="nl">private</span><span class="p">:</span>
+    <span class="kt">void</span> <span class="n">OnLoginSendContextDestroy</span><span class="p">(</span><span class="n">LoginContext</span> <span class="o">&amp;</span><span class="n">context</span><span class="p">);</span>     <span class="c1">// NOLINT(runtime/references)</span>
+    <span class="kt">void</span> <span class="nf">OnLoginRecvContextDestroy</span><span class="p">(</span><span class="n">LoginContext</span> <span class="o">&amp;</span><span class="n">context</span><span class="p">);</span>     <span class="c1">// NOLINT(runtime/references)</span>
+    <span class="kt">void</span> <span class="nf">OnUserLoginContextDestroy</span><span class="p">(</span><span class="n">UserLoginContext</span> <span class="o">&amp;</span><span class="n">context</span><span class="p">);</span> <span class="c1">// NOLINT(runtime/references)</span>
+
+<span class="nl">private</span><span class="p">:</span>
+    <span class="n">TiXmlElement</span> <span class="o">&amp;</span><span class="n">LoadCommand</span><span class="p">(</span><span class="k">const</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">len</span><span class="p">);</span>
+
+<span class="nl">private</span><span class="p">:</span>
+    <span class="n">LoginContextHandler</span> <span class="n">MakeLoginContext</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">stream_id</span><span class="p">,</span>
+                                         <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">stream_token</span><span class="p">,</span>
+                                         <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">client_id</span><span class="p">,</span> <span class="n">ChannelType2</span> <span class="n">channel_type</span><span class="p">,</span>
+                                         <span class="kt">uint32_t</span> <span class="n">channel_id</span><span class="p">,</span>
+                                         <span class="n">Context</span><span class="o">&lt;</span><span class="n">LoginContext</span><span class="o">&gt;::</span><span class="n">OnDestroy</span> <span class="o">&amp;&amp;</span><span class="n">on_destroy</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">SetSessionState</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">session_logged_in</span><span class="p">);</span>
+
+    <span class="n">UserLoginContextHandler</span> <span class="nf">MakeUserLoginContext</span><span class="p">(</span>
+        <span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">group_id</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">group_token</span><span class="p">,</span>
+        <span class="kt">int32_t</span> <span class="n">user_id</span><span class="p">,</span> <span class="n">Context</span><span class="o">&lt;</span><span class="n">UserLoginContext</span><span class="o">&gt;::</span><span class="n">OnDestroy</span> <span class="o">&amp;&amp;</span><span class="n">on_destroy</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">SetSignalSessionState</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">session_logged_in</span><span class="p">);</span>
+
+    <span class="kt">void</span> <span class="nf">OnRecvContextDestroy</span><span class="p">(</span><span class="n">RecvContext</span> <span class="o">&amp;</span><span class="n">context</span><span class="p">);</span> <span class="c1">// NOLINT(runtime/references)</span>
+    <span class="n">RecvContextHandler</span> <span class="nf">MakeRecvContext</span><span class="p">(</span><span class="k">const</span> <span class="n">MediaTuple</span> <span class="o">&amp;</span><span class="n">media_tuple</span><span class="p">,</span>
+                                       <span class="n">Context</span><span class="o">&lt;</span><span class="n">RecvContext</span><span class="o">&gt;::</span><span class="n">OnDestroy</span> <span class="o">&amp;&amp;</span><span class="n">on_destroy</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">CloseAllClientMediaSession</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">user_id</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">group_id</span><span class="p">);</span>
+
+<span class="nl">private</span><span class="p">:</span>
+    <span class="kt">void</span> <span class="n">CleanAllResources</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">stream_id</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnChannelTimer</span><span class="p">(</span><span class="kt">uint64_t</span> <span class="n">channel_id</span><span class="p">,</span> <span class="kt">int64_t</span> <span class="n">timer_id</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">OnSessionTimer</span><span class="p">(</span><span class="kt">uint64_t</span> <span class="n">session_id</span><span class="p">,</span> <span class="kt">int64_t</span> <span class="n">timer_id</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">RemoveChannelTimer</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">channel_id</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">RemoveSessionTimer</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">AddChannelTimer</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">channel_id</span><span class="p">,</span> <span class="n">OnChannelResp</span> <span class="o">&amp;&amp;</span><span class="n">resp</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">AddSessionTimer</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">,</span> <span class="n">OnSessionResp</span> <span class="o">&amp;&amp;</span><span class="n">resp</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">UserLogout</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">session_id</span><span class="p">);</span>
+
+<span class="nl">private</span><span class="p">:</span>
+    <span class="n">util</span><span class="o">::</span><span class="n">Thread</span> <span class="o">&amp;</span><span class="n">m_thread</span><span class="p">;</span>
+    <span class="n">WBASE_NOTIFY</span> <span class="o">&amp;</span><span class="n">m_notify</span><span class="p">;</span>
+
+    <span class="n">GroupMgr</span> <span class="n">m_group_mgr</span><span class="p">;</span>
+    <span class="n">MediaMgr</span> <span class="n">m_media_mgr</span><span class="p">;</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="cm">/*stream_id*/</span><span class="p">,</span> <span class="n">StreamInfo</span><span class="o">&gt;</span> <span class="n">m_stream_table</span><span class="p">;</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="kt">int32_t</span> <span class="cm">/*msg_type*/</span><span class="p">,</span> <span class="n">SessionMsgHandler</span><span class="o">&gt;</span> <span class="n">m_session_pb_msg_handlers</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="kt">int32_t</span> <span class="cm">/*msg_type*/</span><span class="p">,</span> <span class="n">SessionMsgHandler</span><span class="o">&gt;</span> <span class="n">m_session_xml_msg_handlers</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="kt">int32_t</span> <span class="cm">/*msg_type*/</span><span class="p">,</span> <span class="n">SessionMsgHandler</span><span class="o">&gt;</span> <span class="n">m_session_raw_msg_handlers</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="kt">int32_t</span> <span class="cm">/*msg_type*/</span><span class="p">,</span> <span class="n">KafkaMsgHandler</span><span class="o">&gt;</span> <span class="n">m_kafka_msg_handlers</span><span class="p">;</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="kt">uint16_t</span> <span class="cm">/*session_id*/</span><span class="p">,</span> <span class="n">SessionData</span><span class="o">&gt;</span> <span class="n">m_logged_in_sessions</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="kt">uint16_t</span> <span class="cm">/*session_id*/</span><span class="p">,</span> <span class="n">SignalSessionData</span><span class="o">&gt;</span> <span class="n">m_logged_in_signal_sessions</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="kt">uint16_t</span> <span class="cm">/*session_id*/</span><span class="p">,</span> <span class="n">MediaSessionData</span><span class="o">&gt;</span> <span class="n">m_logged_in_media_sessions</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="kt">uint16_t</span> <span class="cm">/*session_id*/</span><span class="p">,</span> <span class="n">RecvContextHandler</span><span class="o">&gt;</span>
+        <span class="n">m_creating_session_context_table</span><span class="p">;</span> <span class="c1">// TODO: erase when login_recv_channel rsp timeout</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="kt">uint32_t</span> <span class="cm">/*channel_id*/</span><span class="p">,</span> <span class="n">RecvContextHandler</span><span class="o">&gt;</span>
+        <span class="n">m_recv_context_table</span><span class="p">;</span> <span class="c1">// TODO: erase when send_login req timeout</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">MediaTuple</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="kt">uint32_t</span> <span class="cm">/*channel_id*/</span><span class="p">,</span> <span class="n">RecvLoginChannelInfo</span><span class="o">&gt;&gt;</span>
+        <span class="n">m_recv_login_reqs_table</span><span class="p">;</span>
+    <span class="n">util</span><span class="o">::</span><span class="n">TimerMgr</span> <span class="n">m_timer_mgr</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="cm">/*stream_id*/</span><span class="p">,</span> <span class="n">SrcChannelInfo</span><span class="o">&gt;</span> <span class="n">m_stream_src_channel</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="kt">uint32_t</span> <span class="cm">/*channel_id*/</span><span class="p">,</span> <span class="n">ChannelTimerInfo</span><span class="o">&gt;</span> <span class="n">m_channel_resps</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="kt">uint16_t</span> <span class="cm">/*session_id*/</span><span class="p">,</span> <span class="n">SessionTimerInfo</span><span class="o">&gt;</span> <span class="n">m_session_resps</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">mutex</span> <span class="n">m_mutex</span><span class="p">;</span>
+
+<span class="nl">private</span><span class="p">:</span>
+    <span class="c1">//print trace log</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="kt">uint16_t</span><span class="cm">/*session_id*/</span><span class="p">,</span> <span class="n">TraceLog</span> <span class="cm">/*trace*/</span><span class="o">&gt;</span><span class="n">m_login_req_trace</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="kt">uint32_t</span><span class="cm">/*channel_id*/</span><span class="p">,</span> <span class="n">TraceLog</span><span class="cm">/*trace*/</span><span class="o">&gt;</span><span class="n">m_recv_req_trace</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="kt">uint64_t</span><span class="cm">/*msg_req*/</span><span class="p">,</span> <span class="n">TraceLog</span><span class="cm">/*trace*/</span><span class="o">&gt;</span><span class="n">m_notify_trace</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="kt">uint16_t</span><span class="cm">/*session_id*/</span><span class="p">,</span> <span class="n">TraceLog</span><span class="cm">/*trace*/</span><span class="o">&gt;</span><span class="n">m_loging_recving_channel</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="cm">/*stream_id*/</span><span class="p">,</span> <span class="n">TraceLog</span><span class="cm">/*trace*/</span><span class="o">&gt;</span><span class="n">m_notify_publish_stream</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="kt">uint32_t</span> <span class="cm">/*src_channel_id*/</span><span class="p">,</span> <span class="n">Stream</span> <span class="cm">/*stream*/</span><span class="o">&gt;</span><span class="n">m_src_channel_stream</span><span class="p">;</span>
+    <span class="n">util</span><span class="o">::</span><span class="n">TracePrinter</span> <span class="o">&amp;</span><span class="n">m_trace</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="p">}</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #333333 }
+body  { background: #111111; color: #ffffff }
+body .c { color: #008800; font-style: italic; background-color: #0f140f } /* Comment */
+body .err { color: #ffffff } /* Error */
+body .esc { color: #ffffff } /* Escape */
+body .g { color: #ffffff } /* Generic */
+body .k { color: #fb660a; font-weight: bold } /* Keyword */
+body .l { color: #ffffff } /* Literal */
+body .n { color: #ffffff } /* Name */
+body .o { color: #ffffff } /* Operator */
+body .x { color: #ffffff } /* Other */
+body .p { color: #ffffff } /* Punctuation */
+body .ch { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Hashbang */
+body .cm { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Multiline */
+body .cp { color: #ff0007; font-weight: bold; font-style: italic; background-color: #0f140f } /* Comment.Preproc */
+body .cpf { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.PreprocFile */
+body .c1 { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Single */
+body .cs { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Special */
+body .gd { color: #ffffff } /* Generic.Deleted */
+body .ge { color: #ffffff } /* Generic.Emph */
+body .gr { color: #ffffff } /* Generic.Error */
+body .gh { color: #ffffff; font-weight: bold } /* Generic.Heading */
+body .gi { color: #ffffff } /* Generic.Inserted */
+body .go { color: #444444; background-color: #222222 } /* Generic.Output */
+body .gp { color: #ffffff } /* Generic.Prompt */
+body .gs { color: #ffffff } /* Generic.Strong */
+body .gu { color: #ffffff; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #ffffff } /* Generic.Traceback */
+body .kc { color: #fb660a; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #fb660a; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #fb660a; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #fb660a } /* Keyword.Pseudo */
+body .kr { color: #fb660a; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #cdcaa9; font-weight: bold } /* Keyword.Type */
+body .ld { color: #ffffff } /* Literal.Date */
+body .m { color: #0086f7; font-weight: bold } /* Literal.Number */
+body .s { color: #0086d2 } /* Literal.String */
+body .na { color: #ff0086; font-weight: bold } /* Name.Attribute */
+body .nb { color: #ffffff } /* Name.Builtin */
+body .nc { color: #ffffff } /* Name.Class */
+body .no { color: #0086d2 } /* Name.Constant */
+body .nd { color: #ffffff } /* Name.Decorator */
+body .ni { color: #ffffff } /* Name.Entity */
+body .ne { color: #ffffff } /* Name.Exception */
+body .nf { color: #ff0086; font-weight: bold } /* Name.Function */
+body .nl { color: #ffffff } /* Name.Label */
+body .nn { color: #ffffff } /* Name.Namespace */
+body .nx { color: #ffffff } /* Name.Other */
+body .py { color: #ffffff } /* Name.Property */
+body .nt { color: #fb660a; font-weight: bold } /* Name.Tag */
+body .nv { color: #fb660a } /* Name.Variable */
+body .ow { color: #ffffff } /* Operator.Word */
+body .w { color: #888888 } /* Text.Whitespace */
+body .mb { color: #0086f7; font-weight: bold } /* Literal.Number.Bin */
+body .mf { color: #0086f7; font-weight: bold } /* Literal.Number.Float */
+body .mh { color: #0086f7; font-weight: bold } /* Literal.Number.Hex */
+body .mi { color: #0086f7; font-weight: bold } /* Literal.Number.Integer */
+body .mo { color: #0086f7; font-weight: bold } /* Literal.Number.Oct */
+body .sa { color: #0086d2 } /* Literal.String.Affix */
+body .sb { color: #0086d2 } /* Literal.String.Backtick */
+body .sc { color: #0086d2 } /* Literal.String.Char */
+body .dl { color: #0086d2 } /* Literal.String.Delimiter */
+body .sd { color: #0086d2 } /* Literal.String.Doc */
+body .s2 { color: #0086d2 } /* Literal.String.Double */
+body .se { color: #0086d2 } /* Literal.String.Escape */
+body .sh { color: #0086d2 } /* Literal.String.Heredoc */
+body .si { color: #0086d2 } /* Literal.String.Interpol */
+body .sx { color: #0086d2 } /* Literal.String.Other */
+body .sr { color: #0086d2 } /* Literal.String.Regex */
+body .s1 { color: #0086d2 } /* Literal.String.Single */
+body .ss { color: #0086d2 } /* Literal.String.Symbol */
+body .bp { color: #ffffff } /* Name.Builtin.Pseudo */
+body .fm { color: #ff0086; font-weight: bold } /* Name.Function.Magic */
+body .vc { color: #fb660a } /* Name.Variable.Class */
+body .vg { color: #fb660a } /* Name.Variable.Global */
+body .vi { color: #fb660a } /* Name.Variable.Instance */
+body .vm { color: #fb660a } /* Name.Variable.Magic */
+body .il { color: #0086f7; font-weight: bold } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;group_server.h&quot;</span><span class="cp"></span>
+
+<span class="cp">#include</span> <span class="cpf">&lt;chrono&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;thread&gt;</span><span class="cp"></span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;json/json.h&quot;</span><span class="cp"></span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;component_mgr.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;global_objects.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;kafka_errcode.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;zk_errcode.h&quot;</span><span class="cp"></span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;config.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;winitguid.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;utility.h&quot;</span><span class="cp"></span>
+
+<span class="k">namespace</span> <span class="n">fsp</span>
+<span class="p">{</span>
+<span class="k">namespace</span> <span class="n">sss</span>
+<span class="p">{</span>
+<span class="k">namespace</span> <span class="n">gs</span>
+<span class="p">{</span>
+<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">placeholders</span><span class="o">::</span><span class="n">_1</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">placeholders</span><span class="o">::</span><span class="n">_2</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">placeholders</span><span class="o">::</span><span class="n">_3</span><span class="p">;</span>
+
+<span class="k">using</span> <span class="n">common</span><span class="o">::</span><span class="n">g_session_mgr</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">common</span><span class="o">::</span><span class="n">g_kafka_msg_mgr</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">common</span><span class="o">::</span><span class="n">g_logger</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">common</span><span class="o">::</span><span class="n">g_printer</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">common</span><span class="o">::</span><span class="n">g_zkclient</span><span class="p">;</span>
+
+<span class="k">using</span> <span class="n">common</span><span class="o">::</span><span class="n">RegisterCallback</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">common</span><span class="o">::</span><span class="n">UnregisterCallback</span><span class="p">;</span>
+
+<span class="k">enum</span> <span class="n">MsgClass</span>
+<span class="p">{</span>
+    <span class="n">SESSION_MSG</span><span class="p">,</span>
+    <span class="n">KAFKA_MSG</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="k">static</span> <span class="n">BOOL</span> <span class="nf">OnSessionMsg</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">msg_class</span><span class="p">,</span> <span class="n">FS_INT</span><span class="p">,</span> <span class="n">FS_UINT</span> <span class="n">param2</span><span class="p">,</span> <span class="kt">uint32_t</span><span class="p">,</span> <span class="n">FS_UINT</span> <span class="n">user_data</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">util</span><span class="o">::</span><span class="n">Thread</span> <span class="o">*</span><span class="kr">thread</span> <span class="o">=</span> <span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="n">util</span><span class="o">::</span><span class="n">Thread</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">user_data</span><span class="p">);</span>
+    <span class="kr">thread</span><span class="o">-&gt;</span><span class="n">PostThreadMsg</span><span class="p">(</span><span class="k">nullptr</span><span class="p">,</span> <span class="n">msg_class</span><span class="p">,</span> <span class="n">param2</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">TRUE</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="n">GroupServer</span><span class="o">::</span><span class="n">Start</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">config</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">m_running</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+
+    <span class="n">InitConfig</span><span class="p">(</span><span class="n">config</span><span class="p">);</span>
+    <span class="n">m_thread</span><span class="p">.</span><span class="n">Start</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">bind</span><span class="p">(</span><span class="o">&amp;</span><span class="n">GroupServer</span><span class="o">::</span><span class="n">HandleThreadMsg</span><span class="p">,</span> <span class="k">this</span><span class="p">,</span> <span class="n">_1</span><span class="p">,</span> <span class="n">_2</span><span class="p">,</span> <span class="n">_3</span><span class="p">));</span>
+    <span class="n">InitLogger</span><span class="p">();</span>
+    <span class="n">InitSessionMgr</span><span class="p">();</span>
+    <span class="n">InitZkClient</span><span class="p">();</span>
+    <span class="n">InitKafkaMsgMgr</span><span class="p">();</span>
+    <span class="n">m_session_msg_processor</span><span class="p">.</span><span class="n">StatisticsConcurrency</span><span class="p">();</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">m_already_register_zk</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">this_thread</span><span class="o">::</span><span class="n">sleep_for</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="p">(</span><span class="mi">100</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="n">INFO</span><span class="p">(</span>
+        <span class="s">&quot;GroupServer Start succeed. instance_id: %s, kafka_brokers: %s, consumer_group: %s, &quot;</span>
+        <span class="s">&quot;sc_topic: %s, gc_topic: %s, broadcast_topic: %s, app_id: %u, listen_port: %u, &quot;</span>
+        <span class="s">&quot;ip: %s, zookeeper: %s, zk_root_node: %s&quot;</span><span class="p">,</span>
+        <span class="n">g_config</span><span class="p">.</span><span class="n">instance_id</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">g_config</span><span class="p">.</span><span class="n">kafka_brokers</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span>
+        <span class="n">g_config</span><span class="p">.</span><span class="n">consumer_group</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">g_config</span><span class="p">.</span><span class="n">sc_topic</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">g_config</span><span class="p">.</span><span class="n">gc_topic</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span>
+        <span class="n">g_config</span><span class="p">.</span><span class="n">broadcast_topic</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">g_config</span><span class="p">.</span><span class="n">app_id</span><span class="p">,</span> <span class="n">g_config</span><span class="p">.</span><span class="n">listen_port</span><span class="p">,</span>
+        <span class="n">g_config</span><span class="p">.</span><span class="n">ip</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">g_config</span><span class="p">.</span><span class="n">zookeeper</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">g_config</span><span class="p">.</span><span class="n">zk_root_node</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+
+    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">GroupServer</span><span class="o">::</span><span class="n">Stop</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">INFO</span><span class="p">(</span><span class="s">&quot;GroupServer Stopped.&quot;</span><span class="p">);</span>
+
+    <span class="n">g_kafka_msg_mgr</span><span class="p">.</span><span class="n">Stop</span><span class="p">();</span>
+    <span class="n">g_session_mgr</span><span class="o">-&gt;</span><span class="n">UnRegisterApplication</span><span class="p">(</span><span class="n">g_config</span><span class="p">.</span><span class="n">app_id</span><span class="p">);</span>
+    <span class="n">g_zkclient</span><span class="p">.</span><span class="n">Unregister</span><span class="p">(</span><span class="o">::</span><span class="n">fsp</span><span class="o">::</span><span class="n">sss</span><span class="o">::</span><span class="n">common</span><span class="o">::</span><span class="n">GROUP_SERVER</span><span class="p">,</span> <span class="n">g_config</span><span class="p">.</span><span class="n">zk_root_node</span><span class="p">,</span>
+        <span class="n">g_config</span><span class="p">.</span><span class="n">instance_id</span><span class="p">,</span> <span class="k">nullptr</span><span class="p">);</span>
+    <span class="n">g_logger</span><span class="p">.</span><span class="n">Stop</span><span class="p">();</span>
+    <span class="n">m_thread</span><span class="p">.</span><span class="n">Stop</span><span class="p">();</span>
+
+    <span class="n">m_running</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="n">GroupServer</span><span class="o">::</span><span class="n">Running</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">m_running</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">GroupServer</span><span class="o">::</span><span class="n">InitConfig</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">config</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Json</span><span class="o">::</span><span class="n">Value</span> <span class="n">root</span><span class="p">;</span>
+    <span class="n">Json</span><span class="o">::</span><span class="n">Reader</span> <span class="n">reader</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">reader</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">root</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;parse config failed&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="s">&quot;parse config failed&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">g_config</span><span class="p">.</span><span class="n">instance_id</span>            <span class="o">=</span> <span class="n">root</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;instance_id&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">).</span><span class="n">asString</span><span class="p">();</span>
+    <span class="c1">// take self instance id as consumer group id</span>
+    <span class="n">g_config</span><span class="p">.</span><span class="n">consumer_group</span>         <span class="o">=</span> <span class="n">g_config</span><span class="p">.</span><span class="n">instance_id</span><span class="p">;</span>
+    <span class="n">g_config</span><span class="p">.</span><span class="n">kafka_brokers</span>          <span class="o">=</span> <span class="n">root</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;kafka_brokers&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">).</span><span class="n">asString</span><span class="p">();</span>
+    <span class="n">g_config</span><span class="p">.</span><span class="n">sc_topic</span>               <span class="o">=</span> <span class="n">root</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;sc_topic&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">).</span><span class="n">asString</span><span class="p">();</span>
+    <span class="n">g_config</span><span class="p">.</span><span class="n">gc_topic</span>               <span class="o">=</span> <span class="n">root</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;gc_topic&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">).</span><span class="n">asString</span><span class="p">();</span>
+    <span class="n">g_config</span><span class="p">.</span><span class="n">broadcast_topic</span>        <span class="o">=</span> <span class="n">root</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;broadcast_topic&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">).</span><span class="n">asString</span><span class="p">();</span>
+    <span class="n">g_config</span><span class="p">.</span><span class="n">app_id</span>                 <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// TODO:</span>
+    <span class="n">g_config</span><span class="p">.</span><span class="n">listen_port</span>            <span class="o">=</span> <span class="n">root</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;listen_port&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">).</span><span class="n">asUInt</span><span class="p">();</span>
+    <span class="n">g_config</span><span class="p">.</span><span class="n">ip</span>                     <span class="o">=</span> <span class="n">root</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;ip&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">).</span><span class="n">asString</span><span class="p">();</span>
+    <span class="n">g_config</span><span class="p">.</span><span class="n">zookeeper</span>              <span class="o">=</span> <span class="n">root</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;zookeeper&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">).</span><span class="n">asString</span><span class="p">();</span>
+    <span class="n">g_config</span><span class="p">.</span><span class="n">zk_root_node</span>           <span class="o">=</span> <span class="n">root</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;zk_root_node&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">).</span><span class="n">asString</span><span class="p">();</span>
+    <span class="n">g_config</span><span class="p">.</span><span class="n">net_address_list</span>       <span class="o">=</span> <span class="n">root</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;net_address_list&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">).</span><span class="n">asString</span><span class="p">();</span>
+    <span class="n">g_config</span><span class="p">.</span><span class="n">trace_path</span>             <span class="o">=</span> <span class="n">root</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;trace_path&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">).</span><span class="n">asString</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">g_config</span><span class="p">.</span><span class="n">instance_id</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">||</span> <span class="n">g_config</span><span class="p">.</span><span class="n">kafka_brokers</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">||</span>
+        <span class="n">g_config</span><span class="p">.</span><span class="n">sc_topic</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">||</span> <span class="n">g_config</span><span class="p">.</span><span class="n">gc_topic</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">||</span> <span class="n">g_config</span><span class="p">.</span><span class="n">app_id</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span>
+        <span class="n">g_config</span><span class="p">.</span><span class="n">listen_port</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">g_config</span><span class="p">.</span><span class="n">ip</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">||</span> <span class="n">g_config</span><span class="p">.</span><span class="n">zookeeper</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">||</span>
+        <span class="n">g_config</span><span class="p">.</span><span class="n">zk_root_node</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">||</span> <span class="n">g_config</span><span class="p">.</span><span class="n">consumer_group</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">||</span>
+        <span class="n">g_config</span><span class="p">.</span><span class="n">broadcast_topic</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;invalid config item&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="s">&quot;invalid config item&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">GroupServer</span><span class="o">::</span><span class="n">InitLogger</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">util</span><span class="o">::</span><span class="n">FilePrinter</span><span class="o">::</span><span class="n">Config</span> <span class="n">log_config</span><span class="p">;</span>
+    <span class="n">log_config</span><span class="p">.</span><span class="n">log_module_name</span> <span class="o">=</span> <span class="n">g_config</span><span class="p">.</span><span class="n">log_module_name</span><span class="p">;</span>
+    <span class="n">log_config</span><span class="p">.</span><span class="n">max_file_size</span>   <span class="o">=</span> <span class="n">g_config</span><span class="p">.</span><span class="n">max_file_size</span><span class="p">;</span>
+
+    <span class="n">g_printer</span><span class="p">.</span><span class="n">SetConfig</span><span class="p">(</span><span class="n">log_config</span><span class="p">);</span>
+
+    <span class="n">g_logger</span><span class="p">.</span><span class="n">AddPrinter</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">bind</span><span class="p">(</span><span class="o">&amp;</span><span class="n">util</span><span class="o">::</span><span class="n">FilePrinter</span><span class="o">::</span><span class="n">OnLog</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">g_printer</span><span class="p">,</span> <span class="n">_1</span><span class="p">,</span> <span class="n">_2</span><span class="p">));</span>
+    <span class="n">g_logger</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>
+
+    <span class="n">util</span><span class="o">::</span><span class="n">TracePrinter</span><span class="o">::</span><span class="n">Config</span> <span class="n">trace_config</span><span class="p">;</span>
+    <span class="n">trace_config</span><span class="p">.</span><span class="n">trace_path</span> <span class="o">=</span> <span class="n">g_config</span><span class="p">.</span><span class="n">trace_path</span><span class="p">;</span>
+    <span class="n">trace_config</span><span class="p">.</span><span class="n">device_id</span> <span class="o">=</span> <span class="n">g_config</span><span class="p">.</span><span class="n">instance_id</span><span class="p">;</span>
+    <span class="n">m_trace</span><span class="p">.</span><span class="n">SetConfig</span><span class="p">(</span><span class="n">trace_config</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">GroupServer</span><span class="o">::</span><span class="n">InitZkClient</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// default timeout : 3000</span>
+    <span class="n">CHAR</span> <span class="n">connect_str</span><span class="p">[</span><span class="n">MAX_PATH</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+    <span class="kt">uint32_t</span> <span class="n">size</span> <span class="o">=</span> <span class="n">MAX_PATH</span><span class="p">;</span>
+    <span class="n">g_session_mgr</span><span class="o">-&gt;</span><span class="n">GetAddrLink</span><span class="p">(</span><span class="n">connect_str</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">size</span><span class="p">,</span> <span class="n">TRUE</span><span class="p">,</span> <span class="n">TRUE</span><span class="p">);</span>
+    <span class="n">g_config</span><span class="p">.</span><span class="n">connect_str</span> <span class="o">=</span> <span class="n">fsp</span><span class="o">::</span><span class="n">sss</span><span class="o">::</span><span class="n">common</span><span class="o">::</span><span class="n">FilterKCP</span><span class="p">(</span><span class="n">connect_str</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">g_zkclient</span><span class="p">.</span><span class="n">Init</span><span class="p">(</span><span class="n">g_config</span><span class="p">.</span><span class="n">zookeeper</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="mi">3000</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">result</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">FATAL</span><span class="p">(</span><span class="s">&quot;ZKClient::Init failed, errcode is %u&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">);</span>
+        <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="s">&quot;ZkClient Init failed.&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">RegisterCallback</span> <span class="n">cb</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">bind</span><span class="p">(</span><span class="o">&amp;</span><span class="n">GroupServer</span><span class="o">::</span><span class="n">RegisterZkCallback</span><span class="p">,</span> <span class="k">this</span><span class="p">,</span> <span class="n">_1</span><span class="p">);</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">g_zkclient</span><span class="p">.</span><span class="n">Register</span><span class="p">(</span><span class="o">::</span><span class="n">fsp</span><span class="o">::</span><span class="n">sss</span><span class="o">::</span><span class="n">common</span><span class="o">::</span><span class="n">GROUP_SERVER</span><span class="p">,</span> <span class="n">g_config</span><span class="p">.</span><span class="n">zk_root_node</span><span class="p">,</span>
+                                 <span class="n">g_config</span><span class="p">.</span><span class="n">instance_id</span><span class="p">,</span>
+                                 <span class="n">g_config</span><span class="p">.</span><span class="n">ip</span><span class="p">,</span> <span class="n">g_config</span><span class="p">.</span><span class="n">listen_port</span><span class="p">,</span> <span class="n">g_config</span><span class="p">.</span><span class="n">connect_str</span><span class="p">,</span> <span class="n">cb</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">result</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">FATAL</span><span class="p">(</span><span class="s">&quot;ZKClient::Register failed, error code is %d&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">);</span>
+        <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="s">&quot;ZkClient Init failed.&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">GroupServer</span><span class="o">::</span><span class="n">RegisterZkCallback</span><span class="p">(</span><span class="kt">int</span> <span class="n">rc</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">rc</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">m_already_register_zk</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="n">INFO</span><span class="p">(</span><span class="s">&quot;zookeeper register succeed.&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+        <span class="n">WARN</span><span class="p">(</span><span class="s">&quot;zookeeper register failed, error code is %d. retry...&quot;</span><span class="p">,</span> <span class="n">rc</span><span class="p">);</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">rc</span> <span class="o">==</span> <span class="n">fsp</span><span class="o">::</span><span class="n">sss</span><span class="o">::</span><span class="n">common</span><span class="o">::</span><span class="n">ZK_CONNECTION_LOSS</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">InitZkClient</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="n">RegisterCallback</span> <span class="n">cb</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">bind</span><span class="p">(</span><span class="o">&amp;</span><span class="n">GroupServer</span><span class="o">::</span><span class="n">RegisterZkCallback</span><span class="p">,</span> <span class="k">this</span><span class="p">,</span> <span class="n">_1</span><span class="p">);</span>
+            <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="k">do</span>
+            <span class="p">{</span>
+                <span class="n">rc</span> <span class="o">=</span> <span class="n">g_zkclient</span><span class="p">.</span><span class="n">Register</span><span class="p">(</span><span class="o">::</span><span class="n">fsp</span><span class="o">::</span><span class="n">sss</span><span class="o">::</span><span class="n">common</span><span class="o">::</span><span class="n">GROUP_SERVER</span><span class="p">,</span> <span class="n">g_config</span><span class="p">.</span><span class="n">zk_root_node</span><span class="p">,</span>
+                                         <span class="n">g_config</span><span class="p">.</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">g_config</span><span class="p">.</span><span class="n">ip</span><span class="p">,</span>
+                                         <span class="n">g_config</span><span class="p">.</span><span class="n">listen_port</span><span class="p">,</span> <span class="n">g_config</span><span class="p">.</span><span class="n">connect_str</span><span class="p">,</span> <span class="n">cb</span><span class="p">);</span>
+                <span class="n">usleep</span><span class="p">(</span><span class="mi">20000</span><span class="p">);</span>
+            <span class="p">}</span><span class="k">while</span> <span class="p">(</span><span class="n">rc</span> <span class="o">==</span> <span class="n">fsp</span><span class="o">::</span><span class="n">sss</span><span class="o">::</span><span class="n">common</span><span class="o">::</span><span class="n">ZK_CREATE_ERROR</span> <span class="o">&amp;&amp;</span> <span class="n">count</span><span class="o">++</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">);</span>
+
+            <span class="n">INFO</span><span class="p">(</span><span class="s">&quot;zookeeper register retry start, rc = %d.&quot;</span><span class="p">,</span> <span class="n">rc</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">GroupServer</span><span class="o">::</span><span class="n">InitSessionMgr</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">common</span><span class="o">::</span><span class="n">ComponentMgr</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">SetNetIPList</span><span class="p">(</span><span class="n">g_config</span><span class="p">.</span><span class="n">net_address_list</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+    <span class="n">g_session_mgr</span> <span class="o">=</span> <span class="n">common</span><span class="o">::</span><span class="n">ComponentMgr</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetSessionMgr</span><span class="p">();</span>
+    <span class="n">AVQosInit</span><span class="p">(</span><span class="n">common</span><span class="o">::</span><span class="n">ComponentMgr</span><span class="o">::</span><span class="n">Instance</span><span class="p">().</span><span class="n">GetComponentFactory</span><span class="p">(),</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">TRUE</span><span class="p">);</span>
+
+    <span class="n">InitNotify</span><span class="p">();</span>
+    <span class="n">common</span><span class="o">::</span><span class="n">ComponentMgr</span><span class="o">::</span><span class="n">InitSessionMgrForServer</span><span class="p">(</span><span class="n">g_session_mgr</span><span class="p">,</span> <span class="n">g_config</span><span class="p">.</span><span class="n">app_id</span><span class="p">,</span>
+                                                   <span class="n">g_config</span><span class="p">.</span><span class="n">listen_port</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m_notify</span><span class="p">,</span>
+                                                   <span class="n">g_config</span><span class="p">.</span><span class="n">session_security_type</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">GroupServer</span><span class="o">::</span><span class="n">InitKafkaMsgMgr</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">auto</span> <span class="n">result</span> <span class="o">=</span> <span class="n">g_kafka_msg_mgr</span><span class="p">.</span><span class="n">Start</span><span class="p">(</span><span class="n">g_config</span><span class="p">.</span><span class="n">kafka_brokers</span><span class="p">,</span> <span class="n">g_config</span><span class="p">.</span><span class="n">instance_id</span><span class="p">,</span>
+                                        <span class="n">g_config</span><span class="p">.</span><span class="n">consumer_group</span><span class="p">,</span>
+                                        <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">{</span><span class="n">g_config</span><span class="p">.</span><span class="n">instance_id</span><span class="p">,</span>
+                                        <span class="n">g_config</span><span class="p">.</span><span class="n">broadcast_topic</span><span class="p">},</span>
+                                        <span class="n">std</span><span class="o">::</span><span class="n">bind</span><span class="p">(</span><span class="o">&amp;</span><span class="n">GroupServer</span><span class="o">::</span><span class="n">OnKafkaMsg</span><span class="p">,</span> <span class="k">this</span><span class="p">,</span> <span class="n">_1</span><span class="p">));</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">result</span> <span class="o">!=</span> <span class="o">::</span><span class="n">fsp</span><span class="o">::</span><span class="n">sss</span><span class="o">::</span><span class="n">common</span><span class="o">::</span><span class="n">KAFKA_SUCCESS</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">FATAL</span><span class="p">(</span><span class="s">&quot;GroupServer start failed, instance_id: %s, sc_topic: %s, brokers: %s&quot;</span><span class="p">,</span>
+              <span class="n">g_config</span><span class="p">.</span><span class="n">instance_id</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">g_config</span><span class="p">.</span><span class="n">sc_topic</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span>
+              <span class="n">g_config</span><span class="p">.</span><span class="n">kafka_brokers</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+        <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="s">&quot;KafkaMsgMgr start failed&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">INFO</span><span class="p">(</span><span class="s">&quot;KafkaMsgMgr started&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">GroupServer</span><span class="o">::</span><span class="n">InitNotify</span><span class="p">()</span> <span class="k">noexcept</span>
+<span class="p">{</span>
+    <span class="n">m_notify</span><span class="p">.</span><span class="n">nNotifyMode</span>             <span class="o">=</span> <span class="n">WBASE_NOTIFYMODE_CALLBACK</span><span class="p">;</span>
+    <span class="n">m_notify</span><span class="p">.</span><span class="n">CallbackMode</span><span class="p">.</span><span class="n">pCallback</span>  <span class="o">=</span> <span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="kt">void</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">OnSessionMsg</span><span class="p">);</span>
+    <span class="n">m_notify</span><span class="p">.</span><span class="n">CallbackMode</span><span class="p">.</span><span class="n">nMsgID</span>     <span class="o">=</span> <span class="n">SESSION_MSG</span><span class="p">;</span>
+    <span class="n">m_notify</span><span class="p">.</span><span class="n">CallbackMode</span><span class="p">.</span><span class="n">dwUserData</span> <span class="o">=</span> <span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="kt">uint64_t</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_thread</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">GroupServer</span><span class="o">::</span><span class="n">OnKafkaMsg</span><span class="p">(</span><span class="n">KafkaMsg</span> <span class="o">&amp;&amp;</span><span class="n">msg</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">m_thread</span><span class="p">.</span><span class="n">PostThreadMsg</span><span class="p">(</span><span class="k">new</span> <span class="n">KafkaMsg</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">msg</span><span class="p">)),</span> <span class="n">KAFKA_MSG</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">GroupServer</span><span class="o">::</span><span class="n">HandleThreadMsg</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="kt">int64_t</span> <span class="n">msg_class</span><span class="p">,</span> <span class="kt">uint64_t</span> <span class="n">session_id</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="n">msg_class</span><span class="p">)</span>
+    <span class="p">{</span>
+    <span class="k">case</span> <span class="nl">SESSION_MSG</span><span class="p">:</span>
+    <span class="p">{</span>
+        <span class="n">SESSION_EVENT</span> <span class="o">*</span><span class="n">event</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">((</span><span class="n">event</span> <span class="o">=</span> <span class="n">g_session_mgr</span><span class="o">-&gt;</span><span class="n">GetEvent</span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">uint16_t</span><span class="o">&gt;</span><span class="p">(</span><span class="n">session_id</span><span class="p">))))</span>
+        <span class="p">{</span>
+            <span class="n">m_session_msg_processor</span><span class="p">.</span><span class="n">OnSessionEvent</span><span class="p">(</span><span class="o">*</span><span class="n">event</span><span class="p">);</span>
+            <span class="n">g_session_mgr</span><span class="o">-&gt;</span><span class="n">FreeEvent</span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">uint16_t</span><span class="o">&gt;</span><span class="p">(</span><span class="n">session_id</span><span class="p">),</span> <span class="n">event</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">case</span> <span class="nl">KAFKA_MSG</span><span class="p">:</span>
+    <span class="p">{</span>
+        <span class="n">KafkaMsg</span> <span class="o">*</span><span class="n">msg</span> <span class="o">=</span> <span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="n">KafkaMsg</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+        <span class="n">assert</span><span class="p">(</span><span class="n">msg</span><span class="p">);</span>
+        <span class="n">m_session_msg_processor</span><span class="p">.</span><span class="n">OnKafkaMsg</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="o">*</span><span class="n">msg</span><span class="p">));</span>
+        <span class="k">delete</span> <span class="n">msg</span><span class="p">;</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">default</span><span class="o">:</span>
+        <span class="n">ERROR</span><span class="p">(</span><span class="s">&quot;invalid msg_class: %llu&quot;</span><span class="p">,</span> <span class="n">msg_class</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="p">}</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</body>
+</html>

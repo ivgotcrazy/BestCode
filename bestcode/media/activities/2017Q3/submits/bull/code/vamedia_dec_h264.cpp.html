@@ -1,0 +1,1066 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #333333 }
+body  { background: #111111; color: #ffffff }
+body .c { color: #008800; font-style: italic; background-color: #0f140f } /* Comment */
+body .err { color: #ffffff } /* Error */
+body .esc { color: #ffffff } /* Escape */
+body .g { color: #ffffff } /* Generic */
+body .k { color: #fb660a; font-weight: bold } /* Keyword */
+body .l { color: #ffffff } /* Literal */
+body .n { color: #ffffff } /* Name */
+body .o { color: #ffffff } /* Operator */
+body .x { color: #ffffff } /* Other */
+body .p { color: #ffffff } /* Punctuation */
+body .ch { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Hashbang */
+body .cm { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Multiline */
+body .cp { color: #ff0007; font-weight: bold; font-style: italic; background-color: #0f140f } /* Comment.Preproc */
+body .cpf { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.PreprocFile */
+body .c1 { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Single */
+body .cs { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Special */
+body .gd { color: #ffffff } /* Generic.Deleted */
+body .ge { color: #ffffff } /* Generic.Emph */
+body .gr { color: #ffffff } /* Generic.Error */
+body .gh { color: #ffffff; font-weight: bold } /* Generic.Heading */
+body .gi { color: #ffffff } /* Generic.Inserted */
+body .go { color: #444444; background-color: #222222 } /* Generic.Output */
+body .gp { color: #ffffff } /* Generic.Prompt */
+body .gs { color: #ffffff } /* Generic.Strong */
+body .gu { color: #ffffff; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #ffffff } /* Generic.Traceback */
+body .kc { color: #fb660a; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #fb660a; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #fb660a; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #fb660a } /* Keyword.Pseudo */
+body .kr { color: #fb660a; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #cdcaa9; font-weight: bold } /* Keyword.Type */
+body .ld { color: #ffffff } /* Literal.Date */
+body .m { color: #0086f7; font-weight: bold } /* Literal.Number */
+body .s { color: #0086d2 } /* Literal.String */
+body .na { color: #ff0086; font-weight: bold } /* Name.Attribute */
+body .nb { color: #ffffff } /* Name.Builtin */
+body .nc { color: #ffffff } /* Name.Class */
+body .no { color: #0086d2 } /* Name.Constant */
+body .nd { color: #ffffff } /* Name.Decorator */
+body .ni { color: #ffffff } /* Name.Entity */
+body .ne { color: #ffffff } /* Name.Exception */
+body .nf { color: #ff0086; font-weight: bold } /* Name.Function */
+body .nl { color: #ffffff } /* Name.Label */
+body .nn { color: #ffffff } /* Name.Namespace */
+body .nx { color: #ffffff } /* Name.Other */
+body .py { color: #ffffff } /* Name.Property */
+body .nt { color: #fb660a; font-weight: bold } /* Name.Tag */
+body .nv { color: #fb660a } /* Name.Variable */
+body .ow { color: #ffffff } /* Operator.Word */
+body .w { color: #888888 } /* Text.Whitespace */
+body .mb { color: #0086f7; font-weight: bold } /* Literal.Number.Bin */
+body .mf { color: #0086f7; font-weight: bold } /* Literal.Number.Float */
+body .mh { color: #0086f7; font-weight: bold } /* Literal.Number.Hex */
+body .mi { color: #0086f7; font-weight: bold } /* Literal.Number.Integer */
+body .mo { color: #0086f7; font-weight: bold } /* Literal.Number.Oct */
+body .sa { color: #0086d2 } /* Literal.String.Affix */
+body .sb { color: #0086d2 } /* Literal.String.Backtick */
+body .sc { color: #0086d2 } /* Literal.String.Char */
+body .dl { color: #0086d2 } /* Literal.String.Delimiter */
+body .sd { color: #0086d2 } /* Literal.String.Doc */
+body .s2 { color: #0086d2 } /* Literal.String.Double */
+body .se { color: #0086d2 } /* Literal.String.Escape */
+body .sh { color: #0086d2 } /* Literal.String.Heredoc */
+body .si { color: #0086d2 } /* Literal.String.Interpol */
+body .sx { color: #0086d2 } /* Literal.String.Other */
+body .sr { color: #0086d2 } /* Literal.String.Regex */
+body .s1 { color: #0086d2 } /* Literal.String.Single */
+body .ss { color: #0086d2 } /* Literal.String.Symbol */
+body .bp { color: #ffffff } /* Name.Builtin.Pseudo */
+body .fm { color: #ff0086; font-weight: bold } /* Name.Function.Magic */
+body .vc { color: #fb660a } /* Name.Variable.Class */
+body .vg { color: #fb660a } /* Name.Variable.Global */
+body .vi { color: #fb660a } /* Name.Variable.Instance */
+body .vm { color: #fb660a } /* Name.Variable.Magic */
+body .il { color: #0086f7; font-weight: bold } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="cm">/*******************************************************************************</span>
+<span class="cm">* 文  件: VADecH264.cpp</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">* 创  建: 2015年12月08日</span>
+<span class="cm">* 版  权: CopyRight(C) 2015 Fsmeeting.com. All rights reserved.</span>
+<span class="cm">* 描  述: H264解码功能实现类</span>
+<span class="cm">********************************************************************************/</span>
+
+<span class="cm">/**************************** 条件编译选项和头文件 ****************************/</span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;vamedia_dec_h264.h&quot;</span><span class="cp"></span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;AutoLock.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;BaseFileFunction.h&quot;</span><span class="cp"></span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;media_factory.h&quot;</span><span class="cp"></span>
+
+<span class="cm">/********************************** 常量和宏 **********************************/</span>
+
+<span class="cm">/********************************** 数据类型 **********************************/</span>
+
+<span class="cm">/**********************************   变量   **********************************/</span>
+
+<span class="cm">/********************************** 函数实现 **********************************/</span>
+
+<span class="cm">/********************************** 类实现 ***********************************/</span>
+
+<span class="n">VADecH264</span><span class="o">::</span><span class="n">VADecH264</span><span class="p">()</span>
+<span class="p">{</span>    
+    <span class="n">m_h264_info_ptr</span> <span class="o">=</span> <span class="n">NewH264Stream</span><span class="p">();</span>  
+    <span class="n">m_src_props_ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TSourceProps</span><span class="p">;</span>
+
+    <span class="n">pthread_mutex_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_decode_mtx</span><span class="p">,</span> <span class="k">nullptr</span><span class="p">);</span>
+    <span class="n">pthread_mutex_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_out_frame_mtx</span><span class="p">,</span> <span class="k">nullptr</span><span class="p">);</span>
+    <span class="n">pthread_cond_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_out_frame_cond</span><span class="p">,</span> <span class="k">nullptr</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">VADecH264</span><span class="o">::~</span><span class="n">VADecH264</span><span class="p">()</span>
+<span class="p">{</span>    
+    <span class="n">FreeH264Stream</span><span class="p">(</span><span class="n">m_h264_info_ptr</span><span class="p">);</span>
+    <span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">m_src_props_ptr</span><span class="p">);</span>
+
+    <span class="n">pthread_mutex_destroy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_decode_mtx</span><span class="p">);</span>
+    <span class="n">pthread_mutex_destroy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_out_frame_mtx</span><span class="p">);</span>
+    <span class="n">pthread_cond_destroy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_out_frame_cond</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: InitVAPicture</span>
+<span class="cm">* 描  述: 初始化VAPicture</span>
+<span class="cm">* 参  数: i_pVAPic</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年03月18日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VADecH264</span><span class="o">::</span><span class="n">InitVAPicture</span><span class="p">(</span><span class="n">VAPictureH264</span><span class="o">*</span> <span class="n">i_va_pic_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">i_va_pic_ptr</span><span class="o">-&gt;</span><span class="n">picture_id</span>          <span class="o">=</span> <span class="n">VA_INVALID_ID</span><span class="p">;</span>
+    <span class="n">i_va_pic_ptr</span><span class="o">-&gt;</span><span class="n">flags</span>               <span class="o">=</span> <span class="n">VA_PICTURE_H264_INVALID</span><span class="p">;</span>
+    <span class="n">i_va_pic_ptr</span><span class="o">-&gt;</span><span class="n">TopFieldOrderCnt</span>    <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">i_va_pic_ptr</span><span class="o">-&gt;</span><span class="n">BottomFieldOrderCnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">i_va_pic_ptr</span><span class="o">-&gt;</span><span class="n">frame_idx</span>           <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: VAInitDecode</span>
+<span class="cm">* 描  述: 初始化h264解码器</span>
+<span class="cm">* 参  数: i_pDecInfo: 解码参数集</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 2015年12月10日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">********************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VADecH264</span><span class="o">::</span><span class="n">CreateDecoder</span><span class="p">(</span><span class="n">TSourceProps</span><span class="o">*</span> <span class="n">i_src_props_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">i_src_props_ptr</span><span class="p">,</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">);</span>
+
+    <span class="n">VAImageFormat</span> <span class="n">va_img_format</span><span class="p">;</span>
+    <span class="n">va_img_format</span><span class="p">.</span><span class="n">fourcc</span> <span class="o">=</span> <span class="n">VA_FOURCC_NV12</span><span class="p">;</span>    
+    <span class="n">va_img_format</span><span class="p">.</span><span class="n">byte_order</span> <span class="o">=</span> <span class="n">VA_LSB_FIRST</span><span class="p">;</span>
+    <span class="n">va_img_format</span><span class="p">.</span><span class="n">bits_per_pixel</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+
+	<span class="n">m_src_size</span><span class="p">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">AlignSize</span><span class="p">(</span><span class="n">i_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_size</span><span class="p">.</span><span class="n">width</span><span class="p">);</span>
+	<span class="n">m_src_size</span><span class="p">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">AlignSize</span><span class="p">(</span><span class="n">i_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_size</span><span class="p">.</span><span class="n">height</span><span class="p">);</span>
+    <span class="n">m_dec_img_ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">VAImage</span><span class="p">;</span>
+	<span class="n">vaCreateImage</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">va_img_format</span><span class="p">,</span> <span class="n">i_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">i_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_size</span><span class="p">.</span><span class="n">height</span><span class="p">,</span> <span class="n">m_dec_img_ptr</span><span class="p">);</span>
+        
+    <span class="n">memcpy</span><span class="p">(</span><span class="n">m_src_props_ptr</span><span class="p">,</span> <span class="n">i_src_props_ptr</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="o">*</span><span class="n">m_src_props_ptr</span><span class="p">));</span>
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Init EncSource[%d], SrcSize[%dx%d]&quot;</span><span class="p">,</span> <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_id</span><span class="p">,</span> <span class="n">m_src_size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">m_src_size</span><span class="p">.</span><span class="n">height</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: SetCallBack</span>
+<span class="cm">* 描  述: 设置解码数据回调</span>
+<span class="cm">* 参  数: i_pCallBack</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年03月07日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VADecH264</span><span class="o">::</span><span class="n">SetDecDataCallBack</span><span class="p">(</span><span class="n">IVCallBack</span><span class="o">*</span> <span class="n">i_callback_ptr</span><span class="p">,</span> <span class="n">TDecOutProps</span><span class="o">*</span> <span class="n">i_dec_param_ptr</span><span class="p">)</span>
+<span class="p">{</span>    
+    <span class="n">CAutoLock</span> <span class="n">lock</span><span class="p">(</span><span class="n">m_decode_mtx</span><span class="p">);</span>   
+
+    <span class="n">m_out_surf_id_list</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_dec_count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>    
+    
+    <span class="k">if</span><span class="p">(</span> <span class="n">i_callback_ptr</span> <span class="o">!=</span> <span class="k">nullptr</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span> <span class="n">m_out_props_ptr</span> <span class="o">!=</span> <span class="k">nullptr</span> <span class="p">)</span>
+            <span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">m_out_props_ptr</span><span class="p">);</span>
+
+        <span class="n">m_out_props_ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TDecOutProps</span><span class="p">();</span>
+        <span class="k">if</span><span class="p">(</span> <span class="n">i_dec_param_ptr</span> <span class="o">!=</span> <span class="k">nullptr</span> <span class="p">)</span>
+        <span class="p">{</span><span class="c1">// 按参数取解码数据</span>
+            <span class="n">m_set_out_props</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="n">memcpy</span><span class="p">(</span><span class="n">m_out_props_ptr</span><span class="p">,</span> <span class="n">i_dec_param_ptr</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">TDecOutProps</span><span class="p">));</span><span class="c1">//NOLINT</span>
+
+            <span class="k">if</span><span class="p">(</span> <span class="n">m_out_props_ptr</span><span class="o">-&gt;</span><span class="n">frame_interval</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="p">)</span>
+                <span class="n">m_out_props_ptr</span><span class="o">-&gt;</span><span class="n">frame_interval</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">StartThread</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span> <span class="n">m_exit_code</span> <span class="o">==</span> <span class="n">EM_TS_RUN</span> <span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">pthread_mutex_lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_out_frame_mtx</span><span class="p">);</span>
+            <span class="n">m_exit_code</span> <span class="o">=</span> <span class="n">EM_TS_STOPING</span><span class="p">;</span>     
+            <span class="n">pthread_cond_signal</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_out_frame_cond</span><span class="p">);</span>  
+            <span class="n">pthread_mutex_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_out_frame_mtx</span><span class="p">);</span>
+
+            <span class="k">while</span><span class="p">(</span><span class="n">m_exit_code</span> <span class="o">!=</span> <span class="n">EM_TS_STOP</span><span class="p">)</span>
+                <span class="n">usleep</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">m_out_props_ptr</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">m_callback_ptr</span> <span class="o">=</span> <span class="n">i_callback_ptr</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span> <span class="n">m_out_props_ptr</span> <span class="o">!=</span> <span class="k">nullptr</span> <span class="p">)</span>
+        <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Source[%d] Need DecData CallBack, Scale[%.3f], OutType[%d], Space[%d]&quot;</span><span class="p">,</span>
+                  <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_id</span><span class="p">,</span> <span class="n">m_out_props_ptr</span><span class="o">-&gt;</span><span class="n">scale</span><span class="p">,</span>
+                  <span class="n">m_out_props_ptr</span><span class="o">-&gt;</span><span class="n">out_type</span><span class="p">,</span><span class="n">m_out_props_ptr</span><span class="o">-&gt;</span><span class="n">frame_interval</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: DestroyDecoder</span>
+<span class="cm">* 描  述: 关闭h264解码器</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 2015年12月08日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">********************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VADecH264</span><span class="o">::</span><span class="n">DestroyDecoder</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_exit_code</span> <span class="o">==</span> <span class="n">EM_TS_RUN</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">pthread_mutex_lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_out_frame_mtx</span><span class="p">);</span>
+        <span class="n">m_exit_code</span> <span class="o">=</span> <span class="n">EM_TS_STOPING</span><span class="p">;</span> 
+        <span class="n">pthread_cond_signal</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_out_frame_cond</span><span class="p">);</span>
+        <span class="n">pthread_mutex_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_out_frame_mtx</span><span class="p">);</span>
+
+        <span class="k">while</span> <span class="p">(</span><span class="n">m_exit_code</span> <span class="o">!=</span> <span class="n">EM_TS_STOP</span><span class="p">)</span>
+            <span class="n">usleep</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">SetDecDataCallBack</span><span class="p">(</span><span class="k">nullptr</span><span class="p">,</span> <span class="k">nullptr</span><span class="p">);</span>
+
+    <span class="n">CAutoLock</span> <span class="nf">lock</span><span class="p">(</span><span class="n">m_decode_mtx</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span> <span class="n">m_is_inited_vaapi</span> <span class="p">)</span>
+    <span class="p">{</span><span class="c1">// 初始化后才释放</span>
+        <span class="n">vaDestroySurfaces</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span><span class="o">&amp;</span><span class="n">m_va_surface_id</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">VA_SURFACE_SIZE</span><span class="p">);</span>
+        <span class="n">vaDestroyBuffer</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span><span class="n">m_va_picture_id</span><span class="p">);</span>
+        <span class="n">vaDestroyBuffer</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span><span class="n">m_va_iq_matrix_id</span><span class="p">);</span>
+        <span class="n">vaDestroyContext</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span><span class="n">m_va_context_id</span><span class="p">);</span>
+        <span class="n">vaDestroyConfig</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span><span class="n">m_va_config_id</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_dec_img_ptr</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">vaDestroyImage</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">m_dec_img_ptr</span><span class="o">-&gt;</span><span class="n">image_id</span><span class="p">);</span>
+        <span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">m_dec_img_ptr</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="n">SAFE_DELETE_ARRAY</span><span class="p">(</span><span class="n">m_va_slice_param_ptr</span><span class="p">);</span>    
+
+    <span class="n">m_use_surf_id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>    
+    <span class="n">m_is_inited_vaapi</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">m_set_out_props</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">m_dec_count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>    
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;UnInit EncSource[%d]&quot;</span><span class="p">,</span> <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_id</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: InitVAAPI</span>
+<span class="cm">* 描  述: 通过解码参数来设置vaapi</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 2015年12月08日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">********************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VADecH264</span><span class="o">::</span><span class="n">InitVAAPI</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">VAStatus</span>   <span class="n">va_status</span><span class="p">;</span>
+    <span class="n">VAEntrypoint</span><span class="o">*</span> <span class="n">entry_point_ptr</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">entry_pt_num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="n">val_entry_pt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">max_display_attr</span> <span class="o">=</span> <span class="n">vaMaxNumDisplayAttributes</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">);</span>
+    
+    <span class="k">if</span><span class="p">(</span> <span class="n">EM_RC_OK</span> <span class="o">!=</span> <span class="n">GetVAProfile</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">EM_RC_OP_NOT_SUPPORT</span><span class="p">;</span>    
+
+    <span class="n">entry_point_ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">VAEntrypoint</span><span class="p">[</span><span class="n">max_display_attr</span><span class="p">];</span>
+    <span class="n">va_status</span> <span class="o">=</span> <span class="n">vaQueryConfigEntrypoints</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">m_va_profile</span><span class="p">,</span> <span class="n">entry_point_ptr</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">entry_pt_num</span><span class="p">);</span>
+    <span class="n">CHECK_VASTATUS</span><span class="p">(</span><span class="n">va_status</span><span class="p">,</span> <span class="s">&quot;vaQueryConfigEntrypoints&quot;</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="n">val_entry_pt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">val_entry_pt</span> <span class="o">&lt;</span> <span class="n">entry_pt_num</span><span class="p">;</span> <span class="n">val_entry_pt</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">entry_point_ptr</span><span class="p">[</span><span class="n">val_entry_pt</span><span class="p">]</span> <span class="o">==</span> <span class="n">VAEntrypointVLD</span><span class="p">)</span>
+            <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">val_entry_pt</span> <span class="o">==</span> <span class="n">entry_pt_num</span><span class="p">)</span><span class="c1">// not find VLD entry point </span>
+        <span class="k">return</span> <span class="n">EM_RC_DEC_NOTFIND_ENTRYPOINT</span><span class="p">;</span>
+    
+    <span class="n">m_va_attrib</span><span class="p">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">VAConfigAttribRTFormat</span><span class="p">;</span>
+    <span class="n">vaGetConfigAttributes</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">m_va_profile</span><span class="p">,</span> <span class="n">VAEntrypointVLD</span><span class="p">,</span><span class="o">&amp;</span><span class="n">m_va_attrib</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">((</span><span class="n">m_va_attrib</span><span class="p">.</span><span class="n">value</span> <span class="o">&amp;</span> <span class="n">VA_RT_FORMAT_YUV420</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span><span class="c1">// not find desired YUV420 RT format </span>
+        <span class="k">return</span> <span class="n">EM_RC_DEC_SUPPORT_YUV420</span><span class="p">;</span>
+
+    <span class="n">va_status</span> <span class="o">=</span> <span class="n">vaCreateConfig</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">m_va_profile</span><span class="p">,</span> <span class="n">VAEntrypointVLD</span><span class="p">,</span><span class="o">&amp;</span><span class="n">m_va_attrib</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="o">&amp;</span><span class="n">m_va_config_id</span><span class="p">);</span>
+    <span class="n">CHECK_VASTATUS</span><span class="p">(</span><span class="n">va_status</span><span class="p">,</span> <span class="s">&quot;vaQueryConfigEntrypoints&quot;</span><span class="p">);</span>
+
+    <span class="n">va_status</span> <span class="o">=</span> <span class="n">vaCreateSurfaces</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span><span class="n">VA_RT_FORMAT_YUV420</span><span class="p">,</span> 
+        <span class="n">m_src_size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">m_src_size</span><span class="p">.</span><span class="n">height</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m_va_surface_id</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">VA_SURFACE_SIZE</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="n">CHECK_VASTATUS</span><span class="p">(</span><span class="n">va_status</span><span class="p">,</span> <span class="s">&quot;vaCreateSurfaces&quot;</span><span class="p">);</span>
+
+    <span class="cm">/* Create a context for this decode pipe */</span>
+    <span class="n">va_status</span> <span class="o">=</span> <span class="n">vaCreateContext</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">m_va_config_id</span><span class="p">,</span> <span class="n">m_src_size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">m_src_size</span><span class="p">.</span><span class="n">height</span><span class="p">,</span>
+        <span class="n">VA_PROGRESSIVE</span><span class="p">,</span><span class="o">&amp;</span><span class="n">m_va_surface_id</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">VA_SURFACE_SIZE</span><span class="p">,</span><span class="o">&amp;</span><span class="n">m_va_context_id</span><span class="p">);</span>
+    <span class="n">CHECK_VASTATUS</span><span class="p">(</span><span class="n">va_status</span><span class="p">,</span> <span class="s">&quot;vaCreateContext&quot;</span><span class="p">);</span>
+
+    <span class="n">va_status</span> <span class="o">=</span> <span class="n">vaCreateBuffer</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">m_va_context_id</span><span class="p">,</span><span class="n">VAPictureParameterBufferType</span><span class="p">,</span>
+        <span class="k">sizeof</span><span class="p">(</span><span class="n">VAPictureParameterBufferH264</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m_va_picture_id</span><span class="p">);</span>
+    <span class="n">CHECK_VASTATUS</span><span class="p">(</span><span class="n">va_status</span><span class="p">,</span> <span class="s">&quot;vaCreateBuffer_VAPictureParameterBufferType&quot;</span><span class="p">);</span>
+
+    <span class="n">va_status</span> <span class="o">=</span> <span class="n">vaCreateBuffer</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">m_va_context_id</span><span class="p">,</span><span class="n">VAIQMatrixBufferType</span><span class="p">,</span>
+        <span class="k">sizeof</span><span class="p">(</span><span class="n">VAIQMatrixBufferH264</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m_va_iq_matrix_id</span><span class="p">);</span>
+    <span class="n">CHECK_VASTATUS</span><span class="p">(</span><span class="n">va_status</span><span class="p">,</span> <span class="s">&quot;vaCreateBuffer_VAIQMatrixBufferType&quot;</span><span class="p">);</span>
+        
+    <span class="n">m_va_slice_param_ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">VASliceParameterBufferH264</span><span class="p">[</span><span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">num_slices</span><span class="p">];</span>
+    <span class="n">SAFE_DELETE_ARRAY</span><span class="p">(</span><span class="n">entry_point_ptr</span><span class="p">);</span>
+    
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Source[%d] Init VAAPI Success, Slices[%d]&quot;</span><span class="p">,</span> <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_id</span><span class="p">,</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">num_slices</span><span class="p">);</span>
+    <span class="n">m_is_inited_vaapi</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> 
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: ParseH264</span>
+<span class="cm">* 描  述: 解析H264信息</span>
+<span class="cm">* 参  数: i_pH264Data</span>
+<span class="cm">* 参  数: i_iDataLen</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年03月18日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VADecH264</span><span class="o">::</span><span class="n">ParseH264</span><span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span> <span class="n">i_h264_data_ptr</span><span class="p">,</span><span class="kt">int</span> <span class="n">i_data_len</span><span class="p">)</span>
+<span class="p">{</span>       
+    <span class="kt">int</span> <span class="n">nal_size</span> <span class="o">=</span> <span class="n">i_data_len</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">nal_start</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">nal_end</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">nal_offset</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">find_ret</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="n">read_ret</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>    
+    <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">parse_buf_ptr</span> <span class="o">=</span> <span class="n">i_h264_data_ptr</span><span class="p">;</span>
+    <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">num_slices</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">do</span>
+    <span class="p">{</span>       
+        <span class="n">find_ret</span> <span class="o">=</span> <span class="n">FindNalUnit</span><span class="p">(</span><span class="n">parse_buf_ptr</span><span class="p">,</span> <span class="n">nal_size</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">nal_start</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">nal_end</span><span class="p">);</span>            
+        <span class="n">parse_buf_ptr</span> <span class="o">+=</span> <span class="n">nal_start</span><span class="p">;</span>  
+        <span class="n">nal_offset</span> <span class="o">+=</span> <span class="n">nal_start</span><span class="p">;</span>
+        <span class="n">read_ret</span> <span class="o">=</span> <span class="n">ReadNalUnit</span><span class="p">(</span><span class="n">m_h264_info_ptr</span><span class="p">,</span> <span class="n">parse_buf_ptr</span><span class="p">,</span> <span class="n">nal_end</span> <span class="o">-</span> <span class="n">nal_start</span><span class="p">);</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">read_ret</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">EM_RC_FILE_READ_ERR</span><span class="p">;</span>
+
+        <span class="k">if</span><span class="p">(</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">nal</span><span class="o">-&gt;</span><span class="n">nal_unit_type</span> <span class="o">==</span> <span class="n">NAL_UNIT_TYPE_CODED_SLICE_IDR</span> <span class="o">||</span> 
+            <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">nal</span><span class="o">-&gt;</span><span class="n">nal_unit_type</span> <span class="o">==</span> <span class="n">NAL_UNIT_TYPE_CODED_SLICE_NON_IDR</span> <span class="o">||</span> 
+            <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">nal</span><span class="o">-&gt;</span><span class="n">nal_unit_type</span> <span class="o">==</span> <span class="n">NAL_UNIT_TYPE_CODED_SLICE_AUX</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">slice_data_offset</span><span class="p">[</span><span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">num_slices</span><span class="p">]</span> <span class="o">=</span> <span class="n">nal_offset</span><span class="p">;</span>
+            <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">num_slices</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="n">nal_offset</span> <span class="o">+=</span> <span class="n">nal_end</span><span class="o">-</span><span class="n">nal_start</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">find_ret</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">parse_buf_ptr</span> <span class="o">+=</span> <span class="p">(</span><span class="n">nal_end</span> <span class="o">-</span> <span class="n">nal_start</span><span class="p">);</span>
+            <span class="n">nal_size</span> <span class="o">-=</span> <span class="n">nal_end</span><span class="p">;</span>    
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">find_ret</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">);</span>    
+
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: VADecodeData</span>
+<span class="cm">* 描  述: 解码函数</span>
+<span class="cm">* 参  数: i_pSrcData: 源数据指针</span>
+<span class="cm">* 参  数: i_iDataLen: 源数据大小 </span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 2015年12月09日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">********************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VADecH264</span><span class="o">::</span><span class="n">DecodeData</span><span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span> <span class="n">i_src_data_ptr</span><span class="p">,</span><span class="kt">int</span> <span class="n">i_data_len</span><span class="p">,</span> <span class="kt">uint8_t</span><span class="o">**</span> <span class="n">o_dst_data_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">o_dst_data_ptr</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">EM_RC_STATE_ERR</span><span class="p">;</span>
+
+    <span class="n">ERetCode</span> <span class="n">er</span> <span class="o">=</span> <span class="n">ParseH264</span><span class="p">(</span><span class="n">i_src_data_ptr</span><span class="p">,</span><span class="n">i_data_len</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">er</span> <span class="o">!=</span> <span class="n">EM_RC_OK</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">er</span><span class="p">;</span>
+    
+    <span class="k">if</span><span class="p">(</span> <span class="o">!</span><span class="n">m_is_inited_vaapi</span> <span class="p">)</span>
+    <span class="p">{</span><span class="c1">// 从sps中获取profile信息，初始化vaapi用来解码        </span>
+        <span class="n">er</span> <span class="o">=</span> <span class="n">InitVAAPI</span><span class="p">();</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">er</span> <span class="o">!=</span> <span class="n">EM_RC_OK</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">er</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">VASurfaceID</span> <span class="n">va_surface_id</span> <span class="o">=</span> <span class="n">m_va_surface_id</span><span class="p">[</span><span class="n">m_use_surf_id</span><span class="p">];</span>
+    <span class="n">VAStatus</span> <span class="n">va_status</span> <span class="o">=</span> <span class="n">vaMapBuffer</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">m_va_picture_id</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span><span class="o">**</span><span class="p">)</span><span class="o">&amp;</span><span class="n">m_va_pic_param_ptr</span><span class="p">);</span>
+    <span class="n">CHECK_VASTATUS</span><span class="p">(</span><span class="n">va_status</span><span class="p">,</span> <span class="s">&quot;vamapBuffer(PictureParam)&quot;</span><span class="p">);</span>  
+    <span class="n">va_status</span> <span class="o">=</span> <span class="n">vaMapBuffer</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">m_va_iq_matrix_id</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span><span class="o">**</span><span class="p">)</span><span class="o">&amp;</span><span class="n">m_va_iq_matrix_ptr</span><span class="p">);</span>
+    <span class="n">CHECK_VASTATUS</span><span class="p">(</span><span class="n">va_status</span><span class="p">,</span> <span class="s">&quot;vamapBuffer(IQMatrix)&quot;</span><span class="p">);</span>  
+    
+    <span class="c1">// 更新引用帧信息(pic和slice)</span>
+    <span class="n">UpdatePicRefList</span><span class="p">();</span>        
+    <span class="c1">// 更新pic参数</span>
+    <span class="n">UpdateH264PicParam</span><span class="p">();</span>
+    <span class="c1">// 更新slice参数</span>
+    <span class="n">UpdateSliceParam</span><span class="p">();</span>    
+    
+    <span class="c1">// 更新当前帧的picture_id</span>
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">CurrPic</span><span class="p">.</span><span class="n">picture_id</span> <span class="o">=</span> <span class="n">va_surface_id</span><span class="p">;</span>
+
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>       
+    <span class="n">VABufferID</span> <span class="n">va_slice_param_id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">va_slice_data_id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">num_slices</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span>
+    <span class="p">{</span><span class="c1">// 创建slice param 和data 的映射        </span>
+        <span class="n">va_status</span> <span class="o">=</span> <span class="n">vaCreateBuffer</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">m_va_context_id</span><span class="p">,</span><span class="n">VASliceParameterBufferType</span><span class="p">,</span> 
+                                  <span class="k">sizeof</span><span class="p">(</span><span class="n">VASliceParameterBufferH264</span><span class="p">),</span> 
+                                  <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="o">&amp;</span><span class="n">va_slice_param_id</span><span class="p">);</span>
+        <span class="n">CHECK_VASTATUS</span><span class="p">(</span><span class="n">va_status</span><span class="p">,</span> <span class="s">&quot;vaCreateSliceParamBuffer&quot;</span><span class="p">);</span>
+        <span class="n">va_status</span> <span class="o">=</span> <span class="n">vaCreateBuffer</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">m_va_context_id</span><span class="p">,</span><span class="n">VASliceDataBufferType</span><span class="p">,</span> 
+                                  <span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">slice_data_size</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> 
+                                  <span class="n">i_src_data_ptr</span><span class="o">+</span><span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">slice_data_offset</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">va_slice_data_id</span><span class="p">);</span>
+        <span class="n">CHECK_VASTATUS</span><span class="p">(</span><span class="n">va_status</span><span class="p">,</span> <span class="s">&quot;vaCreateSliceDataBuffer&quot;</span><span class="p">);</span>
+
+        <span class="n">m_va_slices_id</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">va_slice_param_id</span><span class="p">;</span>
+        <span class="n">m_va_slices_id</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">va_slice_data_id</span><span class="p">;</span>
+    <span class="p">}</span>
+     
+    <span class="n">va_status</span> <span class="o">=</span> <span class="n">vaUnmapBuffer</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">m_va_picture_id</span><span class="p">);</span>
+    <span class="n">CHECK_VASTATUS</span><span class="p">(</span><span class="n">va_status</span><span class="p">,</span> <span class="s">&quot;vaUnmapBuffer(PictureParam)&quot;</span><span class="p">);</span>    
+    <span class="n">va_status</span> <span class="o">=</span> <span class="n">vaUnmapBuffer</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">m_va_iq_matrix_id</span><span class="p">);</span>
+    <span class="n">CHECK_VASTATUS</span><span class="p">(</span><span class="n">va_status</span><span class="p">,</span> <span class="s">&quot;vaUnmapBuffer(IQMatrix)&quot;</span><span class="p">);</span>    
+    
+    <span class="c1">// 执行解码操作</span>
+    <span class="n">RunDecodeTask</span><span class="p">(</span><span class="n">va_surface_id</span><span class="p">);</span>
+        
+    <span class="n">CAutoLock</span> <span class="nf">lock</span><span class="p">(</span> <span class="n">m_decode_mtx</span> <span class="p">);</span>     
+    <span class="k">if</span><span class="p">(</span> <span class="n">m_callback_ptr</span> <span class="o">!=</span> <span class="k">nullptr</span> <span class="o">&amp;&amp;</span> <span class="n">m_out_props_ptr</span> <span class="o">!=</span> <span class="k">nullptr</span> <span class="p">)</span>
+    <span class="p">{</span><span class="c1">// 存在回调，进list，通知线程下载数据</span>
+        <span class="k">if</span><span class="p">(</span> <span class="n">m_dec_count</span><span class="o">%</span><span class="n">m_out_props_ptr</span><span class="o">-&gt;</span><span class="n">frame_interval</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">pthread_mutex_lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_out_frame_mtx</span><span class="p">);</span>
+            <span class="n">m_out_surf_id_list</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">va_surface_id</span><span class="p">);</span>
+            <span class="n">pthread_cond_signal</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_out_frame_cond</span><span class="p">);</span>            
+            <span class="n">pthread_mutex_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_out_frame_mtx</span><span class="p">);</span>
+        <span class="p">}</span>   
+        <span class="n">m_dec_count</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span><span class="p">(</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">num_slices</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">vaDestroyBuffer</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span><span class="n">m_va_slices_id</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="p">]);</span>
+        <span class="n">vaDestroyBuffer</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span><span class="n">m_va_slices_id</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">]);</span>
+    <span class="p">}</span>
+    
+    <span class="n">m_use_surf_id</span><span class="o">++</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">m_use_surf_id</span> <span class="o">&gt;=</span> <span class="n">VA_SURFACE_SIZE</span><span class="p">)</span>
+        <span class="n">m_use_surf_id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span><span class="c1">//NOLINT(readability/fn_size)</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: CalcCurrPoc</span>
+<span class="cm">* 描  述: 计算当前帧的POC</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年03月22日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VADecH264</span><span class="o">::</span><span class="n">CalcCurrPoc</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">SliceHeader</span><span class="o">*</span> <span class="n">sh_ptr</span> <span class="o">=</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">shs</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">sps</span><span class="o">-&gt;</span><span class="n">pic_order_cnt_type</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="p">{</span><span class="c1">// 最简单的模式</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">slice_type</span> <span class="o">==</span> <span class="n">SH_SLICE_TYPE_I</span> <span class="o">||</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">slice_type</span> <span class="o">==</span> <span class="n">SH_SLICE_TYPE_SI</span> <span class="o">||</span>
+            <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">slice_type</span> <span class="o">==</span> <span class="n">SH_SLICE_TYPE_I_ONLY</span> <span class="o">||</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">slice_type</span> <span class="o">==</span> <span class="n">SH_SLICE_TYPE_SI_ONLY</span><span class="p">)</span>
+        <span class="p">{</span><span class="c1">// I帧清零</span>
+            <span class="n">m_frame_num_offset</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="n">m_pic_order_cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="c1">// poc = tmp poc    </span>
+            <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">CurrPic</span><span class="p">.</span><span class="n">TopFieldOrderCnt</span> <span class="o">=</span> <span class="n">m_pic_order_cnt</span><span class="p">;</span>
+            <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">CurrPic</span><span class="p">.</span><span class="n">BottomFieldOrderCnt</span> <span class="o">=</span> <span class="n">m_pic_order_cnt</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span><span class="c1">// p帧计算</span>
+            <span class="kt">int</span> <span class="n">max_frame_num</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">sps</span><span class="o">-&gt;</span><span class="n">log2_max_frame_num_minus4</span> <span class="o">+</span> <span class="mi">4</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">DecRefPicMarking</span><span class="p">.</span><span class="n">memory_management_control_operation</span><span class="p">)</span>
+            <span class="p">{</span><span class="c1">// mmco非0，重置</span>
+                <span class="n">m_pre_frame_num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+                <span class="n">m_pre_frame_num_offset</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">frame_num</span> <span class="o">&lt;</span> <span class="n">m_pre_frame_num</span><span class="p">)</span>
+                <span class="n">m_frame_num_offset</span> <span class="o">=</span> <span class="n">m_pre_frame_num_offset</span> <span class="o">+</span> <span class="n">max_frame_num</span><span class="p">;</span>
+            <span class="k">else</span>
+                <span class="n">m_frame_num_offset</span> <span class="o">=</span> <span class="n">m_pre_frame_num_offset</span><span class="p">;</span>
+
+            <span class="kt">int</span> <span class="n">tmp_frame_num</span> <span class="o">=</span> <span class="n">m_frame_num_offset</span> <span class="o">+</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">frame_num</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">nal</span><span class="o">-&gt;</span><span class="n">nal_ref_idc</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="n">m_pic_order_cnt</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">tmp_frame_num</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+            <span class="k">else</span>
+                <span class="n">m_pic_order_cnt</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">tmp_frame_num</span><span class="p">);</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">field_pic_flag</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">CurrPic</span><span class="p">.</span><span class="n">TopFieldOrderCnt</span> <span class="o">=</span> <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">CurrPic</span><span class="p">.</span><span class="n">BottomFieldOrderCnt</span> <span class="o">=</span> <span class="n">m_pic_order_cnt</span><span class="p">;</span>
+            <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">bottom_field_flag</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">CurrPic</span><span class="p">.</span><span class="n">TopFieldOrderCnt</span> <span class="o">=</span> <span class="n">m_pic_order_cnt</span><span class="p">;</span>
+            <span class="k">else</span>
+                <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">CurrPic</span><span class="p">.</span><span class="n">BottomFieldOrderCnt</span> <span class="o">=</span> <span class="n">m_pic_order_cnt</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="cm">/*if( m_pH264Info-&gt;nal-&gt;nal_ref_idc == 0 )*/</span>
+        <span class="n">m_pre_frame_num</span> <span class="o">=</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">frame_num</span><span class="p">;</span>
+        <span class="n">m_pre_frame_num_offset</span> <span class="o">=</span> <span class="n">m_frame_num_offset</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">max_pic_order_cnt_lsb</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">sps</span><span class="o">-&gt;</span><span class="n">log2_max_pic_order_cnt_lsb</span><span class="p">));</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">pic_order_cnt_lsb</span>  <span class="o">&lt;</span>  <span class="n">m_prev_pic_order_cnt_lsb</span> <span class="o">&amp;&amp;</span> 
+            <span class="p">(</span><span class="n">m_prev_pic_order_cnt_lsb</span> <span class="o">-</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">pic_order_cnt_lsb</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="n">max_pic_order_cnt_lsb</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span>
+            <span class="n">m_pic_order_cnt_msb</span> <span class="o">=</span> <span class="n">m_prev_pic_order_cnt_msb</span> <span class="o">+</span> <span class="n">max_pic_order_cnt_lsb</span><span class="p">;</span>
+        <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">pic_order_cnt_lsb</span> <span class="o">&gt;</span> <span class="n">m_prev_pic_order_cnt_lsb</span> <span class="o">&amp;&amp;</span> 
+            <span class="p">(</span><span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">pic_order_cnt_lsb</span> <span class="o">-</span> <span class="n">m_prev_pic_order_cnt_lsb</span><span class="p">)</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">max_pic_order_cnt_lsb</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span>
+            <span class="n">m_pic_order_cnt_msb</span> <span class="o">=</span> <span class="n">m_prev_pic_order_cnt_msb</span> <span class="o">-</span> <span class="n">max_pic_order_cnt_lsb</span><span class="p">;</span>
+        <span class="k">else</span>
+            <span class="n">m_pic_order_cnt_msb</span> <span class="o">=</span> <span class="n">m_prev_pic_order_cnt_msb</span><span class="p">;</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">field_pic_flag</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span><span class="c1">//frame pix</span>
+            <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">CurrPic</span><span class="p">.</span><span class="n">TopFieldOrderCnt</span> <span class="o">=</span> <span class="n">m_pic_order_cnt_msb</span> <span class="o">+</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">pic_order_cnt_lsb</span><span class="p">;</span>
+            <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">CurrPic</span><span class="p">.</span><span class="n">BottomFieldOrderCnt</span> <span class="o">=</span> 
+                <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">CurrPic</span><span class="p">.</span><span class="n">TopFieldOrderCnt</span> <span class="o">+</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">delta_pic_order_cnt_bottom</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">bottom_field_flag</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1">//top field</span>
+            <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">CurrPic</span><span class="p">.</span><span class="n">TopFieldOrderCnt</span> <span class="o">=</span> <span class="n">m_pic_order_cnt_msb</span> <span class="o">+</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">pic_order_cnt_lsb</span><span class="p">;</span>
+        <span class="k">else</span>          <span class="c1">//bottom field</span>
+            <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">CurrPic</span><span class="p">.</span><span class="n">BottomFieldOrderCnt</span> <span class="o">=</span> <span class="n">m_pic_order_cnt_msb</span> <span class="o">+</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">pic_order_cnt_lsb</span><span class="p">;</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">nal</span><span class="o">-&gt;</span><span class="n">nal_ref_idc</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">m_prev_pic_order_cnt_lsb</span> <span class="o">=</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">pic_order_cnt_lsb</span><span class="p">;</span>
+            <span class="n">m_prev_pic_order_cnt_msb</span> <span class="o">=</span> <span class="n">m_pic_order_cnt_msb</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span><span class="c1">// NOLINT(readability/fn_size)</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: UpdatePicRefList</span>
+<span class="cm">* 描  述: 设置VA引用列表</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年03月18日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VADecH264</span><span class="o">::</span><span class="n">UpdatePicRefList</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">SliceHeader</span><span class="o">*</span> <span class="n">sh_ptr</span> <span class="o">=</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">shs</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">slice_type</span> <span class="o">==</span> <span class="n">SH_SLICE_TYPE_I</span> <span class="o">||</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">slice_type</span> <span class="o">==</span> <span class="n">SH_SLICE_TYPE_I_ONLY</span><span class="p">)</span>
+    <span class="p">{</span><span class="c1">// I帧，重置参数和引用帧列表</span>
+        <span class="n">m_prev_pic_order_cnt_lsb</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">m_prev_pic_order_cnt_msb</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>        
+        <span class="n">m_have_long_term_ref_pic</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 
+        <span class="k">for</span><span class="p">(</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">VA_SURFACE_SIZE</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span>
+            <span class="n">InitVAPicture</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">ReferenceFrames</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+            
+        <span class="k">for</span><span class="p">(</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">num_slices</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">for</span><span class="p">(</span> <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">VA_SURFACE_SIZE</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span> <span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">InitVAPicture</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">RefPicList0</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span>
+                <span class="n">InitVAPicture</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">RefPicList1</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">DecRefPicMarking</span><span class="p">.</span><span class="n">long_term_reference_flag</span><span class="p">)</span>
+        <span class="p">{</span><span class="c1">// 长引用标志，保存长引用帧</span>
+            <span class="n">m_have_long_term_ref_pic</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+            <span class="n">m_va_long_term_ref_pic</span> <span class="o">=</span> <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">CurrPic</span><span class="p">;</span>
+            <span class="n">m_va_long_term_ref_pic</span><span class="p">.</span><span class="n">BottomFieldOrderCnt</span> <span class="o">=</span> <span class="n">m_va_long_term_ref_pic</span><span class="p">.</span><span class="n">TopFieldOrderCnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="n">m_va_long_term_ref_pic</span><span class="p">.</span><span class="n">flags</span> <span class="o">=</span> <span class="n">VA_PICTURE_H264_LONG_TERM_REFERENCE</span><span class="p">;</span> 
+            <span class="n">m_va_long_term_ref_pic</span><span class="p">.</span><span class="n">frame_idx</span> <span class="o">=</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">DecRefPicMarking</span><span class="p">.</span><span class="n">long_term_frame_idx</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span> 
+        <span class="k">if</span><span class="p">(</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">num_ref_l0_frames</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">)</span>
+        <span class="p">{</span><span class="c1">// 存在引用帧(p帧), 参考ffmpeg，只设置pic的Ref0（用上一个解码帧)</span>
+            <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">CurrPic</span><span class="p">.</span><span class="n">flags</span> <span class="o">=</span> <span class="n">VA_PICTURE_H264_SHORT_TERM_REFERENCE</span><span class="p">;</span>            
+            <span class="n">UpdatePicRefLiset</span><span class="p">();</span>
+            <span class="n">UpdateSliceRefList</span><span class="p">();</span>          
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">DecRefPicMarking</span><span class="p">.</span><span class="n">memory_management_control_operation</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">bottom_field_flag</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">m_prev_pic_order_cnt_lsb</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+                <span class="n">m_prev_pic_order_cnt_msb</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="n">m_prev_pic_order_cnt_lsb</span> <span class="o">=</span> <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">CurrPic</span><span class="p">.</span><span class="n">TopFieldOrderCnt</span><span class="p">;</span>
+                <span class="n">m_prev_pic_order_cnt_msb</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="c1">// 计算poc</span>
+    <span class="n">CalcCurrPoc</span><span class="p">();</span>  
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">CurrPic</span><span class="p">.</span><span class="n">frame_idx</span> <span class="o">=</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">frame_num</span><span class="p">;</span>
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">CurrPic</span><span class="p">.</span><span class="n">flags</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: UpdateH264PicParam</span>
+<span class="cm">* 描  述: 更新VAH264的参数(sps&amp;pps)</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年03月18日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VADecH264</span><span class="o">::</span><span class="n">UpdateH264PicParam</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">m_h264_info_ptr</span><span class="p">,</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">);</span>
+
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">picture_width_in_mbs_minus1</span>                     <span class="o">=</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">sps</span><span class="o">-&gt;</span><span class="n">pic_width_in_mbs_minus1</span><span class="p">;</span>
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">picture_height_in_mbs_minus1</span>                    <span class="o">=</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">sps</span><span class="o">-&gt;</span><span class="n">pic_height_in_map_units_minus1</span><span class="p">;</span>
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">bit_depth_luma_minus8</span>                           <span class="o">=</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">sps</span><span class="o">-&gt;</span><span class="n">bit_depth_luma_minus8</span><span class="p">;</span>
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">bit_depth_chroma_minus8</span>                         <span class="o">=</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">sps</span><span class="o">-&gt;</span><span class="n">bit_depth_chroma_minus8</span><span class="p">;</span>
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">num_ref_frames</span>                                  <span class="o">=</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">sps</span><span class="o">-&gt;</span><span class="n">num_ref_frames</span><span class="p">;</span>
+
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">seq_fields</span><span class="p">.</span><span class="n">value</span>                                <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="cm">/* reset all bits */</span>
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">seq_fields</span><span class="p">.</span><span class="n">bits</span><span class="p">.</span><span class="n">chroma_format_idc</span>               <span class="o">=</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">sps</span><span class="o">-&gt;</span><span class="n">chroma_format_idc</span><span class="p">;</span>
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">seq_fields</span><span class="p">.</span><span class="n">bits</span><span class="p">.</span><span class="n">residual_colour_transform_flag</span>  <span class="o">=</span> 
+        <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">sps</span><span class="o">-&gt;</span><span class="n">residual_colour_transform_flag</span><span class="p">;</span> <span class="cm">/* XXX: only for 4:4:4 high profile? */</span>
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">seq_fields</span><span class="p">.</span><span class="n">bits</span><span class="p">.</span><span class="n">gaps_in_frame_num_value_allowed_flag</span>  <span class="o">=</span> 
+        <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">sps</span><span class="o">-&gt;</span><span class="n">gaps_in_frame_num_value_allowed_flag</span><span class="p">;</span>
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">seq_fields</span><span class="p">.</span><span class="n">bits</span><span class="p">.</span><span class="n">frame_mbs_only_flag</span>              <span class="o">=</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">sps</span><span class="o">-&gt;</span><span class="n">frame_mbs_only_flag</span><span class="p">;</span>
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">seq_fields</span><span class="p">.</span><span class="n">bits</span><span class="p">.</span><span class="n">mb_adaptive_frame_field_flag</span>     <span class="o">=</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">sps</span><span class="o">-&gt;</span><span class="n">mb_adaptive_frame_field_flag</span><span class="p">;</span>
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">seq_fields</span><span class="p">.</span><span class="n">bits</span><span class="p">.</span><span class="n">direct_8x8_inference_flag</span>        <span class="o">=</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">sps</span><span class="o">-&gt;</span><span class="n">direct_8x8_inference_flag</span><span class="p">;</span>
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">seq_fields</span><span class="p">.</span><span class="n">bits</span><span class="p">.</span><span class="n">MinLumaBiPredSize8x8</span>             <span class="o">=</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">sps</span><span class="o">-&gt;</span><span class="n">level_idc</span> <span class="o">&gt;=</span> <span class="mi">31</span><span class="p">;</span> <span class="cm">/* A.3.3.2 */</span>
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">seq_fields</span><span class="p">.</span><span class="n">bits</span><span class="p">.</span><span class="n">log2_max_frame_num_minus4</span>        <span class="o">=</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">sps</span><span class="o">-&gt;</span><span class="n">log2_max_frame_num_minus4</span><span class="p">;</span>
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">seq_fields</span><span class="p">.</span><span class="n">bits</span><span class="p">.</span><span class="n">pic_order_cnt_type</span>               <span class="o">=</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">sps</span><span class="o">-&gt;</span><span class="n">pic_order_cnt_type</span><span class="p">;</span>
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">seq_fields</span><span class="p">.</span><span class="n">bits</span><span class="p">.</span><span class="n">log2_max_pic_order_cnt_lsb_minus4</span><span class="o">=</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">sps</span><span class="o">-&gt;</span><span class="n">log2_max_pic_order_cnt_lsb</span> <span class="o">-</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">seq_fields</span><span class="p">.</span><span class="n">bits</span><span class="p">.</span><span class="n">delta_pic_order_always_zero_flag</span><span class="o">=</span><span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">sps</span><span class="o">-&gt;</span><span class="n">delta_pic_order_always_zero_flag</span><span class="p">;</span>
+
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">num_slice_groups_minus1</span>                          <span class="o">=</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">pps</span><span class="o">-&gt;</span><span class="n">num_slice_groups_minus1</span><span class="p">;</span>
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">slice_group_map_type</span>                             <span class="o">=</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">pps</span><span class="o">-&gt;</span><span class="n">slice_group_map_type</span><span class="p">;</span>
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">slice_group_change_rate_minus1</span>                   <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="cm">/* XXX: unimplemented in FFmpeg */</span>
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">pic_init_qp_minus26</span>                              <span class="o">=</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">pps</span><span class="o">-&gt;</span><span class="n">pic_init_qp_minus26</span><span class="p">;</span>
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">pic_init_qs_minus26</span>                              <span class="o">=</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">pps</span><span class="o">-&gt;</span><span class="n">pic_init_qs_minus26</span><span class="p">;</span>
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">chroma_qp_index_offset</span>                           <span class="o">=</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">pps</span><span class="o">-&gt;</span><span class="n">chroma_qp_index_offset</span><span class="p">;</span>
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">second_chroma_qp_index_offset</span>                    <span class="o">=</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">pps</span><span class="o">-&gt;</span><span class="n">chroma_qp_index_offset</span><span class="p">;</span>
+
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">pic_fields</span><span class="p">.</span><span class="n">value</span>                                 <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="cm">/* reset all bits */</span>
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">pic_fields</span><span class="p">.</span><span class="n">bits</span><span class="p">.</span><span class="n">entropy_coding_mode_flag</span>         <span class="o">=</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">pps</span><span class="o">-&gt;</span><span class="n">entropy_coding_mode_flag</span><span class="p">;</span>
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">pic_fields</span><span class="p">.</span><span class="n">bits</span><span class="p">.</span><span class="n">weighted_pred_flag</span>               <span class="o">=</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">pps</span><span class="o">-&gt;</span><span class="n">weighted_pred_flag</span><span class="p">;</span>
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">pic_fields</span><span class="p">.</span><span class="n">bits</span><span class="p">.</span><span class="n">weighted_bipred_idc</span>              <span class="o">=</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">pps</span><span class="o">-&gt;</span><span class="n">weighted_bipred_idc</span><span class="p">;</span>
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">pic_fields</span><span class="p">.</span><span class="n">bits</span><span class="p">.</span><span class="n">transform_8x8_mode_flag</span>          <span class="o">=</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">pps</span><span class="o">-&gt;</span><span class="n">transform_8x8_mode_flag</span><span class="p">;</span>
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">pic_fields</span><span class="p">.</span><span class="n">bits</span><span class="p">.</span><span class="n">field_pic_flag</span>                   <span class="o">=</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">sps</span><span class="o">-&gt;</span><span class="n">frame_mbs_only_flag</span> <span class="o">?</span> <span class="mi">0</span> <span class="o">:</span> <span class="mi">1</span><span class="p">;</span> 
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">pic_fields</span><span class="p">.</span><span class="n">bits</span><span class="p">.</span><span class="n">constrained_intra_pred_flag</span>      <span class="o">=</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">pps</span><span class="o">-&gt;</span><span class="n">constrained_intra_pred_flag</span><span class="p">;</span>
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">pic_fields</span><span class="p">.</span><span class="n">bits</span><span class="p">.</span><span class="n">pic_order_present_flag</span>           <span class="o">=</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">pps</span><span class="o">-&gt;</span><span class="n">pic_order_present_flag</span><span class="p">;</span>
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">pic_fields</span><span class="p">.</span><span class="n">bits</span><span class="p">.</span><span class="n">deblocking_filter_control_present_flag</span> <span class="o">=</span> 
+        <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">pps</span><span class="o">-&gt;</span><span class="n">deblocking_filter_control_present_flag</span><span class="p">;</span>
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">pic_fields</span><span class="p">.</span><span class="n">bits</span><span class="p">.</span><span class="n">redundant_pic_cnt_present_flag</span> <span class="o">=</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">pps</span><span class="o">-&gt;</span><span class="n">redundant_pic_cnt_present_flag</span><span class="p">;</span>
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">pic_fields</span><span class="p">.</span><span class="n">bits</span><span class="p">.</span><span class="n">reference_pic_flag</span>             <span class="o">=</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">pps</span><span class="o">-&gt;</span><span class="n">nal_ref_idc</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">frame_num</span>                                      <span class="o">=</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">shs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">frame_num</span><span class="p">;</span>
+    
+    <span class="n">memcpy</span><span class="p">(</span><span class="n">m_va_iq_matrix_ptr</span><span class="o">-&gt;</span><span class="n">ScalingList4x4</span><span class="p">,</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">pps</span><span class="o">-&gt;</span><span class="n">ScalingList4x4</span><span class="p">,</span> 
+        <span class="k">sizeof</span><span class="p">(</span><span class="n">m_va_iq_matrix_ptr</span><span class="o">-&gt;</span><span class="n">ScalingList4x4</span><span class="p">));</span>
+    <span class="n">memcpy</span><span class="p">(</span><span class="n">m_va_iq_matrix_ptr</span><span class="o">-&gt;</span><span class="n">ScalingList8x8</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">pps</span><span class="o">-&gt;</span><span class="n">ScalingList8x8</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> 
+        <span class="k">sizeof</span><span class="p">(</span><span class="n">m_va_iq_matrix_ptr</span><span class="o">-&gt;</span><span class="n">ScalingList8x8</span><span class="p">[</span><span class="mi">0</span><span class="p">]));</span>
+    <span class="n">memcpy</span><span class="p">(</span><span class="n">m_va_iq_matrix_ptr</span><span class="o">-&gt;</span><span class="n">ScalingList8x8</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">pps</span><span class="o">-&gt;</span><span class="n">ScalingList8x8</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> 
+        <span class="k">sizeof</span><span class="p">(</span><span class="n">m_va_iq_matrix_ptr</span><span class="o">-&gt;</span><span class="n">ScalingList8x8</span><span class="p">[</span><span class="mi">0</span><span class="p">]));</span>
+    
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: UpdateSliceParam</span>
+<span class="cm">* 描  述: 更新Slice参数</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年03月18日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VADecH264</span><span class="o">::</span><span class="n">UpdateSliceParam</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">m_h264_info_ptr</span><span class="p">,</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">);</span>
+    <span class="k">for</span><span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">num_slices</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">SliceHeader</span><span class="o">*</span> <span class="n">sh_ptr</span> <span class="o">=</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">shs</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">slice_data_bit_offset</span>          <span class="o">=</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">slice_data_bit_offset</span><span class="p">;</span>
+        <span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">slice_data_size</span>                <span class="o">=</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">slice_data_size</span><span class="p">;</span>
+        <span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">slice_data_offset</span>              <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">slice_data_flag</span>                <span class="o">=</span> <span class="n">VA_SLICE_DATA_FLAG_ALL</span><span class="p">;</span>
+        <span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">first_mb_in_slice</span>              <span class="o">=</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">first_mb_in_slice</span><span class="p">;</span>
+        <span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">slice_type</span>                     <span class="o">=</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">slice_type</span> <span class="o">&gt;=</span> <span class="mi">5</span> <span class="o">?</span> 
+                                                            <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">slice_type</span> <span class="o">-</span> <span class="mi">5</span> <span class="o">:</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">slice_type</span><span class="p">;</span>
+        <span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">direct_spatial_mv_pred_flag</span>    <span class="o">=</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">direct_spatial_mv_pred_flag</span><span class="p">;</span>
+        <span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">num_ref_idx_l0_active_minus1</span>   <span class="o">=</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">num_ref_l0_frames</span> <span class="o">?</span> 
+                                                            <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">num_ref_l0_frames</span><span class="o">-</span><span class="mi">1</span> <span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">num_ref_idx_l1_active_minus1</span>   <span class="o">=</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">num_ref_l1_frames</span> <span class="o">?</span> 
+                                                            <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">num_ref_l1_frames</span><span class="o">-</span><span class="mi">1</span> <span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">cabac_init_idc</span>                 <span class="o">=</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">cabac_init_idc</span><span class="p">;</span>
+        <span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">slice_qp_delta</span>                 <span class="o">=</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">slice_qp_delta</span><span class="p">;</span>
+        <span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">disable_deblocking_filter_idc</span>  <span class="o">=</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">disable_deblocking_filter_idc</span><span class="p">;</span>
+        <span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">slice_alpha_c0_offset_div2</span>     <span class="o">=</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">slice_alpha_c0_offset_div2</span><span class="p">;</span>
+        <span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">slice_beta_offset_div2</span>         <span class="o">=</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">slice_beta_offset_div2</span><span class="p">;</span>
+        <span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">luma_log2_weight_denom</span>         <span class="o">=</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">PredWeightTable</span><span class="p">.</span><span class="n">luma_log2_weight_denom</span><span class="p">;</span>
+        <span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">chroma_log2_weight_denom</span>       <span class="o">=</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">PredWeightTable</span><span class="p">.</span><span class="n">chroma_log2_weight_denom</span><span class="p">;</span>
+        <span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">luma_weight_l0_flag</span>            <span class="o">=</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">PredWeightTable</span><span class="p">.</span><span class="n">luma_weight_l0_flag</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+        <span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">chroma_weight_l0_flag</span>          <span class="o">=</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">PredWeightTable</span><span class="p">.</span><span class="n">chroma_weight_l0_flag</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+        <span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">luma_weight_l1_flag</span>            <span class="o">=</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">PredWeightTable</span><span class="p">.</span><span class="n">luma_weight_l1_flag</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+        <span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">chroma_weight_l1_flag</span>          <span class="o">=</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">PredWeightTable</span><span class="p">.</span><span class="n">chroma_weight_l1_flag</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+
+        <span class="n">memset</span><span class="p">(</span><span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">luma_weight_l0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">32</span><span class="o">*</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">short</span><span class="p">));</span><span class="c1">//NOLINT()</span>
+        <span class="n">memset</span><span class="p">(</span><span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">luma_offset_l0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">32</span><span class="o">*</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">short</span><span class="p">));</span><span class="c1">//NOLINT()</span>
+        <span class="n">memset</span><span class="p">(</span><span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">chroma_weight_l0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="mi">32</span><span class="o">*</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">short</span><span class="p">));</span><span class="c1">//NOLINT()</span>
+        <span class="n">memset</span><span class="p">(</span><span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">chroma_offset_l0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="mi">32</span><span class="o">*</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">short</span><span class="p">));</span><span class="c1">//NOLINT()</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">num_ref_l0_frames</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">PredWeightTable</span><span class="p">.</span><span class="n">luma_weight_l0_flag</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+            <span class="p">{</span>
+                <span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">luma_weight_l0</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">PredWeightTable</span><span class="p">.</span><span class="n">luma_weight_l0</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+                <span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">luma_offset_l0</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">PredWeightTable</span><span class="p">.</span><span class="n">luma_offset_l0</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">luma_weight_l0</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">PredWeightTable</span><span class="p">.</span><span class="n">luma_log2_weight_denom</span><span class="p">;</span>
+                <span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">luma_offset_l0</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">PredWeightTable</span><span class="p">.</span><span class="n">chroma_weight_l0_flag</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+            <span class="p">{</span>
+                <span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">chroma_weight_l0</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">PredWeightTable</span><span class="p">.</span><span class="n">chroma_weight_l0</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span>
+                <span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">chroma_offset_l0</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">PredWeightTable</span><span class="p">.</span><span class="n">chroma_offset_l0</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span>
+                <span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">chroma_weight_l0</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">PredWeightTable</span><span class="p">.</span><span class="n">chroma_weight_l0</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">1</span><span class="p">];</span>
+                <span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">chroma_offset_l0</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">PredWeightTable</span><span class="p">.</span><span class="n">chroma_offset_l0</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">1</span><span class="p">];</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">chroma_weight_l0</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">PredWeightTable</span><span class="p">.</span><span class="n">chroma_log2_weight_denom</span><span class="p">;</span> 
+                <span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">chroma_offset_l0</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+                <span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">chroma_weight_l0</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">PredWeightTable</span><span class="p">.</span><span class="n">chroma_log2_weight_denom</span><span class="p">;</span>
+                <span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">chroma_offset_l0</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="p">}</span>   
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: UpdatePicRefLiset</span>
+<span class="cm">* 描  述: 更新Pic的引用列表</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年03月21日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VADecH264</span><span class="o">::</span><span class="n">UpdatePicRefLiset</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// 计算pic的参考帧列表</span>
+    <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">num_ref_frames</span><span class="o">++</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">num_ref_frames</span> <span class="o">&gt;</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">sps</span><span class="o">-&gt;</span><span class="n">num_ref_frames</span><span class="p">)</span>
+        <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">num_ref_frames</span> <span class="o">=</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">sps</span><span class="o">-&gt;</span><span class="n">num_ref_frames</span><span class="p">;</span>
+
+    <span class="c1">// 处理短引用</span>
+    <span class="k">for</span><span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">num_ref_frames</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span> <span class="p">)</span>
+        <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">ReferenceFrames</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">ReferenceFrames</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+    <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">ReferenceFrames</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">CurrPic</span><span class="p">;</span>
+        
+    <span class="c1">// 存在长引用</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_have_long_term_ref_pic</span><span class="p">)</span>
+        <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">ReferenceFrames</span><span class="p">[</span><span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">num_ref_frames</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">m_va_long_term_ref_pic</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: UpdateSliceRefList</span>
+<span class="cm">* 描  述: 更新slice的引用帧列表</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年03月18日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VADecH264</span><span class="o">::</span><span class="n">UpdateSliceRefList</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">m_h264_info_ptr</span><span class="p">,</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">);</span>
+
+    <span class="c1">// 设置引用帧, 暂不支持b帧，即list1</span>
+    <span class="k">if</span><span class="p">(</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">num_ref_l0_frames</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="p">)</span>
+        <span class="k">return</span> <span class="n">EM_RC_OP_NOT_SUPPORT</span><span class="p">;</span>
+       
+    <span class="c1">// 计算slice的引用列表，不考虑b帧(即list1)    </span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">num_slices</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span><span class="c1">// slice reflist 应用的是slice信息中的num_ref_l0_frames, 可能被sliceheader中的override参数覆盖新值</span>
+        <span class="n">SliceHeader</span><span class="o">*</span> <span class="n">sh_ptr</span> <span class="o">=</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">shs</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">RefPicListRecorder</span><span class="p">.</span><span class="n">ref_pic_list_reordering_flag_l0</span><span class="p">)</span>
+        <span class="p">{</span><span class="c1">// 需要进行参考帧重排序</span>
+            <span class="kt">int</span> <span class="n">ref_pic_num_l0pred</span> <span class="o">=</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">frame_num</span><span class="p">;</span>   <span class="c1">// 计算初值为当前帧序号</span>
+            <span class="kt">uint32_t</span> <span class="n">ref_frame_num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>                   <span class="c1">// 计算的引用帧序号</span>
+            <span class="kt">int</span> <span class="n">max_frame_num</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">sps</span><span class="o">-&gt;</span><span class="n">log2_max_frame_num_minus4</span><span class="o">+</span><span class="mi">4</span><span class="p">));</span>    <span class="c1">// 最大帧序号            </span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">num_ref_l0_frames</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+            <span class="p">{</span> <span class="c1">// 循环计算参考帧序号</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">ref_pic_num_l0pred</span> <span class="o">-</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">RefPicListRecorder</span><span class="p">.</span><span class="n">abs_diff_pic_num</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+                    <span class="n">ref_frame_num</span> <span class="o">=</span> <span class="n">ref_pic_num_l0pred</span> <span class="o">-</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">RefPicListRecorder</span><span class="p">.</span><span class="n">abs_diff_pic_num</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">max_frame_num</span><span class="p">;</span>
+                <span class="k">else</span>
+                    <span class="n">ref_frame_num</span> <span class="o">=</span> <span class="n">ref_pic_num_l0pred</span> <span class="o">-</span> <span class="n">sh_ptr</span><span class="o">-&gt;</span><span class="n">RefPicListRecorder</span><span class="p">.</span><span class="n">abs_diff_pic_num</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+                
+                <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">num_ref_frames</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span>
+                <span class="p">{</span><span class="c1">// 从pic的reflist中查找对应序号的引用帧，保存到slice的引用列表中</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">ref_frame_num</span> <span class="o">==</span> <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">ReferenceFrames</span><span class="p">[</span><span class="n">k</span><span class="p">].</span><span class="n">frame_idx</span><span class="p">)</span>
+                    <span class="p">{</span><span class="c1">// 复制引用帧(VAPictureH264</span>
+                        <span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">RefPicList0</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">ReferenceFrames</span><span class="p">[</span><span class="n">k</span><span class="p">];</span>
+                        <span class="k">break</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+                
+                <span class="c1">// 预测帧需要使用上一个参考帧序号</span>
+                <span class="n">ref_pic_num_l0pred</span> <span class="o">=</span> <span class="n">ref_frame_num</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span><span class="c1">// 不需要重新排序，</span>
+            <span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">RefPicList0</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">m_va_pic_param_ptr</span><span class="o">-&gt;</span><span class="n">CurrPic</span><span class="p">;</span>
+            <span class="k">for</span><span class="p">(</span> <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">num_ref_l0_frames</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">--</span> <span class="p">)</span>
+                <span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">RefPicList0</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">m_va_slice_param_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">RefPicList0</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+        <span class="p">}</span>        
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: RunDecodeTask</span>
+<span class="cm">* 描  述: 执行解码操作</span>
+<span class="cm">* 参  数: i_vaSurfID</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年03月18日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VADecH264</span><span class="o">::</span><span class="n">RunDecodeTask</span><span class="p">(</span><span class="n">VASurfaceID</span> <span class="n">i_va_surf_id</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">VAStatus</span> <span class="n">va_status</span> <span class="o">=</span> <span class="n">VA_STATUS_SUCCESS</span><span class="p">;</span>
+    <span class="n">va_status</span> <span class="o">=</span> <span class="n">vaBeginPicture</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">m_va_context_id</span><span class="p">,</span> <span class="n">i_va_surf_id</span><span class="p">);</span> 
+    <span class="n">CHECK_VASTATUS</span><span class="p">(</span><span class="n">va_status</span><span class="p">,</span> <span class="s">&quot;vaBeginPicture&quot;</span><span class="p">);</span>
+    
+    <span class="n">va_status</span> <span class="o">=</span> <span class="n">vaRenderPicture</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span><span class="n">m_va_context_id</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m_va_picture_id</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="n">CHECK_VASTATUS</span><span class="p">(</span><span class="n">va_status</span><span class="p">,</span> <span class="s">&quot;vaRenderPicture&quot;</span><span class="p">);</span>
+    
+    <span class="n">va_status</span> <span class="o">=</span> <span class="n">vaRenderPicture</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span><span class="n">m_va_context_id</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m_va_iq_matrix_id</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="n">CHECK_VASTATUS</span><span class="p">(</span><span class="n">va_status</span><span class="p">,</span> <span class="s">&quot;vaRenderPicture&quot;</span><span class="p">);</span>
+
+    <span class="n">va_status</span> <span class="o">=</span> <span class="n">vaRenderPicture</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span><span class="n">m_va_context_id</span><span class="p">,</span> <span class="n">m_va_slices_id</span><span class="p">,</span> <span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">num_slices</span><span class="o">*</span><span class="mi">2</span><span class="p">);</span>
+    <span class="n">CHECK_VASTATUS</span><span class="p">(</span><span class="n">va_status</span><span class="p">,</span> <span class="s">&quot;vaRenderPicture&quot;</span><span class="p">);</span>
+
+    <span class="n">va_status</span> <span class="o">=</span> <span class="n">vaEndPicture</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span><span class="n">m_va_context_id</span><span class="p">);</span>    
+    <span class="n">CHECK_VASTATUS</span><span class="p">(</span><span class="n">va_status</span><span class="p">,</span> <span class="s">&quot;vaEndPicture&quot;</span><span class="p">);</span>
+
+    <span class="n">va_status</span> <span class="o">=</span> <span class="n">vaSyncSurface</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">i_va_surf_id</span><span class="p">);</span>
+    <span class="n">CHECK_VASTATUS</span><span class="p">(</span><span class="n">va_status</span><span class="p">,</span> <span class="s">&quot;vaSyncSurface&quot;</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: GetReadyImage</span>
+<span class="cm">* 描  述: 获取解码好的Image</span>
+<span class="cm">* 时  间: 2016年07月12日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">********************************************************************************/</span>
+<span class="n">VideoSrcImage</span> <span class="n">VADecH264</span><span class="o">::</span><span class="n">GetReadyImage</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">CAutoLock</span> <span class="n">lock</span><span class="p">(</span><span class="n">m_decode_mtx</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_dec_img_ptr</span> <span class="o">==</span> <span class="k">nullptr</span> <span class="o">||</span> <span class="n">m_va_surface_id</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span>
+
+    <span class="kt">int</span> <span class="n">ready_surf_id</span> <span class="o">=</span> <span class="n">m_use_surf_id</span> <span class="o">?</span> <span class="n">m_use_surf_id</span><span class="o">-</span><span class="mi">1</span> <span class="o">:</span> <span class="n">VA_SURFACE_SIZE</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="n">VASurfaceID</span> <span class="n">va_surface_id</span> <span class="o">=</span> <span class="n">m_va_surface_id</span><span class="p">[</span><span class="n">ready_surf_id</span><span class="p">];</span>
+
+    <span class="n">vaGetImage</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">va_surface_id</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_size</span><span class="p">.</span><span class="n">height</span><span class="p">,</span> <span class="n">m_dec_img_ptr</span><span class="o">-&gt;</span><span class="n">image_id</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">m_dec_img_ptr</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: ThreadFuncProc</span>
+<span class="cm">* 描  述: 获取</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年03月07日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VADecH264</span><span class="o">::</span><span class="n">ThreadFuncProc</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">timespec</span> <span class="n">tm_cond</span><span class="p">;</span>    
+    <span class="n">TOutFrame</span> <span class="n">out_frame</span><span class="p">;</span>
+    <span class="n">TDecOutProps</span> <span class="n">dec_out_props</span><span class="p">;</span>
+
+    <span class="n">VASurfaceID</span> <span class="n">va_tmp_surf_id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">VASurfaceID</span> <span class="n">va_out_surf_id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">VAImage</span> <span class="n">va_surf_img</span><span class="p">,</span> <span class="n">va_out_img</span><span class="p">;</span>
+    <span class="n">VAImageFormat</span> <span class="n">va_img_format</span><span class="p">;</span>    
+    
+    <span class="kt">int</span> <span class="n">out_frame_size</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 
+    <span class="kt">int</span> <span class="n">src_data_size</span> <span class="o">=</span> <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_size</span><span class="p">.</span><span class="n">width</span><span class="o">*</span><span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_size</span><span class="p">.</span><span class="n">height</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+
+    <span class="n">va_out_img</span><span class="p">.</span><span class="n">image_id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">va_surf_img</span><span class="p">.</span><span class="n">image_id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    
+    <span class="n">va_img_format</span><span class="p">.</span><span class="n">fourcc</span> <span class="o">=</span> <span class="n">VA_FOURCC_NV12</span><span class="p">;</span>
+    <span class="n">va_img_format</span><span class="p">.</span><span class="n">byte_order</span> <span class="o">=</span> <span class="n">VA_LSB_FIRST</span><span class="p">;</span>
+    <span class="n">va_img_format</span><span class="p">.</span><span class="n">bits_per_pixel</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+    <span class="n">vaCreateImage</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">va_img_format</span><span class="p">,</span> <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span><span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_size</span><span class="p">.</span><span class="n">height</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">va_surf_img</span><span class="p">);</span>
+
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;EncSource[%d] Start DecOutFrame Thread!&quot;</span><span class="p">,</span> <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_id</span><span class="p">);</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">m_exit_code</span> <span class="o">==</span> <span class="n">EM_TS_RUN</span><span class="p">)</span>
+    <span class="p">{</span>   
+        <span class="n">pthread_mutex_lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_out_frame_mtx</span><span class="p">);</span>
+        
+        <span class="k">if</span><span class="p">(</span> <span class="n">m_callback_ptr</span> <span class="o">==</span> <span class="k">nullptr</span> <span class="o">||</span> <span class="n">m_out_surf_id_list</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="p">)</span>
+        <span class="p">{</span><span class="c1">// 无数据时等待</span>
+            <span class="n">tm_cond</span><span class="p">.</span><span class="n">tv_nsec</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="n">tm_cond</span><span class="p">.</span><span class="n">tv_sec</span> <span class="o">=</span> <span class="p">(</span><span class="kt">long</span><span class="p">)</span><span class="n">time</span><span class="p">(</span><span class="k">nullptr</span><span class="p">)</span> <span class="o">+</span> <span class="n">COMMON_TICK_THREADTMO</span><span class="p">;</span>
+
+            <span class="n">pthread_cond_timedwait</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_out_frame_cond</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m_out_frame_mtx</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">tm_cond</span><span class="p">);</span>
+            <span class="n">pthread_mutex_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_out_frame_mtx</span><span class="p">);</span>    
+            <span class="k">continue</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="n">va_out_surf_id</span> <span class="o">=</span> <span class="n">m_out_surf_id_list</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
+        <span class="n">m_out_surf_id_list</span><span class="p">.</span><span class="n">pop_front</span><span class="p">();</span>
+        <span class="n">pthread_mutex_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_out_frame_mtx</span><span class="p">);</span>    
+         
+        <span class="k">if</span><span class="p">(</span> <span class="o">!</span><span class="n">m_set_out_props</span> <span class="p">)</span>        
+        <span class="p">{</span><span class="c1">// 取所有数据</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">out_frame</span><span class="p">.</span><span class="n">frame_data_ptr</span> <span class="o">==</span> <span class="k">nullptr</span> <span class="o">||</span> <span class="n">out_frame</span><span class="p">.</span><span class="n">data_len</span> <span class="o">!=</span> <span class="n">src_data_size</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">SAFE_DELETE_ARRAY</span><span class="p">(</span><span class="n">out_frame</span><span class="p">.</span><span class="n">frame_data_ptr</span><span class="p">);</span>
+                <span class="n">out_frame</span><span class="p">.</span><span class="n">data_len</span> <span class="o">=</span> <span class="n">src_data_size</span><span class="p">;</span>
+                <span class="n">out_frame</span><span class="p">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_size</span><span class="p">.</span><span class="n">width</span><span class="p">;</span>
+                <span class="n">out_frame</span><span class="p">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_size</span><span class="p">.</span><span class="n">height</span><span class="p">;</span>
+                <span class="n">out_frame</span><span class="p">.</span><span class="n">frame_data_ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">uint8_t</span><span class="p">[</span><span class="n">out_frame</span><span class="p">.</span><span class="n">data_len</span><span class="p">];</span>
+            <span class="p">}</span>
+
+            <span class="n">pthread_mutex_lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_decode_mtx</span><span class="p">);</span>
+            <span class="n">vaGetImage</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">va_out_surf_id</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_size</span><span class="p">.</span><span class="n">height</span><span class="p">,</span> <span class="n">va_surf_img</span><span class="p">.</span><span class="n">image_id</span><span class="p">);</span>
+            <span class="n">pthread_mutex_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_decode_mtx</span><span class="p">);</span>
+            <span class="n">DownYUVDataFromImage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">va_surf_img</span><span class="p">,</span> <span class="n">out_frame</span><span class="p">.</span><span class="n">frame_data_ptr</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="n">out_frame</span><span class="p">.</span><span class="n">width</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_size</span><span class="p">.</span><span class="n">width</span><span class="o">*</span><span class="n">m_out_props_ptr</span><span class="o">-&gt;</span><span class="n">scale</span><span class="p">);</span>
+            <span class="n">out_frame</span><span class="p">.</span><span class="n">height</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_size</span><span class="p">.</span><span class="n">height</span><span class="o">*</span><span class="n">m_out_props_ptr</span><span class="o">-&gt;</span><span class="n">scale</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">m_out_props_ptr</span><span class="o">-&gt;</span><span class="n">out_type</span><span class="p">)</span> <span class="c1">// y</span>
+                <span class="n">out_frame_size</span> <span class="o">=</span> <span class="n">out_frame</span><span class="p">.</span><span class="n">width</span><span class="o">*</span><span class="n">out_frame</span><span class="p">.</span><span class="n">height</span><span class="p">;</span>
+            <span class="k">else</span> <span class="c1">// yuv</span>
+                <span class="n">out_frame_size</span> <span class="o">=</span> <span class="n">out_frame</span><span class="p">.</span><span class="n">width</span><span class="o">*</span><span class="n">out_frame</span><span class="p">.</span><span class="n">height</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">out_frame</span><span class="p">.</span><span class="n">data_len</span> <span class="o">!=</span> <span class="n">out_frame_size</span><span class="p">)</span>
+            <span class="p">{</span><span class="c1">// 参数变化</span>
+                <span class="n">SAFE_DELETE_ARRAY</span><span class="p">(</span><span class="n">out_frame</span><span class="p">.</span><span class="n">frame_data_ptr</span><span class="p">);</span>
+                <span class="n">out_frame</span><span class="p">.</span><span class="n">data_len</span> <span class="o">=</span> <span class="n">out_frame_size</span><span class="p">;</span>
+                <span class="n">out_frame</span><span class="p">.</span><span class="n">frame_data_ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">uint8_t</span><span class="p">[</span><span class="n">out_frame</span><span class="p">.</span><span class="n">data_len</span><span class="p">];</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">va_out_img</span><span class="p">.</span><span class="n">image_id</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">vaDestroyImage</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">va_out_img</span><span class="p">.</span><span class="n">image_id</span><span class="p">);</span>
+                    <span class="n">va_out_img</span><span class="p">.</span><span class="n">image_id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">va_tmp_surf_id</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">vaDestroySurfaces</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">va_tmp_surf_id</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+                    <span class="n">va_tmp_surf_id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+                <span class="p">}</span>
+
+                <span class="n">vaCreateImage</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">va_img_format</span><span class="p">,</span> <span class="n">out_frame</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">out_frame</span><span class="p">.</span><span class="n">height</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">va_out_img</span><span class="p">);</span>
+                <span class="n">vaCreateSurfaces</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">VA_RT_FORMAT_YUV420</span><span class="p">,</span> <span class="n">AlignSize</span><span class="p">(</span><span class="n">out_frame</span><span class="p">.</span><span class="n">width</span><span class="p">),</span>
+                    <span class="n">AlignSize</span><span class="p">(</span><span class="n">out_frame</span><span class="p">.</span><span class="n">height</span><span class="p">),</span> <span class="o">&amp;</span><span class="n">va_tmp_surf_id</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+            <span class="p">}</span>
+
+            <span class="c1">// 从surface取出image,注意lock，避免和GetReadyImage接口冲突</span>
+            <span class="n">pthread_mutex_lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_decode_mtx</span><span class="p">);</span>
+            <span class="n">vaGetImage</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">va_out_surf_id</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_size</span><span class="p">.</span><span class="n">height</span><span class="p">,</span> <span class="n">va_surf_img</span><span class="p">.</span><span class="n">image_id</span><span class="p">);</span>
+            <span class="n">pthread_mutex_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_decode_mtx</span><span class="p">);</span>
+            <span class="c1">// 把image put到目标尺寸的surface上，执行缩放</span>
+            <span class="n">vaPutImage</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">va_tmp_surf_id</span><span class="p">,</span> <span class="n">va_surf_img</span><span class="p">.</span><span class="n">image_id</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_size</span><span class="p">.</span><span class="n">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">out_frame</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">out_frame</span><span class="p">.</span><span class="n">height</span><span class="p">);</span>
+            <span class="c1">// 获取缩放后的image</span>
+            <span class="n">vaGetImage</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">va_tmp_surf_id</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">out_frame</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">out_frame</span><span class="p">.</span><span class="n">height</span><span class="p">,</span> <span class="n">va_out_img</span><span class="p">.</span><span class="n">image_id</span><span class="p">);</span>
+
+            <span class="c1">// 下载Y或yuv数据</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">m_out_props_ptr</span><span class="o">-&gt;</span><span class="n">out_type</span><span class="p">)</span>
+                <span class="n">DownYDataFromImage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">va_out_img</span><span class="p">,</span> <span class="n">out_frame</span><span class="p">.</span><span class="n">frame_data_ptr</span><span class="p">);</span>
+            <span class="k">else</span>
+                <span class="nf">DownYUVDataFromImage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">va_out_img</span><span class="p">,</span> <span class="n">out_frame</span><span class="p">.</span><span class="n">frame_data_ptr</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="n">m_callback_ptr</span><span class="o">-&gt;</span><span class="n">OnDecodeCallBack</span><span class="p">(</span><span class="o">&amp;</span><span class="n">out_frame</span><span class="p">,</span> <span class="p">(</span><span class="n">RBSUserData</span><span class="p">)</span><span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_id</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">va_surf_img</span><span class="p">.</span><span class="n">image_id</span><span class="p">)</span>
+        <span class="n">vaDestroyImage</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span><span class="n">va_surf_img</span><span class="p">.</span><span class="n">image_id</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">va_out_img</span><span class="p">.</span><span class="n">image_id</span><span class="p">)</span>
+        <span class="n">vaDestroyImage</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span><span class="n">va_out_img</span><span class="p">.</span><span class="n">image_id</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">va_tmp_surf_id</span><span class="p">)</span>
+        <span class="n">vaDestroySurfaces</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span><span class="o">&amp;</span><span class="n">va_tmp_surf_id</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+    
+    <span class="n">SAFE_DELETE_ARRAY</span><span class="p">(</span><span class="n">out_frame</span><span class="p">.</span><span class="n">frame_data_ptr</span><span class="p">);</span>
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;EncSource[%d] Exit DecOutFrame Thread!&quot;</span><span class="p">,</span> <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_id</span><span class="p">);</span>
+    <span class="n">m_exit_code</span> <span class="o">=</span> <span class="n">EM_TS_STOP</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span><span class="c1">// NOLINT(readability/fn_size)</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: GetProfile</span>
+<span class="cm">* 描  述: profile_idc转换为VA的profile定义</span>
+<span class="cm">* 时  间: 17年03月18日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VADecH264</span><span class="o">::</span><span class="n">GetVAProfile</span><span class="p">()</span>
+<span class="p">{</span>    
+    <span class="n">m_va_profile</span> <span class="o">=</span> <span class="n">VAProfileNone</span><span class="p">;</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">sps</span><span class="o">-&gt;</span><span class="n">profile_idc</span> <span class="o">==</span> <span class="n">PROFILE_IDC_BASELINE</span><span class="p">)</span>
+        <span class="n">m_va_profile</span> <span class="o">=</span> <span class="n">VAProfileH264Baseline</span><span class="p">;</span>
+    <span class="k">else</span> <span class="nf">if</span><span class="p">(</span><span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">sps</span><span class="o">-&gt;</span><span class="n">profile_idc</span> <span class="o">==</span> <span class="n">PROFILE_IDC_MAIN</span><span class="p">)</span>
+        <span class="n">m_va_profile</span> <span class="o">=</span> <span class="n">VAProfileH264Main</span><span class="p">;</span>
+    <span class="k">else</span> <span class="nf">if</span><span class="p">(</span><span class="n">m_h264_info_ptr</span><span class="o">-&gt;</span><span class="n">sps</span><span class="o">-&gt;</span><span class="n">profile_idc</span> <span class="o">==</span> <span class="n">PROFILE_IDC_HIGH</span><span class="p">)</span>
+        <span class="n">m_va_profile</span> <span class="o">=</span> <span class="n">VAProfileH264High</span><span class="p">;</span>
+    <span class="k">else</span>
+        <span class="k">return</span> <span class="n">EM_RC_OP_NOT_SUPPORT</span><span class="p">;</span>
+   
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</body>
+</html>

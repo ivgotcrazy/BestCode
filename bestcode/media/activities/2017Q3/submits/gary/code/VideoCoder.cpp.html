@@ -1,0 +1,384 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=latin1">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #333333 }
+body  { background: #111111; color: #ffffff }
+body .c { color: #008800; font-style: italic; background-color: #0f140f } /* Comment */
+body .err { color: #ffffff } /* Error */
+body .esc { color: #ffffff } /* Escape */
+body .g { color: #ffffff } /* Generic */
+body .k { color: #fb660a; font-weight: bold } /* Keyword */
+body .l { color: #ffffff } /* Literal */
+body .n { color: #ffffff } /* Name */
+body .o { color: #ffffff } /* Operator */
+body .x { color: #ffffff } /* Other */
+body .p { color: #ffffff } /* Punctuation */
+body .ch { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Hashbang */
+body .cm { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Multiline */
+body .cp { color: #ff0007; font-weight: bold; font-style: italic; background-color: #0f140f } /* Comment.Preproc */
+body .cpf { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.PreprocFile */
+body .c1 { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Single */
+body .cs { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Special */
+body .gd { color: #ffffff } /* Generic.Deleted */
+body .ge { color: #ffffff } /* Generic.Emph */
+body .gr { color: #ffffff } /* Generic.Error */
+body .gh { color: #ffffff; font-weight: bold } /* Generic.Heading */
+body .gi { color: #ffffff } /* Generic.Inserted */
+body .go { color: #444444; background-color: #222222 } /* Generic.Output */
+body .gp { color: #ffffff } /* Generic.Prompt */
+body .gs { color: #ffffff } /* Generic.Strong */
+body .gu { color: #ffffff; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #ffffff } /* Generic.Traceback */
+body .kc { color: #fb660a; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #fb660a; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #fb660a; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #fb660a } /* Keyword.Pseudo */
+body .kr { color: #fb660a; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #cdcaa9; font-weight: bold } /* Keyword.Type */
+body .ld { color: #ffffff } /* Literal.Date */
+body .m { color: #0086f7; font-weight: bold } /* Literal.Number */
+body .s { color: #0086d2 } /* Literal.String */
+body .na { color: #ff0086; font-weight: bold } /* Name.Attribute */
+body .nb { color: #ffffff } /* Name.Builtin */
+body .nc { color: #ffffff } /* Name.Class */
+body .no { color: #0086d2 } /* Name.Constant */
+body .nd { color: #ffffff } /* Name.Decorator */
+body .ni { color: #ffffff } /* Name.Entity */
+body .ne { color: #ffffff } /* Name.Exception */
+body .nf { color: #ff0086; font-weight: bold } /* Name.Function */
+body .nl { color: #ffffff } /* Name.Label */
+body .nn { color: #ffffff } /* Name.Namespace */
+body .nx { color: #ffffff } /* Name.Other */
+body .py { color: #ffffff } /* Name.Property */
+body .nt { color: #fb660a; font-weight: bold } /* Name.Tag */
+body .nv { color: #fb660a } /* Name.Variable */
+body .ow { color: #ffffff } /* Operator.Word */
+body .w { color: #888888 } /* Text.Whitespace */
+body .mb { color: #0086f7; font-weight: bold } /* Literal.Number.Bin */
+body .mf { color: #0086f7; font-weight: bold } /* Literal.Number.Float */
+body .mh { color: #0086f7; font-weight: bold } /* Literal.Number.Hex */
+body .mi { color: #0086f7; font-weight: bold } /* Literal.Number.Integer */
+body .mo { color: #0086f7; font-weight: bold } /* Literal.Number.Oct */
+body .sa { color: #0086d2 } /* Literal.String.Affix */
+body .sb { color: #0086d2 } /* Literal.String.Backtick */
+body .sc { color: #0086d2 } /* Literal.String.Char */
+body .dl { color: #0086d2 } /* Literal.String.Delimiter */
+body .sd { color: #0086d2 } /* Literal.String.Doc */
+body .s2 { color: #0086d2 } /* Literal.String.Double */
+body .se { color: #0086d2 } /* Literal.String.Escape */
+body .sh { color: #0086d2 } /* Literal.String.Heredoc */
+body .si { color: #0086d2 } /* Literal.String.Interpol */
+body .sx { color: #0086d2 } /* Literal.String.Other */
+body .sr { color: #0086d2 } /* Literal.String.Regex */
+body .s1 { color: #0086d2 } /* Literal.String.Single */
+body .ss { color: #0086d2 } /* Literal.String.Symbol */
+body .bp { color: #ffffff } /* Name.Builtin.Pseudo */
+body .fm { color: #ff0086; font-weight: bold } /* Name.Function.Magic */
+body .vc { color: #fb660a } /* Name.Variable.Class */
+body .vg { color: #fb660a } /* Name.Variable.Global */
+body .vi { color: #fb660a } /* Name.Variable.Instance */
+body .vm { color: #fb660a } /* Name.Variable.Magic */
+body .il { color: #0086f7; font-weight: bold } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;StdAfxWV.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;VideoCoder.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;VideoCodecLoader.h&quot;</span><span class="cp"></span>
+<span class="cp">#ifdef _FS_OS_ANDROID</span>
+<span class="cp">#include</span> <span class="cpf">&quot;jniCommon.h&quot;</span><span class="cp"></span>
+<span class="cp">#endif</span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">WVideo</span><span class="p">;</span> <span class="c1">//NOLINT</span>
+
+<span class="cp">#ifndef ALOG</span>
+<span class="cp">#define ALOG</span>
+<span class="cp">#endif</span>
+
+
+<span class="cp">#if USE_H264IOSHDENC</span>
+<span class="cp">#include</span> <span class="cpf">&quot;VideoEncoderH264IOSHD.h&quot;</span><span class="cp"></span>
+<span class="cp">#endif</span>
+
+
+<span class="cp">#include</span> <span class="cpf">&quot;HWAccController.h&quot;</span><span class="cp"></span>
+<span class="n">CHWAccController</span>	<span class="n">g_hwAccController</span><span class="p">;</span>
+
+<span class="k">extern</span> <span class="n">HMODULE</span> <span class="n">g_hVideoModule</span><span class="p">;</span>
+
+<span class="c1">//</span>
+
+<span class="n">CVideoCodecLoader</span> <span class="n">g_videoCodecLoader</span><span class="p">;</span>
+
+<span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span> <span class="c1">//NOLINT</span>
+	<span class="kt">int</span>		<span class="n">nCodecID</span><span class="p">;</span>
+	<span class="n">WCHAR</span>   <span class="n">wszCodecName</span><span class="p">[</span><span class="mi">64</span><span class="p">];</span>
+<span class="p">}</span><span class="n">VideoCodecInfo</span><span class="p">;</span>
+
+<span class="k">const</span> <span class="n">VideoCodecInfo</span> <span class="n">g_VideoCodeArray</span><span class="p">[]</span> <span class="o">=</span>
+<span class="p">{</span>
+	<span class="p">{</span> <span class="n">VIDEO_CODEC_DIVX</span><span class="p">,</span> <span class="sa">L</span><span class="s">&quot;Mpeg4 Codec 1&quot;</span> <span class="p">},</span>
+	<span class="p">{</span> <span class="n">VIDEO_CODEC_WMV9</span><span class="p">,</span><span class="sa">L</span><span class="s">&quot;Mpeg4 Codec 2&quot;</span><span class="p">},</span>
+	<span class="p">{</span> <span class="n">VIDEO_CODEC_H264</span><span class="p">,</span><span class="sa">L</span><span class="s">&quot;H264 Codec&quot;</span><span class="p">},</span>
+<span class="c1">//	{ VIDEO_CODEC_H264PLUS,L&quot;H264 Codec Plus&quot;},</span>
+	<span class="p">{</span> <span class="n">VIDEO_CODEC_H264PLUS</span><span class="p">,</span><span class="sa">L</span><span class="s">&quot;TIVC Codec&quot;</span><span class="p">},</span>
+	<span class="p">{</span> <span class="n">VIDEO_CODEC_XVID</span><span class="p">,</span><span class="sa">L</span><span class="s">&quot;XVID Codec&quot;</span><span class="p">},</span>
+	<span class="p">{</span> <span class="n">VIDEO_CODEC_VP8</span><span class="p">,</span><span class="sa">L</span><span class="s">&quot;VP8 Codec&quot;</span><span class="p">},</span>
+	<span class="p">{</span> <span class="n">VIDEO_CODEC_VP9</span><span class="p">,</span><span class="sa">L</span><span class="s">&quot;VP9 Codec&quot;</span><span class="p">},</span>
+	<span class="p">{</span><span class="n">VIDEO_CODEC_H265</span><span class="p">,</span> <span class="sa">L</span><span class="s">&quot;H265 Codec&quot;</span><span class="p">},</span>
+<span class="p">};</span>
+
+<span class="c1">//---------------------</span>
+<span class="c1">//»ñÈ¡±àÂëÆ÷¸öÊý</span>
+<span class="c1">//---------------------</span>
+<span class="kt">int</span> 	<span class="nf">VIDEO_Codec_GetCount</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="k">return</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">g_VideoCodeArray</span><span class="p">)</span><span class="o">/</span><span class="k">sizeof</span><span class="p">(</span><span class="n">VideoCodecInfo</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//---------------------</span>
+<span class="c1">//»ñÈ¡±àÂëÆ÷Ãû³Æ</span>
+<span class="c1">//---------------------</span>
+<span class="n">FS_UINT</span>    <span class="nf">VIDEO_Codec_GetInfo</span><span class="p">(</span><span class="kt">int</span> <span class="n">nIndex</span><span class="p">,</span> <span class="n">WCHAR</span> <span class="o">*</span><span class="n">wszName</span><span class="p">,</span> <span class="n">FS_UINT</span> <span class="n">nSize</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">nCodecID</span><span class="p">)</span> <span class="c1">//NOLINT</span>
+<span class="p">{</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">nIndex</span> <span class="o">&gt;=</span> <span class="n">VIDEO_Codec_GetCount</span><span class="p">()</span> <span class="p">)</span>
+		<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	
+	<span class="k">if</span><span class="p">(</span> <span class="n">nSize</span> <span class="o">&lt;=</span> <span class="n">wcslen</span><span class="p">(</span><span class="n">g_VideoCodeArray</span><span class="p">[</span><span class="n">nIndex</span><span class="p">].</span><span class="n">wszCodecName</span><span class="p">))</span>
+		<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	
+	<span class="n">wcscpy</span><span class="p">(</span> <span class="n">wszName</span><span class="p">,</span><span class="n">g_VideoCodeArray</span><span class="p">[</span><span class="n">nIndex</span><span class="p">].</span><span class="n">wszCodecName</span> <span class="p">);</span>
+	<span class="n">nCodecID</span> <span class="o">=</span> <span class="n">g_VideoCodeArray</span><span class="p">[</span><span class="n">nIndex</span><span class="p">].</span><span class="n">nCodecID</span><span class="p">;</span>
+	
+	<span class="k">return</span> <span class="n">wcslen</span><span class="p">(</span> <span class="n">wszName</span> <span class="p">);</span>	
+<span class="p">}</span>
+
+<span class="c1">//---------------------</span>
+<span class="c1">//´´½¨Ñ¹ËõÆ÷</span>
+<span class="c1">//EncodeType: Ñ¹ËõÆ÷ÀàÐÍ</span>
+<span class="c1">//lpbiIn:Ñ¹ËõÇ°Î»Í¼¸ñÊ½</span>
+<span class="c1">//Return:Ñ¹ËõÆ÷¾ä±ú</span>
+<span class="c1">//-------------------</span>
+<span class="n">VCodecHandle</span>	<span class="nf">VIDEO_Encode_StartCompress</span><span class="p">(</span> <span class="k">const</span> <span class="n">Video_Encoder_Param</span> <span class="o">&amp;</span><span class="n">param</span><span class="p">,</span><span class="k">const</span> <span class="n">BITMAPINFOHEADER</span> <span class="o">&amp;</span><span class="n">biIn</span> <span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">VideoCodecDllEx</span> <span class="o">*</span><span class="n">pCodecDll</span><span class="p">;</span>
+	<span class="n">HANDLE</span> <span class="n">hCodec</span><span class="p">;</span>
+	<span class="n">VCodecHandle</span> <span class="n">vHandle</span><span class="p">;</span>
+	<span class="n">BOOL</span> <span class="n">bHasHW</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">;</span>
+	<span class="n">BOOL</span> <span class="n">isHW</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">;</span>
+	<span class="n">BOOL</span> <span class="n">bEnableH265</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">;</span>
+	<span class="n">vHandle</span><span class="p">.</span><span class="n">pCodec</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="n">vHandle</span><span class="p">.</span><span class="n">pCodecDll</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+	<span class="kt">int</span> <span class="n">nCodecId</span> <span class="o">=</span>  <span class="n">param</span><span class="p">.</span><span class="n">nEncoderID</span><span class="p">;</span>
+    <span class="c1">//if (param.nEncoderID == VIDEO_CODEC_H264 || param.nEncoderID == VIDEO_CODEC_H264PLUS)</span>
+    <span class="c1">//    nCodecId = VIDEO_CODEC_H265;</span>
+	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">g_videoCodecLoader</span><span class="p">.</span><span class="n">IsInited</span><span class="p">())</span>
+		<span class="k">return</span> <span class="n">vHandle</span><span class="p">;</span>
+
+	<span class="k">if</span> <span class="p">(</span><span class="n">g_pVideoConfigCenter</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">g_pVideoConfigCenter</span><span class="o">-&gt;</span><span class="n">GetBool</span><span class="p">(</span><span class="s">&quot;avcore.codec.video.h265&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">bEnableH265</span><span class="p">)){</span>
+			<span class="n">LOG</span><span class="p">(</span><span class="s">&quot;INF:VIDEO_Encode_StartCompress: enable H.265 feature status [%d]!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">bEnableH265</span><span class="p">);</span>
+		<span class="p">}</span>
+		<span class="k">else</span> <span class="p">{</span>
+			<span class="n">bEnableH265</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">;</span>
+			<span class="n">LOG</span><span class="p">(</span><span class="s">&quot;INF:VIDEO_Encode_StartCompress: disable H.265 feature!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+
+	<span class="c1">//if H.265 is disabled in config center, fall back to H.264</span>
+	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">bEnableH265</span> <span class="o">&amp;&amp;</span> <span class="n">nCodecId</span> <span class="o">==</span> <span class="n">VIDEO_CODEC_H265</span><span class="p">)</span> <span class="p">{</span>
+		<span class="n">nCodecId</span> <span class="o">=</span> <span class="n">VIDEO_CODEC_H264</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="c1">//check HW acc control</span>
+	<span class="n">bHasHW</span> <span class="o">=</span> <span class="n">g_videoCodecLoader</span><span class="p">.</span><span class="n">HasHWAcc</span><span class="p">(</span><span class="n">nCodecId</span><span class="p">,</span> <span class="n">TRUE</span><span class="p">);</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">bHasHW</span> <span class="o">&amp;&amp;</span> <span class="n">g_hwAccController</span><span class="p">.</span><span class="n">IncreaseCurHWAccEncoder</span><span class="p">())</span> <span class="p">{</span>
+		<span class="n">isHW</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="n">pCodecDll</span> <span class="o">=</span> <span class="n">g_videoCodecLoader</span><span class="p">.</span><span class="n">FindCodecById</span><span class="p">(</span><span class="n">nCodecId</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">isHW</span><span class="p">);</span>
+	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">pCodecDll</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">vHandle</span><span class="p">;</span>
+
+	<span class="n">VideoCodecPluginInfoEx</span> <span class="n">codecInfo</span><span class="p">;</span>
+	<span class="n">pCodecDll</span><span class="o">-&gt;</span><span class="n">DllGetInfo</span><span class="p">(</span><span class="o">&amp;</span><span class="n">codecInfo</span><span class="p">);</span>
+
+<span class="cp">#ifdef _FS_OS_ANDROID</span>
+	<span class="c1">//Some HW accelerated codecs need specific parameter be configured</span>
+	<span class="c1">// before opening it.</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">codecInfo</span><span class="p">.</span><span class="n">nModuleID</span> <span class="o">==</span> <span class="n">MODULE_ID_FFMPEG</span> <span class="o">&amp;&amp;</span>
+			<span class="n">codecInfo</span><span class="p">.</span><span class="n">nCodecID</span> <span class="o">==</span> <span class="n">VIDEO_CODEC_H264</span><span class="p">){</span>
+		<span class="c1">//codec is MediaCodec HWAcc encoder</span>
+		<span class="n">pCodecDll</span><span class="o">-&gt;</span><span class="n">DllEncConfig</span><span class="p">(</span><span class="nb">NULL</span><span class="p">,</span> <span class="n">ENC_CONFIG_TYPE_JVM</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="n">g_hVideoModule</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="cp">#endif</span>
+
+	<span class="n">hCodec</span> <span class="o">=</span> <span class="n">pCodecDll</span><span class="o">-&gt;</span><span class="n">DllEncOpen</span><span class="p">(</span><span class="o">&amp;</span><span class="n">param</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">biIn</span><span class="p">);</span>
+	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">hCodec</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">vHandle</span><span class="p">;</span>
+
+	<span class="n">vHandle</span><span class="p">.</span><span class="n">pCodec</span> <span class="o">=</span> <span class="n">hCodec</span><span class="p">;</span>
+	<span class="n">vHandle</span><span class="p">.</span><span class="n">pCodecDll</span> <span class="o">=</span> <span class="p">(</span><span class="n">HANDLE</span><span class="p">)</span><span class="n">pCodecDll</span><span class="p">;</span>
+
+	<span class="k">return</span> <span class="n">vHandle</span><span class="p">;</span>
+	
+<span class="p">}</span>
+
+<span class="c1">//////////////////////////////////////////////////////////////</span>
+<span class="c1">//for compatablity, should be removed later</span>
+<span class="n">BOOL</span>	<span class="nf">VIDEO_Encode_Compress</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">hEncoder</span><span class="p">,</span><span class="n">Video_Code_Frame</span> <span class="o">&amp;</span><span class="n">frame</span> <span class="p">){</span><span class="k">return</span> <span class="nb">true</span><span class="p">;}</span> <span class="c1">//NOLINT</span>
+<span class="n">BOOL</span>	<span class="nf">VIDEO_Decode_Decompress</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">hEncoder</span><span class="p">,</span><span class="n">Video_Code_Frame</span> <span class="o">&amp;</span><span class="n">frame</span> <span class="p">){</span><span class="k">return</span> <span class="nb">true</span><span class="p">;}</span> <span class="c1">//NOLINT</span>
+<span class="n">BOOL</span>	<span class="nf">VIDEO_Encode_StopCompress</span><span class="p">(</span><span class="kt">void</span><span class="o">*&amp;</span> <span class="n">hEncoder</span><span class="p">){</span><span class="k">return</span> <span class="nb">true</span><span class="p">;}</span> <span class="c1">//NOLINT</span>
+<span class="n">BOOL</span>	<span class="nf">VIDEO_Decode_StopDecompress</span><span class="p">(</span><span class="kt">void</span><span class="o">*&amp;</span> <span class="n">hEncoder</span><span class="p">){</span><span class="k">return</span> <span class="nb">true</span><span class="p">;}</span> <span class="c1">//NOLINT</span>
+<span class="c1">//////////////////////////////////////////////////////////////</span>
+<span class="c1">//---------------------</span>
+<span class="c1">//Ñ¹ËõÊý¾Ý</span>
+<span class="c1">//frame£ºÑ¹ËõÊý¾Ý°ü</span>
+<span class="c1">//Return:·µ»ØÊÇ·ñ³É¹¦</span>
+<span class="c1">//----------------------</span>
+<span class="n">BOOL</span>	<span class="nf">VIDEO_Encode_Compress</span><span class="p">(</span><span class="n">VCodecHandle</span> <span class="n">hEncoder</span><span class="p">,</span><span class="n">Video_Code_Frame</span> <span class="o">&amp;</span><span class="n">frame</span> <span class="p">)</span> <span class="c1">//NOLINT</span>
+<span class="p">{</span>
+	<span class="k">if</span><span class="p">(</span> <span class="o">!</span><span class="n">hEncoder</span><span class="p">.</span><span class="n">pCodec</span> <span class="o">||</span> <span class="o">!</span><span class="n">hEncoder</span><span class="p">.</span><span class="n">pCodecDll</span> <span class="p">)</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+
+	<span class="n">VideoCodecDllEx</span> <span class="o">*</span><span class="n">pCodecDll</span> <span class="o">=</span> <span class="p">(</span><span class="n">VideoCodecDllEx</span> <span class="o">*</span><span class="p">)</span><span class="n">hEncoder</span><span class="p">.</span><span class="n">pCodecDll</span><span class="p">;</span>
+
+	<span class="k">return</span> <span class="n">pCodecDll</span><span class="o">-&gt;</span><span class="n">DllEncode</span><span class="p">(</span><span class="n">hEncoder</span><span class="p">.</span><span class="n">pCodec</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">frame</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//--------------------</span>
+<span class="c1">//Í£Ö¹Ñ¹ËõÆ÷</span>
+<span class="c1">//hEncoder: Ñ¹ËõÆ÷¾ä±ú</span>
+<span class="c1">//--------------------</span>
+<span class="n">VOID</span>	<span class="nf">VIDEO_Encode_StopCompress</span><span class="p">(</span><span class="n">VCodecHandle</span> <span class="o">&amp;</span><span class="n">hEncoder</span><span class="p">)</span><span class="c1">//NOLINT</span>
+<span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">hEncoder</span><span class="p">.</span><span class="n">pCodec</span> <span class="o">||</span> <span class="o">!</span><span class="n">hEncoder</span><span class="p">.</span><span class="n">pCodecDll</span><span class="p">)</span>
+		<span class="k">return</span><span class="p">;</span>
+
+	<span class="n">VideoCodecDllEx</span> <span class="o">*</span><span class="n">pCodecDll</span> <span class="o">=</span> <span class="p">(</span><span class="n">VideoCodecDllEx</span> <span class="o">*</span><span class="p">)</span><span class="n">hEncoder</span><span class="p">.</span><span class="n">pCodecDll</span><span class="p">;</span>
+	<span class="n">pCodecDll</span><span class="o">-&gt;</span><span class="n">DllEncClose</span><span class="p">(</span><span class="n">hEncoder</span><span class="p">.</span><span class="n">pCodec</span><span class="p">);</span>
+	<span class="n">hEncoder</span><span class="p">.</span><span class="n">pCodec</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="n">hEncoder</span><span class="p">.</span><span class="n">pCodecDll</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+	<span class="n">VideoCodecPluginInfoEx</span> <span class="n">codecInfo</span><span class="p">;</span>
+	<span class="n">pCodecDll</span><span class="o">-&gt;</span><span class="n">DllGetInfo</span><span class="p">(</span><span class="o">&amp;</span><span class="n">codecInfo</span><span class="p">);</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">codecInfo</span><span class="p">.</span><span class="n">bIsHWAccel</span><span class="p">)</span> <span class="p">{</span>
+		<span class="n">g_hwAccController</span><span class="p">.</span><span class="n">DecreaseCurHWAccEncoder</span><span class="p">();</span>
+	<span class="p">}</span>
+	
+<span class="p">}</span>
+
+<span class="n">VOID</span>	<span class="nf">VIDEO_Encode_SetMaxHWAccEncoder</span><span class="p">(</span><span class="n">DWORD</span> <span class="n">nMax</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">g_hwAccController</span><span class="p">.</span><span class="n">SetMaxHWAccEncoder</span><span class="p">(</span><span class="n">nMax</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//---------------------</span>
+<span class="c1">//´´½¨½âÑ¹Æ÷</span>
+<span class="c1">//CodeType:½âÑ¹Æ÷¾ä±ú</span>
+<span class="c1">//biOut:½âÑ¹Ö®ºó¸ñÊ½</span>
+<span class="c1">//Return: ½âÑ¹Æ÷¾ä±ú</span>
+<span class="c1">//---------------------</span>
+<span class="n">VCodecHandle</span> <span class="nf">VIDEO_Decode_StartDecompress</span><span class="p">(</span><span class="kt">int</span> <span class="n">nCodecId</span><span class="p">,</span> <span class="k">const</span> <span class="n">BITMAPINFOHEADER</span> <span class="o">&amp;</span><span class="n">biOut</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">VideoCodecDllEx</span> <span class="o">*</span><span class="n">pCodecDll</span><span class="p">;</span>
+	<span class="n">HANDLE</span> <span class="n">hCodec</span><span class="p">;</span>
+	<span class="n">VCodecHandle</span> <span class="n">vHandle</span><span class="p">;</span>
+	<span class="n">VideoCodecPluginInfoEx</span> <span class="n">vInfo</span><span class="p">;</span>
+	<span class="n">BOOL</span> <span class="n">bHasHW</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">;</span>
+	<span class="n">BOOL</span> <span class="n">isHW</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">;</span>
+	<span class="n">vHandle</span><span class="p">.</span><span class="n">pCodec</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="n">vHandle</span><span class="p">.</span><span class="n">pCodecDll</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+	<span class="c1">//if (nCodecId == VIDEO_CODEC_H264 || nCodecId == VIDEO_CODEC_H264PLUS)</span>
+	   <span class="c1">// nCodecId = VIDEO_CODEC_H265;</span>
+
+	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">g_videoCodecLoader</span><span class="p">.</span><span class="n">IsInited</span><span class="p">())</span>
+		<span class="k">return</span> <span class="n">vHandle</span><span class="p">;</span>
+
+	<span class="c1">//check HW acc control</span>
+	<span class="n">bHasHW</span> <span class="o">=</span> <span class="n">g_videoCodecLoader</span><span class="p">.</span><span class="n">HasHWAcc</span><span class="p">(</span><span class="n">nCodecId</span><span class="p">,</span> <span class="n">FALSE</span><span class="p">);</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">bHasHW</span> <span class="o">&amp;&amp;</span> <span class="n">g_hwAccController</span><span class="p">.</span><span class="n">IncreaseCurHWAccDecoder</span><span class="p">())</span> <span class="p">{</span>
+		<span class="n">isHW</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="n">pCodecDll</span> <span class="o">=</span> <span class="n">g_videoCodecLoader</span><span class="p">.</span><span class="n">FindCodecById</span><span class="p">(</span><span class="n">nCodecId</span><span class="p">,</span> <span class="n">FALSE</span><span class="p">,</span> <span class="n">isHW</span><span class="p">);</span>
+	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">pCodecDll</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">vHandle</span><span class="p">;</span>
+
+	<span class="n">pCodecDll</span><span class="o">-&gt;</span><span class="n">DllGetInfo</span><span class="p">(</span><span class="o">&amp;</span><span class="n">vInfo</span><span class="p">);</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">vInfo</span><span class="p">.</span><span class="n">bIsHWAccel</span><span class="p">)</span> <span class="p">{</span>
+		<span class="n">vHandle</span><span class="p">.</span><span class="n">pCodecDll</span> <span class="o">=</span> <span class="n">pCodecDll</span><span class="p">;</span>
+<span class="cp">#ifdef _FS_OS_ANDROID</span>
+		<span class="n">pCodecDll</span><span class="o">-&gt;</span><span class="n">DllDecConfig</span><span class="p">(</span><span class="nb">NULL</span><span class="p">,</span> <span class="n">DEC_CONFIG_TYPE_JVM</span><span class="p">,</span> <span class="n">g_hVideoModule</span><span class="p">);</span>
+<span class="cp">#endif</span>
+		<span class="k">return</span> <span class="n">vHandle</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="n">hCodec</span> <span class="o">=</span> <span class="n">pCodecDll</span><span class="o">-&gt;</span><span class="n">DllDecOpen</span><span class="p">(</span><span class="o">&amp;</span><span class="n">biOut</span><span class="p">);</span>
+	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">hCodec</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">vHandle</span><span class="p">;</span>
+
+	<span class="n">vHandle</span><span class="p">.</span><span class="n">pCodec</span> <span class="o">=</span> <span class="n">hCodec</span><span class="p">;</span>
+	<span class="n">vHandle</span><span class="p">.</span><span class="n">pCodecDll</span> <span class="o">=</span> <span class="p">(</span><span class="n">HANDLE</span><span class="p">)</span><span class="n">pCodecDll</span><span class="p">;</span>
+
+	<span class="k">return</span> <span class="n">vHandle</span><span class="p">;</span>
+
+<span class="p">}</span>
+
+
+<span class="c1">//-------------------</span>
+<span class="c1">//½âÑ¹Í¼Ïó</span>
+<span class="c1">//hDecoder:½âÑ¹Æ÷¾ä±ú</span>
+<span class="c1">//frame:½âÑ¹°ü</span>
+<span class="c1">//Return: ÊÇ·ñ½âÑ¹³É¹¦</span>
+<span class="c1">//--------------------</span>
+<span class="n">BOOL</span>	<span class="nf">VIDEO_Decode_Decompress</span><span class="p">(</span><span class="n">VCodecHandle</span> <span class="n">hDecoder</span><span class="p">,</span><span class="n">Video_Code_Frame</span> <span class="o">&amp;</span><span class="n">frame</span> <span class="p">)</span><span class="c1">//NOLINT</span>
+<span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">hDecoder</span><span class="p">.</span><span class="n">pCodec</span> <span class="o">||</span> <span class="o">!</span><span class="n">hDecoder</span><span class="p">.</span><span class="n">pCodecDll</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+
+	<span class="n">VideoCodecDllEx</span> <span class="o">*</span><span class="n">pCodecDll</span> <span class="o">=</span> <span class="p">(</span><span class="n">VideoCodecDllEx</span> <span class="o">*</span><span class="p">)</span><span class="n">hDecoder</span><span class="p">.</span><span class="n">pCodecDll</span><span class="p">;</span>
+	<span class="k">return</span> <span class="n">pCodecDll</span><span class="o">-&gt;</span><span class="n">DllDecode</span><span class="p">(</span><span class="n">hDecoder</span><span class="p">.</span><span class="n">pCodec</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">frame</span><span class="p">);</span>
+
+<span class="p">}</span>
+
+<span class="c1">//---------------------</span>
+<span class="c1">//Í£Ö¹Ñ¹ËõÆ÷</span>
+<span class="c1">//hDecoder:½âÑ¹Æ÷¾ä±ú</span>
+<span class="c1">//--------------------</span>
+<span class="n">VOID</span>	<span class="nf">VIDEO_Decode_StopDecompress</span><span class="p">(</span><span class="n">VCodecHandle</span> <span class="o">&amp;</span><span class="n">hDecoder</span><span class="p">)</span><span class="c1">//NOLINT</span>
+<span class="p">{</span>
+	<span class="n">ALOG</span><span class="p">(</span><span class="s">&quot;VIDEO_Decode_StopDecompress:: stop decoder.&quot;</span><span class="p">);</span>
+	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">hDecoder</span><span class="p">.</span><span class="n">pCodecDll</span><span class="p">)</span>
+		<span class="k">return</span><span class="p">;</span>
+	<span class="n">VideoCodecDllEx</span> <span class="o">*</span><span class="n">pCodecDll</span> <span class="o">=</span> <span class="p">(</span><span class="n">VideoCodecDllEx</span> <span class="o">*</span><span class="p">)</span><span class="n">hDecoder</span><span class="p">.</span><span class="n">pCodecDll</span><span class="p">;</span>
+	<span class="n">pCodecDll</span><span class="o">-&gt;</span><span class="n">DllDecClose</span><span class="p">(</span><span class="n">hDecoder</span><span class="p">.</span><span class="n">pCodec</span><span class="p">);</span>
+	<span class="n">hDecoder</span><span class="p">.</span><span class="n">pCodec</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="n">hDecoder</span><span class="p">.</span><span class="n">pCodecDll</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+	<span class="n">VideoCodecPluginInfoEx</span> <span class="n">codecInfo</span><span class="p">;</span>
+	<span class="n">pCodecDll</span><span class="o">-&gt;</span><span class="n">DllGetInfo</span><span class="p">(</span><span class="o">&amp;</span><span class="n">codecInfo</span><span class="p">);</span>
+	<span class="n">ALOG</span><span class="p">(</span><span class="s">&quot;VIDEO_Decode_StopDecompress:: get decoder info.&quot;</span><span class="p">);</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">codecInfo</span><span class="p">.</span><span class="n">bIsHWAccel</span><span class="p">)</span> <span class="p">{</span>
+		<span class="n">ALOG</span><span class="p">(</span><span class="s">&quot;VIDEO_Decode_StopDecompress:: decrease HW decoder count.&quot;</span><span class="p">);</span>
+		<span class="n">g_hwAccController</span><span class="p">.</span><span class="n">DecreaseCurHWAccDecoder</span><span class="p">();</span>
+	<span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</body>
+</html>

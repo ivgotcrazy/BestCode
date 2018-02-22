@@ -1,0 +1,317 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #333333 }
+body  { background: #111111; color: #ffffff }
+body .c { color: #008800; font-style: italic; background-color: #0f140f } /* Comment */
+body .err { color: #ffffff } /* Error */
+body .esc { color: #ffffff } /* Escape */
+body .g { color: #ffffff } /* Generic */
+body .k { color: #fb660a; font-weight: bold } /* Keyword */
+body .l { color: #ffffff } /* Literal */
+body .n { color: #ffffff } /* Name */
+body .o { color: #ffffff } /* Operator */
+body .x { color: #ffffff } /* Other */
+body .p { color: #ffffff } /* Punctuation */
+body .ch { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Hashbang */
+body .cm { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Multiline */
+body .cp { color: #ff0007; font-weight: bold; font-style: italic; background-color: #0f140f } /* Comment.Preproc */
+body .cpf { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.PreprocFile */
+body .c1 { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Single */
+body .cs { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Special */
+body .gd { color: #ffffff } /* Generic.Deleted */
+body .ge { color: #ffffff } /* Generic.Emph */
+body .gr { color: #ffffff } /* Generic.Error */
+body .gh { color: #ffffff; font-weight: bold } /* Generic.Heading */
+body .gi { color: #ffffff } /* Generic.Inserted */
+body .go { color: #444444; background-color: #222222 } /* Generic.Output */
+body .gp { color: #ffffff } /* Generic.Prompt */
+body .gs { color: #ffffff } /* Generic.Strong */
+body .gu { color: #ffffff; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #ffffff } /* Generic.Traceback */
+body .kc { color: #fb660a; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #fb660a; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #fb660a; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #fb660a } /* Keyword.Pseudo */
+body .kr { color: #fb660a; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #cdcaa9; font-weight: bold } /* Keyword.Type */
+body .ld { color: #ffffff } /* Literal.Date */
+body .m { color: #0086f7; font-weight: bold } /* Literal.Number */
+body .s { color: #0086d2 } /* Literal.String */
+body .na { color: #ff0086; font-weight: bold } /* Name.Attribute */
+body .nb { color: #ffffff } /* Name.Builtin */
+body .nc { color: #ffffff } /* Name.Class */
+body .no { color: #0086d2 } /* Name.Constant */
+body .nd { color: #ffffff } /* Name.Decorator */
+body .ni { color: #ffffff } /* Name.Entity */
+body .ne { color: #ffffff } /* Name.Exception */
+body .nf { color: #ff0086; font-weight: bold } /* Name.Function */
+body .nl { color: #ffffff } /* Name.Label */
+body .nn { color: #ffffff } /* Name.Namespace */
+body .nx { color: #ffffff } /* Name.Other */
+body .py { color: #ffffff } /* Name.Property */
+body .nt { color: #fb660a; font-weight: bold } /* Name.Tag */
+body .nv { color: #fb660a } /* Name.Variable */
+body .ow { color: #ffffff } /* Operator.Word */
+body .w { color: #888888 } /* Text.Whitespace */
+body .mb { color: #0086f7; font-weight: bold } /* Literal.Number.Bin */
+body .mf { color: #0086f7; font-weight: bold } /* Literal.Number.Float */
+body .mh { color: #0086f7; font-weight: bold } /* Literal.Number.Hex */
+body .mi { color: #0086f7; font-weight: bold } /* Literal.Number.Integer */
+body .mo { color: #0086f7; font-weight: bold } /* Literal.Number.Oct */
+body .sa { color: #0086d2 } /* Literal.String.Affix */
+body .sb { color: #0086d2 } /* Literal.String.Backtick */
+body .sc { color: #0086d2 } /* Literal.String.Char */
+body .dl { color: #0086d2 } /* Literal.String.Delimiter */
+body .sd { color: #0086d2 } /* Literal.String.Doc */
+body .s2 { color: #0086d2 } /* Literal.String.Double */
+body .se { color: #0086d2 } /* Literal.String.Escape */
+body .sh { color: #0086d2 } /* Literal.String.Heredoc */
+body .si { color: #0086d2 } /* Literal.String.Interpol */
+body .sx { color: #0086d2 } /* Literal.String.Other */
+body .sr { color: #0086d2 } /* Literal.String.Regex */
+body .s1 { color: #0086d2 } /* Literal.String.Single */
+body .ss { color: #0086d2 } /* Literal.String.Symbol */
+body .bp { color: #ffffff } /* Name.Builtin.Pseudo */
+body .fm { color: #ff0086; font-weight: bold } /* Name.Function.Magic */
+body .vc { color: #fb660a } /* Name.Variable.Class */
+body .vg { color: #fb660a } /* Name.Variable.Global */
+body .vi { color: #fb660a } /* Name.Variable.Instance */
+body .vm { color: #fb660a } /* Name.Variable.Magic */
+body .il { color: #0086f7; font-weight: bold } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;windows.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;pipe_decode.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;VideoCodecPlugin.h&quot;</span><span class="cp"></span>
+
+
+<span class="kt">void</span>   <span class="n">STDAPICALLTYPE</span>	<span class="nf">_DllGetInfoH264</span><span class="p">(</span><span class="n">VideoCodecPluginInfoEx</span> <span class="o">*</span><span class="n">pInfo</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">pInfo</span><span class="p">){</span>
+		<span class="n">ZeroMemory</span><span class="p">(</span><span class="n">pInfo</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">VideoCodecPluginInfoEx</span><span class="p">));</span>
+		<span class="n">pInfo</span><span class="o">-&gt;</span><span class="n">dwVersion</span> <span class="o">=</span> <span class="mh">0x01</span><span class="p">;</span> <span class="c1">//unused</span>
+		<span class="n">pInfo</span><span class="o">-&gt;</span><span class="n">bSupportDec</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">;</span>
+		<span class="n">pInfo</span><span class="o">-&gt;</span><span class="n">bSupportEnc</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">;</span>
+		<span class="n">pInfo</span><span class="o">-&gt;</span><span class="n">bIsHWAccel</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">;</span>
+		<span class="n">pInfo</span><span class="o">-&gt;</span><span class="n">nCodecID</span> <span class="o">=</span> <span class="n">VIDEO_CODEC_H264</span><span class="p">;</span>
+		<span class="n">pInfo</span><span class="o">-&gt;</span><span class="n">bIsRenerBuiltIn</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">;</span>
+		<span class="n">pInfo</span><span class="o">-&gt;</span><span class="n">nModuleID</span> <span class="o">=</span> <span class="n">MODULE_ID_INTELHW</span><span class="p">;</span>
+		<span class="n">wcscpy</span><span class="p">(</span><span class="n">pInfo</span><span class="o">-&gt;</span><span class="n">wszName</span><span class="p">,</span> <span class="sa">L</span><span class="s">&quot;Intel H264 Decoder&quot;</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span>   <span class="n">STDAPICALLTYPE</span>	<span class="nf">_DllGetInfoH265</span><span class="p">(</span><span class="n">VideoCodecPluginInfoEx</span> <span class="o">*</span><span class="n">pInfo</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">pInfo</span><span class="p">){</span>
+		<span class="n">ZeroMemory</span><span class="p">(</span><span class="n">pInfo</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">VideoCodecPluginInfoEx</span><span class="p">));</span>
+		<span class="n">pInfo</span><span class="o">-&gt;</span><span class="n">dwVersion</span> <span class="o">=</span> <span class="mh">0x01</span><span class="p">;</span> <span class="c1">//unused</span>
+		<span class="n">pInfo</span><span class="o">-&gt;</span><span class="n">bSupportDec</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">;</span>
+		<span class="n">pInfo</span><span class="o">-&gt;</span><span class="n">bSupportEnc</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">;</span>
+		<span class="n">pInfo</span><span class="o">-&gt;</span><span class="n">bIsHWAccel</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">;</span>
+		<span class="n">pInfo</span><span class="o">-&gt;</span><span class="n">nCodecID</span> <span class="o">=</span> <span class="n">VIDEO_CODEC_H265</span><span class="p">;</span>
+		<span class="n">pInfo</span><span class="o">-&gt;</span><span class="n">bIsRenerBuiltIn</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">;</span>
+		<span class="n">pInfo</span><span class="o">-&gt;</span><span class="n">nModuleID</span> <span class="o">=</span> <span class="n">MODULE_ID_INTELHW</span><span class="p">;</span>
+		<span class="n">wcscpy</span><span class="p">(</span><span class="n">pInfo</span><span class="o">-&gt;</span><span class="n">wszName</span><span class="p">,</span> <span class="sa">L</span><span class="s">&quot;Intel H265 Decoder&quot;</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">HANDLE</span>  <span class="n">STDAPICALLTYPE</span> <span class="nf">_DllDecOpenH264</span><span class="p">(</span><span class="n">HWND</span> <span class="n">hWnd</span><span class="p">,</span> <span class="n">PBYTE</span> <span class="n">data</span><span class="p">,</span> <span class="kt">int</span> <span class="n">size</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">data</span><span class="p">)</span>
+		<span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="n">CDecodingPipeline</span><span class="o">*</span> <span class="n">pDec</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CDecodingPipeline</span><span class="p">;</span>
+	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">pDec</span><span class="p">)</span>
+		<span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">MFX_ERR_NONE</span> <span class="o">!=</span> <span class="n">pDec</span><span class="o">-&gt;</span><span class="n">Init</span><span class="p">(</span><span class="n">hWnd</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">MFX_CODEC_AVC</span><span class="p">))</span>
+	<span class="p">{</span>
+		<span class="n">pDec</span><span class="o">-&gt;</span><span class="n">Close</span><span class="p">();</span>
+		<span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">pDec</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">HANDLE</span>  <span class="n">STDAPICALLTYPE</span> <span class="nf">_DllDecOpenH265</span><span class="p">(</span><span class="n">HWND</span> <span class="n">hWnd</span><span class="p">,</span> <span class="n">PBYTE</span> <span class="n">data</span><span class="p">,</span> <span class="kt">int</span> <span class="n">size</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">data</span><span class="p">)</span>
+		<span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="n">CDecodingPipeline</span><span class="o">*</span> <span class="n">pDec</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CDecodingPipeline</span><span class="p">;</span>
+	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">pDec</span><span class="p">)</span>
+		<span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">MFX_ERR_NONE</span> <span class="o">!=</span> <span class="n">pDec</span><span class="o">-&gt;</span><span class="n">Init</span><span class="p">(</span><span class="n">hWnd</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">MFX_CODEC_HEVC</span><span class="p">))</span>
+	<span class="p">{</span>
+		<span class="n">pDec</span><span class="o">-&gt;</span><span class="n">Close</span><span class="p">();</span>
+		<span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">pDec</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">VOID</span>	<span class="n">STDAPICALLTYPE</span> <span class="nf">_DllDecClose</span><span class="p">(</span><span class="n">HANDLE</span> <span class="n">hDecoder</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">hDecoder</span><span class="p">)</span>
+		<span class="k">return</span><span class="p">;</span>
+	<span class="n">CDecodingPipeline</span><span class="o">*</span> <span class="n">pDec</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">CDecodingPipeline</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">hDecoder</span><span class="p">);</span>
+	<span class="n">pDec</span><span class="o">-&gt;</span><span class="n">Close</span><span class="p">();</span>
+	<span class="k">delete</span> <span class="n">pDec</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="n">VOID</span> <span class="n">STDAPICALLTYPE</span> <span class="nf">_DllEnableRender</span><span class="p">(</span><span class="n">HANDLE</span> <span class="n">hDecoder</span><span class="p">,</span> <span class="n">BOOL</span> <span class="n">bRender</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">hDecoder</span><span class="p">)</span>
+		<span class="k">return</span><span class="p">;</span>
+	<span class="n">CDecodingPipeline</span><span class="o">*</span> <span class="n">pDec</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">CDecodingPipeline</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">hDecoder</span><span class="p">);</span>
+	<span class="n">pDec</span><span class="o">-&gt;</span><span class="n">SetIsRender</span><span class="p">(</span><span class="n">bRender</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span>  <span class="n">STDAPICALLTYPE</span> <span class="nf">_DllDecodeAndRender</span><span class="p">(</span><span class="n">HANDLE</span> <span class="n">hDecoder</span><span class="p">,</span> <span class="n">PBYTE</span> <span class="n">data</span><span class="p">,</span> <span class="kt">int</span> <span class="n">size</span><span class="p">,</span> <span class="n">PBYTE</span> <span class="n">pDecData</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span><span class="o">*</span> <span class="n">pDecSize</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">hDecoder</span> <span class="o">||</span> <span class="o">!</span><span class="n">data</span><span class="p">)</span>
+		<span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+	<span class="n">CDecodingPipeline</span><span class="o">*</span> <span class="n">pDec</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">CDecodingPipeline</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">hDecoder</span><span class="p">);</span>
+	<span class="kt">unsigned</span> <span class="n">decsize</span><span class="p">;</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">MFX_ERR_NONE</span> <span class="o">!=</span> <span class="n">pDec</span><span class="o">-&gt;</span><span class="n">DecodeAndRender</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">pDecData</span><span class="p">,</span> <span class="n">decsize</span><span class="p">))</span>
+		<span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">pDecSize</span><span class="p">)</span>
+		<span class="o">*</span><span class="n">pDecSize</span> <span class="o">=</span> <span class="n">decsize</span><span class="p">;</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">VOID</span> <span class="n">STDAPICALLTYPE</span> <span class="nf">_DllSetDisplayMode</span><span class="p">(</span><span class="n">HANDLE</span> <span class="n">hDecoder</span><span class="p">,</span> <span class="kt">int</span> <span class="n">mode</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">hDecoder</span><span class="p">)</span>
+		<span class="k">return</span><span class="p">;</span>
+	<span class="n">CDecodingPipeline</span><span class="o">*</span> <span class="n">pDec</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">CDecodingPipeline</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">hDecoder</span><span class="p">);</span>
+	<span class="n">pDec</span><span class="o">-&gt;</span><span class="n">SetDisplayMode</span><span class="p">(</span><span class="n">mode</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">VOID</span> <span class="n">STDAPICALLTYPE</span> <span class="nf">_DllSetRenderWnd</span><span class="p">(</span><span class="n">HANDLE</span> <span class="n">hDecoder</span><span class="p">,</span> <span class="n">HWND</span> <span class="n">hWnd</span><span class="p">)</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="n">VOID</span> <span class="n">STDAPICALLTYPE</span> <span class="nf">_DllSetRenderPos</span><span class="p">(</span><span class="n">HANDLE</span> <span class="n">hDecoder</span><span class="p">,</span> <span class="k">const</span> <span class="n">RECT</span><span class="o">&amp;</span> <span class="n">rect</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">hDecoder</span><span class="p">)</span>
+		<span class="k">return</span><span class="p">;</span>
+	<span class="n">CDecodingPipeline</span><span class="o">*</span> <span class="n">pDec</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">CDecodingPipeline</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">hDecoder</span><span class="p">);</span>
+	<span class="n">pDec</span><span class="o">-&gt;</span><span class="n">SetRenderPos</span><span class="p">(</span><span class="n">rect</span><span class="p">);</span>
+<span class="p">}</span>
+
+
+<span class="n">HANDLE</span>	<span class="n">STDAPICALLTYPE</span> <span class="nf">_DllDecOpen</span><span class="p">(</span><span class="k">const</span> <span class="n">BITMAPINFOHEADER</span> <span class="o">*</span><span class="n">pbiOut</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">BOOL</span>	<span class="n">STDAPICALLTYPE</span> <span class="nf">_DllDecode</span><span class="p">(</span><span class="n">HANDLE</span> <span class="n">hDecoder</span><span class="p">,</span> <span class="n">Video_Code_Frame</span> <span class="o">*</span><span class="n">pFrame</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+
+
+<span class="n">HANDLE</span>	<span class="n">STDAPICALLTYPE</span> <span class="nf">_DllEncOpen</span><span class="p">(</span><span class="k">const</span> <span class="n">Video_Encoder_Param</span><span class="o">*</span> <span class="n">pParam</span><span class="p">,</span> <span class="k">const</span> <span class="n">BITMAPINFOHEADER</span> <span class="o">*</span><span class="n">pbiIn</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">BOOL</span>	<span class="n">STDAPICALLTYPE</span>	<span class="nf">_DllEncode</span><span class="p">(</span><span class="n">HANDLE</span> <span class="n">hEncoder</span><span class="p">,</span> <span class="n">Video_Code_Frame</span> <span class="o">*</span><span class="n">pFrame</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">BOOL</span>	<span class="n">STDAPICALLTYPE</span> <span class="nf">_DllEncConfig</span><span class="p">(</span><span class="n">HANDLE</span> <span class="n">hEncoder</span><span class="p">,</span> <span class="n">EncConfigType</span> <span class="n">ecType</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">pParam</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">VOID</span>	<span class="n">STDAPICALLTYPE</span>	<span class="nf">_DllEncClose</span><span class="p">(</span><span class="n">HANDLE</span> <span class="n">hEncoder</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="n">VideoCodecDllEx</span>		<span class="n">g_VideoCodec</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+
+	<span class="p">{</span> <span class="n">_DllGetInfoH264</span><span class="p">,</span> <span class="n">_DllEncOpen</span><span class="p">,</span> <span class="n">_DllEncode</span><span class="p">,</span> <span class="n">_DllEncConfig</span><span class="p">,</span> <span class="n">_DllEncClose</span><span class="p">,</span> <span class="n">_DllDecOpen</span><span class="p">,</span> 
+	<span class="n">_DllDecode</span><span class="p">,</span> <span class="n">_DllDecClose</span><span class="p">,</span> <span class="n">_DllDecOpenH264</span><span class="p">,</span> <span class="n">_DllEnableRender</span><span class="p">,</span> <span class="n">_DllDecodeAndRender</span><span class="p">,</span> <span class="n">_DllSetDisplayMode</span><span class="p">,</span> <span class="n">_DllSetRenderWnd</span><span class="p">,</span> <span class="n">_DllSetRenderPos</span><span class="p">,</span> <span class="n">FALSE</span> <span class="p">},</span>
+	<span class="p">{</span> <span class="n">_DllGetInfoH265</span><span class="p">,</span> <span class="n">_DllEncOpen</span><span class="p">,</span> <span class="n">_DllEncode</span><span class="p">,</span> <span class="n">_DllEncConfig</span><span class="p">,</span> <span class="n">_DllEncClose</span><span class="p">,</span> <span class="n">_DllDecOpen</span><span class="p">,</span>
+	<span class="n">_DllDecode</span><span class="p">,</span> <span class="n">_DllDecClose</span><span class="p">,</span> <span class="n">_DllDecOpenH265</span><span class="p">,</span> <span class="n">_DllEnableRender</span><span class="p">,</span> <span class="n">_DllDecodeAndRender</span><span class="p">,</span> <span class="n">_DllSetDisplayMode</span><span class="p">,</span> <span class="n">_DllSetRenderWnd</span><span class="p">,</span> <span class="n">_DllSetRenderPos</span><span class="p">,</span> <span class="n">FALSE</span> <span class="p">}</span>
+
+<span class="p">};</span>
+
+<span class="kt">int</span>		<span class="n">g_nCodecCount</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">g_VideoCodec</span><span class="p">)</span> <span class="o">/</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">VideoCodecDllEx</span><span class="p">);</span>
+
+<span class="cp">#define LOG		wprintf</span>
+
+<span class="n">STDAPI</span>	<span class="nf">FMVCodecEx</span><span class="p">(</span><span class="n">VideoCodecDllEx</span> <span class="o">*</span><span class="n">pDll</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">pDll</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">E_INVALIDARG</span><span class="p">;</span>
+	<span class="n">ZeroMemory</span><span class="p">(</span><span class="n">pDll</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="o">*</span><span class="n">pDll</span><span class="p">));</span>
+
+	<span class="n">mfxStatus</span> <span class="n">sts</span><span class="p">;</span>
+	<span class="n">MFXVideoSession</span> <span class="n">mfxSession</span><span class="p">;</span>
+	<span class="n">mfxInitParam</span> <span class="n">initPar</span><span class="p">;</span>
+	<span class="n">mfxVersion</span> <span class="n">version</span><span class="p">;</span>     <span class="c1">// real API version with which library is initialized</span>
+	<span class="n">MSDK_ZERO_MEMORY</span><span class="p">(</span><span class="n">initPar</span><span class="p">);</span>
+
+	<span class="c1">// we set version to 1.0 and later we will query actual version of the library which will got leaded</span>
+	<span class="n">initPar</span><span class="p">.</span><span class="n">Version</span><span class="p">.</span><span class="n">Major</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+	<span class="n">initPar</span><span class="p">.</span><span class="n">Version</span><span class="p">.</span><span class="n">Minor</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+	<span class="n">initPar</span><span class="p">.</span><span class="n">GPUCopy</span> <span class="o">=</span> <span class="n">MFX_GPUCOPY_ON</span><span class="p">;</span>
+	<span class="c1">// try searching on all display adapters</span>
+	<span class="n">initPar</span><span class="p">.</span><span class="n">Implementation</span> <span class="o">=</span> <span class="n">MFX_IMPL_HARDWARE_ANY</span><span class="p">;</span>
+
+	<span class="n">sts</span> <span class="o">=</span> <span class="n">mfxSession</span><span class="p">.</span><span class="n">InitEx</span><span class="p">(</span><span class="n">initPar</span><span class="p">);</span>
+
+	<span class="c1">// MSDK API version may not support multiple adapters - then try initialize on the default</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">MFX_ERR_NONE</span> <span class="o">!=</span> <span class="n">sts</span><span class="p">)</span> <span class="p">{</span>
+		<span class="n">initPar</span><span class="p">.</span><span class="n">Implementation</span> <span class="o">=</span> <span class="p">(</span><span class="n">initPar</span><span class="p">.</span><span class="n">Implementation</span> <span class="o">&amp;</span> <span class="o">!</span><span class="n">MFX_IMPL_HARDWARE_ANY</span><span class="p">)</span> <span class="o">|</span> <span class="n">MFX_IMPL_HARDWARE</span><span class="p">;</span>
+		<span class="n">sts</span> <span class="o">=</span> <span class="n">mfxSession</span><span class="p">.</span><span class="n">InitEx</span><span class="p">(</span><span class="n">initPar</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="k">if</span> <span class="p">(</span><span class="n">sts</span> <span class="o">&lt;</span> <span class="n">MFX_ERR_NONE</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">LOG</span><span class="p">(</span><span class="n">_T</span><span class="p">(</span><span class="s">&quot;Hardware accelerator is not usable.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">));</span>
+		<span class="k">return</span> <span class="n">E_FAIL</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="n">LOG</span><span class="p">(</span><span class="n">_T</span><span class="p">(</span><span class="s">&quot;We&#39;ll be able to Intel Hardware Accelerator.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">));</span>
+	<span class="n">CopyMemory</span><span class="p">(</span><span class="n">pDll</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">g_VideoCodec</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">VideoCodecDllEx</span><span class="p">));</span>
+	<span class="n">mfxSession</span><span class="p">.</span><span class="n">Close</span><span class="p">();</span>
+	<span class="k">return</span> <span class="n">S_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">STDAPI</span>	<span class="nf">FMVCodecGetCountEx</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">pCount</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">pCount</span><span class="p">)</span>
+		<span class="o">*</span><span class="n">pCount</span> <span class="o">=</span> <span class="n">g_nCodecCount</span><span class="p">;</span>
+	<span class="k">return</span> <span class="n">S_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">STDAPI</span>	<span class="nf">FMVCodecGetInfoEx</span><span class="p">(</span><span class="kt">int</span> <span class="n">nIndex</span><span class="p">,</span> <span class="n">VideoCodecDllEx</span><span class="o">*</span> <span class="n">pDll</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">nIndex</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">nIndex</span> <span class="o">&gt;=</span> <span class="n">g_nCodecCount</span> <span class="o">||</span> <span class="nb">NULL</span> <span class="o">==</span> <span class="n">pDll</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">E_INVALIDARG</span><span class="p">;</span>
+	<span class="n">CopyMemory</span><span class="p">(</span><span class="n">pDll</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">g_VideoCodec</span><span class="p">[</span><span class="n">nIndex</span><span class="p">],</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">VideoCodecDllEx</span><span class="p">));</span>
+	<span class="k">return</span> <span class="n">S_OK</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</body>
+</html>

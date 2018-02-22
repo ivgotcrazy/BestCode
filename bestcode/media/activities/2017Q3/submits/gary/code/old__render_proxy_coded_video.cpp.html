@@ -1,0 +1,1083 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #333333 }
+body  { background: #111111; color: #ffffff }
+body .c { color: #008800; font-style: italic; background-color: #0f140f } /* Comment */
+body .err { color: #ffffff } /* Error */
+body .esc { color: #ffffff } /* Escape */
+body .g { color: #ffffff } /* Generic */
+body .k { color: #fb660a; font-weight: bold } /* Keyword */
+body .l { color: #ffffff } /* Literal */
+body .n { color: #ffffff } /* Name */
+body .o { color: #ffffff } /* Operator */
+body .x { color: #ffffff } /* Other */
+body .p { color: #ffffff } /* Punctuation */
+body .ch { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Hashbang */
+body .cm { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Multiline */
+body .cp { color: #ff0007; font-weight: bold; font-style: italic; background-color: #0f140f } /* Comment.Preproc */
+body .cpf { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.PreprocFile */
+body .c1 { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Single */
+body .cs { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Special */
+body .gd { color: #ffffff } /* Generic.Deleted */
+body .ge { color: #ffffff } /* Generic.Emph */
+body .gr { color: #ffffff } /* Generic.Error */
+body .gh { color: #ffffff; font-weight: bold } /* Generic.Heading */
+body .gi { color: #ffffff } /* Generic.Inserted */
+body .go { color: #444444; background-color: #222222 } /* Generic.Output */
+body .gp { color: #ffffff } /* Generic.Prompt */
+body .gs { color: #ffffff } /* Generic.Strong */
+body .gu { color: #ffffff; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #ffffff } /* Generic.Traceback */
+body .kc { color: #fb660a; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #fb660a; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #fb660a; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #fb660a } /* Keyword.Pseudo */
+body .kr { color: #fb660a; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #cdcaa9; font-weight: bold } /* Keyword.Type */
+body .ld { color: #ffffff } /* Literal.Date */
+body .m { color: #0086f7; font-weight: bold } /* Literal.Number */
+body .s { color: #0086d2 } /* Literal.String */
+body .na { color: #ff0086; font-weight: bold } /* Name.Attribute */
+body .nb { color: #ffffff } /* Name.Builtin */
+body .nc { color: #ffffff } /* Name.Class */
+body .no { color: #0086d2 } /* Name.Constant */
+body .nd { color: #ffffff } /* Name.Decorator */
+body .ni { color: #ffffff } /* Name.Entity */
+body .ne { color: #ffffff } /* Name.Exception */
+body .nf { color: #ff0086; font-weight: bold } /* Name.Function */
+body .nl { color: #ffffff } /* Name.Label */
+body .nn { color: #ffffff } /* Name.Namespace */
+body .nx { color: #ffffff } /* Name.Other */
+body .py { color: #ffffff } /* Name.Property */
+body .nt { color: #fb660a; font-weight: bold } /* Name.Tag */
+body .nv { color: #fb660a } /* Name.Variable */
+body .ow { color: #ffffff } /* Operator.Word */
+body .w { color: #888888 } /* Text.Whitespace */
+body .mb { color: #0086f7; font-weight: bold } /* Literal.Number.Bin */
+body .mf { color: #0086f7; font-weight: bold } /* Literal.Number.Float */
+body .mh { color: #0086f7; font-weight: bold } /* Literal.Number.Hex */
+body .mi { color: #0086f7; font-weight: bold } /* Literal.Number.Integer */
+body .mo { color: #0086f7; font-weight: bold } /* Literal.Number.Oct */
+body .sa { color: #0086d2 } /* Literal.String.Affix */
+body .sb { color: #0086d2 } /* Literal.String.Backtick */
+body .sc { color: #0086d2 } /* Literal.String.Char */
+body .dl { color: #0086d2 } /* Literal.String.Delimiter */
+body .sd { color: #0086d2 } /* Literal.String.Doc */
+body .s2 { color: #0086d2 } /* Literal.String.Double */
+body .se { color: #0086d2 } /* Literal.String.Escape */
+body .sh { color: #0086d2 } /* Literal.String.Heredoc */
+body .si { color: #0086d2 } /* Literal.String.Interpol */
+body .sx { color: #0086d2 } /* Literal.String.Other */
+body .sr { color: #0086d2 } /* Literal.String.Regex */
+body .s1 { color: #0086d2 } /* Literal.String.Single */
+body .ss { color: #0086d2 } /* Literal.String.Symbol */
+body .bp { color: #ffffff } /* Name.Builtin.Pseudo */
+body .fm { color: #ff0086; font-weight: bold } /* Name.Function.Magic */
+body .vc { color: #fb660a } /* Name.Variable.Class */
+body .vg { color: #fb660a } /* Name.Variable.Global */
+body .vi { color: #fb660a } /* Name.Variable.Instance */
+body .vm { color: #fb660a } /* Name.Variable.Magic */
+body .il { color: #0086f7; font-weight: bold } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;StdAfxWV.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;MediaTypeDefine.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;render_proxy_coded_video.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;render_base.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;render_common_tools.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;HWAccDecRenderControl.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;LogJson.h&quot;</span><span class="cp"></span>
+
+<span class="cp">#ifdef _FS_OS_WIN</span>
+<span class="cp">#include</span> <span class="cpf">&quot;IntelCodecConfig.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;VideoEncoderIntelH264.h&quot;</span><span class="cp"></span>
+<span class="k">extern</span> <span class="n">WVideo</span><span class="o">::</span><span class="n">CIntelCodecConfig</span> <span class="n">g_IntelCodecConfig</span><span class="p">;</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#ifdef ANDROID_HWDEC</span>
+<span class="cp">#include</span> <span class="cpf">&quot;nativeMediaCodec.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;jniCommon.h&quot;</span><span class="cp"></span>
+<span class="cp">#endif</span>
+
+<span class="n">CHWAccDecRenderControl</span> <span class="n">g_hwAccDecRenderControl</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="n">wvideo</span> <span class="p">{</span>
+
+<span class="k">static</span> <span class="k">const</span> <span class="n">FS_UINT32</span> <span class="n">MSG_MIN</span> <span class="o">=</span> <span class="n">WM_USER</span> <span class="o">+</span> <span class="mi">20</span><span class="p">;</span>
+<span class="k">static</span> <span class="k">const</span> <span class="n">FS_UINT32</span> <span class="n">MSG_RENDER_DATA</span> <span class="o">=</span> <span class="n">MSG_MIN</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="k">static</span> <span class="k">const</span> <span class="n">DWORD</span> <span class="n">RENDER_OPERATE_SET_DISPLAY_MODE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="k">static</span> <span class="k">const</span> <span class="n">DWORD</span> <span class="n">RENDER_OPERATE_SET_DST_RECT</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">;</span>
+<span class="k">static</span> <span class="k">const</span> <span class="n">DWORD</span> <span class="n">RENDER_OPERATE_SET_RENDER_HWND</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span><span class="p">;</span>
+<span class="k">static</span> <span class="k">const</span> <span class="n">DWORD</span> <span class="n">RENDER_OPERATE_ON_DRAW</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">3</span><span class="p">;</span>
+
+<span class="n">RenderProxyCodecVideo</span><span class="o">::</span><span class="n">RenderProxyCodecVideo</span><span class="p">(</span><span class="n">DWORD</span> <span class="n">dwRenderId</span><span class="p">,</span>
+	<span class="n">HWND</span> <span class="n">hWnd</span><span class="p">,</span>
+	<span class="k">const</span> <span class="n">WBASE_NOTIFY</span><span class="o">&amp;</span> <span class="n">notify</span><span class="p">,</span>
+	<span class="n">VideoFrameBufferAllocatror</span><span class="o">*</span> <span class="n">pAllocator</span><span class="p">,</span>
+	<span class="n">FS_UINT32</span> <span class="n">dwStmId</span><span class="p">)</span>
+	<span class="o">:</span><span class="n">RenderProxyBase</span><span class="p">(</span><span class="n">dwRenderId</span><span class="p">,</span> <span class="n">hWnd</span><span class="p">,</span> <span class="n">notify</span><span class="p">)</span>
+<span class="cp">#if defined _FS_OS_IOS || defined _FS_OS_ANDROID</span>
+	<span class="p">,</span><span class="n">m_pauseSemaphore</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+	<span class="n">m_bPause</span><span class="p">(</span><span class="n">FALSE</span><span class="p">)</span>
+<span class="cp">#endif</span>
+<span class="p">{</span>
+	<span class="n">m_pAllocator</span> <span class="o">=</span> <span class="n">pAllocator</span><span class="p">;</span>
+	<span class="n">m_RenderBuffer</span><span class="p">.</span><span class="n">Init</span><span class="p">(</span><span class="n">pAllocator</span><span class="p">);</span>
+
+	<span class="n">m_dwStmID</span> <span class="o">=</span> <span class="n">dwStmId</span><span class="p">;</span>
+
+<span class="cp">#ifdef ANDROID_HWDEC</span>
+	<span class="n">m_bNMCUsable</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="cp">#endif</span>
+	<span class="n">m_bHWAccEnabled</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">;</span>
+	<span class="n">m_bIntelHWUsable</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">;</span>
+	<span class="n">m_bEnableRend</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">;</span>
+
+	<span class="n">m_hDecoder</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="n">m_pLastKeyFrame</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>	
+	<span class="n">m_hImgSharpenFilter</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="n">m_pbDecBuffer</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="n">m_unDecBufSize</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+	<span class="n">m_dwWriteBytes</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="n">m_dwLastTime</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="n">m_dwFrameCount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="n">m_dwFrameRate</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="n">m_dwBitrate</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+	<span class="n">m_dwRenderOperation</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+	<span class="n">ZeroMemory</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_FrameHeader</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">m_FrameHeader</span><span class="p">));</span>
+	<span class="n">ZeroMemory</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_biDec</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">m_biDec</span><span class="p">));</span>
+
+<span class="cp">#ifdef _FS_OS_WIN</span>
+	<span class="n">ZeroMemory</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_IntelVideoDecDll</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">m_IntelVideoDecDll</span><span class="p">));</span>
+	<span class="n">m_hIntelDecRender</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="cp">#endif</span>
+
+	<span class="c1">//@@@ test</span>
+	<span class="n">m_dwTestFrameCount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="n">m_dwTestLastLogTime</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">RenderProxyCodecVideo</span><span class="o">::~</span><span class="n">RenderProxyCodecVideo</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">DoDestroy</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">RenderProxyCodecVideo</span><span class="o">::</span><span class="n">Open</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">IsStarted</span><span class="p">())</span> <span class="p">{</span>
+		<span class="k">return</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nb">NULL</span> <span class="o">==</span> <span class="n">m_pAllocator</span><span class="p">)</span>
+		<span class="k">return</span><span class="p">;</span>
+
+<span class="cp">#ifdef _FS_OS_WIN</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">g_IntelCodecConfig</span><span class="p">.</span><span class="n">m_IntelCodecDll</span><span class="p">.</span><span class="n">DllDecOpen</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">LOG</span><span class="p">(</span><span class="s">&quot;INF:RenderProxyCodecData::StartRender intel hardware decoder enable!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+		<span class="n">m_bIntelHWUsable</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="cp">#endif</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">g_hwAccDecRenderControl</span><span class="p">.</span><span class="n">IncreaseCurHWAccDecRender</span><span class="p">())</span>
+	<span class="p">{</span>
+		<span class="n">m_bHWAccEnabled</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">;</span>
+<span class="cp">#ifdef _FS_OS_WIN</span>
+		<span class="n">m_IntelVideoDecDll</span>  <span class="o">=</span> <span class="n">g_hwAccDecRenderControl</span><span class="p">.</span><span class="n">GetHWAccDecRenderDll</span><span class="p">();</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#ifdef ANDROID_HWDEC</span>
+		<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">m_NMCDecoder</span><span class="p">.</span><span class="n">Init</span><span class="p">((</span><span class="n">JavaVM</span><span class="o">*</span><span class="p">)</span><span class="n">g_hVideoModule</span><span class="p">,</span> <span class="p">(</span><span class="n">HWND</span><span class="p">)</span><span class="n">m_hRendWnd</span><span class="p">))</span> <span class="p">{</span>
+			<span class="n">ALOG</span><span class="p">(</span><span class="s">&quot;CVideoRenderDec:StartRenderHW: Init Failed...&quot;</span><span class="p">);</span>
+			<span class="k">return</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="n">m_bNMCUsable</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">;</span>	
+<span class="cp">#endif</span>
+
+		<span class="n">LOG</span><span class="p">(</span><span class="s">&quot;INF:RenderProxyCodecData::Open intel hardware decoder enable!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="k">else</span>
+	<span class="p">{</span>
+		<span class="n">LOG</span><span class="p">(</span><span class="s">&quot;There is no more quota for new hw-acc-decode-render.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="n">StartThread</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">RenderProxyCodecVideo</span><span class="o">::</span><span class="n">Destroy</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">DoDestroy</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">RenderProxyCodecVideo</span><span class="o">::</span><span class="n">Write</span><span class="p">(</span><span class="n">PBYTE</span> <span class="n">pbData</span><span class="p">,</span> <span class="n">DWORD</span> <span class="n">dwDataLen</span><span class="p">,</span> <span class="n">BITMAPINFOHEADER</span><span class="o">*</span> <span class="n">pBiDataInfo</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="c1">//内部决定格式， 不适用 pBiDataInfo</span>
+<span class="cp">#ifdef _WIN32</span>
+	<span class="k">if</span> <span class="p">(</span><span class="o">::</span><span class="n">IsBadWritePtr</span><span class="p">(</span><span class="n">pbData</span><span class="p">,</span> <span class="n">dwDataLen</span><span class="p">))</span>
+		<span class="k">return</span><span class="p">;</span>
+<span class="cp">#endif</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">dwDataLen</span> <span class="o">&lt;=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">VideoFrameHeader</span><span class="p">)</span> <span class="o">||</span> <span class="nb">NULL</span> <span class="o">==</span> <span class="n">pbData</span> <span class="o">||</span> <span class="o">!</span><span class="n">m_pAllocator</span><span class="p">)</span>
+		<span class="k">return</span><span class="p">;</span>
+
+	<span class="n">CalNetRate</span><span class="p">(</span><span class="n">dwDataLen</span><span class="p">);</span>
+	<span class="n">m_RenderBuffer</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="n">pbData</span><span class="p">,</span> <span class="n">dwDataLen</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">BOOL</span> <span class="n">RenderProxyCodecVideo</span><span class="o">::</span><span class="n">Pause</span><span class="p">(</span><span class="n">BOOL</span> <span class="n">bPause</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="cp">#if defined _FS_OS_IOS || defined _FS_OS_ANDROID</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">bPause</span> <span class="o">==</span> <span class="n">m_bPause</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+
+	<span class="n">m_bPause</span> <span class="o">=</span> <span class="n">bPause</span><span class="p">;</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">bPause</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">m_pauseSemaphore</span><span class="p">.</span><span class="n">WaitSemaphore</span><span class="p">(</span><span class="n">INFINITE</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="k">else</span>
+	<span class="p">{</span>
+		<span class="n">m_pauseSemaphore</span><span class="p">.</span><span class="n">ReleaseSemaphore</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="n">TRUE</span><span class="p">;</span>
+<span class="cp">#else</span>
+	<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="cp">#endif</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">RenderProxyCodecVideo</span><span class="o">::</span><span class="n">Show</span><span class="p">(</span><span class="n">BOOL</span> <span class="n">bShow</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">m_bEnableRend</span> <span class="o">=</span> <span class="n">bShow</span><span class="p">;</span>
+<span class="cp">#ifdef _FS_OS_WIN</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">m_hIntelDecRender</span><span class="p">)</span>
+		<span class="n">m_IntelVideoDecDll</span><span class="p">.</span><span class="n">EnableRender</span><span class="p">(</span><span class="n">m_hIntelDecRender</span><span class="p">,</span> <span class="n">bShow</span><span class="p">);</span>
+<span class="cp">#endif</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">RenderProxyCodecVideo</span><span class="o">::</span><span class="n">DoDrawLastFrame</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">Lock</span><span class="p">();</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">m_bEnableRend</span> <span class="o">&amp;&amp;</span> <span class="n">m_pbDecBuffer</span><span class="p">)</span> <span class="p">{</span>
+		<span class="n">m_pRender</span><span class="o">-&gt;</span><span class="n">Draw</span><span class="p">(</span><span class="n">m_pbDecBuffer</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="n">UnLock</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="n">BOOL</span> <span class="n">RenderProxyCodecVideo</span><span class="o">::</span><span class="n">ReadLastFrame</span><span class="p">(</span><span class="n">PBYTE</span> <span class="n">pbBuffer</span><span class="p">,</span> <span class="n">FS_UINT32</span> <span class="o">*</span><span class="n">pDwSize</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nb">NULL</span> <span class="o">==</span> <span class="n">pDwSize</span><span class="p">){</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="n">WAutoLock</span> <span class="n">lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_Locker</span><span class="p">);</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nb">NULL</span> <span class="o">==</span> <span class="n">m_pLastKeyFrame</span><span class="p">){</span>
+		<span class="o">*</span><span class="n">pDwSize</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">if</span><span class="p">(</span> <span class="o">*</span><span class="n">pDwSize</span> <span class="o">&lt;</span> <span class="n">m_pLastKeyFrame</span><span class="o">-&gt;</span><span class="n">GetDataLen</span><span class="p">()</span> <span class="o">||</span> <span class="nb">NULL</span> <span class="o">==</span> <span class="n">pbBuffer</span> <span class="p">){</span>
+		<span class="o">*</span><span class="n">pDwSize</span> <span class="o">=</span> <span class="n">m_pLastKeyFrame</span><span class="o">-&gt;</span><span class="n">GetDataLen</span><span class="p">();</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="n">CopyMemory</span><span class="p">(</span> <span class="n">pbBuffer</span><span class="p">,</span><span class="n">m_pLastKeyFrame</span><span class="o">-&gt;</span><span class="n">GetPtr</span><span class="p">(),</span><span class="n">m_pLastKeyFrame</span><span class="o">-&gt;</span><span class="n">GetDataLen</span><span class="p">()</span> <span class="p">);</span>
+	<span class="k">return</span> <span class="n">TRUE</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">BOOL</span> <span class="n">RenderProxyCodecVideo</span><span class="o">::</span><span class="n">SavePicture</span><span class="p">(</span><span class="k">const</span> <span class="n">WCHAR</span><span class="o">*</span> <span class="n">szFilePath</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nb">NULL</span> <span class="o">==</span> <span class="n">szFilePath</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="cp">#ifdef ANDROID</span>
+	<span class="n">Lock</span><span class="p">();</span>
+	<span class="n">jobject</span> <span class="o">*</span><span class="n">pObjBmp</span> <span class="o">=</span> <span class="p">(</span><span class="n">jobject</span><span class="o">*</span><span class="p">)</span><span class="n">szFilePath</span><span class="p">;</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">m_pbDecBuffer</span><span class="p">){</span>
+		<span class="n">CreateBitmap</span><span class="p">(</span><span class="n">m_pbDecBuffer</span><span class="p">,</span> <span class="n">m_biDec</span><span class="p">.</span><span class="n">biSizeImage</span><span class="p">,</span> <span class="n">m_biDec</span><span class="p">,</span> <span class="p">(</span><span class="n">jobject</span><span class="o">*</span><span class="p">)</span><span class="n">szFilePath</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="n">UnLock</span><span class="p">();</span>
+	<span class="k">return</span> <span class="o">*</span><span class="n">pObjBmp</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="cp">#elif defined _FS_OS_WIN</span>
+	<span class="n">TCHAR</span> <span class="n">szPicFilePath</span><span class="p">[</span><span class="n">MAX_PATH</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span> <span class="p">};</span>
+	<span class="n">StrCopyWStr2TStr</span><span class="p">(</span><span class="n">szPicFilePath</span><span class="p">,</span> <span class="n">szFilePath</span><span class="p">);</span>
+	<span class="n">Lock</span><span class="p">();</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">m_bEnableRend</span> <span class="o">&amp;&amp;</span> <span class="n">m_pbDecBuffer</span><span class="p">){</span>
+		<span class="n">WritePicFile</span><span class="p">(</span><span class="n">m_pbDecBuffer</span><span class="p">,</span> <span class="n">m_biDec</span><span class="p">.</span><span class="n">biSizeImage</span><span class="p">,</span> <span class="n">m_biDec</span><span class="p">,</span> <span class="n">szPicFilePath</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="n">UnLock</span><span class="p">();</span>
+	<span class="k">return</span> <span class="n">TRUE</span><span class="p">;</span>
+<span class="cp">#else</span>
+	<span class="k">return</span> <span class="n">TRUE</span><span class="p">;</span>
+<span class="cp">#endif</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">RenderProxyCodecVideo</span><span class="o">::</span><span class="n">SetSyncTime</span><span class="p">(</span><span class="n">IPlaySyncTime</span><span class="o">*</span> <span class="n">pSyncTime</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">m_RenderBuffer</span><span class="p">.</span><span class="n">SetSyncTime</span><span class="p">(</span><span class="n">pSyncTime</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">RenderProxyCodecVideo</span><span class="o">::</span><span class="n">GetState</span><span class="p">(</span><span class="n">VideoRender_State</span><span class="o">*</span> <span class="n">pOutState</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nb">NULL</span> <span class="o">==</span> <span class="n">pOutState</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">return</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="n">pOutState</span><span class="o">-&gt;</span><span class="n">dwWidth</span> <span class="o">=</span> <span class="n">m_FrameHeader</span><span class="p">.</span><span class="n">bWidth</span> <span class="o">*</span> <span class="mi">8</span><span class="p">;</span>
+	<span class="n">pOutState</span><span class="o">-&gt;</span><span class="n">dwHeight</span> <span class="o">=</span> <span class="n">m_FrameHeader</span><span class="p">.</span><span class="n">bHeight</span> <span class="o">*</span> <span class="mi">8</span><span class="p">;</span>
+	<span class="n">pOutState</span><span class="o">-&gt;</span><span class="n">nBitrate</span> <span class="o">=</span> <span class="n">m_dwBitrate</span><span class="p">;</span>
+	<span class="n">pOutState</span><span class="o">-&gt;</span><span class="n">nFrameRate</span> <span class="o">=</span> <span class="n">m_dwFrameRate</span><span class="p">;</span>
+	<span class="n">pOutState</span><span class="o">-&gt;</span><span class="n">nEncoderID</span> <span class="o">=</span> <span class="n">m_FrameHeader</span><span class="p">.</span><span class="n">bCodecID</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">FS_UINT32</span> <span class="n">RenderProxyCodecVideo</span><span class="o">::</span><span class="n">ThreadProcEx</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">AutoCoInitialize</span> <span class="n">autoCoIntializer</span><span class="p">;</span>
+
+	<span class="k">if</span> <span class="p">(</span><span class="nb">NULL</span> <span class="o">==</span> <span class="n">m_pRender</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="n">DWORD</span> <span class="n">dwWaitTime</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+	<span class="n">Thread_MSG</span> <span class="n">msg</span><span class="p">;</span>
+	<span class="n">FS_UINT32</span> <span class="n">waitType</span><span class="p">;</span>
+
+	<span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">m_bStop</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">waitType</span> <span class="o">=</span> <span class="n">WaitForThreadMsg</span><span class="p">(</span><span class="n">dwWaitTime</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">msg</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">WAIT_THREAD_EXIT</span> <span class="o">==</span> <span class="n">waitType</span><span class="p">){</span>
+			<span class="k">break</span><span class="p">;</span>
+		<span class="p">}</span>
+
+<span class="cp">#if defined _FS_OS_IOS || defined _FS_OS_ANDROID</span>
+		<span class="n">m_pauseSemaphore</span><span class="p">.</span><span class="n">WaitSemaphore</span><span class="p">(</span><span class="n">INFINITE</span><span class="p">);</span>
+<span class="cp">#endif</span>
+		<span class="n">CVideoFrameBuffer</span> <span class="o">*</span><span class="n">pBuffer</span> <span class="o">=</span> <span class="n">m_RenderBuffer</span><span class="p">.</span><span class="n">GetBuffer</span><span class="p">(</span><span class="n">dwWaitTime</span><span class="p">);</span>
+
+		<span class="n">ProcessRenderOperate</span><span class="p">();</span>
+
+		<span class="k">if</span> <span class="p">(</span><span class="n">pBuffer</span><span class="p">){</span>
+<span class="cp">#ifdef ANDROID_HWDEC</span>
+			<span class="k">if</span><span class="p">(</span><span class="n">m_bNMCUsable</span> <span class="o">&amp;&amp;</span> <span class="n">m_bHWAccEnabled</span><span class="p">)</span> <span class="p">{</span>
+				<span class="n">NMCHWDecAndDraw</span><span class="p">(</span><span class="n">pBuffer</span><span class="o">-&gt;</span><span class="n">GetPtr</span><span class="p">(),</span> <span class="n">pBuffer</span><span class="o">-&gt;</span><span class="n">GetDataLen</span><span class="p">());</span>
+			<span class="p">}</span><span class="k">else</span> <span class="p">{</span>
+				<span class="n">SoftDecAndDraw</span><span class="p">(</span><span class="n">pBuffer</span><span class="o">-&gt;</span><span class="n">GetPtr</span><span class="p">(),</span> <span class="n">pBuffer</span><span class="o">-&gt;</span><span class="n">GetDataLen</span><span class="p">());</span>
+			<span class="p">}</span>
+<span class="cp">#else</span>
+			<span class="n">VideoFrameHeader</span><span class="o">*</span> <span class="n">pHeader</span> <span class="o">=</span> <span class="p">(</span><span class="n">VideoFrameHeader</span><span class="o">*</span><span class="p">)</span><span class="n">pBuffer</span><span class="o">-&gt;</span><span class="n">GetPtr</span><span class="p">();</span>
+			<span class="n">DWORD</span> <span class="n">dwCodecID</span> <span class="o">=</span> <span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bCodecID</span><span class="p">;</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">dwCodecID</span> <span class="o">==</span> <span class="n">VIDEO_CODEC_H264</span> <span class="o">&amp;&amp;</span> <span class="n">m_bIntelHWUsable</span> <span class="o">&amp;&amp;</span> <span class="n">m_bHWAccEnabled</span><span class="p">)</span>
+				<span class="n">HWDecAndDraw</span><span class="p">(</span><span class="n">pBuffer</span><span class="o">-&gt;</span><span class="n">GetPtr</span><span class="p">(),</span> <span class="n">pBuffer</span><span class="o">-&gt;</span><span class="n">GetDataLen</span><span class="p">());</span>
+			<span class="k">else</span>
+				<span class="nf">SoftDecAndDraw</span><span class="p">(</span><span class="n">pBuffer</span><span class="o">-&gt;</span><span class="n">GetPtr</span><span class="p">(),</span> <span class="n">pBuffer</span><span class="o">-&gt;</span><span class="n">GetDataLen</span><span class="p">());</span>
+<span class="cp">#endif				</span>
+			<span class="n">m_RenderBuffer</span><span class="p">.</span><span class="n">Free</span><span class="p">(</span><span class="n">pBuffer</span><span class="p">);</span>
+		<span class="p">}</span>
+
+<span class="cp">#if defined _FS_OS_IOS || defined _FS_OS_ANDROID</span>
+		<span class="n">m_pauseSemaphore</span><span class="p">.</span><span class="n">ReleaseSemaphore</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="cp">#endif</span>
+	<span class="p">}</span>
+	<span class="n">m_pRender</span><span class="o">-&gt;</span><span class="n">Release</span><span class="p">();</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">BOOL</span> <span class="n">RenderProxyCodecVideo</span><span class="o">::</span><span class="n">SoftDecAndDraw</span><span class="p">(</span><span class="n">PBYTE</span> <span class="n">pbData</span><span class="p">,</span> <span class="n">DWORD</span> <span class="n">dwDataLen</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">VideoFrameHeader</span><span class="o">*</span> <span class="n">pHeader</span> <span class="o">=</span> <span class="p">(</span><span class="n">VideoFrameHeader</span><span class="o">*</span><span class="p">)</span><span class="n">pbData</span><span class="p">;</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bWidth</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bHeight</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">LOG</span><span class="p">(</span><span class="s">&quot;ERR:RenderProxyCodecData::SoftDecAndDraw:width[%d] or height[%d] error!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bWidth</span><span class="p">,</span> <span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bHeight</span><span class="p">);</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="n">WAutoLock</span> <span class="n">lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_Locker</span><span class="p">);</span>
+
+	<span class="c1">//如果当前压缩格式的大小和位数与以前的压缩格式不同，</span>
+	<span class="k">if</span> <span class="p">((</span><span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bWidth</span> <span class="o">!=</span> <span class="n">m_FrameHeader</span><span class="p">.</span><span class="n">bWidth</span> <span class="o">||</span>
+		<span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bHeight</span> <span class="o">!=</span> <span class="n">m_FrameHeader</span><span class="p">.</span><span class="n">bHeight</span><span class="p">)</span> <span class="o">&amp;&amp;</span>
+		<span class="o">!</span><span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bKeyFrame</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">LOG</span><span class="p">(</span><span class="s">&quot;ERR:RenderProxyCodecData::SoftDecAndDraw:wh[%d,%d to %d,%d] chage!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+			<span class="n">m_FrameHeader</span><span class="p">.</span><span class="n">bWidth</span><span class="p">,</span> <span class="n">m_FrameHeader</span><span class="p">.</span><span class="n">bHeight</span><span class="p">,</span> <span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bWidth</span><span class="p">,</span> <span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bHeight</span><span class="p">);</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="c1">//重新设置解压缩器，当前压缩格式与以前的格式不通</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bCodecID</span> <span class="o">!=</span> <span class="n">m_FrameHeader</span><span class="p">.</span><span class="n">bCodecID</span> <span class="o">||</span>
+		<span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bWidth</span> <span class="o">!=</span> <span class="n">m_FrameHeader</span><span class="p">.</span><span class="n">bWidth</span> <span class="o">||</span>
+		<span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bHeight</span> <span class="o">!=</span> <span class="n">m_FrameHeader</span><span class="p">.</span><span class="n">bHeight</span> <span class="o">||</span>
+		<span class="o">!</span><span class="n">m_hDecoder</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">LOG</span><span class="p">(</span><span class="s">&quot;WAR:Remote Video Format Changed,Width Height CodecID pre[%d,%d,%d] cur[%d,%d,%d].</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+			<span class="n">m_FrameHeader</span><span class="p">.</span><span class="n">bWidth</span><span class="p">,</span> <span class="n">m_FrameHeader</span><span class="p">.</span><span class="n">bHeight</span><span class="p">,</span> <span class="n">m_FrameHeader</span><span class="p">.</span><span class="n">bCodecID</span><span class="p">,</span>
+			<span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bWidth</span><span class="p">,</span> <span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bHeight</span><span class="p">,</span> <span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bCodecID</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bKeyFrame</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">LOG</span><span class="p">(</span><span class="s">&quot;ERR:RenderProxyCodecData::SoftDecAndDraw:format changed[src:%d %d %d cur:%d %d %d], but is not keyframe.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+				<span class="n">m_FrameHeader</span><span class="p">.</span><span class="n">bCodecID</span><span class="p">,</span> <span class="n">m_FrameHeader</span><span class="p">.</span><span class="n">bWidth</span><span class="p">,</span> <span class="n">m_FrameHeader</span><span class="p">.</span><span class="n">bHeight</span><span class="p">,</span>
+				<span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bCodecID</span><span class="p">,</span> <span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bWidth</span><span class="p">,</span> <span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bHeight</span><span class="p">);</span>
+			<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="n">ClearOldResource</span><span class="p">();</span>
+		<span class="c1">//将当前压缩格式拷贝到老的压缩格式中去</span>
+		<span class="n">CopyMemory</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_FrameHeader</span><span class="p">,</span> <span class="n">pHeader</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">VideoFrameHeader</span><span class="p">));</span>
+
+		<span class="k">if</span> <span class="p">(</span><span class="n">m_hDecoder</span><span class="p">){</span>
+			<span class="c1">//销毁当前解压对象</span>
+			<span class="n">VIDEO_Decode_StopDecompress</span><span class="p">(</span><span class="n">m_hDecoder</span><span class="p">);</span>
+			<span class="n">m_hDecoder</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+		<span class="p">}</span>
+
+		<span class="c1">//WMV9不支持I420</span>
+		<span class="n">ZeroMemory</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_biDec</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">m_biDec</span><span class="p">));</span>
+		<span class="n">m_biDec</span><span class="p">.</span><span class="n">biSize</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">BITMAPINFOHEADER</span><span class="p">);</span>
+		<span class="n">m_biDec</span><span class="p">.</span><span class="n">biCompression</span> <span class="o">=</span> <span class="n">FOURCC_I420</span><span class="p">;</span>
+<span class="cp">#if USE_MSWMV9ENC</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bCodecID</span> <span class="o">==</span> <span class="n">VIDEO_CODEC_WMV9</span><span class="p">){</span>
+			<span class="n">m_biDec</span><span class="p">.</span><span class="n">biCompression</span> <span class="o">=</span> <span class="n">FOURCC_YV12</span><span class="p">;</span>
+		<span class="p">}</span>
+<span class="cp">#endif</span>
+		<span class="n">m_biDec</span><span class="p">.</span><span class="n">biPlanes</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+		<span class="n">m_biDec</span><span class="p">.</span><span class="n">biBitCount</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+		<span class="n">m_biDec</span><span class="p">.</span><span class="n">biWidth</span> <span class="o">=</span> <span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bWidth</span> <span class="o">*</span> <span class="mi">8</span><span class="p">;</span>
+		<span class="n">m_biDec</span><span class="p">.</span><span class="n">biHeight</span> <span class="o">=</span> <span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bHeight</span> <span class="o">*</span> <span class="mi">8</span><span class="p">;</span>
+		<span class="n">m_biDec</span><span class="p">.</span><span class="n">biSizeImage</span> <span class="o">=</span> <span class="p">(</span><span class="n">m_biDec</span><span class="p">.</span><span class="n">biWidth</span><span class="o">*</span><span class="n">m_biDec</span><span class="p">.</span><span class="n">biHeight</span><span class="o">*</span><span class="n">m_biDec</span><span class="p">.</span><span class="n">biBitCount</span><span class="p">)</span> <span class="o">/</span> <span class="mi">8</span><span class="p">;</span>
+
+		<span class="c1">//重新创建解压对象		</span>
+		<span class="n">m_hDecoder</span> <span class="o">=</span> <span class="n">VIDEO_Decode_StartDecompress</span><span class="p">(</span><span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bCodecID</span><span class="p">,</span> <span class="n">m_biDec</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">m_hDecoder</span><span class="p">){</span>
+			<span class="n">LOG</span><span class="p">(</span><span class="s">&quot;ERR:Start Decompress Failed,Encoder Type = %d,Width = %d,Height = %d.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+				<span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bCodecID</span><span class="p">,</span> <span class="n">m_biDec</span><span class="p">.</span><span class="n">biWidth</span><span class="p">,</span> <span class="n">m_biDec</span><span class="p">.</span><span class="n">biHeight</span><span class="p">);</span>
+			<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+		<span class="p">}</span>
+
+		<span class="n">LOG</span><span class="p">(</span><span class="s">&quot;Created Remote Video Decoder,Width:%d,Height:%d,CodecID:%d.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+			<span class="n">m_biDec</span><span class="p">.</span><span class="n">biWidth</span><span class="p">,</span> <span class="n">m_biDec</span><span class="p">.</span><span class="n">biHeight</span><span class="p">,</span> <span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bCodecID</span><span class="p">);</span>
+
+		<span class="n">UINT</span> <span class="n">nNeedSize</span> <span class="o">=</span> <span class="n">m_biDec</span><span class="p">.</span><span class="n">biSizeImage</span><span class="p">;</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">m_unDecBufSize</span> <span class="o">&lt;</span> <span class="n">nNeedSize</span> <span class="o">||</span> <span class="o">!</span><span class="n">m_pbDecBuffer</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">m_pbDecBuffer</span><span class="p">){</span>
+				<span class="n">aligned_free</span><span class="p">(</span><span class="n">m_pbDecBuffer</span><span class="p">);</span>
+				<span class="n">m_pbDecBuffer</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+				<span class="n">m_unDecBufSize</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+			<span class="p">}</span>
+			<span class="c1">//分配解压内存块</span>
+			<span class="n">m_pbDecBuffer</span> <span class="o">=</span> <span class="p">(</span><span class="n">PBYTE</span><span class="p">)</span><span class="n">aligned_malloc</span><span class="p">(</span><span class="n">nNeedSize</span><span class="p">,</span> <span class="mi">256</span><span class="p">);</span>
+			<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">m_pbDecBuffer</span><span class="p">)</span>
+			<span class="p">{</span>
+				<span class="n">LOG</span><span class="p">(</span><span class="s">&quot;RenderProxyCodecData::SoftDecAndDraw:malloc[%d] for decbuffer fail.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">nNeedSize</span><span class="p">);</span>
+				<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+			<span class="p">}</span>
+
+			<span class="n">m_unDecBufSize</span> <span class="o">=</span> <span class="n">nNeedSize</span><span class="p">;</span>
+		<span class="p">}</span>
+<span class="cp">#ifndef _FS_OS_LINUX</span>
+		<span class="n">m_pRender</span><span class="o">-&gt;</span><span class="n">SetSourceFormat</span><span class="p">(</span><span class="n">m_biDec</span><span class="p">);</span>
+<span class="cp">#endif</span>
+		<span class="n">m_TextWriter</span><span class="p">.</span><span class="n">SetVideoFormat</span><span class="p">(</span><span class="n">m_biDec</span><span class="p">);</span>
+
+<span class="cp">#if	USE_IMAGESHARPEN</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">m_hImgSharpenFilter</span><span class="p">){</span>
+			<span class="n">TImage_SharpenFilter_SetFormat</span><span class="p">(</span><span class="n">m_hImgSharpenFilter</span><span class="p">,</span> <span class="n">m_biDec</span><span class="p">);</span>
+		<span class="p">}</span>
+<span class="cp">#endif</span>
+		<span class="n">NotifyEvent</span><span class="p">(</span><span class="n">VIDEORENDER_EVENT_STATE</span><span class="p">,</span> <span class="n">m_dwRenderID</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">m_pbDecBuffer</span> <span class="o">||</span> <span class="o">!</span><span class="n">m_hDecoder</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">LOG</span><span class="p">(</span><span class="s">&quot;RenderProxyCodecData::SoftDecAndDraw:m_pbDecBuffer[%p] or m_hDecoder[%p] is null.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">m_pbDecBuffer</span><span class="p">,</span> <span class="n">m_hDecoder</span><span class="p">);</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+	<span class="p">}</span>
+
+
+	<span class="n">Video_Code_Frame</span> <span class="n">frame</span><span class="p">;</span>
+	<span class="n">frame</span><span class="p">.</span><span class="n">pbIn</span> <span class="o">=</span> <span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">pbData</span><span class="p">;</span>
+	<span class="n">frame</span><span class="p">.</span><span class="n">unInLen</span> <span class="o">=</span> <span class="n">dwDataLen</span> <span class="o">-</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">VideoFrameHeader</span><span class="p">);</span>
+	<span class="n">frame</span><span class="p">.</span><span class="n">pbOut</span> <span class="o">=</span> <span class="n">m_pbDecBuffer</span><span class="p">;</span>
+	<span class="n">frame</span><span class="p">.</span><span class="n">unOutLen</span> <span class="o">=</span> <span class="n">m_unDecBufSize</span><span class="p">;</span>
+
+	<span class="n">DecodeFrame</span><span class="p">(</span><span class="n">frame</span><span class="p">);</span>
+
+	<span class="n">m_dwTestFrameCount</span><span class="o">++</span><span class="p">;</span>
+	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">m_dwTestLastLogTime</span><span class="p">)</span> <span class="n">m_dwTestLastLogTime</span> <span class="o">=</span> <span class="n">timeGetTime</span><span class="p">();</span>
+	<span class="n">FS_UINT32</span> <span class="n">dwCurTime</span> <span class="o">=</span> <span class="n">timeGetTime</span><span class="p">();</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">dwCurTime</span> <span class="o">-</span> <span class="n">m_dwTestLastLogTime</span> <span class="o">&gt;=</span> <span class="mi">5000</span><span class="p">){</span>
+		<span class="n">FS_UINT32</span> <span class="n">dwFrameRate</span> <span class="o">=</span> <span class="n">m_dwTestFrameCount</span> <span class="o">*</span> <span class="mi">1000</span> <span class="o">/</span> <span class="p">(</span><span class="n">dwCurTime</span> <span class="o">-</span> <span class="n">m_dwTestLastLogTime</span><span class="p">);</span>
+		<span class="n">LogJson</span> <span class="n">logjson</span><span class="p">;</span>
+		<span class="n">logjson</span><span class="p">.</span><span class="n">StartObject</span><span class="p">();</span>
+		<span class="n">logjson</span><span class="p">.</span><span class="n">WriteKeyValue</span><span class="p">(</span><span class="s">&quot;title&quot;</span><span class="p">,</span> <span class="s">&quot;vidrenderdec&quot;</span><span class="p">);</span><span class="c1">// 主题</span>
+		<span class="n">logjson</span><span class="p">.</span><span class="n">WriteKeyValue</span><span class="p">(</span><span class="s">&quot;stmid&quot;</span><span class="p">,</span> <span class="n">m_dwStmID</span><span class="p">);</span><span class="c1">// 流id</span>
+		<span class="n">logjson</span><span class="p">.</span><span class="n">WriteKeyValue</span><span class="p">(</span><span class="s">&quot;dectype&quot;</span><span class="p">,</span> <span class="s">&quot;soft&quot;</span><span class="p">);</span><span class="c1">// 硬解还是软解</span>
+		<span class="n">logjson</span><span class="p">.</span><span class="n">WriteKeyValue</span><span class="p">(</span><span class="s">&quot;decw&quot;</span><span class="p">,</span> <span class="n">m_FrameHeader</span><span class="p">.</span><span class="n">bWidth</span> <span class="o">*</span> <span class="mi">8</span><span class="p">);</span><span class="c1">// 解码宽</span>
+		<span class="n">logjson</span><span class="p">.</span><span class="n">WriteKeyValue</span><span class="p">(</span><span class="s">&quot;dech&quot;</span><span class="p">,</span> <span class="n">m_FrameHeader</span><span class="p">.</span><span class="n">bHeight</span> <span class="o">*</span> <span class="mi">8</span><span class="p">);</span><span class="c1">// 解码高</span>
+		<span class="n">logjson</span><span class="p">.</span><span class="n">WriteKeyValue</span><span class="p">(</span><span class="s">&quot;decid&quot;</span><span class="p">,</span> <span class="n">m_FrameHeader</span><span class="p">.</span><span class="n">bCodecID</span><span class="p">);</span><span class="c1">// 解码器id</span>
+		<span class="n">logjson</span><span class="p">.</span><span class="n">WriteKeyValue</span><span class="p">(</span><span class="s">&quot;decfr&quot;</span><span class="p">,</span> <span class="n">dwFrameRate</span><span class="p">);</span><span class="c1">// 解码帧率</span>
+		<span class="n">logjson</span><span class="p">.</span><span class="n">WriteKeyValue</span><span class="p">(</span><span class="s">&quot;render&quot;</span><span class="p">,</span> <span class="n">m_bEnableRend</span> <span class="o">?</span> <span class="s">&quot;true&quot;</span> <span class="o">:</span> <span class="s">&quot;false&quot;</span><span class="p">);</span><span class="c1">// 是否渲染</span>
+<span class="cp">#ifndef _FS_OS_LINUX</span>
+		<span class="n">POINT</span> <span class="n">pt</span><span class="p">;</span> <span class="n">RECT</span> <span class="n">rect</span><span class="p">;</span>
+		<span class="n">m_pRender</span><span class="o">-&gt;</span><span class="n">GetVideoOrg</span><span class="p">(</span><span class="o">&amp;</span><span class="n">pt</span><span class="p">);</span>
+		<span class="n">logjson</span><span class="p">.</span><span class="n">WriteKey</span><span class="p">(</span><span class="s">&quot;VideoOrg&quot;</span><span class="p">);</span>
+		<span class="n">logjson</span><span class="p">.</span><span class="n">StartArray</span><span class="p">();</span>
+		<span class="n">logjson</span><span class="p">.</span><span class="n">WriteValue</span><span class="p">(</span><span class="n">pt</span><span class="p">.</span><span class="n">x</span><span class="p">);</span> <span class="n">logjson</span><span class="p">.</span><span class="n">WriteValue</span><span class="p">(</span><span class="n">pt</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+		<span class="n">logjson</span><span class="p">.</span><span class="n">EndArray</span><span class="p">();</span>
+<span class="cp">#ifdef _FS_OS_WIN</span>
+		<span class="n">m_pRender</span><span class="o">-&gt;</span><span class="n">GetWinRect</span><span class="p">(</span><span class="o">&amp;</span><span class="n">rect</span><span class="p">);</span>
+		<span class="n">logjson</span><span class="p">.</span><span class="n">WriteKey</span><span class="p">(</span><span class="s">&quot;WinRect&quot;</span><span class="p">);</span>
+		<span class="n">logjson</span><span class="p">.</span><span class="n">StartArray</span><span class="p">();</span>
+		<span class="n">logjson</span><span class="p">.</span><span class="n">WriteValue</span><span class="p">(</span><span class="n">rect</span><span class="p">.</span><span class="n">left</span><span class="p">);</span> <span class="n">logjson</span><span class="p">.</span><span class="n">WriteValue</span><span class="p">(</span><span class="n">rect</span><span class="p">.</span><span class="n">top</span><span class="p">);</span>
+		<span class="n">logjson</span><span class="p">.</span><span class="n">WriteValue</span><span class="p">(</span><span class="n">rect</span><span class="p">.</span><span class="n">right</span><span class="p">);</span> <span class="n">logjson</span><span class="p">.</span><span class="n">WriteValue</span><span class="p">(</span><span class="n">rect</span><span class="p">.</span><span class="n">bottom</span><span class="p">);</span>
+		<span class="n">logjson</span><span class="p">.</span><span class="n">EndArray</span><span class="p">();</span>
+<span class="cp">#endif</span>
+		<span class="n">m_pRender</span><span class="o">-&gt;</span><span class="n">GetDstRect</span><span class="p">(</span><span class="o">&amp;</span><span class="n">rect</span><span class="p">);</span>
+		<span class="n">logjson</span><span class="p">.</span><span class="n">WriteKey</span><span class="p">(</span><span class="s">&quot;DstRect&quot;</span><span class="p">);</span>
+		<span class="n">logjson</span><span class="p">.</span><span class="n">StartArray</span><span class="p">();</span>
+		<span class="n">logjson</span><span class="p">.</span><span class="n">WriteValue</span><span class="p">(</span><span class="n">rect</span><span class="p">.</span><span class="n">left</span><span class="p">);</span> <span class="n">logjson</span><span class="p">.</span><span class="n">WriteValue</span><span class="p">(</span><span class="n">rect</span><span class="p">.</span><span class="n">top</span><span class="p">);</span>
+		<span class="n">logjson</span><span class="p">.</span><span class="n">WriteValue</span><span class="p">(</span><span class="n">rect</span><span class="p">.</span><span class="n">right</span><span class="p">);</span> <span class="n">logjson</span><span class="p">.</span><span class="n">WriteValue</span><span class="p">(</span><span class="n">rect</span><span class="p">.</span><span class="n">bottom</span><span class="p">);</span>
+		<span class="n">logjson</span><span class="p">.</span><span class="n">EndArray</span><span class="p">();</span>
+<span class="cp">#endif</span>
+		<span class="n">logjson</span><span class="p">.</span><span class="n">EndObject</span><span class="p">();</span>
+		<span class="n">LOG</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span> <span class="n">logjson</span><span class="p">.</span><span class="n">ToString</span><span class="p">());</span>
+		<span class="n">m_dwTestLastLogTime</span> <span class="o">=</span> <span class="n">dwCurTime</span><span class="p">;</span>
+		<span class="n">m_dwTestFrameCount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="c1">//保存关键帧</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bKeyFrame</span><span class="p">){</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nb">NULL</span> <span class="o">==</span> <span class="n">m_pLastKeyFrame</span><span class="p">){</span>
+			<span class="n">m_pLastKeyFrame</span> <span class="o">=</span> <span class="n">m_pAllocator</span><span class="o">-&gt;</span><span class="n">Alloc</span><span class="p">();</span>
+		<span class="p">}</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">m_pLastKeyFrame</span><span class="p">)</span>
+			<span class="n">m_pLastKeyFrame</span><span class="o">-&gt;</span><span class="n">WriteData</span><span class="p">(</span><span class="n">pbData</span><span class="p">,</span> <span class="n">dwDataLen</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="c1">//回调</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">m_pRawDataCallback</span><span class="p">){</span>
+		<span class="n">m_pRawDataCallback</span><span class="p">(</span><span class="n">m_lpRawDataCallbackObj</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m_biDec</span><span class="p">,</span> <span class="n">frame</span><span class="p">.</span><span class="n">pbOut</span><span class="p">,</span> <span class="n">m_biDec</span><span class="p">.</span><span class="n">biSizeImage</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="c1">//显示输出</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">m_bEnableRend</span><span class="p">){</span>
+
+		<span class="n">POINT</span> <span class="n">ptOrg</span><span class="p">;</span>
+<span class="cp">#ifndef _FS_OS_LINUX</span>
+		<span class="n">m_pRender</span><span class="o">-&gt;</span><span class="n">GetVideoOrg</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ptOrg</span><span class="p">);</span>
+<span class="cp">#endif</span>
+		<span class="n">m_TextWriter</span><span class="p">.</span><span class="n">WriteText2</span><span class="p">(</span><span class="n">frame</span><span class="p">.</span><span class="n">pbOut</span><span class="p">,</span> <span class="n">m_biDec</span><span class="p">.</span><span class="n">biWidth</span><span class="o">*</span><span class="p">(</span><span class="n">m_biDec</span><span class="p">.</span><span class="n">biBitCount</span> <span class="o">/</span> <span class="mi">8</span><span class="p">),</span> <span class="n">ptOrg</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">ptOrg</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+<span class="cp">#if USE_IMAGESHARPEN</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">m_hImgSharpenFilter</span><span class="p">){</span>
+			<span class="n">RECT</span> <span class="n">rcDst</span><span class="p">;</span>
+<span class="cp">#ifndef _FS_OS_LINUX</span>
+			<span class="n">m_pRender</span><span class="o">-&gt;</span><span class="n">GetDstRect</span><span class="p">(</span><span class="o">&amp;</span><span class="n">rcDst</span><span class="p">);</span>
+<span class="cp">#endif</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">rcDst</span><span class="p">.</span><span class="n">right</span> <span class="o">-</span> <span class="n">rcDst</span><span class="p">.</span><span class="n">left</span> <span class="o">&gt;=</span> <span class="mi">640</span><span class="p">)</span>
+				<span class="n">TImage_SharpenFilter_Process</span><span class="p">(</span><span class="n">m_hImgSharpenFilter</span><span class="p">,</span> <span class="n">m_pbDecBuffer</span><span class="p">,</span> <span class="n">m_biDec</span><span class="p">.</span><span class="n">biSizeImage</span><span class="p">,</span> <span class="n">m_biDec</span><span class="p">.</span><span class="n">biWidth</span><span class="p">);</span>
+		<span class="p">}</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#ifndef _FS_OS_LINUX</span>
+		<span class="n">m_pRender</span><span class="o">-&gt;</span><span class="n">Draw</span><span class="p">(</span><span class="n">m_pbDecBuffer</span><span class="p">);</span>
+<span class="cp">#endif</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="n">TRUE</span><span class="p">;</span>
+<span class="p">}</span> <span class="c1">//NOLINT</span>
+
+<span class="n">BOOL</span> <span class="n">RenderProxyCodecVideo</span><span class="o">::</span><span class="n">HWDecAndDraw</span><span class="p">(</span><span class="n">PBYTE</span> <span class="n">pbData</span><span class="p">,</span> <span class="n">FS_UINT32</span> <span class="n">dwDataLen</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="cp">#ifdef _FS_OS_WIN</span>
+	<span class="n">VideoFrameHeader</span><span class="o">*</span> <span class="n">pHeader</span> <span class="o">=</span> <span class="p">(</span><span class="n">VideoFrameHeader</span><span class="o">*</span><span class="p">)</span><span class="n">pbData</span><span class="p">;</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bWidth</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bHeight</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+
+	<span class="n">WAutoLock</span> <span class="nf">lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_Locker</span><span class="p">);</span>
+
+	<span class="c1">//如果当前压缩格式的大小和位数与以前的压缩格式不同，</span>
+	<span class="k">if</span> <span class="p">((</span><span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bWidth</span> <span class="o">!=</span> <span class="n">m_FrameHeader</span><span class="p">.</span><span class="n">bWidth</span> <span class="o">||</span>
+		<span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bHeight</span> <span class="o">!=</span> <span class="n">m_FrameHeader</span><span class="p">.</span><span class="n">bHeight</span><span class="p">)</span> <span class="o">&amp;&amp;</span>
+		<span class="o">!</span><span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bKeyFrame</span> <span class="o">&amp;&amp;</span> <span class="n">m_hIntelDecRender</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">m_IntelVideoDecDll</span><span class="p">.</span><span class="n">DecodeClose</span><span class="p">(</span><span class="n">m_hIntelDecRender</span><span class="p">);</span>
+		<span class="n">m_hIntelDecRender</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="c1">//重新设置解压缩器，当前压缩格式与以前的格式不通</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bCodecID</span> <span class="o">!=</span> <span class="n">m_FrameHeader</span><span class="p">.</span><span class="n">bCodecID</span> <span class="o">||</span>
+		<span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bWidth</span> <span class="o">!=</span> <span class="n">m_FrameHeader</span><span class="p">.</span><span class="n">bWidth</span> <span class="o">||</span>
+		<span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bHeight</span> <span class="o">!=</span> <span class="n">m_FrameHeader</span><span class="p">.</span><span class="n">bHeight</span> <span class="o">||</span>
+		<span class="o">!</span><span class="n">m_hIntelDecRender</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bKeyFrame</span><span class="p">)</span>
+			<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+		<span class="n">ClearOldResource</span><span class="p">();</span>
+		<span class="c1">//将当前压缩格式拷贝到老的压缩格式中去</span>
+		<span class="n">CopyMemory</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_FrameHeader</span><span class="p">,</span> <span class="n">pHeader</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">VideoFrameHeader</span><span class="p">));</span>
+
+		<span class="k">if</span> <span class="p">(</span><span class="n">m_hIntelDecRender</span><span class="p">){</span>
+			<span class="n">m_IntelVideoDecDll</span><span class="p">.</span><span class="n">DecodeClose</span><span class="p">(</span><span class="n">m_hIntelDecRender</span><span class="p">);</span>
+			<span class="n">m_hIntelDecRender</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+		<span class="p">}</span>
+
+		<span class="n">ZeroMemory</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_biDec</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">m_biDec</span><span class="p">));</span>
+		<span class="n">m_biDec</span><span class="p">.</span><span class="n">biSize</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">BITMAPINFOHEADER</span><span class="p">);</span>
+		<span class="n">m_biDec</span><span class="p">.</span><span class="n">biCompression</span> <span class="o">=</span> <span class="n">FOURCC_I420</span><span class="p">;</span>
+		<span class="n">m_biDec</span><span class="p">.</span><span class="n">biPlanes</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+		<span class="n">m_biDec</span><span class="p">.</span><span class="n">biBitCount</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+		<span class="n">m_biDec</span><span class="p">.</span><span class="n">biWidth</span> <span class="o">=</span> <span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bWidth</span> <span class="o">*</span> <span class="mi">8</span><span class="p">;</span>
+		<span class="n">m_biDec</span><span class="p">.</span><span class="n">biHeight</span> <span class="o">=</span> <span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bHeight</span> <span class="o">*</span> <span class="mi">8</span><span class="p">;</span>
+		<span class="n">m_biDec</span><span class="p">.</span><span class="n">biSizeImage</span> <span class="o">=</span> <span class="p">(</span><span class="n">m_biDec</span><span class="p">.</span><span class="n">biWidth</span><span class="o">*</span><span class="n">m_biDec</span><span class="p">.</span><span class="n">biHeight</span><span class="o">*</span><span class="n">m_biDec</span><span class="p">.</span><span class="n">biBitCount</span><span class="p">)</span> <span class="o">/</span> <span class="mi">8</span><span class="p">;</span>
+
+		<span class="n">LOG</span><span class="p">(</span><span class="s">&quot;Remote Video Format Changed,Width:%d,Height:%d,CodecID:%d.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+			<span class="n">m_biDec</span><span class="p">.</span><span class="n">biWidth</span><span class="p">,</span> <span class="n">m_biDec</span><span class="p">.</span><span class="n">biHeight</span><span class="p">,</span> <span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bCodecID</span><span class="p">);</span>
+		<span class="n">m_hIntelDecRender</span> <span class="o">=</span> <span class="n">m_IntelVideoDecDll</span><span class="p">.</span><span class="n">DecodeOpen</span><span class="p">(</span><span class="n">m_hRendWnd</span><span class="p">,</span> <span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">pbData</span><span class="p">,</span> <span class="n">dwDataLen</span> <span class="o">-</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">VideoFrameHeader</span><span class="p">));</span>
+		<span class="n">UINT</span> <span class="n">nNeedSize</span> <span class="o">=</span> <span class="n">m_biDec</span><span class="p">.</span><span class="n">biSizeImage</span><span class="p">;</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">m_unDecBufSize</span> <span class="o">&lt;</span> <span class="n">nNeedSize</span> <span class="o">||</span> <span class="o">!</span><span class="n">m_pbDecBuffer</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">m_pbDecBuffer</span><span class="p">){</span>
+				<span class="n">aligned_free</span><span class="p">(</span><span class="n">m_pbDecBuffer</span><span class="p">);</span>
+				<span class="n">m_pbDecBuffer</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+				<span class="n">m_unDecBufSize</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+			<span class="p">}</span>
+			<span class="c1">//分配解压内存块</span>
+			<span class="n">m_pbDecBuffer</span> <span class="o">=</span> <span class="p">(</span><span class="n">PBYTE</span><span class="p">)</span><span class="n">aligned_malloc</span><span class="p">(</span><span class="n">nNeedSize</span><span class="p">,</span> <span class="mi">256</span><span class="p">);</span>
+			<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">m_pbDecBuffer</span><span class="p">)</span>
+				<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+			<span class="n">m_unDecBufSize</span> <span class="o">=</span> <span class="n">nNeedSize</span><span class="p">;</span>
+		<span class="p">}</span>
+
+		<span class="n">NotifyEvent</span><span class="p">(</span><span class="n">VIDEORENDER_EVENT_STATE</span><span class="p">,</span> <span class="n">m_dwRenderID</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">m_pbDecBuffer</span> <span class="o">||</span> <span class="o">!</span><span class="n">m_hIntelDecRender</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+
+	<span class="k">if</span> <span class="p">(</span><span class="n">m_hIntelDecRender</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">POINT</span> <span class="n">ptOrg</span><span class="p">;</span>
+		<span class="n">m_TextWriter</span><span class="p">.</span><span class="n">SetVideoFormat</span><span class="p">(</span><span class="n">m_biDec</span><span class="p">);</span>
+		<span class="n">m_pRender</span><span class="o">-&gt;</span><span class="n">SetSourceFormat</span><span class="p">(</span><span class="n">m_biDec</span><span class="p">);</span>
+		<span class="n">m_pRender</span><span class="o">-&gt;</span><span class="n">GetVideoOrg</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ptOrg</span><span class="p">);</span>
+		<span class="n">m_IntelVideoDecDll</span><span class="p">.</span><span class="n">DecodeAndRender</span><span class="p">(</span><span class="n">m_hIntelDecRender</span><span class="p">,</span> <span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">pbData</span><span class="p">,</span> <span class="n">dwDataLen</span> <span class="o">-</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">VideoFrameHeader</span><span class="p">),</span>
+			<span class="n">m_pbDecBuffer</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m_unDecBufSize</span><span class="p">);</span>
+		<span class="n">m_dwTestFrameCount</span><span class="o">++</span><span class="p">;</span>
+		<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">m_dwTestLastLogTime</span><span class="p">)</span> <span class="n">m_dwTestLastLogTime</span> <span class="o">=</span> <span class="n">timeGetTime</span><span class="p">();</span>
+		<span class="n">FS_UINT32</span> <span class="n">dwCurTime</span> <span class="o">=</span> <span class="n">timeGetTime</span><span class="p">();</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">dwCurTime</span> <span class="o">-</span> <span class="n">m_dwTestLastLogTime</span> <span class="o">&gt;=</span> <span class="mi">5000</span><span class="p">){</span>
+			<span class="n">FS_UINT32</span> <span class="n">dwFrameRate</span> <span class="o">=</span> <span class="n">m_dwTestFrameCount</span> <span class="o">*</span> <span class="mi">1000</span> <span class="o">/</span> <span class="p">(</span><span class="n">dwCurTime</span> <span class="o">-</span> <span class="n">m_dwTestLastLogTime</span><span class="p">);</span>
+			<span class="n">LogJson</span> <span class="n">logjson</span><span class="p">;</span>
+			<span class="n">logjson</span><span class="p">.</span><span class="n">StartObject</span><span class="p">();</span>
+			<span class="n">logjson</span><span class="p">.</span><span class="n">WriteKeyValue</span><span class="p">(</span><span class="s">&quot;title&quot;</span><span class="p">,</span> <span class="s">&quot;vidrenderdec&quot;</span><span class="p">);</span><span class="c1">// 主题</span>
+			<span class="n">logjson</span><span class="p">.</span><span class="n">WriteKeyValue</span><span class="p">(</span><span class="s">&quot;stmid&quot;</span><span class="p">,</span> <span class="n">m_dwStmID</span><span class="p">);</span><span class="c1">// 流id</span>
+			<span class="n">logjson</span><span class="p">.</span><span class="n">WriteKeyValue</span><span class="p">(</span><span class="s">&quot;dectype&quot;</span><span class="p">,</span> <span class="s">&quot;hard&quot;</span><span class="p">);</span><span class="c1">// 硬解还是软解</span>
+			<span class="n">logjson</span><span class="p">.</span><span class="n">WriteKeyValue</span><span class="p">(</span><span class="s">&quot;decw&quot;</span><span class="p">,</span> <span class="n">m_FrameHeader</span><span class="p">.</span><span class="n">bWidth</span> <span class="o">*</span> <span class="mi">8</span><span class="p">);</span><span class="c1">// 解码宽</span>
+			<span class="n">logjson</span><span class="p">.</span><span class="n">WriteKeyValue</span><span class="p">(</span><span class="s">&quot;dech&quot;</span><span class="p">,</span> <span class="n">m_FrameHeader</span><span class="p">.</span><span class="n">bHeight</span> <span class="o">*</span> <span class="mi">8</span><span class="p">);</span><span class="c1">// 解码高</span>
+			<span class="n">logjson</span><span class="p">.</span><span class="n">WriteKeyValue</span><span class="p">(</span><span class="s">&quot;decid&quot;</span><span class="p">,</span> <span class="n">m_FrameHeader</span><span class="p">.</span><span class="n">bCodecID</span><span class="p">);</span><span class="c1">// 解码器id</span>
+			<span class="n">logjson</span><span class="p">.</span><span class="n">WriteKeyValue</span><span class="p">(</span><span class="s">&quot;decfr&quot;</span><span class="p">,</span> <span class="n">dwFrameRate</span><span class="p">);</span> <span class="c1">// 解码帧率</span>
+			<span class="n">logjson</span><span class="p">.</span><span class="n">WriteKeyValue</span><span class="p">(</span><span class="s">&quot;render&quot;</span><span class="p">,</span> <span class="n">m_bEnableRend</span> <span class="o">?</span> <span class="s">&quot;true&quot;</span> <span class="o">:</span> <span class="s">&quot;false&quot;</span><span class="p">);</span><span class="c1">// 是否渲染</span>
+			<span class="n">logjson</span><span class="p">.</span><span class="n">EndObject</span><span class="p">();</span>
+			<span class="n">LOG</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span> <span class="n">logjson</span><span class="p">.</span><span class="n">ToString</span><span class="p">());</span>
+			<span class="c1">//LOG(logjson);</span>
+			<span class="n">m_dwTestLastLogTime</span> <span class="o">=</span> <span class="n">dwCurTime</span><span class="p">;</span>
+			<span class="n">m_dwTestFrameCount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+	<span class="c1">//保存关键帧</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bKeyFrame</span><span class="p">){</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nb">NULL</span> <span class="o">==</span> <span class="n">m_pLastKeyFrame</span><span class="p">){</span>
+			<span class="n">m_pLastKeyFrame</span> <span class="o">=</span> <span class="n">m_pAllocator</span><span class="o">-&gt;</span><span class="n">Alloc</span><span class="p">();</span>
+		<span class="p">}</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">m_pLastKeyFrame</span><span class="p">)</span>
+			<span class="n">m_pLastKeyFrame</span><span class="o">-&gt;</span><span class="n">WriteData</span><span class="p">(</span><span class="n">pbData</span><span class="p">,</span> <span class="n">dwDataLen</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="n">TRUE</span><span class="p">;</span>
+<span class="cp">#else</span>
+	<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="cp">#endif</span>
+<span class="p">}</span> <span class="c1">//NOLINT</span>
+
+<span class="cp">#ifdef ANDROID_HWDEC</span>
+<span class="kr">inline</span> <span class="n">BOOL</span> <span class="n">RenderProxyCodecVideo</span><span class="o">::</span><span class="n">NMCHWDecAndDraw</span><span class="p">(</span><span class="n">PBYTE</span> <span class="n">pbData</span><span class="p">,</span> <span class="n">DWORD</span> <span class="n">dwDataLen</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">DLOG</span><span class="p">(</span><span class="s">&quot;CVideoRenderDec:NMCHWDecAndDraw: Begin...&quot;</span><span class="p">);</span>
+	<span class="n">BOOL</span> <span class="n">bNMCInited</span> <span class="o">=</span> <span class="n">m_NMCDecoder</span><span class="p">.</span><span class="n">IsInited</span><span class="p">();</span>
+
+	<span class="n">VideoFrameHeader</span><span class="o">*</span> <span class="n">pHeader</span> <span class="o">=</span> <span class="p">(</span><span class="n">VideoFrameHeader</span><span class="o">*</span><span class="p">)</span><span class="n">pbData</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bWidth</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bHeight</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">)</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+
+	<span class="n">WAutoLock</span> <span class="nf">lock</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">m_Locker</span> <span class="p">);</span>
+
+	<span class="k">if</span><span class="p">(</span> <span class="p">(</span> <span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bWidth</span> <span class="o">!=</span> <span class="n">m_FrameHeader</span><span class="p">.</span><span class="n">bWidth</span> <span class="o">||</span>
+		<span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bHeight</span> <span class="o">!=</span> <span class="n">m_FrameHeader</span><span class="p">.</span><span class="n">bHeight</span> <span class="p">)</span> <span class="o">&amp;&amp;</span>
+		<span class="o">!</span><span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bKeyFrame</span> <span class="p">)</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+
+	<span class="k">if</span> <span class="p">(</span> <span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bCodecID</span> <span class="o">!=</span> <span class="n">m_FrameHeader</span><span class="p">.</span><span class="n">bCodecID</span> <span class="o">||</span> 
+		 <span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bWidth</span> <span class="o">!=</span> <span class="n">m_FrameHeader</span><span class="p">.</span><span class="n">bWidth</span> <span class="o">||</span>
+		 <span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bHeight</span> <span class="o">!=</span> <span class="n">m_FrameHeader</span><span class="p">.</span><span class="n">bHeight</span> <span class="o">||</span>
+		 <span class="o">!</span><span class="n">bNMCInited</span> <span class="p">)</span>
+	<span class="p">{</span>
+		<span class="k">if</span><span class="p">(</span> <span class="o">!</span><span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bKeyFrame</span> <span class="p">)</span>
+			<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+
+		<span class="n">CopyMemory</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_FrameHeader</span><span class="p">,</span><span class="n">pHeader</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">VideoFrameHeader</span><span class="p">));</span>	
+		
+		
+		<span class="k">if</span><span class="p">(</span> <span class="n">bNMCInited</span> <span class="p">){</span>
+			<span class="n">ALOG</span><span class="p">(</span><span class="s">&quot;CVideoRenderDec:NMCHWDecAndDraw: StopDecoder...&quot;</span><span class="p">);</span>
+			<span class="n">m_NMCDecoder</span><span class="p">.</span><span class="n">StopDecoder</span><span class="p">();</span>
+		<span class="p">}</span>
+
+		<span class="n">ZeroMemory</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">m_biDec</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">m_biDec</span><span class="p">));</span>	
+		<span class="n">m_biDec</span><span class="p">.</span><span class="n">biSize</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">BITMAPINFOHEADER</span><span class="p">);</span>
+		<span class="n">m_biDec</span><span class="p">.</span><span class="n">biCompression</span> <span class="o">=</span> <span class="n">FOURCC_I420</span><span class="p">;</span>
+		<span class="n">m_biDec</span><span class="p">.</span><span class="n">biPlanes</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+		<span class="n">m_biDec</span><span class="p">.</span><span class="n">biBitCount</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+		<span class="n">m_biDec</span><span class="p">.</span><span class="n">biWidth</span> <span class="o">=</span> <span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bWidth</span><span class="o">*</span><span class="mi">8</span><span class="p">;</span>
+		<span class="n">m_biDec</span><span class="p">.</span><span class="n">biHeight</span> <span class="o">=</span> <span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bHeight</span><span class="o">*</span><span class="mi">8</span><span class="p">;</span>
+		<span class="n">m_biDec</span><span class="p">.</span><span class="n">biSizeImage</span> <span class="o">=</span> <span class="p">(</span><span class="n">m_biDec</span><span class="p">.</span><span class="n">biWidth</span><span class="o">*</span><span class="n">m_biDec</span><span class="p">.</span><span class="n">biHeight</span><span class="o">*</span><span class="n">m_biDec</span><span class="p">.</span><span class="n">biBitCount</span><span class="p">)</span><span class="o">/</span><span class="mi">8</span><span class="p">;</span>
+
+		<span class="n">ALOG</span><span class="p">(</span><span class="s">&quot;Remote Video Format Changed,Width:%d,Height:%d,CodecID:%d.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+			<span class="n">m_biDec</span><span class="p">.</span><span class="n">biWidth</span><span class="p">,</span><span class="n">m_biDec</span><span class="p">.</span><span class="n">biHeight</span><span class="p">,</span><span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bCodecID</span> <span class="p">);</span>
+
+		<span class="n">m_NMCDecoder</span><span class="p">.</span><span class="n">StartDecoder</span><span class="p">(</span><span class="n">m_biDec</span><span class="p">,</span> <span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)(</span><span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">pbData</span><span class="p">),</span> <span class="n">dwDataLen</span><span class="o">-</span><span class="k">sizeof</span><span class="p">(</span><span class="n">VideoFrameHeader</span><span class="p">));</span>
+		<span class="n">bNMCInited</span> <span class="o">=</span> <span class="n">m_NMCDecoder</span><span class="p">.</span><span class="n">IsInited</span><span class="p">();</span>
+		
+		<span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="n">bNMCInited</span> <span class="p">){</span>
+			<span class="n">ALOG</span><span class="p">(</span><span class="s">&quot;Start Decompress Failed,Encoder Type = %d,Width = %d,Height = %d.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+				<span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bCodecID</span><span class="p">,</span><span class="n">m_biDec</span><span class="p">.</span><span class="n">biWidth</span><span class="p">,</span><span class="n">m_biDec</span><span class="p">.</span><span class="n">biHeight</span> <span class="p">);</span>
+			<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="n">ALOG</span><span class="p">(</span> <span class="s">&quot;Created Remote Video Decoder,Width:%d,Height:%d,CodecID:%d.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+			<span class="n">m_biDec</span><span class="p">.</span><span class="n">biWidth</span><span class="p">,</span><span class="n">m_biDec</span><span class="p">.</span><span class="n">biHeight</span><span class="p">,</span><span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bCodecID</span> <span class="p">);</span>
+				
+		<span class="n">UINT</span> <span class="n">nNeedSize</span> <span class="o">=</span> <span class="n">m_biDec</span><span class="p">.</span><span class="n">biSizeImage</span><span class="p">;</span>
+		<span class="k">if</span><span class="p">(</span> <span class="n">m_unDecBufSize</span> <span class="o">&lt;</span> <span class="n">nNeedSize</span> <span class="o">||</span> <span class="o">!</span><span class="n">m_pbDecBuffer</span> <span class="p">)</span>
+		<span class="p">{</span>
+			<span class="k">if</span><span class="p">(</span> <span class="n">m_pbDecBuffer</span> <span class="p">){</span>
+				<span class="n">aligned_free</span><span class="p">(</span> <span class="n">m_pbDecBuffer</span> <span class="p">);</span>
+				<span class="n">m_pbDecBuffer</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+				<span class="n">m_unDecBufSize</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+			<span class="p">}</span>
+			<span class="n">m_pbDecBuffer</span> <span class="o">=</span> <span class="p">(</span><span class="n">PBYTE</span><span class="p">)</span><span class="n">aligned_malloc</span><span class="p">(</span> <span class="n">nNeedSize</span><span class="p">,</span><span class="mi">256</span> <span class="p">);</span>
+			<span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="n">m_pbDecBuffer</span> <span class="p">)</span>
+				<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+			<span class="n">m_unDecBufSize</span> <span class="o">=</span> <span class="n">nNeedSize</span><span class="p">;</span>
+		<span class="p">}</span>
+
+		<span class="n">NotifyEvent</span><span class="p">(</span> <span class="n">VIDEORENDER_EVENT_STATE</span><span class="p">,</span><span class="n">m_dwRenderID</span> <span class="p">);</span>		
+	<span class="p">}</span>
+		
+
+	<span class="n">Video_Code_Frame</span> <span class="n">frame</span><span class="p">;</span>
+	<span class="n">frame</span><span class="p">.</span><span class="n">pbIn</span>		<span class="o">=</span> <span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">pbData</span><span class="p">;</span>
+	<span class="n">frame</span><span class="p">.</span><span class="n">unInLen</span>	<span class="o">=</span> <span class="n">dwDataLen</span><span class="o">-</span><span class="k">sizeof</span><span class="p">(</span><span class="n">VideoFrameHeader</span><span class="p">);</span>
+	<span class="n">frame</span><span class="p">.</span><span class="n">pbOut</span>		<span class="o">=</span> <span class="n">m_pbDecBuffer</span><span class="p">;</span>
+	<span class="n">frame</span><span class="p">.</span><span class="n">unOutLen</span>	<span class="o">=</span> <span class="n">m_unDecBufSize</span><span class="p">;</span>
+
+	<span class="n">DLOG</span><span class="p">(</span><span class="s">&quot;CVideoRenderDec:NMCHWDecAndDraw: Start Decoding...&quot;</span><span class="p">);</span>
+	<span class="n">m_NMCDecoder</span><span class="p">.</span><span class="n">DecodeAndRender</span><span class="p">((</span><span class="kt">char</span><span class="o">*</span><span class="p">)(</span><span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">pbData</span><span class="p">),</span> <span class="n">dwDataLen</span><span class="o">-</span><span class="k">sizeof</span><span class="p">(</span><span class="n">VideoFrameHeader</span><span class="p">));</span>
+	<span class="n">DLOG</span><span class="p">(</span><span class="s">&quot;CVideoRenderDec:NMCHWDecAndDraw: End Decoding...&quot;</span><span class="p">);</span>
+
+	<span class="k">if</span><span class="p">(</span> <span class="n">pHeader</span><span class="o">-&gt;</span><span class="n">bKeyFrame</span> <span class="p">){</span>
+		<span class="k">if</span><span class="p">(</span> <span class="nb">NULL</span> <span class="o">==</span> <span class="n">m_pLastKeyFrame</span> <span class="p">){</span>
+			<span class="n">m_pLastKeyFrame</span> <span class="o">=</span> <span class="n">m_pAllocator</span> <span class="o">-&gt;</span><span class="n">Alloc</span><span class="p">();</span>
+		<span class="p">}</span>
+		<span class="k">if</span><span class="p">(</span> <span class="n">m_pLastKeyFrame</span> <span class="p">)</span>
+			<span class="n">m_pLastKeyFrame</span><span class="o">-&gt;</span><span class="n">WriteData</span><span class="p">(</span> <span class="n">pbData</span><span class="p">,</span><span class="n">dwDataLen</span> <span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="n">DLOG</span><span class="p">(</span><span class="s">&quot;CVideoRenderDec:NMCHWDecAndDraw: End...&quot;</span><span class="p">);</span>
+
+	<span class="k">return</span> <span class="n">TRUE</span><span class="p">;</span>
+<span class="p">}</span><span class="c1">//NOLINT</span>
+
+<span class="cp">#endif</span>
+
+<span class="kt">void</span> <span class="n">RenderProxyCodecVideo</span><span class="o">::</span><span class="n">OnRenderWndChanged</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">WAutoLock</span> <span class="n">lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_Locker</span><span class="p">);</span>
+
+<span class="cp">#ifdef ANDROID_HWDEC</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">m_bNMCUsable</span><span class="p">)</span> <span class="p">{</span>
+		<span class="n">m_NMCDecoder</span><span class="p">.</span><span class="n">StopDecoder</span><span class="p">();</span>
+		<span class="n">m_NMCDecoder</span><span class="p">.</span><span class="n">ReleaseJNI</span><span class="p">();</span>
+		<span class="n">m_NMCDecoder</span><span class="p">.</span><span class="n">Init</span><span class="p">((</span><span class="n">JavaVM</span><span class="o">*</span><span class="p">)</span><span class="n">g_hVideoModule</span><span class="p">,</span> <span class="p">(</span><span class="n">HWND</span><span class="p">)</span><span class="n">m_hRendWnd</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="cp">#endif</span>
+
+<span class="p">}</span>
+
+<span class="n">BOOL</span> <span class="n">RenderProxyCodecVideo</span><span class="o">::</span><span class="n">DecodeFrame</span><span class="p">(</span><span class="n">Video_Code_Frame</span> <span class="o">&amp;</span><span class="n">frame</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">BOOL</span> <span class="n">bResult</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="cp">#ifdef _WIN32	</span>
+	<span class="kr">__try</span>
+	<span class="p">{</span>
+		<span class="n">bResult</span> <span class="o">=</span> <span class="n">VIDEO_Decode_Decompress</span><span class="p">(</span><span class="n">m_hDecoder</span><span class="p">,</span> <span class="n">frame</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="kr">__except</span> <span class="p">(</span><span class="n">EXCEPTION_EXECUTE_HANDLER</span><span class="p">)</span>
+	<span class="p">{</span>
+	<span class="p">}</span>
+<span class="cp">#else</span>
+	<span class="n">bResult</span> <span class="o">=</span> <span class="n">VIDEO_Decode_Decompress</span><span class="p">(</span><span class="n">m_hDecoder</span><span class="p">,</span> <span class="n">frame</span><span class="p">);</span>
+<span class="cp">#endif	</span>
+	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">bResult</span><span class="p">){</span>
+		<span class="n">LOG</span><span class="p">(</span><span class="s">&quot;ERR:RenderProxyCodecData::DecodeFrame Decompress Frame Failed,Encoder Type = %d,Width = %d,Height = %d,DataLen = %d.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="c1">//NOLINT</span>
+			<span class="n">m_FrameHeader</span><span class="p">.</span><span class="n">bCodecID</span><span class="p">,</span> <span class="n">m_biDec</span><span class="p">.</span><span class="n">biWidth</span><span class="p">,</span> <span class="n">m_biDec</span><span class="p">.</span><span class="n">biHeight</span><span class="p">,</span> <span class="n">frame</span><span class="p">.</span><span class="n">unInLen</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="n">bResult</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">RenderProxyCodecVideo</span><span class="o">::</span><span class="n">ClearOldResource</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="cp">#ifdef _FS_OS_WIN</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">m_hIntelDecRender</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">m_IntelVideoDecDll</span><span class="p">.</span><span class="n">DecodeClose</span><span class="p">(</span><span class="n">m_hIntelDecRender</span><span class="p">);</span>
+		<span class="n">m_hIntelDecRender</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">m_pbDecBuffer</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">aligned_free</span><span class="p">(</span><span class="n">m_pbDecBuffer</span><span class="p">);</span>
+			<span class="n">m_pbDecBuffer</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+			<span class="n">m_unDecBufSize</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="cp">#endif</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">m_hDecoder</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">VIDEO_Decode_StopDecompress</span><span class="p">(</span><span class="n">m_hDecoder</span><span class="p">);</span>
+		<span class="n">m_hDecoder</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">m_pbDecBuffer</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">aligned_free</span><span class="p">(</span><span class="n">m_pbDecBuffer</span><span class="p">);</span>
+			<span class="n">m_pbDecBuffer</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+			<span class="n">m_unDecBufSize</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">RenderProxyCodecVideo</span><span class="o">::</span><span class="n">CalNetRate</span><span class="p">(</span><span class="n">DWORD</span> <span class="n">dwBytes</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">m_dwLastTime</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+		<span class="n">m_dwLastTime</span> <span class="o">=</span> <span class="n">timeGetTime</span><span class="p">();</span>
+
+	<span class="n">m_dwWriteBytes</span> <span class="o">+=</span> <span class="n">dwBytes</span><span class="p">;</span>
+	<span class="n">m_dwFrameCount</span><span class="o">++</span><span class="p">;</span>
+
+	<span class="n">DWORD</span> <span class="n">dwNowTime</span> <span class="o">=</span> <span class="n">timeGetTime</span><span class="p">();</span>
+
+	<span class="k">if</span> <span class="p">(</span><span class="n">dwNowTime</span> <span class="o">-</span> <span class="n">m_dwLastTime</span> <span class="o">&gt;=</span> <span class="mi">2000</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">m_dwBitrate</span> <span class="o">=</span> <span class="p">(</span><span class="n">DWORD</span><span class="p">)((</span><span class="kt">double</span><span class="p">)</span><span class="n">m_dwWriteBytes</span> <span class="o">*</span> <span class="mi">8000</span> <span class="o">/</span> <span class="p">(</span><span class="n">dwNowTime</span> <span class="o">-</span> <span class="n">m_dwLastTime</span><span class="p">));</span>
+		<span class="n">m_dwFrameRate</span> <span class="o">=</span> <span class="n">m_dwFrameCount</span> <span class="o">*</span> <span class="mi">1000</span> <span class="o">/</span> <span class="p">(</span><span class="n">dwNowTime</span> <span class="o">-</span> <span class="n">m_dwLastTime</span><span class="p">);</span>
+
+		<span class="n">m_dwLastTime</span> <span class="o">=</span> <span class="n">dwNowTime</span><span class="p">;</span>
+		<span class="n">m_dwWriteBytes</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="n">m_dwFrameCount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="n">NotifyEvent</span><span class="p">(</span><span class="n">VIDEORENDER_EVENT_STATE</span><span class="p">,</span> <span class="n">m_dwRenderID</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">RenderProxyCodecVideo</span><span class="o">::</span><span class="n">DoDestroy</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">StopThread</span><span class="p">();</span>
+
+	<span class="n">Lock</span><span class="p">();</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">m_hDecoder</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">VIDEO_Decode_StopDecompress</span><span class="p">(</span><span class="n">m_hDecoder</span><span class="p">);</span>
+		<span class="n">m_hDecoder</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="p">}</span>
+
+<span class="cp">#if	USE_IMAGESHARPEN</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">m_hImgSharpenFilter</span><span class="p">){</span>
+		<span class="n">TImage_SharpenFilter_Destroy</span><span class="p">(</span><span class="n">m_hImgSharpenFilter</span><span class="p">);</span>
+		<span class="n">m_hImgSharpenFilter</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#ifdef _FS_OS_WIN</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">m_hIntelDecRender</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">m_IntelVideoDecDll</span><span class="p">.</span><span class="n">DecodeClose</span><span class="p">(</span><span class="n">m_hIntelDecRender</span><span class="p">);</span>
+		<span class="n">m_hIntelDecRender</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#ifdef ANDROID_HWDEC</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">m_bNMCUsable</span><span class="p">)</span> <span class="p">{</span>
+		<span class="n">m_NMCDecoder</span><span class="p">.</span><span class="n">StopDecoder</span><span class="p">();</span>
+		<span class="n">m_NMCDecoder</span><span class="p">.</span><span class="n">ReleaseJNI</span><span class="p">();</span>
+		<span class="n">m_bNMCUsable</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="cp">#endif</span>
+
+	<span class="k">if</span> <span class="p">(</span><span class="n">m_pbDecBuffer</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">aligned_free</span><span class="p">(</span><span class="n">m_pbDecBuffer</span><span class="p">);</span>
+		<span class="n">m_pbDecBuffer</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+		<span class="n">m_unDecBufSize</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="n">UnLock</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="cp">#ifdef ANDROID</span>
+<span class="n">BOOL</span> <span class="n">RenderProxyCodecVideo</span><span class="o">::</span><span class="n">CreateBitmap</span><span class="p">(</span><span class="n">PBYTE</span> <span class="n">pbData</span><span class="p">,</span> <span class="n">UINT</span> <span class="n">unDataLen</span><span class="p">,</span> <span class="k">const</span> <span class="n">BITMAPINFOHEADER</span> <span class="o">&amp;</span><span class="n">biIn</span><span class="p">,</span> <span class="n">jobject</span><span class="o">*</span> <span class="n">objBmp</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">JavaVM</span><span class="o">*</span> <span class="n">pJVM</span> <span class="o">=</span> <span class="p">(</span><span class="n">JavaVM</span><span class="o">*</span><span class="p">)</span><span class="n">g_hVideoModule</span><span class="p">;</span>
+	<span class="n">JNIEnv</span><span class="o">*</span> <span class="n">env</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="kt">bool</span> <span class="n">bAttached</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nb">NULL</span> <span class="o">==</span> <span class="n">env</span><span class="p">){</span>
+		<span class="kt">int</span> <span class="n">nStatus</span> <span class="o">=</span> <span class="n">pJVM</span><span class="o">-&gt;</span><span class="n">GetEnv</span><span class="p">((</span><span class="kt">void</span><span class="o">**</span><span class="p">)</span><span class="o">&amp;</span><span class="n">env</span><span class="p">,</span> <span class="n">JNI_VERSION_1_4</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">nStatus</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">){</span>
+			<span class="n">nStatus</span> <span class="o">=</span> <span class="n">pJVM</span><span class="o">-&gt;</span><span class="n">AttachCurrentThread</span><span class="p">(</span><span class="o">&amp;</span><span class="n">env</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">nStatus</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">){</span>
+				<span class="n">LOG</span><span class="p">(</span><span class="s">&quot;JavaVM AttachCurrentThread failed,Status = %d.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">nStatus</span><span class="p">);</span>
+				<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+			<span class="p">}</span>
+			<span class="n">bAttached</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+	<span class="n">HANDLE</span>		<span class="n">hConvert</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="n">PBYTE</span>		<span class="n">pbBuffer</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+	<span class="n">jclass</span>		<span class="n">clsBitmap</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="n">jclass</span>		<span class="n">clsBuffer</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="n">jclass</span>		<span class="n">clsBitmapConfig</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="n">jmethodID</span> 	<span class="n">createBitmap</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="n">jmethodID</span> 	<span class="n">copyPixelsFromBuffer</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="n">jmethodID</span> 	<span class="n">wrap</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="n">jfieldID</span>	<span class="n">rgb565</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+	<span class="n">jobject</span>		<span class="n">objRGB565</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="n">jbyteArray</span>	<span class="n">dataArray</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="n">jobject</span> 	<span class="n">objBitmap</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="n">jobject</span> 	<span class="n">objBuffer</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+	<span class="n">BOOL</span>		<span class="n">bResult</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">;</span>
+	<span class="k">do</span><span class="p">{</span>
+		<span class="n">BITMAPINFOHEADER</span> <span class="n">bmiIn</span><span class="p">;</span>
+		<span class="n">CopyMemory</span><span class="p">(</span><span class="o">&amp;</span><span class="n">bmiIn</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">biIn</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">BITMAPINFOHEADER</span><span class="p">));</span>
+
+		<span class="n">BITMAPINFOHEADER</span> <span class="n">biOut</span><span class="p">;</span>
+		<span class="n">ZeroMemory</span><span class="p">(</span><span class="o">&amp;</span><span class="n">biOut</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">biOut</span><span class="p">));</span>
+		<span class="n">biOut</span><span class="p">.</span><span class="n">biSize</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">biOut</span><span class="p">);</span>
+		<span class="n">biOut</span><span class="p">.</span><span class="n">biCompression</span> <span class="o">=</span> <span class="n">BI_RGB</span><span class="p">;</span>
+		<span class="n">biOut</span><span class="p">.</span><span class="n">biBitCount</span> <span class="o">=</span> <span class="mi">16</span><span class="p">;</span>
+		<span class="n">biOut</span><span class="p">.</span><span class="n">biPlanes</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+		<span class="n">biOut</span><span class="p">.</span><span class="n">biWidth</span> <span class="o">=</span> <span class="n">bmiIn</span><span class="p">.</span><span class="n">biWidth</span><span class="p">;</span>
+		<span class="n">biOut</span><span class="p">.</span><span class="n">biHeight</span> <span class="o">=</span> <span class="n">bmiIn</span><span class="p">.</span><span class="n">biHeight</span><span class="p">;</span>
+		<span class="n">biOut</span><span class="p">.</span><span class="n">biSizeImage</span> <span class="o">=</span> <span class="n">biOut</span><span class="p">.</span><span class="n">biWidth</span><span class="o">*</span><span class="n">biOut</span><span class="p">.</span><span class="n">biHeight</span><span class="o">*</span><span class="n">biOut</span><span class="p">.</span><span class="n">biBitCount</span> <span class="o">/</span> <span class="mi">8</span><span class="p">;</span>
+
+		<span class="n">HANDLE</span>  <span class="n">hConvert</span> <span class="o">=</span> <span class="n">TImage_Convert_Create</span><span class="p">();</span>
+		<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">hConvert</span><span class="p">)</span>
+			<span class="k">break</span><span class="p">;</span>
+
+		<span class="n">TImage_Convert_SetFormat</span><span class="p">(</span><span class="n">hConvert</span><span class="p">,</span> <span class="n">bmiIn</span><span class="p">,</span> <span class="n">biOut</span><span class="p">,</span> <span class="n">TRUE</span><span class="p">);</span>
+		<span class="n">PBYTE</span> <span class="n">pbBuffer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BYTE</span><span class="p">[</span><span class="n">biOut</span><span class="p">.</span><span class="n">biSizeImage</span><span class="p">];</span>
+		<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">pbBuffer</span><span class="p">)</span>
+			<span class="k">break</span><span class="p">;</span>
+
+		<span class="n">TImage_Convert_Convert</span><span class="p">(</span><span class="n">hConvert</span><span class="p">,</span> <span class="n">pbData</span><span class="p">,</span> <span class="n">unDataLen</span><span class="p">,</span>
+			<span class="n">bmiIn</span><span class="p">.</span><span class="n">biWidth</span><span class="o">*</span><span class="p">(</span><span class="n">bmiIn</span><span class="p">.</span><span class="n">biBitCount</span> <span class="o">/</span> <span class="mi">8</span><span class="p">),</span> <span class="n">pbBuffer</span><span class="p">,</span> <span class="n">biOut</span><span class="p">.</span><span class="n">biWidth</span><span class="o">*</span><span class="p">(</span><span class="n">biOut</span><span class="p">.</span><span class="n">biBitCount</span> <span class="o">/</span> <span class="mi">8</span><span class="p">));</span>
+		<span class="n">TImage_Convert_Destroy</span><span class="p">(</span><span class="n">hConvert</span><span class="p">);</span>
+		<span class="n">hConvert</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+		<span class="n">clsBitmap</span> <span class="o">=</span> <span class="n">env</span><span class="o">-&gt;</span><span class="n">FindClass</span><span class="p">(</span><span class="s">&quot;android/graphics/Bitmap&quot;</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nb">NULL</span> <span class="o">==</span> <span class="n">clsBitmap</span><span class="p">){</span>
+			<span class="n">LOG</span><span class="p">(</span><span class="s">&quot;FindClass Bitmap failed.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+			<span class="k">break</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="n">clsBuffer</span> <span class="o">=</span> <span class="n">env</span><span class="o">-&gt;</span><span class="n">FindClass</span><span class="p">(</span><span class="s">&quot;java/nio/ByteBuffer&quot;</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nb">NULL</span> <span class="o">==</span> <span class="n">clsBuffer</span><span class="p">){</span>
+			<span class="n">LOG</span><span class="p">(</span><span class="s">&quot;FindClass ByteBuffer failed.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+			<span class="k">break</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="n">clsBitmapConfig</span> <span class="o">=</span> <span class="n">env</span><span class="o">-&gt;</span><span class="n">FindClass</span><span class="p">(</span><span class="s">&quot;android/graphics/Bitmap$Config&quot;</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nb">NULL</span> <span class="o">==</span> <span class="n">clsBitmapConfig</span><span class="p">){</span>
+			<span class="n">LOG</span><span class="p">(</span><span class="s">&quot;FindClass Bitmap$Config failed.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+			<span class="k">break</span><span class="p">;</span>
+		<span class="p">}</span>
+
+		<span class="n">createBitmap</span> <span class="o">=</span> <span class="n">env</span><span class="o">-&gt;</span><span class="n">GetStaticMethodID</span><span class="p">(</span><span class="n">clsBitmap</span><span class="p">,</span>
+			<span class="s">&quot;createBitmap&quot;</span><span class="p">,</span> <span class="s">&quot;(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;&quot;</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nb">NULL</span> <span class="o">==</span> <span class="n">createBitmap</span><span class="p">){</span>
+			<span class="n">LOG</span><span class="p">(</span><span class="s">&quot;GetStaticMethodID createBitmap failed.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+			<span class="k">break</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="n">copyPixelsFromBuffer</span> <span class="o">=</span> <span class="n">env</span><span class="o">-&gt;</span><span class="n">GetMethodID</span><span class="p">(</span><span class="n">clsBitmap</span><span class="p">,</span> <span class="s">&quot;copyPixelsFromBuffer&quot;</span><span class="p">,</span> <span class="s">&quot;(Ljava/nio/Buffer;)V&quot;</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nb">NULL</span> <span class="o">==</span> <span class="n">copyPixelsFromBuffer</span><span class="p">){</span>
+			<span class="n">LOG</span><span class="p">(</span><span class="s">&quot;GetMethodID copyPixelsFromBuffer failed.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+			<span class="k">break</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="n">wrap</span> <span class="o">=</span> <span class="n">env</span><span class="o">-&gt;</span><span class="n">GetStaticMethodID</span><span class="p">(</span><span class="n">clsBuffer</span><span class="p">,</span> <span class="s">&quot;wrap&quot;</span><span class="p">,</span> <span class="s">&quot;([B)Ljava/nio/ByteBuffer;&quot;</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nb">NULL</span> <span class="o">==</span> <span class="n">wrap</span><span class="p">){</span>
+			<span class="n">LOG</span><span class="p">(</span><span class="s">&quot;GetStaticMethodID wrap failed.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+			<span class="k">break</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="n">rgb565</span> <span class="o">=</span> <span class="n">env</span><span class="o">-&gt;</span><span class="n">GetStaticFieldID</span><span class="p">(</span><span class="n">clsBitmapConfig</span><span class="p">,</span> <span class="s">&quot;RGB_565&quot;</span><span class="p">,</span> <span class="s">&quot;Landroid/graphics/Bitmap$Config;&quot;</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nb">NULL</span> <span class="o">==</span> <span class="n">rgb565</span><span class="p">){</span>
+			<span class="n">LOG</span><span class="p">(</span><span class="s">&quot;GetStaticFieldID rgb565 failed.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+			<span class="k">break</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="n">objRGB565</span> <span class="o">=</span> <span class="n">env</span><span class="o">-&gt;</span><span class="n">GetStaticObjectField</span><span class="p">(</span><span class="n">clsBitmapConfig</span><span class="p">,</span> <span class="n">rgb565</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nb">NULL</span> <span class="o">==</span> <span class="n">objRGB565</span><span class="p">){</span>
+			<span class="n">LOG</span><span class="p">(</span><span class="s">&quot;GetStaticObjectField rgb565 failed.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+			<span class="k">break</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="n">dataArray</span> <span class="o">=</span> <span class="n">env</span><span class="o">-&gt;</span><span class="n">NewByteArray</span><span class="p">(</span><span class="n">biOut</span><span class="p">.</span><span class="n">biSizeImage</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nb">NULL</span> <span class="o">==</span> <span class="n">dataArray</span><span class="p">){</span>
+			<span class="n">LOG</span><span class="p">(</span><span class="s">&quot;NewByteArray failed.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+			<span class="k">break</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="n">env</span><span class="o">-&gt;</span><span class="n">SetByteArrayRegion</span><span class="p">(</span><span class="n">dataArray</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">biOut</span><span class="p">.</span><span class="n">biSizeImage</span><span class="p">,</span> <span class="p">(</span><span class="n">jbyte</span><span class="o">*</span><span class="p">)</span><span class="n">pbBuffer</span><span class="p">);</span>
+
+		<span class="n">objBuffer</span> <span class="o">=</span> <span class="n">env</span><span class="o">-&gt;</span><span class="n">CallStaticObjectMethod</span><span class="p">(</span><span class="n">clsBuffer</span><span class="p">,</span> <span class="n">wrap</span><span class="p">,</span> <span class="n">dataArray</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nb">NULL</span> <span class="o">==</span> <span class="n">objBuffer</span><span class="p">){</span>
+			<span class="n">LOG</span><span class="p">(</span><span class="s">&quot;wrap buffer failed.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+			<span class="k">break</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="n">objBitmap</span> <span class="o">=</span> <span class="n">env</span><span class="o">-&gt;</span><span class="n">CallStaticObjectMethod</span><span class="p">(</span><span class="n">clsBitmap</span><span class="p">,</span> <span class="n">createBitmap</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">biOut</span><span class="p">.</span><span class="n">biWidth</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">biOut</span><span class="p">.</span><span class="n">biHeight</span><span class="p">,</span> <span class="n">objRGB565</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nb">NULL</span> <span class="o">==</span> <span class="n">objBitmap</span><span class="p">){</span>
+			<span class="n">LOG</span><span class="p">(</span><span class="s">&quot;createBitmap failed.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+			<span class="k">break</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="n">env</span><span class="o">-&gt;</span><span class="n">CallVoidMethod</span><span class="p">(</span><span class="n">objBitmap</span><span class="p">,</span> <span class="n">copyPixelsFromBuffer</span><span class="p">,</span> <span class="n">objBuffer</span><span class="p">);</span>
+
+		<span class="o">*</span><span class="n">objBmp</span> <span class="o">=</span> <span class="n">objBitmap</span><span class="p">;</span>
+		<span class="n">bResult</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">;</span>
+
+	<span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">FALSE</span><span class="p">);</span>
+
+	<span class="k">if</span> <span class="p">(</span><span class="n">clsBitmap</span><span class="p">)</span> <span class="n">env</span><span class="o">-&gt;</span><span class="n">DeleteLocalRef</span><span class="p">(</span><span class="n">clsBitmap</span><span class="p">);</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">clsBuffer</span><span class="p">)</span> <span class="n">env</span><span class="o">-&gt;</span><span class="n">DeleteLocalRef</span><span class="p">(</span><span class="n">clsBuffer</span><span class="p">);</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">clsBitmapConfig</span><span class="p">)</span> <span class="n">env</span><span class="o">-&gt;</span><span class="n">DeleteLocalRef</span><span class="p">(</span><span class="n">clsBitmapConfig</span><span class="p">);</span>
+
+	<span class="k">if</span> <span class="p">(</span><span class="n">dataArray</span><span class="p">)</span> <span class="n">env</span><span class="o">-&gt;</span><span class="n">DeleteLocalRef</span><span class="p">(</span><span class="n">dataArray</span><span class="p">);</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">objRGB565</span><span class="p">)</span> <span class="n">env</span><span class="o">-&gt;</span><span class="n">DeleteLocalRef</span><span class="p">(</span><span class="n">objRGB565</span><span class="p">);</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">objBuffer</span><span class="p">)</span> <span class="n">env</span><span class="o">-&gt;</span><span class="n">DeleteLocalRef</span><span class="p">(</span><span class="n">objBuffer</span><span class="p">);</span>
+
+	<span class="k">if</span> <span class="p">(</span><span class="n">hConvert</span><span class="p">)</span>	<span class="n">TImage_Convert_Destroy</span><span class="p">(</span><span class="n">hConvert</span><span class="p">);</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">pbBuffer</span><span class="p">)</span> 	<span class="k">delete</span><span class="p">[]</span> <span class="n">pbBuffer</span><span class="p">;</span>
+
+	<span class="k">if</span> <span class="p">(</span><span class="n">bAttached</span><span class="p">)</span> <span class="n">pJVM</span><span class="o">-&gt;</span><span class="n">DetachCurrentThread</span><span class="p">();</span>
+
+	<span class="k">return</span> <span class="n">bResult</span><span class="p">;</span>
+<span class="p">}</span> <span class="c1">//NOLINT</span>
+<span class="cp">#endif</span>
+
+<span class="p">}</span> <span class="c1">//namespace wvideo</span>
+</pre></div>
+</body>
+</html>

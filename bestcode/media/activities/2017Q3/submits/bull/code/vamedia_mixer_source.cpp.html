@@ -1,0 +1,1116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #333333 }
+body  { background: #111111; color: #ffffff }
+body .c { color: #008800; font-style: italic; background-color: #0f140f } /* Comment */
+body .err { color: #ffffff } /* Error */
+body .esc { color: #ffffff } /* Escape */
+body .g { color: #ffffff } /* Generic */
+body .k { color: #fb660a; font-weight: bold } /* Keyword */
+body .l { color: #ffffff } /* Literal */
+body .n { color: #ffffff } /* Name */
+body .o { color: #ffffff } /* Operator */
+body .x { color: #ffffff } /* Other */
+body .p { color: #ffffff } /* Punctuation */
+body .ch { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Hashbang */
+body .cm { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Multiline */
+body .cp { color: #ff0007; font-weight: bold; font-style: italic; background-color: #0f140f } /* Comment.Preproc */
+body .cpf { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.PreprocFile */
+body .c1 { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Single */
+body .cs { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Special */
+body .gd { color: #ffffff } /* Generic.Deleted */
+body .ge { color: #ffffff } /* Generic.Emph */
+body .gr { color: #ffffff } /* Generic.Error */
+body .gh { color: #ffffff; font-weight: bold } /* Generic.Heading */
+body .gi { color: #ffffff } /* Generic.Inserted */
+body .go { color: #444444; background-color: #222222 } /* Generic.Output */
+body .gp { color: #ffffff } /* Generic.Prompt */
+body .gs { color: #ffffff } /* Generic.Strong */
+body .gu { color: #ffffff; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #ffffff } /* Generic.Traceback */
+body .kc { color: #fb660a; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #fb660a; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #fb660a; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #fb660a } /* Keyword.Pseudo */
+body .kr { color: #fb660a; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #cdcaa9; font-weight: bold } /* Keyword.Type */
+body .ld { color: #ffffff } /* Literal.Date */
+body .m { color: #0086f7; font-weight: bold } /* Literal.Number */
+body .s { color: #0086d2 } /* Literal.String */
+body .na { color: #ff0086; font-weight: bold } /* Name.Attribute */
+body .nb { color: #ffffff } /* Name.Builtin */
+body .nc { color: #ffffff } /* Name.Class */
+body .no { color: #0086d2 } /* Name.Constant */
+body .nd { color: #ffffff } /* Name.Decorator */
+body .ni { color: #ffffff } /* Name.Entity */
+body .ne { color: #ffffff } /* Name.Exception */
+body .nf { color: #ff0086; font-weight: bold } /* Name.Function */
+body .nl { color: #ffffff } /* Name.Label */
+body .nn { color: #ffffff } /* Name.Namespace */
+body .nx { color: #ffffff } /* Name.Other */
+body .py { color: #ffffff } /* Name.Property */
+body .nt { color: #fb660a; font-weight: bold } /* Name.Tag */
+body .nv { color: #fb660a } /* Name.Variable */
+body .ow { color: #ffffff } /* Operator.Word */
+body .w { color: #888888 } /* Text.Whitespace */
+body .mb { color: #0086f7; font-weight: bold } /* Literal.Number.Bin */
+body .mf { color: #0086f7; font-weight: bold } /* Literal.Number.Float */
+body .mh { color: #0086f7; font-weight: bold } /* Literal.Number.Hex */
+body .mi { color: #0086f7; font-weight: bold } /* Literal.Number.Integer */
+body .mo { color: #0086f7; font-weight: bold } /* Literal.Number.Oct */
+body .sa { color: #0086d2 } /* Literal.String.Affix */
+body .sb { color: #0086d2 } /* Literal.String.Backtick */
+body .sc { color: #0086d2 } /* Literal.String.Char */
+body .dl { color: #0086d2 } /* Literal.String.Delimiter */
+body .sd { color: #0086d2 } /* Literal.String.Doc */
+body .s2 { color: #0086d2 } /* Literal.String.Double */
+body .se { color: #0086d2 } /* Literal.String.Escape */
+body .sh { color: #0086d2 } /* Literal.String.Heredoc */
+body .si { color: #0086d2 } /* Literal.String.Interpol */
+body .sx { color: #0086d2 } /* Literal.String.Other */
+body .sr { color: #0086d2 } /* Literal.String.Regex */
+body .s1 { color: #0086d2 } /* Literal.String.Single */
+body .ss { color: #0086d2 } /* Literal.String.Symbol */
+body .bp { color: #ffffff } /* Name.Builtin.Pseudo */
+body .fm { color: #ff0086; font-weight: bold } /* Name.Function.Magic */
+body .vc { color: #fb660a } /* Name.Variable.Class */
+body .vg { color: #fb660a } /* Name.Variable.Global */
+body .vi { color: #fb660a } /* Name.Variable.Instance */
+body .vm { color: #fb660a } /* Name.Variable.Magic */
+body .il { color: #0086f7; font-weight: bold } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="cm">/*******************************************************************************</span>
+<span class="cm">* 文  件: VAMixerSource.cpp</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">* 创  建: 2015年12月09日</span>
+<span class="cm">* 版  权: CopyRight(C) 2015 Fsmeeting.com. All rights reserved.</span>
+<span class="cm">* 描  述:</span>
+<span class="cm">********************************************************************************/</span>
+
+<span class="cm">/**************************** 条件编译选项和头文件 ****************************/</span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;vamedia_mixer_source.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;rbs.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;AutoLock.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;ConfDefine.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;BaseFileFunction.h&quot;</span><span class="cp"></span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;media_factory.h&quot;</span><span class="cp"></span>
+
+<span class="cm">/********************************** 常量和宏 **********************************/</span>
+
+<span class="cm">/********************************** 数据类型 **********************************/</span>
+
+<span class="cm">/**********************************   变量   **********************************/</span>
+
+<span class="cm">/********************************** 函数实现 **********************************/</span>
+
+<span class="cm">/**********************************  类实现  **********************************/</span>
+
+<span class="n">VAMixerSource</span><span class="o">::</span><span class="n">VAMixerSource</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">m_src_props_ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TSourceProps</span><span class="p">;</span>
+    <span class="n">pthread_mutex_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_mixer_mtx</span><span class="p">,</span> <span class="k">nullptr</span><span class="p">);</span>
+    <span class="n">pthread_mutex_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_readyImage_mtx</span><span class="p">,</span> <span class="k">nullptr</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">VAMixerSource</span><span class="o">::~</span><span class="n">VAMixerSource</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">m_src_props_ptr</span><span class="p">);</span>
+    <span class="n">pthread_mutex_destroy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_mixer_mtx</span><span class="p">);</span>
+    <span class="n">pthread_mutex_destroy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_readyImage_mtx</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: Init</span>
+<span class="cm">* 描  述: 初始化合成器</span>
+<span class="cm">* 参  数: i_pSrcProps: 合成参数</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年03月07日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VAMixerSource</span><span class="o">::</span><span class="n">CreateSource</span><span class="p">(</span><span class="n">TSourceProps</span><span class="o">*</span> <span class="n">i_src_props_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">i_src_props_ptr</span><span class="p">,</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_id</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">LOG_ERROR</span><span class="p">(</span><span class="s">&quot;MixSource[%d] Init!, Please UnInit&quot;</span><span class="p">,</span> <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_id</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">EM_RC_INITED_ERR</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">ERetCode</span> <span class="n">er</span> <span class="o">=</span> <span class="n">CreateSurface</span><span class="p">(</span><span class="n">i_src_props_ptr</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">er</span> <span class="o">!=</span> <span class="n">EM_RC_OK</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">LOG_ERROR</span><span class="p">(</span><span class="s">&quot;MixSource[%d] Create Surface Fail[%d]&quot;</span><span class="p">,</span> <span class="n">i_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_id</span><span class="p">,</span> <span class="n">er</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">er</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">vaCreateConfig</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">VAProfileNone</span><span class="p">,</span> <span class="n">VAEntrypointVideoProc</span><span class="p">,</span> <span class="k">nullptr</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m_va_config_id</span><span class="p">);</span>
+    <span class="n">memcpy</span><span class="p">(</span><span class="n">m_src_props_ptr</span><span class="p">,</span> <span class="n">i_src_props_ptr</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="o">*</span><span class="n">m_src_props_ptr</span><span class="p">));</span>
+
+    <span class="n">m_watermark_ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MediaTool</span><span class="p">(</span><span class="n">g_rbs_Log_ptr</span><span class="p">);</span>
+
+    <span class="n">m_exit_code</span> <span class="o">=</span> <span class="n">EM_TS_RUN</span><span class="p">;</span>
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Init MixerSource[%d], Size[%dx%d]&quot;</span><span class="p">,</span> <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_id</span><span class="p">,</span>
+        <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_size</span><span class="p">.</span><span class="n">height</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nf">StartThread</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: CreateSurface</span>
+<span class="cm">* 描  述: 创建合成surface和链表(Image)</span>
+<span class="cm">* 参  数: i_pSrcProps</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年06月17日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VAMixerSource</span><span class="o">::</span><span class="n">CreateSurface</span><span class="p">(</span><span class="n">TSourceProps</span><span class="o">*</span> <span class="n">i_src_props_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// 创建合成、特效渲染的Surface</span>
+    <span class="n">VASurfaceAttrib</span> <span class="n">va_surf_attr</span><span class="p">;</span>
+    <span class="n">va_surf_attr</span><span class="p">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">VASurfaceAttribPixelFormat</span><span class="p">;</span>
+    <span class="n">va_surf_attr</span><span class="p">.</span><span class="n">flags</span> <span class="o">=</span> <span class="n">VA_SURFACE_ATTRIB_SETTABLE</span><span class="p">;</span>
+    <span class="n">va_surf_attr</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">VAGenericValueTypeInteger</span><span class="p">;</span>
+    <span class="n">va_surf_attr</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">i</span> <span class="o">=</span> <span class="n">VA_FOURCC_NV12</span><span class="p">;</span>
+
+    <span class="n">vaCreateSurfaces</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">VA_RT_FORMAT_YUV420</span><span class="p">,</span> <span class="n">AlignSize</span><span class="p">(</span><span class="n">i_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_size</span><span class="p">.</span><span class="n">width</span><span class="p">),</span>
+        <span class="n">AlignSize</span><span class="p">(</span><span class="n">i_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_size</span><span class="p">.</span><span class="n">height</span><span class="p">),</span> <span class="o">&amp;</span><span class="n">m_va_surface_id</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">VA_SOURCE_RING_SIZE</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">va_surf_attr</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="n">vaCreateSurfaces</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">VA_RT_FORMAT_YUV420</span><span class="p">,</span> <span class="n">AlignSize</span><span class="p">(</span><span class="n">i_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_size</span><span class="p">.</span><span class="n">width</span><span class="p">),</span>
+        <span class="n">AlignSize</span><span class="p">(</span><span class="n">i_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_size</span><span class="p">.</span><span class="n">height</span><span class="p">),</span> <span class="o">&amp;</span><span class="n">m_va_effSurf_id</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">va_surf_attr</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+
+    <span class="c1">// 创建特效Image</span>
+    <span class="n">VAImageFormat</span> <span class="n">img_fmt</span><span class="p">;</span>
+    <span class="n">img_fmt</span><span class="p">.</span><span class="n">fourcc</span> <span class="o">=</span> <span class="n">VA_FOURCC_NV12</span><span class="p">;</span>
+    <span class="n">img_fmt</span><span class="p">.</span><span class="n">byte_order</span> <span class="o">=</span> <span class="n">VA_LSB_FIRST</span><span class="p">;</span>
+    <span class="n">img_fmt</span><span class="p">.</span><span class="n">bits_per_pixel</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+    <span class="n">vaCreateImage</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">img_fmt</span><span class="p">,</span> <span class="n">i_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">i_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_size</span><span class="p">.</span><span class="n">height</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m_va_mix_image</span><span class="p">);</span>
+
+    <span class="c1">// 重置特效标志</span>
+    <span class="n">m_effect_frame_num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">m_effect_state</span> <span class="o">=</span> <span class="n">EM_ES_END</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: DestroySurface</span>
+<span class="cm">* 描  述: 销毁合成surface和image</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年06月09日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VAMixerSource</span><span class="o">::</span><span class="n">DestroySurface</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">vaDestroySurfaces</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m_va_effSurf_id</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="n">vaDestroySurfaces</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m_va_surface_id</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">VA_SOURCE_RING_SIZE</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_va_effect_img</span><span class="p">.</span><span class="n">image_id</span><span class="p">)</span>
+        <span class="n">vaDestroyImage</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">m_va_effect_img</span><span class="p">.</span><span class="n">image_id</span><span class="p">);</span>
+    <span class="n">vaDestroyImage</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">m_va_mix_image</span><span class="p">.</span><span class="n">image_id</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: UnInit</span>
+<span class="cm">* 描  述: 释放资源</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 2015年12月10日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">********************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VAMixerSource</span><span class="o">::</span><span class="n">DestroySource</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_exit_code</span> <span class="o">!=</span> <span class="n">EM_TS_STOP</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">m_exit_code</span> <span class="o">=</span> <span class="n">EM_TS_STOPING</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">m_exit_code</span> <span class="o">!=</span> <span class="n">EM_TS_STOP</span><span class="p">)</span>
+            <span class="n">usleep</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">CAutoLock</span> <span class="n">lock</span><span class="p">(</span><span class="n">m_mixer_mtx</span><span class="p">);</span>
+    <span class="k">auto</span> <span class="n">map_node</span> <span class="o">=</span> <span class="n">m_mixer_map</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+    <span class="k">for</span> <span class="p">(;</span> <span class="n">map_node</span> <span class="o">!=</span> <span class="n">m_mixer_map</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">map_node</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span><span class="c1">// 清空合成源对象参数</span>
+        <span class="n">TMixerMember</span><span class="o">*</span> <span class="n">mixer_member_ptr</span> <span class="o">=</span> <span class="n">map_node</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span>
+        <span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">tmp_ptr</span><span class="p">);</span>
+        <span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">mixer_member_ptr</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">m_mixer_map</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+
+    <span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">m_watermark_ptr</span><span class="p">);</span>
+
+    <span class="n">DestroySurface</span><span class="p">();</span>
+    <span class="n">vaDestroyConfig</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">m_va_config_id</span><span class="p">);</span>
+
+    <span class="n">m_use_surf_id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">m_cur_src_count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">m_is_has_title</span> <span class="o">=</span> <span class="n">m_is_has_logo</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;UnInit MixerSource[%d]&quot;</span><span class="p">,</span> <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_id</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: SetSubTitle</span>
+<span class="cm">* 描  述: 设置字幕</span>
+<span class="cm">* 参  数: i_pTitleRect</span>
+<span class="cm">* 参  数: i_pTitleYUV</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年06月08日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VAMixerSource</span><span class="o">::</span><span class="n">SetSubTitle</span><span class="p">(</span><span class="n">TTextInfo</span><span class="o">*</span> <span class="n">i_text_info_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">CAutoLock</span> <span class="n">lock</span><span class="p">(</span><span class="n">m_readyImage_mtx</span><span class="p">);</span>
+
+    <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_subtile_info</span><span class="p">,</span> <span class="n">i_text_info_ptr</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">TTextInfo</span><span class="p">));</span>
+    <span class="n">LoadSubtitle</span><span class="p">();</span>
+
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: SetLogo</span>
+<span class="cm">* 描  述: 设置台标</span>
+<span class="cm">* 参  数: i_pLogRect</span>
+<span class="cm">* 参  数: i_pLogoRGB</span>
+<span class="cm">* 参  数: i_pLogoYUV</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年06月08日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VAMixerSource</span><span class="o">::</span><span class="n">SetLogo</span><span class="p">(</span><span class="n">TLogoInfo</span><span class="o">*</span> <span class="n">i_logo_info_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">CAutoLock</span> <span class="n">lock</span><span class="p">(</span><span class="n">m_readyImage_mtx</span><span class="p">);</span>
+
+    <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_logo_info</span><span class="p">,</span> <span class="n">i_logo_info_ptr</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">TLogoInfo</span><span class="p">));</span>
+    <span class="n">LoadLogo</span><span class="p">();</span>
+
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: SetEffect</span>
+<span class="cm">* 描  述: 设置特效</span>
+<span class="cm">* 参  数: i_eEffect</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年06月08日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VAMixerSource</span><span class="o">::</span><span class="n">SetEffect</span><span class="p">(</span><span class="n">EEffectType</span> <span class="n">i_effect</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_effect_state</span> <span class="o">!=</span> <span class="n">EM_ES_END</span><span class="p">)</span>
+        <span class="n">m_tmp_effect</span> <span class="o">=</span> <span class="n">i_effect</span><span class="p">;</span>
+    <span class="k">else</span>
+        <span class="n">m_cur_effect</span> <span class="o">=</span> <span class="n">i_effect</span><span class="p">;</span>
+
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Set Effect Type[%d]&quot;</span><span class="p">,</span> <span class="n">i_effect</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">ERetCode</span> <span class="n">VAMixerSource</span><span class="o">::</span><span class="n">LoadLogo</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">SAFE_DELETE_ARRAY</span><span class="p">(</span><span class="n">m_wm_data_ptr</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+    <span class="n">SAFE_DELETE_ARRAY</span><span class="p">(</span><span class="n">m_wm_data_ptr</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+    <span class="n">m_is_has_logo</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_logo_info</span><span class="p">.</span><span class="n">pos</span><span class="p">)</span>
+    <span class="p">{</span><span class="c1">// 存在台标，且未初始化</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">EM_RC_OK</span> <span class="o">!=</span> <span class="n">m_watermark_ptr</span><span class="o">-&gt;</span><span class="n">DecodePNG</span><span class="p">(</span><span class="n">m_logo_info</span><span class="p">.</span><span class="n">logo_path</span><span class="p">,</span>
+            <span class="o">&amp;</span><span class="n">m_wm_data_ptr</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">m_wm_data_ptr</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">width</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">height</span><span class="p">))</span>
+            <span class="k">return</span> <span class="n">EM_RC_DEC_FAILED</span><span class="p">;</span>
+        
+        <span class="c1">// 计算台标位置</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">m_logo_info</span><span class="p">.</span><span class="n">pos</span> <span class="o">==</span> <span class="n">RBS_WM_POS_LT</span><span class="p">)</span><span class="c1">//左上</span>
+            <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">iX</span> <span class="o">=</span> <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">iY</span> <span class="o">=</span> <span class="n">COMMON_SIZE_4</span><span class="p">;</span>
+        <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">m_logo_info</span><span class="p">.</span><span class="n">pos</span> <span class="o">==</span> <span class="n">RBS_WM_POS_RT</span><span class="p">)</span><span class="c1">//右上</span>
+        <span class="p">{</span>
+            <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">iX</span> <span class="o">=</span> <span class="n">m_subtile_info</span><span class="p">.</span><span class="n">width</span> <span class="o">-</span> <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">width</span> <span class="o">-</span> <span class="n">COMMON_SIZE_4</span><span class="p">;</span>
+            <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">iY</span> <span class="o">=</span> <span class="n">COMMON_SIZE_4</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">m_logo_info</span><span class="p">.</span><span class="n">pos</span> <span class="o">==</span> <span class="n">RBS_WM_POS_LB</span><span class="p">)</span><span class="c1">//左下</span>
+        <span class="p">{</span>
+            <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">iX</span> <span class="o">=</span> <span class="n">COMMON_SIZE_4</span><span class="p">;</span>
+            <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">iY</span> <span class="o">=</span> <span class="n">m_subtile_info</span><span class="p">.</span><span class="n">height</span> <span class="o">-</span> <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">height</span> <span class="o">-</span> <span class="n">COMMON_SIZE_4</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">m_logo_info</span><span class="p">.</span><span class="n">pos</span> <span class="o">==</span> <span class="n">RBS_WM_POS_RB</span><span class="p">)</span><span class="c1">//右下</span>
+        <span class="p">{</span>
+            <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">iX</span> <span class="o">=</span> <span class="n">m_subtile_info</span><span class="p">.</span><span class="n">width</span> <span class="o">-</span> <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">width</span> <span class="o">-</span> <span class="n">COMMON_SIZE_4</span><span class="p">;</span>
+            <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">iY</span> <span class="o">=</span> <span class="n">m_subtile_info</span><span class="p">.</span><span class="n">height</span> <span class="o">-</span> <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">height</span> <span class="o">-</span> <span class="n">COMMON_SIZE_4</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;SetLogo Pos[%dx%d], Size[%dx%d]&quot;</span><span class="p">,</span>
+            <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">iX</span><span class="p">,</span> <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">iY</span><span class="p">,</span> <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">width</span><span class="p">,</span> <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">height</span><span class="p">);</span>
+
+        <span class="n">m_is_has_logo</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">ERetCode</span> <span class="n">VAMixerSource</span><span class="o">::</span><span class="n">LoadSubtitle</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">m_subtile_info</span><span class="p">.</span><span class="n">is_time_changed</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">SAFE_DELETE_ARRAY</span><span class="p">(</span><span class="n">m_wm_data_ptr</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">m_subtile_info</span><span class="p">.</span><span class="n">pos</span><span class="p">)</span><span class="c1">// 存在字幕,计算字幕位置</span>
+        <span class="p">{</span>
+            <span class="c1">// 原来的Size值存储的是英文字符个数(汉字会*2)        </span>
+            <span class="kt">int</span> <span class="n">char_count</span> <span class="o">=</span> <span class="n">m_subtile_info</span><span class="p">.</span><span class="n">font_size</span><span class="p">;</span>
+            <span class="n">m_subtile_info</span><span class="p">.</span><span class="n">font_size</span> <span class="o">=</span> <span class="n">m_subtile_info</span><span class="p">.</span><span class="n">width</span> <span class="o">/</span> <span class="n">COMMON_SIZE_32</span><span class="p">;</span>
+
+            <span class="c1">// 20是时间字符串的字符个数</span>
+            <span class="kt">int</span> <span class="n">char_max_len</span> <span class="o">=</span> <span class="p">(</span><span class="n">char_count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">m_subtile_info</span><span class="p">.</span><span class="n">font_size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">m_subtile_info</span><span class="p">.</span><span class="n">iIsShowTime</span><span class="p">)</span>
+                <span class="n">char_max_len</span> <span class="o">=</span> <span class="n">MAX_RBS</span><span class="p">(</span><span class="n">char_count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span> <span class="o">*</span> <span class="n">m_subtile_info</span><span class="p">.</span><span class="n">font_size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+
+            <span class="c1">// ffmpeg的drawtext filter，宽度必须是64的整数倍</span>
+            <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">width</span> <span class="o">=</span> <span class="p">((</span><span class="n">char_max_len</span> <span class="o">+</span> <span class="n">COMMON_SIZE_64</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">COMMON_SIZE_64</span><span class="p">)</span><span class="o">*</span><span class="n">COMMON_SIZE_64</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">left_width</span> <span class="o">=</span> <span class="n">m_subtile_info</span><span class="p">.</span><span class="n">width</span> <span class="o">-</span> <span class="p">(</span><span class="n">m_logo_info</span><span class="p">.</span><span class="n">pos</span> <span class="o">?</span> <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nl">width</span> <span class="p">:</span> <span class="mi">0</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">width</span> <span class="o">&gt;</span> <span class="n">left_width</span><span class="p">)</span>
+            <span class="p">{</span><span class="c1">// 字幕叠加的宽度超过视频宽度，缩小字体</span>
+                <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">width</span> <span class="o">=</span> <span class="p">(</span><span class="n">left_width</span> <span class="o">/</span> <span class="n">COMMON_SIZE_64</span><span class="p">)</span><span class="o">*</span><span class="n">COMMON_SIZE_64</span><span class="p">;</span>
+                <span class="n">m_subtile_info</span><span class="p">.</span><span class="n">font_size</span> <span class="o">=</span> <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">width</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">/</span> <span class="n">char_count</span><span class="p">;</span>
+                <span class="n">m_subtile_info</span><span class="p">.</span><span class="n">font_size</span> <span class="o">=</span> <span class="p">(</span><span class="n">m_subtile_info</span><span class="p">.</span><span class="n">font_size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="c1">// 楷体的宽高比约为1:0.7,且宽高必须为偶数</span>
+            <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">height</span> <span class="o">=</span> <span class="n">m_subtile_info</span><span class="p">.</span><span class="n">font_size</span><span class="o">*</span><span class="mf">4.5</span><span class="p">;</span>
+            <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">height</span> <span class="o">=</span> <span class="p">((</span><span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">height</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">m_subtile_info</span><span class="p">.</span><span class="n">pos</span> <span class="o">==</span> <span class="n">RBS_WM_POS_LT</span><span class="p">)</span><span class="c1">//左上</span>
+            <span class="p">{</span>
+                <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">iX</span> <span class="o">=</span> <span class="n">m_subtile_info</span><span class="p">.</span><span class="n">is_convert_logo</span> <span class="o">?</span> <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nl">width</span> <span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+                <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">iY</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">m_subtile_info</span><span class="p">.</span><span class="n">pos</span> <span class="o">==</span> <span class="n">RBS_WM_POS_RT</span><span class="p">)</span><span class="c1">//右上</span>
+            <span class="p">{</span>
+                <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">iX</span> <span class="o">=</span> <span class="n">m_subtile_info</span><span class="p">.</span><span class="n">width</span><span class="o">-</span><span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">width</span><span class="o">-</span><span class="p">(</span><span class="n">m_subtile_info</span><span class="p">.</span><span class="n">is_convert_logo</span><span class="o">?</span><span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nl">width</span><span class="p">:</span><span class="mi">0</span><span class="p">);</span>
+                <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">iY</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">m_subtile_info</span><span class="p">.</span><span class="n">pos</span> <span class="o">==</span> <span class="n">RBS_WM_POS_LB</span><span class="p">)</span><span class="c1">//左下</span>
+            <span class="p">{</span>
+                <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">iX</span> <span class="o">=</span> <span class="n">m_subtile_info</span><span class="p">.</span><span class="n">is_convert_logo</span> <span class="o">?</span> <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nl">width</span> <span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+                <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">iY</span> <span class="o">=</span> <span class="n">m_subtile_info</span><span class="p">.</span><span class="n">height</span> <span class="o">-</span> <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">height</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">m_subtile_info</span><span class="p">.</span><span class="n">pos</span> <span class="o">==</span> <span class="n">RBS_WM_POS_RB</span><span class="p">)</span><span class="c1">//右下</span>
+            <span class="p">{</span>
+                <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">iX</span> <span class="o">=</span> <span class="n">m_subtile_info</span><span class="p">.</span><span class="n">width</span><span class="o">-</span><span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">width</span><span class="o">-</span><span class="p">(</span><span class="n">m_subtile_info</span><span class="p">.</span><span class="n">is_convert_logo</span><span class="o">?</span><span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nl">width</span><span class="p">:</span><span class="mi">0</span><span class="p">);</span>
+                <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">iY</span> <span class="o">=</span> <span class="n">m_subtile_info</span><span class="p">.</span><span class="n">height</span> <span class="o">-</span> <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">height</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="n">m_watermark_ptr</span><span class="o">-&gt;</span><span class="n">SetSubTitle</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_subtile_info</span><span class="p">,</span> <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">width</span><span class="p">,</span> <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">height</span><span class="p">);</span>
+			<span class="n">m_wm_data_ptr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">uint8_t</span><span class="p">[</span><span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">width</span><span class="o">*</span><span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">height</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span><span class="p">];</span>
+
+            <span class="c1">// 背景白色</span>
+            <span class="n">memset</span><span class="p">(</span><span class="n">m_wm_data_ptr</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">width</span><span class="o">*</span><span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">height</span><span class="p">);</span>
+            <span class="n">memset</span><span class="p">(</span><span class="n">m_wm_data_ptr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">width</span><span class="o">*</span><span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">height</span><span class="p">,</span> <span class="mh">0x80</span><span class="p">,</span> <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">width</span><span class="o">*</span><span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">m_subtile_info</span><span class="p">.</span><span class="n">iIsShowTime</span><span class="p">)</span>
+            <span class="p">{</span><span class="c1">// 第一帧叠加不上字幕</span>
+                <span class="n">m_watermark_ptr</span><span class="o">-&gt;</span><span class="n">SubTitleFilter</span><span class="p">(</span><span class="n">m_wm_data_ptr</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+                <span class="n">m_watermark_ptr</span><span class="o">-&gt;</span><span class="n">SubTitleFilter</span><span class="p">(</span><span class="n">m_wm_data_ptr</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+            <span class="p">}</span>
+            <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Set SubTitle CharCount[%d], FontSize[%d], Pos[%dx%d], Size[%dx%d]&quot;</span><span class="p">,</span>
+                <span class="n">char_count</span><span class="p">,</span><span class="n">m_subtile_info</span><span class="p">.</span><span class="n">font_size</span><span class="p">,</span><span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">iX</span><span class="p">,</span><span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">iY</span><span class="p">,</span><span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">width</span><span class="p">,</span><span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">height</span><span class="p">);</span>
+            <span class="n">m_subtile_info</span><span class="p">.</span><span class="n">font_size</span> <span class="o">=</span> <span class="n">char_count</span><span class="p">;</span>
+
+            <span class="n">m_is_has_title</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+            <span class="n">m_is_has_title</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">m_subtile_info</span><span class="p">.</span><span class="n">pos</span> <span class="o">&amp;&amp;</span> <span class="n">m_subtile_info</span><span class="p">.</span><span class="n">iIsShowTime</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">memset</span><span class="p">(</span><span class="n">m_wm_data_ptr</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">width</span><span class="o">*</span><span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">height</span><span class="p">);</span>
+            <span class="n">memset</span><span class="p">(</span><span class="n">m_wm_data_ptr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">width</span><span class="o">*</span><span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">height</span><span class="p">,</span> <span class="mh">0x80</span><span class="p">,</span> <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">width</span><span class="o">*</span><span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+            <span class="n">m_watermark_ptr</span><span class="o">-&gt;</span><span class="n">SubTitleFilter</span><span class="p">(</span><span class="n">m_wm_data_ptr</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span><span class="c1">//NOLINT(readability/fn_size)</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: RunEffect</span>
+<span class="cm">* 描  述: 运行特效</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年06月08日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VAMixerSource</span><span class="o">::</span><span class="n">RunEffect</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">CAutoLock</span> <span class="n">lockMix</span><span class="p">(</span><span class="n">m_mixer_mtx</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_effect_state</span> <span class="o">!=</span> <span class="n">EM_ES_END</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">EM_RC_OP_NOT_SUPPORT</span><span class="p">;</span>
+
+    <span class="n">m_effect_state</span> <span class="o">=</span> <span class="n">EM_ES_READY</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_cur_effect</span> <span class="o">==</span> <span class="n">EM_EFFECT_RANDOM</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">m_tmp_effect</span> <span class="o">=</span> <span class="n">EM_EFFECT_RANDOM</span><span class="p">;</span>
+        <span class="n">m_cur_effect</span> <span class="o">=</span> <span class="p">(</span><span class="n">EEffectType</span><span class="p">)(</span><span class="n">EM_EFFECT_FADE</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">stGetCurrentMicroSecond</span><span class="p">()</span> <span class="o">%</span> <span class="p">(</span><span class="n">EM_EFFECT_RANDOM</span> <span class="o">-</span> <span class="mi">2</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Run Effect, Type[%d]&quot;</span><span class="p">,</span> <span class="n">m_cur_effect</span><span class="p">);</span>
+    <span class="n">m_effect_frame_num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">m_effect_state</span> <span class="o">=</span> <span class="n">EM_ES_RUN</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: LockReadyImage</span>
+<span class="cm">* 描  述: 加锁</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年06月26日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="kt">void</span> <span class="n">VAMixerSource</span><span class="o">::</span><span class="n">LockReadyImage</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">pthread_mutex_lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_readyImage_mtx</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: GetReadyImage</span>
+<span class="cm">* 描  述: 获取合成好的Image</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年06月08日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">VideoSrcImage</span> <span class="n">VAMixerSource</span><span class="o">::</span><span class="n">GetReadyImage</span><span class="p">(</span><span class="n">TOutFrame</span><span class="o">*</span> <span class="n">o_frame_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_exit_code</span> <span class="o">!=</span> <span class="n">EM_TS_RUN</span><span class="p">)</span>
+        <span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="o">&amp;</span><span class="n">m_va_mix_image</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: UnLockReadyImage</span>
+<span class="cm">* 描  述: 解锁</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年06月26日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="kt">void</span> <span class="n">VAMixerSource</span><span class="o">::</span><span class="n">UnLockReadyImage</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">pthread_mutex_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_readyImage_mtx</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: ModifyMixerSize</span>
+<span class="cm">* 描  述: 修改合成参数</span>
+<span class="cm">* 参  数: i_pSize</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年06月08日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VAMixerSource</span><span class="o">::</span><span class="n">ModifyMixerSize</span><span class="p">(</span><span class="n">TSize</span><span class="o">*</span> <span class="n">i_size_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">i_size_ptr</span><span class="p">,</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">i_size_ptr</span><span class="o">-&gt;</span><span class="n">width</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">i_size_ptr</span><span class="o">-&gt;</span><span class="n">height</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">;</span>
+
+    <span class="n">m_update_size</span> <span class="o">=</span> <span class="o">*</span><span class="n">i_size_ptr</span><span class="p">;</span>
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;MixSource[%d] Ready Change MixSize[%dx%d]&quot;</span><span class="p">,</span> <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_id</span><span class="p">,</span> <span class="n">i_size_ptr</span><span class="o">-&gt;</span><span class="n">width</span><span class="p">,</span> <span class="n">i_size_ptr</span><span class="o">-&gt;</span><span class="n">height</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: AddSource</span>
+<span class="cm">* 描  述: 增加合成源</span>
+<span class="cm">* 参  数: i_iSrcID</span>
+<span class="cm">* 参  数: i_pItem</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年06月09日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VAMixerSource</span><span class="o">::</span><span class="n">AddSource</span><span class="p">(</span><span class="kt">int</span> <span class="n">i_src_id</span><span class="p">,</span> <span class="n">TProcItem</span><span class="o">*</span> <span class="n">i_item_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">i_item_ptr</span><span class="p">,</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">);</span>
+
+    <span class="n">CAutoLock</span> <span class="nf">lock</span><span class="p">(</span><span class="n">m_mixer_mtx</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_cur_src_count</span> <span class="o">&gt;=</span> <span class="n">m_max_src_count</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">LOG_ERROR</span><span class="p">(</span><span class="s">&quot;Reach Max VideoMixer Source Count[%d/%d]&quot;</span><span class="p">,</span> <span class="n">m_cur_src_count</span><span class="p">,</span> <span class="n">m_max_src_count</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">EM_RC_SIZE_NOTENOUGH</span><span class="p">;</span>
+    <span class="p">}</span>
+	 
+    <span class="n">TMixerMember</span><span class="o">*</span> <span class="n">mixer_member_ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TMixerMember</span><span class="p">;</span>
+    <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">tmp_ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TMixerMember</span><span class="p">;</span>
+    <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span> <span class="o">=</span> <span class="n">i_item_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">;</span>
+    <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">source_ptr</span> <span class="o">=</span> <span class="n">i_item_ptr</span><span class="o">-&gt;</span><span class="n">source_ptr</span><span class="p">;</span>
+    <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">level</span> <span class="o">=</span> <span class="n">i_item_ptr</span><span class="o">-&gt;</span><span class="n">level</span><span class="p">;</span>
+    <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">mix_state</span> <span class="o">=</span> <span class="n">EM_SS_ACTIVING</span><span class="p">;</span>
+
+    <span class="n">m_mixer_map</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">MapMixerMember</span><span class="o">::</span><span class="n">value_type</span><span class="p">(</span><span class="n">i_src_id</span><span class="p">,</span> <span class="n">mixer_member_ptr</span><span class="p">));</span>
+
+    <span class="n">m_cur_src_count</span><span class="o">++</span><span class="p">;</span>
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Add Source[%d] To MixSource[%d], Level[%d], Pos[%d,%d], Size[%dx%d], Count[%d/%d]&quot;</span><span class="p">,</span>
+        <span class="n">i_src_id</span><span class="p">,</span> <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_id</span><span class="p">,</span> <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">level</span><span class="p">,</span> <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">iX</span><span class="p">,</span> <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">iY</span><span class="p">,</span>
+        <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">height</span><span class="p">,</span> <span class="n">m_cur_src_count</span><span class="p">,</span> <span class="n">m_max_src_count</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: VARemoveSource</span>
+<span class="cm">* 描  述: 移除指定的合成源</span>
+<span class="cm">* 参  数: i_iSrcID</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 2015年12月24日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">********************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VAMixerSource</span><span class="o">::</span><span class="n">DelSource</span><span class="p">(</span><span class="kt">int</span> <span class="n">i_src_id</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_cur_src_count</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">m_cur_src_count</span> <span class="o">&gt;=</span> <span class="n">m_max_src_count</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">;</span>
+
+    <span class="n">CAutoLock</span> <span class="nf">lock</span><span class="p">(</span><span class="n">m_mixer_mtx</span><span class="p">);</span>
+    <span class="k">auto</span> <span class="n">node_map</span> <span class="o">=</span> <span class="n">m_mixer_map</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">i_src_id</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">node_map</span> <span class="o">==</span> <span class="n">m_mixer_map</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">EM_RC_XML_NODE_NOTEXIST</span><span class="p">;</span>
+
+    <span class="n">TMixerMember</span><span class="o">*</span> <span class="n">mixer_member_ptr</span> <span class="o">=</span> <span class="n">node_map</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span>
+    <span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">tmp_ptr</span><span class="p">);</span>
+    <span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">mixer_member_ptr</span><span class="p">);</span>
+
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;MixerSource[%d] Remove Source[%d]&quot;</span><span class="p">,</span> <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_id</span><span class="p">,</span> <span class="n">i_src_id</span><span class="p">);</span>
+    <span class="n">m_mixer_map</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">node_map</span><span class="p">);</span>
+
+    <span class="n">m_cur_src_count</span><span class="o">--</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: ModifySrcOutRect</span>
+<span class="cm">* 描  述: 修改布局方式</span>
+<span class="cm">* 参  数: i_iSrcID: 源id</span>
+<span class="cm">* 参  数: i_pOutRect: 新位置</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年03月07日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VAMixerSource</span><span class="o">::</span><span class="n">ModifySrcOutRect</span><span class="p">(</span><span class="kt">int</span> <span class="n">i_src_id</span><span class="p">,</span> <span class="n">TRect</span><span class="o">*</span> <span class="n">i_rect_ptr</span><span class="p">)</span>
+<span class="p">{</span><span class="c1">//暂时只支持切换布局，不支持增减流数、修改流类型。</span>
+    <span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">i_rect_ptr</span><span class="p">,</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">);</span>
+
+    <span class="k">auto</span> <span class="n">node_map</span> <span class="o">=</span> <span class="n">m_mixer_map</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">i_src_id</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">node_map</span> <span class="o">==</span> <span class="n">m_mixer_map</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">EM_RC_XML_NODE_NOTEXIST</span><span class="p">;</span>
+
+    <span class="n">TMixerMember</span><span class="o">*</span> <span class="n">mixer_member_ptr</span> <span class="o">=</span> <span class="n">node_map</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">mix_state</span> <span class="o">==</span> <span class="n">EM_SS_NONE</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">;</span>
+
+    <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">tmp_ptr</span><span class="o">-&gt;</span><span class="n">rect</span> <span class="o">=</span> <span class="o">*</span><span class="n">i_rect_ptr</span><span class="p">;</span>
+    <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">mix_state</span> <span class="o">|=</span> <span class="n">EM_SS_MODIFY_POS</span><span class="p">;</span>   <span class="c1">// modify outrect                </span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: ModifySrcLevel</span>
+<span class="cm">* 描  述: 修改层级</span>
+<span class="cm">* 参  数: i_iSrcID</span>
+<span class="cm">* 参  数: i_pDecode</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年03月07日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VAMixerSource</span><span class="o">::</span><span class="n">ModifySrcLevel</span><span class="p">(</span><span class="kt">int</span> <span class="n">i_src_id</span><span class="p">,</span> <span class="n">EVMixLevel</span> <span class="n">i_level</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">auto</span> <span class="n">node_map</span> <span class="o">=</span> <span class="n">m_mixer_map</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">i_src_id</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">node_map</span> <span class="o">==</span> <span class="n">m_mixer_map</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">EM_RC_XML_NODE_NOTEXIST</span><span class="p">;</span>
+
+    <span class="n">TMixerMember</span><span class="o">*</span> <span class="n">mixer_member_ptr</span> <span class="o">=</span> <span class="n">node_map</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">mix_state</span> <span class="o">==</span> <span class="n">EM_SS_NONE</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">;</span>
+
+    <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">tmp_ptr</span><span class="o">-&gt;</span><span class="n">level</span> <span class="o">=</span> <span class="n">i_level</span><span class="p">;</span>
+    <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">mix_state</span> <span class="o">|=</span> <span class="n">EM_SS_MODIFY_LEVEL</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: ModifySrcSource</span>
+<span class="cm">* 描  述: 修改输入源对象</span>
+<span class="cm">* 参  数: i_iSrcID</span>
+<span class="cm">* 参  数: i_pSource</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年06月08日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VAMixerSource</span><span class="o">::</span><span class="n">ModifySrcSource</span><span class="p">(</span><span class="kt">int</span> <span class="n">i_src_id</span><span class="p">,</span> <span class="n">ISource</span><span class="o">*</span> <span class="n">i_source_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">i_source_ptr</span><span class="p">,</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">);</span>
+    <span class="k">auto</span> <span class="n">node_map</span> <span class="o">=</span> <span class="n">m_mixer_map</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">i_src_id</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">node_map</span> <span class="o">==</span> <span class="n">m_mixer_map</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">EM_RC_XML_NODE_NOTEXIST</span><span class="p">;</span>
+
+    <span class="c1">// 修改source需要加锁，保证线程没有在执行合成</span>
+    <span class="n">CAutoLock</span> <span class="nf">lockMix</span><span class="p">(</span><span class="n">m_mixer_mtx</span><span class="p">);</span>
+    <span class="n">TMixerMember</span><span class="o">*</span> <span class="n">mixer_member_ptr</span> <span class="o">=</span> <span class="n">node_map</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">mix_state</span> <span class="o">==</span> <span class="n">EM_SS_NONE</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">;</span>
+
+    <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">source_ptr</span> <span class="o">=</span> <span class="n">i_source_ptr</span><span class="p">;</span>
+    <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">mix_state</span> <span class="o">=</span> <span class="n">EM_SS_ACTIVING</span><span class="p">;</span>
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;MixerSource[%d] Modify Source[%d] Input Source Object!&quot;</span><span class="p">,</span> <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_id</span><span class="p">,</span> <span class="n">i_src_id</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: ThreadFuncProc</span>
+<span class="cm">* 描  述: 定时合成线程</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年06月28日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VAMixerSource</span><span class="o">::</span><span class="n">ThreadFuncProc</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">uint64_t</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">uint64_t</span> <span class="n">tick</span> <span class="o">=</span> <span class="n">stGetCurrentMicroSecond</span><span class="p">();</span>
+    <span class="kt">uint64_t</span> <span class="n">frame_timestamp</span> <span class="o">=</span> <span class="n">COMMON_TICK_BASE</span> <span class="o">/</span> <span class="n">COMMON_DEFAULT_FPS</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">fps</span><span class="p">)</span>
+        <span class="n">frame_timestamp</span> <span class="o">=</span> <span class="n">COMMON_TICK_BASE</span> <span class="o">/</span> <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">fps</span><span class="p">;</span>
+
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;MixerSource[%d] Start VideoMixerThread!&quot;</span><span class="p">,</span> <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_id</span><span class="p">);</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">m_exit_code</span> <span class="o">==</span> <span class="n">EM_TS_RUN</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">m_update_size</span> <span class="o">==</span> <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_size</span><span class="p">)</span>
+            <span class="n">m_update_size</span><span class="p">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">m_update_size</span><span class="p">.</span><span class="n">height</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">m_update_size</span><span class="p">.</span><span class="n">width</span> <span class="o">&amp;&amp;</span> <span class="n">m_update_size</span><span class="p">.</span><span class="n">height</span><span class="p">)</span>
+        <span class="p">{</span><span class="c1">// 检查合成尺寸是否修改</span>
+            <span class="n">pthread_mutex_lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_readyImage_mtx</span><span class="p">);</span>
+            <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_size</span> <span class="o">=</span> <span class="n">m_update_size</span><span class="p">;</span>
+            <span class="n">m_update_size</span><span class="p">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">m_update_size</span><span class="p">.</span><span class="n">height</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+            <span class="n">DestroySurface</span><span class="p">();</span>
+            <span class="n">CreateSurface</span><span class="p">(</span><span class="n">m_src_props_ptr</span><span class="p">);</span>
+            <span class="n">pthread_mutex_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_readyImage_mtx</span><span class="p">);</span>
+            <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;MixSource[%d] Change MixSize[%dx%d]&quot;</span><span class="p">,</span> <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_id</span><span class="p">,</span>
+                <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_size</span><span class="p">.</span><span class="n">height</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="n">pthread_mutex_lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_mixer_mtx</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">m_cur_src_count</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">pthread_mutex_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_mixer_mtx</span><span class="p">);</span>
+            <span class="n">usleep</span><span class="p">(</span><span class="n">COMMON_TICK_SECOND</span><span class="p">);</span>
+            <span class="k">continue</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">// 执行检查map、合成、渲染</span>
+        <span class="n">CheckSourceState</span><span class="p">();</span>
+        <span class="n">RunMixerTask</span><span class="p">();</span>
+        <span class="n">RunEffectTask</span><span class="p">();</span>
+
+        <span class="n">m_use_surf_id</span><span class="o">++</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">m_use_surf_id</span> <span class="o">&gt;=</span> <span class="n">VA_SOURCE_RING_SIZE</span><span class="p">)</span>
+            <span class="n">m_use_surf_id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">pthread_mutex_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_mixer_mtx</span><span class="p">);</span>
+
+        <span class="n">RunWaterMarkTask</span><span class="p">();</span>
+
+        <span class="n">count</span><span class="o">++</span><span class="p">;</span><span class="c1">//休眠        </span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">stGetCurrentMicroSecond</span><span class="p">()</span> <span class="o">-</span> <span class="n">tick</span> <span class="o">&lt;</span> <span class="n">count</span> <span class="o">*</span> <span class="n">frame_timestamp</span><span class="p">)</span>
+            <span class="n">usleep</span><span class="p">(</span><span class="n">COMMON_TICK_SECOND</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">m_exit_code</span> <span class="o">=</span> <span class="n">EM_TS_STOP</span><span class="p">;</span>
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;MixerSource[%d] Stop VideoMixerThread!&quot;</span><span class="p">,</span> <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_id</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: CheckSourceState</span>
+<span class="cm">* 描  述: 检查输入源参数是否修改</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年06月08日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VAMixerSource</span><span class="o">::</span><span class="n">CheckSourceState</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">TMixerMember</span><span class="o">*</span> <span class="n">mixer_member_ptr</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+    <span class="k">auto</span> <span class="n">node_map</span> <span class="o">=</span> <span class="n">m_mixer_map</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+    <span class="k">for</span> <span class="p">(;</span> <span class="n">node_map</span> <span class="o">!=</span> <span class="n">m_mixer_map</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">node_map</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">mixer_member_ptr</span> <span class="o">=</span> <span class="n">node_map</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">mix_state</span> <span class="o">==</span> <span class="n">EM_SS_ACTIVING</span><span class="p">)</span>
+            <span class="k">continue</span><span class="p">;</span>
+
+        <span class="kt">int</span> <span class="n">src_id</span> <span class="o">=</span> <span class="n">node_map</span><span class="o">-&gt;</span><span class="n">first</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">mix_state</span> <span class="o">&amp;</span> <span class="n">EM_SS_MODIFY_LEVEL</span><span class="p">)</span>
+        <span class="p">{</span><span class="c1">// 需要修改输出层级</span>
+            <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">level</span> <span class="o">=</span> <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">tmp_ptr</span><span class="o">-&gt;</span><span class="n">level</span><span class="p">;</span>
+            <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;MixerSource[%d] Modify Source[%d] Level[%d]&quot;</span><span class="p">,</span> <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_id</span><span class="p">,</span> <span class="n">src_id</span><span class="p">,</span> <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">level</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">mix_state</span> <span class="o">&amp;</span> <span class="n">EM_SS_MODIFY_POS</span><span class="p">)</span>
+        <span class="p">{</span><span class="c1">// 需要修改输出位置</span>
+            <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span> <span class="o">=</span> <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">tmp_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">;</span>
+            <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;MixerSource[%d] Modify Source[%d] Pos[%dx%d], Size[%dx%d]&quot;</span><span class="p">,</span>
+                <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_id</span><span class="p">,</span> <span class="n">src_id</span><span class="p">,</span> <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">iX</span><span class="p">,</span> <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">iY</span><span class="p">,</span>
+                <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">height</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">mix_state</span> <span class="o">=</span> <span class="n">EM_SS_ACTIVING</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: RunMixerTask</span>
+<span class="cm">* 描  述: 执行合成操作</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 2016年07月12日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">********************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VAMixerSource</span><span class="o">::</span><span class="n">RunMixerTask</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">VAImage</span><span class="o">*</span> <span class="n">image_ptr</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+    <span class="n">TMixerMember</span><span class="o">*</span> <span class="n">mixer_member_ptr</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+    <span class="n">VASurfaceID</span> <span class="n">va_surf_id</span> <span class="o">=</span> <span class="n">m_va_surface_id</span><span class="p">[</span><span class="n">m_use_surf_id</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_effect_state</span> <span class="o">==</span> <span class="n">EM_ES_RUN</span><span class="p">)</span>
+        <span class="n">va_surf_id</span> <span class="o">=</span> <span class="n">m_va_effSurf_id</span><span class="p">;</span>
+
+    <span class="k">auto</span> <span class="n">node_map</span> <span class="o">=</span> <span class="n">m_mixer_map</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+    <span class="k">for</span> <span class="p">(;</span> <span class="n">node_map</span> <span class="o">!=</span> <span class="n">m_mixer_map</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">node_map</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">mixer_member_ptr</span> <span class="o">=</span> <span class="n">node_map</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">mix_state</span> <span class="o">==</span> <span class="n">EM_SS_ACTIVING</span> <span class="o">&amp;&amp;</span>
+            <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">source_ptr</span> <span class="o">!=</span> <span class="k">nullptr</span> <span class="o">&amp;&amp;</span> <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">level</span> <span class="o">==</span> <span class="n">EM_VML_BOTTOM</span><span class="p">)</span>
+        <span class="p">{</span><span class="c1">// 输入底层源image</span>
+            <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">source_ptr</span><span class="o">-&gt;</span><span class="n">LockReadyImage</span><span class="p">();</span>
+            <span class="n">image_ptr</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">VAImage</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">source_ptr</span><span class="o">-&gt;</span><span class="n">GetReadyImage</span><span class="p">());</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">image_ptr</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+                <span class="n">vaPutImage</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">va_surf_id</span><span class="p">,</span> <span class="n">image_ptr</span><span class="o">-&gt;</span><span class="n">image_id</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">image_ptr</span><span class="o">-&gt;</span><span class="n">width</span><span class="p">,</span> <span class="n">image_ptr</span><span class="o">-&gt;</span><span class="n">height</span><span class="p">,</span>
+                <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">iX</span><span class="p">,</span> <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">iY</span><span class="p">,</span> <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">height</span><span class="p">);</span>
+            <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">source_ptr</span><span class="o">-&gt;</span><span class="n">UnLockReadyImage</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">node_map</span> <span class="o">=</span> <span class="n">m_mixer_map</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+    <span class="k">for</span> <span class="p">(;</span> <span class="n">node_map</span> <span class="o">!=</span> <span class="n">m_mixer_map</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">node_map</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">mixer_member_ptr</span> <span class="o">=</span> <span class="n">node_map</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">mix_state</span> <span class="o">==</span> <span class="n">EM_SS_ACTIVING</span> <span class="o">&amp;&amp;</span>
+            <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">source_ptr</span> <span class="o">!=</span> <span class="k">nullptr</span> <span class="o">&amp;&amp;</span> <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">level</span> <span class="o">==</span> <span class="n">EM_VML_TOP</span><span class="p">)</span>
+        <span class="p">{</span><span class="c1">// 输入顶层源image</span>
+            <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">source_ptr</span><span class="o">-&gt;</span><span class="n">LockReadyImage</span><span class="p">();</span>
+            <span class="n">image_ptr</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">VAImage</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">source_ptr</span><span class="o">-&gt;</span><span class="n">GetReadyImage</span><span class="p">());</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">image_ptr</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+                <span class="n">vaPutImage</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">va_surf_id</span><span class="p">,</span> <span class="n">image_ptr</span><span class="o">-&gt;</span><span class="n">image_id</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">image_ptr</span><span class="o">-&gt;</span><span class="n">width</span><span class="p">,</span> <span class="n">image_ptr</span><span class="o">-&gt;</span><span class="n">height</span><span class="p">,</span>
+                <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">iX</span><span class="p">,</span> <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">iY</span><span class="p">,</span> <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">height</span><span class="p">);</span>
+            <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">source_ptr</span><span class="o">-&gt;</span><span class="n">UnLockReadyImage</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: RunEffectTask</span>
+<span class="cm">* 描  述: 执行特效渲染工作</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年06月17日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VAMixerSource</span><span class="o">::</span><span class="n">RunEffectTask</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_effect_state</span> <span class="o">==</span> <span class="n">EM_ES_RUN</span><span class="p">)</span>
+    <span class="p">{</span><span class="c1">// 运行特效</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">m_effect_frame_num</span><span class="p">)</span><span class="c1">// 取出特效模板</span>
+            <span class="n">vaDeriveImage</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">m_va_surface_id</span><span class="p">[</span><span class="n">m_use_surf_id</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">m_va_effect_img</span><span class="p">);</span>
+
+        <span class="n">RenderEffect</span><span class="p">();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">m_effect_frame_num</span> <span class="o">&gt;=</span> <span class="n">EFFECT_RUN_COUNT</span><span class="p">)</span>
+        <span class="p">{</span><span class="c1">// 结束特效</span>
+            <span class="n">vaDestroyImage</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">m_va_effect_img</span><span class="p">.</span><span class="n">image_id</span><span class="p">);</span>
+            <span class="n">m_va_effect_img</span><span class="p">.</span><span class="n">image_id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+            <span class="n">m_effect_frame_num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="n">m_effect_state</span> <span class="o">=</span> <span class="n">EM_ES_END</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">m_tmp_effect</span> <span class="o">!=</span> <span class="n">EM_EFFECT_NONE</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">m_cur_effect</span> <span class="o">=</span> <span class="n">m_tmp_effect</span><span class="p">;</span>
+                <span class="n">m_tmp_effect</span> <span class="o">=</span> <span class="n">EM_EFFECT_NONE</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: RenderEffect</span>
+<span class="cm">* 描  述: 渲染特效</span>
+<span class="cm">* 参  数: pVAImg</span>
+<span class="cm">* 参  数: i_pSrcSize</span>
+<span class="cm">* 参  数: i_pOutRect</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年04月01日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VAMixerSource</span><span class="o">::</span><span class="n">RenderEffect</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">VAImage</span> <span class="n">va_image</span><span class="p">;</span>
+    <span class="n">VASurfaceID</span> <span class="n">va_surf_id</span> <span class="o">=</span> <span class="n">m_va_surface_id</span><span class="p">[</span><span class="n">m_use_surf_id</span><span class="p">];</span>
+    <span class="n">vaDeriveImage</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">m_va_effSurf_id</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">va_image</span><span class="p">);</span>
+
+    <span class="kt">int</span> <span class="n">width</span> <span class="o">=</span> <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_size</span><span class="p">.</span><span class="n">width</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">height</span> <span class="o">=</span> <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_size</span><span class="p">.</span><span class="n">height</span><span class="p">;</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="n">m_cur_effect</span><span class="p">)</span>
+    <span class="p">{</span>
+    <span class="k">case</span> <span class="nl">EM_EFFECT_FADE</span><span class="p">:</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="nl">EM_EFFECT_ERASEH</span><span class="p">:</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">offset</span> <span class="o">=</span> <span class="n">EFFECT_EVEN</span><span class="p">(</span><span class="n">width</span><span class="o">*</span><span class="n">m_effect_frame_num</span> <span class="o">/</span> <span class="n">EFFECT_RUN_COUNT</span><span class="p">);</span>
+        <span class="n">vaPutImage</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">va_surf_id</span><span class="p">,</span> <span class="n">m_va_effect_img</span><span class="p">.</span><span class="n">image_id</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">);</span>
+        <span class="n">vaPutImage</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">va_surf_id</span><span class="p">,</span> <span class="n">va_image</span><span class="p">.</span><span class="n">image_id</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">height</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="nl">EM_EFFECT_ERASEV</span><span class="p">:</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">offset</span> <span class="o">=</span> <span class="n">EFFECT_EVEN</span><span class="p">(</span><span class="n">height</span><span class="o">*</span><span class="n">m_effect_frame_num</span> <span class="o">/</span> <span class="n">EFFECT_RUN_COUNT</span><span class="p">);</span>
+        <span class="n">vaPutImage</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">va_surf_id</span><span class="p">,</span> <span class="n">m_va_effect_img</span><span class="p">.</span><span class="n">image_id</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">);</span>
+        <span class="n">vaPutImage</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">va_surf_id</span><span class="p">,</span> <span class="n">va_image</span><span class="p">.</span><span class="n">image_id</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">offset</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="nl">EM_EFFECT_SHUTTERH</span><span class="p">:</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">shutter</span> <span class="o">=</span> <span class="n">height</span> <span class="o">/</span> <span class="n">EFFECT_SHUTTER_COUNT</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">offset</span> <span class="o">=</span> <span class="n">EFFECT_EVEN</span><span class="p">(</span><span class="n">m_effect_frame_num</span><span class="o">*</span><span class="n">shutter</span> <span class="o">/</span> <span class="n">EFFECT_RUN_COUNT</span><span class="p">);</span>
+
+        <span class="n">vaPutImage</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">va_surf_id</span><span class="p">,</span> <span class="n">m_va_effect_img</span><span class="p">.</span><span class="n">image_id</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">EFFECT_SHUTTER_COUNT</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span><span class="c1">// 12叶窗</span>
+            <span class="n">vaPutImage</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">va_surf_id</span><span class="p">,</span> <span class="n">va_image</span><span class="p">.</span><span class="n">image_id</span><span class="p">,</span>
+                <span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="o">*</span><span class="n">shutter</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="o">*</span><span class="n">shutter</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">offset</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="nl">EM_EFFECT_SHUTTERV</span><span class="p">:</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">shutter</span> <span class="o">=</span> <span class="n">width</span> <span class="o">/</span> <span class="n">EFFECT_SHUTTER_COUNT</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">offset</span> <span class="o">=</span> <span class="n">EFFECT_EVEN</span><span class="p">(</span><span class="n">m_effect_frame_num</span><span class="o">*</span><span class="n">shutter</span> <span class="o">/</span> <span class="n">EFFECT_RUN_COUNT</span><span class="p">);</span>
+        <span class="n">vaPutImage</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">va_surf_id</span><span class="p">,</span> <span class="n">m_va_effect_img</span><span class="p">.</span><span class="n">image_id</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">);</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">EFFECT_SHUTTER_COUNT</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span><span class="c1">// 12叶窗</span>
+            <span class="n">vaPutImage</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">va_surf_id</span><span class="p">,</span> <span class="n">va_image</span><span class="p">.</span><span class="n">image_id</span><span class="p">,</span>
+                <span class="n">i</span><span class="o">*</span><span class="n">shutter</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">i</span><span class="o">*</span><span class="n">shutter</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">height</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="nl">EM_EFFECT_BOXIN</span><span class="p">:</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">box_w</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">EFFECT_EVEN</span><span class="p">((</span><span class="n">width</span> <span class="o">-</span> <span class="n">m_effect_frame_num</span><span class="o">*</span><span class="n">width</span> <span class="o">/</span> <span class="n">EFFECT_RUN_COUNT</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">));</span>
+        <span class="kt">int</span> <span class="n">box_h</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">EFFECT_EVEN</span><span class="p">((</span><span class="n">height</span> <span class="o">-</span> <span class="n">m_effect_frame_num</span><span class="o">*</span><span class="n">height</span> <span class="o">/</span> <span class="n">EFFECT_RUN_COUNT</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">));</span>
+        <span class="n">box_w</span> <span class="o">=</span> <span class="n">ALIGN_SIZE_32</span><span class="p">(</span><span class="n">box_w</span><span class="p">);</span>
+        <span class="kt">int</span> <span class="n">x_offset</span> <span class="o">=</span> <span class="p">(</span><span class="n">width</span> <span class="o">-</span> <span class="n">box_w</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">y_offset</span> <span class="o">=</span> <span class="p">(</span><span class="n">height</span> <span class="o">-</span> <span class="n">box_h</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span>
+
+        <span class="n">vaPutImage</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">va_surf_id</span><span class="p">,</span> <span class="n">va_image</span><span class="p">.</span><span class="n">image_id</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">);</span>
+        <span class="n">vaPutImage</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">va_surf_id</span><span class="p">,</span> <span class="n">m_va_effect_img</span><span class="p">.</span><span class="n">image_id</span><span class="p">,</span>
+            <span class="n">x_offset</span><span class="p">,</span> <span class="n">y_offset</span><span class="p">,</span> <span class="n">box_w</span><span class="p">,</span> <span class="n">box_h</span><span class="p">,</span> <span class="n">x_offset</span><span class="p">,</span> <span class="n">y_offset</span><span class="p">,</span> <span class="n">box_w</span><span class="p">,</span> <span class="n">box_h</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="nl">EM_EFFECT_BOXOUT</span><span class="p">:</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">box_w</span> <span class="o">=</span> <span class="n">EFFECT_EVEN</span><span class="p">(</span><span class="n">m_effect_frame_num</span><span class="o">*</span><span class="n">width</span> <span class="o">/</span> <span class="n">EFFECT_RUN_COUNT</span><span class="p">);</span>
+        <span class="kt">int</span> <span class="n">box_h</span> <span class="o">=</span> <span class="n">EFFECT_EVEN</span><span class="p">(</span><span class="n">m_effect_frame_num</span><span class="o">*</span><span class="n">height</span> <span class="o">/</span> <span class="n">EFFECT_RUN_COUNT</span><span class="p">);</span>
+        <span class="n">box_w</span> <span class="o">=</span> <span class="n">ALIGN_SIZE_32</span><span class="p">(</span><span class="n">box_w</span><span class="p">);</span>
+        <span class="kt">int</span> <span class="n">x_offset</span> <span class="o">=</span> <span class="p">(</span><span class="n">width</span> <span class="o">-</span> <span class="n">box_w</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">y_offset</span> <span class="o">=</span> <span class="p">(</span><span class="n">height</span> <span class="o">-</span> <span class="n">box_h</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span>
+
+        <span class="n">vaPutImage</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">va_surf_id</span><span class="p">,</span> <span class="n">m_va_effect_img</span><span class="p">.</span><span class="n">image_id</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">);</span>
+        <span class="n">vaPutImage</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">va_surf_id</span><span class="p">,</span> <span class="n">va_image</span><span class="p">.</span><span class="n">image_id</span><span class="p">,</span>
+            <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">x_offset</span><span class="p">,</span> <span class="n">y_offset</span><span class="p">,</span> <span class="n">box_w</span><span class="p">,</span> <span class="n">box_h</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">break</span><span class="p">;</span>
+    <span class="k">default</span><span class="o">:</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">m_effect_frame_num</span><span class="o">++</span><span class="p">;</span>
+    <span class="n">vaDestroyImage</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">va_image</span><span class="p">.</span><span class="n">image_id</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span><span class="c1">// NOLINT(readability/fn_size)</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: RunWaterMarkTask</span>
+<span class="cm">* 描  述: 执行水印任务</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年06月27日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VAMixerSource</span><span class="o">::</span><span class="n">RunWaterMarkTask</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">pthread_mutex_lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_readyImage_mtx</span><span class="p">);</span>
+
+    <span class="kt">int</span> <span class="n">surf_id</span> <span class="o">=</span> <span class="n">m_use_surf_id</span> <span class="o">?</span> <span class="n">m_use_surf_id</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">:</span> <span class="n">VA_SOURCE_RING_SIZE</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">vaGetImage</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">m_va_surface_id</span><span class="p">[</span><span class="n">surf_id</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span>
+        <span class="n">m_src_props_ptr</span><span class="o">-&gt;</span><span class="n">src_size</span><span class="p">.</span><span class="n">height</span><span class="p">,</span> <span class="n">m_va_mix_image</span><span class="p">.</span><span class="n">image_id</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_is_has_logo</span> <span class="o">+</span> <span class="n">m_is_has_title</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">image_buf</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+        <span class="n">vaMapBuffer</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">m_va_mix_image</span><span class="p">.</span><span class="n">buf</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span><span class="o">**</span><span class="p">)</span><span class="o">&amp;</span><span class="n">image_buf</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">m_is_has_logo</span><span class="p">)</span>
+            <span class="n">RenderLogo</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_va_mix_image</span><span class="p">,</span> <span class="n">image_buf</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">m_is_has_title</span><span class="p">)</span>
+            <span class="n">RenderTitle</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_va_mix_image</span><span class="p">,</span> <span class="n">image_buf</span><span class="p">);</span>
+        <span class="n">vaUnmapBuffer</span><span class="p">(</span><span class="n">g_va_display</span><span class="p">,</span> <span class="n">m_va_mix_image</span><span class="p">.</span><span class="n">buf</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">pthread_mutex_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_readyImage_mtx</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: RenderLogo</span>
+<span class="cm">* 描  述: 计算字幕透明混合</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年03月28日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VAMixerSource</span><span class="o">::</span><span class="n">RenderLogo</span><span class="p">(</span><span class="n">VAImage</span><span class="o">*</span> <span class="n">va_image_ptr</span><span class="p">,</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">image_buf</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">iX</span><span class="p">,</span> <span class="n">sub_x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">iY</span><span class="p">,</span> <span class="n">sub_y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">w</span> <span class="o">=</span> <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">width</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">h</span> <span class="o">=</span> <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">height</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="n">w</span><span class="o">*</span><span class="n">h</span><span class="p">;</span>
+
+    <span class="kt">int</span> <span class="n">y_pitch</span> <span class="o">=</span> <span class="n">va_image_ptr</span><span class="o">-&gt;</span><span class="n">pitches</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">u_pitch</span> <span class="o">=</span> <span class="n">va_image_ptr</span><span class="o">-&gt;</span><span class="n">pitches</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">v_pitch</span> <span class="o">=</span> <span class="n">va_image_ptr</span><span class="o">-&gt;</span><span class="n">pitches</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">u_offset</span> <span class="o">=</span> <span class="n">va_image_ptr</span><span class="o">-&gt;</span><span class="n">offsets</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">v_offset</span> <span class="o">=</span> <span class="n">va_image_ptr</span><span class="o">-&gt;</span><span class="n">offsets</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+
+    <span class="kt">int</span> <span class="n">y_start</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">y_pitch</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">uv_start</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">sub_y</span><span class="o">*</span><span class="n">u_pitch</span> <span class="o">+</span> <span class="n">u_offset</span><span class="p">;</span>
+
+    <span class="kt">int</span> <span class="n">line</span> <span class="o">=</span> <span class="n">w</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">alpha</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span> <span class="p">};</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">h</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">w</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span><span class="c1">// 进行alpha混合</span>
+            <span class="kt">int</span> <span class="n">x_dst</span> <span class="o">=</span> <span class="n">y_start</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">y_pitch</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">j</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">cur_pos</span> <span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="n">line</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">8</span> <span class="o">*</span> <span class="n">j</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">x_src</span> <span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">width</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">j</span><span class="p">;</span>
+            <span class="n">alpha</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">m_wm_data_ptr</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">cur_pos</span> <span class="o">+</span> <span class="mi">3</span><span class="p">];</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">alpha</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="n">image_buf</span><span class="p">[</span><span class="n">x_dst</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">image_buf</span><span class="p">[</span><span class="n">x_dst</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="mh">0xff</span> <span class="o">-</span> <span class="n">alpha</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">+</span> <span class="p">((</span><span class="n">alpha</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">m_wm_data_ptr</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">x_src</span><span class="p">])</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">);</span>
+            <span class="n">alpha</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">m_wm_data_ptr</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">cur_pos</span> <span class="o">+</span> <span class="mi">7</span><span class="p">];</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">alpha</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+                <span class="n">image_buf</span><span class="p">[</span><span class="n">x_dst</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">image_buf</span><span class="p">[</span><span class="n">x_dst</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="mh">0xff</span><span class="o">-</span><span class="n">alpha</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span><span class="o">&gt;&gt;</span><span class="mi">8</span><span class="p">)</span><span class="o">+</span><span class="p">((</span><span class="n">alpha</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">m_wm_data_ptr</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">x_src</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span><span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">);</span>
+            <span class="n">alpha</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">m_wm_data_ptr</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">cur_pos</span> <span class="o">+</span> <span class="n">line</span> <span class="o">+</span> <span class="mi">3</span><span class="p">];</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">alpha</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+                <span class="n">image_buf</span><span class="p">[</span><span class="n">x_dst</span> <span class="o">+</span> <span class="n">y_pitch</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">image_buf</span><span class="p">[</span><span class="n">x_dst</span> <span class="o">+</span> <span class="n">y_pitch</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="mh">0xff</span> <span class="o">-</span> <span class="n">alpha</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">+</span>
+                <span class="p">((</span><span class="n">alpha</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">m_wm_data_ptr</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">x_src</span> <span class="o">+</span> <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">width</span><span class="p">])</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">);</span>
+            <span class="n">alpha</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">m_wm_data_ptr</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">cur_pos</span> <span class="o">+</span> <span class="n">line</span> <span class="o">+</span> <span class="mi">7</span><span class="p">];</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">alpha</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+                <span class="n">image_buf</span><span class="p">[</span><span class="n">x_dst</span> <span class="o">+</span> <span class="n">y_pitch</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">image_buf</span><span class="p">[</span><span class="n">x_dst</span> <span class="o">+</span> <span class="n">y_pitch</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="mh">0xff</span> <span class="o">-</span> <span class="n">alpha</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">+</span>
+                <span class="p">((</span><span class="n">alpha</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">*</span> <span class="n">m_wm_data_ptr</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">x_src</span> <span class="o">+</span> <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">width</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">);</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">alpha</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">alpha</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">alpha</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">alpha</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+            <span class="p">{</span><span class="c1">// 只要uv对应的4个y中有一个不是0，即着色</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">va_image_ptr</span><span class="o">-&gt;</span><span class="n">format</span><span class="p">.</span><span class="n">fourcc</span> <span class="o">==</span> <span class="n">VA_FOURCC_NV12</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">x_dst</span> <span class="o">=</span> <span class="n">uv_start</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="n">u_pitch</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">j</span><span class="p">;</span>
+                    <span class="n">image_buf</span><span class="p">[</span><span class="n">x_dst</span><span class="p">]</span> <span class="o">=</span> <span class="n">m_wm_data_ptr</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">size</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="n">w</span> <span class="o">+</span> <span class="n">j</span><span class="p">];</span>
+                    <span class="n">image_buf</span><span class="p">[</span><span class="n">x_dst</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">m_wm_data_ptr</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">size</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="n">w</span> <span class="o">+</span> <span class="n">j</span><span class="p">];</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">va_image_ptr</span><span class="o">-&gt;</span><span class="n">format</span><span class="p">.</span><span class="n">fourcc</span> <span class="o">==</span> <span class="n">VA_FOURCC_YV12</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">x_dst</span> <span class="o">=</span> <span class="n">u_offset</span> <span class="o">+</span> <span class="n">sub_x</span> <span class="o">+</span> <span class="p">(</span><span class="n">sub_y</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="n">u_pitch</span> <span class="o">+</span> <span class="n">j</span><span class="p">;</span>
+                    <span class="n">image_buf</span><span class="p">[</span><span class="n">x_dst</span><span class="p">]</span> <span class="o">=</span> <span class="n">m_wm_data_ptr</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">size</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="n">w</span> <span class="o">+</span> <span class="n">j</span><span class="p">];</span>
+                    <span class="n">x_dst</span> <span class="o">=</span> <span class="n">v_offset</span> <span class="o">+</span> <span class="n">sub_x</span> <span class="o">+</span> <span class="p">(</span><span class="n">sub_y</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="n">v_pitch</span> <span class="o">+</span> <span class="n">j</span><span class="p">;</span>
+                    <span class="n">image_buf</span><span class="p">[</span><span class="n">x_dst</span><span class="p">]</span> <span class="o">=</span> <span class="n">m_wm_data_ptr</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">size</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="n">w</span> <span class="o">+</span> <span class="n">j</span><span class="p">];</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 函  数: RenderTitle</span>
+<span class="cm">* 描  述: 计算字幕混合</span>
+<span class="cm">* 返回值: enumRC_OK: 成功 enumRC_XX: 失败错误码</span>
+<span class="cm">* 时  间: 17年03月28日</span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">*******************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">VAMixerSource</span><span class="o">::</span><span class="n">RenderTitle</span><span class="p">(</span><span class="n">VAImage</span><span class="o">*</span> <span class="n">va_image_ptr</span><span class="p">,</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">image_buf</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">iX</span><span class="p">,</span> <span class="n">sub_x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">iY</span><span class="p">,</span> <span class="n">sub_y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">w</span> <span class="o">=</span> <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">width</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">h</span> <span class="o">=</span> <span class="n">m_wm_rect</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">height</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="n">w</span><span class="o">*</span><span class="n">h</span><span class="p">;</span>
+
+    <span class="kt">int</span> <span class="n">y_pitch</span> <span class="o">=</span> <span class="n">va_image_ptr</span><span class="o">-&gt;</span><span class="n">pitches</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">u_pitch</span> <span class="o">=</span> <span class="n">va_image_ptr</span><span class="o">-&gt;</span><span class="n">pitches</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">v_pitch</span> <span class="o">=</span> <span class="n">va_image_ptr</span><span class="o">-&gt;</span><span class="n">pitches</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">u_offset</span> <span class="o">=</span> <span class="n">va_image_ptr</span><span class="o">-&gt;</span><span class="n">offsets</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">v_offset</span> <span class="o">=</span> <span class="n">va_image_ptr</span><span class="o">-&gt;</span><span class="n">offsets</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+
+    <span class="kt">int</span> <span class="n">y_start</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">y_pitch</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">uv_start</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">sub_y</span><span class="o">*</span><span class="n">u_pitch</span> <span class="o">+</span> <span class="n">u_offset</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">white</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span> <span class="p">};</span> <span class="c1">// 4y = 1u = 1v</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">h</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">w</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span><span class="c1">// 进行alpha混合</span>
+            <span class="kt">int</span> <span class="n">x_src</span> <span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="n">w</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">j</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">x_dst</span> <span class="o">=</span> <span class="n">y_start</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">y_pitch</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">j</span><span class="p">;</span>
+
+            <span class="n">white</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">m_wm_data_ptr</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">x_src</span><span class="p">];</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">white</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="mh">0xff</span><span class="p">)</span>
+                <span class="n">image_buf</span><span class="p">[</span><span class="n">x_dst</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">image_buf</span><span class="p">[</span><span class="n">x_dst</span><span class="p">]</span> <span class="o">*</span> <span class="n">white</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">;</span>
+            <span class="n">white</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">m_wm_data_ptr</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">x_src</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">white</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="mh">0xff</span><span class="p">)</span>
+                <span class="n">image_buf</span><span class="p">[</span><span class="n">x_dst</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">image_buf</span><span class="p">[</span><span class="n">x_dst</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">white</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">;</span>
+            <span class="n">white</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">m_wm_data_ptr</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">x_src</span> <span class="o">+</span> <span class="n">w</span> <span class="o">*</span> <span class="mi">2</span><span class="p">];</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">white</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">!=</span> <span class="mh">0xff</span><span class="p">)</span>
+                <span class="n">image_buf</span><span class="p">[</span><span class="n">x_dst</span> <span class="o">+</span> <span class="n">y_pitch</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">image_buf</span><span class="p">[</span><span class="n">x_dst</span> <span class="o">+</span> <span class="n">y_pitch</span><span class="p">]</span> <span class="o">*</span> <span class="n">white</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">;</span>
+            <span class="n">white</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">m_wm_data_ptr</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">x_src</span> <span class="o">+</span> <span class="n">w</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">white</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">!=</span> <span class="mh">0xff</span><span class="p">)</span>
+                <span class="n">image_buf</span><span class="p">[</span><span class="n">x_dst</span> <span class="o">+</span> <span class="n">y_pitch</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">image_buf</span><span class="p">[</span><span class="n">x_dst</span> <span class="o">+</span> <span class="n">y_pitch</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">white</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">;</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">white</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="mh">0xff</span> <span class="o">||</span> <span class="n">white</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="mh">0xff</span> <span class="o">||</span> <span class="n">white</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">!=</span> <span class="mh">0xff</span> <span class="o">||</span> <span class="n">white</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">!=</span> <span class="mh">0xff</span><span class="p">)</span>
+            <span class="p">{</span><span class="c1">// 只要uv对应的4个y中有一个不是白色，即着色</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">va_image_ptr</span><span class="o">-&gt;</span><span class="n">format</span><span class="p">.</span><span class="n">fourcc</span> <span class="o">==</span> <span class="n">VA_FOURCC_NV12</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">x_dst</span> <span class="o">=</span> <span class="n">uv_start</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="n">u_pitch</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">j</span><span class="p">;</span>
+                    <span class="n">image_buf</span><span class="p">[</span><span class="n">x_dst</span><span class="p">]</span> <span class="o">=</span> <span class="n">m_wm_data_ptr</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">size</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="n">w</span> <span class="o">+</span> <span class="n">j</span><span class="p">];</span>
+                    <span class="n">image_buf</span><span class="p">[</span><span class="n">x_dst</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">m_wm_data_ptr</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">size</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="n">w</span> <span class="o">+</span> <span class="n">j</span><span class="p">];</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">va_image_ptr</span><span class="o">-&gt;</span><span class="n">format</span><span class="p">.</span><span class="n">fourcc</span> <span class="o">==</span> <span class="n">VA_FOURCC_YV12</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">x_dst</span> <span class="o">=</span> <span class="n">u_offset</span> <span class="o">+</span> <span class="n">sub_x</span> <span class="o">+</span> <span class="p">(</span><span class="n">sub_y</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="n">u_pitch</span> <span class="o">+</span> <span class="n">j</span><span class="p">;</span>
+                    <span class="n">image_buf</span><span class="p">[</span><span class="n">x_dst</span><span class="p">]</span> <span class="o">=</span> <span class="n">m_wm_data_ptr</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">size</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="n">w</span> <span class="o">+</span> <span class="n">j</span><span class="p">];</span>
+                    <span class="n">x_dst</span> <span class="o">=</span> <span class="n">v_offset</span> <span class="o">+</span> <span class="n">sub_x</span> <span class="o">+</span> <span class="p">(</span><span class="n">sub_y</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="n">v_pitch</span> <span class="o">+</span> <span class="n">j</span><span class="p">;</span>
+                    <span class="n">image_buf</span><span class="p">[</span><span class="n">x_dst</span><span class="p">]</span> <span class="o">=</span> <span class="n">m_wm_data_ptr</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">size</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="n">w</span> <span class="o">+</span> <span class="n">j</span><span class="p">];</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</body>
+</html>

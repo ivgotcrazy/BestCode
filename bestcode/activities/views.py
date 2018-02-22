@@ -30,6 +30,13 @@ def activity(request, activity_id):
 		submit_comments = comment_models.Comment.objects.filter(comment_type__comment_type_name="submit").filter(object_id=submit.submit_id)
 		submit.comment_count = len(submit_comments)
 
+	# this is a ugly adaption to absolute path and relative path, i just dont want to explain why.
+	for submit in submits:
+		if submit.activity_user.photo.__str__()[0] != '/':
+			submit.activity_user.photo = ("/media/%s" % submit.activity_user.photo)
+		if submit.submit_reviewer.photo.__str__()[0] != '/':
+			submit.submit_reviewer.photo = ("/media/%s" % submit.submit_reviewer.photo)
+
 	context = {
 		'nav_items': breadcrumbs.GetNavItems(request),
 		'login': request.user.is_authenticated,

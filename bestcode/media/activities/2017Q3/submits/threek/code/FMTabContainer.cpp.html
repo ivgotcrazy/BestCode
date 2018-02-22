@@ -1,0 +1,328 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #333333 }
+body  { background: #111111; color: #ffffff }
+body .c { color: #008800; font-style: italic; background-color: #0f140f } /* Comment */
+body .err { color: #ffffff } /* Error */
+body .esc { color: #ffffff } /* Escape */
+body .g { color: #ffffff } /* Generic */
+body .k { color: #fb660a; font-weight: bold } /* Keyword */
+body .l { color: #ffffff } /* Literal */
+body .n { color: #ffffff } /* Name */
+body .o { color: #ffffff } /* Operator */
+body .x { color: #ffffff } /* Other */
+body .p { color: #ffffff } /* Punctuation */
+body .ch { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Hashbang */
+body .cm { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Multiline */
+body .cp { color: #ff0007; font-weight: bold; font-style: italic; background-color: #0f140f } /* Comment.Preproc */
+body .cpf { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.PreprocFile */
+body .c1 { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Single */
+body .cs { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Special */
+body .gd { color: #ffffff } /* Generic.Deleted */
+body .ge { color: #ffffff } /* Generic.Emph */
+body .gr { color: #ffffff } /* Generic.Error */
+body .gh { color: #ffffff; font-weight: bold } /* Generic.Heading */
+body .gi { color: #ffffff } /* Generic.Inserted */
+body .go { color: #444444; background-color: #222222 } /* Generic.Output */
+body .gp { color: #ffffff } /* Generic.Prompt */
+body .gs { color: #ffffff } /* Generic.Strong */
+body .gu { color: #ffffff; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #ffffff } /* Generic.Traceback */
+body .kc { color: #fb660a; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #fb660a; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #fb660a; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #fb660a } /* Keyword.Pseudo */
+body .kr { color: #fb660a; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #cdcaa9; font-weight: bold } /* Keyword.Type */
+body .ld { color: #ffffff } /* Literal.Date */
+body .m { color: #0086f7; font-weight: bold } /* Literal.Number */
+body .s { color: #0086d2 } /* Literal.String */
+body .na { color: #ff0086; font-weight: bold } /* Name.Attribute */
+body .nb { color: #ffffff } /* Name.Builtin */
+body .nc { color: #ffffff } /* Name.Class */
+body .no { color: #0086d2 } /* Name.Constant */
+body .nd { color: #ffffff } /* Name.Decorator */
+body .ni { color: #ffffff } /* Name.Entity */
+body .ne { color: #ffffff } /* Name.Exception */
+body .nf { color: #ff0086; font-weight: bold } /* Name.Function */
+body .nl { color: #ffffff } /* Name.Label */
+body .nn { color: #ffffff } /* Name.Namespace */
+body .nx { color: #ffffff } /* Name.Other */
+body .py { color: #ffffff } /* Name.Property */
+body .nt { color: #fb660a; font-weight: bold } /* Name.Tag */
+body .nv { color: #fb660a } /* Name.Variable */
+body .ow { color: #ffffff } /* Operator.Word */
+body .w { color: #888888 } /* Text.Whitespace */
+body .mb { color: #0086f7; font-weight: bold } /* Literal.Number.Bin */
+body .mf { color: #0086f7; font-weight: bold } /* Literal.Number.Float */
+body .mh { color: #0086f7; font-weight: bold } /* Literal.Number.Hex */
+body .mi { color: #0086f7; font-weight: bold } /* Literal.Number.Integer */
+body .mo { color: #0086f7; font-weight: bold } /* Literal.Number.Oct */
+body .sa { color: #0086d2 } /* Literal.String.Affix */
+body .sb { color: #0086d2 } /* Literal.String.Backtick */
+body .sc { color: #0086d2 } /* Literal.String.Char */
+body .dl { color: #0086d2 } /* Literal.String.Delimiter */
+body .sd { color: #0086d2 } /* Literal.String.Doc */
+body .s2 { color: #0086d2 } /* Literal.String.Double */
+body .se { color: #0086d2 } /* Literal.String.Escape */
+body .sh { color: #0086d2 } /* Literal.String.Heredoc */
+body .si { color: #0086d2 } /* Literal.String.Interpol */
+body .sx { color: #0086d2 } /* Literal.String.Other */
+body .sr { color: #0086d2 } /* Literal.String.Regex */
+body .s1 { color: #0086d2 } /* Literal.String.Single */
+body .ss { color: #0086d2 } /* Literal.String.Symbol */
+body .bp { color: #ffffff } /* Name.Builtin.Pseudo */
+body .fm { color: #ff0086; font-weight: bold } /* Name.Function.Magic */
+body .vc { color: #fb660a } /* Name.Variable.Class */
+body .vg { color: #fb660a } /* Name.Variable.Global */
+body .vi { color: #fb660a } /* Name.Variable.Instance */
+body .vm { color: #fb660a } /* Name.Variable.Magic */
+body .il { color: #0086f7; font-weight: bold } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;stdafx.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;FMTabContainer.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;Control\FMTabContainerUI.h&quot;</span><span class="cp"></span>
+
+<span class="k">namespace</span> <span class="n">fm_uimodule</span>
+<span class="p">{</span> 
+	<span class="k">static</span> <span class="n">CTabContainerCreateCallback</span> <span class="n">sTabContainerCreateCallback</span><span class="p">;</span>
+
+	<span class="n">CFMTabContainer</span><span class="o">::</span><span class="n">CFMTabContainer</span><span class="p">()</span>
+	<span class="o">:</span><span class="n">WndModule</span><span class="p">(</span><span class="k">nullptr</span><span class="p">),</span>
+	 <span class="n">m_pTabContainerLayout</span><span class="p">(</span><span class="k">nullptr</span><span class="p">),</span>
+	 <span class="n">m_nMaxItemCount</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+	 <span class="n">m_wndFinalCallback</span><span class="p">(</span><span class="k">nullptr</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">m_xmlfile</span>  <span class="o">=</span> <span class="n">_T</span><span class="p">(</span><span class="s">&quot;&lt;Window caption=</span><span class="se">\&quot;</span><span class="s">0,0,0,32</span><span class="se">\&quot;</span><span class="s"> sizebox=</span><span class="se">\&quot;</span><span class="s">4,4,6,6</span><span class="se">\&quot;</span><span class="s"> &gt;&quot;</span><span class="p">)</span>
+									<span class="n">_T</span><span class="p">(</span><span class="s">&quot;&lt;FMTabContainer bkcolor=</span><span class="se">\&quot;</span><span class="s">#FF666666</span><span class="se">\&quot;</span><span class="s">&gt;&quot;</span><span class="p">)</span>
+										<span class="n">_T</span><span class="p">(</span><span class="s">&quot;&lt;TabView&gt;&quot;</span><span class="p">)</span>
+										<span class="n">_T</span><span class="p">(</span><span class="s">&quot;&lt;/TabView&gt;&quot;</span><span class="p">)</span>
+									<span class="n">_T</span><span class="p">(</span><span class="s">&quot;&lt;/FMTabContainer&gt;&quot;</span><span class="p">)</span>
+								<span class="n">_T</span><span class="p">(</span><span class="s">&quot;&lt;/Window&gt;&quot;</span><span class="p">);</span>
+
+		<span class="n">SetNotify</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+		<span class="n">SetBuilderCallback</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sTabContainerCreateCallback</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="n">CFMTabContainer</span><span class="o">::~</span><span class="n">CFMTabContainer</span><span class="p">()</span>
+	<span class="p">{</span>
+		<span class="n">m_vecHwnd</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">CFMTabContainer</span><span class="o">::</span><span class="n">SetFinalCallback</span><span class="p">(</span><span class="n">FMWndCallback</span> <span class="n">wndCallback</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">wndCallback</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+			<span class="n">m_wndFinalCallback</span> <span class="o">=</span> <span class="n">wndCallback</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">CFMTabContainer</span><span class="o">::</span><span class="n">UpdateRegin</span><span class="p">(</span><span class="k">const</span> <span class="n">RECT</span><span class="o">&amp;</span> <span class="n">rcRegin</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">m_pTabContainerLayout</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+			<span class="k">return</span><span class="p">;</span>
+
+		<span class="n">m_pTabContainerLayout</span><span class="o">-&gt;</span><span class="n">UpdateRegion</span><span class="p">(</span><span class="n">rcRegin</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">CFMTabContainer</span><span class="o">::</span><span class="n">AddItem</span><span class="p">(</span><span class="k">const</span> <span class="n">TagTabAttr</span><span class="o">&amp;</span> <span class="n">table</span><span class="p">,</span> <span class="n">HWND</span> <span class="n">hPageWnd</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">m_vecHwnd</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="n">m_nMaxItemCount</span><span class="p">)</span>
+			<span class="k">return</span><span class="p">;</span>
+
+		<span class="k">if</span> <span class="p">(</span><span class="o">::</span><span class="n">IsWindow</span><span class="p">(</span><span class="n">hPageWnd</span><span class="p">))</span>
+		<span class="p">{</span>
+			<span class="n">tstring</span> <span class="n">strXmlFile</span> <span class="o">=</span> <span class="n">m_xmlfile</span><span class="p">.</span><span class="n">GetData</span><span class="p">();</span>
+			<span class="n">CFMItemXmlHelper</span><span class="o">::</span><span class="n">GetInstance</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">AddTabItem</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">_T</span><span class="p">(</span><span class="s">&quot;FMTabContainer&quot;</span><span class="p">),</span> <span class="o">&amp;</span><span class="n">strXmlFile</span><span class="p">);</span>
+			<span class="n">m_xmlfile</span> <span class="o">=</span> <span class="n">strXmlFile</span><span class="p">.</span><span class="n">c_str</span><span class="p">();</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">CFMTabContainer</span><span class="o">::</span><span class="n">AddNewItem</span><span class="p">(</span><span class="k">const</span> <span class="n">TagTabAttr</span><span class="o">&amp;</span> <span class="n">tabAttr</span><span class="p">,</span> <span class="n">HWND</span> <span class="n">hPageWnd</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">m_vecHwnd</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="n">m_nMaxItemCount</span> <span class="o">||</span> <span class="o">!::</span><span class="n">IsWindow</span><span class="p">(</span><span class="n">hPageWnd</span><span class="p">))</span>
+			<span class="k">return</span><span class="p">;</span>
+
+		<span class="k">if</span> <span class="p">(</span><span class="n">m_pTabContainerLayout</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+			<span class="k">return</span><span class="p">;</span>
+
+		<span class="n">tstring</span> <span class="n">strHeaderXml</span> <span class="o">=</span> <span class="n">CFMItemXmlHelper</span><span class="o">::</span><span class="n">GetInstance</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">AddNewTabItem</span><span class="p">(</span><span class="n">tabAttr</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">strHeaderXml</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+			<span class="k">return</span><span class="p">;</span>
+
+		<span class="n">DuiLib</span><span class="o">::</span><span class="n">CDialogBuilder</span> <span class="n">builder</span><span class="p">;</span>
+		<span class="n">CFMTabHeaderUI</span><span class="o">*</span> <span class="n">pTabHeader</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">CFMTabHeaderUI</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">builder</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="n">strHeaderXml</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> 
+											<span class="p">(</span><span class="n">UINT</span><span class="p">)</span><span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">sTabContainerCreateCallback</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m_pm</span><span class="p">));</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pTabHeader</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+			<span class="k">return</span><span class="p">;</span>
+
+		<span class="n">m_pTabContainerLayout</span><span class="o">-&gt;</span><span class="n">Add</span><span class="p">(</span><span class="n">pTabHeader</span><span class="p">);</span>
+		<span class="n">pTabHeader</span><span class="o">-&gt;</span><span class="n">GetHeaderOpt</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">Activate</span><span class="p">();</span>
+
+		<span class="n">DuiLib</span><span class="o">::</span><span class="n">CContainerUI</span><span class="o">*</span> <span class="n">pTabView</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DuiLib</span><span class="o">::</span><span class="n">CContainerUI</span><span class="p">;</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pTabView</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+			<span class="k">return</span><span class="p">;</span>
+		 
+		<span class="n">m_pTabContainerLayout</span><span class="o">-&gt;</span><span class="n">AddItem2</span><span class="p">(</span><span class="n">pTabView</span><span class="p">);</span>
+		<span class="o">::</span><span class="n">SendMessage</span><span class="p">(</span><span class="n">GetHWND</span><span class="p">(),</span> <span class="n">WM_PAINT</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+		<span class="n">InitSubViewWnd</span><span class="p">(</span><span class="n">hPageWnd</span><span class="p">);</span>
+		<span class="n">m_vecHwnd</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">hPageWnd</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">CFMTabContainer</span><span class="o">::</span><span class="n">RemoveItem</span><span class="p">(</span><span class="k">const</span> <span class="n">tstring</span><span class="o">&amp;</span> <span class="n">strItemName</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">m_pTabContainerLayout</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+			<span class="k">return</span><span class="p">;</span>
+
+		<span class="kt">unsigned</span> <span class="n">nIndex</span> <span class="o">=</span> <span class="n">m_pTabContainerLayout</span><span class="o">-&gt;</span><span class="n">RemoveItem</span><span class="p">(</span><span class="n">strItemName</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">nIndex</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">nIndex</span> <span class="o">&lt;</span> <span class="n">m_vecHwnd</span><span class="p">.</span><span class="n">size</span><span class="p">())</span>
+		<span class="p">{</span>
+			<span class="n">OnDeleteItem</span><span class="p">(</span><span class="n">nIndex</span><span class="p">);</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">CFMTabContainer</span><span class="o">::</span><span class="n">RemoveItem</span><span class="p">(</span><span class="n">HWND</span> <span class="n">hSubWnd</span><span class="p">)</span>
+	<span class="p">{}</span>
+
+	<span class="kt">void</span> <span class="n">CFMTabContainer</span><span class="o">::</span><span class="n">SetMaxItemCount</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">nCount</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">m_nMaxItemCount</span> <span class="o">=</span> <span class="n">nCount</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">CFMTabContainer</span><span class="o">::</span><span class="n">SetTabContainerAttr</span><span class="p">(</span><span class="k">const</span> <span class="n">TagFMTabContainerAttr</span><span class="o">&amp;</span> <span class="n">tcAttr</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">tstring</span> <span class="n">strXmlFile</span> <span class="o">=</span> <span class="n">m_xmlfile</span><span class="p">.</span><span class="n">GetData</span><span class="p">();</span>
+		<span class="n">CFMItemXmlHelper</span><span class="o">::</span><span class="n">GetInstance</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">ModifyTabContainer</span><span class="p">(</span><span class="n">tcAttr</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">strXmlFile</span><span class="p">);</span>
+		<span class="n">m_xmlfile</span> <span class="o">=</span> <span class="n">strXmlFile</span><span class="p">.</span><span class="n">c_str</span><span class="p">();</span>
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">CFMTabContainer</span><span class="o">::</span><span class="n">Notify</span><span class="p">(</span><span class="n">DuiLib</span><span class="o">::</span><span class="n">TNotifyUI</span><span class="o">&amp;</span> <span class="n">msg</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">msg</span><span class="p">.</span><span class="n">sType</span> <span class="o">==</span> <span class="n">DUI_MSGTYPE_WINDOWINIT</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">OnPrepare</span><span class="p">();</span>
+		<span class="p">}</span>
+		<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">msg</span><span class="p">.</span><span class="n">sType</span> <span class="o">==</span> <span class="n">DUI_MSGTYPE_SELECTCHANGED</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">OnSelectChange</span><span class="p">();</span>
+		<span class="p">}</span>
+		<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">msg</span><span class="p">.</span><span class="n">sType</span> <span class="o">==</span> <span class="n">DUI_MSGTYPE_TABDELITEM</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">OnDeleteItem</span><span class="p">(</span><span class="n">msg</span><span class="p">.</span><span class="n">wParam</span><span class="p">);</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">CFMTabContainer</span><span class="o">::</span><span class="n">OnPrepare</span><span class="p">()</span>
+	<span class="p">{</span>
+		<span class="n">m_pTabContainerLayout</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">CFMTabContainerUI</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">m_pm</span><span class="p">.</span><span class="n">GetRoot</span><span class="p">());</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">m_pTabContainerLayout</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+			<span class="k">return</span><span class="p">;</span>
+
+		<span class="n">UpdateSubWndPos</span><span class="p">();</span>
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">CFMTabContainer</span><span class="o">::</span><span class="n">OnSelectChange</span><span class="p">()</span>
+	<span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">m_pTabContainerLayout</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+			<span class="k">return</span><span class="p">;</span>
+
+		<span class="kt">unsigned</span> <span class="n">nIndex</span> <span class="o">=</span> <span class="n">m_pTabContainerLayout</span><span class="o">-&gt;</span><span class="n">GetSelectItemIndex</span><span class="p">();</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">nIndex</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">nIndex</span> <span class="o">&gt;=</span> <span class="n">m_vecHwnd</span><span class="p">.</span><span class="n">size</span><span class="p">())</span>
+			<span class="k">return</span><span class="p">;</span>
+
+		<span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m_vecHwnd</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="o">::</span><span class="n">ShowWindow</span><span class="p">(</span><span class="n">m_vecHwnd</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">nIndex</span><span class="p">)</span> <span class="o">?</span> <span class="nl">SW_SHOW</span> <span class="p">:</span> <span class="n">SW_HIDE</span><span class="p">);</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">CFMTabContainer</span><span class="o">::</span><span class="n">OnDeleteItem</span><span class="p">(</span><span class="kt">unsigned</span> <span class="n">nIndex</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">nIndex</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">nIndex</span> <span class="o">&lt;</span> <span class="n">m_vecHwnd</span><span class="p">.</span><span class="n">size</span><span class="p">())</span>
+		<span class="p">{</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">m_wndFinalCallback</span><span class="p">)</span>
+			<span class="p">{</span>
+				<span class="n">m_wndFinalCallback</span><span class="p">(</span><span class="n">m_vecHwnd</span><span class="p">[</span><span class="n">nIndex</span><span class="p">]);</span>
+			<span class="p">}</span>
+
+			<span class="n">m_vecHwnd</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">m_vecHwnd</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="o">+</span> <span class="n">nIndex</span><span class="p">);</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+
+	<span class="n">LRESULT</span> <span class="n">CFMTabContainer</span><span class="o">::</span><span class="n">OnSize</span><span class="p">(</span><span class="n">UINT</span> <span class="n">uMsg</span><span class="p">,</span> <span class="n">WPARAM</span> <span class="n">wParam</span><span class="p">,</span> <span class="n">LPARAM</span> <span class="n">lParam</span><span class="p">,</span> <span class="n">BOOL</span><span class="o">*</span> <span class="n">bHandled</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">m_pTabContainerLayout</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">RECT</span> <span class="n">rcClient</span><span class="p">;</span>
+			<span class="o">::</span><span class="n">GetClientRect</span><span class="p">(</span><span class="n">GetHWND</span><span class="p">(),</span> <span class="o">&amp;</span><span class="n">rcClient</span><span class="p">);</span>
+			<span class="n">m_pTabContainerLayout</span><span class="o">-&gt;</span><span class="n">UpdateRegion</span><span class="p">(</span><span class="n">rcClient</span><span class="p">);</span>
+		<span class="p">}</span>
+
+		<span class="n">UPDATE_WNDLAYOUT</span><span class="p">();</span>
+		<span class="n">UpdateSubWndPos</span><span class="p">();</span>
+		<span class="k">return</span> <span class="n">__super</span><span class="o">::</span><span class="n">OnSize</span><span class="p">(</span><span class="n">uMsg</span><span class="p">,</span> <span class="n">wParam</span><span class="p">,</span> <span class="n">lParam</span><span class="p">,</span> <span class="n">bHandled</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">CFMTabContainer</span><span class="o">::</span><span class="n">OnFinalMessage</span><span class="p">(</span><span class="n">HWND</span> <span class="n">hWnd</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">m_wndFinalCallback</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="k">for</span> <span class="p">(</span><span class="n">HWND</span> <span class="nl">hWnd</span> <span class="p">:</span> <span class="n">m_vecHwnd</span><span class="p">)</span>
+			<span class="p">{</span>
+				<span class="k">if</span> <span class="p">(</span><span class="o">::</span><span class="n">IsWindow</span><span class="p">(</span><span class="n">hWnd</span><span class="p">))</span>
+					<span class="n">m_wndFinalCallback</span><span class="p">(</span><span class="n">hWnd</span><span class="p">);</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">CFMTabContainer</span><span class="o">::</span><span class="n">UpdateSubWndPos</span><span class="p">()</span>
+	<span class="p">{</span>
+		<span class="n">RECT</span> <span class="n">rcView</span> <span class="o">=</span> <span class="n">m_pTabContainerLayout</span><span class="o">-&gt;</span><span class="n">GetViewItemPos</span><span class="p">();</span>
+		<span class="kt">int</span> <span class="n">iIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="k">for</span> <span class="p">(</span><span class="n">HWND</span> <span class="nl">hWnd</span> <span class="p">:</span> <span class="n">m_vecHwnd</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="kt">bool</span> <span class="n">bVisible</span> <span class="o">=</span> <span class="n">m_pTabContainerLayout</span><span class="o">-&gt;</span><span class="n">IsViewItemVisible</span><span class="p">(</span><span class="n">iIndex</span><span class="o">++</span><span class="p">);</span>
+			<span class="k">if</span> <span class="p">(</span><span class="o">::</span><span class="n">IsWindow</span><span class="p">(</span><span class="n">hWnd</span><span class="p">))</span>
+			<span class="p">{</span>
+				<span class="n">SetChildWnd</span><span class="p">(</span><span class="n">hWnd</span><span class="p">,</span> <span class="n">GetHWND</span><span class="p">());</span>
+				<span class="o">::</span><span class="n">ShowWindow</span><span class="p">(</span><span class="n">hWnd</span><span class="p">,</span> <span class="n">bVisible</span> <span class="o">?</span> <span class="nl">SW_SHOW</span> <span class="p">:</span> <span class="n">SW_HIDE</span><span class="p">);</span>
+
+				<span class="o">::</span><span class="n">MoveWindow</span><span class="p">(</span><span class="n">hWnd</span><span class="p">,</span> <span class="n">rcView</span><span class="p">.</span><span class="n">left</span><span class="p">,</span> <span class="n">rcView</span><span class="p">.</span><span class="n">top</span><span class="p">,</span>
+					<span class="n">rcView</span><span class="p">.</span><span class="n">right</span> <span class="o">-</span> <span class="n">rcView</span><span class="p">.</span><span class="n">left</span><span class="p">,</span>
+					<span class="n">rcView</span><span class="p">.</span><span class="n">bottom</span> <span class="o">-</span> <span class="n">rcView</span><span class="p">.</span><span class="n">top</span><span class="p">,</span> <span class="n">FALSE</span><span class="p">);</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">CFMTabContainer</span><span class="o">::</span><span class="n">InitSubViewWnd</span><span class="p">(</span><span class="n">HWND</span> <span class="n">hSubWnd</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">RECT</span> <span class="n">rcView</span> <span class="o">=</span> <span class="n">m_pTabContainerLayout</span><span class="o">-&gt;</span><span class="n">GetViewItemPos</span><span class="p">();</span>
+
+		<span class="kt">int</span> <span class="n">iIndex</span> <span class="o">=</span> <span class="n">m_pTabContainerLayout</span><span class="o">-&gt;</span><span class="n">GetCount</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+		<span class="k">if</span> <span class="p">(</span><span class="o">::</span><span class="n">IsWindow</span><span class="p">(</span><span class="n">hSubWnd</span><span class="p">))</span>
+		<span class="p">{</span>
+			<span class="n">SetChildWnd</span><span class="p">(</span><span class="n">hSubWnd</span><span class="p">,</span> <span class="n">GetHWND</span><span class="p">());</span>
+			<span class="o">::</span><span class="n">ShowWindow</span><span class="p">(</span><span class="n">hSubWnd</span><span class="p">,</span> <span class="n">SW_SHOW</span><span class="p">);</span>
+
+			<span class="o">::</span><span class="n">MoveWindow</span><span class="p">(</span><span class="n">hSubWnd</span><span class="p">,</span> <span class="n">rcView</span><span class="p">.</span><span class="n">left</span><span class="p">,</span> <span class="n">rcView</span><span class="p">.</span><span class="n">top</span><span class="p">,</span>
+				<span class="n">rcView</span><span class="p">.</span><span class="n">right</span> <span class="o">-</span> <span class="n">rcView</span><span class="p">.</span><span class="n">left</span><span class="p">,</span>
+				<span class="n">rcView</span><span class="p">.</span><span class="n">bottom</span> <span class="o">-</span> <span class="n">rcView</span><span class="p">.</span><span class="n">top</span><span class="p">,</span> <span class="n">FALSE</span><span class="p">);</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</body>
+</html>

@@ -15,7 +15,7 @@
 					<a href="/users/{{ submit_user.user.username }}"><img src="{{ submit_user.photo }}" style="height: 96px; width:80px" /></a>
 				</div>
 				<div class="media-body" style="line-height: 20px">
-					<span style="line-height:25px">英文名字：{{ submit_user.user.username }}</span><br>
+					<!--span style="line-height:25px">英文名字：{{ submit_user.user.username }}</span><br-->
 					<span style="line-height:25px">中文名字：{{ submit_user.chinese_name }}</span><br>
 					<span style="line-height:25px">一级部门：{{ submit_user.primary_department.department_name }}</span><br>
 					<span style="line-height:25px">二级部门：{{ submit_user.secondary_department.department_name}}</span><br>
@@ -44,7 +44,7 @@
 					<a href="/users/{{ reviewer.user.username }}"><img src="{{ reviewer.photo }}" style="height: 96px; width: 80px" /></a>
 				</div>
 				<div class="media-body" style="line-height: 20px">
-					<span style="line-height:25px">英文名字：{{ reviewer.user.username }}</span><br>
+					<!--span style="line-height:25px">英文名字：{{ reviewer.user.username }}</span><br-->
 					<span style="line-height:25px">中文名字：{{ reviewer.chinese_name }}</span><br>
 					<span style="line-height:25px">一级部门：{{ reviewer.primary_department.department_name }}</span><br>
 					<span style="line-height:25px">二级部门：{{ reviewer.secondary_department.department_name}}</span><br>
@@ -56,7 +56,7 @@
 			<div class="panel-body">
 				{% if code_desc_file.file_name %}
 				<a id="code-desc" onclick="onSelectFile('{{ code_desc_file.file_path }}')" href="#">{{ code_desc_file.file_name }}</a>
-				<span style="float:right">&nbsp;-&nbsp;【<a href="{{ code_desc_file.file_path }}">新窗口</a>】</span>
+				<span style="float:right">&nbsp;-&nbsp;【<a href="{{ code_desc_file.file_path }}" target="_blank">新窗口</a>】</span>
 				{% endif %}
 			</div>
 		</div>
@@ -65,7 +65,7 @@
 			<div class="panel-body" >
 				{% for src_code_file in src_code_files %}
 					<a onclick="onSelectFile('{{ src_code_file.file_path }}')" href="#">{{ src_code_file.file_name }}</a>
-					<span style="float:right">&nbsp;-&nbsp;【<a href="{{ src_code_file.file_path }}">新窗口</a>】</span>
+					<span style="float:right">&nbsp;-&nbsp;【<a href="{{ src_code_file.file_path }}" target="_blank">新窗口</a>】</span>
 					<br>
 				{% endfor %}
 			</div>
@@ -75,12 +75,12 @@
 			<div class="panel-body">
 				{% if code_review_file.file_name %}
 				<a onclick="onSelectFile('{{ code_review_file.file_path }}')" href="#">{{ code_review_file.file_name }}</a>
-				<span style="float:right">&nbsp;-&nbsp;【<a href="{{ code_review_file.file_path }}">新窗口</a>】</span>
+				<span style="float:right">&nbsp;-&nbsp;【<a href="{{ code_review_file.file_path }}" target="_blank">新窗口</a>】</span>
 				{% endif %}
 				<br>
 				{% if code_comment_file.file_name %}
 				<a href="#" onclick="onSelectFile('{{ code_comment_file.file_path }}')">{{ code_comment_file.file_name }}</a>
-				<span style="float:right">&nbsp;-&nbsp;【<a href="{{ code_comment_file.file_path }}">新窗口</a>】</span>
+				<span style="float:right">&nbsp;-&nbsp;【<a href="{{ code_comment_file.file_path }}" target="_blank">新窗口</a>】</span>
 				{% endif %}
 			</div>
 		</div>

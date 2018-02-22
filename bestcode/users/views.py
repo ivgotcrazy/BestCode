@@ -44,14 +44,16 @@ def user(request, user_name):
 			my_comment.target_name = my_comment.object_id
 			my_comment.target_url = "/user/" + my_comment.object_id
 
-	print(user_name)
-
 	# get user object
 	try:
 		auth_user = auth_models.User.objects.get(username=user_name)
 		acti_user = models.ActivityUser.objects.get(user=auth_user)
 	except:
 		return render(request, 'comment/500.html')
+
+	# this is a ugly adaption to absolute path and relative path, i just dont want to explain why.
+	if acti_user.photo.__str__()[0] != '/':
+		acti_user.photo = ("/media/%s" % acti_user.photo)
 
 	context = {
 		'nav_items': breadcrumbs.GetNavItems(request),

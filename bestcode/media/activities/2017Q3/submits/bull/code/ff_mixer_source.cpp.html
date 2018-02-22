@@ -1,0 +1,780 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #333333 }
+body  { background: #111111; color: #ffffff }
+body .c { color: #008800; font-style: italic; background-color: #0f140f } /* Comment */
+body .err { color: #ffffff } /* Error */
+body .esc { color: #ffffff } /* Escape */
+body .g { color: #ffffff } /* Generic */
+body .k { color: #fb660a; font-weight: bold } /* Keyword */
+body .l { color: #ffffff } /* Literal */
+body .n { color: #ffffff } /* Name */
+body .o { color: #ffffff } /* Operator */
+body .x { color: #ffffff } /* Other */
+body .p { color: #ffffff } /* Punctuation */
+body .ch { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Hashbang */
+body .cm { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Multiline */
+body .cp { color: #ff0007; font-weight: bold; font-style: italic; background-color: #0f140f } /* Comment.Preproc */
+body .cpf { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.PreprocFile */
+body .c1 { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Single */
+body .cs { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Special */
+body .gd { color: #ffffff } /* Generic.Deleted */
+body .ge { color: #ffffff } /* Generic.Emph */
+body .gr { color: #ffffff } /* Generic.Error */
+body .gh { color: #ffffff; font-weight: bold } /* Generic.Heading */
+body .gi { color: #ffffff } /* Generic.Inserted */
+body .go { color: #444444; background-color: #222222 } /* Generic.Output */
+body .gp { color: #ffffff } /* Generic.Prompt */
+body .gs { color: #ffffff } /* Generic.Strong */
+body .gu { color: #ffffff; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #ffffff } /* Generic.Traceback */
+body .kc { color: #fb660a; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #fb660a; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #fb660a; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #fb660a } /* Keyword.Pseudo */
+body .kr { color: #fb660a; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #cdcaa9; font-weight: bold } /* Keyword.Type */
+body .ld { color: #ffffff } /* Literal.Date */
+body .m { color: #0086f7; font-weight: bold } /* Literal.Number */
+body .s { color: #0086d2 } /* Literal.String */
+body .na { color: #ff0086; font-weight: bold } /* Name.Attribute */
+body .nb { color: #ffffff } /* Name.Builtin */
+body .nc { color: #ffffff } /* Name.Class */
+body .no { color: #0086d2 } /* Name.Constant */
+body .nd { color: #ffffff } /* Name.Decorator */
+body .ni { color: #ffffff } /* Name.Entity */
+body .ne { color: #ffffff } /* Name.Exception */
+body .nf { color: #ff0086; font-weight: bold } /* Name.Function */
+body .nl { color: #ffffff } /* Name.Label */
+body .nn { color: #ffffff } /* Name.Namespace */
+body .nx { color: #ffffff } /* Name.Other */
+body .py { color: #ffffff } /* Name.Property */
+body .nt { color: #fb660a; font-weight: bold } /* Name.Tag */
+body .nv { color: #fb660a } /* Name.Variable */
+body .ow { color: #ffffff } /* Operator.Word */
+body .w { color: #888888 } /* Text.Whitespace */
+body .mb { color: #0086f7; font-weight: bold } /* Literal.Number.Bin */
+body .mf { color: #0086f7; font-weight: bold } /* Literal.Number.Float */
+body .mh { color: #0086f7; font-weight: bold } /* Literal.Number.Hex */
+body .mi { color: #0086f7; font-weight: bold } /* Literal.Number.Integer */
+body .mo { color: #0086f7; font-weight: bold } /* Literal.Number.Oct */
+body .sa { color: #0086d2 } /* Literal.String.Affix */
+body .sb { color: #0086d2 } /* Literal.String.Backtick */
+body .sc { color: #0086d2 } /* Literal.String.Char */
+body .dl { color: #0086d2 } /* Literal.String.Delimiter */
+body .sd { color: #0086d2 } /* Literal.String.Doc */
+body .s2 { color: #0086d2 } /* Literal.String.Double */
+body .se { color: #0086d2 } /* Literal.String.Escape */
+body .sh { color: #0086d2 } /* Literal.String.Heredoc */
+body .si { color: #0086d2 } /* Literal.String.Interpol */
+body .sx { color: #0086d2 } /* Literal.String.Other */
+body .sr { color: #0086d2 } /* Literal.String.Regex */
+body .s1 { color: #0086d2 } /* Literal.String.Single */
+body .ss { color: #0086d2 } /* Literal.String.Symbol */
+body .bp { color: #ffffff } /* Name.Builtin.Pseudo */
+body .fm { color: #ff0086; font-weight: bold } /* Name.Function.Magic */
+body .vc { color: #fb660a } /* Name.Variable.Class */
+body .vg { color: #fb660a } /* Name.Variable.Global */
+body .vi { color: #fb660a } /* Name.Variable.Instance */
+body .vm { color: #fb660a } /* Name.Variable.Magic */
+body .il { color: #0086f7; font-weight: bold } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="cm">/*##############################################################################</span>
+<span class="cm">* 文件：FFMixerSource.cpp</span>
+<span class="cm">* 描述：软处理合成源（将加入的ISource进行软合成）的定义</span>
+<span class="cm">* 作者：bull</span>
+<span class="cm">* 时间：2017年9月5日</span>
+<span class="cm">* 版权：Copyright(C) 2017 Fsmeeting.com. All rights reserved.</span>
+<span class="cm">#############################################################################*/</span>
+
+<span class="cm">/**************************** 条件编译选项和头文件 ****************************/</span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;ff_mixer_source.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;BaseFileFunction.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;media_source.h&quot;</span><span class="cp"></span>
+
+<span class="cm">/********************************** 常量和宏 **********************************/</span>
+
+<span class="cp">#define FF_SOURCE_RING_SIZE 8</span>
+
+<span class="cm">/**********************************  类声明  ***********************************/</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：创建合成源</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">ERetCode</span> <span class="n">FFMixerSource</span><span class="o">::</span><span class="n">CreateSource</span><span class="p">(</span><span class="n">TSourceProps</span><span class="o">*</span> <span class="n">i_src_props_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">i_src_props_ptr</span><span class="p">,</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">);</span>
+
+    <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_src_props</span><span class="p">,</span> <span class="n">i_src_props_ptr</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">TSourceProps</span><span class="p">));</span>
+
+    <span class="n">AllocDataBuffer</span><span class="p">();</span>
+
+    <span class="n">m_media_tool_ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MediaTool</span><span class="p">(</span><span class="n">g_rbs_Log_ptr</span><span class="p">);</span>
+    <span class="n">m_soft_logo_ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FFLogo</span><span class="p">;</span>
+    <span class="n">m_soft_logo_ptr</span><span class="o">-&gt;</span><span class="n">Init</span><span class="p">();</span>
+    <span class="n">m_soft_subtitle_ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FFSubTitle</span><span class="p">;</span>
+    <span class="n">m_soft_subtitle_ptr</span><span class="o">-&gt;</span><span class="n">Init</span><span class="p">();</span>
+    <span class="n">m_dict_effect_ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DirectEffect</span><span class="p">;</span>
+
+	<span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Create MixerSource[%ld] Format[ %d ], Size[ %dx%d ]&quot;</span><span class="p">,</span>
+		<span class="n">m_src_props</span><span class="p">.</span><span class="n">user_data</span><span class="p">,</span> <span class="n">m_src_props</span><span class="p">.</span><span class="n">format</span><span class="p">,</span>
+		<span class="n">m_src_props</span><span class="p">.</span><span class="n">src_size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">m_src_props</span><span class="p">.</span><span class="n">src_size</span><span class="p">.</span><span class="n">height</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="nf">StartThread</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：销毁合成源</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">ERetCode</span> <span class="n">FFMixerSource</span><span class="o">::</span><span class="n">DestroySource</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">StopThread</span><span class="p">();</span>
+
+    <span class="n">ReleaseDataBuffer</span><span class="p">();</span>
+
+    <span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">m_media_tool_ptr</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_soft_logo_ptr</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">m_soft_logo_ptr</span><span class="o">-&gt;</span><span class="n">UnInit</span><span class="p">();</span>
+        <span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">m_soft_logo_ptr</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_soft_subtitle_ptr</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">m_soft_subtitle_ptr</span><span class="o">-&gt;</span><span class="n">UnInit</span><span class="p">();</span>
+        <span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">m_soft_subtitle_ptr</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_dict_effect_ptr</span><span class="p">)</span>
+        <span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">m_dict_effect_ptr</span><span class="p">);</span>
+
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Destroy MixerSource [%d]&quot;</span><span class="p">,</span> <span class="n">m_src_props</span><span class="p">.</span><span class="n">user_data</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：设置字幕</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">ERetCode</span> <span class="n">FFMixerSource</span><span class="o">::</span><span class="n">SetSubTitle</span><span class="p">(</span><span class="n">TTextInfo</span> <span class="o">*</span><span class="n">i_text_info_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">unique_lock</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lock</span><span class="p">(</span><span class="n">m_filter_mtx</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">i_text_info_ptr</span><span class="o">-&gt;</span><span class="n">is_time_changed</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">i_text_info_ptr</span><span class="p">)</span>
+			<span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_text_info</span><span class="p">,</span> <span class="n">i_text_info_ptr</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">m_text_info</span><span class="p">));</span>
+        <span class="k">else</span>
+			<span class="nf">memset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_text_info</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">m_text_info</span><span class="p">));</span>
+
+        <span class="n">m_filter_status_flag</span> <span class="o">|=</span> <span class="n">EM_FILTER_MODIFY_SUBTITLE</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：设置台标</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">ERetCode</span> <span class="n">FFMixerSource</span><span class="o">::</span><span class="n">SetLogo</span><span class="p">(</span><span class="n">TLogoInfo</span> <span class="o">*</span><span class="n">i_logo_info_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">unique_lock</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lock</span><span class="p">(</span><span class="n">m_filter_mtx</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">i_logo_info_ptr</span><span class="p">)</span>
+        <span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_logo_info</span><span class="p">,</span> <span class="n">i_logo_info_ptr</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">TLogoInfo</span><span class="p">));</span>
+    <span class="k">else</span>
+        <span class="nf">memset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_logo_info</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">TLogoInfo</span><span class="p">));</span>
+
+    <span class="n">m_filter_status_flag</span> <span class="o">|=</span> <span class="n">EM_FILTER_MODIFY_LOGO</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：设置特效</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">ERetCode</span> <span class="n">FFMixerSource</span><span class="o">::</span><span class="n">SetEffect</span><span class="p">(</span><span class="n">EEffectType</span> <span class="n">i_effect</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">unique_lock</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lock</span><span class="p">(</span><span class="n">m_filter_mtx</span><span class="p">);</span>
+        <span class="n">m_effect_type</span> <span class="o">=</span> <span class="n">i_effect</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Set Mixer Source [%d] Effect [%d]&quot;</span><span class="p">,</span> <span class="n">m_src_props</span><span class="p">.</span><span class="n">user_data</span><span class="p">,</span> <span class="n">m_effect_type</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：运行特效</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">ERetCode</span> <span class="n">FFMixerSource</span><span class="o">::</span><span class="n">RunEffect</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="c1">//准备一份特效的底图</span>
+	<span class="p">{</span>
+		<span class="n">std</span><span class="o">::</span><span class="n">unique_lock</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lock</span><span class="p">(</span><span class="n">m_mixer_mtx</span><span class="p">);</span>
+		<span class="n">ReadyEffectBG</span><span class="p">();</span>
+	<span class="p">}</span>
+
+    <span class="p">{</span>
+		 <span class="n">std</span><span class="o">::</span><span class="n">unique_lock</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lock</span><span class="p">(</span><span class="n">m_filter_mtx</span><span class="p">);</span>
+		 <span class="n">m_dict_effect_ptr</span><span class="o">-&gt;</span><span class="n">SetEffect</span><span class="p">(</span><span class="n">m_effect_type</span><span class="p">);</span>
+		 <span class="n">m_dict_effect_ptr</span><span class="o">-&gt;</span><span class="n">SetDictSize</span><span class="p">(</span><span class="n">m_src_props</span><span class="p">.</span><span class="n">src_size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">m_src_props</span><span class="p">.</span><span class="n">src_size</span><span class="p">.</span><span class="n">height</span><span class="p">);</span>
+		 <span class="n">m_dict_effect_ptr</span><span class="o">-&gt;</span><span class="n">UpdateLastDictImage</span><span class="p">(</span><span class="n">m_effect_bg_buffer</span><span class="p">);</span>
+    <span class="p">}</span>
+
+ <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：获取图像数据</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">VideoSrcImage</span> <span class="n">FFMixerSource</span><span class="o">::</span><span class="n">GetReadyImage</span><span class="p">(</span><span class="n">TOutFrame</span><span class="o">*</span> <span class="n">o_data_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">o_data_ptr</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+		<span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span>
+
+	<span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="n">m_modify_size_flag</span> <span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">o_data_ptr</span><span class="o">-&gt;</span><span class="n">width</span> <span class="o">=</span> <span class="n">m_src_props</span><span class="p">.</span><span class="n">src_size</span><span class="p">.</span><span class="n">width</span><span class="p">;</span>
+		<span class="n">o_data_ptr</span><span class="o">-&gt;</span><span class="n">height</span> <span class="o">=</span> <span class="n">m_src_props</span><span class="p">.</span><span class="n">src_size</span><span class="p">.</span><span class="n">height</span><span class="p">;</span>
+		<span class="n">o_data_ptr</span><span class="o">-&gt;</span><span class="n">data_len</span> <span class="o">=</span> <span class="n">m_src_image_size</span><span class="p">;</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">m_media_Ring_Buffer</span><span class="p">.</span><span class="n">GetData</span><span class="p">(</span><span class="n">o_data_ptr</span><span class="o">-&gt;</span><span class="n">frame_data_ptr</span><span class="p">,</span> <span class="p">(</span><span class="kt">uint32_t</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">o_data_ptr</span><span class="o">-&gt;</span><span class="n">data_len</span><span class="p">)</span> <span class="o">==</span> <span class="n">EM_RC_OK</span><span class="p">)</span>
+			<span class="k">return</span> <span class="o">&amp;</span><span class="n">m_media_Ring_Buffer</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：获取源属性</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">TSourceProps</span><span class="o">*</span> <span class="n">FFMixerSource</span><span class="o">::</span><span class="n">GetSrcProps</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="o">&amp;</span><span class="n">m_src_props</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：修改合成大小</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">ERetCode</span> <span class="n">FFMixerSource</span><span class="o">::</span><span class="n">ModifyMixerSize</span><span class="p">(</span><span class="n">TSize</span><span class="o">*</span> <span class="n">i_size_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">m_modify_size_flag</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+	<span class="p">{</span>
+		<span class="n">std</span><span class="o">::</span><span class="n">unique_lock</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lock</span><span class="p">(</span><span class="n">m_mixer_mtx</span><span class="p">);</span>
+		<span class="c1">//修改缩放器</span>
+		<span class="n">m_src_props</span><span class="p">.</span><span class="n">src_size</span> <span class="o">=</span> <span class="o">*</span><span class="n">i_size_ptr</span><span class="p">;</span>
+		<span class="n">m_src_image_size</span> <span class="o">=</span> <span class="n">RBS_IYUV_SIZE</span><span class="p">(</span><span class="n">m_src_props</span><span class="p">.</span><span class="n">src_size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">m_src_props</span><span class="p">.</span><span class="n">src_size</span><span class="p">.</span><span class="n">height</span><span class="p">);</span>
+
+		<span class="n">LOG_WARN</span><span class="p">(</span><span class="s">&quot;Stream [%d] Modify Mixer Size Width:Height [%d:%d]&quot;</span><span class="p">,</span> <span class="n">m_src_props</span><span class="p">.</span><span class="n">user_data</span><span class="p">,</span> <span class="n">i_size_ptr</span><span class="o">-&gt;</span><span class="n">width</span><span class="p">,</span> <span class="n">i_size_ptr</span><span class="o">-&gt;</span><span class="n">height</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="n">m_modify_size_flag</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：分辨数据缓冲</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">ERetCode</span> <span class="n">FFMixerSource</span><span class="o">::</span><span class="n">AllocDataBuffer</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">m_buffer_size</span> <span class="o">=</span> <span class="n">RBS_IYUV_SIZE</span><span class="p">(</span><span class="n">COMMON_DEFAULT_WIDTH</span><span class="p">,</span><span class="n">COMMON_DEFAULT_HEIGHT</span><span class="p">);</span>
+    <span class="n">m_src_image_size</span> <span class="o">=</span> <span class="n">RBS_IYUV_SIZE</span><span class="p">(</span><span class="n">m_src_props</span><span class="p">.</span><span class="n">src_size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span><span class="n">m_src_props</span><span class="p">.</span><span class="n">src_size</span><span class="p">.</span><span class="n">height</span><span class="p">);</span>
+
+    <span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">m_scale_buffer_ptr</span><span class="p">);</span>
+    <span class="n">m_scale_buffer_ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">uint8_t</span><span class="p">[</span><span class="n">m_buffer_size</span><span class="p">];</span>
+
+    <span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">m_read_buffer</span><span class="p">.</span><span class="n">frame_data_ptr</span><span class="p">);</span>
+    <span class="n">m_read_buffer</span><span class="p">.</span><span class="n">frame_data_ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">uint8_t</span><span class="p">[</span><span class="n">m_buffer_size</span><span class="p">];</span>
+
+	<span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">m_mixer_buffer_ptr</span><span class="p">);</span>
+	<span class="n">m_mixer_buffer_ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">uint8_t</span><span class="p">[</span><span class="n">m_buffer_size</span><span class="p">];</span>
+	
+	<span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">m_effect_bg_buffer</span><span class="p">);</span>
+    <span class="n">m_effect_bg_buffer</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">uint8_t</span><span class="p">[</span><span class="n">COMMON_SIZE_4M</span><span class="p">];</span>
+
+	<span class="n">m_media_Ring_Buffer</span><span class="p">.</span><span class="n">CreateRing</span><span class="p">(</span><span class="n">FPS_BUF_COUNT</span><span class="p">,</span> <span class="n">m_buffer_size</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：释放分辨数据缓冲</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">ERetCode</span> <span class="n">FFMixerSource</span><span class="o">::</span><span class="n">ReleaseDataBuffer</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span> <span class="n">m_read_buffer</span><span class="p">.</span><span class="n">frame_data_ptr</span> <span class="p">)</span>
+		<span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">m_read_buffer</span><span class="p">.</span><span class="n">frame_data_ptr</span><span class="p">);</span>
+
+	<span class="k">if</span> <span class="p">(</span><span class="n">m_scale_buffer_ptr</span><span class="p">)</span>
+		<span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">m_scale_buffer_ptr</span><span class="p">);</span>
+
+	<span class="k">if</span> <span class="p">(</span><span class="n">m_mixer_buffer_ptr</span><span class="p">)</span>
+		<span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">m_mixer_buffer_ptr</span><span class="p">);</span>
+
+	<span class="k">if</span> <span class="p">(</span><span class="n">m_effect_bg_buffer</span><span class="p">)</span>
+		<span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">m_effect_bg_buffer</span><span class="p">);</span>
+
+	<span class="n">m_media_Ring_Buffer</span><span class="p">.</span><span class="n">DestroyRing</span><span class="p">();</span>
+
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：添加数据源</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">ERetCode</span> <span class="n">FFMixerSource</span><span class="o">::</span><span class="n">AddSource</span><span class="p">(</span><span class="kt">int</span> <span class="n">i_src_id</span><span class="p">,</span> <span class="n">TProcItem</span><span class="o">*</span> <span class="n">i_item_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">i_item_ptr</span><span class="p">,</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">unique_lock</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lock</span><span class="p">(</span><span class="n">m_mixer_mtx</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_cur_src_count</span> <span class="o">&gt;=</span> <span class="n">m_max_src_count</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">LOG_ERROR</span><span class="p">(</span><span class="s">&quot;Reach Max VideoMixer Source Count[%d/%d]&quot;</span><span class="p">,</span> <span class="n">m_cur_src_count</span><span class="p">,</span> <span class="n">m_max_src_count</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">EM_RC_SIZE_NOTENOUGH</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">TMixerMember</span><span class="o">*</span> <span class="n">mixer_member_ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TMixerMember</span><span class="p">;</span>
+    <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">tmp_ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TMixerMember</span><span class="p">;</span>
+    <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span> <span class="o">=</span> <span class="n">i_item_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">;</span>
+    <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">source_ptr</span> <span class="o">=</span> <span class="n">i_item_ptr</span><span class="o">-&gt;</span><span class="n">source_ptr</span><span class="p">;</span>
+    <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">level</span> <span class="o">=</span> <span class="n">i_item_ptr</span><span class="o">-&gt;</span><span class="n">level</span><span class="p">;</span>
+    <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">mix_state</span> <span class="o">=</span> <span class="n">EM_SS_ACTIVING</span><span class="p">;</span>
+
+    <span class="n">m_mixer_map</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">MapMixerMember</span><span class="o">::</span><span class="n">value_type</span><span class="p">(</span><span class="n">i_src_id</span><span class="p">,</span> <span class="n">mixer_member_ptr</span><span class="p">));</span>
+    <span class="n">m_cur_src_count</span><span class="o">++</span><span class="p">;</span>
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Add Source[%d] To MixerSource [%d], Level[%d], Pos[%d,%d], Size[%dx%d], Count[%d/%d] SourcePtr [%p]&quot;</span><span class="p">,</span>
+        <span class="n">i_src_id</span><span class="p">,</span> <span class="n">m_src_props</span><span class="p">.</span><span class="n">user_data</span><span class="p">,</span> <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">level</span><span class="p">,</span> <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">iX</span><span class="p">,</span> <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">iY</span><span class="p">,</span>
+        <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">height</span><span class="p">,</span> <span class="n">m_cur_src_count</span><span class="p">,</span> <span class="n">m_max_src_count</span><span class="p">,</span> <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">source_ptr</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：删除数据源</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">ERetCode</span> <span class="n">FFMixerSource</span><span class="o">::</span><span class="n">DelSource</span><span class="p">(</span><span class="kt">int</span> <span class="n">i_src_id</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">unique_lock</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lock</span><span class="p">(</span><span class="n">m_mixer_mtx</span><span class="p">);</span>
+    <span class="k">auto</span> <span class="n">node_map</span> <span class="o">=</span> <span class="n">m_mixer_map</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">i_src_id</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">node_map</span> <span class="o">==</span> <span class="n">m_mixer_map</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">EM_RC_XML_NODE_NOTEXIST</span><span class="p">;</span>
+
+    <span class="n">TMixerMember</span><span class="o">*</span> <span class="n">mixer_member_ptr</span> <span class="o">=</span> <span class="n">node_map</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span>
+    <span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">tmp_ptr</span><span class="p">);</span>
+    <span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">mixer_member_ptr</span><span class="p">);</span>
+
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;MixerSource[%d] Remove Source[%d]&quot;</span><span class="p">,</span> <span class="n">m_src_props</span><span class="p">.</span><span class="n">src_id</span><span class="p">,</span> <span class="n">i_src_id</span><span class="p">);</span>
+    <span class="n">m_mixer_map</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">node_map</span><span class="p">);</span>
+
+    <span class="n">m_cur_src_count</span><span class="o">--</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：修改源布局信息</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">ERetCode</span> <span class="n">FFMixerSource</span><span class="o">::</span><span class="n">ModifySrcOutRect</span><span class="p">(</span><span class="kt">int</span> <span class="n">i_src_id</span><span class="p">,</span> <span class="n">TRect</span><span class="o">*</span> <span class="n">i_out_rect_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">i_out_rect_ptr</span><span class="p">,</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">);</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">unique_lock</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lock</span><span class="p">(</span><span class="n">m_mixer_mtx</span><span class="p">);</span>
+    <span class="k">auto</span> <span class="n">node_map</span> <span class="o">=</span> <span class="n">m_mixer_map</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">i_src_id</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">node_map</span> <span class="o">==</span> <span class="n">m_mixer_map</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">EM_RC_XML_NODE_NOTEXIST</span><span class="p">;</span>
+
+    <span class="n">TMixerMember</span><span class="o">*</span> <span class="n">mixer_mem_ptr</span> <span class="o">=</span> <span class="n">node_map</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">mixer_mem_ptr</span><span class="o">-&gt;</span><span class="n">mix_state</span> <span class="o">==</span> <span class="n">EM_SS_NONE</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">;</span>
+
+    <span class="n">mixer_mem_ptr</span><span class="o">-&gt;</span><span class="n">tmp_ptr</span><span class="o">-&gt;</span><span class="n">rect</span> <span class="o">=</span> <span class="o">*</span><span class="n">i_out_rect_ptr</span><span class="p">;</span>
+    <span class="n">mixer_mem_ptr</span><span class="o">-&gt;</span><span class="n">mix_state</span> <span class="o">|=</span> <span class="n">EM_SS_MODIFY_POS</span><span class="p">;</span>   <span class="c1">// modify outrect                </span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：修改数据源层级</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">ERetCode</span> <span class="n">FFMixerSource</span><span class="o">::</span><span class="n">ModifySrcLevel</span><span class="p">(</span><span class="kt">int</span> <span class="n">i_src_id</span><span class="p">,</span> <span class="n">EVMixLevel</span> <span class="n">i_level</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">unique_lock</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lock</span><span class="p">(</span><span class="n">m_mixer_mtx</span><span class="p">);</span>
+    <span class="k">auto</span> <span class="n">node_map</span> <span class="o">=</span> <span class="n">m_mixer_map</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">i_src_id</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">node_map</span> <span class="o">==</span> <span class="n">m_mixer_map</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">EM_RC_XML_NODE_NOTEXIST</span><span class="p">;</span>
+
+    <span class="n">TMixerMember</span><span class="o">*</span> <span class="n">mixer_member_ptr</span> <span class="o">=</span> <span class="n">node_map</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">mix_state</span> <span class="o">==</span> <span class="n">EM_SS_NONE</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">;</span>
+
+    <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">tmp_ptr</span><span class="o">-&gt;</span><span class="n">level</span> <span class="o">=</span> <span class="n">i_level</span><span class="p">;</span>
+    <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">mix_state</span> <span class="o">|=</span> <span class="n">EM_SS_MODIFY_LEVEL</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：修改数据源</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">ERetCode</span> <span class="n">FFMixerSource</span><span class="o">::</span><span class="n">ModifySrcSource</span><span class="p">(</span><span class="kt">int</span> <span class="n">i_src_id</span><span class="p">,</span> <span class="n">ISource</span><span class="o">*</span> <span class="n">i_source_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">i_source_ptr</span><span class="p">,</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">unique_lock</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lock</span><span class="p">(</span><span class="n">m_mixer_mtx</span><span class="p">);</span>
+
+    <span class="k">auto</span> <span class="n">node_map</span> <span class="o">=</span> <span class="n">m_mixer_map</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">i_src_id</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">node_map</span> <span class="o">==</span> <span class="n">m_mixer_map</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">EM_RC_XML_NODE_NOTEXIST</span><span class="p">;</span>
+
+    <span class="c1">// 修改source需要加锁，保证线程没有在执行合成</span>
+    <span class="n">TMixerMember</span><span class="o">*</span> <span class="n">mixer_mem_ptr</span> <span class="o">=</span> <span class="n">node_map</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">mixer_mem_ptr</span><span class="o">-&gt;</span><span class="n">mix_state</span> <span class="o">==</span> <span class="n">EM_SS_NONE</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">;</span>
+
+    <span class="n">mixer_mem_ptr</span><span class="o">-&gt;</span><span class="n">source_ptr</span> <span class="o">=</span> <span class="n">i_source_ptr</span><span class="p">;</span>
+    <span class="n">mixer_mem_ptr</span><span class="o">-&gt;</span><span class="n">mix_state</span> <span class="o">=</span> <span class="n">EM_SS_ACTIVING</span><span class="p">;</span>
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;MixerSource[%d] Modify Source[%d] Input Source Object!&quot;</span><span class="p">,</span> <span class="n">m_src_props</span><span class="p">.</span><span class="n">src_id</span><span class="p">,</span> <span class="n">i_src_id</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：合成源业务线程</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">ERetCode</span> <span class="n">FFMixerSource</span><span class="o">::</span><span class="n">ThreadFuncProc</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">uint64_t</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">uint64_t</span> <span class="n">tick</span> <span class="o">=</span> <span class="n">stGetCurrentMicroSecond</span><span class="p">();</span>
+    <span class="kt">uint64_t</span> <span class="n">frame_timestamp</span> <span class="o">=</span> <span class="n">COMMON_TICK_BASE</span> <span class="o">/</span> <span class="n">COMMON_DEFAULT_FPS</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_src_props</span><span class="p">.</span><span class="n">fps</span><span class="p">)</span>
+        <span class="n">frame_timestamp</span> <span class="o">=</span> <span class="n">COMMON_TICK_BASE</span> <span class="o">/</span> <span class="n">m_src_props</span><span class="p">.</span><span class="n">fps</span><span class="p">;</span>
+
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Start FFVideoMixerThread!&quot;</span><span class="p">);</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">m_exit_code</span> <span class="o">==</span> <span class="n">EM_TS_RUN</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="p">{</span>
+            <span class="n">m_mixer_mtx</span><span class="p">.</span><span class="n">lock</span><span class="p">();</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">m_cur_src_count</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">m_mixer_mtx</span><span class="p">.</span><span class="n">unlock</span><span class="p">();</span>
+                <span class="n">usleep</span><span class="p">(</span><span class="n">COMMON_TICK_SECOND</span><span class="p">);</span>
+                <span class="k">continue</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="n">m_mixer_mtx</span><span class="p">.</span><span class="n">unlock</span><span class="p">();</span>
+        <span class="p">}</span>
+  <span class="p">{</span>
+      <span class="n">std</span><span class="o">::</span><span class="n">unique_lock</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lock</span><span class="p">(</span><span class="n">m_mixer_mtx</span><span class="p">);</span>
+
+      <span class="n">CheckFilterState</span><span class="p">();</span>
+      <span class="n">CheckSourceState</span><span class="p">();</span>
+      <span class="n">RunVideoMixerTask</span><span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span><span class="n">stGetCurrentMicroSecond</span><span class="p">()</span> <span class="o">-</span> <span class="n">tick</span> <span class="o">&lt;</span> <span class="n">count</span> <span class="o">*</span> <span class="n">frame_timestamp</span><span class="p">)</span>
+      <span class="n">usleep</span><span class="p">(</span><span class="mi">5000</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">m_exit_code</span> <span class="o">=</span> <span class="n">EM_TS_STOP</span><span class="p">;</span>
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Stop VideoMixerThread!&quot;</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：检查filter状态</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">ERetCode</span> <span class="n">FFMixerSource</span><span class="o">::</span><span class="n">CheckFilterState</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">unique_lock</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lock</span><span class="p">(</span><span class="n">m_filter_mtx</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_filter_status_flag</span> <span class="o">&amp;</span> <span class="n">EM_FILTER_MODIFY_SUBTITLE</span> <span class="o">&amp;&amp;</span> <span class="n">m_soft_subtitle_ptr</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">m_soft_subtitle_ptr</span><span class="o">-&gt;</span><span class="n">UnInit</span><span class="p">();</span>
+        <span class="n">m_soft_subtitle_ptr</span><span class="o">-&gt;</span><span class="n">Init</span><span class="p">();</span>
+        <span class="n">m_soft_subtitle_ptr</span><span class="o">-&gt;</span><span class="n">SetVideoSourceSize</span><span class="p">(</span><span class="n">m_src_props</span><span class="p">.</span><span class="n">src_size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">m_src_props</span><span class="p">.</span><span class="n">src_size</span><span class="p">.</span><span class="n">height</span><span class="p">);</span>
+        <span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">m_text_info</span><span class="p">.</span><span class="n">font_size</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">m_src_props</span><span class="p">.</span><span class="n">src_size</span><span class="p">.</span><span class="n">width</span> <span class="o">&lt;</span> <span class="n">COMMON_TICK_SECOND</span><span class="p">)</span> <span class="c1">// 标清</span>
+            <span class="n">m_text_info</span><span class="p">.</span><span class="n">font_size</span> <span class="o">=</span> <span class="mi">24</span><span class="p">;</span>
+        <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">m_src_props</span><span class="p">.</span><span class="n">src_size</span><span class="p">.</span><span class="n">width</span> <span class="o">&lt;</span> <span class="n">COMMON_DEFAULT_WIDTH</span><span class="p">)</span> <span class="c1">//高清</span>
+            <span class="n">m_text_info</span><span class="p">.</span><span class="n">font_size</span> <span class="o">=</span> <span class="mi">48</span><span class="p">;</span>
+        <span class="k">else</span><span class="c1">//全高清</span>
+            <span class="n">m_text_info</span><span class="p">.</span><span class="n">font_size</span> <span class="o">=</span> <span class="mi">72</span><span class="p">;</span>
+
+        <span class="n">m_soft_subtitle_ptr</span><span class="o">-&gt;</span><span class="n">SetSubTitle</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_text_info</span><span class="p">);</span>
+        <span class="n">m_text_info</span><span class="p">.</span><span class="n">font_size</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_filter_status_flag</span> <span class="o">&amp;</span> <span class="n">EM_FILTER_MODIFY_LOGO</span> <span class="o">&amp;&amp;</span> <span class="n">m_soft_logo_ptr</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">m_soft_logo_ptr</span><span class="o">-&gt;</span><span class="n">UnInit</span><span class="p">();</span>
+        <span class="n">m_soft_logo_ptr</span><span class="o">-&gt;</span><span class="n">Init</span><span class="p">();</span>
+        <span class="n">m_soft_logo_ptr</span><span class="o">-&gt;</span><span class="n">SetVideoSourceSize</span><span class="p">(</span><span class="n">m_src_props</span><span class="p">.</span><span class="n">src_size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">m_src_props</span><span class="p">.</span><span class="n">src_size</span><span class="p">.</span><span class="n">height</span><span class="p">);</span>
+        <span class="n">m_soft_logo_ptr</span><span class="o">-&gt;</span><span class="n">SetLogo</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_logo_info</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">m_filter_status_flag</span> <span class="o">=</span> <span class="n">EM_FILTER_NONE</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：检查数据源状态</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">ERetCode</span> <span class="n">FFMixerSource</span><span class="o">::</span><span class="n">CheckSourceState</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">TMixerMember</span><span class="o">*</span> <span class="n">mixer_mem_ptr</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+
+    <span class="k">auto</span> <span class="n">node_map</span> <span class="o">=</span> <span class="n">m_mixer_map</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+    <span class="k">for</span> <span class="p">(;</span> <span class="n">node_map</span> <span class="o">!=</span> <span class="n">m_mixer_map</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">node_map</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">mixer_mem_ptr</span> <span class="o">=</span> <span class="n">node_map</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">mixer_mem_ptr</span><span class="o">-&gt;</span><span class="n">mix_state</span> <span class="o">==</span> <span class="n">EM_SS_ACTIVING</span><span class="p">)</span>
+            <span class="k">continue</span><span class="p">;</span>
+
+        <span class="kt">int</span> <span class="n">iSrcID</span> <span class="o">=</span> <span class="n">node_map</span><span class="o">-&gt;</span><span class="n">first</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">mixer_mem_ptr</span><span class="o">-&gt;</span><span class="n">mix_state</span> <span class="o">&amp;</span> <span class="n">EM_SS_MODIFY_LEVEL</span><span class="p">)</span>
+        <span class="p">{</span><span class="c1">// 需要修改输出层级</span>
+            <span class="n">mixer_mem_ptr</span><span class="o">-&gt;</span><span class="n">level</span> <span class="o">=</span> <span class="n">mixer_mem_ptr</span><span class="o">-&gt;</span><span class="n">tmp_ptr</span><span class="o">-&gt;</span><span class="n">level</span><span class="p">;</span>
+            <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;MixerSource[%d] Modify Source[%d] Level[%d]&quot;</span><span class="p">,</span>
+                <span class="n">m_src_props</span><span class="p">.</span><span class="n">src_id</span><span class="p">,</span> <span class="n">iSrcID</span><span class="p">,</span> <span class="n">mixer_mem_ptr</span><span class="o">-&gt;</span><span class="n">level</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">mixer_mem_ptr</span><span class="o">-&gt;</span><span class="n">mix_state</span> <span class="o">&amp;</span> <span class="n">EM_SS_MODIFY_POS</span><span class="p">)</span>
+        <span class="p">{</span><span class="c1">// 需要修改输出位置</span>
+            <span class="n">mixer_mem_ptr</span><span class="o">-&gt;</span><span class="n">rect</span> <span class="o">=</span> <span class="n">mixer_mem_ptr</span><span class="o">-&gt;</span><span class="n">tmp_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">;</span>
+            <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;MixerSource[%d] Modify Source[%d] Pos[%dx%d], Size[%dx%d]&quot;</span><span class="p">,</span>
+                <span class="n">m_src_props</span><span class="p">.</span><span class="n">src_id</span><span class="p">,</span> <span class="n">iSrcID</span><span class="p">,</span> <span class="n">mixer_mem_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">iX</span><span class="p">,</span> <span class="n">mixer_mem_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">iY</span><span class="p">,</span>
+                <span class="n">mixer_mem_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">mixer_mem_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">height</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">mixer_mem_ptr</span><span class="o">-&gt;</span><span class="n">mix_state</span> <span class="o">=</span> <span class="n">EM_SS_ACTIVING</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：准备特效背景</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">ERetCode</span> <span class="n">FFMixerSource</span><span class="o">::</span><span class="n">ReadyEffectBG</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">//准备一帧数据作为特效底图</span>
+    <span class="n">TMixerMember</span><span class="o">*</span> <span class="n">mixer_mem_ptr</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">node_map</span> <span class="o">=</span> <span class="n">m_mixer_map</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">node_map</span> <span class="o">!=</span> <span class="n">m_mixer_map</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">node_map</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">mixer_mem_ptr</span> <span class="o">=</span> <span class="n">node_map</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span>
+        <span class="c1">//保存原来底部最后一帧数据</span>
+        <span class="n">LOG_WARN</span><span class="p">(</span><span class="s">&quot;Mix State [%d], level [%d]&quot;</span><span class="p">,</span> <span class="n">mixer_mem_ptr</span><span class="o">-&gt;</span><span class="n">mix_state</span><span class="p">,</span> <span class="n">mixer_mem_ptr</span><span class="o">-&gt;</span><span class="n">level</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">mixer_mem_ptr</span><span class="o">-&gt;</span><span class="n">mix_state</span> <span class="o">&amp;</span> <span class="n">EM_SS_ACTIVING</span> <span class="o">&amp;&amp;</span> <span class="n">mixer_mem_ptr</span><span class="o">-&gt;</span><span class="n">level</span> <span class="o">==</span> <span class="n">EM_VML_BOTTOM</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">RBSMediaSource</span><span class="o">*</span> <span class="n">source_ptr</span> <span class="o">=</span> <span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="n">RBSMediaSource</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">mixer_mem_ptr</span><span class="o">-&gt;</span><span class="n">source_ptr</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">source_ptr</span><span class="o">-&gt;</span><span class="n">GetReadyImage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_read_buffer</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">m_read_buffer</span><span class="p">.</span><span class="n">width</span> <span class="o">!=</span> <span class="n">m_src_props</span><span class="p">.</span><span class="n">src_size</span><span class="p">.</span><span class="n">width</span> <span class="o">||</span> <span class="n">m_read_buffer</span><span class="p">.</span><span class="n">height</span> <span class="o">!=</span> <span class="n">m_src_props</span><span class="p">.</span><span class="n">src_size</span><span class="p">.</span><span class="n">height</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="c1">//对yuv进行缩放</span>
+                    <span class="n">m_media_tool_ptr</span><span class="o">-&gt;</span><span class="n">DirectVideoScale</span><span class="p">(</span><span class="n">m_read_buffer</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">m_read_buffer</span><span class="p">.</span><span class="n">height</span><span class="p">,</span> <span class="n">m_read_buffer</span><span class="p">.</span><span class="n">frame_data_ptr</span><span class="p">,</span>
+                        <span class="n">mixer_mem_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">mixer_mem_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">height</span><span class="p">,</span> <span class="n">m_effect_bg_buffer</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">else</span>
+                    <span class="n">memcpy</span><span class="p">(</span><span class="n">m_effect_bg_buffer</span><span class="p">,</span> <span class="n">m_read_buffer</span><span class="p">.</span><span class="n">frame_data_ptr</span><span class="p">,</span>
+                    <span class="n">RBS_IYUV_SIZE</span><span class="p">(</span><span class="n">m_src_props</span><span class="p">.</span><span class="n">src_size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">m_src_props</span><span class="p">.</span><span class="n">src_size</span><span class="p">.</span><span class="n">height</span><span class="p">));</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：执行合成任务</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">ERetCode</span> <span class="n">FFMixerSource</span><span class="o">::</span><span class="n">RunVideoMixerTask</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">TMixerMember</span><span class="o">*</span> <span class="n">mixer_member_ptr</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+	<span class="n">RBSMediaSource</span><span class="o">*</span> <span class="n">source_ptr</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+
+	<span class="k">auto</span> <span class="n">node_map</span> <span class="o">=</span> <span class="n">m_mixer_map</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+	<span class="k">for</span> <span class="p">(;</span> <span class="n">node_map</span> <span class="o">!=</span> <span class="n">m_mixer_map</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">node_map</span><span class="o">++</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">mixer_member_ptr</span> <span class="o">=</span> <span class="n">node_map</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span>
+		<span class="n">source_ptr</span> <span class="o">=</span> <span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="n">RBSMediaSource</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">source_ptr</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">mix_state</span> <span class="o">==</span> <span class="n">EM_SS_ACTIVING</span> <span class="o">&amp;&amp;</span> <span class="n">source_ptr</span> <span class="o">!=</span> <span class="k">nullptr</span>
+			<span class="o">&amp;&amp;</span> <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">level</span> <span class="o">==</span> <span class="n">EM_VML_BOTTOM</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="c1">// 输入底层源image</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">source_ptr</span><span class="o">-&gt;</span><span class="n">GetReadyImage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_read_buffer</span><span class="p">))</span>
+			<span class="p">{</span>
+				<span class="kt">uint8_t</span> <span class="o">*</span><span class="n">buffer_ptr</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+				<span class="k">if</span> <span class="p">(</span><span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">width</span> <span class="o">!=</span> <span class="n">m_read_buffer</span><span class="p">.</span><span class="n">width</span> <span class="o">||</span> <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">height</span> <span class="o">!=</span> <span class="n">m_read_buffer</span><span class="p">.</span><span class="n">height</span><span class="p">)</span>
+				<span class="p">{</span>
+					<span class="c1">//对yuv进行缩放</span>
+					<span class="n">m_media_tool_ptr</span><span class="o">-&gt;</span><span class="n">DirectVideoScale</span><span class="p">(</span><span class="n">m_read_buffer</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">m_read_buffer</span><span class="p">.</span><span class="n">height</span><span class="p">,</span> <span class="n">m_read_buffer</span><span class="p">.</span><span class="n">frame_data_ptr</span><span class="p">,</span>
+						<span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">height</span><span class="p">,</span> <span class="n">m_scale_buffer_ptr</span><span class="p">);</span>
+					<span class="n">buffer_ptr</span> <span class="o">=</span> <span class="n">m_scale_buffer_ptr</span><span class="p">;</span>
+				<span class="p">}</span>
+				<span class="k">else</span>
+					<span class="n">buffer_ptr</span> <span class="o">=</span> <span class="n">m_read_buffer</span><span class="p">.</span><span class="n">frame_data_ptr</span><span class="p">;</span>
+
+				<span class="n">MixVideoTask</span><span class="p">({</span> <span class="n">m_src_props</span><span class="p">.</span><span class="n">src_size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">m_src_props</span><span class="p">.</span><span class="n">src_size</span><span class="p">.</span><span class="n">height</span> <span class="p">},</span> <span class="n">m_mixer_buffer_ptr</span><span class="p">,</span>
+					<span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">,</span> <span class="n">buffer_ptr</span><span class="p">);</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+
+	<span class="n">node_map</span> <span class="o">=</span> <span class="n">m_mixer_map</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+	<span class="k">for</span> <span class="p">(;</span> <span class="n">node_map</span> <span class="o">!=</span> <span class="n">m_mixer_map</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">node_map</span><span class="o">++</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">mixer_member_ptr</span> <span class="o">=</span> <span class="n">node_map</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span>
+		<span class="n">source_ptr</span> <span class="o">=</span> <span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="n">RBSMediaSource</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">source_ptr</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">mix_state</span> <span class="o">==</span> <span class="n">EM_SS_ACTIVING</span> <span class="o">&amp;&amp;</span> <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">source_ptr</span> <span class="o">!=</span> <span class="k">nullptr</span>
+			<span class="o">&amp;&amp;</span> <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">level</span> <span class="o">==</span> <span class="n">EM_VML_TOP</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="c1">// 输入顶层源image</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">source_ptr</span><span class="o">-&gt;</span><span class="n">GetReadyImage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_read_buffer</span><span class="p">)</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+			<span class="p">{</span>
+				<span class="kt">uint8_t</span> <span class="o">*</span><span class="n">buffer_ptr</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+				<span class="k">if</span> <span class="p">(</span><span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">width</span> <span class="o">!=</span> <span class="n">m_read_buffer</span><span class="p">.</span><span class="n">width</span> <span class="o">||</span> <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">height</span> <span class="o">!=</span> <span class="n">m_read_buffer</span><span class="p">.</span><span class="n">height</span><span class="p">)</span>
+				<span class="p">{</span>
+					<span class="c1">//对yuv进行缩放</span>
+					<span class="n">m_media_tool_ptr</span><span class="o">-&gt;</span><span class="n">DirectVideoScale</span><span class="p">(</span><span class="n">m_read_buffer</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">m_read_buffer</span><span class="p">.</span><span class="n">height</span><span class="p">,</span> <span class="n">m_read_buffer</span><span class="p">.</span><span class="n">frame_data_ptr</span><span class="p">,</span>
+						<span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">.</span><span class="n">height</span><span class="p">,</span> <span class="n">m_scale_buffer_ptr</span><span class="p">);</span>
+					<span class="n">buffer_ptr</span> <span class="o">=</span> <span class="n">m_scale_buffer_ptr</span><span class="p">;</span>
+				<span class="p">}</span>
+				<span class="k">else</span>
+					<span class="n">buffer_ptr</span> <span class="o">=</span> <span class="n">m_read_buffer</span><span class="p">.</span><span class="n">frame_data_ptr</span><span class="p">;</span>
+
+				<span class="n">MixVideoTask</span><span class="p">({</span> <span class="n">m_src_props</span><span class="p">.</span><span class="n">src_size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">m_src_props</span><span class="p">.</span><span class="n">src_size</span><span class="p">.</span><span class="n">height</span> <span class="p">},</span>
+					<span class="n">m_mixer_buffer_ptr</span><span class="p">,</span> <span class="n">mixer_member_ptr</span><span class="o">-&gt;</span><span class="n">rect</span><span class="p">,</span> <span class="n">buffer_ptr</span><span class="p">);</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+
+	<span class="n">DoneFilter</span><span class="p">(</span><span class="n">m_mixer_buffer_ptr</span><span class="p">);</span>
+
+	<span class="n">m_media_Ring_Buffer</span><span class="p">.</span><span class="n">PutData</span><span class="p">(</span><span class="n">m_mixer_buffer_ptr</span><span class="p">,</span><span class="n">m_src_image_size</span><span class="p">);</span>
+
+	<span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span><span class="c1">//NOLINT(readability/fn_size)</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：执行filter</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">ERetCode</span> <span class="n">FFMixerSource</span><span class="o">::</span><span class="n">DoneFilter</span><span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span> <span class="n">i_buffer_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">i_buffer_ptr</span><span class="p">,</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">);</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">unique_lock</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lock</span><span class="p">(</span><span class="n">m_filter_mtx</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_logo_info</span><span class="p">.</span><span class="n">pos</span> <span class="o">&amp;&amp;</span> <span class="n">m_soft_logo_ptr</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">m_soft_logo_ptr</span><span class="o">-&gt;</span><span class="n">LogoFilter</span><span class="p">(</span><span class="n">i_buffer_ptr</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_text_info</span><span class="p">.</span><span class="n">pos</span> <span class="o">&amp;&amp;</span> <span class="n">m_soft_subtitle_ptr</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">m_soft_subtitle_ptr</span><span class="o">-&gt;</span><span class="n">SubTitleFilter</span><span class="p">(</span><span class="n">i_buffer_ptr</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_effect_type</span> <span class="o">!=</span> <span class="n">EM_EFFECT_NONE</span> <span class="o">&amp;&amp;</span> <span class="n">m_dict_effect_ptr</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">m_dict_effect_ptr</span><span class="o">-&gt;</span><span class="n">AddEffect</span><span class="p">(</span><span class="n">i_buffer_ptr</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：合成任务（仅仅支持YUV420P）</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">ERetCode</span> <span class="n">FFMixerSource</span><span class="o">::</span><span class="n">MixVideoTask</span><span class="p">(</span><span class="n">TSize</span> <span class="n">i_main_size</span><span class="p">,</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">io_main_image_ptr</span><span class="p">,</span> <span class="n">TRect</span> <span class="n">i_sub_size</span><span class="p">,</span>
+    <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">i_sub_image_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">io_main_image_ptr</span><span class="p">,</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">);</span>
+    <span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">i_sub_image_ptr</span><span class="p">,</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">);</span>
+
+    <span class="cm">/*主画面每行Y占用的字节数*/</span>
+    <span class="kt">int</span> <span class="n">main_y_byte_per_line</span> <span class="o">=</span> <span class="n">i_main_size</span><span class="p">.</span><span class="n">width</span><span class="p">;</span>
+    <span class="cm">/*主画面每行U占用的字节数*/</span>
+    <span class="kt">int</span> <span class="n">main_u_byte_per_line</span> <span class="o">=</span> <span class="n">i_main_size</span><span class="p">.</span><span class="n">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="cm">/*子画面每行Y占用的字节数*/</span>
+    <span class="kt">int</span> <span class="n">sub_y_byte_per_line</span> <span class="o">=</span> <span class="n">i_sub_size</span><span class="p">.</span><span class="n">width</span><span class="p">;</span>
+    <span class="cm">/*子画面每行U占用的字节数*/</span>
+    <span class="kt">int</span> <span class="n">sub_u_byte_per_line</span> <span class="o">=</span> <span class="n">i_sub_size</span><span class="p">.</span><span class="n">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+
+    <span class="cm">/*主画面U的起始位置*/</span>
+    <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">main_u_start_sddr_ptr</span> <span class="o">=</span> <span class="n">io_main_image_ptr</span> <span class="o">+</span> <span class="n">i_main_size</span><span class="p">.</span><span class="n">width</span><span class="o">*</span><span class="n">i_main_size</span><span class="p">.</span><span class="n">height</span><span class="p">;</span>
+    <span class="cm">/*主画面V的起始位置*/</span>
+    <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">main_v_start_addr_ptr</span> <span class="o">=</span> <span class="n">io_main_image_ptr</span> <span class="o">+</span> <span class="n">i_main_size</span><span class="p">.</span><span class="n">width</span><span class="o">*</span><span class="n">i_main_size</span><span class="p">.</span><span class="n">height</span> <span class="o">+</span> <span class="n">i_main_size</span><span class="p">.</span><span class="n">width</span><span class="o">*</span><span class="n">i_main_size</span><span class="p">.</span><span class="n">height</span> <span class="o">/</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="cm">/*分画面U的起始位置*/</span>
+    <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">sub_u_start_addr_ptr</span> <span class="o">=</span> <span class="n">i_sub_image_ptr</span> <span class="o">+</span> <span class="n">i_sub_size</span><span class="p">.</span><span class="n">width</span><span class="o">*</span><span class="n">i_sub_size</span><span class="p">.</span><span class="n">height</span><span class="p">;</span>
+    <span class="cm">/*分画面V的起始位置*/</span>
+    <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">sub_v_start_addr_ptr</span> <span class="o">=</span> <span class="n">i_sub_image_ptr</span> <span class="o">+</span> <span class="n">i_sub_size</span><span class="p">.</span><span class="n">width</span><span class="o">*</span><span class="n">i_sub_size</span><span class="p">.</span><span class="n">height</span> <span class="o">+</span> <span class="n">i_sub_size</span><span class="p">.</span><span class="n">width</span><span class="o">*</span><span class="n">i_sub_size</span><span class="p">.</span><span class="n">height</span> <span class="o">/</span> <span class="mi">4</span><span class="p">;</span>
+
+    <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">i_sub_size</span><span class="p">.</span><span class="n">height</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="cm">/*Y数据拷贝*/</span>
+        <span class="n">memcpy</span><span class="p">(</span><span class="n">io_main_image_ptr</span> <span class="o">+</span> <span class="p">(</span><span class="n">i_sub_size</span><span class="p">.</span><span class="n">iY</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="n">main_y_byte_per_line</span> <span class="o">+</span> <span class="n">i_sub_size</span><span class="p">.</span><span class="n">iX</span><span class="p">,</span>
+            <span class="n">i_sub_image_ptr</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="n">sub_y_byte_per_line</span><span class="p">,</span> <span class="n">sub_y_byte_per_line</span><span class="p">);</span>
+        <span class="cm">/*UV数据拷贝*/</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">memcpy</span><span class="p">(</span><span class="n">main_u_start_sddr_ptr</span> <span class="o">+</span> <span class="p">(</span><span class="n">i_sub_size</span><span class="p">.</span><span class="n">iY</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">j</span><span class="p">)</span><span class="o">*</span><span class="n">main_u_byte_per_line</span> <span class="o">+</span> <span class="n">i_sub_size</span><span class="p">.</span><span class="n">iX</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
+                <span class="n">sub_u_start_addr_ptr</span> <span class="o">+</span> <span class="n">j</span><span class="o">*</span><span class="n">sub_u_byte_per_line</span><span class="p">,</span> <span class="n">sub_u_byte_per_line</span><span class="p">);</span>
+            <span class="n">memcpy</span><span class="p">(</span><span class="n">main_v_start_addr_ptr</span> <span class="o">+</span> <span class="p">(</span><span class="n">i_sub_size</span><span class="p">.</span><span class="n">iY</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">j</span><span class="p">)</span><span class="o">*</span><span class="n">main_u_byte_per_line</span> <span class="o">+</span> <span class="n">i_sub_size</span><span class="p">.</span><span class="n">iX</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
+                <span class="n">sub_v_start_addr_ptr</span> <span class="o">+</span> <span class="n">j</span><span class="o">*</span><span class="n">sub_u_byte_per_line</span><span class="p">,</span> <span class="n">sub_u_byte_per_line</span><span class="p">);</span>
+            <span class="n">j</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</body>
+</html>

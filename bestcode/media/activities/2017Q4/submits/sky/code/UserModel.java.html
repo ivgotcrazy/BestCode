@@ -1,0 +1,592 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #333333 }
+body  { background: #111111; color: #ffffff }
+body .c { color: #008800; font-style: italic; background-color: #0f140f } /* Comment */
+body .err { color: #ffffff } /* Error */
+body .esc { color: #ffffff } /* Escape */
+body .g { color: #ffffff } /* Generic */
+body .k { color: #fb660a; font-weight: bold } /* Keyword */
+body .l { color: #ffffff } /* Literal */
+body .n { color: #ffffff } /* Name */
+body .o { color: #ffffff } /* Operator */
+body .x { color: #ffffff } /* Other */
+body .p { color: #ffffff } /* Punctuation */
+body .ch { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Hashbang */
+body .cm { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Multiline */
+body .cp { color: #ff0007; font-weight: bold; font-style: italic; background-color: #0f140f } /* Comment.Preproc */
+body .cpf { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.PreprocFile */
+body .c1 { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Single */
+body .cs { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Special */
+body .gd { color: #ffffff } /* Generic.Deleted */
+body .ge { color: #ffffff } /* Generic.Emph */
+body .gr { color: #ffffff } /* Generic.Error */
+body .gh { color: #ffffff; font-weight: bold } /* Generic.Heading */
+body .gi { color: #ffffff } /* Generic.Inserted */
+body .go { color: #444444; background-color: #222222 } /* Generic.Output */
+body .gp { color: #ffffff } /* Generic.Prompt */
+body .gs { color: #ffffff } /* Generic.Strong */
+body .gu { color: #ffffff; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #ffffff } /* Generic.Traceback */
+body .kc { color: #fb660a; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #fb660a; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #fb660a; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #fb660a } /* Keyword.Pseudo */
+body .kr { color: #fb660a; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #cdcaa9; font-weight: bold } /* Keyword.Type */
+body .ld { color: #ffffff } /* Literal.Date */
+body .m { color: #0086f7; font-weight: bold } /* Literal.Number */
+body .s { color: #0086d2 } /* Literal.String */
+body .na { color: #ff0086; font-weight: bold } /* Name.Attribute */
+body .nb { color: #ffffff } /* Name.Builtin */
+body .nc { color: #ffffff } /* Name.Class */
+body .no { color: #0086d2 } /* Name.Constant */
+body .nd { color: #ffffff } /* Name.Decorator */
+body .ni { color: #ffffff } /* Name.Entity */
+body .ne { color: #ffffff } /* Name.Exception */
+body .nf { color: #ff0086; font-weight: bold } /* Name.Function */
+body .nl { color: #ffffff } /* Name.Label */
+body .nn { color: #ffffff } /* Name.Namespace */
+body .nx { color: #ffffff } /* Name.Other */
+body .py { color: #ffffff } /* Name.Property */
+body .nt { color: #fb660a; font-weight: bold } /* Name.Tag */
+body .nv { color: #fb660a } /* Name.Variable */
+body .ow { color: #ffffff } /* Operator.Word */
+body .w { color: #888888 } /* Text.Whitespace */
+body .mb { color: #0086f7; font-weight: bold } /* Literal.Number.Bin */
+body .mf { color: #0086f7; font-weight: bold } /* Literal.Number.Float */
+body .mh { color: #0086f7; font-weight: bold } /* Literal.Number.Hex */
+body .mi { color: #0086f7; font-weight: bold } /* Literal.Number.Integer */
+body .mo { color: #0086f7; font-weight: bold } /* Literal.Number.Oct */
+body .sa { color: #0086d2 } /* Literal.String.Affix */
+body .sb { color: #0086d2 } /* Literal.String.Backtick */
+body .sc { color: #0086d2 } /* Literal.String.Char */
+body .dl { color: #0086d2 } /* Literal.String.Delimiter */
+body .sd { color: #0086d2 } /* Literal.String.Doc */
+body .s2 { color: #0086d2 } /* Literal.String.Double */
+body .se { color: #0086d2 } /* Literal.String.Escape */
+body .sh { color: #0086d2 } /* Literal.String.Heredoc */
+body .si { color: #0086d2 } /* Literal.String.Interpol */
+body .sx { color: #0086d2 } /* Literal.String.Other */
+body .sr { color: #0086d2 } /* Literal.String.Regex */
+body .s1 { color: #0086d2 } /* Literal.String.Single */
+body .ss { color: #0086d2 } /* Literal.String.Symbol */
+body .bp { color: #ffffff } /* Name.Builtin.Pseudo */
+body .fm { color: #ff0086; font-weight: bold } /* Name.Function.Magic */
+body .vc { color: #fb660a } /* Name.Variable.Class */
+body .vg { color: #fb660a } /* Name.Variable.Global */
+body .vi { color: #fb660a } /* Name.Variable.Instance */
+body .vm { color: #fb660a } /* Name.Variable.Magic */
+body .il { color: #0086f7; font-weight: bold } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * Created by wangy on 2017/1/17.</span>
+<span class="cm"> * UserModel实现了观察者，其返回的数据对象为UserMessage</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">UserModel</span> <span class="kd">extends</span> <span class="n">Observable</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">TAG</span> <span class="o">=</span> <span class="s">&quot;UserModel&quot;</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">LISTENERS_NUMBER</span> <span class="o">=</span> <span class="s">&quot;旁听人数:&quot;</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="n">ConcurrentHashMap</span><span class="o">&lt;</span><span class="n">Long</span><span class="o">,</span> <span class="n">BaseUser</span><span class="o">&gt;</span> <span class="n">users</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConcurrentHashMap</span><span class="o">&lt;&gt;();</span>
+    <span class="kd">private</span> <span class="n">BaseUser</span> <span class="n">mainSpeakerUser</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">BaseUser</span> <span class="n">localUser</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">MeetingRoomConfState</span> <span class="n">meetingRoomConfState</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">UserModel</span> <span class="n">instance</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">Handler</span> <span class="n">userHandler</span> <span class="o">=</span> <span class="k">new</span> <span class="n">UserHandler</span><span class="o">();</span>
+
+    <span class="c1">// 会议室总人数</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">totalUser</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="n">CopyOnWriteArrayList</span><span class="o">&lt;</span><span class="n">IUserStateChangedListener</span><span class="o">&gt;</span> <span class="n">listeners</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CopyOnWriteArrayList</span><span class="o">&lt;&gt;();</span>
+
+    <span class="kd">enum</span> <span class="n">UserUpdateType</span> <span class="o">{</span>
+        <span class="n">USER_ADD</span><span class="o">,</span>
+        <span class="n">USER_BATCH_ADD</span><span class="o">,</span> <span class="c1">//用户批量添加</span>
+        <span class="n">USER_REMOVE</span><span class="o">,</span>
+        <span class="n">USER_UPDATE</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 单例获取器</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">UserModel</span> <span class="nf">getInstance</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">instance</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="n">UserModel</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">instance</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="nf">UserModel</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// 先添加本地用户，防止出现外界调用为空指针的问题</span>
+        <span class="n">RoomUserInfo</span> <span class="n">localUserInfo</span> <span class="o">=</span> <span class="n">UserManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">getLocalUser</span><span class="o">();</span>
+        <span class="c1">// 当本地用未被初始化好时，上述方法返回的对象不为null，但是userName一定为null，只有都不为null时才添加</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">localUserInfo</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">localUserInfo</span><span class="o">.</span><span class="na">strUserName</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="c1">// 当应用被回收重新进入会中时，会导致本地用户为空</span>
+            <span class="n">localUser</span> <span class="o">=</span> <span class="n">putUserToMap</span><span class="o">(</span><span class="n">localUserInfo</span><span class="o">);</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">localUser</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">updateUserAndNotify</span><span class="o">(</span><span class="kc">false</span><span class="o">,</span> <span class="n">localUser</span><span class="o">,</span> <span class="n">UserUpdateType</span><span class="o">.</span><span class="na">USER_ADD</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kt">void</span> <span class="nf">setMeetingRoomConfState</span><span class="o">(</span><span class="n">MeetingRoomConfState</span> <span class="n">state</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">meetingRoomConfState</span> <span class="o">=</span> <span class="n">state</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="n">BaseUser</span> <span class="nf">createUser</span><span class="o">(</span><span class="n">RoomUserInfo</span> <span class="n">userInfo</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">BaseUser</span><span class="o">(</span><span class="n">userInfo</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 添加用户，如果要添加的用户已经存在，则替换原来的</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return 返回加入的user</span>
+<span class="cm">     */</span>
+    <span class="n">BaseUser</span> <span class="nf">addUser</span><span class="o">(</span><span class="n">RoomUserInfo</span> <span class="n">userInfo</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">addUserWithNotify</span><span class="o">(</span><span class="n">userInfo</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kt">void</span> <span class="nf">addLocalUser</span><span class="o">(</span><span class="n">RoomUserInfo</span> <span class="n">userInfo</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">localUser</span> <span class="o">=</span> <span class="n">addUser</span><span class="o">(</span><span class="n">userInfo</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kt">void</span> <span class="nf">addUserList</span><span class="o">(</span><span class="n">RoomUserInfo</span><span class="o">[]</span> <span class="n">userInfos</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">userInfos</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">for</span> <span class="o">(</span><span class="n">RoomUserInfo</span> <span class="n">userInfo</span> <span class="o">:</span> <span class="n">userInfos</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">addUserWithNotify</span><span class="o">(</span><span class="n">userInfo</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>
+            <span class="o">}</span>
+
+            <span class="c1">// 批量添加用户时，只在添加完成所有用户后才发送用户数目发生变化通知。</span>
+            <span class="c1">// 注意批量添加用户时将changdeUser设置为null。</span>
+            <span class="n">sendUserChangedMsg</span><span class="o">(</span><span class="kc">null</span><span class="o">,</span> <span class="n">UserUpdateType</span><span class="o">.</span><span class="na">USER_BATCH_ADD</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kt">void</span> <span class="nf">removeUserById</span><span class="o">(</span><span class="kt">long</span> <span class="n">userID</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// 先更新数据在移除，保证用户状态时最新的</span>
+        <span class="n">RoomUserInfo</span> <span class="n">removeUserInfo</span> <span class="o">=</span> <span class="n">UserManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">getUser</span><span class="o">(</span><span class="n">userID</span><span class="o">);</span>
+        <span class="n">BaseUser</span> <span class="n">removedUser</span> <span class="o">=</span> <span class="n">users</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">userID</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">removeUserInfo</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">removedUser</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">removedUser</span><span class="o">.</span><span class="na">setRoomInfo</span><span class="o">(</span><span class="n">removeUserInfo</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="n">removedUser</span> <span class="o">=</span> <span class="n">users</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">userID</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">removedUser</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">updateUserAndNotify</span><span class="o">(</span><span class="kc">true</span><span class="o">,</span> <span class="n">removedUser</span><span class="o">,</span> <span class="n">UserUpdateType</span><span class="o">.</span><span class="na">USER_REMOVE</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kt">void</span> <span class="nf">updateUserById</span><span class="o">(</span><span class="kt">long</span> <span class="n">userID</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">updateUserInfo</span><span class="o">(</span><span class="n">UserManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">getUser</span><span class="o">(</span><span class="n">userID</span><span class="o">));</span>
+    <span class="o">}</span>
+
+    <span class="kt">void</span> <span class="nf">updateUser</span><span class="o">(</span><span class="n">RoomUserInfo</span> <span class="n">userInfo</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">updateUserInfo</span><span class="o">(</span><span class="n">userInfo</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">updateUserInfo</span><span class="o">(</span><span class="n">RoomUserInfo</span> <span class="n">userInfo</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">BaseUser</span> <span class="n">user</span> <span class="o">=</span> <span class="n">users</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">userInfo</span><span class="o">.</span><span class="na">userID</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">user</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">user</span><span class="o">.</span><span class="na">setRoomInfo</span><span class="o">(</span><span class="n">userInfo</span><span class="o">);</span>
+            <span class="n">updateUserAndNotify</span><span class="o">(</span><span class="kc">true</span><span class="o">,</span> <span class="n">user</span><span class="o">,</span> <span class="n">UserUpdateType</span><span class="o">.</span><span class="na">USER_UPDATE</span><span class="o">);</span>
+            <span class="n">notifyUserChangedWitchCheckMainThread</span><span class="o">(</span><span class="n">user</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="c1">// 先从底层的用户列表中根据ID获取用户，如果存在则添加到上层用户列表中</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">UserManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">getUser</span><span class="o">(</span><span class="n">userInfo</span><span class="o">.</span><span class="na">userID</span><span class="o">)</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">addUser</span><span class="o">(</span><span class="n">userInfo</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 添加用户</span>
+<span class="cm">     * @param isNeedSendMsg 是否需要发送数据变化广播</span>
+<span class="cm">     */</span>
+    <span class="kd">private</span> <span class="n">BaseUser</span> <span class="nf">addUserWithNotify</span><span class="o">(</span><span class="n">RoomUserInfo</span> <span class="n">userInfo</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">isNeedSendMsg</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">BaseUser</span> <span class="n">user</span> <span class="o">=</span> <span class="n">putUserToMap</span><span class="o">(</span><span class="n">userInfo</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">user</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">updateUserAndNotify</span><span class="o">(</span><span class="n">isNeedSendMsg</span><span class="o">,</span> <span class="n">user</span><span class="o">,</span> <span class="n">UserUpdateType</span><span class="o">.</span><span class="na">USER_ADD</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="k">return</span> <span class="n">user</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="n">BaseUser</span> <span class="nf">putUserToMap</span><span class="o">(</span><span class="n">RoomUserInfo</span> <span class="n">userInfo</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">BaseUser</span> <span class="n">user</span> <span class="o">=</span> <span class="n">createUser</span><span class="o">(</span><span class="n">userInfo</span><span class="o">);</span>
+        <span class="n">users</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">userInfo</span><span class="o">.</span><span class="na">userID</span><span class="o">,</span> <span class="n">user</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">user</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 先计算所有的参会人数。</span>
+<span class="cm">     * 在更新主讲状态。</span>
+<span class="cm">     * 最后确定是否发送用户发生变化通知</span>
+<span class="cm">     */</span>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">updateUserAndNotify</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">isNeedSendMsg</span><span class="o">,</span> <span class="n">BaseUser</span> <span class="n">user</span><span class="o">,</span> <span class="n">UserUpdateType</span> <span class="n">type</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">calcTotalUsersAndNotify</span><span class="o">(</span><span class="n">user</span><span class="o">,</span> <span class="n">type</span><span class="o">);</span>
+        <span class="n">updateMainSpeakAfterUpdateUsers</span><span class="o">(</span><span class="n">user</span><span class="o">);</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="n">isNeedSendMsg</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">sendUserChangedMsg</span><span class="o">(</span><span class="n">user</span><span class="o">,</span> <span class="n">type</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 计算会议中总用户数。</span>
+<span class="cm">     * 在boss后台设置为：旁听用户的列表显示旁听用户总数 时，所有旁听归纳为一个用户</span>
+<span class="cm">     * 导致总人数出错（比如旁听人数为5，有一行显示为：“旁听人数:5”，旁听自己算一个人，这一行算一个人）</span>
+<span class="cm">     * 所以当本地用户也作为旁听时并且设置为“旁听人数:x”时，客户端将每个旁听都作为单独的一个人计算。</span>
+<span class="cm">     */</span>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">calcTotalUsersAndNotify</span><span class="o">(</span><span class="n">BaseUser</span> <span class="n">user</span><span class="o">,</span> <span class="n">UserUpdateType</span> <span class="n">type</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">BaseUser</span> <span class="n">localUser</span> <span class="o">=</span> <span class="n">getLocalUser</span><span class="o">();</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">localUser</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">user</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="kt">boolean</span> <span class="n">isOneItemListeners</span> <span class="o">=</span> <span class="n">isListenersOnOneItem</span><span class="o">(</span><span class="n">user</span><span class="o">,</span> <span class="n">localUser</span><span class="o">);</span>
+
+        <span class="kt">int</span> <span class="n">oldTotalUser</span> <span class="o">=</span> <span class="n">totalUser</span><span class="o">;</span>
+        <span class="k">switch</span> <span class="o">(</span><span class="n">type</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">case</span> <span class="n">USER_ADD</span><span class="o">:</span>
+                <span class="n">calcTotalUserWhenAdd</span><span class="o">(</span><span class="n">user</span><span class="o">,</span> <span class="n">isOneItemListeners</span><span class="o">);</span>
+                <span class="k">break</span><span class="o">;</span>
+
+            <span class="k">case</span> <span class="n">USER_UPDATE</span><span class="o">:</span>
+                <span class="n">calcTotalUserWhenUpdate</span><span class="o">(</span><span class="n">user</span><span class="o">,</span> <span class="n">isOneItemListeners</span><span class="o">);</span>
+                <span class="k">break</span><span class="o">;</span>
+
+            <span class="k">case</span> <span class="n">USER_REMOVE</span><span class="o">:</span>
+                <span class="n">totalUser</span><span class="o">--;</span>
+                <span class="k">break</span><span class="o">;</span>
+
+<span class="nl">            default:</span>
+                <span class="k">break</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="n">oldTotalUser</span> <span class="o">!=</span> <span class="n">totalUser</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">notifyUserCountChangedWitchCheckMainThread</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">calcTotalUserWhenUpdate</span><span class="o">(</span><span class="n">BaseUser</span> <span class="n">user</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">isOneItemListeners</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">isOneItemListeners</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kt">int</span> <span class="n">listenerNum</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getNickName</span><span class="o">().</span><span class="na">split</span><span class="o">(</span><span class="s">&quot;:&quot;</span><span class="o">)[</span><span class="mi">1</span><span class="o">]);</span>            
+            <span class="k">if</span> <span class="o">(</span><span class="n">listenerNum</span> <span class="o">==</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// 旁听人数：1 这种情况要要减去这一个人数</span>
+                <span class="n">totalUser</span> <span class="o">=</span> <span class="n">users</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">-</span> <span class="n">listenerNum</span><span class="o">;</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span> <span class="c1">// -2去除重复，因为本地用户和“旁听人数：x”都已经在参会人列表中作为一个单独的人计算</span>
+                <span class="n">totalUser</span> <span class="o">=</span> <span class="n">listenerNum</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">users</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">calcTotalUserWhenAdd</span><span class="o">(</span><span class="n">BaseUser</span> <span class="n">user</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">isOneItemListeners</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">isOneItemListeners</span><span class="o">)</span> <span class="o">{</span>
+            <span class="c1">// 修复BUG：14531；在UserModel初始化的时候已经把本地用户计算到totalUser内，</span>
+            <span class="c1">// “旁听人数：” 冒号后面的数字代表所有的旁听，包括了本地用户自己。为了防止重复添加，所以要减1。</span>
+            <span class="n">totalUser</span> <span class="o">+=</span> <span class="o">(</span><span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getNickName</span><span class="o">().</span><span class="na">split</span><span class="o">(</span><span class="s">&quot;:&quot;</span><span class="o">)[</span><span class="mi">1</span><span class="o">])</span> <span class="o">-</span> <span class="mi">1</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="n">totalUser</span><span class="o">++;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 判断旁听用户是否全部在作为一个用户处理</span>
+<span class="cm">     */</span>
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">isListenersOnOneItem</span><span class="o">(</span><span class="n">BaseUser</span> <span class="n">user</span><span class="o">,</span> <span class="n">BaseUser</span> <span class="n">localUser</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">boolean</span> <span class="n">isOneItemListeners</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+
+        <span class="c1">// 只有本地用户是旁听时，才对旁听用户做处理</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">localUser</span><span class="o">.</span><span class="na">isListener</span><span class="o">())</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getNickName</span><span class="o">().</span><span class="na">length</span><span class="o">()</span> <span class="o">&gt;</span> <span class="n">LISTENERS_NUMBER</span><span class="o">.</span><span class="na">length</span><span class="o">())</span> <span class="o">{</span>
+                <span class="n">String</span> <span class="n">subUserName</span> <span class="o">=</span> <span class="n">user</span><span class="o">.</span><span class="na">getNickName</span><span class="o">().</span><span class="na">substring</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">5</span><span class="o">);</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">subUserName</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">LISTENERS_NUMBER</span><span class="o">))</span> <span class="o">{</span>
+                    <span class="n">isOneItemListeners</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">isOneItemListeners</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">updateMainSpeakAfterUpdateUsers</span><span class="o">(</span><span class="n">BaseUser</span> <span class="n">user</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">isMainSpeakerDone</span><span class="o">())</span> <span class="o">{</span>
+            <span class="n">mainSpeakerUser</span> <span class="o">=</span> <span class="n">user</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">mainSpeakerUser</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">mainSpeakerUser</span> <span class="o">==</span> <span class="n">user</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">mainSpeakerUser</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 只要有用户状态的改变就会调用该方法</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param user 发生改变的用户</span>
+<span class="cm">     * @param type 变更类型</span>
+<span class="cm">     */</span>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">sendUserChangedMsg</span><span class="o">(</span><span class="n">BaseUser</span> <span class="n">user</span><span class="o">,</span> <span class="n">UserUpdateType</span> <span class="n">type</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">userHandler</span><span class="o">.</span><span class="na">removeMessages</span><span class="o">(</span><span class="n">UserHandler</span><span class="o">.</span><span class="na">NOTIFY_USERS_CHANGED</span><span class="o">);</span>
+        <span class="n">userHandler</span><span class="o">.</span><span class="na">sendEmptyMessage</span><span class="o">(</span><span class="n">UserHandler</span><span class="o">.</span><span class="na">NOTIFY_USERS_CHANGED</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 获取在线人数</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getOnlineUserNumber</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">totalUser</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 返回当前会议室参会人列表</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">BaseUser</span><span class="o">&gt;</span> <span class="nf">getUsers</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">BaseUser</span><span class="o">&gt;</span> <span class="n">usersList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+        <span class="n">usersList</span><span class="o">.</span><span class="na">addAll</span><span class="o">(</span><span class="n">users</span><span class="o">.</span><span class="na">values</span><span class="o">());</span>
+        <span class="k">return</span> <span class="n">usersList</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 返回指定Id的参会人</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="n">BaseUser</span> <span class="nf">getUserById</span><span class="o">(</span><span class="kt">long</span> <span class="n">userId</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">users</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">userId</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 用户是否在会议室中</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isUserInMeeting</span><span class="o">(</span><span class="n">BaseUser</span> <span class="n">user</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">getUserById</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getUserID</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 当localuser为null 或者UserManager.getInstance().getLocalUser()返回为空则返回true。</span>
+<span class="cm">     * 使用该方法用于判断应用是否被系统回收JNI层或者JAVA层</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isLocalUserDisable</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="o">(</span><span class="n">getLocalUser</span><span class="o">()</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">UserManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">getLocalUser</span><span class="o">()</span> <span class="o">==</span> <span class="kc">null</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 获取当前本地用户</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="n">BaseUser</span> <span class="nf">getLocalUser</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// 如果为空尝试从列表中重新获取一次</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">localUser</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">RoomUserInfo</span> <span class="n">localUserInfo</span> <span class="o">=</span> <span class="n">UserManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">getLocalUser</span><span class="o">();</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">localUserInfo</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="c1">// 从保存的map中拿本地用户，如果不存在则add到列表中</span>
+                <span class="n">BaseUser</span> <span class="n">tempUser</span> <span class="o">=</span> <span class="n">getUserById</span><span class="o">(</span><span class="n">localUserInfo</span><span class="o">.</span><span class="na">userID</span><span class="o">);</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">tempUser</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">tempUser</span> <span class="o">=</span> <span class="n">addUser</span><span class="o">(</span><span class="n">localUserInfo</span><span class="o">);</span>
+                <span class="o">}</span>
+
+                <span class="n">localUser</span> <span class="o">=</span> <span class="n">tempUser</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+
+        <span class="k">return</span> <span class="n">localUser</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">static</span> <span class="kt">void</span> <span class="nf">releaseObj</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">instance</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">instance</span><span class="o">.</span><span class="na">deleteObservers</span><span class="o">();</span>
+            <span class="n">instance</span><span class="o">.</span><span class="na">users</span><span class="o">.</span><span class="na">clear</span><span class="o">();</span>
+            <span class="n">instance</span><span class="o">.</span><span class="na">listeners</span><span class="o">.</span><span class="na">clear</span><span class="o">();</span>
+            <span class="n">instance</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 通知用户状态发生改变的Handler，此处引入handler的原因是防止大并发时短时间用户的频繁变化导致UI刷新过多的问题 。</span>
+<span class="cm">     * 同样使用该种方式广播用户，也可能一些变化的用户还没有来的及广播就已经被新的变化用户给覆盖了。</span>
+<span class="cm">     * 基于以上原因现在通知用户发生变化，只携带当前用户列表参数，不携带用户更新类型。</span>
+<span class="cm">     */</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">UserHandler</span> <span class="kd">extends</span> <span class="n">Handler</span> <span class="o">{</span>
+        <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">NOTIFY_USERS_CHANGED</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">handleMessage</span><span class="o">(</span><span class="n">Message</span> <span class="n">msg</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">msg</span><span class="o">.</span><span class="na">what</span> <span class="o">==</span> <span class="n">NOTIFY_USERS_CHANGED</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">UserModel</span> <span class="n">userModel</span> <span class="o">=</span> <span class="n">UserModel</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">userModel</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">userModel</span><span class="o">.</span><span class="na">setChanged</span><span class="o">();</span>
+                    <span class="n">userModel</span><span class="o">.</span><span class="na">notifyObservers</span><span class="o">(</span><span class="n">userModel</span><span class="o">.</span><span class="na">getUsers</span><span class="o">());</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 初始化会议时，当在子线程加入本地用户时，需要切换到主线程推送参会人数变更</span>
+<span class="cm">     */</span>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">notifyUserCountChangedWitchCheckMainThread</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">ScreenUtil</span><span class="o">.</span><span class="na">isMainThread</span><span class="o">())</span> <span class="o">{</span>
+            <span class="n">notifyUserCountChanged</span><span class="o">();</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="n">userHandler</span><span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="k">new</span> <span class="n">Runnable</span><span class="o">()</span> <span class="o">{</span>
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="n">notifyUserCountChanged</span><span class="o">();</span>
+                <span class="o">}</span>
+            <span class="o">});</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 初始化会议时，当在子线程更新本地用户时，需要切换到主线程推送用户状态发生改变</span>
+<span class="cm">     */</span>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">notifyUserChangedWitchCheckMainThread</span><span class="o">(</span><span class="kd">final</span> <span class="n">BaseUser</span> <span class="n">user</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">ScreenUtil</span><span class="o">.</span><span class="na">isMainThread</span><span class="o">())</span> <span class="o">{</span>
+            <span class="n">notifyUserChanged</span><span class="o">(</span><span class="n">user</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="n">userHandler</span><span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="k">new</span> <span class="n">Runnable</span><span class="o">()</span> <span class="o">{</span>
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="n">notifyUserChanged</span><span class="o">(</span><span class="n">user</span><span class="o">);</span>
+                <span class="o">}</span>
+            <span class="o">});</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kt">void</span> <span class="nf">notifyUserAudioChanged</span><span class="o">(</span><span class="kt">long</span> <span class="n">userId</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">BaseUser</span> <span class="n">user</span> <span class="o">=</span> <span class="n">getUserById</span><span class="o">(</span><span class="n">userId</span><span class="o">);</span>
+        <span class="k">for</span> <span class="o">(</span><span class="n">IUserStateChangedListener</span> <span class="n">listener</span> <span class="o">:</span> <span class="n">listeners</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">listener</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">listener</span><span class="o">.</span><span class="na">onUserAudioChanged</span><span class="o">(</span><span class="n">user</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kt">void</span> <span class="nf">notifyUserVideoChanged</span><span class="o">(</span><span class="kt">long</span> <span class="n">userId</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">BaseUser</span> <span class="n">user</span> <span class="o">=</span> <span class="n">getUserById</span><span class="o">(</span><span class="n">userId</span><span class="o">);</span>
+        <span class="k">for</span> <span class="o">(</span><span class="n">IUserStateChangedListener</span> <span class="n">listener</span> <span class="o">:</span> <span class="n">listeners</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">listener</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">listener</span><span class="o">.</span><span class="na">onUserVideoChanged</span><span class="o">(</span><span class="n">user</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kt">void</span> <span class="nf">notifyUserMainSpeakerChanged</span><span class="o">(</span><span class="kt">long</span> <span class="n">userId</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">BaseUser</span> <span class="n">user</span> <span class="o">=</span> <span class="n">getUserById</span><span class="o">(</span><span class="n">userId</span><span class="o">);</span>
+        <span class="k">for</span> <span class="o">(</span><span class="n">IUserStateChangedListener</span> <span class="n">listener</span> <span class="o">:</span> <span class="n">listeners</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">listener</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">listener</span><span class="o">.</span><span class="na">onUserMainSpeakerChanged</span><span class="o">(</span><span class="n">user</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kt">void</span> <span class="nf">notifyUserCountChanged</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">for</span> <span class="o">(</span><span class="n">IUserStateChangedListener</span> <span class="n">listener</span> <span class="o">:</span> <span class="n">listeners</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">listener</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">listener</span><span class="o">.</span><span class="na">onMeetingUserNumberChanged</span><span class="o">(</span><span class="n">totalUser</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kt">void</span> <span class="nf">notifyUserWBMarkChanged</span><span class="o">(</span><span class="kt">long</span> <span class="n">userId</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">BaseUser</span> <span class="n">user</span> <span class="o">=</span> <span class="n">getUserById</span><span class="o">(</span><span class="n">userId</span><span class="o">);</span>
+        <span class="k">for</span> <span class="o">(</span><span class="n">IUserStateChangedListener</span> <span class="n">listener</span> <span class="o">:</span> <span class="n">listeners</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">listener</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">listener</span><span class="o">.</span><span class="na">onUserWBMarkChanged</span><span class="o">(</span><span class="n">user</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kt">void</span> <span class="nf">notifyUserChanged</span><span class="o">(</span><span class="n">BaseUser</span> <span class="n">user</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">for</span> <span class="o">(</span><span class="n">IUserStateChangedListener</span> <span class="n">listener</span> <span class="o">:</span> <span class="n">listeners</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">listener</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">listener</span><span class="o">.</span><span class="na">onUserChanged</span><span class="o">(</span><span class="n">user</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 用户状态接口</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">IUserStateChangedListener</span> <span class="o">{</span>
+        <span class="cm">/**</span>
+<span class="cm">         * 本地用户音频状态发生改变</span>
+<span class="cm">         */</span>
+        <span class="kt">void</span> <span class="nf">onUserAudioChanged</span><span class="o">(</span><span class="n">BaseUser</span> <span class="n">localUser</span><span class="o">);</span>
+
+        <span class="cm">/**</span>
+<span class="cm">         * 本地用户视频状态发生改变</span>
+<span class="cm">         */</span>
+        <span class="kt">void</span> <span class="nf">onUserVideoChanged</span><span class="o">(</span><span class="n">BaseUser</span> <span class="n">localUser</span><span class="o">);</span>
+
+        <span class="cm">/**</span>
+<span class="cm">         * 本地用户主讲状态发生变化</span>
+<span class="cm">         */</span>
+        <span class="kt">void</span> <span class="nf">onUserMainSpeakerChanged</span><span class="o">(</span><span class="n">BaseUser</span> <span class="n">localUser</span><span class="o">);</span>
+
+        <span class="cm">/**</span>
+<span class="cm">         * 会议室人数发生变化</span>
+<span class="cm">         */</span>
+        <span class="kt">void</span> <span class="nf">onMeetingUserNumberChanged</span><span class="o">(</span><span class="kt">int</span> <span class="n">totalUser</span><span class="o">);</span>
+
+        <span class="cm">/**</span>
+<span class="cm">         * 用户标注白板权限发生变化</span>
+<span class="cm">         */</span>
+        <span class="kt">void</span> <span class="nf">onUserWBMarkChanged</span><span class="o">(</span><span class="n">BaseUser</span> <span class="n">user</span><span class="o">);</span>
+
+        <span class="cm">/**</span>
+<span class="cm">         * 用户信息发生变化，包括email,手机，性别，昵称。</span>
+<span class="cm">         */</span>
+        <span class="kt">void</span> <span class="nf">onUserChanged</span><span class="o">(</span><span class="n">BaseUser</span> <span class="n">user</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 便捷的本地状态发生改变的监听实现类</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">SimpleUserStateChangedListener</span> <span class="kd">implements</span> <span class="n">IUserStateChangedListener</span> <span class="o">{</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onUserAudioChanged</span><span class="o">(</span><span class="n">BaseUser</span> <span class="n">user</span><span class="o">)</span> <span class="o">{}</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onUserVideoChanged</span><span class="o">(</span><span class="n">BaseUser</span> <span class="n">user</span><span class="o">)</span> <span class="o">{}</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onUserMainSpeakerChanged</span><span class="o">(</span><span class="n">BaseUser</span> <span class="n">user</span><span class="o">)</span> <span class="o">{}</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onMeetingUserNumberChanged</span><span class="o">(</span><span class="kt">int</span> <span class="n">totalUser</span><span class="o">)</span> <span class="o">{}</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onUserWBMarkChanged</span><span class="o">(</span><span class="n">BaseUser</span> <span class="n">user</span><span class="o">)</span> <span class="o">{}</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onUserChanged</span><span class="o">(</span><span class="n">BaseUser</span> <span class="n">user</span><span class="o">)</span> <span class="o">{}</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 添加用户状态变化监听器</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addUserStateChangedListener</span><span class="o">(</span><span class="n">IUserStateChangedListener</span> <span class="n">listener</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(!</span><span class="n">listeners</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">listener</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">listeners</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">listener</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 移除用户状态变化监听器</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">removeUserStateChangedListener</span><span class="o">(</span><span class="n">IUserStateChangedListener</span> <span class="n">listener</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">listeners</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">listener</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</body>
+</html>

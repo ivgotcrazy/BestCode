@@ -1,0 +1,371 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=latin1">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #333333 }
+body  { background: #111111; color: #ffffff }
+body .c { color: #008800; font-style: italic; background-color: #0f140f } /* Comment */
+body .err { color: #ffffff } /* Error */
+body .esc { color: #ffffff } /* Escape */
+body .g { color: #ffffff } /* Generic */
+body .k { color: #fb660a; font-weight: bold } /* Keyword */
+body .l { color: #ffffff } /* Literal */
+body .n { color: #ffffff } /* Name */
+body .o { color: #ffffff } /* Operator */
+body .x { color: #ffffff } /* Other */
+body .p { color: #ffffff } /* Punctuation */
+body .ch { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Hashbang */
+body .cm { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Multiline */
+body .cp { color: #ff0007; font-weight: bold; font-style: italic; background-color: #0f140f } /* Comment.Preproc */
+body .cpf { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.PreprocFile */
+body .c1 { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Single */
+body .cs { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Special */
+body .gd { color: #ffffff } /* Generic.Deleted */
+body .ge { color: #ffffff } /* Generic.Emph */
+body .gr { color: #ffffff } /* Generic.Error */
+body .gh { color: #ffffff; font-weight: bold } /* Generic.Heading */
+body .gi { color: #ffffff } /* Generic.Inserted */
+body .go { color: #444444; background-color: #222222 } /* Generic.Output */
+body .gp { color: #ffffff } /* Generic.Prompt */
+body .gs { color: #ffffff } /* Generic.Strong */
+body .gu { color: #ffffff; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #ffffff } /* Generic.Traceback */
+body .kc { color: #fb660a; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #fb660a; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #fb660a; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #fb660a } /* Keyword.Pseudo */
+body .kr { color: #fb660a; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #cdcaa9; font-weight: bold } /* Keyword.Type */
+body .ld { color: #ffffff } /* Literal.Date */
+body .m { color: #0086f7; font-weight: bold } /* Literal.Number */
+body .s { color: #0086d2 } /* Literal.String */
+body .na { color: #ff0086; font-weight: bold } /* Name.Attribute */
+body .nb { color: #ffffff } /* Name.Builtin */
+body .nc { color: #ffffff } /* Name.Class */
+body .no { color: #0086d2 } /* Name.Constant */
+body .nd { color: #ffffff } /* Name.Decorator */
+body .ni { color: #ffffff } /* Name.Entity */
+body .ne { color: #ffffff } /* Name.Exception */
+body .nf { color: #ff0086; font-weight: bold } /* Name.Function */
+body .nl { color: #ffffff } /* Name.Label */
+body .nn { color: #ffffff } /* Name.Namespace */
+body .nx { color: #ffffff } /* Name.Other */
+body .py { color: #ffffff } /* Name.Property */
+body .nt { color: #fb660a; font-weight: bold } /* Name.Tag */
+body .nv { color: #fb660a } /* Name.Variable */
+body .ow { color: #ffffff } /* Operator.Word */
+body .w { color: #888888 } /* Text.Whitespace */
+body .mb { color: #0086f7; font-weight: bold } /* Literal.Number.Bin */
+body .mf { color: #0086f7; font-weight: bold } /* Literal.Number.Float */
+body .mh { color: #0086f7; font-weight: bold } /* Literal.Number.Hex */
+body .mi { color: #0086f7; font-weight: bold } /* Literal.Number.Integer */
+body .mo { color: #0086f7; font-weight: bold } /* Literal.Number.Oct */
+body .sa { color: #0086d2 } /* Literal.String.Affix */
+body .sb { color: #0086d2 } /* Literal.String.Backtick */
+body .sc { color: #0086d2 } /* Literal.String.Char */
+body .dl { color: #0086d2 } /* Literal.String.Delimiter */
+body .sd { color: #0086d2 } /* Literal.String.Doc */
+body .s2 { color: #0086d2 } /* Literal.String.Double */
+body .se { color: #0086d2 } /* Literal.String.Escape */
+body .sh { color: #0086d2 } /* Literal.String.Heredoc */
+body .si { color: #0086d2 } /* Literal.String.Interpol */
+body .sx { color: #0086d2 } /* Literal.String.Other */
+body .sr { color: #0086d2 } /* Literal.String.Regex */
+body .s1 { color: #0086d2 } /* Literal.String.Single */
+body .ss { color: #0086d2 } /* Literal.String.Symbol */
+body .bp { color: #ffffff } /* Name.Builtin.Pseudo */
+body .fm { color: #ff0086; font-weight: bold } /* Name.Function.Magic */
+body .vc { color: #fb660a } /* Name.Variable.Class */
+body .vg { color: #fb660a } /* Name.Variable.Global */
+body .vi { color: #fb660a } /* Name.Variable.Instance */
+body .vm { color: #fb660a } /* Name.Variable.Magic */
+body .il { color: #0086f7; font-weight: bold } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;stdafx.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;FMTabContainerUI.h&quot;</span><span class="cp"></span>
+
+
+<span class="k">namespace</span> <span class="n">fm_uimodule</span>
+<span class="p">{</span>
+
+	<span class="n">CFMTabContainerUI</span><span class="o">::</span><span class="n">CFMTabContainerUI</span><span class="p">()</span>
+		<span class="o">:</span><span class="n">m_nMaxCount</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
+		<span class="n">m_nVisibleItemIndex</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+		<span class="n">m_nVisibleItemCount</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+		<span class="n">m_nMinVisibleItemCount</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+	<span class="p">{</span>
+	<span class="p">}</span>
+
+	<span class="n">CFMTabContainerUI</span><span class="o">::~</span><span class="n">CFMTabContainerUI</span><span class="p">()</span>
+	<span class="p">{</span>
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">CFMTabContainerUI</span><span class="o">::</span><span class="n">UpdateRegion</span><span class="p">(</span><span class="k">const</span> <span class="n">RECT</span><span class="o">&amp;</span> <span class="n">rcRegion</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">RECT</span> <span class="n">rcOldRegion</span> <span class="o">=</span> <span class="n">GetPos</span><span class="p">();</span>
+		<span class="kt">int</span> <span class="n">nOldWidth</span> <span class="o">=</span> <span class="n">rcOldRegion</span><span class="p">.</span><span class="n">right</span> <span class="o">-</span> <span class="n">rcOldRegion</span><span class="p">.</span><span class="n">left</span><span class="p">;</span>
+		<span class="kt">int</span> <span class="n">nNewWidth</span> <span class="o">=</span> <span class="n">rcRegion</span><span class="p">.</span><span class="n">right</span> <span class="o">-</span> <span class="n">rcRegion</span><span class="p">.</span><span class="n">left</span><span class="p">;</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">nOldWidth</span> <span class="o">==</span> <span class="n">nNewWidth</span><span class="p">)</span>
+			<span class="k">return</span><span class="p">;</span>
+
+		<span class="kt">int</span> <span class="n">nNewItemCount</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">nNewWidth</span> <span class="o">/</span> <span class="n">m_nFixedWidth</span><span class="p">,</span> <span class="n">m_nMaxCount</span><span class="p">);</span>
+		<span class="kt">int</span> <span class="n">nExtendItem</span> <span class="o">=</span> <span class="n">abs</span><span class="p">(</span><span class="n">nNewItemCount</span> <span class="o">-</span> <span class="n">m_nVisibleItemCount</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">nExtendItem</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+			<span class="k">return</span><span class="p">;</span>
+
+		<span class="c1">//extend</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">nNewWidth</span> <span class="o">&gt;</span> <span class="n">nOldWidth</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="c1">//Ö»¹»À©Õ¹×ó±ß</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">m_nVisibleItemIndex</span> <span class="o">&gt;=</span> <span class="n">nExtendItem</span><span class="p">)</span>
+			<span class="p">{</span>
+				<span class="n">m_nVisibleItemIndex</span> <span class="o">-=</span> <span class="n">nExtendItem</span><span class="p">;</span>
+				<span class="n">m_nVisibleItemCount</span> <span class="o">+=</span> <span class="n">nExtendItem</span><span class="p">;</span>
+			<span class="p">}</span>
+			<span class="k">else</span>
+			<span class="p">{</span>
+				<span class="n">nExtendItem</span> <span class="o">-=</span> <span class="n">m_nVisibleItemIndex</span><span class="p">;</span>
+				<span class="kt">int</span> <span class="n">nRightHideItemCount</span> <span class="o">=</span> <span class="n">m_pTabHeaderLayout</span><span class="o">-&gt;</span><span class="n">GetCount</span><span class="p">()</span> <span class="o">-</span>
+					<span class="p">(</span><span class="n">m_nVisibleItemIndex</span> <span class="o">+</span> <span class="n">m_nVisibleItemCount</span><span class="p">);</span>
+
+				<span class="k">if</span> <span class="p">(</span><span class="n">nRightHideItemCount</span> <span class="o">&lt;=</span> <span class="n">nExtendItem</span><span class="p">)</span>
+				<span class="p">{</span>
+					<span class="n">m_nVisibleItemCount</span> <span class="o">=</span> <span class="n">m_pTabHeaderLayout</span><span class="o">-&gt;</span><span class="n">GetCount</span><span class="p">();</span>
+				<span class="p">}</span>
+				<span class="k">else</span>
+				<span class="p">{</span>
+					<span class="n">m_nVisibleItemCount</span> <span class="o">=</span> <span class="n">m_pTabHeaderLayout</span><span class="o">-&gt;</span><span class="n">GetCount</span><span class="p">()</span> <span class="o">-</span> <span class="p">(</span><span class="n">nRightHideItemCount</span> <span class="o">-</span> <span class="n">nExtendItem</span><span class="p">);</span>
+				<span class="p">}</span>
+
+				<span class="n">m_nVisibleItemIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+		<span class="k">else</span>
+		<span class="p">{</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">m_nVisibleItemCount</span> <span class="o">&lt;=</span> <span class="n">max</span><span class="p">(</span><span class="n">m_nMinVisibleItemCount</span><span class="p">,</span> <span class="n">nNewItemCount</span><span class="p">))</span>
+				<span class="k">return</span><span class="p">;</span>
+			
+			<span class="c1">//±£Áô×îÐ¡¿É¼ûÔ¤ÉèÊý</span>
+			<span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">m_nVisibleItemCount</span> <span class="o">-</span> <span class="n">nExtendItem</span> <span class="o">&lt;=</span> <span class="n">m_nMinVisibleItemCount</span><span class="p">)</span>
+			<span class="p">{</span>
+				<span class="n">nExtendItem</span> <span class="o">=</span> <span class="n">m_nVisibleItemCount</span> <span class="o">-</span> <span class="n">m_nMinVisibleItemCount</span><span class="p">;</span>
+				<span class="n">m_nVisibleItemCount</span> <span class="o">=</span> <span class="n">m_nMinVisibleItemCount</span><span class="p">;</span>
+			<span class="p">}</span>
+			<span class="c1">//Ò»°ãÇé¿ö,¿ÉËõÐ¡ÇÒËõÐ¡ºóµÄÏî´óÓÚµÈÓÚ×îÐ¡Ô¤ÉèÊý</span>
+			
+			<span class="c1">//Èç¹ûÖ»¹»ËõÐ¡Ò»¸ö×ÓÏî</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">nExtendItem</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">m_nVisibleItemCount</span> <span class="o">&gt;</span> <span class="n">m_nMinVisibleItemCount</span><span class="p">)</span>
+			<span class="p">{</span>
+				<span class="n">m_nVisibleItemIndex</span><span class="o">++</span><span class="p">;</span>
+				<span class="n">m_nVisibleItemCount</span><span class="o">--</span><span class="p">;</span>
+			<span class="p">}</span>
+			<span class="c1">//ÓÒ²àÊÕÒ»¸ö£¬Ê£ÓàÈ«¸ø×ó²à</span>
+			<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">nExtendItem</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
+			<span class="p">{</span>
+				<span class="kt">int</span> <span class="n">nRightShrinkItem</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+				<span class="kt">int</span> <span class="n">nLeftShrinkItem</span> <span class="o">=</span> <span class="n">nExtendItem</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+				<span class="n">m_nVisibleItemIndex</span> <span class="o">+=</span> <span class="p">(</span><span class="n">nLeftShrinkItem</span><span class="p">);</span>
+				<span class="k">if</span> <span class="p">(</span><span class="n">m_nVisibleItemCount</span> <span class="o">&gt;</span> <span class="n">m_nMinVisibleItemCount</span><span class="p">)</span>
+					<span class="n">m_nVisibleItemCount</span> <span class="o">-=</span> <span class="n">nExtendItem</span><span class="p">;</span>
+
+			<span class="p">}</span>
+		<span class="p">}</span>
+
+		<span class="n">AdjustVisibleItem</span><span class="p">(</span><span class="n">UPDATEITEM</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">CFMTabContainerUI</span><span class="o">::</span><span class="n">SetHeaderFixedWidth</span><span class="p">(</span><span class="kt">int</span> <span class="n">nWidth</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">m_nFixedWidth</span> <span class="o">=</span> <span class="n">nWidth</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">CFMTabContainerUI</span><span class="o">::</span><span class="n">SetVisibleIndex</span><span class="p">(</span><span class="kt">int</span> <span class="n">nIndex</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">m_nVisibleItemIndex</span> <span class="o">=</span> <span class="n">nIndex</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="kt">bool</span> <span class="n">CFMTabContainerUI</span><span class="o">::</span><span class="n">AddItem</span><span class="p">(</span><span class="n">CControlUI</span><span class="o">*</span> <span class="n">pControl</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pControl</span> <span class="o">==</span> <span class="k">nullptr</span> <span class="p">)</span>
+			<span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+
+		<span class="k">if</span> <span class="p">(</span><span class="n">m_pTabHeaderLayout</span> <span class="o">&amp;&amp;</span> <span class="n">m_pTabHeaderLayout</span><span class="o">-&gt;</span><span class="n">GetCount</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="n">m_nMaxCount</span><span class="p">)</span>
+			<span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+
+		<span class="k">if</span> <span class="p">(</span><span class="n">pControl</span><span class="o">-&gt;</span><span class="n">GetInterface</span><span class="p">(</span><span class="n">DUI_CTR_FMTABHEADER</span><span class="p">)</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">CFMTabHeaderUI</span><span class="o">*</span> <span class="n">pTabHeader</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">CFMTabHeaderUI</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">pControl</span><span class="p">);</span>
+			<span class="n">DuiLib</span><span class="o">::</span><span class="n">CButtonUI</span><span class="o">*</span> <span class="n">pButton</span> <span class="o">=</span> <span class="n">pTabHeader</span><span class="o">-&gt;</span><span class="n">GetHeaderBtn</span><span class="p">();</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">pButton</span><span class="p">)</span>
+			<span class="p">{</span>
+				<span class="n">pButton</span><span class="o">-&gt;</span><span class="n">OnNotify</span> <span class="o">+=</span> <span class="n">MakeDelegate</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">CFMTabContainerUI</span><span class="o">::</span><span class="n">OnButtonClick</span><span class="p">);</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+
+		<span class="n">__super</span><span class="o">::</span><span class="n">Add</span><span class="p">(</span><span class="n">pControl</span><span class="p">);</span>
+
+		<span class="n">AdjustVisibleItem</span><span class="p">(</span><span class="n">ADDITEM</span><span class="p">);</span>
+		<span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="kt">int</span> <span class="n">CFMTabContainerUI</span><span class="o">::</span><span class="n">RemoveItem</span><span class="p">(</span><span class="n">CControlUI</span><span class="o">*</span> <span class="n">pControl</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pControl</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+			<span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+
+		<span class="kt">bool</span> <span class="n">bRightHidden</span> <span class="o">=</span> <span class="n">m_nVisibleItemIndex</span> <span class="o">+</span> <span class="n">m_nVisibleItemCount</span> <span class="o">&lt;</span> <span class="n">m_pTabHeaderLayout</span><span class="o">-&gt;</span><span class="n">GetCount</span><span class="p">();</span>
+		<span class="kt">int</span> <span class="n">nIndex</span> <span class="o">=</span> <span class="n">__super</span><span class="o">::</span><span class="n">Remove</span><span class="p">(</span><span class="n">pControl</span><span class="p">);</span>
+		<span class="n">RemoveItem</span><span class="p">(</span><span class="n">nIndex</span><span class="p">,</span> <span class="n">bRightHidden</span><span class="p">);</span>	
+		<span class="k">return</span> <span class="n">nIndex</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="kt">int</span> <span class="n">CFMTabContainerUI</span><span class="o">::</span><span class="n">RemoveItem</span><span class="p">(</span><span class="n">LPCTSTR</span> <span class="n">pstrName</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pstrName</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+			<span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+
+		<span class="kt">bool</span> <span class="n">bRightHidden</span> <span class="o">=</span> <span class="n">m_nVisibleItemIndex</span> <span class="o">+</span> <span class="n">m_nVisibleItemCount</span> <span class="o">&lt;</span> <span class="n">m_pTabHeaderLayout</span><span class="o">-&gt;</span><span class="n">GetCount</span><span class="p">();</span>
+		<span class="kt">int</span> <span class="n">nIndex</span> <span class="o">=</span> <span class="n">__super</span><span class="o">::</span><span class="n">RemoveItem</span><span class="p">(</span><span class="n">pstrName</span><span class="p">);</span>
+		<span class="n">RemoveItem</span><span class="p">(</span><span class="n">nIndex</span><span class="p">,</span> <span class="n">bRightHidden</span><span class="p">);</span>
+		<span class="k">return</span> <span class="n">nIndex</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="kt">bool</span> <span class="n">CFMTabContainerUI</span><span class="o">::</span><span class="n">RemoveItemAt</span><span class="p">(</span><span class="kt">int</span> <span class="n">nIndex</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">nIndex</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+			<span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+
+		<span class="kt">bool</span> <span class="n">bRightHidden</span> <span class="o">=</span> <span class="n">m_nVisibleItemIndex</span> <span class="o">+</span> <span class="n">m_nVisibleItemCount</span> <span class="o">&lt;</span> <span class="n">m_pTabHeaderLayout</span><span class="o">-&gt;</span><span class="n">GetCount</span><span class="p">();</span>
+		<span class="n">RemoveItem</span><span class="p">(</span><span class="n">nIndex</span><span class="p">,</span> <span class="n">bRightHidden</span><span class="p">);</span>
+		<span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">CFMTabContainerUI</span><span class="o">::</span><span class="n">Select</span><span class="p">(</span><span class="kt">int</span> <span class="n">nIndex</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">nIndex</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">nIndex</span> <span class="o">&gt;=</span> <span class="n">m_pTabHeaderLayout</span><span class="o">-&gt;</span><span class="n">GetCount</span><span class="p">())</span>
+			<span class="k">return</span><span class="p">;</span>
+
+		<span class="k">if</span> <span class="p">(</span><span class="n">nIndex</span> <span class="o">&gt;=</span> <span class="n">m_nVisibleItemIndex</span> <span class="o">&amp;&amp;</span> 
+			<span class="n">nIndex</span> <span class="o">&lt;</span> <span class="n">m_nVisibleItemIndex</span> <span class="o">+</span> <span class="n">m_nVisibleItemCount</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">Select</span><span class="p">(</span><span class="n">nIndex</span><span class="p">);</span>
+			<span class="k">return</span><span class="p">;</span>
+		<span class="p">}</span>
+
+		<span class="n">m_nVisibleItemIndex</span> <span class="o">=</span> <span class="n">nIndex</span><span class="p">;</span>
+		<span class="n">AdjustVisibleItem</span><span class="p">(</span><span class="n">UPDATEITEM</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">CFMTabContainerUI</span><span class="o">::</span><span class="n">RemoveItem</span><span class="p">(</span><span class="kt">int</span> <span class="n">nIndex</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">bRightHidden</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">nIndex</span> <span class="o">&gt;=</span> <span class="n">m_nVisibleItemIndex</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="c1">//ÓÒ²àÓÐÒþ²Ø×ÓÏî</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">bRightHidden</span><span class="p">)</span>
+			<span class="p">{</span>
+				<span class="c1">//m_nVisibleItemIndex++;</span>
+			<span class="p">}</span>
+			<span class="c1">//×ó²àÓÐÒþ²Ø×ÓÏî</span>
+			<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">m_nVisibleItemIndex</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+			<span class="p">{</span>
+				<span class="n">m_nVisibleItemIndex</span><span class="o">--</span><span class="p">;</span>
+			<span class="p">}</span>
+			<span class="c1">//È«²¿¿É¼û</span>
+			<span class="k">else</span>
+			<span class="p">{</span>
+				<span class="n">m_nVisibleItemCount</span><span class="o">--</span><span class="p">;</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+
+		<span class="n">AdjustVisibleItem</span><span class="p">(</span><span class="n">UPDATEITEM</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">CFMTabContainerUI</span><span class="o">::</span><span class="n">AdjustVisibleItem</span><span class="p">(</span><span class="n">ENItemState</span> <span class="n">state</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="k">switch</span> <span class="p">(</span><span class="n">state</span><span class="p">)</span>
+		<span class="p">{</span>
+		<span class="k">case</span> <span class="nl">ADDITEM</span><span class="p">:</span>
+			<span class="n">ExtendItemPos</span><span class="p">();</span>
+			<span class="k">break</span><span class="p">;</span>
+		<span class="k">case</span> <span class="nl">UPDATEITEM</span><span class="p">:</span>
+			<span class="n">UpdateItemPos</span><span class="p">();</span>
+			<span class="k">break</span><span class="p">;</span>
+		<span class="k">default</span><span class="o">:</span>
+			<span class="k">break</span><span class="p">;</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+
+	<span class="c1">//Ä¬ÈÏ&quot;É¾³ý&quot;°´Å¥</span>
+	<span class="kt">bool</span> <span class="n">CFMTabContainerUI</span><span class="o">::</span><span class="n">OnButtonClick</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">param</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">DuiLib</span><span class="o">::</span><span class="n">TNotifyUI</span><span class="o">*</span> <span class="n">pMsg</span> <span class="o">=</span> <span class="p">(</span><span class="n">DuiLib</span><span class="o">::</span><span class="n">TNotifyUI</span><span class="o">*</span><span class="p">)</span><span class="n">param</span><span class="p">;</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pMsg</span><span class="o">-&gt;</span><span class="n">sType</span> <span class="o">==</span> <span class="n">DUI_MSGTYPE_CLICK</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">CControlUI</span><span class="o">*</span> <span class="n">pSender</span> <span class="o">=</span> <span class="n">pMsg</span><span class="o">-&gt;</span><span class="n">pSender</span><span class="p">;</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">pSender</span><span class="o">-&gt;</span><span class="n">GetInterface</span><span class="p">(</span><span class="n">DUI_CTR_BUTTON</span><span class="p">)</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+			<span class="p">{</span>
+				<span class="n">CFMTabHeaderUI</span><span class="o">*</span> <span class="n">pTabHeader</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">CFMTabHeaderUI</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">pSender</span><span class="o">-&gt;</span><span class="n">GetParent</span><span class="p">());</span>
+				<span class="kt">int</span> <span class="n">nTargetIndex</span> <span class="o">=</span> <span class="n">Remove</span><span class="p">(</span><span class="n">pTabHeader</span><span class="p">);</span>
+
+				<span class="n">GetManager</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">SendNotify</span><span class="p">(</span><span class="nb">NULL</span><span class="p">,</span> <span class="n">DUI_MSGTYPE_TABDELITEM</span><span class="p">,</span> <span class="n">nTargetIndex</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+
+		<span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">CFMTabContainerUI</span><span class="o">::</span><span class="n">ExtendItemPos</span><span class="p">()</span>
+	<span class="p">{</span>
+		<span class="n">RECT</span> <span class="n">rcRegion</span> <span class="o">=</span> <span class="n">GetPos</span><span class="p">();</span>
+		<span class="kt">int</span> <span class="n">nItemCount</span> <span class="o">=</span> <span class="n">m_pTabHeaderLayout</span><span class="o">-&gt;</span><span class="n">GetCount</span><span class="p">();</span>
+		<span class="kt">int</span> <span class="n">nTotalItemWidth</span> <span class="o">=</span> <span class="n">nItemCount</span> <span class="o">*</span> <span class="n">m_nFixedWidth</span><span class="p">;</span>
+		<span class="kt">int</span> <span class="n">nMaxWidth</span> <span class="o">=</span> <span class="n">rcRegion</span><span class="p">.</span><span class="n">right</span> <span class="o">-</span> <span class="n">rcRegion</span><span class="p">.</span><span class="n">left</span><span class="p">;</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">nTotalItemWidth</span> <span class="o">&lt;=</span> <span class="n">nMaxWidth</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nItemCount</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+			<span class="p">{</span>
+				<span class="kt">bool</span> <span class="n">bVisible</span> <span class="o">=</span> <span class="n">m_pTabHeaderLayout</span><span class="o">-&gt;</span><span class="n">GetItemAt</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">IsVisible</span><span class="p">();</span>
+				<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">bVisible</span><span class="p">)</span>
+					<span class="n">m_pTabHeaderLayout</span><span class="o">-&gt;</span><span class="n">GetItemAt</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">SetVisible</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+			<span class="p">}</span>
+
+			<span class="n">m_nVisibleItemIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+			<span class="n">m_nVisibleItemCount</span> <span class="o">=</span> <span class="n">nItemCount</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="k">else</span>
+		<span class="p">{</span>
+			<span class="kt">int</span> <span class="n">nVisibleItemIndex</span> <span class="o">=</span> <span class="p">(</span><span class="n">nItemCount</span> <span class="o">-</span> <span class="n">nMaxWidth</span> <span class="o">/</span> <span class="n">m_nFixedWidth</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+			<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nItemCount</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+			<span class="p">{</span>
+				<span class="n">m_pTabHeaderLayout</span><span class="o">-&gt;</span><span class="n">GetItemAt</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">SetVisible</span><span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="n">nVisibleItemIndex</span><span class="p">);</span>
+			<span class="p">}</span>
+
+			<span class="n">m_nVisibleItemIndex</span> <span class="o">=</span> <span class="n">nVisibleItemIndex</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+			<span class="n">m_nVisibleItemCount</span> <span class="o">=</span> <span class="n">nItemCount</span> <span class="o">-</span> <span class="n">m_nVisibleItemIndex</span><span class="p">;</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">CFMTabContainerUI</span><span class="o">::</span><span class="n">UpdateItemPos</span><span class="p">()</span>
+	<span class="p">{</span>
+		<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m_pTabHeaderLayout</span><span class="o">-&gt;</span><span class="n">GetCount</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="kt">bool</span> <span class="n">bVisible</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;=</span> <span class="n">m_nVisibleItemIndex</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m_nVisibleItemIndex</span> <span class="o">+</span> <span class="n">m_nVisibleItemCount</span><span class="p">);</span>
+			<span class="n">m_pTabHeaderLayout</span><span class="o">-&gt;</span><span class="n">GetItemAt</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">SetVisible</span><span class="p">(</span><span class="n">bVisible</span><span class="p">);</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</body>
+</html>

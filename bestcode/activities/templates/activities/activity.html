@@ -51,7 +51,6 @@
 										</a>
 									</td>
 								</tr>
-								<tr><td><small style="margin-left: 6px">英文名：{{ submit.submit_reviewer.user.username }}</small></td></tr>
 								<tr><td><small style="margin-left: 6px">中文名：{{ submit.submit_reviewer.chinese_name }}</small></td></tr>
 								<tr><td><small style="margin-left: 6px">{{ submit.submit_reviewer.primary_department.department_name }}</small></td></tr>
 							</table>
@@ -113,7 +112,7 @@
 								<tr><td><h4><small>{{ submit.code_desc }}</small></h4><td></tr>
 								<tr>
 									<td>
-										<small>赞数：{{ submit.praise_count }}</small>&nbsp;&nbsp;
+										<small>点赞：{{ submit.praise_count }}</small>&nbsp;&nbsp;
 										<small>评论：{{ submit.comment_count }}</small>&nbsp;&nbsp;
 										<small>浏览: {{ submit.browse_times }}</small>
 									</td>
@@ -125,7 +124,7 @@
 					<!-- divider -->
 					<tr>
 						<td colspan="3">
-							<hr style="margin: 8px" width="100%" color="red" size=2 />
+							<hr style="margin: 8px" width="100%" size=2 />
 						</td>
 					</tr>
 					{% endif %}

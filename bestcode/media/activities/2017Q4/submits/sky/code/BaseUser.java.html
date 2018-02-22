@@ -1,0 +1,396 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #333333 }
+body  { background: #111111; color: #ffffff }
+body .c { color: #008800; font-style: italic; background-color: #0f140f } /* Comment */
+body .err { color: #ffffff } /* Error */
+body .esc { color: #ffffff } /* Escape */
+body .g { color: #ffffff } /* Generic */
+body .k { color: #fb660a; font-weight: bold } /* Keyword */
+body .l { color: #ffffff } /* Literal */
+body .n { color: #ffffff } /* Name */
+body .o { color: #ffffff } /* Operator */
+body .x { color: #ffffff } /* Other */
+body .p { color: #ffffff } /* Punctuation */
+body .ch { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Hashbang */
+body .cm { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Multiline */
+body .cp { color: #ff0007; font-weight: bold; font-style: italic; background-color: #0f140f } /* Comment.Preproc */
+body .cpf { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.PreprocFile */
+body .c1 { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Single */
+body .cs { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Special */
+body .gd { color: #ffffff } /* Generic.Deleted */
+body .ge { color: #ffffff } /* Generic.Emph */
+body .gr { color: #ffffff } /* Generic.Error */
+body .gh { color: #ffffff; font-weight: bold } /* Generic.Heading */
+body .gi { color: #ffffff } /* Generic.Inserted */
+body .go { color: #444444; background-color: #222222 } /* Generic.Output */
+body .gp { color: #ffffff } /* Generic.Prompt */
+body .gs { color: #ffffff } /* Generic.Strong */
+body .gu { color: #ffffff; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #ffffff } /* Generic.Traceback */
+body .kc { color: #fb660a; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #fb660a; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #fb660a; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #fb660a } /* Keyword.Pseudo */
+body .kr { color: #fb660a; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #cdcaa9; font-weight: bold } /* Keyword.Type */
+body .ld { color: #ffffff } /* Literal.Date */
+body .m { color: #0086f7; font-weight: bold } /* Literal.Number */
+body .s { color: #0086d2 } /* Literal.String */
+body .na { color: #ff0086; font-weight: bold } /* Name.Attribute */
+body .nb { color: #ffffff } /* Name.Builtin */
+body .nc { color: #ffffff } /* Name.Class */
+body .no { color: #0086d2 } /* Name.Constant */
+body .nd { color: #ffffff } /* Name.Decorator */
+body .ni { color: #ffffff } /* Name.Entity */
+body .ne { color: #ffffff } /* Name.Exception */
+body .nf { color: #ff0086; font-weight: bold } /* Name.Function */
+body .nl { color: #ffffff } /* Name.Label */
+body .nn { color: #ffffff } /* Name.Namespace */
+body .nx { color: #ffffff } /* Name.Other */
+body .py { color: #ffffff } /* Name.Property */
+body .nt { color: #fb660a; font-weight: bold } /* Name.Tag */
+body .nv { color: #fb660a } /* Name.Variable */
+body .ow { color: #ffffff } /* Operator.Word */
+body .w { color: #888888 } /* Text.Whitespace */
+body .mb { color: #0086f7; font-weight: bold } /* Literal.Number.Bin */
+body .mf { color: #0086f7; font-weight: bold } /* Literal.Number.Float */
+body .mh { color: #0086f7; font-weight: bold } /* Literal.Number.Hex */
+body .mi { color: #0086f7; font-weight: bold } /* Literal.Number.Integer */
+body .mo { color: #0086f7; font-weight: bold } /* Literal.Number.Oct */
+body .sa { color: #0086d2 } /* Literal.String.Affix */
+body .sb { color: #0086d2 } /* Literal.String.Backtick */
+body .sc { color: #0086d2 } /* Literal.String.Char */
+body .dl { color: #0086d2 } /* Literal.String.Delimiter */
+body .sd { color: #0086d2 } /* Literal.String.Doc */
+body .s2 { color: #0086d2 } /* Literal.String.Double */
+body .se { color: #0086d2 } /* Literal.String.Escape */
+body .sh { color: #0086d2 } /* Literal.String.Heredoc */
+body .si { color: #0086d2 } /* Literal.String.Interpol */
+body .sx { color: #0086d2 } /* Literal.String.Other */
+body .sr { color: #0086d2 } /* Literal.String.Regex */
+body .s1 { color: #0086d2 } /* Literal.String.Single */
+body .ss { color: #0086d2 } /* Literal.String.Symbol */
+body .bp { color: #ffffff } /* Name.Builtin.Pseudo */
+body .fm { color: #ff0086; font-weight: bold } /* Name.Function.Magic */
+body .vc { color: #fb660a } /* Name.Variable.Class */
+body .vg { color: #fb660a } /* Name.Variable.Global */
+body .vi { color: #fb660a } /* Name.Variable.Instance */
+body .vm { color: #fb660a } /* Name.Variable.Magic */
+body .il { color: #0086f7; font-weight: bold } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * 会议用户类型基类</span>
+<span class="cm"> * Created by wangy on 2017/1/16.</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BaseUser</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">LOCAL_USER_PRIORITY</span> <span class="o">=</span> <span class="mi">100</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">MAIN_SPEAKER_PRIORITY</span> <span class="o">=</span> <span class="mi">99</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">TELEPHONE_USER_PRIORITY</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span><span class="o">;</span>
+
+    <span class="kd">protected</span> <span class="n">RoomUserInfo</span> <span class="n">userInfo</span><span class="o">;</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 构造器</span>
+<span class="cm">     * */</span>
+    <span class="kd">public</span> <span class="nf">BaseUser</span><span class="o">(</span><span class="n">RoomUserInfo</span> <span class="n">userInfo</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">userInfo</span> <span class="o">=</span> <span class="n">userInfo</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setRoomInfo</span><span class="o">(</span><span class="n">RoomUserInfo</span> <span class="n">roomUserInfo</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">userInfo</span> <span class="o">=</span> <span class="n">roomUserInfo</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 检查是否有广播音频的权限</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">checkAudioPermission</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="o">!</span><span class="n">isListener</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 检查是否有广播音频的权限</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">checkVideoPermission</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="o">!</span><span class="n">isListener</span><span class="o">()</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">MeetingModel</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">isAudioMeeting</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 检查是否有申请主讲的权限</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">checkMainSpeakPermission</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="o">!</span><span class="n">isListener</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 检查音频频权限</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">checkAVPermission</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">checkVideoPermission</span><span class="o">()</span> <span class="o">&amp;&amp;</span> <span class="n">checkAudioPermission</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 检查是否具有公聊权限</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">checkPubChatPermission</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">MeetingModel</span> <span class="n">roomInfoModel</span> <span class="o">=</span> <span class="n">MeetingModel</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
+        <span class="k">return</span> <span class="n">roomInfoModel</span><span class="o">.</span><span class="na">chatEnable</span><span class="o">()</span> <span class="o">&amp;&amp;</span> <span class="n">roomInfoModel</span><span class="o">.</span><span class="na">pubChatEnable</span><span class="o">()</span> <span class="o">&amp;&amp;</span> <span class="n">isChatEnable</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 检查是否具有私聊权限</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">checkP2pChatPermission</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">MeetingModel</span> <span class="n">roomInfoModel</span> <span class="o">=</span> <span class="n">MeetingModel</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
+        <span class="k">return</span> <span class="n">roomInfoModel</span><span class="o">.</span><span class="na">chatEnable</span><span class="o">()</span> <span class="o">&amp;&amp;</span> <span class="n">roomInfoModel</span><span class="o">.</span><span class="na">p2pChatEnable</span><span class="o">()</span> <span class="o">&amp;&amp;</span> <span class="n">isChatEnable</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 检查是否有控制远程用户的权限，如发言，视频广播，其实际就是当前用户是主讲或者主席与{@checkHighestPermission()}方法返回一致</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">checkControlRemotePermission</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">checkHighestPermission</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * @return 请出会议室权限：只有主席才有权限</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">checkRemoveUserPermission</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">userInfo</span><span class="o">.</span><span class="na">userRight</span> <span class="o">==</span> <span class="n">RoomUserInfo</span><span class="o">.</span><span class="na">USERRIGHT_CHAIR</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 检查是否有共享文档的权限</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return 只有非旁听用户才具有共享文档的权限</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">checkSharePermission</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">checkMainSpeakPermission</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 用户是否具有最高权限，即是主席或者主讲</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">checkHighestPermission</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">isChair</span><span class="o">()</span> <span class="o">||</span> <span class="n">isMainSpeakerDone</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isMainSpeakerDone</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">userInfo</span><span class="o">.</span><span class="na">dataState</span> <span class="o">==</span> <span class="n">RoomUserInfo</span><span class="o">.</span><span class="na">STATE_DONE</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isMainSpeakerWait</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">userInfo</span><span class="o">.</span><span class="na">dataState</span> <span class="o">==</span> <span class="n">RoomUserInfo</span><span class="o">.</span><span class="na">STATE_WAITING</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 不在主讲状态，不包含申请主讲中状态</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isMainSpeakerNone</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">userInfo</span><span class="o">.</span><span class="na">dataState</span> <span class="o">==</span> <span class="n">RoomUserInfo</span><span class="o">.</span><span class="na">STATE_NONE</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 是否在主讲或者申请主讲状态中</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isMainSpeakerDoneOrWait</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="o">!</span><span class="n">isMainSpeakerNone</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 是否在共享</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isVncDone</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">userInfo</span><span class="o">.</span><span class="na">vncState</span> <span class="o">==</span> <span class="n">RoomUserInfo</span><span class="o">.</span><span class="na">STATE_DONE</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isMediaShareDone</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="o">(</span><span class="n">userInfo</span><span class="o">.</span><span class="na">audioShareID</span> <span class="o">!=</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">userInfo</span><span class="o">.</span><span class="na">videoShareID</span> <span class="o">!=</span> <span class="mi">0</span><span class="o">)</span>
+                <span class="o">&amp;&amp;</span> <span class="n">userInfo</span><span class="o">.</span><span class="na">mediaShareState</span> <span class="o">!=</span> <span class="n">RoomUserInfo</span><span class="o">.</span><span class="na">MEDIA_SHARE_PAUSE</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isMediaSharePause</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">userInfo</span><span class="o">.</span><span class="na">mediaShareState</span> <span class="o">==</span> <span class="n">RoomUserInfo</span><span class="o">.</span><span class="na">MEDIA_SHARE_PAUSE</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isMediaShareNone</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="o">(</span><span class="n">userInfo</span><span class="o">.</span><span class="na">audioShareID</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">userInfo</span><span class="o">.</span><span class="na">videoShareID</span> <span class="o">==</span> <span class="mi">0</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 是否是电话接入用户</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isTelephoneUser</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">userInfo</span><span class="o">.</span><span class="na">terminalType</span> <span class="o">==</span> <span class="n">RoomUserInfo</span><span class="o">.</span><span class="na">TERMINAL_TELEPHONE</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 是否有接入的视屏设备</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isVideoDeviceConnected</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">userInfo</span><span class="o">.</span><span class="na">vclmgr</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">userInfo</span><span class="o">.</span><span class="na">vclmgr</span><span class="o">.</span><span class="na">getChannelCount</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 是否有音频设备接入</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isAudioDeviceConnected</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">userInfo</span><span class="o">.</span><span class="na">audioChannel</span><span class="o">.</span><span class="na">hasAudio</span> <span class="o">==</span> <span class="n">RoomUserInfo</span><span class="o">.</span><span class="na">STATE_BOOL_TRUE</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isVncNone</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">userInfo</span><span class="o">.</span><span class="na">vncState</span> <span class="o">==</span> <span class="n">RoomUserInfo</span><span class="o">.</span><span class="na">STATE_NONE</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 是否是本地用户</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kd">final</span> <span class="kt">boolean</span> <span class="nf">isLocalUser</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">UserManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">getLocalUserID</span><span class="o">()</span> <span class="o">==</span> <span class="n">userInfo</span><span class="o">.</span><span class="na">userID</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">VideoChannelManager</span> <span class="nf">getVideoManager</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">userInfo</span><span class="o">.</span><span class="na">vclmgr</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">long</span> <span class="nf">getUserID</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">userInfo</span><span class="o">.</span><span class="na">userID</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 获取用户昵称，如果昵称为空，则返回用户名称</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getNickName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">userInfo</span><span class="o">.</span><span class="na">strNickName</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">userInfo</span><span class="o">.</span><span class="na">strUserName</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="k">return</span> <span class="n">userInfo</span><span class="o">.</span><span class="na">strNickName</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 获取已经接入的视频设备列表</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">VideoChannel</span><span class="o">&gt;</span> <span class="nf">getVideoChannelList</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">userInfo</span><span class="o">.</span><span class="na">vclmgr</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+        <span class="o">}</span>
+
+        <span class="k">return</span> <span class="n">userInfo</span><span class="o">.</span><span class="na">vclmgr</span><span class="o">.</span><span class="na">getChannelList</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 是否是主席用户</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isChair</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">userInfo</span><span class="o">.</span><span class="na">userRight</span> <span class="o">==</span> <span class="n">RoomUserInfo</span><span class="o">.</span><span class="na">USERRIGHT_CHAIR</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 是否是旁听用户</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isListener</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">userInfo</span><span class="o">.</span><span class="na">userRight</span> <span class="o">==</span> <span class="n">RoomUserInfo</span><span class="o">.</span><span class="na">USERRIGHT_LISTENER</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 是否是出席用户</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isAttender</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">userInfo</span><span class="o">.</span><span class="na">userRight</span> <span class="o">==</span> <span class="n">RoomUserInfo</span><span class="o">.</span><span class="na">USERRIGHT_ATTENDER</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 是否正在发言中</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isSpeechDone</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">userInfo</span><span class="o">.</span><span class="na">audioChannel</span><span class="o">.</span><span class="na">state</span> <span class="o">==</span> <span class="n">AudioChannel</span><span class="o">.</span><span class="na">AUDIO_STATE_DONE</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 是否正在申请发言</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isSpeechWait</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">userInfo</span><span class="o">.</span><span class="na">audioChannel</span><span class="o">.</span><span class="na">state</span> <span class="o">==</span> <span class="n">AudioChannel</span><span class="o">.</span><span class="na">AUDIO_STATE_WAITING</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 未发言状态，不包含申请中状态</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isSpeechNone</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">userInfo</span><span class="o">.</span><span class="na">audioChannel</span><span class="o">.</span><span class="na">state</span> <span class="o">==</span> <span class="n">AudioChannel</span><span class="o">.</span><span class="na">AUDIO_STATE_NONE</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 是否在广播视频，只要有一路视频在广播，则返回true</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isVideoDone</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">userInfo</span><span class="o">.</span><span class="na">vclmgr</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">userInfo</span><span class="o">.</span><span class="na">vclmgr</span><span class="o">.</span><span class="na">hasStateDone</span><span class="o">();</span>
+
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 没有视频在广播</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isVideoNone</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">userInfo</span><span class="o">.</span><span class="na">vclmgr</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="o">!</span><span class="n">userInfo</span><span class="o">.</span><span class="na">vclmgr</span><span class="o">.</span><span class="na">hasStateDone</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 是否有白板标注权限</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isWBMarkDone</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">userInfo</span><span class="o">.</span><span class="na">wbMarkState</span> <span class="o">==</span> <span class="n">RoomUserInfo</span><span class="o">.</span><span class="na">STATE_DONE</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 获取用户优先级Id，</span>
+<span class="cm">     * 用于排序，本地用户 &gt; 主讲 &gt; 主席 &gt; 出席 &gt; 旁听 &gt; 电话用户</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getUserPriority</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">isTelephoneUser</span><span class="o">())</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">TELEPHONE_USER_PRIORITY</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">isLocalUser</span><span class="o">())</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">LOCAL_USER_PRIORITY</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">isMainSpeakerDone</span><span class="o">())</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">MAIN_SPEAKER_PRIORITY</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">userInfo</span><span class="o">.</span><span class="na">userRight</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 用户本身是否具有聊天的权限</span>
+<span class="cm">     */</span>
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">isChatEnable</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">userInfo</span><span class="o">.</span><span class="na">enableChat</span> <span class="o">==</span> <span class="n">RoomInfo</span><span class="o">.</span><span class="na">STATE_DONE</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * 指定的视频channelId的视频是否在广播</span>
+<span class="cm">     * */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isVideoChannelDone</span><span class="o">(</span><span class="kt">byte</span> <span class="n">channelId</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">userInfo</span><span class="o">.</span><span class="na">vclmgr</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">userInfo</span><span class="o">.</span><span class="na">vclmgr</span><span class="o">.</span><span class="na">getChannelState</span><span class="o">(</span><span class="n">channelId</span><span class="o">)</span> <span class="o">==</span> <span class="n">RoomUserInfo</span><span class="o">.</span><span class="na">STATE_DONE</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</body>
+</html>

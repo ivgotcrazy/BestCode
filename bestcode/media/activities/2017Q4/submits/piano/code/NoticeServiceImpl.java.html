@@ -1,0 +1,372 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #333333 }
+body  { background: #111111; color: #ffffff }
+body .c { color: #008800; font-style: italic; background-color: #0f140f } /* Comment */
+body .err { color: #ffffff } /* Error */
+body .esc { color: #ffffff } /* Escape */
+body .g { color: #ffffff } /* Generic */
+body .k { color: #fb660a; font-weight: bold } /* Keyword */
+body .l { color: #ffffff } /* Literal */
+body .n { color: #ffffff } /* Name */
+body .o { color: #ffffff } /* Operator */
+body .x { color: #ffffff } /* Other */
+body .p { color: #ffffff } /* Punctuation */
+body .ch { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Hashbang */
+body .cm { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Multiline */
+body .cp { color: #ff0007; font-weight: bold; font-style: italic; background-color: #0f140f } /* Comment.Preproc */
+body .cpf { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.PreprocFile */
+body .c1 { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Single */
+body .cs { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Special */
+body .gd { color: #ffffff } /* Generic.Deleted */
+body .ge { color: #ffffff } /* Generic.Emph */
+body .gr { color: #ffffff } /* Generic.Error */
+body .gh { color: #ffffff; font-weight: bold } /* Generic.Heading */
+body .gi { color: #ffffff } /* Generic.Inserted */
+body .go { color: #444444; background-color: #222222 } /* Generic.Output */
+body .gp { color: #ffffff } /* Generic.Prompt */
+body .gs { color: #ffffff } /* Generic.Strong */
+body .gu { color: #ffffff; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #ffffff } /* Generic.Traceback */
+body .kc { color: #fb660a; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #fb660a; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #fb660a; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #fb660a } /* Keyword.Pseudo */
+body .kr { color: #fb660a; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #cdcaa9; font-weight: bold } /* Keyword.Type */
+body .ld { color: #ffffff } /* Literal.Date */
+body .m { color: #0086f7; font-weight: bold } /* Literal.Number */
+body .s { color: #0086d2 } /* Literal.String */
+body .na { color: #ff0086; font-weight: bold } /* Name.Attribute */
+body .nb { color: #ffffff } /* Name.Builtin */
+body .nc { color: #ffffff } /* Name.Class */
+body .no { color: #0086d2 } /* Name.Constant */
+body .nd { color: #ffffff } /* Name.Decorator */
+body .ni { color: #ffffff } /* Name.Entity */
+body .ne { color: #ffffff } /* Name.Exception */
+body .nf { color: #ff0086; font-weight: bold } /* Name.Function */
+body .nl { color: #ffffff } /* Name.Label */
+body .nn { color: #ffffff } /* Name.Namespace */
+body .nx { color: #ffffff } /* Name.Other */
+body .py { color: #ffffff } /* Name.Property */
+body .nt { color: #fb660a; font-weight: bold } /* Name.Tag */
+body .nv { color: #fb660a } /* Name.Variable */
+body .ow { color: #ffffff } /* Operator.Word */
+body .w { color: #888888 } /* Text.Whitespace */
+body .mb { color: #0086f7; font-weight: bold } /* Literal.Number.Bin */
+body .mf { color: #0086f7; font-weight: bold } /* Literal.Number.Float */
+body .mh { color: #0086f7; font-weight: bold } /* Literal.Number.Hex */
+body .mi { color: #0086f7; font-weight: bold } /* Literal.Number.Integer */
+body .mo { color: #0086f7; font-weight: bold } /* Literal.Number.Oct */
+body .sa { color: #0086d2 } /* Literal.String.Affix */
+body .sb { color: #0086d2 } /* Literal.String.Backtick */
+body .sc { color: #0086d2 } /* Literal.String.Char */
+body .dl { color: #0086d2 } /* Literal.String.Delimiter */
+body .sd { color: #0086d2 } /* Literal.String.Doc */
+body .s2 { color: #0086d2 } /* Literal.String.Double */
+body .se { color: #0086d2 } /* Literal.String.Escape */
+body .sh { color: #0086d2 } /* Literal.String.Heredoc */
+body .si { color: #0086d2 } /* Literal.String.Interpol */
+body .sx { color: #0086d2 } /* Literal.String.Other */
+body .sr { color: #0086d2 } /* Literal.String.Regex */
+body .s1 { color: #0086d2 } /* Literal.String.Single */
+body .ss { color: #0086d2 } /* Literal.String.Symbol */
+body .bp { color: #ffffff } /* Name.Builtin.Pseudo */
+body .fm { color: #ff0086; font-weight: bold } /* Name.Function.Magic */
+body .vc { color: #fb660a } /* Name.Variable.Class */
+body .vg { color: #fb660a } /* Name.Variable.Global */
+body .vi { color: #fb660a } /* Name.Variable.Instance */
+body .vm { color: #fb660a } /* Name.Variable.Magic */
+body .il { color: #0086f7; font-weight: bold } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm"> * 文件名：NoticeServiceImpl.java</span>
+<span class="cm"> * 版权：Copyright by www.fsmeeting.com</span>
+<span class="cm"> * 描述：</span>
+<span class="cm"> * 修改人：pich</span>
+<span class="cm"> * 修改时间：2017年5月12日</span>
+<span class="cm"> * 修改内容：</span>
+<span class="cm"> */</span>
+
+<span class="kn">package</span> <span class="nn">com.fs.party.article.service.impl</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.stereotype.Service</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.fs.party.article.common.ArticleStatusEnum</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fs.party.article.common.ArticleTopEnum</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fs.party.article.common.ArticleTypeEnum</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fs.party.article.dao.mybatis.party.INoticeMapper</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fs.party.article.exception.NoticeException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fs.party.article.pojo.Notice</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fs.party.article.pojo.vo.NoticeInfo</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fs.party.article.service.INoticeService</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fs.party.article.service.ISystemClient</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fs.party.depeds.base.exception.FSException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fs.party.depeds.base.service.BaseServiceImpl</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fs.party.depeds.pojo.UserPartyInfo</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.fs.party.depeds.utils.Tools</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.github.pagehelper.PageHelper</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.github.pagehelper.PageInfo</span><span class="o">;</span>
+
+<span class="nd">@Service</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">NoticeServiceImpl</span> <span class="kd">extends</span> <span class="n">BaseServiceImpl</span> <span class="kd">implements</span> <span class="n">INoticeService</span> <span class="o">{</span>
+    
+    <span class="nd">@Autowired</span>
+    <span class="kd">private</span> <span class="n">INoticeMapper</span> <span class="n">noticeMapper</span><span class="o">;</span>
+  
+    <span class="nd">@Autowired</span>
+    <span class="kd">private</span> <span class="n">ISystemClient</span> <span class="n">systemClient</span><span class="o">;</span>
+    
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addNotice</span><span class="o">(</span><span class="n">Notice</span> <span class="n">notice</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="c1">//查询是否存在该用户 ,是否存在该组织</span>
+            <span class="cm">/*if (noticeMapper.queryUserExist(notice) == 0) {</span>
+<span class="cm">                throw new FSException(NoticeException.USER_IS_NOT_EXIST, &quot;该用户不存在&quot;);</span>
+<span class="cm">            }else if (noticeMapper.queryOrgExist(notice) == 0) {</span>
+<span class="cm">                throw new FSException(NoticeException.ORG_IS_NOT_EXIST, &quot;所属组织不存在&quot;);</span>
+<span class="cm">            }*/</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">notice</span><span class="o">.</span><span class="na">getTitle</span><span class="o">().</span><span class="na">getBytes</span><span class="o">().</span><span class="na">length</span> <span class="o">&gt;</span> <span class="mi">90</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">throw</span> <span class="k">new</span> <span class="n">FSException</span><span class="o">(</span><span class="n">NoticeException</span><span class="o">.</span><span class="na">TITLELEN_IS_LONG</span><span class="o">,</span> <span class="s">&quot;标题长度超过限制&quot;</span><span class="o">);</span>
+            <span class="o">}</span>
+            <span class="k">if</span> <span class="o">(!</span><span class="n">Tools</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">notice</span><span class="o">.</span><span class="na">getType</span><span class="o">()))</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(!</span><span class="n">ArticleTypeEnum</span><span class="o">.</span><span class="na">CITYNEWS</span><span class="o">.</span><span class="na">toString</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">notice</span><span class="o">.</span><span class="na">getType</span><span class="o">())</span>
+                        <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">ArticleTypeEnum</span><span class="o">.</span><span class="na">CADREWORK</span><span class="o">.</span><span class="na">toString</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">notice</span><span class="o">.</span><span class="na">getType</span><span class="o">())</span>
+                        <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">ArticleTypeEnum</span><span class="o">.</span><span class="na">INFORMATIONRELEASE</span><span class="o">.</span><span class="na">toString</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">notice</span><span class="o">.</span><span class="na">getType</span><span class="o">())</span>
+                        <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">ArticleTypeEnum</span><span class="o">.</span><span class="na">PARTYBUILDING</span><span class="o">.</span><span class="na">toString</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">notice</span><span class="o">.</span><span class="na">getType</span><span class="o">())</span>
+                        <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">ArticleTypeEnum</span><span class="o">.</span><span class="na">PARTYKNOWLEDGE</span><span class="o">.</span><span class="na">toString</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">notice</span><span class="o">.</span><span class="na">getType</span><span class="o">())</span>
+                        <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">ArticleTypeEnum</span><span class="o">.</span><span class="na">POLREG</span><span class="o">.</span><span class="na">toString</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">notice</span><span class="o">.</span><span class="na">getType</span><span class="o">())</span>
+                        <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">ArticleTypeEnum</span><span class="o">.</span><span class="na">TALENT</span><span class="o">.</span><span class="na">toString</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">notice</span><span class="o">.</span><span class="na">getType</span><span class="o">())</span>
+                        <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">ArticleTypeEnum</span><span class="o">.</span><span class="na">TISSUEGARDEN</span><span class="o">.</span><span class="na">toString</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">notice</span><span class="o">.</span><span class="na">getType</span><span class="o">())</span>
+                        <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">ArticleTypeEnum</span><span class="o">.</span><span class="na">VILLAGEAPP</span><span class="o">.</span><span class="na">toString</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">notice</span><span class="o">.</span><span class="na">getType</span><span class="o">())</span>
+                        <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">ArticleTypeEnum</span><span class="o">.</span><span class="na">NOTICE</span><span class="o">.</span><span class="na">toString</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">notice</span><span class="o">.</span><span class="na">getType</span><span class="o">()))</span> <span class="o">{</span>
+                    <span class="k">throw</span> <span class="k">new</span> <span class="n">FSException</span><span class="o">(</span><span class="n">NoticeException</span><span class="o">.</span><span class="na">TYPE_IS_ILLEGAL</span><span class="o">,</span> <span class="s">&quot;类型错误&quot;</span><span class="o">);</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+            <span class="n">notice</span><span class="o">.</span><span class="na">setCreateTime</span><span class="o">(</span><span class="k">new</span> <span class="n">Date</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">currentTimeMillis</span><span class="o">()));</span>
+            <span class="n">notice</span><span class="o">.</span><span class="na">setModifyTime</span><span class="o">(</span><span class="k">new</span> <span class="n">Date</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">currentTimeMillis</span><span class="o">()));</span>
+            <span class="c1">//发布状态为暂存，置顶状态为非置顶</span>
+            <span class="n">notice</span><span class="o">.</span><span class="na">setStatus</span><span class="o">(</span><span class="n">ArticleStatusEnum</span><span class="o">.</span><span class="na">ALPHA</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+            <span class="n">notice</span><span class="o">.</span><span class="na">setTopStatus</span><span class="o">(</span><span class="n">ArticleTopEnum</span><span class="o">.</span><span class="na">DOWN</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+            <span class="c1">//notice.setType(ArticleTypeEnum.NOTICE.toString());</span>
+            <span class="n">noticeMapper</span><span class="o">.</span><span class="na">insert</span><span class="o">(</span><span class="n">notice</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Throwable</span> <span class="n">thr</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">throw</span> <span class="k">this</span><span class="o">.</span><span class="na">catchException</span><span class="o">(</span><span class="n">thr</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">delNotice</span><span class="o">(</span><span class="n">String</span> <span class="n">ids</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">String</span><span class="o">[]</span> <span class="n">idStr</span> <span class="o">=</span> <span class="n">ids</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">&quot;,&quot;</span><span class="o">);</span>
+            <span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="n">noticeId</span> <span class="o">:</span> <span class="n">idStr</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(!</span><span class="n">noticeId</span><span class="o">.</span><span class="na">matches</span><span class="o">(</span><span class="s">&quot;^[0-9]+$&quot;</span><span class="o">))</span> <span class="o">{</span>
+                    <span class="k">throw</span> <span class="k">new</span> <span class="n">FSException</span><span class="o">(</span><span class="n">NoticeException</span><span class="o">.</span><span class="na">ID_IS_ILLEGAL</span><span class="o">,</span> <span class="s">&quot;Id只能为数字&quot;</span><span class="o">);</span>
+                <span class="o">}</span>
+                <span class="n">Notice</span> <span class="n">notice</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Notice</span><span class="o">();</span>
+                <span class="n">notice</span><span class="o">.</span><span class="na">setId</span><span class="o">(</span><span class="n">Long</span><span class="o">.</span><span class="na">parseLong</span><span class="o">(</span><span class="n">noticeId</span><span class="o">));</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">noticeMapper</span><span class="o">.</span><span class="na">queryNotById</span><span class="o">(</span><span class="n">notice</span><span class="o">)</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="k">throw</span> <span class="k">new</span> <span class="n">FSException</span><span class="o">(</span><span class="n">NoticeException</span><span class="o">.</span><span class="na">NOTICEID_IS_NOT_EXIST</span><span class="o">,</span> <span class="s">&quot;该通知公告不存在&quot;</span><span class="o">);</span>
+                <span class="o">}</span>
+                <span class="k">if</span> <span class="o">(!</span><span class="n">Tools</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">noticeId</span><span class="o">))</span> <span class="o">{</span>
+                    <span class="n">noticeMapper</span><span class="o">.</span><span class="na">del</span><span class="o">(</span><span class="n">Long</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">noticeId</span><span class="o">));</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Throwable</span> <span class="n">thr</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">throw</span> <span class="k">this</span><span class="o">.</span><span class="na">catchException</span><span class="o">(</span><span class="n">thr</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">modifyNotice</span><span class="o">(</span><span class="n">Notice</span> <span class="n">notice</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">noticeMapper</span><span class="o">.</span><span class="na">queryNotById</span><span class="o">(</span><span class="n">notice</span><span class="o">)</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">throw</span> <span class="k">new</span> <span class="n">FSException</span><span class="o">(</span><span class="n">NoticeException</span><span class="o">.</span><span class="na">NOTICEID_IS_NOT_EXIST</span><span class="o">,</span> <span class="s">&quot;该通知公告不存在&quot;</span><span class="o">);</span>
+            <span class="o">}</span>
+            <span class="k">if</span> <span class="o">(!</span><span class="n">Tools</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">notice</span><span class="o">.</span><span class="na">getTitle</span><span class="o">()))</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">notice</span><span class="o">.</span><span class="na">getTitle</span><span class="o">().</span><span class="na">getBytes</span><span class="o">().</span><span class="na">length</span> <span class="o">&gt;</span> <span class="mi">90</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="k">throw</span> <span class="k">new</span> <span class="n">FSException</span><span class="o">(</span><span class="n">NoticeException</span><span class="o">.</span><span class="na">TITLELEN_IS_LONG</span><span class="o">,</span> <span class="s">&quot;标题长度超过限制&quot;</span><span class="o">);</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+            <span class="k">if</span> <span class="o">(!</span><span class="n">Tools</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">notice</span><span class="o">.</span><span class="na">getStatus</span><span class="o">()))</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(!</span><span class="n">ArticleStatusEnum</span><span class="o">.</span><span class="na">ALPHA</span><span class="o">.</span><span class="na">toString</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">notice</span><span class="o">.</span><span class="na">getStatus</span><span class="o">())</span>
+                        <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">ArticleStatusEnum</span><span class="o">.</span><span class="na">RELEASE</span><span class="o">.</span><span class="na">toString</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">notice</span><span class="o">.</span><span class="na">getStatus</span><span class="o">()))</span> <span class="o">{</span>
+                    <span class="k">throw</span> <span class="k">new</span> <span class="n">FSException</span><span class="o">(</span><span class="n">NoticeException</span><span class="o">.</span><span class="na">STATUS_IS_ILLEGAL</span><span class="o">,</span> <span class="s">&quot;发布状态只能为ALPHA或RELEASE&quot;</span><span class="o">);</span>
+                <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                    <span class="c1">//下架时不修改发布时间</span>
+                    <span class="k">if</span> <span class="o">(!</span><span class="n">ArticleStatusEnum</span><span class="o">.</span><span class="na">ALPHA</span><span class="o">.</span><span class="na">toString</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">notice</span><span class="o">.</span><span class="na">getStatus</span><span class="o">()))</span> <span class="o">{</span>
+                        <span class="n">notice</span><span class="o">.</span><span class="na">setReleaseTime</span><span class="o">(</span><span class="k">new</span> <span class="n">Date</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">currentTimeMillis</span><span class="o">()));</span>
+                    <span class="o">}</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+            <span class="k">if</span> <span class="o">(!</span><span class="n">Tools</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">notice</span><span class="o">.</span><span class="na">getTopStatus</span><span class="o">()))</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(!</span><span class="n">notice</span><span class="o">.</span><span class="na">getTopStatus</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">ArticleTopEnum</span><span class="o">.</span><span class="na">TOP</span><span class="o">.</span><span class="na">toString</span><span class="o">())</span>
+                        <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">notice</span><span class="o">.</span><span class="na">getTopStatus</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">ArticleTopEnum</span><span class="o">.</span><span class="na">DOWN</span><span class="o">.</span><span class="na">toString</span><span class="o">()))</span> <span class="o">{</span>
+                    <span class="k">throw</span> <span class="k">new</span> <span class="n">FSException</span><span class="o">(</span><span class="n">NoticeException</span><span class="o">.</span><span class="na">STATUS_IS_ILLEGAL</span><span class="o">,</span> <span class="s">&quot;置顶状态只能为TOP或DOWN&quot;</span><span class="o">);</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+            <span class="n">notice</span><span class="o">.</span><span class="na">setModifyTime</span><span class="o">(</span><span class="k">new</span> <span class="n">Date</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">currentTimeMillis</span><span class="o">()));</span>
+            <span class="n">noticeMapper</span><span class="o">.</span><span class="na">update</span><span class="o">(</span><span class="n">notice</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Throwable</span> <span class="n">thr</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">throw</span> <span class="k">this</span><span class="o">.</span><span class="na">catchException</span><span class="o">(</span><span class="n">thr</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">NoticeInfo</span> <span class="nf">queryNoticePage</span><span class="o">(</span><span class="n">NoticeInfo</span> <span class="n">notice</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">Notice</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Notice</span><span class="o">&gt;();</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">PageHelper</span><span class="o">.</span><span class="na">startPage</span><span class="o">(</span><span class="n">notice</span><span class="o">.</span><span class="na">getCurrentPage</span><span class="o">(),</span><span class="n">notice</span><span class="o">.</span><span class="na">getPageSize</span><span class="o">());</span>
+            <span class="n">list</span> <span class="o">=</span> <span class="n">noticeMapper</span><span class="o">.</span><span class="na">querySelective</span><span class="o">(</span><span class="n">notice</span><span class="o">);</span>
+            <span class="k">for</span> <span class="o">(</span><span class="n">Notice</span> <span class="n">notice2</span> <span class="o">:</span> <span class="n">list</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(!</span><span class="n">Tools</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">notice2</span><span class="o">.</span><span class="na">getReleaseUserId</span><span class="o">()))</span> <span class="o">{</span>
+                    <span class="n">UserPartyInfo</span> <span class="n">user</span> <span class="o">=</span> <span class="k">new</span> <span class="n">UserPartyInfo</span><span class="o">();</span>
+                    <span class="n">user</span><span class="o">.</span><span class="na">setUserId</span><span class="o">(</span><span class="n">notice2</span><span class="o">.</span><span class="na">getReleaseUserId</span><span class="o">());</span>
+                    <span class="n">user</span> <span class="o">=</span> <span class="n">systemClient</span><span class="o">.</span><span class="na">queryUserById</span><span class="o">(</span><span class="n">user</span><span class="o">);</span>
+                    <span class="k">if</span> <span class="o">(!</span><span class="n">Tools</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">user</span><span class="o">))</span> <span class="o">{</span>
+                        <span class="n">notice2</span><span class="o">.</span><span class="na">setReleaseUserName</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+                    <span class="o">}</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+            <span class="n">PageInfo</span><span class="o">&lt;</span><span class="n">Notice</span><span class="o">&gt;</span> <span class="n">pageInfo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PageInfo</span><span class="o">&lt;</span><span class="n">Notice</span><span class="o">&gt;(</span><span class="n">list</span><span class="o">);</span>
+            <span class="n">notice</span><span class="o">.</span><span class="na">setData</span><span class="o">(</span><span class="n">pageInfo</span><span class="o">.</span><span class="na">getList</span><span class="o">());</span>
+            <span class="n">notice</span><span class="o">.</span><span class="na">setTotalRecords</span><span class="o">((</span><span class="kt">int</span><span class="o">)</span> <span class="n">pageInfo</span><span class="o">.</span><span class="na">getTotal</span><span class="o">());</span>
+            <span class="k">return</span> <span class="n">notice</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Throwable</span> <span class="n">thr</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">throw</span> <span class="k">this</span><span class="o">.</span><span class="na">catchException</span><span class="o">(</span><span class="n">thr</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">Notice</span> <span class="nf">queryNotice</span><span class="o">(</span><span class="n">Notice</span> <span class="n">notice</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">noticeMapper</span><span class="o">.</span><span class="na">queryNotById</span><span class="o">(</span><span class="n">notice</span><span class="o">)</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">throw</span> <span class="k">new</span> <span class="n">FSException</span><span class="o">(</span><span class="n">NoticeException</span><span class="o">.</span><span class="na">NOTICEID_IS_NOT_EXIST</span><span class="o">,</span> <span class="s">&quot;该通知公告不存在&quot;</span><span class="o">);</span>
+            <span class="o">}</span>
+            <span class="n">notice</span> <span class="o">=</span> <span class="n">noticeMapper</span><span class="o">.</span><span class="na">queryNoticeBack</span><span class="o">(</span><span class="n">notice</span><span class="o">);</span>
+            <span class="cm">/*if (!Tools.isEmpty(notice.getReleaseUserId())) {</span>
+<span class="cm">                UserPartyInfo user = new UserPartyInfo();</span>
+<span class="cm">                user.setUserId(notice.getReleaseUserId());</span>
+<span class="cm">                user = systemClient.queryUserById(user);</span>
+<span class="cm">                if (!Tools.isEmpty(user) &amp;&amp;!Tools.isEmpty(user.getName())) {</span>
+<span class="cm">                    notice.setReleaseUserName(user.getName());</span>
+<span class="cm">                }</span>
+<span class="cm">            }*/</span>
+            <span class="k">return</span> <span class="n">notice</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Throwable</span> <span class="n">thr</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">throw</span> <span class="k">this</span><span class="o">.</span><span class="na">catchException</span><span class="o">(</span><span class="n">thr</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">NoticeInfo</span> <span class="nf">queryNotice</span><span class="o">(</span><span class="n">NoticeInfo</span> <span class="n">notice</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">Notice</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Notice</span><span class="o">&gt;();</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(!</span><span class="n">Tools</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">notice</span><span class="o">.</span><span class="na">getStatus</span><span class="o">()))</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(!</span><span class="n">ArticleStatusEnum</span><span class="o">.</span><span class="na">ALPHA</span><span class="o">.</span><span class="na">toString</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">notice</span><span class="o">.</span><span class="na">getStatus</span><span class="o">())</span>
+                        <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">ArticleStatusEnum</span><span class="o">.</span><span class="na">RELEASE</span><span class="o">.</span><span class="na">toString</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">notice</span><span class="o">.</span><span class="na">getStatus</span><span class="o">()))</span> <span class="o">{</span>
+                    <span class="k">throw</span> <span class="k">new</span> <span class="n">FSException</span><span class="o">(</span><span class="n">NoticeException</span><span class="o">.</span><span class="na">STATUS_IS_ILLEGAL</span><span class="o">,</span> <span class="s">&quot;发布状态只能为ALPHA或RELEASE&quot;</span><span class="o">);</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+            <span class="n">PageHelper</span><span class="o">.</span><span class="na">startPage</span><span class="o">(</span><span class="n">notice</span><span class="o">.</span><span class="na">getCurrentPage</span><span class="o">(),</span><span class="n">notice</span><span class="o">.</span><span class="na">getPageSize</span><span class="o">());</span>
+            <span class="n">list</span> <span class="o">=</span> <span class="n">noticeMapper</span><span class="o">.</span><span class="na">query</span><span class="o">(</span><span class="n">notice</span><span class="o">);</span>
+            <span class="k">for</span> <span class="o">(</span><span class="n">Notice</span> <span class="n">notice2</span> <span class="o">:</span> <span class="n">list</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(!</span><span class="n">Tools</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">notice2</span><span class="o">.</span><span class="na">getReleaseUserId</span><span class="o">()))</span> <span class="o">{</span>
+                    <span class="n">UserPartyInfo</span> <span class="n">user</span> <span class="o">=</span> <span class="k">new</span> <span class="n">UserPartyInfo</span><span class="o">();</span>
+                    <span class="n">user</span><span class="o">.</span><span class="na">setUserId</span><span class="o">(</span><span class="n">notice2</span><span class="o">.</span><span class="na">getReleaseUserId</span><span class="o">());</span>
+                    <span class="n">user</span> <span class="o">=</span> <span class="n">systemClient</span><span class="o">.</span><span class="na">queryUserById</span><span class="o">(</span><span class="n">user</span><span class="o">);</span>
+                    <span class="k">if</span> <span class="o">(!</span><span class="n">Tools</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">user</span><span class="o">))</span> <span class="o">{</span>
+                        <span class="n">notice2</span><span class="o">.</span><span class="na">setReleaseUserName</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+                    <span class="o">}</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+            <span class="n">PageInfo</span><span class="o">&lt;</span><span class="n">Notice</span><span class="o">&gt;</span> <span class="n">pageInfo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PageInfo</span><span class="o">&lt;</span><span class="n">Notice</span><span class="o">&gt;(</span><span class="n">list</span><span class="o">);</span>
+            <span class="n">notice</span><span class="o">.</span><span class="na">setData</span><span class="o">(</span><span class="n">pageInfo</span><span class="o">.</span><span class="na">getList</span><span class="o">());</span>
+            <span class="n">notice</span><span class="o">.</span><span class="na">setTotalRecords</span><span class="o">((</span><span class="kt">int</span><span class="o">)</span> <span class="n">pageInfo</span><span class="o">.</span><span class="na">getTotal</span><span class="o">());</span>
+            <span class="k">return</span> <span class="n">notice</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Throwable</span> <span class="n">thr</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">throw</span> <span class="k">this</span><span class="o">.</span><span class="na">catchException</span><span class="o">(</span><span class="n">thr</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">Notice</span> <span class="nf">queryNoticeById</span><span class="o">(</span><span class="n">Notice</span> <span class="n">notice</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">String</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="o">;</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">noticeMapper</span><span class="o">.</span><span class="na">queryNotById</span><span class="o">(</span><span class="n">notice</span><span class="o">)</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">throw</span> <span class="k">new</span> <span class="n">FSException</span><span class="o">(</span><span class="n">NoticeException</span><span class="o">.</span><span class="na">NOTICEID_IS_NOT_EXIST</span><span class="o">,</span> <span class="s">&quot;该通知不存在&quot;</span><span class="o">);</span>
+            <span class="o">}</span>
+            <span class="kt">int</span> <span class="n">row</span> <span class="o">=</span> <span class="n">noticeMapper</span><span class="o">.</span><span class="na">getrow</span><span class="o">(</span><span class="n">notice</span><span class="o">);</span>
+            <span class="kt">int</span> <span class="n">preRow</span> <span class="o">=</span> <span class="n">row</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span>
+
+            <span class="n">notice</span> <span class="o">=</span> <span class="n">noticeMapper</span><span class="o">.</span><span class="na">queryNotice</span><span class="o">(</span><span class="n">notice</span><span class="o">);</span>
+            <span class="k">if</span> <span class="o">(!</span><span class="n">Tools</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">notice</span><span class="o">))</span> <span class="o">{</span>
+                <span class="n">type</span> <span class="o">=</span> <span class="n">notice</span><span class="o">.</span><span class="na">getType</span><span class="o">();</span>
+            <span class="o">}</span>
+            <span class="k">if</span> <span class="o">(!</span><span class="n">Tools</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">notice</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">Tools</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">noticeMapper</span><span class="o">.</span><span class="na">queryNoticeRow</span><span class="o">(</span><span class="n">preRow</span><span class="o">,</span><span class="n">type</span><span class="o">)))</span> <span class="o">{</span>
+                <span class="n">notice</span><span class="o">.</span><span class="na">setPrefer</span><span class="o">(</span><span class="n">noticeMapper</span><span class="o">.</span><span class="na">queryNoticeRow</span><span class="o">(</span><span class="n">preRow</span><span class="o">,</span><span class="n">type</span><span class="o">));</span>
+            <span class="o">}</span>
+            <span class="kt">int</span>  <span class="n">nextRow</span> <span class="o">=</span> <span class="n">row</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
+            <span class="k">if</span> <span class="o">(!</span><span class="n">Tools</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">notice</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">Tools</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">noticeMapper</span><span class="o">.</span><span class="na">queryNoticeRow</span><span class="o">(</span><span class="n">nextRow</span><span class="o">,</span><span class="n">type</span><span class="o">)))</span> <span class="o">{</span>
+                <span class="n">notice</span><span class="o">.</span><span class="na">setAfter</span><span class="o">(</span><span class="n">noticeMapper</span><span class="o">.</span><span class="na">queryNoticeRow</span><span class="o">(</span><span class="n">nextRow</span><span class="o">,</span><span class="n">type</span><span class="o">));</span>
+            <span class="o">}</span>
+            <span class="k">return</span> <span class="n">notice</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Throwable</span> <span class="n">thr</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">throw</span> <span class="k">this</span><span class="o">.</span><span class="na">catchException</span><span class="o">(</span><span class="n">thr</span><span class="o">);</span>
+        <span class="o">}</span>
+    
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">NoticeInfo</span> <span class="nf">queryNoticeAndImg</span><span class="o">(</span><span class="n">NoticeInfo</span> <span class="n">notice</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">Notice</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Notice</span><span class="o">&gt;();</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">PageHelper</span><span class="o">.</span><span class="na">startPage</span><span class="o">(</span><span class="n">notice</span><span class="o">.</span><span class="na">getCurrentPage</span><span class="o">(),</span><span class="n">notice</span><span class="o">.</span><span class="na">getPageSize</span><span class="o">());</span>
+            <span class="n">list</span> <span class="o">=</span> <span class="n">noticeMapper</span><span class="o">.</span><span class="na">querySelective</span><span class="o">(</span><span class="n">notice</span><span class="o">);</span>
+            <span class="k">for</span> <span class="o">(</span><span class="n">Notice</span> <span class="n">notice2</span> <span class="o">:</span> <span class="n">list</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(!</span><span class="n">Tools</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">notice2</span><span class="o">.</span><span class="na">getReleaseUserId</span><span class="o">()))</span> <span class="o">{</span>
+                    <span class="n">UserPartyInfo</span> <span class="n">user</span> <span class="o">=</span> <span class="k">new</span> <span class="n">UserPartyInfo</span><span class="o">();</span>
+                    <span class="n">user</span><span class="o">.</span><span class="na">setUserId</span><span class="o">(</span><span class="n">notice2</span><span class="o">.</span><span class="na">getReleaseUserId</span><span class="o">());</span>
+                    <span class="n">user</span> <span class="o">=</span> <span class="n">systemClient</span><span class="o">.</span><span class="na">queryUserById</span><span class="o">(</span><span class="n">user</span><span class="o">);</span>
+                    <span class="k">if</span> <span class="o">(!</span><span class="n">Tools</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">user</span><span class="o">))</span> <span class="o">{</span>
+                        <span class="n">notice2</span><span class="o">.</span><span class="na">setReleaseUserName</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+                    <span class="o">}</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+            <span class="c1">//获取图片地址</span>
+            <span class="k">for</span> <span class="o">(</span><span class="n">Notice</span> <span class="n">notice1</span> <span class="o">:</span> <span class="n">list</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">imgList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+                <span class="n">imgList</span> <span class="o">=</span> <span class="n">Tools</span><span class="o">.</span><span class="na">getImgStr</span><span class="o">(</span><span class="n">notice1</span><span class="o">.</span><span class="na">getContent</span><span class="o">());</span>
+                <span class="n">notice1</span><span class="o">.</span><span class="na">setImgList</span><span class="o">(</span><span class="n">imgList</span><span class="o">);</span>
+            <span class="o">}</span>
+            <span class="n">PageInfo</span><span class="o">&lt;</span><span class="n">Notice</span><span class="o">&gt;</span> <span class="n">pageInfo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PageInfo</span><span class="o">&lt;</span><span class="n">Notice</span><span class="o">&gt;(</span><span class="n">list</span><span class="o">);</span>
+            <span class="n">notice</span><span class="o">.</span><span class="na">setData</span><span class="o">(</span><span class="n">pageInfo</span><span class="o">.</span><span class="na">getList</span><span class="o">());</span>
+            <span class="n">notice</span><span class="o">.</span><span class="na">setTotalRecords</span><span class="o">((</span><span class="kt">int</span><span class="o">)</span> <span class="n">pageInfo</span><span class="o">.</span><span class="na">getTotal</span><span class="o">());</span>
+            <span class="k">return</span> <span class="n">notice</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Throwable</span> <span class="n">thr</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">throw</span> <span class="k">this</span><span class="o">.</span><span class="na">catchException</span><span class="o">(</span><span class="n">thr</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</body>
+</html>

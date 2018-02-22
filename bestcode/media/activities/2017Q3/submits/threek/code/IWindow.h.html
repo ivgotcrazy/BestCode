@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=latin1">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #333333 }
+body  { background: #111111; color: #ffffff }
+body .c { color: #008800; font-style: italic; background-color: #0f140f } /* Comment */
+body .err { color: #ffffff } /* Error */
+body .esc { color: #ffffff } /* Escape */
+body .g { color: #ffffff } /* Generic */
+body .k { color: #fb660a; font-weight: bold } /* Keyword */
+body .l { color: #ffffff } /* Literal */
+body .n { color: #ffffff } /* Name */
+body .o { color: #ffffff } /* Operator */
+body .x { color: #ffffff } /* Other */
+body .p { color: #ffffff } /* Punctuation */
+body .ch { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Hashbang */
+body .cm { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Multiline */
+body .cp { color: #ff0007; font-weight: bold; font-style: italic; background-color: #0f140f } /* Comment.Preproc */
+body .cpf { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.PreprocFile */
+body .c1 { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Single */
+body .cs { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Special */
+body .gd { color: #ffffff } /* Generic.Deleted */
+body .ge { color: #ffffff } /* Generic.Emph */
+body .gr { color: #ffffff } /* Generic.Error */
+body .gh { color: #ffffff; font-weight: bold } /* Generic.Heading */
+body .gi { color: #ffffff } /* Generic.Inserted */
+body .go { color: #444444; background-color: #222222 } /* Generic.Output */
+body .gp { color: #ffffff } /* Generic.Prompt */
+body .gs { color: #ffffff } /* Generic.Strong */
+body .gu { color: #ffffff; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #ffffff } /* Generic.Traceback */
+body .kc { color: #fb660a; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #fb660a; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #fb660a; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #fb660a } /* Keyword.Pseudo */
+body .kr { color: #fb660a; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #cdcaa9; font-weight: bold } /* Keyword.Type */
+body .ld { color: #ffffff } /* Literal.Date */
+body .m { color: #0086f7; font-weight: bold } /* Literal.Number */
+body .s { color: #0086d2 } /* Literal.String */
+body .na { color: #ff0086; font-weight: bold } /* Name.Attribute */
+body .nb { color: #ffffff } /* Name.Builtin */
+body .nc { color: #ffffff } /* Name.Class */
+body .no { color: #0086d2 } /* Name.Constant */
+body .nd { color: #ffffff } /* Name.Decorator */
+body .ni { color: #ffffff } /* Name.Entity */
+body .ne { color: #ffffff } /* Name.Exception */
+body .nf { color: #ff0086; font-weight: bold } /* Name.Function */
+body .nl { color: #ffffff } /* Name.Label */
+body .nn { color: #ffffff } /* Name.Namespace */
+body .nx { color: #ffffff } /* Name.Other */
+body .py { color: #ffffff } /* Name.Property */
+body .nt { color: #fb660a; font-weight: bold } /* Name.Tag */
+body .nv { color: #fb660a } /* Name.Variable */
+body .ow { color: #ffffff } /* Operator.Word */
+body .w { color: #888888 } /* Text.Whitespace */
+body .mb { color: #0086f7; font-weight: bold } /* Literal.Number.Bin */
+body .mf { color: #0086f7; font-weight: bold } /* Literal.Number.Float */
+body .mh { color: #0086f7; font-weight: bold } /* Literal.Number.Hex */
+body .mi { color: #0086f7; font-weight: bold } /* Literal.Number.Integer */
+body .mo { color: #0086f7; font-weight: bold } /* Literal.Number.Oct */
+body .sa { color: #0086d2 } /* Literal.String.Affix */
+body .sb { color: #0086d2 } /* Literal.String.Backtick */
+body .sc { color: #0086d2 } /* Literal.String.Char */
+body .dl { color: #0086d2 } /* Literal.String.Delimiter */
+body .sd { color: #0086d2 } /* Literal.String.Doc */
+body .s2 { color: #0086d2 } /* Literal.String.Double */
+body .se { color: #0086d2 } /* Literal.String.Escape */
+body .sh { color: #0086d2 } /* Literal.String.Heredoc */
+body .si { color: #0086d2 } /* Literal.String.Interpol */
+body .sx { color: #0086d2 } /* Literal.String.Other */
+body .sr { color: #0086d2 } /* Literal.String.Regex */
+body .s1 { color: #0086d2 } /* Literal.String.Single */
+body .ss { color: #0086d2 } /* Literal.String.Symbol */
+body .bp { color: #ffffff } /* Name.Builtin.Pseudo */
+body .fm { color: #ff0086; font-weight: bold } /* Name.Function.Magic */
+body .vc { color: #fb660a } /* Name.Variable.Class */
+body .vg { color: #fb660a } /* Name.Variable.Global */
+body .vi { color: #fb660a } /* Name.Variable.Instance */
+body .vm { color: #fb660a } /* Name.Variable.Magic */
+body .il { color: #0086f7; font-weight: bold } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="cp">#ifndef _IWINDOW_H__</span>
+<span class="cp">#define _IWINDOW_H__</span>
+<span class="cp">#include</span> <span class="cpf">&quot;ControlAttr.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;functional&gt;</span><span class="cp"></span>
+
+<span class="n">namespace</span> <span class="n">fm_uimodule</span>
+<span class="p">{</span>
+	<span class="k">typedef</span> <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="n">HWND</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">FMWndCallback</span><span class="p">;</span>
+	<span class="k">typedef</span> <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="n">POINT</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">FMUICallback</span><span class="p">;</span>
+	<span class="k">typedef</span> <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">tstring</span><span class="p">,</span> <span class="n">FMUICallback</span><span class="o">&gt;</span> <span class="n">FMUICBMap</span><span class="p">;</span>
+
+	<span class="n">interface</span> <span class="n">IWindowBase</span>
+	<span class="p">{</span>
+		<span class="n">virtual</span> <span class="kt">void</span> <span class="n">SetFinalCallback</span><span class="p">(</span><span class="n">FMWndCallback</span> <span class="n">wndCallback</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="n">virtual</span> <span class="o">~</span><span class="n">IWindowBase</span><span class="p">()</span> <span class="p">{}</span>
+	<span class="p">};</span>
+
+	<span class="n">interface</span> <span class="nl">ITabView</span> <span class="p">:</span> <span class="n">public</span> <span class="n">IWindowBase</span>
+	<span class="p">{</span>
+		<span class="n">virtual</span> <span class="kt">void</span> <span class="n">AddItem</span><span class="p">(</span><span class="k">const</span> <span class="n">TagTabAttr</span><span class="o">&amp;</span> <span class="n">tabAttr</span><span class="p">,</span> <span class="n">HWND</span> <span class="n">hPageWnd</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="n">virtual</span> <span class="kt">void</span> <span class="nf">RemoveItem</span><span class="p">(</span><span class="k">const</span> <span class="n">tstring</span><span class="o">&amp;</span> <span class="n">strItemName</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="n">virtual</span> <span class="kt">void</span> <span class="nf">RemoveItem</span><span class="p">(</span><span class="n">HWND</span> <span class="n">hSubWnd</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="n">virtual</span> <span class="kt">void</span> <span class="nf">SetTabViewAttr</span><span class="p">(</span><span class="k">const</span> <span class="n">TagFMTabViewAttr</span><span class="o">&amp;</span> <span class="n">tvAttr</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="p">};</span>
+
+	<span class="n">interface</span> <span class="nl">ITabContainer</span> <span class="p">:</span> <span class="n">public</span> <span class="n">IWindowBase</span>
+	<span class="p">{</span>
+		<span class="n">virtual</span> <span class="kt">void</span> <span class="n">UpdateRegin</span><span class="p">(</span><span class="k">const</span> <span class="n">RECT</span><span class="o">&amp;</span> <span class="n">rcRegin</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="n">virtual</span> <span class="kt">void</span> <span class="nf">AddItem</span><span class="p">(</span><span class="k">const</span> <span class="n">TagTabAttr</span><span class="o">&amp;</span> <span class="n">table</span><span class="p">,</span> <span class="n">HWND</span> <span class="n">hPageWnd</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="c1">//¶¯Ì¬´´½¨</span>
+		<span class="n">virtual</span> <span class="kt">void</span> <span class="nf">AddNewItem</span><span class="p">(</span><span class="k">const</span> <span class="n">TagTabAttr</span><span class="o">&amp;</span> <span class="n">tabAttr</span><span class="p">,</span> <span class="n">HWND</span> <span class="n">hPageWnd</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="n">virtual</span> <span class="kt">void</span> <span class="nf">RemoveItem</span><span class="p">(</span><span class="k">const</span> <span class="n">tstring</span><span class="o">&amp;</span> <span class="n">strItemName</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="n">virtual</span> <span class="kt">void</span> <span class="nf">RemoveItem</span><span class="p">(</span><span class="n">HWND</span> <span class="n">hSubWnd</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="n">virtual</span> <span class="kt">void</span> <span class="nf">SetMaxItemCount</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">nCount</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="n">virtual</span> <span class="kt">void</span> <span class="nf">SetTabContainerAttr</span><span class="p">(</span><span class="k">const</span> <span class="n">TagFMTabContainerAttr</span><span class="o">&amp;</span> <span class="n">tcAttr</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="p">};</span>
+
+	<span class="n">interface</span> <span class="nl">IModulePanel</span> <span class="p">:</span> <span class="n">public</span> <span class="n">IWindowBase</span>
+	<span class="p">{</span>
+		<span class="n">virtual</span> <span class="kt">void</span> <span class="n">SetPanelAttr</span><span class="p">(</span><span class="k">const</span> <span class="n">TagFMModulePanelAttr</span><span class="o">&amp;</span> <span class="n">vpAttr</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="n">virtual</span> <span class="kt">void</span> <span class="nf">AddToolBarItem</span><span class="p">(</span><span class="k">const</span> <span class="n">TagButtonAttr</span><span class="o">&amp;</span> <span class="n">btnAttr</span><span class="p">,</span> <span class="n">FMUICallback</span> <span class="n">callback</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="n">virtual</span> <span class="kt">void</span> <span class="nf">AddItem</span><span class="p">(</span><span class="n">HWND</span> <span class="n">hSubWnd</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="n">virtual</span> <span class="kt">void</span> <span class="nf">AddNewItem</span><span class="p">(</span><span class="n">HWND</span> <span class="n">hSubWnd</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="p">};</span>
+
+	<span class="n">interface</span> <span class="nl">ISplitContainer</span> <span class="p">:</span> <span class="n">public</span> <span class="n">IWindowBase</span>
+	<span class="p">{</span>
+		<span class="n">virtual</span> <span class="kt">void</span> <span class="n">PushWindow</span><span class="p">(</span><span class="n">HWND</span> <span class="n">hSubWnd</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="n">virtual</span> <span class="kt">void</span> <span class="nf">PushNewWnd</span><span class="p">(</span><span class="n">HWND</span> <span class="n">hSubWnd</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="n">virtual</span> <span class="kt">void</span> <span class="nf">SetToolBarAttr</span><span class="p">(</span><span class="k">const</span> <span class="n">TagFMSplitContainerAttr</span><span class="o">&amp;</span> <span class="n">scAttr</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="n">virtual</span> <span class="kt">void</span> <span class="nf">AddToolBarItem</span><span class="p">(</span><span class="k">const</span> <span class="n">TagButtonAttr</span><span class="o">&amp;</span> <span class="n">btnAttr</span><span class="p">,</span> <span class="n">FMUICallback</span> <span class="n">callback</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="p">};</span>
+
+	<span class="n">interface</span> <span class="nl">IStatsuBar</span> <span class="p">:</span> <span class="n">public</span> <span class="n">IWindowBase</span>
+	<span class="p">{</span>
+		<span class="n">virtual</span> <span class="kt">int</span>  <span class="n">PushWindow</span><span class="p">(</span><span class="n">HWND</span> <span class="n">hSubWnd</span><span class="p">,</span> <span class="n">RECT</span> <span class="n">rcPadding</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="n">virtual</span> <span class="kt">int</span>  <span class="nf">PushItem</span><span class="p">(</span><span class="k">const</span> <span class="n">TagCtrlAttr</span><span class="o">&amp;</span> <span class="n">ctrlAttr</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="n">virtual</span> <span class="kt">int</span>  <span class="nf">PushItem</span><span class="p">(</span><span class="k">const</span> <span class="n">TagButtonAttr</span><span class="o">&amp;</span> <span class="n">btnAttr</span><span class="p">,</span> <span class="n">FMUICallback</span> <span class="n">callback</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="n">virtual</span> <span class="kt">void</span> <span class="nf">SetItemVisible</span><span class="p">(</span><span class="kt">int</span> <span class="n">nIndex</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">bVisible</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="n">virtual</span> <span class="kt">void</span> <span class="nf">SetStatusBarAttr</span><span class="p">(</span><span class="k">const</span> <span class="n">TagFMStatusBarAttr</span><span class="o">&amp;</span> <span class="n">stbAttr</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="p">};</span>
+
+	<span class="n">interface</span> <span class="nl">IPopupView</span> <span class="p">:</span> <span class="n">public</span> <span class="n">IWindowBase</span>
+	<span class="p">{</span>
+		<span class="n">virtual</span> <span class="kt">void</span> <span class="n">SetPopWindow</span><span class="p">(</span><span class="n">HWND</span> <span class="n">hPopWnd</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="n">virtual</span> <span class="kt">void</span> <span class="nf">SetToolBarAttr</span><span class="p">(</span><span class="k">const</span> <span class="n">TagFMPopupViewAttr</span><span class="o">&amp;</span> <span class="n">pvAttr</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="n">virtual</span> <span class="kt">void</span> <span class="nf">AddToolBarItem</span><span class="p">(</span><span class="k">const</span> <span class="n">TagButtonAttr</span><span class="o">&amp;</span> <span class="n">btnAttr</span><span class="p">,</span> <span class="n">FMUICallback</span> <span class="n">callback</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="n">virtual</span> <span class="kt">void</span> <span class="nf">UpdateItem</span><span class="p">(</span><span class="k">const</span> <span class="n">tstring</span><span class="o">&amp;</span> <span class="n">strItemName</span><span class="p">,</span> <span class="k">const</span> <span class="n">tstring</span><span class="o">&amp;</span> <span class="n">strText</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="p">};</span>
+<span class="p">}</span>
+
+<span class="cp">#endif</span>
+</pre></div>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #333333 }
+body  { background: #111111; color: #ffffff }
+body .c { color: #008800; font-style: italic; background-color: #0f140f } /* Comment */
+body .err { color: #ffffff } /* Error */
+body .esc { color: #ffffff } /* Escape */
+body .g { color: #ffffff } /* Generic */
+body .k { color: #fb660a; font-weight: bold } /* Keyword */
+body .l { color: #ffffff } /* Literal */
+body .n { color: #ffffff } /* Name */
+body .o { color: #ffffff } /* Operator */
+body .x { color: #ffffff } /* Other */
+body .p { color: #ffffff } /* Punctuation */
+body .ch { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Hashbang */
+body .cm { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Multiline */
+body .cp { color: #ff0007; font-weight: bold; font-style: italic; background-color: #0f140f } /* Comment.Preproc */
+body .cpf { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.PreprocFile */
+body .c1 { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Single */
+body .cs { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Special */
+body .gd { color: #ffffff } /* Generic.Deleted */
+body .ge { color: #ffffff } /* Generic.Emph */
+body .gr { color: #ffffff } /* Generic.Error */
+body .gh { color: #ffffff; font-weight: bold } /* Generic.Heading */
+body .gi { color: #ffffff } /* Generic.Inserted */
+body .go { color: #444444; background-color: #222222 } /* Generic.Output */
+body .gp { color: #ffffff } /* Generic.Prompt */
+body .gs { color: #ffffff } /* Generic.Strong */
+body .gu { color: #ffffff; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #ffffff } /* Generic.Traceback */
+body .kc { color: #fb660a; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #fb660a; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #fb660a; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #fb660a } /* Keyword.Pseudo */
+body .kr { color: #fb660a; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #cdcaa9; font-weight: bold } /* Keyword.Type */
+body .ld { color: #ffffff } /* Literal.Date */
+body .m { color: #0086f7; font-weight: bold } /* Literal.Number */
+body .s { color: #0086d2 } /* Literal.String */
+body .na { color: #ff0086; font-weight: bold } /* Name.Attribute */
+body .nb { color: #ffffff } /* Name.Builtin */
+body .nc { color: #ffffff } /* Name.Class */
+body .no { color: #0086d2 } /* Name.Constant */
+body .nd { color: #ffffff } /* Name.Decorator */
+body .ni { color: #ffffff } /* Name.Entity */
+body .ne { color: #ffffff } /* Name.Exception */
+body .nf { color: #ff0086; font-weight: bold } /* Name.Function */
+body .nl { color: #ffffff } /* Name.Label */
+body .nn { color: #ffffff } /* Name.Namespace */
+body .nx { color: #ffffff } /* Name.Other */
+body .py { color: #ffffff } /* Name.Property */
+body .nt { color: #fb660a; font-weight: bold } /* Name.Tag */
+body .nv { color: #fb660a } /* Name.Variable */
+body .ow { color: #ffffff } /* Operator.Word */
+body .w { color: #888888 } /* Text.Whitespace */
+body .mb { color: #0086f7; font-weight: bold } /* Literal.Number.Bin */
+body .mf { color: #0086f7; font-weight: bold } /* Literal.Number.Float */
+body .mh { color: #0086f7; font-weight: bold } /* Literal.Number.Hex */
+body .mi { color: #0086f7; font-weight: bold } /* Literal.Number.Integer */
+body .mo { color: #0086f7; font-weight: bold } /* Literal.Number.Oct */
+body .sa { color: #0086d2 } /* Literal.String.Affix */
+body .sb { color: #0086d2 } /* Literal.String.Backtick */
+body .sc { color: #0086d2 } /* Literal.String.Char */
+body .dl { color: #0086d2 } /* Literal.String.Delimiter */
+body .sd { color: #0086d2 } /* Literal.String.Doc */
+body .s2 { color: #0086d2 } /* Literal.String.Double */
+body .se { color: #0086d2 } /* Literal.String.Escape */
+body .sh { color: #0086d2 } /* Literal.String.Heredoc */
+body .si { color: #0086d2 } /* Literal.String.Interpol */
+body .sx { color: #0086d2 } /* Literal.String.Other */
+body .sr { color: #0086d2 } /* Literal.String.Regex */
+body .s1 { color: #0086d2 } /* Literal.String.Single */
+body .ss { color: #0086d2 } /* Literal.String.Symbol */
+body .bp { color: #ffffff } /* Name.Builtin.Pseudo */
+body .fm { color: #ff0086; font-weight: bold } /* Name.Function.Magic */
+body .vc { color: #fb660a } /* Name.Variable.Class */
+body .vg { color: #fb660a } /* Name.Variable.Global */
+body .vi { color: #fb660a } /* Name.Variable.Instance */
+body .vm { color: #fb660a } /* Name.Variable.Magic */
+body .il { color: #0086f7; font-weight: bold } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="cm">/* </span>
+<span class="cm"> * h264bitstream - a library for reading and writing H.264 video</span>
+<span class="cm"> * Copyright (C) 2005-2007 Auroras Entertainment, LLC</span>
+<span class="cm"> * Copyright (C) 2008-2011 Avail-TVN</span>
+<span class="cm"> * </span>
+<span class="cm"> * Written by Alex Izvorski &lt;aizvorski@gmail.com&gt; and Alex Giladi &lt;alex.giladi@gmail.com&gt;</span>
+<span class="cm"> * </span>
+<span class="cm"> * This library is free software; you can redistribute it and/or</span>
+<span class="cm"> * modify it under the terms of the GNU Lesser General Public</span>
+<span class="cm"> * License as published by the Free Software Foundation; either</span>
+<span class="cm"> * version 2.1 of the License, or (at your option) any later version.</span>
+<span class="cm"> * </span>
+<span class="cm"> * This library is distributed in the hope that it will be useful,</span>
+<span class="cm"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="cm"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</span>
+<span class="cm"> * Lesser General Public License for more details.</span>
+<span class="cm"> * </span>
+<span class="cm"> * You should have received a copy of the GNU Lesser General Public</span>
+<span class="cm"> * License along with this library; if not, write to the Free Software</span>
+<span class="cm"> * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA</span>
+<span class="cm"> */</span>
+
+<span class="cp">#include</span> <span class="cpf">&lt;stdint.h&gt;</span><span class="cp"></span>
+
+<span class="cp">#ifndef _H264_SEI_H</span>
+<span class="cp">#define _H264_SEI_H        1</span>
+
+<span class="cp">#include</span> <span class="cpf">&lt;stdint.h&gt;</span><span class="cp"></span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;vamedia_bitstream.h&quot;</span><span class="cp"></span>
+
+<span class="cp">#ifdef __cplusplus</span>
+<span class="k">extern</span> <span class="s">&quot;C&quot;</span> <span class="p">{</span>
+<span class="cp">#endif</span>
+
+<span class="k">struct</span> <span class="n">SEI</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">payload_type</span><span class="p">;</span>    <span class="c1">//负载类型</span>
+    <span class="kt">int</span> <span class="n">payload_size</span><span class="p">;</span>    <span class="c1">//负载大小</span>
+    <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">payload_ptr</span><span class="p">;</span><span class="c1">//负载数据</span>
+<span class="p">};</span>
+
+<span class="n">SEI</span><span class="o">*</span> <span class="nf">NewSEI</span><span class="p">();</span>
+<span class="kt">void</span> <span class="nf">FreeSEI</span><span class="p">(</span><span class="n">SEI</span><span class="o">*</span> <span class="n">s_ptr</span><span class="p">);</span>
+
+<span class="c1">//D.1 SEI payload syntax</span>
+<span class="cp">#define SEIYPE_BUFFERING_PERIOD                           0</span>
+<span class="cp">#define SEIYPE_PIC_TIMING                                 1</span>
+<span class="cp">#define SEIYPE_PAN_SCAN_RECT                              2</span>
+<span class="cp">#define SEIYPE_FILLER_PAYLOAD                             3</span>
+<span class="cp">#define SEIYPE_USER_DATA_REGISTERED_ITU_T_T35             4</span>
+<span class="cp">#define SEIYPE_USER_DATA_UNREGISTERED                     5</span>
+<span class="cp">#define SEIYPE_RECOVERY_POINT                             6</span>
+<span class="cp">#define SEIYPE_DEC_REF_PIC_MARKING_REPETITION             7</span>
+<span class="cp">#define SEIYPE_SPARE_PIC                                  8</span>
+<span class="cp">#define SEIYPE_SCENE_INFO                                 9</span>
+<span class="cp">#define SEIYPE_SUB_SEQ_INFO                               10</span>
+<span class="cp">#define SEIYPE_SUB_SEQ_LAYER_CHARACTERISTICS              11</span>
+<span class="cp">#define SEIYPE_SUB_SEQ_CHARACTERISTICS                    12</span>
+<span class="cp">#define SEIYPE_FULL_FRAME_FREEZE                          13</span>
+<span class="cp">#define SEIYPE_FULL_FRAME_FREEZE_RELEASE                  14</span>
+<span class="cp">#define SEIYPE_FULL_FRAME_SNAPSHOT                        15</span>
+<span class="cp">#define SEIYPE_PROGRESSIVE_REFINEMENT_SEGMENT_VAART       16</span>
+<span class="cp">#define SEIYPE_PROGRESSIVE_REFINEMENT_SEGMENT_END         17</span>
+<span class="cp">#define SEIYPE_MOTION_CONSTRAINED_SLICE_GROUP_SET         18</span>
+<span class="cp">#define SEIYPE_FILM_GRAIN_CHARACTERISTICS                 19</span>
+<span class="cp">#define SEIYPE_DEBLOCKING_FILTER_DISPLAY_PREFERENCE       20</span>
+<span class="cp">#define SEIYPE_STEREO_VIDEO_INFO                          21</span>
+
+<span class="cp">#ifdef __cplusplus</span>
+<span class="p">}</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#endif</span>
+</pre></div>
+</body>
+</html>

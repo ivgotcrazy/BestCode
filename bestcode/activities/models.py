@@ -10,7 +10,7 @@ class ActivityState(models.Model):
 
 class Activity(models.Model):
 	activity_id = models.AutoField(primary_key=True)
-	name = models.CharField(max_length=64, default="最佳代码")
+	name = models.CharField(max_length=64)
 	desc = models.TextField(max_length=4096)
 	result = models.TextField(max_length=4096)
 	img_path = models.CharField(max_length=256, default="")
@@ -29,4 +29,4 @@ class ActivityPlan(models.Model):
 	plan_item_end = models.DateTimeField('End time')
 
 	def __str__(self):
-		return "activity plan of %s" % self.activity_id
+		return "%s of %s" % (self.plan_item_name, self.activity.name)

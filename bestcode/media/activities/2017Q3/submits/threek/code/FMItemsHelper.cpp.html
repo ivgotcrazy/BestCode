@@ -1,0 +1,495 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=latin1">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #333333 }
+body  { background: #111111; color: #ffffff }
+body .c { color: #008800; font-style: italic; background-color: #0f140f } /* Comment */
+body .err { color: #ffffff } /* Error */
+body .esc { color: #ffffff } /* Escape */
+body .g { color: #ffffff } /* Generic */
+body .k { color: #fb660a; font-weight: bold } /* Keyword */
+body .l { color: #ffffff } /* Literal */
+body .n { color: #ffffff } /* Name */
+body .o { color: #ffffff } /* Operator */
+body .x { color: #ffffff } /* Other */
+body .p { color: #ffffff } /* Punctuation */
+body .ch { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Hashbang */
+body .cm { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Multiline */
+body .cp { color: #ff0007; font-weight: bold; font-style: italic; background-color: #0f140f } /* Comment.Preproc */
+body .cpf { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.PreprocFile */
+body .c1 { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Single */
+body .cs { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Special */
+body .gd { color: #ffffff } /* Generic.Deleted */
+body .ge { color: #ffffff } /* Generic.Emph */
+body .gr { color: #ffffff } /* Generic.Error */
+body .gh { color: #ffffff; font-weight: bold } /* Generic.Heading */
+body .gi { color: #ffffff } /* Generic.Inserted */
+body .go { color: #444444; background-color: #222222 } /* Generic.Output */
+body .gp { color: #ffffff } /* Generic.Prompt */
+body .gs { color: #ffffff } /* Generic.Strong */
+body .gu { color: #ffffff; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #ffffff } /* Generic.Traceback */
+body .kc { color: #fb660a; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #fb660a; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #fb660a; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #fb660a } /* Keyword.Pseudo */
+body .kr { color: #fb660a; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #cdcaa9; font-weight: bold } /* Keyword.Type */
+body .ld { color: #ffffff } /* Literal.Date */
+body .m { color: #0086f7; font-weight: bold } /* Literal.Number */
+body .s { color: #0086d2 } /* Literal.String */
+body .na { color: #ff0086; font-weight: bold } /* Name.Attribute */
+body .nb { color: #ffffff } /* Name.Builtin */
+body .nc { color: #ffffff } /* Name.Class */
+body .no { color: #0086d2 } /* Name.Constant */
+body .nd { color: #ffffff } /* Name.Decorator */
+body .ni { color: #ffffff } /* Name.Entity */
+body .ne { color: #ffffff } /* Name.Exception */
+body .nf { color: #ff0086; font-weight: bold } /* Name.Function */
+body .nl { color: #ffffff } /* Name.Label */
+body .nn { color: #ffffff } /* Name.Namespace */
+body .nx { color: #ffffff } /* Name.Other */
+body .py { color: #ffffff } /* Name.Property */
+body .nt { color: #fb660a; font-weight: bold } /* Name.Tag */
+body .nv { color: #fb660a } /* Name.Variable */
+body .ow { color: #ffffff } /* Operator.Word */
+body .w { color: #888888 } /* Text.Whitespace */
+body .mb { color: #0086f7; font-weight: bold } /* Literal.Number.Bin */
+body .mf { color: #0086f7; font-weight: bold } /* Literal.Number.Float */
+body .mh { color: #0086f7; font-weight: bold } /* Literal.Number.Hex */
+body .mi { color: #0086f7; font-weight: bold } /* Literal.Number.Integer */
+body .mo { color: #0086f7; font-weight: bold } /* Literal.Number.Oct */
+body .sa { color: #0086d2 } /* Literal.String.Affix */
+body .sb { color: #0086d2 } /* Literal.String.Backtick */
+body .sc { color: #0086d2 } /* Literal.String.Char */
+body .dl { color: #0086d2 } /* Literal.String.Delimiter */
+body .sd { color: #0086d2 } /* Literal.String.Doc */
+body .s2 { color: #0086d2 } /* Literal.String.Double */
+body .se { color: #0086d2 } /* Literal.String.Escape */
+body .sh { color: #0086d2 } /* Literal.String.Heredoc */
+body .si { color: #0086d2 } /* Literal.String.Interpol */
+body .sx { color: #0086d2 } /* Literal.String.Other */
+body .sr { color: #0086d2 } /* Literal.String.Regex */
+body .s1 { color: #0086d2 } /* Literal.String.Single */
+body .ss { color: #0086d2 } /* Literal.String.Symbol */
+body .bp { color: #ffffff } /* Name.Builtin.Pseudo */
+body .fm { color: #ff0086; font-weight: bold } /* Name.Function.Magic */
+body .vc { color: #fb660a } /* Name.Variable.Class */
+body .vg { color: #fb660a } /* Name.Variable.Global */
+body .vi { color: #fb660a } /* Name.Variable.Instance */
+body .vm { color: #fb660a } /* Name.Variable.Magic */
+body .il { color: #0086f7; font-weight: bold } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;stdafx.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;FMItemsHelper.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;AttributeHelper.h&quot;</span><span class="cp"></span>
+
+<span class="k">namespace</span> <span class="n">fm_uimodule</span>
+<span class="p">{</span>
+	<span class="n">CFMItemXmlHelper</span><span class="o">::</span><span class="n">CFMItemXmlHelper</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+	<span class="p">{}</span>
+
+	<span class="n">CFMItemXmlHelper</span><span class="o">::~</span><span class="n">CFMItemXmlHelper</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+	<span class="p">{}</span>
+
+	<span class="kt">void</span> <span class="n">CFMItemXmlHelper</span><span class="o">::</span><span class="n">AddTabItem</span><span class="p">(</span><span class="k">const</span> <span class="n">TagTabAttr</span><span class="o">&amp;</span> <span class="n">table</span><span class="p">,</span> <span class="k">const</span> <span class="n">tstring</span><span class="o">&amp;</span> <span class="n">strNodeName</span><span class="p">,</span> <span class="n">tstring</span><span class="o">*</span> <span class="n">strXmlFile</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">AddHeaderItem</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">strNodeName</span><span class="p">,</span> <span class="n">strXmlFile</span><span class="p">);</span>
+		<span class="n">AddSubViewItem</span><span class="p">(</span><span class="n">strNodeName</span><span class="p">,</span> <span class="n">strXmlFile</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="n">tstring</span> <span class="n">CFMItemXmlHelper</span><span class="o">::</span><span class="n">AddNewTabItem</span><span class="p">(</span><span class="k">const</span> <span class="n">TagTabAttr</span><span class="o">&amp;</span> <span class="n">table</span><span class="p">)</span>
+	<span class="p">{</span>				
+		<span class="n">TiXmlDocument</span><span class="o">*</span> <span class="n">xmlDoc</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TiXmlDocument</span><span class="p">;</span>
+
+		<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pRoot</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TiXmlElement</span><span class="p">(</span><span class="s">&quot;Window&quot;</span><span class="p">);</span>
+		<span class="n">xmlDoc</span><span class="o">-&gt;</span><span class="n">LinkEndChild</span><span class="p">(</span><span class="n">pRoot</span><span class="p">);</span>
+
+		<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pTabHeader</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TiXmlElement</span><span class="p">(</span><span class="s">&quot;TabHeader&quot;</span><span class="p">);</span>
+		<span class="n">pRoot</span><span class="o">-&gt;</span><span class="n">LinkEndChild</span><span class="p">(</span><span class="n">pTabHeader</span><span class="p">);</span>
+
+		<span class="c1">//ÉèÖÃheaderÊôÐÔ </span>
+		<span class="n">SetControlAttr</span><span class="p">(</span><span class="n">pTabHeader</span><span class="p">,</span> <span class="n">table</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">table</span><span class="p">.</span><span class="n">HasSubButton</span><span class="p">())</span>
+		<span class="p">{</span>
+			<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pButton</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TiXmlElement</span><span class="p">(</span><span class="s">&quot;Button&quot;</span><span class="p">);</span>
+			<span class="n">pTabHeader</span><span class="o">-&gt;</span><span class="n">LinkEndChild</span><span class="p">(</span><span class="n">pButton</span><span class="p">);</span>
+
+			<span class="c1">//ÉèÖÃbuttonÊôÐÔ</span>
+			<span class="n">SetControlAttr</span><span class="p">(</span><span class="n">pButton</span><span class="p">,</span> <span class="n">table</span><span class="p">.</span><span class="n">button</span><span class="p">);</span>
+		<span class="p">}</span>
+
+		<span class="k">return</span> <span class="n">ReleaseXmlDoc</span><span class="p">(</span><span class="n">pRoot</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">CFMItemXmlHelper</span><span class="o">::</span><span class="n">AddSplitItem</span><span class="p">(</span><span class="n">tstring</span><span class="o">*</span> <span class="n">strXmlFile</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pRoot</span> <span class="o">=</span> <span class="n">GetRootElement</span><span class="p">(</span><span class="o">*</span><span class="n">strXmlFile</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pRoot</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+			<span class="k">return</span><span class="p">;</span>
+	
+		<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pElem</span> <span class="o">=</span> <span class="n">pRoot</span><span class="o">-&gt;</span><span class="n">FirstChildElement</span><span class="p">(</span><span class="s">&quot;VerticalLayout&quot;</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pElem</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+			<span class="k">return</span><span class="p">;</span>
+
+		<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pContainer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TiXmlElement</span><span class="p">(</span><span class="s">&quot;VerticalLayout&quot;</span><span class="p">);</span>
+		<span class="n">pElem</span><span class="o">-&gt;</span><span class="n">LinkEndChild</span><span class="p">(</span><span class="n">pContainer</span><span class="p">);</span>
+
+		<span class="o">*</span><span class="n">strXmlFile</span> <span class="o">=</span> <span class="n">ReleaseXmlDoc</span><span class="p">(</span><span class="n">pRoot</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">CFMItemXmlHelper</span><span class="o">::</span><span class="n">AddFunPanelItem</span><span class="p">(</span><span class="k">const</span> <span class="n">TagFunPanelCellAttr</span><span class="o">&amp;</span> <span class="n">fpc</span><span class="p">,</span> <span class="n">tstring</span><span class="o">*</span> <span class="n">strXmlFile</span><span class="p">)</span>
+	<span class="p">{</span>
+	<span class="cm">/*	TiXmlElement* pRoot = GetRootElement(*strXmlFile);</span>
+<span class="cm">		if (pRoot == nullptr)</span>
+<span class="cm">			return;</span>
+
+<span class="cm">		TiXmlElement* pVideoElem = pRoot-&gt;FirstChild(&quot;VerticalLayout&quot;)-&gt;FirstChild(&quot;VerticalLayout&quot;)-&gt;ToElement();</span>
+<span class="cm">		if (pVideoElem == nullptr)</span>
+<span class="cm">			return;</span>
+
+<span class="cm">		TiXmlElement* pContainerElem = new TiXmlElement(&quot;Container&quot;);</span>
+<span class="cm">		SetControlAttr(pContainerElem, fpc);</span>
+<span class="cm">		pVideoElem-&gt;LinkEndChild(pContainerElem);</span>
+
+<span class="cm">		*strXmlFile = ReleaseXmlDoc(pRoot);*/</span>
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">CFMItemXmlHelper</span><span class="o">::</span><span class="n">ModifyFunPanelItem</span><span class="p">(</span><span class="k">const</span> <span class="n">tstring</span><span class="o">&amp;</span> <span class="n">strName</span><span class="p">,</span> <span class="kt">int</span> <span class="n">nValue</span><span class="p">,</span> <span class="n">tstring</span><span class="o">*</span> <span class="n">strXmlFile</span><span class="p">)</span>
+	<span class="p">{</span>
+	<span class="p">}</span>
+
+	<span class="kt">int</span> <span class="n">CFMItemXmlHelper</span><span class="o">::</span><span class="n">AddStatusBarItem</span><span class="p">(</span><span class="k">const</span> <span class="n">TagCtrlAttr</span><span class="o">&amp;</span> <span class="n">stb</span><span class="p">,</span> <span class="n">tstring</span><span class="o">*</span> <span class="n">strXmlFile</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="kt">int</span> <span class="n">nIndex</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+
+		<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pRoot</span> <span class="o">=</span> <span class="n">GetRootElement</span><span class="p">(</span><span class="o">*</span><span class="n">strXmlFile</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pRoot</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+			<span class="k">return</span> <span class="n">nIndex</span><span class="p">;</span>
+
+		<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pElem</span> <span class="o">=</span> <span class="n">pRoot</span><span class="o">-&gt;</span><span class="n">FirstChildElement</span><span class="p">(</span><span class="s">&quot;HorizontalLayout&quot;</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pElem</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+			<span class="k">return</span> <span class="n">nIndex</span><span class="p">;</span>
+
+		<span class="k">const</span> <span class="n">CHAR</span><span class="o">*</span> <span class="n">pName</span> <span class="o">=</span> <span class="n">pElem</span><span class="o">-&gt;</span><span class="n">Attribute</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pName</span> <span class="o">!=</span> <span class="k">nullptr</span> <span class="o">&amp;&amp;</span> <span class="n">_stricmp</span><span class="p">(</span><span class="n">pName</span><span class="p">,</span> <span class="s">&quot;ItemsContainer&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">string</span> <span class="n">strControlType</span><span class="p">;</span>
+
+			<span class="k">if</span> <span class="p">(</span><span class="n">stb</span><span class="p">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">FMCT_CONTAINER</span><span class="p">)</span>
+			<span class="p">{</span>
+				<span class="n">strControlType</span> <span class="o">=</span> <span class="s">&quot;Container&quot;</span><span class="p">;</span>
+			<span class="p">}</span>
+			<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">stb</span><span class="p">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">FMCT_BUTTON</span><span class="p">)</span>
+			<span class="p">{</span>
+				<span class="n">strControlType</span> <span class="o">=</span> <span class="s">&quot;Button&quot;</span><span class="p">;</span>
+			<span class="p">}</span>
+			<span class="k">else</span>
+			<span class="p">{</span>
+				<span class="n">strControlType</span> <span class="o">=</span> <span class="s">&quot;Text&quot;</span><span class="p">;</span>
+			<span class="p">}</span>
+
+			<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">strControlType</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+			<span class="p">{</span>
+				<span class="n">CheckHolderItem</span><span class="p">(</span><span class="n">pElem</span><span class="p">,</span> <span class="n">stb</span><span class="p">.</span><span class="n">padding</span><span class="p">.</span><span class="n">empty</span><span class="p">());</span>
+
+				<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pItem</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TiXmlElement</span><span class="p">(</span><span class="n">strControlType</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+				<span class="n">SetControlAttr</span><span class="p">(</span><span class="n">pItem</span><span class="p">,</span> <span class="n">stb</span><span class="p">);</span>
+
+				<span class="n">pElem</span><span class="o">-&gt;</span><span class="n">LinkEndChild</span><span class="p">(</span><span class="n">pItem</span><span class="p">);</span>
+				<span class="n">nIndex</span> <span class="o">=</span> <span class="n">FindItemIndex</span><span class="p">(</span><span class="n">pElem</span><span class="p">,</span> <span class="n">pItem</span><span class="p">);</span>
+
+				<span class="n">CheckHolderItem</span><span class="p">(</span><span class="n">pElem</span><span class="p">,</span> <span class="n">stb</span><span class="p">.</span><span class="n">padding</span><span class="p">.</span><span class="n">empty</span><span class="p">());</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+
+		<span class="o">*</span><span class="n">strXmlFile</span> <span class="o">=</span> <span class="n">ReleaseXmlDoc</span><span class="p">(</span><span class="n">pRoot</span><span class="p">);</span>
+		<span class="k">return</span> <span class="n">nIndex</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">CFMItemXmlHelper</span><span class="o">::</span><span class="n">AddHeaderItem</span><span class="p">(</span><span class="k">const</span> <span class="n">TagTabAttr</span><span class="o">&amp;</span> <span class="n">header</span><span class="p">,</span> <span class="k">const</span> <span class="n">tstring</span><span class="o">&amp;</span> <span class="n">strNodeName</span><span class="p">,</span> <span class="n">tstring</span><span class="o">*</span> <span class="n">strXmlFile</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pRoot</span> <span class="o">=</span> <span class="n">GetRootElement</span><span class="p">(</span><span class="o">*</span><span class="n">strXmlFile</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pRoot</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+			<span class="k">return</span><span class="p">;</span>
+
+		<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pElem</span> <span class="o">=</span> <span class="n">pRoot</span><span class="o">-&gt;</span><span class="n">FirstChildElement</span><span class="p">(</span><span class="n">UnicodeToAnsi</span><span class="p">(</span><span class="n">strNodeName</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pElem</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+			<span class="k">return</span><span class="p">;</span>
+
+		<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pTabHeader</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TiXmlElement</span><span class="p">(</span><span class="s">&quot;TabHeader&quot;</span><span class="p">);</span>
+		<span class="n">SetControlAttr</span><span class="p">(</span><span class="n">pTabHeader</span><span class="p">,</span> <span class="n">header</span><span class="p">);</span>
+
+		<span class="n">pElem</span><span class="o">-&gt;</span><span class="n">LinkEndChild</span><span class="p">(</span><span class="n">pTabHeader</span><span class="p">);</span>
+
+		<span class="k">if</span> <span class="p">(</span><span class="n">header</span><span class="p">.</span><span class="n">HasSubButton</span><span class="p">())</span>
+		<span class="p">{</span>
+			<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pButton</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TiXmlElement</span><span class="p">(</span><span class="s">&quot;Button&quot;</span><span class="p">);</span>
+			<span class="n">pTabHeader</span><span class="o">-&gt;</span><span class="n">LinkEndChild</span><span class="p">(</span><span class="n">pButton</span><span class="p">);</span>
+
+			<span class="n">SetControlAttr</span><span class="p">(</span><span class="n">pButton</span><span class="p">,</span> <span class="n">header</span><span class="p">.</span><span class="n">button</span><span class="p">);</span>
+		<span class="p">}</span>
+
+		<span class="o">*</span><span class="n">strXmlFile</span> <span class="o">=</span> <span class="n">ReleaseXmlDoc</span><span class="p">(</span><span class="n">pRoot</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">CFMItemXmlHelper</span><span class="o">::</span><span class="n">AddSubViewItem</span><span class="p">(</span><span class="k">const</span> <span class="n">tstring</span> <span class="n">strNodeName</span><span class="p">,</span> <span class="n">tstring</span><span class="o">*</span> <span class="n">strXmlFile</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pRoot</span> <span class="o">=</span> <span class="n">GetRootElement</span><span class="p">(</span><span class="o">*</span><span class="n">strXmlFile</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pRoot</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+			<span class="k">return</span><span class="p">;</span>
+
+		<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pElem</span> <span class="o">=</span> <span class="n">pRoot</span><span class="o">-&gt;</span><span class="n">FirstChildElement</span><span class="p">(</span><span class="n">UnicodeToAnsi</span><span class="p">(</span><span class="n">strNodeName</span><span class="p">).</span><span class="n">c_str</span><span class="p">());</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pElem</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+			<span class="k">return</span><span class="p">;</span>
+
+		<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pTabViewElem</span> <span class="o">=</span> <span class="n">pElem</span><span class="o">-&gt;</span><span class="n">FirstChildElement</span><span class="p">(</span><span class="s">&quot;TabView&quot;</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pTabViewElem</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pContainerElem</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TiXmlElement</span><span class="p">(</span><span class="s">&quot;Container&quot;</span><span class="p">);</span>
+			<span class="n">pTabViewElem</span><span class="o">-&gt;</span><span class="n">LinkEndChild</span><span class="p">(</span><span class="n">pContainerElem</span><span class="p">);</span>
+		<span class="p">}</span>
+		
+		<span class="o">*</span><span class="n">strXmlFile</span> <span class="o">=</span> <span class="n">ReleaseXmlDoc</span><span class="p">(</span><span class="n">pRoot</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">CFMItemXmlHelper</span><span class="o">::</span><span class="n">AddToolBarItem</span><span class="p">(</span><span class="k">const</span> <span class="n">TagButtonAttr</span><span class="o">&amp;</span> <span class="n">button</span><span class="p">,</span> <span class="n">tstring</span><span class="o">*</span> <span class="n">strXmlFile</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">bAddFront</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pRoot</span> <span class="o">=</span> <span class="n">GetRootElement</span><span class="p">(</span><span class="o">*</span><span class="n">strXmlFile</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pRoot</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+			<span class="k">return</span><span class="p">;</span>
+
+		<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pElem</span> <span class="o">=</span> <span class="n">pRoot</span><span class="o">-&gt;</span><span class="n">FirstChild</span><span class="p">(</span><span class="s">&quot;VerticalLayout&quot;</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">FirstChild</span><span class="p">(</span><span class="s">&quot;HorizontalLayout&quot;</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">ToElement</span><span class="p">();</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pElem</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+			<span class="k">return</span><span class="p">;</span>
+
+		<span class="k">const</span> <span class="n">CHAR</span><span class="o">*</span> <span class="n">pName</span> <span class="o">=</span> <span class="n">pElem</span><span class="o">-&gt;</span><span class="n">Attribute</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pName</span> <span class="o">!=</span> <span class="k">nullptr</span> <span class="o">&amp;&amp;</span> <span class="n">_stricmp</span><span class="p">(</span><span class="n">pName</span><span class="p">,</span> <span class="s">&quot;ToolBar&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pChildElem</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TiXmlElement</span><span class="p">(</span><span class="s">&quot;Button&quot;</span><span class="p">);</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">bAddFront</span><span class="p">)</span>
+				<span class="n">pElem</span><span class="o">-&gt;</span><span class="n">LinkEndChild</span><span class="p">(</span><span class="n">pChildElem</span><span class="p">);</span>
+			<span class="k">else</span>
+				<span class="n">pElem</span><span class="o">-&gt;</span><span class="n">InsertBeforeChild</span><span class="p">(</span><span class="n">pElem</span><span class="o">-&gt;</span><span class="n">FirstChildElement</span><span class="p">(),</span> <span class="o">*</span><span class="n">pChildElem</span><span class="p">);</span>
+
+			<span class="n">SetControlAttr</span><span class="p">(</span><span class="n">pChildElem</span><span class="p">,</span> <span class="n">button</span><span class="p">);</span>
+		<span class="p">}</span>
+
+		<span class="o">*</span><span class="n">strXmlFile</span> <span class="o">=</span> <span class="n">ReleaseXmlDoc</span><span class="p">(</span><span class="n">pRoot</span><span class="p">);</span>
+  	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">CFMItemXmlHelper</span><span class="o">::</span><span class="n">AddToolBarItem2</span><span class="p">(</span><span class="k">const</span> <span class="n">TagButtonAttr</span><span class="o">&amp;</span> <span class="n">button</span><span class="p">,</span> <span class="n">tstring</span><span class="o">*</span> <span class="n">strXmlFile</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">bAddFront</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pRoot</span> <span class="o">=</span> <span class="n">GetRootElement</span><span class="p">(</span><span class="o">*</span><span class="n">strXmlFile</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pRoot</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+			<span class="k">return</span><span class="p">;</span>
+
+		<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pElem</span> <span class="o">=</span> <span class="n">pRoot</span><span class="o">-&gt;</span><span class="n">FirstChild</span><span class="p">(</span><span class="s">&quot;VerticalLayout&quot;</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">FirstChild</span><span class="p">(</span><span class="s">&quot;HorizontalLayout&quot;</span><span class="p">)</span><span class="o">-&gt;</span>
+			<span class="n">FirstChild</span><span class="p">(</span><span class="s">&quot;HorizontalLayout&quot;</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">ToElement</span><span class="p">();</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pElem</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+			<span class="k">return</span><span class="p">;</span>
+
+		<span class="k">const</span> <span class="n">CHAR</span><span class="o">*</span> <span class="n">pName</span> <span class="o">=</span> <span class="n">pElem</span><span class="o">-&gt;</span><span class="n">Attribute</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pName</span> <span class="o">!=</span> <span class="k">nullptr</span> <span class="o">&amp;&amp;</span> <span class="n">_stricmp</span><span class="p">(</span><span class="n">pName</span><span class="p">,</span> <span class="s">&quot;ToolBar&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pChildElem</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TiXmlElement</span><span class="p">(</span><span class="s">&quot;Button&quot;</span><span class="p">);</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">bAddFront</span><span class="p">)</span>
+				<span class="n">pElem</span><span class="o">-&gt;</span><span class="n">LinkEndChild</span><span class="p">(</span><span class="n">pChildElem</span><span class="p">);</span>
+			<span class="k">else</span>
+				<span class="n">pElem</span><span class="o">-&gt;</span><span class="n">InsertBeforeChild</span><span class="p">(</span><span class="n">pElem</span><span class="o">-&gt;</span><span class="n">FirstChildElement</span><span class="p">(),</span> <span class="o">*</span><span class="n">pChildElem</span><span class="p">);</span>
+
+			<span class="n">SetControlAttr</span><span class="p">(</span><span class="n">pChildElem</span><span class="p">,</span> <span class="n">button</span><span class="p">);</span>
+		<span class="p">}</span>
+
+		<span class="o">*</span><span class="n">strXmlFile</span> <span class="o">=</span> <span class="n">ReleaseXmlDoc</span><span class="p">(</span><span class="n">pRoot</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">CFMItemXmlHelper</span><span class="o">::</span><span class="n">ModifyPopupViewToolBar</span><span class="p">(</span><span class="k">const</span> <span class="n">TagFMPopupViewAttr</span><span class="o">&amp;</span> <span class="n">pv</span><span class="p">,</span> <span class="n">tstring</span><span class="o">*</span> <span class="n">strXmlFile</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pRoot</span> <span class="o">=</span> <span class="n">GetRootElement</span><span class="p">(</span><span class="o">*</span><span class="n">strXmlFile</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pRoot</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+			<span class="k">return</span><span class="p">;</span>
+
+		<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pFrame</span> <span class="o">=</span> <span class="n">pRoot</span><span class="o">-&gt;</span><span class="n">FirstChildElement</span><span class="p">(</span><span class="s">&quot;VerticalLayout&quot;</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pFrame</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+			<span class="n">SetFrameCtrlAttr</span><span class="p">(</span><span class="n">pFrame</span><span class="p">,</span> <span class="n">pv</span><span class="p">);</span>
+
+		<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pHori</span> <span class="o">=</span> <span class="n">pFrame</span><span class="o">-&gt;</span><span class="n">FirstChildElement</span><span class="p">(</span><span class="s">&quot;HorizontalLayout&quot;</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pHori</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="k">const</span> <span class="n">CHAR</span><span class="o">*</span> <span class="n">name</span> <span class="o">=</span> <span class="n">pHori</span><span class="o">-&gt;</span><span class="n">Attribute</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">);</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">name</span> <span class="o">!=</span> <span class="k">nullptr</span> <span class="o">&amp;&amp;</span> <span class="n">_stricmp</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s">&quot;ToolBar&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+			<span class="p">{</span>
+				<span class="n">SetFrameHeaderAttr</span><span class="p">(</span><span class="n">pHori</span><span class="p">,</span> <span class="n">pv</span><span class="p">.</span><span class="n">header</span><span class="p">);</span>
+			<span class="p">}</span>
+
+			<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pButton</span> <span class="o">=</span> <span class="n">pHori</span><span class="o">-&gt;</span><span class="n">FirstChildElement</span><span class="p">(</span><span class="s">&quot;Button&quot;</span><span class="p">);</span>
+			<span class="k">while</span> <span class="p">(</span><span class="n">pButton</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+			<span class="p">{</span>
+				<span class="k">const</span> <span class="n">CHAR</span><span class="o">*</span> <span class="n">name</span> <span class="o">=</span> <span class="n">pButton</span><span class="o">-&gt;</span><span class="n">Attribute</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">);</span>
+				<span class="k">if</span> <span class="p">(</span><span class="n">name</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+				<span class="p">{</span>
+					<span class="k">if</span> <span class="p">(</span><span class="n">_stricmp</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s">&quot;Popup&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+						<span class="n">SetControlAttr</span><span class="p">(</span><span class="n">pButton</span><span class="p">,</span> <span class="n">pv</span><span class="p">.</span><span class="n">popup</span><span class="p">);</span>
+					<span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">_stricmp</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s">&quot;Popback&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+						<span class="n">SetControlAttr</span><span class="p">(</span><span class="n">pButton</span><span class="p">,</span> <span class="n">pv</span><span class="p">.</span><span class="n">popback</span><span class="p">);</span>
+				<span class="p">}</span>
+
+				<span class="n">pButton</span> <span class="o">=</span> <span class="n">pButton</span><span class="o">-&gt;</span><span class="n">NextSiblingElement</span><span class="p">();</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+
+		<span class="o">*</span><span class="n">strXmlFile</span> <span class="o">=</span> <span class="n">ReleaseXmlDoc</span><span class="p">(</span><span class="n">pRoot</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">CFMItemXmlHelper</span><span class="o">::</span><span class="n">ModifySplitContainerToolBar</span><span class="p">(</span><span class="k">const</span> <span class="n">TagFMSplitContainerAttr</span><span class="o">&amp;</span> <span class="n">sc</span><span class="p">,</span> <span class="n">tstring</span><span class="o">*</span> <span class="n">strXmlFile</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pRoot</span> <span class="o">=</span> <span class="n">GetRootElement</span><span class="p">(</span><span class="o">*</span><span class="n">strXmlFile</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pRoot</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+			<span class="k">return</span><span class="p">;</span>
+
+		<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">pRoot</span><span class="o">-&gt;</span><span class="n">FirstChildElement</span><span class="p">(</span><span class="s">&quot;VerticalLayout&quot;</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">frame</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+			<span class="n">SetFrameCtrlAttr</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">sc</span><span class="p">);</span>
+
+		<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">toolbar</span> <span class="o">=</span> <span class="n">frame</span><span class="o">-&gt;</span><span class="n">FirstChildElement</span><span class="p">(</span><span class="s">&quot;HorizontalLayout&quot;</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">toolbar</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="k">const</span> <span class="n">CHAR</span><span class="o">*</span> <span class="n">name</span> <span class="o">=</span> <span class="n">toolbar</span><span class="o">-&gt;</span><span class="n">Attribute</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">);</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">name</span> <span class="o">!=</span> <span class="k">nullptr</span> <span class="o">&amp;&amp;</span> <span class="n">_stricmp</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s">&quot;ToolBar&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+				<span class="n">SetFrameHeaderAttr</span><span class="p">(</span><span class="n">toolbar</span><span class="p">,</span> <span class="n">sc</span><span class="p">.</span><span class="n">header</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+		<span class="p">}</span>
+
+		<span class="o">*</span><span class="n">strXmlFile</span> <span class="o">=</span> <span class="n">ReleaseXmlDoc</span><span class="p">(</span><span class="n">pRoot</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">CFMItemXmlHelper</span><span class="o">::</span><span class="n">ModifyStatusBar</span><span class="p">(</span><span class="k">const</span> <span class="n">TagFMStatusBarAttr</span><span class="o">&amp;</span> <span class="n">stb</span><span class="p">,</span> <span class="n">tstring</span><span class="o">*</span> <span class="n">strXmlFile</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pRoot</span> <span class="o">=</span> <span class="n">GetRootElement</span><span class="p">(</span><span class="o">*</span><span class="n">strXmlFile</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pRoot</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+			<span class="k">return</span><span class="p">;</span>
+
+		<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pFrame</span> <span class="o">=</span> <span class="n">pRoot</span><span class="o">-&gt;</span><span class="n">FirstChildElement</span><span class="p">(</span><span class="s">&quot;HorizontalLayout&quot;</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pFrame</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+			<span class="n">SetFrameCtrlAttr</span><span class="p">(</span><span class="n">pFrame</span><span class="p">,</span> <span class="n">stb</span><span class="p">);</span>
+
+		<span class="o">*</span><span class="n">strXmlFile</span> <span class="o">=</span> <span class="n">ReleaseXmlDoc</span><span class="p">(</span><span class="n">pRoot</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">CFMItemXmlHelper</span><span class="o">::</span><span class="n">ModifyModulePanel</span><span class="p">(</span><span class="k">const</span> <span class="n">TagFMModulePanelAttr</span><span class="o">&amp;</span> <span class="n">vp</span><span class="p">,</span> <span class="n">tstring</span><span class="o">*</span> <span class="n">strXmlFile</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pRoot</span> <span class="o">=</span> <span class="n">GetRootElement</span><span class="p">(</span><span class="o">*</span><span class="n">strXmlFile</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pRoot</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+			<span class="k">return</span><span class="p">;</span>
+
+		<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pToolbar</span> <span class="o">=</span> <span class="n">pRoot</span><span class="o">-&gt;</span><span class="n">FirstChild</span><span class="p">(</span><span class="s">&quot;HorizontalLayout&quot;</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">FirstChild</span><span class="p">(</span><span class="s">&quot;HorizontalLayout&quot;</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">ToElement</span><span class="p">();</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pToolbar</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="k">const</span> <span class="n">CHAR</span><span class="o">*</span> <span class="n">name</span> <span class="o">=</span> <span class="n">pToolbar</span><span class="o">-&gt;</span><span class="n">Attribute</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">);</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">name</span> <span class="o">!=</span> <span class="k">nullptr</span> <span class="o">&amp;&amp;</span> <span class="n">_stricmp</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s">&quot;ToolBar&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+				<span class="n">SetFrameHeaderAttr</span><span class="p">(</span><span class="n">pToolbar</span><span class="p">,</span> <span class="n">vp</span><span class="p">.</span><span class="n">header</span><span class="p">);</span>
+		<span class="p">}</span>
+
+		<span class="o">*</span><span class="n">strXmlFile</span> <span class="o">=</span> <span class="n">ReleaseXmlDoc</span><span class="p">(</span><span class="n">pRoot</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">CFMItemXmlHelper</span><span class="o">::</span><span class="n">ModifyTabView</span><span class="p">(</span><span class="k">const</span> <span class="n">TagFMTabViewAttr</span><span class="o">&amp;</span> <span class="n">tv</span><span class="p">,</span> <span class="n">tstring</span><span class="o">*</span> <span class="n">strXmlFile</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pRoot</span> <span class="o">=</span> <span class="n">GetRootElement</span><span class="p">(</span><span class="o">*</span><span class="n">strXmlFile</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pRoot</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+			<span class="k">return</span><span class="p">;</span>
+
+		<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pTabview</span> <span class="o">=</span> <span class="n">pRoot</span><span class="o">-&gt;</span><span class="n">FirstChildElement</span><span class="p">(</span><span class="s">&quot;FMTabLayout&quot;</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pTabview</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+			<span class="n">SetTabViewAttr</span><span class="p">(</span><span class="n">pTabview</span><span class="p">,</span> <span class="n">tv</span><span class="p">);</span>
+
+		<span class="o">*</span><span class="n">strXmlFile</span> <span class="o">=</span> <span class="n">ReleaseXmlDoc</span><span class="p">(</span><span class="n">pRoot</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">CFMItemXmlHelper</span><span class="o">::</span><span class="n">ModifyTabContainer</span><span class="p">(</span><span class="k">const</span> <span class="n">TagFMTabContainerAttr</span><span class="o">&amp;</span> <span class="n">tc</span><span class="p">,</span> <span class="n">tstring</span><span class="o">*</span> <span class="n">strXmlFile</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pRoot</span> <span class="o">=</span> <span class="n">GetRootElement</span><span class="p">(</span><span class="o">*</span><span class="n">strXmlFile</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pRoot</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+			<span class="k">return</span><span class="p">;</span>
+
+		<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pTabContainerElem</span> <span class="o">=</span> <span class="n">pRoot</span><span class="o">-&gt;</span><span class="n">FirstChildElement</span><span class="p">(</span><span class="s">&quot;FMTabContainer&quot;</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pTabContainerElem</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span>
+			<span class="n">SetTabViewAttr</span><span class="p">(</span><span class="n">pTabContainerElem</span><span class="p">,</span> <span class="n">tc</span><span class="p">);</span>
+
+		<span class="o">*</span><span class="n">strXmlFile</span> <span class="o">=</span> <span class="n">ReleaseXmlDoc</span><span class="p">(</span><span class="n">pRoot</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">GetRootElement</span><span class="p">(</span><span class="k">const</span> <span class="n">tstring</span><span class="o">&amp;</span> <span class="n">strXmlFile</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">TiXmlDocument</span><span class="o">*</span> <span class="n">xmlDoc</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TiXmlDocument</span><span class="p">;</span>
+
+		<span class="n">CHAR</span> <span class="n">szXmlBuf</span><span class="p">[</span><span class="mi">1024</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span> <span class="p">};</span>
+		<span class="n">WBASELIB</span><span class="o">::</span><span class="n">ConvertUnicodeToAnsi</span><span class="p">(</span><span class="n">strXmlFile</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">szXmlBuf</span><span class="p">,</span> <span class="n">_countof</span><span class="p">(</span><span class="n">szXmlBuf</span><span class="p">));</span>
+		<span class="n">xmlDoc</span><span class="o">-&gt;</span><span class="n">Parse</span><span class="p">(</span><span class="n">szXmlBuf</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">xmlDoc</span><span class="o">-&gt;</span><span class="n">Error</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+			<span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span>
+
+		<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">root</span> <span class="o">=</span> <span class="n">xmlDoc</span><span class="o">-&gt;</span><span class="n">RootElement</span><span class="p">();</span>
+		<span class="k">return</span> <span class="n">root</span><span class="p">;</span>
+	<span class="p">}</span>
+	
+	<span class="n">tstring</span> <span class="n">ReleaseXmlDoc</span><span class="p">(</span><span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pRootElement</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">TiXmlDocument</span><span class="o">*</span> <span class="n">pXmlDoc</span> <span class="o">=</span> <span class="n">pRootElement</span><span class="o">-&gt;</span><span class="n">GetDocument</span><span class="p">();</span>
+		<span class="n">TIXML_OSTREAM</span> <span class="n">stream</span><span class="p">;</span>
+		<span class="n">stream</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">pXmlDoc</span><span class="p">;</span>
+
+		<span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">pXmlDoc</span><span class="p">);</span>
+
+		<span class="n">WCHAR</span> <span class="n">szXmlResult</span><span class="p">[</span><span class="mi">1024</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span> <span class="p">};</span>
+		<span class="n">WBASELIB</span><span class="o">::</span><span class="n">ConvertAnsiToUnicode</span><span class="p">(</span><span class="n">stream</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">szXmlResult</span><span class="p">,</span> <span class="n">_countof</span><span class="p">(</span><span class="n">szXmlResult</span><span class="p">));</span>
+
+		<span class="k">return</span> <span class="nf">tstring</span><span class="p">(</span><span class="n">szXmlResult</span><span class="p">);</span>
+	<span class="p">}</span>
+
+
+	<span class="kt">void</span> <span class="n">CFMItemXmlHelper</span><span class="o">::</span><span class="n">CheckHolderItem</span><span class="p">(</span><span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pElem</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">bPadEmpty</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">bPadEmpty</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pCtrl</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TiXmlElement</span><span class="p">(</span><span class="s">&quot;Control&quot;</span><span class="p">);</span>
+			<span class="n">pElem</span><span class="o">-&gt;</span><span class="n">LinkEndChild</span><span class="p">(</span><span class="n">pCtrl</span><span class="p">);</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+
+	<span class="kt">int</span>  <span class="n">CFMItemXmlHelper</span><span class="o">::</span><span class="n">FindItemIndex</span><span class="p">(</span><span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pRoot</span><span class="p">,</span> <span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pElem</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">pRoot</span> <span class="o">==</span> <span class="k">nullptr</span> <span class="o">||</span> <span class="n">pElem</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+			<span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+
+		<span class="kt">int</span> <span class="n">nIndex</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+		<span class="n">TiXmlElement</span><span class="o">*</span> <span class="n">pChild</span> <span class="o">=</span> <span class="n">pRoot</span><span class="o">-&gt;</span><span class="n">FirstChildElement</span><span class="p">();</span>
+		<span class="k">while</span> <span class="p">(</span><span class="n">pChild</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">nIndex</span><span class="o">++</span><span class="p">;</span>
+
+			<span class="k">if</span> <span class="p">(</span><span class="n">pChild</span> <span class="o">==</span> <span class="n">pElem</span><span class="p">)</span>
+				<span class="k">break</span><span class="p">;</span>
+
+			<span class="n">pChild</span> <span class="o">=</span> <span class="n">pChild</span><span class="o">-&gt;</span><span class="n">NextSiblingElement</span><span class="p">();</span>
+		<span class="p">}</span>
+
+		<span class="k">return</span> <span class="n">nIndex</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</body>
+</html>

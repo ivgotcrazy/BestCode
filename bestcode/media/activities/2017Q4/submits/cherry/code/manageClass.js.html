@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #333333 }
+body  { background: #111111; color: #ffffff }
+body .c { color: #008800; font-style: italic; background-color: #0f140f } /* Comment */
+body .err { color: #ffffff } /* Error */
+body .esc { color: #ffffff } /* Escape */
+body .g { color: #ffffff } /* Generic */
+body .k { color: #fb660a; font-weight: bold } /* Keyword */
+body .l { color: #ffffff } /* Literal */
+body .n { color: #ffffff } /* Name */
+body .o { color: #ffffff } /* Operator */
+body .x { color: #ffffff } /* Other */
+body .p { color: #ffffff } /* Punctuation */
+body .ch { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Hashbang */
+body .cm { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Multiline */
+body .cp { color: #ff0007; font-weight: bold; font-style: italic; background-color: #0f140f } /* Comment.Preproc */
+body .cpf { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.PreprocFile */
+body .c1 { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Single */
+body .cs { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Special */
+body .gd { color: #ffffff } /* Generic.Deleted */
+body .ge { color: #ffffff } /* Generic.Emph */
+body .gr { color: #ffffff } /* Generic.Error */
+body .gh { color: #ffffff; font-weight: bold } /* Generic.Heading */
+body .gi { color: #ffffff } /* Generic.Inserted */
+body .go { color: #444444; background-color: #222222 } /* Generic.Output */
+body .gp { color: #ffffff } /* Generic.Prompt */
+body .gs { color: #ffffff } /* Generic.Strong */
+body .gu { color: #ffffff; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #ffffff } /* Generic.Traceback */
+body .kc { color: #fb660a; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #fb660a; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #fb660a; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #fb660a } /* Keyword.Pseudo */
+body .kr { color: #fb660a; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #cdcaa9; font-weight: bold } /* Keyword.Type */
+body .ld { color: #ffffff } /* Literal.Date */
+body .m { color: #0086f7; font-weight: bold } /* Literal.Number */
+body .s { color: #0086d2 } /* Literal.String */
+body .na { color: #ff0086; font-weight: bold } /* Name.Attribute */
+body .nb { color: #ffffff } /* Name.Builtin */
+body .nc { color: #ffffff } /* Name.Class */
+body .no { color: #0086d2 } /* Name.Constant */
+body .nd { color: #ffffff } /* Name.Decorator */
+body .ni { color: #ffffff } /* Name.Entity */
+body .ne { color: #ffffff } /* Name.Exception */
+body .nf { color: #ff0086; font-weight: bold } /* Name.Function */
+body .nl { color: #ffffff } /* Name.Label */
+body .nn { color: #ffffff } /* Name.Namespace */
+body .nx { color: #ffffff } /* Name.Other */
+body .py { color: #ffffff } /* Name.Property */
+body .nt { color: #fb660a; font-weight: bold } /* Name.Tag */
+body .nv { color: #fb660a } /* Name.Variable */
+body .ow { color: #ffffff } /* Operator.Word */
+body .w { color: #888888 } /* Text.Whitespace */
+body .mb { color: #0086f7; font-weight: bold } /* Literal.Number.Bin */
+body .mf { color: #0086f7; font-weight: bold } /* Literal.Number.Float */
+body .mh { color: #0086f7; font-weight: bold } /* Literal.Number.Hex */
+body .mi { color: #0086f7; font-weight: bold } /* Literal.Number.Integer */
+body .mo { color: #0086f7; font-weight: bold } /* Literal.Number.Oct */
+body .sa { color: #0086d2 } /* Literal.String.Affix */
+body .sb { color: #0086d2 } /* Literal.String.Backtick */
+body .sc { color: #0086d2 } /* Literal.String.Char */
+body .dl { color: #0086d2 } /* Literal.String.Delimiter */
+body .sd { color: #0086d2 } /* Literal.String.Doc */
+body .s2 { color: #0086d2 } /* Literal.String.Double */
+body .se { color: #0086d2 } /* Literal.String.Escape */
+body .sh { color: #0086d2 } /* Literal.String.Heredoc */
+body .si { color: #0086d2 } /* Literal.String.Interpol */
+body .sx { color: #0086d2 } /* Literal.String.Other */
+body .sr { color: #0086d2 } /* Literal.String.Regex */
+body .s1 { color: #0086d2 } /* Literal.String.Single */
+body .ss { color: #0086d2 } /* Literal.String.Symbol */
+body .bp { color: #ffffff } /* Name.Builtin.Pseudo */
+body .fm { color: #ff0086; font-weight: bold } /* Name.Function.Magic */
+body .vc { color: #fb660a } /* Name.Variable.Class */
+body .vg { color: #fb660a } /* Name.Variable.Global */
+body .vi { color: #fb660a } /* Name.Variable.Instance */
+body .vm { color: #fb660a } /* Name.Variable.Magic */
+body .il { color: #0086f7; font-weight: bold } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="c1">//课表左右移动</span>
+<span class="kd">var</span> <span class="nx">coursePlayf</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.courseListUl&#39;</span><span class="p">).</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="nx">coursePlayf</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CoursePlay</span><span class="p">(</span><span class="s1">&#39;.courseListUl&#39;</span><span class="p">,</span><span class="nx">i</span><span class="p">);</span>
+<span class="p">}</span>
+
+
+<span class="c1">//课程展示（课表）</span>
+<span class="kd">function</span> <span class="nx">CoursePlay</span><span class="p">(</span><span class="nx">course</span><span class="p">,</span><span class="nx">n</span><span class="p">){</span>
+    <span class="c1">//下面是设置coursePlay的属性</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">times</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="c1">//初始化计数器</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">course</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">course</span><span class="p">).</span><span class="nx">eq</span><span class="p">(</span><span class="nx">n</span><span class="p">);</span><span class="c1">//选到ul</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">courseInfo</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">course</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">&quot;.courseInfo&quot;</span><span class="p">);</span><span class="c1">//选到ul的li</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">hasClass</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">course</span><span class="p">.</span><span class="nx">closest</span><span class="p">(</span><span class="s2">&quot;.courseList&quot;</span><span class="p">).</span><span class="nx">siblings</span><span class="p">(</span><span class="s1">&#39;.timeInfo&#39;</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s2">&quot;.has-class&quot;</span><span class="p">);</span><span class="c1">//取到刻度上有课程的块</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">multiple</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">courseInfo</span><span class="p">.</span><span class="nx">length</span> <span class="o">/</span> <span class="mi">4</span><span class="p">);</span><span class="c1">//对4取余向上取舍（假如有10个li 10/4=3）</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">leftMove</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">course</span><span class="p">.</span><span class="nx">parent</span><span class="p">().</span><span class="nx">siblings</span><span class="p">(</span><span class="s2">&quot;.leftMove&quot;</span><span class="p">);</span><span class="c1">//选取左边按钮</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">rightMove</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">course</span><span class="p">.</span><span class="nx">parent</span><span class="p">().</span><span class="nx">siblings</span><span class="p">(</span><span class="s2">&quot;.rightMove&quot;</span><span class="p">);</span><span class="c1">//选取右边按钮</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">titleActive</span><span class="p">();</span>
+    <span class="c1">//初始化左右按钮的状态（可点/不可点）</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">checkButtonStatus</span><span class="p">();</span>
+    <span class="kd">var</span> <span class="nx">_this</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+    <span class="c1">//点击左移</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">leftMove</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">_this</span><span class="p">.</span><span class="nx">moveToLeft</span><span class="p">();</span>
+    <span class="p">});</span>
+    <span class="c1">//点击右移</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">rightMove</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">_this</span><span class="p">.</span><span class="nx">moveToRight</span><span class="p">();</span>
+    <span class="p">});</span>
+    <span class="c1">//悬浮时间刻度上的块进行左右移</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">hasClass</span><span class="p">.</span><span class="nx">hover</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span><span class="c1">//移入</span>
+        <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">_this</span><span class="p">.</span><span class="nx">courseInfo</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span><span class="c1">//遍历刻度上有课程的块</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="nx">_this</span><span class="p">.</span><span class="nx">courseInfo</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">&quot;.classTime&quot;</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">).</span><span class="nx">eq</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">text</span><span class="p">()){</span>
+                <span class="nx">_this</span><span class="p">.</span><span class="nx">courseInfo</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;box-shadow&quot;</span><span class="p">,</span> <span class="s2">&quot;0px 0px 5px #000 inset&quot;</span><span class="p">);</span>
+                <span class="kd">var</span> <span class="nx">timesNext</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">i</span><span class="o">/</span><span class="mi">4</span><span class="p">);</span><span class="c1">//假如悬浮的是第5块，5/4=1</span>
+                <span class="k">if</span><span class="p">(</span><span class="nx">timesNext</span> <span class="o">&gt;</span> <span class="nx">_this</span><span class="p">.</span><span class="nx">times</span><span class="p">){</span><span class="c1">//1&gt;0</span>
+                    <span class="nx">_this</span><span class="p">.</span><span class="nx">times</span> <span class="o">=</span> <span class="nx">timesNext</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+                    <span class="nx">_this</span><span class="p">.</span><span class="nx">moveToLeft</span><span class="p">();</span>
+                <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">timesNext</span> <span class="o">&lt;</span> <span class="nx">_this</span><span class="p">.</span><span class="nx">times</span><span class="p">){</span>
+                    <span class="nx">_this</span><span class="p">.</span><span class="nx">times</span> <span class="o">=</span> <span class="nx">timesNext</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+                    <span class="nx">_this</span><span class="p">.</span><span class="nx">moveToRight</span><span class="p">();</span>
+                <span class="p">}</span>
+                <span class="k">return</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">},</span><span class="kd">function</span><span class="p">(){</span><span class="c1">//移出</span>
+        <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">_this</span><span class="p">.</span><span class="nx">courseInfo</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="nx">_this</span><span class="p">.</span><span class="nx">courseInfo</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">&quot;.classTime&quot;</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">).</span><span class="nx">eq</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">text</span><span class="p">()){</span>
+                <span class="nx">_this</span><span class="p">.</span><span class="nx">courseInfo</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;box-shadow&quot;</span><span class="p">,</span> <span class="s2">&quot;none&quot;</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="c1">//左移</span>
+<span class="nx">CoursePlay</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">moveToLeft</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="c1">//假设li的长度为10，则 this.multiple=3</span>
+    <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="o">++</span><span class="k">this</span><span class="p">.</span><span class="nx">times</span><span class="p">;</span><span class="c1">//times初始是0，左点击一次，times+1，则a=1</span>
+    <span class="kd">var</span> <span class="nx">courseWidth</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">course</span><span class="p">.</span><span class="nx">width</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">course</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">&quot;.courseInfo&quot;</span><span class="p">).</span><span class="nx">length</span> <span class="o">*</span> <span class="mf">283.7</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">a</span> <span class="o">&lt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">multiple</span><span class="p">)</span> <span class="p">{</span><span class="c1">//1&lt;3</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">course</span><span class="p">.</span><span class="nx">stop</span><span class="p">().</span><span class="nx">animate</span><span class="p">({</span><span class="s2">&quot;left&quot;</span><span class="o">:</span> <span class="o">-</span><span class="mf">283.7</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">*</span> <span class="nx">a</span> <span class="o">+</span> <span class="s2">&quot;px&quot;</span><span class="p">},</span> <span class="mi">1000</span><span class="p">);</span><span class="c1">//向左平移4个li</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">times</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">multiple</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="c1">//将times设置为3-1=2</span>
+    <span class="p">}</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">titleActive</span><span class="p">();</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">checkButtonStatus</span><span class="p">();</span>
+<span class="p">};</span>
+
+<span class="c1">//右移</span>
+<span class="nx">CoursePlay</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">moveToRight</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="o">--</span><span class="k">this</span><span class="p">.</span><span class="nx">times</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">courseWidth</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">course</span><span class="p">.</span><span class="nx">width</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">course</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">&quot;.courseInfo&quot;</span><span class="p">).</span><span class="nx">length</span> <span class="o">*</span> <span class="mf">283.7</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">b</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">course</span><span class="p">.</span><span class="nx">stop</span><span class="p">().</span><span class="nx">animate</span><span class="p">({</span><span class="s2">&quot;left&quot;</span><span class="o">:</span> <span class="o">-</span><span class="mf">283.7</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">*</span> <span class="nx">b</span> <span class="o">+</span> <span class="s2">&quot;px&quot;</span><span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">times</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">titleActive</span><span class="p">();</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">checkButtonStatus</span><span class="p">();</span>
+<span class="p">};</span>
+
+<span class="c1">//高亮时间刻度</span>
+<span class="nx">CoursePlay</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">titleActive</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">hasClass</span><span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;selected&#39;</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">pageStart</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">times</span><span class="o">*</span><span class="mi">4</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">pageEnd</span> <span class="o">=</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">times</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mi">4</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="nx">pageStart</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">pageEnd</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span><span class="c1">//根据times的值来选中对应的时间刻度，若times=1，选中的是第四个到第八个。</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">hasClass</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;selected&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">//左右按钮状态</span>
+<span class="nx">CoursePlay</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">checkButtonStatus</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">times</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">){</span><span class="c1">//右按钮的显示状态</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">rightMove</span><span class="p">.</span><span class="nx">css</span><span class="p">({</span><span class="s2">&quot;cursor&quot;</span><span class="o">:</span><span class="s2">&quot;not-allowed&quot;</span><span class="p">,</span><span class="s2">&quot;color&quot;</span><span class="o">:</span> <span class="s2">&quot;#eeeee&quot;</span><span class="p">});</span>
+    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">rightMove</span><span class="p">.</span><span class="nx">css</span><span class="p">({</span><span class="s2">&quot;cursor&quot;</span><span class="o">:</span><span class="s2">&quot;pointer&quot;</span><span class="p">,</span><span class="s2">&quot;color&quot;</span><span class="o">:</span> <span class="s2">&quot;#d2d2d2&quot;</span><span class="p">});</span>
+    <span class="p">}</span>
+    <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">times</span> <span class="o">&gt;=</span> <span class="k">this</span><span class="p">.</span><span class="nx">multiple</span><span class="o">-</span><span class="mi">1</span><span class="p">){</span><span class="c1">//左按钮的显示状态</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">leftMove</span><span class="p">.</span><span class="nx">css</span><span class="p">({</span><span class="s2">&quot;cursor&quot;</span><span class="o">:</span><span class="s2">&quot;not-allowed&quot;</span><span class="p">,</span><span class="s2">&quot;color&quot;</span><span class="o">:</span> <span class="s2">&quot;#eeeeee&quot;</span><span class="p">});</span>
+    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">leftMove</span><span class="p">.</span><span class="nx">css</span><span class="p">({</span><span class="s2">&quot;cursor&quot;</span><span class="o">:</span><span class="s2">&quot;pointer&quot;</span><span class="p">,</span><span class="s2">&quot;color&quot;</span><span class="o">:</span> <span class="s2">&quot;#d2d2d2&quot;</span><span class="p">});</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</body>
+</html>

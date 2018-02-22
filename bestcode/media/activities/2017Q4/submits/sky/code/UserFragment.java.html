@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #333333 }
+body  { background: #111111; color: #ffffff }
+body .c { color: #008800; font-style: italic; background-color: #0f140f } /* Comment */
+body .err { color: #ffffff } /* Error */
+body .esc { color: #ffffff } /* Escape */
+body .g { color: #ffffff } /* Generic */
+body .k { color: #fb660a; font-weight: bold } /* Keyword */
+body .l { color: #ffffff } /* Literal */
+body .n { color: #ffffff } /* Name */
+body .o { color: #ffffff } /* Operator */
+body .x { color: #ffffff } /* Other */
+body .p { color: #ffffff } /* Punctuation */
+body .ch { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Hashbang */
+body .cm { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Multiline */
+body .cp { color: #ff0007; font-weight: bold; font-style: italic; background-color: #0f140f } /* Comment.Preproc */
+body .cpf { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.PreprocFile */
+body .c1 { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Single */
+body .cs { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Special */
+body .gd { color: #ffffff } /* Generic.Deleted */
+body .ge { color: #ffffff } /* Generic.Emph */
+body .gr { color: #ffffff } /* Generic.Error */
+body .gh { color: #ffffff; font-weight: bold } /* Generic.Heading */
+body .gi { color: #ffffff } /* Generic.Inserted */
+body .go { color: #444444; background-color: #222222 } /* Generic.Output */
+body .gp { color: #ffffff } /* Generic.Prompt */
+body .gs { color: #ffffff } /* Generic.Strong */
+body .gu { color: #ffffff; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #ffffff } /* Generic.Traceback */
+body .kc { color: #fb660a; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #fb660a; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #fb660a; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #fb660a } /* Keyword.Pseudo */
+body .kr { color: #fb660a; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #cdcaa9; font-weight: bold } /* Keyword.Type */
+body .ld { color: #ffffff } /* Literal.Date */
+body .m { color: #0086f7; font-weight: bold } /* Literal.Number */
+body .s { color: #0086d2 } /* Literal.String */
+body .na { color: #ff0086; font-weight: bold } /* Name.Attribute */
+body .nb { color: #ffffff } /* Name.Builtin */
+body .nc { color: #ffffff } /* Name.Class */
+body .no { color: #0086d2 } /* Name.Constant */
+body .nd { color: #ffffff } /* Name.Decorator */
+body .ni { color: #ffffff } /* Name.Entity */
+body .ne { color: #ffffff } /* Name.Exception */
+body .nf { color: #ff0086; font-weight: bold } /* Name.Function */
+body .nl { color: #ffffff } /* Name.Label */
+body .nn { color: #ffffff } /* Name.Namespace */
+body .nx { color: #ffffff } /* Name.Other */
+body .py { color: #ffffff } /* Name.Property */
+body .nt { color: #fb660a; font-weight: bold } /* Name.Tag */
+body .nv { color: #fb660a } /* Name.Variable */
+body .ow { color: #ffffff } /* Operator.Word */
+body .w { color: #888888 } /* Text.Whitespace */
+body .mb { color: #0086f7; font-weight: bold } /* Literal.Number.Bin */
+body .mf { color: #0086f7; font-weight: bold } /* Literal.Number.Float */
+body .mh { color: #0086f7; font-weight: bold } /* Literal.Number.Hex */
+body .mi { color: #0086f7; font-weight: bold } /* Literal.Number.Integer */
+body .mo { color: #0086f7; font-weight: bold } /* Literal.Number.Oct */
+body .sa { color: #0086d2 } /* Literal.String.Affix */
+body .sb { color: #0086d2 } /* Literal.String.Backtick */
+body .sc { color: #0086d2 } /* Literal.String.Char */
+body .dl { color: #0086d2 } /* Literal.String.Delimiter */
+body .sd { color: #0086d2 } /* Literal.String.Doc */
+body .s2 { color: #0086d2 } /* Literal.String.Double */
+body .se { color: #0086d2 } /* Literal.String.Escape */
+body .sh { color: #0086d2 } /* Literal.String.Heredoc */
+body .si { color: #0086d2 } /* Literal.String.Interpol */
+body .sx { color: #0086d2 } /* Literal.String.Other */
+body .sr { color: #0086d2 } /* Literal.String.Regex */
+body .s1 { color: #0086d2 } /* Literal.String.Single */
+body .ss { color: #0086d2 } /* Literal.String.Symbol */
+body .bp { color: #ffffff } /* Name.Builtin.Pseudo */
+body .fm { color: #ff0086; font-weight: bold } /* Name.Function.Magic */
+body .vc { color: #fb660a } /* Name.Variable.Class */
+body .vg { color: #fb660a } /* Name.Variable.Global */
+body .vi { color: #fb660a } /* Name.Variable.Instance */
+body .vm { color: #fb660a } /* Name.Variable.Magic */
+body .il { color: #0086f7; font-weight: bold } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * [参会人列表]</span>
+<span class="cm"> * Created by Sky on 2017/1/19.</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">UserFragment</span> <span class="kd">extends</span> <span class="n">BaseFragment</span> <span class="kd">implements</span> <span class="n">IUserView</span><span class="o">,</span> <span class="n">OnClickListener</span> <span class="o">{</span>
+
+    <span class="nd">@BindView</span><span class="o">(</span><span class="n">R2</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">attender_listview</span><span class="o">)</span>
+    <span class="n">ListView</span> <span class="n">userListView</span><span class="o">;</span>
+    <span class="nd">@BindView</span><span class="o">(</span><span class="n">R2</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">back_imageview</span><span class="o">)</span>
+    <span class="n">ImageView</span> <span class="n">backImageView</span><span class="o">;</span>
+    <span class="nd">@BindView</span><span class="o">(</span><span class="n">R2</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">right_one_imageview</span><span class="o">)</span>
+    <span class="n">ImageView</span> <span class="n">searchImageView</span><span class="o">;</span>
+    <span class="nd">@BindView</span><span class="o">(</span><span class="n">R2</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">title_textview</span><span class="o">)</span>
+    <span class="n">TextView</span> <span class="n">titleTextView</span><span class="o">;</span>
+    <span class="nd">@BindView</span><span class="o">(</span><span class="n">R2</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">user_toolbar</span><span class="o">)</span>
+    <span class="n">Toolbar</span> <span class="n">userToolbar</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="n">UserMenuDialog</span> <span class="n">userMenuDialog</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">UserSearchDialog</span> <span class="n">userSearchDialog</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="n">UserListAdapter</span> <span class="n">adapter</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">IUserPresenter</span> <span class="n">presenter</span><span class="o">;</span>
+
+    <span class="nd">@Nullable</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">View</span> <span class="nf">onCreateView</span><span class="o">(</span><span class="n">LayoutInflater</span> <span class="n">inflater</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">ViewGroup</span> <span class="n">container</span><span class="o">,</span>
+            <span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">View</span> <span class="n">view</span> <span class="o">=</span> <span class="kd">super</span><span class="o">.</span><span class="na">onCreateView</span><span class="o">(</span><span class="n">inflater</span><span class="o">,</span> <span class="n">container</span><span class="o">,</span> <span class="n">savedInstanceState</span><span class="o">);</span>
+        <span class="n">initViews</span><span class="o">(</span><span class="n">view</span><span class="o">);</span>
+        <span class="n">initValues</span><span class="o">();</span>
+        <span class="n">initListeners</span><span class="o">();</span>
+        <span class="k">return</span> <span class="n">view</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="n">View</span> <span class="nf">loadLayout</span><span class="o">(</span><span class="n">LayoutInflater</span> <span class="n">inflater</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">ViewGroup</span> <span class="n">container</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">inflater</span><span class="o">.</span><span class="na">inflate</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">fragment_user</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">initViews</span><span class="o">(</span><span class="n">View</span> <span class="n">view</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">adapter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">UserListAdapter</span><span class="o">(</span><span class="n">getContext</span><span class="o">(),</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">BaseUser</span><span class="o">&gt;());</span>
+        <span class="n">userListView</span><span class="o">.</span><span class="na">setAdapter</span><span class="o">(</span><span class="n">adapter</span><span class="o">);</span>
+        <span class="n">titleTextView</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">top_title_attendee</span><span class="o">);</span>
+        <span class="n">searchImageView</span><span class="o">.</span><span class="na">setVisibility</span><span class="o">(</span><span class="n">View</span><span class="o">.</span><span class="na">VISIBLE</span><span class="o">);</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="n">ScreenUtils</span><span class="o">.</span><span class="na">isPhone</span><span class="o">())</span> <span class="o">{</span>
+            <span class="n">setToolBarHeight</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">initValues</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">presenter</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">initListeners</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">searchImageView</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+        <span class="n">backImageView</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+        <span class="n">userListView</span><span class="o">.</span><span class="na">setOnItemClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">UserListItemClickListener</span><span class="o">());</span>
+        <span class="n">userListView</span><span class="o">.</span><span class="na">setOnScrollListener</span><span class="o">(</span><span class="k">new</span> <span class="n">UserListScrollListener</span><span class="o">());</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onHiddenChanged</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">hidden</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onHiddenChanged</span><span class="o">(</span><span class="n">hidden</span><span class="o">);</span>
+        <span class="n">presenter</span><span class="o">.</span><span class="na">onUserViewVisible</span><span class="o">(!</span><span class="n">hidden</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onConfigurationChanged</span><span class="o">(</span><span class="n">Configuration</span> <span class="n">newConfig</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onConfigurationChanged</span><span class="o">(</span><span class="n">newConfig</span><span class="o">);</span>
+        <span class="n">setToolBarHeight</span><span class="o">();</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">userSearchDialogShowing</span><span class="o">())</span> <span class="o">{</span>
+            <span class="n">userSearchDialog</span><span class="o">.</span><span class="na">setToolBarHeight</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">showUserMenu</span><span class="o">(</span><span class="n">BaseUser</span> <span class="n">user</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">showUserMenuDialogIfNotShowing</span><span class="o">(</span><span class="n">user</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">dismissUserMenu</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">dismissUserMenuDialog</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">showUserSearchDialog</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">showUserSearchDialogIfNotShowing</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">userSearchDialogShowing</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">userSearchDialog</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">userSearchDialog</span><span class="o">.</span><span class="na">isShowing</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">userMenuDialogShowing</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">userMenuDialog</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">userMenuDialog</span><span class="o">.</span><span class="na">isShowing</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">BaseUser</span> <span class="nf">getMenuDialogUser</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">userMenuDialogShowing</span><span class="o">())</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">userMenuDialog</span><span class="o">.</span><span class="na">getRoomUser</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">showMatchUserEmptyToast</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">userSearchDialog</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">userSearchDialog</span><span class="o">.</span><span class="na">showMatchEmptyToast</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">refreshUserList</span><span class="o">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">BaseUser</span><span class="o">&gt;</span> <span class="n">users</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">adapter</span><span class="o">.</span><span class="na">updateDataAndNotifyDataChanged</span><span class="o">(</span><span class="n">users</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">refreshUserSearchList</span><span class="o">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">BaseUser</span><span class="o">&gt;</span> <span class="n">searchedUsers</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">userSearchDialogShowing</span><span class="o">())</span> <span class="o">{</span>
+            <span class="n">userSearchDialog</span><span class="o">.</span><span class="na">refreshSearchUserList</span><span class="o">(</span><span class="n">searchedUsers</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setPresenter</span><span class="o">(</span><span class="n">IUserPresenter</span> <span class="n">userPresenter</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">presenter</span> <span class="o">=</span> <span class="n">userPresenter</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">view</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">switch</span> <span class="o">(</span><span class="n">view</span><span class="o">.</span><span class="na">getId</span><span class="o">())</span> <span class="o">{</span>
+            <span class="k">case</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">back_imageview</span><span class="o">:</span>
+                <span class="n">presenter</span><span class="o">.</span><span class="na">onBack</span><span class="o">();</span>
+                <span class="k">break</span><span class="o">;</span>
+
+            <span class="k">case</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">right_one_imageview</span><span class="o">:</span>
+                <span class="n">presenter</span><span class="o">.</span><span class="na">onUserViewSearchClick</span><span class="o">();</span>
+                <span class="k">break</span><span class="o">;</span>
+
+<span class="nl">            default:</span>
+                <span class="k">break</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">setToolBarHeight</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">ScreenUtils</span><span class="o">.</span><span class="na">isPortrait</span><span class="o">(</span><span class="n">getContext</span><span class="o">()))</span> <span class="o">{</span>
+            <span class="n">ViewGroup</span><span class="o">.</span><span class="na">LayoutParams</span> <span class="n">params</span> <span class="o">=</span> <span class="n">userToolbar</span><span class="o">.</span><span class="na">getLayoutParams</span><span class="o">();</span>
+            <span class="n">params</span><span class="o">.</span><span class="na">height</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="n">getResources</span><span class="o">().</span><span class="na">getDimension</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">dimen</span><span class="o">.</span><span class="na">toolbarHeight</span><span class="o">);</span>
+            <span class="n">userToolbar</span><span class="o">.</span><span class="na">setLayoutParams</span><span class="o">(</span><span class="n">params</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="n">ViewGroup</span><span class="o">.</span><span class="na">LayoutParams</span> <span class="n">params</span> <span class="o">=</span> <span class="n">userToolbar</span><span class="o">.</span><span class="na">getLayoutParams</span><span class="o">();</span>
+            <span class="n">params</span><span class="o">.</span><span class="na">height</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="n">getResources</span><span class="o">().</span><span class="na">getDimension</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">dimen</span><span class="o">.</span><span class="na">toolbarHeightLand</span><span class="o">);</span>
+            <span class="n">userToolbar</span><span class="o">.</span><span class="na">setLayoutParams</span><span class="o">(</span><span class="n">params</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kd">class</span> <span class="nc">UserListItemClickListener</span> <span class="kd">extends</span> <span class="n">NoRepeatItemClickListener</span> <span class="o">{</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onNoRepeatItemClick</span><span class="o">(</span><span class="n">AdapterView</span><span class="o">&lt;?&gt;</span> <span class="n">parent</span><span class="o">,</span> <span class="n">View</span> <span class="n">view</span><span class="o">,</span> <span class="kt">int</span> <span class="n">position</span><span class="o">,</span> <span class="kt">long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">presenter</span><span class="o">.</span><span class="na">onUserItemClick</span><span class="o">((</span><span class="n">BaseUser</span><span class="o">)</span> <span class="n">parent</span><span class="o">.</span><span class="na">getAdapter</span><span class="o">().</span><span class="na">getItem</span><span class="o">(</span><span class="n">position</span><span class="o">));</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kd">class</span> <span class="nc">UserSearchClickListener</span> <span class="kd">implements</span> <span class="n">ISearchClickListener</span> <span class="o">{</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSearchClick</span><span class="o">(</span><span class="n">String</span> <span class="n">keyword</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">presenter</span><span class="o">.</span><span class="na">onUserSearchViewSearchClick</span><span class="o">(</span><span class="n">keyword</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">showUserMenuDialogIfNotShowing</span><span class="o">(</span><span class="n">BaseUser</span> <span class="n">user</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(!</span><span class="n">userMenuDialogShowing</span><span class="o">())</span> <span class="o">{</span>
+            <span class="n">userMenuDialog</span> <span class="o">=</span> <span class="k">new</span> <span class="n">UserMenuDialog</span><span class="o">(</span><span class="n">getContext</span><span class="o">(),</span> <span class="n">user</span><span class="o">);</span>
+            <span class="n">userMenuDialog</span><span class="o">.</span><span class="na">setOnDismissListener</span><span class="o">(</span><span class="k">new</span> <span class="n">OnDismissListener</span><span class="o">()</span> <span class="o">{</span>
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDismiss</span><span class="o">(</span><span class="n">DialogInterface</span> <span class="n">dialog</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">userMenuDialog</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+                <span class="o">}</span>
+            <span class="o">});</span>
+            <span class="n">userMenuDialog</span><span class="o">.</span><span class="na">show</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">dismissUserMenuDialog</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">userMenuDialogShowing</span><span class="o">())</span> <span class="o">{</span>
+            <span class="n">userMenuDialog</span><span class="o">.</span><span class="na">dismiss</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">showUserSearchDialogIfNotShowing</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(!</span><span class="n">userSearchDialogShowing</span><span class="o">())</span> <span class="o">{</span>
+            <span class="n">userSearchDialog</span> <span class="o">=</span> <span class="k">new</span> <span class="n">UserSearchDialog</span><span class="o">(</span><span class="n">getContext</span><span class="o">());</span>
+            <span class="n">userSearchDialog</span><span class="o">.</span><span class="na">setSearchUserItemClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">UserListItemClickListener</span><span class="o">());</span>
+            <span class="n">userSearchDialog</span><span class="o">.</span><span class="na">setSearchClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">UserSearchClickListener</span><span class="o">());</span>
+            <span class="n">userSearchDialog</span><span class="o">.</span><span class="na">setOnDismissListener</span><span class="o">(</span><span class="k">new</span> <span class="n">OnDismissListener</span><span class="o">()</span> <span class="o">{</span>
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDismiss</span><span class="o">(</span><span class="n">DialogInterface</span> <span class="n">dialog</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">presenter</span><span class="o">.</span><span class="na">onUserSearchDialogDismissed</span><span class="o">();</span>
+                    <span class="k">if</span> <span class="o">(</span><span class="n">dialog</span> <span class="o">==</span> <span class="n">userSearchDialog</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="n">userSearchDialog</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+                    <span class="o">}</span>
+                <span class="o">}</span>
+            <span class="o">});</span>
+
+            <span class="n">userSearchDialog</span><span class="o">.</span><span class="na">setToolBarHeight</span><span class="o">();</span>
+            <span class="n">userSearchDialog</span><span class="o">.</span><span class="na">show</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kd">class</span> <span class="nc">UserListScrollListener</span> <span class="kd">implements</span> <span class="n">OnScrollListener</span> <span class="o">{</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onScrollStateChanged</span><span class="o">(</span><span class="n">AbsListView</span> <span class="n">view</span><span class="o">,</span> <span class="kt">int</span> <span class="n">scrollState</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">presenter</span><span class="o">.</span><span class="na">onUserListScroll</span><span class="o">(</span><span class="n">scrollState</span> <span class="o">!=</span> <span class="n">OnScrollListener</span><span class="o">.</span><span class="na">SCROLL_STATE_IDLE</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onScroll</span><span class="o">(</span><span class="n">AbsListView</span> <span class="n">view</span><span class="o">,</span> <span class="kt">int</span> <span class="n">firstVisibleItem</span><span class="o">,</span> <span class="kt">int</span> <span class="n">visibleItemCount</span><span class="o">,</span> <span class="kt">int</span> <span class="n">totalItemCount</span><span class="o">)</span> <span class="o">{}</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDestroyView</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">presenter</span><span class="o">.</span><span class="na">onStop</span><span class="o">();</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onDestroyView</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</body>
+</html>

@@ -1,0 +1,632 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #333333 }
+body  { background: #111111; color: #ffffff }
+body .c { color: #008800; font-style: italic; background-color: #0f140f } /* Comment */
+body .err { color: #ffffff } /* Error */
+body .esc { color: #ffffff } /* Escape */
+body .g { color: #ffffff } /* Generic */
+body .k { color: #fb660a; font-weight: bold } /* Keyword */
+body .l { color: #ffffff } /* Literal */
+body .n { color: #ffffff } /* Name */
+body .o { color: #ffffff } /* Operator */
+body .x { color: #ffffff } /* Other */
+body .p { color: #ffffff } /* Punctuation */
+body .ch { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Hashbang */
+body .cm { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Multiline */
+body .cp { color: #ff0007; font-weight: bold; font-style: italic; background-color: #0f140f } /* Comment.Preproc */
+body .cpf { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.PreprocFile */
+body .c1 { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Single */
+body .cs { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Special */
+body .gd { color: #ffffff } /* Generic.Deleted */
+body .ge { color: #ffffff } /* Generic.Emph */
+body .gr { color: #ffffff } /* Generic.Error */
+body .gh { color: #ffffff; font-weight: bold } /* Generic.Heading */
+body .gi { color: #ffffff } /* Generic.Inserted */
+body .go { color: #444444; background-color: #222222 } /* Generic.Output */
+body .gp { color: #ffffff } /* Generic.Prompt */
+body .gs { color: #ffffff } /* Generic.Strong */
+body .gu { color: #ffffff; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #ffffff } /* Generic.Traceback */
+body .kc { color: #fb660a; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #fb660a; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #fb660a; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #fb660a } /* Keyword.Pseudo */
+body .kr { color: #fb660a; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #cdcaa9; font-weight: bold } /* Keyword.Type */
+body .ld { color: #ffffff } /* Literal.Date */
+body .m { color: #0086f7; font-weight: bold } /* Literal.Number */
+body .s { color: #0086d2 } /* Literal.String */
+body .na { color: #ff0086; font-weight: bold } /* Name.Attribute */
+body .nb { color: #ffffff } /* Name.Builtin */
+body .nc { color: #ffffff } /* Name.Class */
+body .no { color: #0086d2 } /* Name.Constant */
+body .nd { color: #ffffff } /* Name.Decorator */
+body .ni { color: #ffffff } /* Name.Entity */
+body .ne { color: #ffffff } /* Name.Exception */
+body .nf { color: #ff0086; font-weight: bold } /* Name.Function */
+body .nl { color: #ffffff } /* Name.Label */
+body .nn { color: #ffffff } /* Name.Namespace */
+body .nx { color: #ffffff } /* Name.Other */
+body .py { color: #ffffff } /* Name.Property */
+body .nt { color: #fb660a; font-weight: bold } /* Name.Tag */
+body .nv { color: #fb660a } /* Name.Variable */
+body .ow { color: #ffffff } /* Operator.Word */
+body .w { color: #888888 } /* Text.Whitespace */
+body .mb { color: #0086f7; font-weight: bold } /* Literal.Number.Bin */
+body .mf { color: #0086f7; font-weight: bold } /* Literal.Number.Float */
+body .mh { color: #0086f7; font-weight: bold } /* Literal.Number.Hex */
+body .mi { color: #0086f7; font-weight: bold } /* Literal.Number.Integer */
+body .mo { color: #0086f7; font-weight: bold } /* Literal.Number.Oct */
+body .sa { color: #0086d2 } /* Literal.String.Affix */
+body .sb { color: #0086d2 } /* Literal.String.Backtick */
+body .sc { color: #0086d2 } /* Literal.String.Char */
+body .dl { color: #0086d2 } /* Literal.String.Delimiter */
+body .sd { color: #0086d2 } /* Literal.String.Doc */
+body .s2 { color: #0086d2 } /* Literal.String.Double */
+body .se { color: #0086d2 } /* Literal.String.Escape */
+body .sh { color: #0086d2 } /* Literal.String.Heredoc */
+body .si { color: #0086d2 } /* Literal.String.Interpol */
+body .sx { color: #0086d2 } /* Literal.String.Other */
+body .sr { color: #0086d2 } /* Literal.String.Regex */
+body .s1 { color: #0086d2 } /* Literal.String.Single */
+body .ss { color: #0086d2 } /* Literal.String.Symbol */
+body .bp { color: #ffffff } /* Name.Builtin.Pseudo */
+body .fm { color: #ff0086; font-weight: bold } /* Name.Function.Magic */
+body .vc { color: #fb660a } /* Name.Variable.Class */
+body .vg { color: #fb660a } /* Name.Variable.Global */
+body .vi { color: #fb660a } /* Name.Variable.Instance */
+body .vm { color: #fb660a } /* Name.Variable.Magic */
+body .il { color: #0086f7; font-weight: bold } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="cm">/* </span>
+<span class="cm">* h264bitstream - a library for reading and writing H.264 video</span>
+<span class="cm">* Copyright (C) 2005-2007 Auroras Entertainment, LLC</span>
+<span class="cm">* Copyright (C) 2008-2011 Avail-TVN</span>
+<span class="cm">* </span>
+<span class="cm">* Written by Alex Izvorski &lt;aizvorski@gmail.com&gt; and Alex Giladi &lt;alex.giladi@gmail.com&gt;</span>
+<span class="cm">* </span>
+<span class="cm">* This library is free software; you can redistribute it and/or</span>
+<span class="cm">* modify it under the terms of the GNU Lesser General Public</span>
+<span class="cm">* License as published by the Free Software Foundation; either</span>
+<span class="cm">* version 2.1 of the License, or (at your option) any later version.</span>
+<span class="cm">* </span>
+<span class="cm">* This library is distributed in the hope that it will be useful,</span>
+<span class="cm">* but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="cm">* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</span>
+<span class="cm">* Lesser General Public License for more details.</span>
+<span class="cm">* </span>
+<span class="cm">* You should have received a copy of the GNU Lesser General Public</span>
+<span class="cm">* License along with this library; if not, write to the Free Software</span>
+<span class="cm">* Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA</span>
+<span class="cm">*/</span>
+
+<span class="cp">#ifndef _H264_STREAM_H</span>
+<span class="cp">#define _H264_STREAM_H  1</span>
+
+<span class="cp">#include</span> <span class="cpf">&lt;stdint.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;assert.h&gt;</span><span class="cp"></span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;vamedia_bitstream.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;vamedia_sei_h264.h&quot;</span><span class="cp"></span>
+
+<span class="cp">#ifdef __cplusplus</span>
+<span class="k">extern</span> <span class="s">&quot;C&quot;</span> <span class="p">{</span>
+<span class="cp">#endif</span>
+
+
+    <span class="cm">/**</span>
+<span class="cm">    Sequence Parameter Set</span>
+<span class="cm">    @see 7.3.2.1 Sequence parameter set RBSP syntax</span>
+<span class="cm">    @see ReadSeqParamSetRbsp</span>
+<span class="cm">    @see WriteSeqParamSetRBSP</span>
+<span class="cm">    @see DebugSPS</span>
+<span class="cm">    */</span>
+    <span class="k">struct</span> <span class="n">SPS</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">nal_ref_idc</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">nal_unit_type</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">profile_idc</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">constraint_set0_flag</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">constraint_set1_flag</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">constraint_set2_flag</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">constraint_set3_flag</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">constraint_set4_flag</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">constraint_set5_flag</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">reserved_zero_2bits</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">constraint_set_flags</span><span class="p">;</span>    
+        <span class="kt">int</span> <span class="n">level_idc</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">seq_parameter_set_id</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">chroma_format_idc</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">residual_colour_transform_flag</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">bit_depth_luma_minus8</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">bit_depth_chroma_minus8</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">qpprime_y_zero_transform_bypass_flag</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">seq_scaling_matrix_present_flag</span><span class="p">;</span>        
+        <span class="kt">uint8_t</span> <span class="n">ScalingList4x4</span><span class="p">[</span><span class="mi">6</span><span class="p">][</span><span class="mi">16</span><span class="p">];</span>
+        <span class="kt">uint8_t</span> <span class="n">ScalingList8x8</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">64</span><span class="p">];</span>
+        <span class="kt">int</span> <span class="n">log2_max_frame_num_minus4</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">pic_order_cnt_type</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">log2_max_pic_order_cnt_lsb</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">delta_pic_order_always_zero_flag</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">offset_for_non_ref_pic</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">offset_for_top_to_bottom_field</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">num_ref_frames_in_pic_order_cnt_cycle</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">offset_for_ref_frame</span><span class="p">[</span><span class="mi">256</span><span class="p">];</span>
+        <span class="kt">int</span> <span class="n">num_ref_frames</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">gaps_in_frame_num_value_allowed_flag</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">pic_width_in_mbs_minus1</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">pic_height_in_map_units_minus1</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">frame_mbs_only_flag</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">mb_adaptive_frame_field_flag</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">direct_8x8_inference_flag</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">frame_cropping_flag</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">frame_crop_left_offset</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">frame_crop_right_offset</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">frame_crop_top_offset</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">frame_crop_bottom_offset</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">vui_parameters_present_flag</span><span class="p">;</span>
+
+        <span class="k">struct</span> 
+        <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">aspect_ratio_info_present_flag</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">aspect_ratio_idc</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">sar_width</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">sar_height</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">overscan_info_present_flag</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">overscan_appropriate_flag</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">video_sigNALype_present_flag</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">video_format</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">video_full_range_flag</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">colour_description_present_flag</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">colour_primaries</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">transfer_characteristics</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">matrix_coefficients</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">chroma_loc_info_present_flag</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">chroma_sample_loc_type_top_field</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">chroma_sample_loc_type_bottom_field</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">timing_info_present_flag</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">num_units_in_tick</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">time_scale</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">fixed_frame_rate_flag</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">nal_hrd_parameters_present_flag</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">vcl_hrd_parameters_present_flag</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">low_delay_hrd_flag</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">pic_struct_present_flag</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">bitstream_restriction_flag</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">motion_vectors_over_pic_boundaries_flag</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">max_bytes_per_pic_denom</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">max_bits_per_mb_denom</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">log2_max_mv_length_horizontal</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">log2_max_mv_length_vertical</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">num_reorder_frames</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">max_dec_frame_buffering</span><span class="p">;</span>
+        <span class="p">}</span><span class="n">vui</span><span class="p">;</span><span class="c1">//NOLINT</span>
+
+        <span class="k">struct</span> 
+        <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">cpb_cnt_minus1</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">bit_rate_scale</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">cpb_size_scale</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">bit_rate_value_minus1</span><span class="p">[</span><span class="mi">32</span><span class="p">];</span> <span class="c1">// up to cpb_cnt_minus1, which is &lt;= 31</span>
+            <span class="kt">int</span> <span class="n">cpb_size_value_minus1</span><span class="p">[</span><span class="mi">32</span><span class="p">];</span>
+            <span class="kt">int</span> <span class="n">cbr_flag</span><span class="p">[</span><span class="mi">32</span><span class="p">];</span>
+            <span class="kt">int</span> <span class="n">initial_cpb_removal_delay_length_minus1</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">cpb_removal_delay_length_minus1</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">dpb_output_delay_length_minus1</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">time_offset_length</span><span class="p">;</span>
+        <span class="p">}</span><span class="n">hrd</span><span class="p">;</span> <span class="c1">//NOLINT</span>
+    <span class="p">};</span>
+
+
+    <span class="cm">/**</span>
+<span class="cm">    Picture Parameter Set</span>
+<span class="cm">    @see 7.3.2.2 Picture parameter set RBSP syntax</span>
+<span class="cm">    @see ReadPicParamSetRBSP</span>
+<span class="cm">    @see WritePicParamSetRBSP</span>
+<span class="cm">    @see DebugPPS</span>
+<span class="cm">    */</span>
+    <span class="k">struct</span> <span class="n">PPS</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">nal_ref_idc</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">nal_unit_type</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">pic_parameter_set_id</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">seq_parameter_set_id</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">entropy_coding_mode_flag</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">pic_order_present_flag</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">num_slice_groups_minus1</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">slice_group_map_type</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">run_length_minus1</span><span class="p">[</span><span class="mi">8</span><span class="p">];</span> <span class="c1">// up to num_slice_groups_minus1, which is &lt;= 7 in Baseline and Extended, 0 otheriwse</span>
+        <span class="kt">int</span> <span class="n">top_left</span><span class="p">[</span><span class="mi">8</span><span class="p">];</span>
+        <span class="kt">int</span> <span class="n">bottom_right</span><span class="p">[</span><span class="mi">8</span><span class="p">];</span>
+        <span class="kt">int</span> <span class="n">slice_group_change_direction_flag</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">slice_group_change_rate_minus1</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">pic_size_in_map_units_minus1</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">slice_group_id</span><span class="p">[</span><span class="mi">256</span><span class="p">];</span> <span class="c1">// FIXME what size?</span>
+        <span class="kt">int</span> <span class="n">num_ref_idx_l0_active_minus1</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">num_ref_idx_l1_active_minus1</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">weighted_pred_flag</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">weighted_bipred_idc</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">pic_init_qp_minus26</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">pic_init_qs_minus26</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">chroma_qp_index_offset</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">deblocking_filter_control_present_flag</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">constrained_intra_pred_flag</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">redundant_pic_cnt_present_flag</span><span class="p">;</span>
+
+        <span class="c1">// set iff we carry any of the optional headers</span>
+        <span class="kt">int</span> <span class="n">more_rbsp_data_present</span><span class="p">;</span>
+
+        <span class="kt">int</span> <span class="n">transform_8x8_mode_flag</span><span class="p">;</span>        
+        <span class="kt">uint8_t</span> <span class="n">ScalingList4x4</span><span class="p">[</span><span class="mi">6</span><span class="p">][</span><span class="mi">16</span><span class="p">];</span>
+        <span class="kt">uint8_t</span> <span class="n">ScalingList8x8</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">64</span><span class="p">];</span>
+        <span class="kt">int</span> <span class="n">second_chroma_qp_index_offset</span><span class="p">;</span>
+    <span class="p">};</span>
+
+    <span class="cm">/**</span>
+<span class="cm">    Slice Header</span>
+<span class="cm">    @see 7.3.3 Slice header syntax</span>
+<span class="cm">    @see read_slice_header_rbsp</span>
+<span class="cm">    @see write_slice_header_rbsp</span>
+<span class="cm">    @see debug_slice_header_rbsp</span>
+<span class="cm">    */</span>
+    <span class="k">struct</span> <span class="n">SliceHeader</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">slice_data_bit_offset</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">slice_data_size</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">first_mb_in_slice</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">slice_type</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">pic_parameter_set_id</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">frame_num</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">field_pic_flag</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">bottom_field_flag</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">idr_pic_id</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">pic_order_cnt_lsb</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">delta_pic_order_cnt_bottom</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">delta_pic_order_cnt</span><span class="p">[</span> <span class="mi">2</span> <span class="p">];</span>
+        <span class="kt">int</span> <span class="n">redundant_pic_cnt</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">direct_spatial_mv_pred_flag</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">num_ref_idx_active_override_flag</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">num_ref_idx_l0_active_minus1</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">num_ref_idx_l1_active_minus1</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">cabac_init_idc</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">slice_qp_delta</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">sp_for_switch_flag</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">slice_qs_delta</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">disable_deblocking_filter_idc</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">slice_alpha_c0_offset_div2</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">slice_beta_offset_div2</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">slice_group_change_cycle</span><span class="p">;</span>
+        
+        <span class="k">struct</span>
+        <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">luma_log2_weight_denom</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">chroma_log2_weight_denom</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">luma_weight_l0_flag</span><span class="p">[</span><span class="mi">64</span><span class="p">];</span>
+            <span class="kt">int</span> <span class="n">luma_weight_l0</span><span class="p">[</span><span class="mi">64</span><span class="p">];</span>
+            <span class="kt">int</span> <span class="n">luma_offset_l0</span><span class="p">[</span><span class="mi">64</span><span class="p">];</span>
+            <span class="kt">int</span> <span class="n">chroma_weight_l0_flag</span><span class="p">[</span><span class="mi">64</span><span class="p">];</span>
+            <span class="kt">int</span> <span class="n">chroma_weight_l0</span><span class="p">[</span><span class="mi">64</span><span class="p">][</span><span class="mi">2</span><span class="p">];</span>
+            <span class="kt">int</span> <span class="n">chroma_offset_l0</span><span class="p">[</span><span class="mi">64</span><span class="p">][</span><span class="mi">2</span><span class="p">];</span>
+            <span class="kt">int</span> <span class="n">luma_weight_l1_flag</span><span class="p">[</span><span class="mi">64</span><span class="p">];</span>
+            <span class="kt">int</span> <span class="n">luma_weight_l1</span><span class="p">[</span><span class="mi">64</span><span class="p">];</span>
+            <span class="kt">int</span> <span class="n">luma_offset_l1</span><span class="p">[</span><span class="mi">64</span><span class="p">];</span>
+            <span class="kt">int</span> <span class="n">chroma_weight_l1_flag</span><span class="p">[</span><span class="mi">64</span><span class="p">];</span>
+            <span class="kt">int</span> <span class="n">chroma_weight_l1</span><span class="p">[</span><span class="mi">64</span><span class="p">][</span><span class="mi">2</span><span class="p">];</span>
+            <span class="kt">int</span> <span class="n">chroma_offset_l1</span><span class="p">[</span><span class="mi">64</span><span class="p">][</span><span class="mi">2</span><span class="p">];</span>
+        <span class="p">}</span> <span class="n">PredWeightTable</span><span class="p">;</span> <span class="c1">// predictive weight table</span>
+
+        <span class="k">struct</span> <span class="c1">// FIXME stack or array</span>
+        <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">ref_pic_list_reordering_flag_l0</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">ref_pic_list_reordering_flag_l1</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">reordering_of_pic_nums_idc</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">abs_diff_pic_num</span><span class="p">[</span><span class="mi">16</span><span class="p">];</span>
+            <span class="kt">int</span> <span class="n">long_term_pic_num</span><span class="p">;</span>
+        <span class="p">}</span> <span class="n">RefPicListRecorder</span><span class="p">;</span> <span class="c1">// ref pic list reorder</span>
+
+        <span class="k">struct</span> <span class="c1">// FIXME stack or array</span>
+        <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">no_output_of_prior_pics_flag</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">long_term_reference_flag</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">adaptive_ref_pic_marking_mode_flag</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">memory_management_control_operation</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">difference_of_pic_nums_minus1</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">long_term_pic_num</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">long_term_frame_idx</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">max_long_term_frame_idx_plus1</span><span class="p">;</span>
+        <span class="p">}</span><span class="n">DecRefPicMarking</span><span class="p">;</span> <span class="c1">// decoded ref pic marking</span>
+    <span class="p">};</span>
+
+
+    <span class="cm">/**</span>
+<span class="cm">    Access unit delimiter</span>
+<span class="cm">    @see 7.3.1 NAL unit syntax</span>
+<span class="cm">    @see ReadNalUnit</span>
+<span class="cm">    @see WriteNalUnit</span>
+<span class="cm">    @see DebugNal</span>
+<span class="cm">    */</span>
+    <span class="k">struct</span> <span class="n">AUD</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">primary_pic_type</span><span class="p">;</span>
+    <span class="p">};</span>
+
+    <span class="cm">/**</span>
+<span class="cm">    Network Abstraction Layer (NAL) unit</span>
+<span class="cm">    @see 7.3.1 NAL unit syntax</span>
+<span class="cm">    @see ReadNalUnit</span>
+<span class="cm">    @see WriteNalUnit</span>
+<span class="cm">    @see DebugNal</span>
+<span class="cm">    */</span>
+    <span class="k">struct</span> <span class="n">NAL</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">forbidden_zero_bit</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">nal_ref_idc</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">nal_unit_type</span><span class="p">;</span>
+        <span class="kt">void</span><span class="o">*</span> <span class="n">parsed</span><span class="p">;</span> <span class="c1">// FIXME</span>
+        <span class="kt">int</span> <span class="n">sizeof_parsed</span><span class="p">;</span>
+
+        <span class="c1">//uint8_t* rbsp_buf;</span>
+        <span class="c1">//int rbsp_size;</span>
+    <span class="p">};</span>
+
+    <span class="k">struct</span> <span class="n">SeiBuffering</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">is_initialized</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">sps_id</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">initial_cpb_removal_delay</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">initial_cpb_delay_offset</span><span class="p">;</span>
+    <span class="p">};</span>
+
+    <span class="k">struct</span> <span class="n">PictureTimestamp</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">clock_timestamp_flag</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">ct_type</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">nuit_field_based_flag</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">counting_type</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">full_timestamp_flag</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">discontinuity_flag</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">cnt_dropped_flag</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">n_frames</span><span class="p">;</span>
+
+        <span class="kt">int</span> <span class="n">seconds_value</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">minutes_value</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">hours_value</span><span class="p">;</span>
+
+        <span class="kt">int</span> <span class="n">seconds_flag</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">minutes_flag</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">hours_flag</span><span class="p">;</span>
+
+        <span class="kt">int</span> <span class="n">time_offset</span><span class="p">;</span>
+    <span class="p">};</span>
+
+    <span class="k">struct</span> <span class="n">SeiPictureTiming</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">is_initialized</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">cpb_removal_delay</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">dpb_output_delay</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">pic_struct</span><span class="p">;</span>
+        <span class="n">PictureTimestamp</span> <span class="n">clock_timestamps</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span> <span class="c1">// 3 is the maximum possible value</span>
+    <span class="p">};</span>
+
+    <span class="k">typedef</span> <span class="k">struct</span> <span class="n">SliceDataRbsp</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">rbsp_size</span><span class="p">;</span>
+        <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">rbsp_buf</span><span class="p">;</span>
+    <span class="p">}</span><span class="n">SliceDataRbsp</span> <span class="p">;</span>
+
+    <span class="cm">/**</span>
+<span class="cm">    H264 stream</span>
+<span class="cm">    Contains data structures for all NAL types that can be handled by this library.  </span>
+<span class="cm">    When reading, data is read into those, and when writing it is written from those.  </span>
+<span class="cm">    The reason why they are all contained in one place is that some of them depend on others, we need to </span>
+<span class="cm">    have all of them available to read or write correctly.</span>
+<span class="cm">    */</span>
+    <span class="k">struct</span> <span class="n">H264Stream</span>
+    <span class="p">{</span>
+        <span class="n">NAL</span><span class="o">*</span> <span class="n">nal</span> <span class="o">=</span> <span class="n">nullptr</span><span class="p">;</span>
+        <span class="n">SPS</span><span class="o">*</span> <span class="n">sps</span> <span class="o">=</span> <span class="n">nullptr</span><span class="p">;</span>
+        <span class="n">PPS</span><span class="o">*</span> <span class="n">pps</span> <span class="o">=</span> <span class="n">nullptr</span><span class="p">;</span>
+        <span class="n">AUD</span><span class="o">*</span> <span class="n">aud</span> <span class="o">=</span> <span class="n">nullptr</span><span class="p">;</span>
+        <span class="n">SEI</span><span class="o">*</span> <span class="n">sei</span> <span class="o">=</span> <span class="n">nullptr</span><span class="p">;</span> <span class="c1">//This is a TEMP pointer at whats in h-&gt;seis...    </span>
+        <span class="n">SliceHeader</span><span class="o">*</span> <span class="n">sh</span> <span class="o">=</span> <span class="n">nullptr</span><span class="p">;</span>
+        <span class="n">SliceDataRbsp</span><span class="o">*</span> <span class="n">slice_data</span> <span class="o">=</span> <span class="n">nullptr</span><span class="p">;</span>
+        <span class="n">SPS</span><span class="o">*</span> <span class="n">sps_able</span><span class="p">[</span><span class="mi">32</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="n">nullptr</span> <span class="p">};</span>
+        <span class="n">PPS</span><span class="o">*</span> <span class="n">pps_able</span><span class="p">[</span><span class="mi">256</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="n">nullptr</span> <span class="p">};</span>
+        <span class="n">SEI</span><span class="o">**</span> <span class="n">seis</span> <span class="o">=</span> <span class="n">nullptr</span> <span class="p">;</span>
+        <span class="n">SliceHeader</span><span class="o">*</span> <span class="n">shs</span><span class="p">[</span><span class="mi">16</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="n">nullptr</span> <span class="p">};</span>
+        
+        <span class="kt">int</span> <span class="n">num_seis</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">num_slices</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">num_ref_frames</span><span class="p">;</span>     <span class="c1">// pic的引用帧数, 递增至sps-&gt;num_ref_frames</span>
+        <span class="kt">int</span> <span class="n">num_ref_l0_frames</span><span class="p">;</span>  <span class="c1">// slice的ref_list0中的引用帧数</span>
+        <span class="kt">int</span> <span class="n">num_ref_l1_frames</span><span class="p">;</span>  <span class="c1">// slice的ref_list1中的引用帧数</span>
+        <span class="kt">int</span> <span class="n">slice_data_offset</span><span class="p">[</span><span class="mi">16</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span> <span class="p">};</span>
+    <span class="p">};</span>
+
+    <span class="n">H264Stream</span><span class="o">*</span> <span class="nf">NewH264Stream</span><span class="p">();</span>
+    <span class="kt">void</span> <span class="nf">FreeH264Stream</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">);</span>
+
+    <span class="kt">int</span> <span class="nf">FindNalUnit</span><span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span> <span class="n">buf</span><span class="p">,</span> <span class="kt">int</span> <span class="n">size</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">nal_start</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">nal_end</span><span class="p">);</span>
+
+    <span class="kt">int</span> <span class="nf">RbspToNal</span><span class="p">(</span><span class="k">const</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">rbsp_buf</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span><span class="o">*</span> <span class="n">rbsp_size</span><span class="p">,</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">nal_buf</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">nal_size</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="nf">NaluToRbsp</span><span class="p">(</span><span class="k">const</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">nal_buf</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">nal_size</span><span class="p">,</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">rbsp_buf</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">rbsp_size</span><span class="p">);</span>
+
+    <span class="kt">int</span> <span class="nf">ReadNalUnit</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">buf</span><span class="p">,</span> <span class="kt">int</span> <span class="n">size</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="nf">PeekNalUnit</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">buf</span><span class="p">,</span> <span class="kt">int</span> <span class="n">size</span><span class="p">);</span>
+
+    <span class="kt">void</span> <span class="nf">ReadSeqParamSetRbsp</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">ReadScalingList</span><span class="p">(</span><span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">scalingList</span><span class="p">,</span> <span class="kt">int</span> <span class="n">sizeOfScalingList</span><span class="p">,</span> <span class="kt">int</span> <span class="n">useDefaultScalingMatrixFlag</span> <span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">ReadVUIParam</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">ReadHRDParam</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">);</span>
+
+    <span class="kt">void</span> <span class="nf">ReadPicParamSetRBSP</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">);</span>
+
+    <span class="kt">void</span> <span class="nf">ReadSEIRBSP</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">ReadSEIMessage</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">ReadAccessUnitDelimiterRBSP</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">ReadEndOfSeqRBSP</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">ReadEndOfStreamRBSP</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">ReadFilterDataRBSP</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">);</span>
+
+    <span class="kt">void</span> <span class="nf">ReadSliceLayerRBSP</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">ReadRBSPSliceTrailingBits</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">ReadRBSPTrailingBits</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">ReadSliceHeader</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">ReadRefPicListRecorder</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">ReadPredWeightTable</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">ReadDecRefPicMarking</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">);</span>
+
+    <span class="kt">int</span> <span class="nf">DecodeScalingMatrices</span><span class="p">(</span><span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">,</span> <span class="k">const</span> <span class="n">SPS</span> <span class="o">*</span><span class="n">sps</span><span class="p">,</span> <span class="k">const</span> <span class="n">PPS</span><span class="o">*</span> <span class="n">pps</span><span class="p">,</span>
+                                <span class="kt">int</span> <span class="n">is_sps</span><span class="p">,</span> <span class="kt">uint8_t</span><span class="p">(</span><span class="o">*</span><span class="n">scaling_matrix4</span><span class="p">)[</span><span class="mi">16</span><span class="p">],</span> <span class="kt">uint8_t</span><span class="p">(</span><span class="o">*</span><span class="n">scaling_matrix8</span><span class="p">)[</span><span class="mi">64</span><span class="p">]);</span>
+
+    <span class="kt">int</span> <span class="nf">MoreRBSPTrailingData</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">);</span>
+
+    <span class="kt">int</span> <span class="nf">WriteNalUnit</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">buf</span><span class="p">,</span> <span class="kt">int</span> <span class="n">size</span><span class="p">);</span>
+
+    <span class="kt">void</span> <span class="nf">WriteSeqParamSetRBSP</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">WriteScailingList</span><span class="p">(</span><span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">scalingList</span><span class="p">,</span> <span class="kt">int</span> <span class="n">sizeOfScalingList</span><span class="p">,</span> <span class="kt">int</span> <span class="n">useDefaultScalingMatrixFlag</span> <span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">WriteVUIParam</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">WriteHRDPARAM</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">);</span>
+
+    <span class="kt">void</span> <span class="nf">WritePicParamSetRBSP</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">);</span>
+
+    <span class="kt">void</span> <span class="nf">WriteSEIRBSP</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">WriteSEIMessage</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">WriteAccessUnitDelimiterRBSP</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">WriteEndOfSeqRBSP</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">WriteEndOfStreamRBSP</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">WriteFillerDataRBSP</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">);</span>
+
+    <span class="kt">void</span> <span class="nf">WriteSliceLayerRBSP</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">WriteRBSPSliceTrailingBits</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">WriteRBSTrailingBits</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">WriteSliceHeader</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">WriteRefPicListRecorder</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">WritePredWeightTable</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">WriteDecRefPicMarking</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">);</span>
+
+    <span class="kt">void</span> <span class="nf">DebugSPS</span><span class="p">(</span><span class="n">SPS</span><span class="o">*</span> <span class="n">sps</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">DebugPPS</span><span class="p">(</span><span class="n">PPS</span><span class="o">*</span> <span class="n">pps</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">DebugSliceHeader</span><span class="p">(</span><span class="n">SliceHeader</span><span class="o">*</span> <span class="n">sh</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">DebugNal</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">NAL</span><span class="o">*</span> <span class="n">nal</span><span class="p">);</span>
+
+    <span class="kt">void</span> <span class="nf">DebugBytes</span><span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span> <span class="n">buf</span><span class="p">,</span> <span class="kt">int</span> <span class="n">len</span><span class="p">);</span>
+
+    <span class="kt">void</span> <span class="nf">ReadSEIPayload</span><span class="p">(</span> <span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="n">payloadType</span><span class="p">,</span> <span class="kt">int</span> <span class="n">payloadSize</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">WriteSEIPayload</span><span class="p">(</span> <span class="n">H264Stream</span><span class="o">*</span> <span class="n">h</span><span class="p">,</span> <span class="n">TBitStream</span><span class="o">*</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="n">payloadType</span><span class="p">,</span> <span class="kt">int</span> <span class="n">payloadSize</span><span class="p">);</span>
+
+    <span class="c1">//NAL ref idc codes</span>
+<span class="cp">#define NAL_REF_IDC_PRIORITY_HIGHEST    3</span>
+<span class="cp">#define NAL_REF_IDC_PRIORITY_HIGH       2</span>
+<span class="cp">#define NAL_REF_IDC_PRIORITY_LOW        1</span>
+<span class="cp">#define NAL_REF_IDC_PRIORITY_DISPOSABLE 0</span>
+
+    <span class="c1">//Table 7-1 NAL unit type codes</span>
+<span class="cp">#define NAL_UNIT_TYPE_UNSPECIFIED                    0    </span><span class="c1">// Unspecified</span>
+<span class="cp">#define NAL_UNIT_TYPE_CODED_SLICE_NON_IDR            1    </span><span class="c1">// Coded slice of a non-IDR picture</span>
+<span class="cp">#define NAL_UNIT_TYPE_CODED_SLICE_DATA_PARTITION_A   2    </span><span class="c1">// Coded slice data PARTITION A</span>
+<span class="cp">#define NAL_UNIT_TYPE_CODED_SLICE_DATA_PARTITION_B   3    </span><span class="c1">// Coded slice data PARTITION B</span>
+<span class="cp">#define NAL_UNIT_TYPE_CODED_SLICE_DATA_PARTITION_C   4    </span><span class="c1">// Coded slice data PARTITION C</span>
+<span class="cp">#define NAL_UNIT_TYPE_CODED_SLICE_IDR                5    </span><span class="c1">// Coded slice of an IDR picture</span>
+<span class="cp">#define NAL_UNIT_TYPE_SEI                            6    </span><span class="c1">// Supplemental enhancement information (SEI)</span>
+<span class="cp">#define NAL_UNIT_TYPE_SPS                            7    </span><span class="c1">// Sequence parameter set</span>
+<span class="cp">#define NAL_UNIT_TYPE_PPS                            8    </span><span class="c1">// Picture parameter set</span>
+<span class="cp">#define NAL_UNIT_TYPE_AUD                            9    </span><span class="c1">// Access unit delimiter</span>
+<span class="cp">#define NAL_UNIT_TYPE_END_OF_SEQUENCE               10    </span><span class="c1">// End of sequence</span>
+<span class="cp">#define NAL_UNIT_TYPE_END_OF_STREAM                 11    </span><span class="c1">// End of stream</span>
+<span class="cp">#define NAL_UNIT_TYPE_FILLER                        12    </span><span class="c1">// Filler data</span>
+<span class="cp">#define NAL_UNIT_TYPE_SPS_EXT                       13    </span><span class="c1">// Sequence parameter set extension</span>
+    <span class="c1">// 14..18    // Reserved</span>
+<span class="cp">#define NAL_UNIT_TYPE_CODED_SLICE_AUX               19  </span>
+    <span class="c1">// Coded slice of an auxiliary coded picture without partitioning</span>
+    <span class="c1">// 20..23    // Reserved</span>
+    <span class="c1">// 24..31    // Unspecified</span>
+
+
+
+    <span class="c1">//7.4.3 Table 7-6. Name association to slice_type</span>
+<span class="cp">#define SH_SLICE_TYPE_P        0        </span><span class="c1">// P (P slice)</span>
+<span class="cp">#define SH_SLICE_TYPE_B        1        </span><span class="c1">// B (B slice)</span>
+<span class="cp">#define SH_SLICE_TYPE_I        2        </span><span class="c1">// I (I slice)</span>
+<span class="cp">#define SH_SLICE_TYPE_SP       3        </span><span class="c1">// SP (SP slice)</span>
+<span class="cp">#define SH_SLICE_TYPE_SI       4        </span><span class="c1">// SI (SI slice)</span>
+    <span class="c1">//as per footnote to Table 7-6, the *_ONLY slice types indicate </span>
+    <span class="c1">//that all other slices in that picture are of the same type</span>
+<span class="cp">#define SH_SLICE_TYPE_P_ONLY    5        </span><span class="c1">// P (P slice)</span>
+<span class="cp">#define SH_SLICE_TYPE_B_ONLY    6        </span><span class="c1">// B (B slice)</span>
+<span class="cp">#define SH_SLICE_TYPE_I_ONLY    7        </span><span class="c1">// I (I slice)</span>
+<span class="cp">#define SH_SLICE_TYPE_SP_ONLY   8        </span><span class="c1">// SP (SP slice)</span>
+<span class="cp">#define SH_SLICE_TYPE_SI_ONLY   9        </span><span class="c1">// SI (SI slice)</span>
+
+    <span class="c1">//Appendix E. Table E-1  Meaning of sample aspect ratio indicator</span>
+<span class="cp">#define SAR_UNSPECIFIED  0           </span><span class="c1">// Unspecified</span>
+<span class="cp">#define SAR_1_1        1             </span><span class="c1">//  1:1</span>
+<span class="cp">#define SAR_12_11      2             </span><span class="c1">// 12:11</span>
+<span class="cp">#define SAR_10_11      3             </span><span class="c1">// 10:11</span>
+<span class="cp">#define SAR_16_11      4             </span><span class="c1">// 16:11</span>
+<span class="cp">#define SAR_40_33      5             </span><span class="c1">// 40:33</span>
+<span class="cp">#define SAR_24_11      6             </span><span class="c1">// 24:11</span>
+<span class="cp">#define SAR_20_11      7             </span><span class="c1">// 20:11</span>
+<span class="cp">#define SAR_32_11      8             </span><span class="c1">// 32:11</span>
+<span class="cp">#define SAR_80_33      9             </span><span class="c1">// 80:33</span>
+<span class="cp">#define SAR_18_11     10             </span><span class="c1">// 18:11</span>
+<span class="cp">#define SAR_15_11     11             </span><span class="c1">// 15:11</span>
+<span class="cp">#define SAR_64_33     12             </span><span class="c1">// 64:33</span>
+<span class="cp">#define SAR_160_99    13             </span><span class="c1">// 160:99</span>
+    <span class="c1">// 14..254           Reserved</span>
+<span class="cp">#define SAR_EXTENDED      255        </span><span class="c1">// Extended_SAR</span>
+
+    <span class="c1">//7.4.3.1 Table 7-7 reordering_of_pic_nums_idc operations for reordering of reference picture lists</span>
+<span class="cp">#define RPLR_IDC_ABS_DIFF_ADD       0</span>
+<span class="cp">#define RPLR_IDC_ABS_DIFF_SUBTRACT  1</span>
+<span class="cp">#define RPLR_IDC_LONG_TERM          2</span>
+<span class="cp">#define RPLR_IDC_END                3</span>
+
+    <span class="c1">//7.4.3.3 Table 7-9 Memory management control operation (memory_management_control_operation) values</span>
+<span class="cp">#define MMCO_END                     0</span>
+<span class="cp">#define MMCO_SHORT_TERM_UNUSED       1</span>
+<span class="cp">#define MMCO_LONG_TERM_UNUSED        2</span>
+<span class="cp">#define MMCO_SHORT_TERM_TO_LONG_TERM 3</span>
+<span class="cp">#define MMCO_LONG_TERM_MAX_INDEX     4</span>
+<span class="cp">#define MMCO_ALL_UNUSED              5</span>
+<span class="cp">#define MMCO_CURRENT_TO_LONG_TERM    6</span>
+
+    <span class="c1">//7.4.2.4 Table 7-5 Meaning of primary_pic_type</span>
+<span class="cp">#define AUD_PRIMARY_PIC_TYPE_I       0                </span><span class="c1">// I</span>
+<span class="cp">#define AUD_PRIMARY_PIC_TYPE_IP      1                </span><span class="c1">// I, P</span>
+<span class="cp">#define AUD_PRIMARY_PIC_TYPE_IPB     2                </span><span class="c1">// I, P, B</span>
+<span class="cp">#define AUD_PRIMARY_PIC_TYPE_SI      3                </span><span class="c1">// SI</span>
+<span class="cp">#define AUD_PRIMARY_PIC_TYPE_SISP    4                </span><span class="c1">// SI, SP</span>
+<span class="cp">#define AUD_PRIMARY_PIC_TYPE_ISI     5                </span><span class="c1">// I, SI</span>
+<span class="cp">#define AUD_PRIMARY_PIC_TYPE_ISIPSP  6                </span><span class="c1">// I, SI, P, SP</span>
+<span class="cp">#define AUD_PRIMARY_PIC_TYPE_ISIPSPB 7                </span><span class="c1">// I, SI, P, SP, B</span>
+
+<span class="cp">#define H264_PROFILE_BASELINE  66</span>
+<span class="cp">#define H264_PROFILE_MAIN      77</span>
+<span class="cp">#define H264_PROFILE_EXTENDED  88</span>
+<span class="cp">#define H264_PROFILE_HIGH     100</span>
+
+<span class="cp">#ifdef __cplusplus</span>
+<span class="p">}</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#endif</span>
+</pre></div>
+</body>
+</html>

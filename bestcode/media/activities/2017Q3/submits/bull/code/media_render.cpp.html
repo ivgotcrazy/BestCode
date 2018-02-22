@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #333333 }
+body  { background: #111111; color: #ffffff }
+body .c { color: #008800; font-style: italic; background-color: #0f140f } /* Comment */
+body .err { color: #ffffff } /* Error */
+body .esc { color: #ffffff } /* Escape */
+body .g { color: #ffffff } /* Generic */
+body .k { color: #fb660a; font-weight: bold } /* Keyword */
+body .l { color: #ffffff } /* Literal */
+body .n { color: #ffffff } /* Name */
+body .o { color: #ffffff } /* Operator */
+body .x { color: #ffffff } /* Other */
+body .p { color: #ffffff } /* Punctuation */
+body .ch { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Hashbang */
+body .cm { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Multiline */
+body .cp { color: #ff0007; font-weight: bold; font-style: italic; background-color: #0f140f } /* Comment.Preproc */
+body .cpf { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.PreprocFile */
+body .c1 { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Single */
+body .cs { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Special */
+body .gd { color: #ffffff } /* Generic.Deleted */
+body .ge { color: #ffffff } /* Generic.Emph */
+body .gr { color: #ffffff } /* Generic.Error */
+body .gh { color: #ffffff; font-weight: bold } /* Generic.Heading */
+body .gi { color: #ffffff } /* Generic.Inserted */
+body .go { color: #444444; background-color: #222222 } /* Generic.Output */
+body .gp { color: #ffffff } /* Generic.Prompt */
+body .gs { color: #ffffff } /* Generic.Strong */
+body .gu { color: #ffffff; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #ffffff } /* Generic.Traceback */
+body .kc { color: #fb660a; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #fb660a; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #fb660a; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #fb660a } /* Keyword.Pseudo */
+body .kr { color: #fb660a; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #cdcaa9; font-weight: bold } /* Keyword.Type */
+body .ld { color: #ffffff } /* Literal.Date */
+body .m { color: #0086f7; font-weight: bold } /* Literal.Number */
+body .s { color: #0086d2 } /* Literal.String */
+body .na { color: #ff0086; font-weight: bold } /* Name.Attribute */
+body .nb { color: #ffffff } /* Name.Builtin */
+body .nc { color: #ffffff } /* Name.Class */
+body .no { color: #0086d2 } /* Name.Constant */
+body .nd { color: #ffffff } /* Name.Decorator */
+body .ni { color: #ffffff } /* Name.Entity */
+body .ne { color: #ffffff } /* Name.Exception */
+body .nf { color: #ff0086; font-weight: bold } /* Name.Function */
+body .nl { color: #ffffff } /* Name.Label */
+body .nn { color: #ffffff } /* Name.Namespace */
+body .nx { color: #ffffff } /* Name.Other */
+body .py { color: #ffffff } /* Name.Property */
+body .nt { color: #fb660a; font-weight: bold } /* Name.Tag */
+body .nv { color: #fb660a } /* Name.Variable */
+body .ow { color: #ffffff } /* Operator.Word */
+body .w { color: #888888 } /* Text.Whitespace */
+body .mb { color: #0086f7; font-weight: bold } /* Literal.Number.Bin */
+body .mf { color: #0086f7; font-weight: bold } /* Literal.Number.Float */
+body .mh { color: #0086f7; font-weight: bold } /* Literal.Number.Hex */
+body .mi { color: #0086f7; font-weight: bold } /* Literal.Number.Integer */
+body .mo { color: #0086f7; font-weight: bold } /* Literal.Number.Oct */
+body .sa { color: #0086d2 } /* Literal.String.Affix */
+body .sb { color: #0086d2 } /* Literal.String.Backtick */
+body .sc { color: #0086d2 } /* Literal.String.Char */
+body .dl { color: #0086d2 } /* Literal.String.Delimiter */
+body .sd { color: #0086d2 } /* Literal.String.Doc */
+body .s2 { color: #0086d2 } /* Literal.String.Double */
+body .se { color: #0086d2 } /* Literal.String.Escape */
+body .sh { color: #0086d2 } /* Literal.String.Heredoc */
+body .si { color: #0086d2 } /* Literal.String.Interpol */
+body .sx { color: #0086d2 } /* Literal.String.Other */
+body .sr { color: #0086d2 } /* Literal.String.Regex */
+body .s1 { color: #0086d2 } /* Literal.String.Single */
+body .ss { color: #0086d2 } /* Literal.String.Symbol */
+body .bp { color: #ffffff } /* Name.Builtin.Pseudo */
+body .fm { color: #ff0086; font-weight: bold } /* Name.Function.Magic */
+body .vc { color: #fb660a } /* Name.Variable.Class */
+body .vg { color: #fb660a } /* Name.Variable.Global */
+body .vi { color: #fb660a } /* Name.Variable.Instance */
+body .vm { color: #fb660a } /* Name.Variable.Magic */
+body .il { color: #0086f7; font-weight: bold } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="cm">/*##############################################################################</span>
+<span class="cm">* 文件：MediaRender.cpp</span>
+<span class="cm">* 描述：解码器封装的接口定义和实现</span>
+<span class="cm">* 作者：bull</span>
+<span class="cm">* 时间：2017年9月13日</span>
+<span class="cm">* 版权：Copyright(C) 2017 Fsmeeting.com. All rights reserved.</span>
+<span class="cm">#############################################################################*/</span>
+
+<span class="cm">/**************************** 条件编译选项和头文件 ****************************/</span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;media_render.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;vamedia_render_x11.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;ff_mixer_render.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;vamedia_define.h&quot;</span><span class="cp"></span>
+
+<span class="cm">/********************************** 类实现 ***********************************/</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：初始化X11的Display</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">ERetCode</span> <span class="n">MediaRender</span><span class="o">::</span><span class="n">CreateDisplay</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="k">return</span> <span class="n">VACreateDisplayX11</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：销毁X11的Display</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">ERetCode</span> <span class="n">MediaRender</span><span class="o">::</span><span class="n">DestroyDisplay</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="k">return</span> <span class="n">VADestroyDisplay</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：创建渲染器</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">ERetCode</span> <span class="n">MediaRender</span><span class="o">::</span><span class="n">CreateRender</span><span class="p">(</span><span class="n">TMediaRenderProps</span><span class="o">*</span> <span class="n">i_render_props_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">i_render_props_ptr</span><span class="p">,</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">);</span>
+	<span class="k">if</span> <span class="p">(</span> <span class="n">m_render_ptr</span> <span class="o">!=</span> <span class="k">nullptr</span> <span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">m_render_ptr</span><span class="o">-&gt;</span><span class="n">DestroyRender</span><span class="p">();</span>
+		<span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">m_render_ptr</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="k">if</span> <span class="p">(</span><span class="n">i_render_props_ptr</span><span class="o">-&gt;</span><span class="n">media_mode</span> <span class="o">==</span> <span class="n">EM_MEDIA_MODE_SOFT</span><span class="p">)</span>
+		<span class="n">m_render_ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FFMixerRender</span><span class="p">();</span>
+	<span class="k">else</span>
+		<span class="n">m_render_ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">VARenderX11</span><span class="p">();</span>
+
+	<span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">m_render_ptr</span><span class="p">,</span> <span class="n">EM_RC_MEMROY_ALLOC_ERR</span><span class="p">);</span>
+
+	<span class="k">if</span> <span class="p">(</span> <span class="n">m_render_ptr</span><span class="o">-&gt;</span><span class="n">CreateRender</span><span class="p">(</span><span class="n">i_render_props_ptr</span><span class="p">)</span> <span class="o">!=</span> <span class="n">EM_RC_OK</span> <span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">LOG_ERROR</span><span class="p">(</span><span class="s">&quot;Stream [%d] Init Render Failed&quot;</span><span class="p">);</span>
+		<span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">m_render_ptr</span><span class="p">);</span>
+		<span class="k">return</span> <span class="n">EM_RC_INIT_ERR</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：添加数据源</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">ERetCode</span> <span class="n">MediaRender</span><span class="o">::</span><span class="n">AddSource</span><span class="p">(</span><span class="kt">int</span> <span class="n">i_src_id</span><span class="p">,</span> <span class="n">TProcItem</span><span class="o">*</span> <span class="n">i_item_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">m_render_ptr</span><span class="p">,</span> <span class="n">EM_RC_INIT_ERR</span><span class="p">);</span>
+
+	<span class="k">return</span> <span class="n">m_render_ptr</span><span class="o">-&gt;</span><span class="n">AddSource</span><span class="p">(</span><span class="n">i_src_id</span><span class="p">,</span> <span class="n">i_item_ptr</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：删除数据源</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">ERetCode</span> <span class="n">MediaRender</span><span class="o">::</span><span class="n">DelSource</span><span class="p">(</span><span class="kt">int</span> <span class="n">i_src_id</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">m_render_ptr</span><span class="p">,</span> <span class="n">EM_RC_INIT_ERR</span><span class="p">);</span>
+
+	<span class="k">return</span> <span class="n">m_render_ptr</span><span class="o">-&gt;</span><span class="n">DelSource</span><span class="p">(</span><span class="n">i_src_id</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：渲染NV12</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">ERetCode</span> <span class="n">MediaRender</span><span class="o">::</span><span class="n">RenderData</span><span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span> <span class="n">i_pData</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">m_render_ptr</span><span class="p">,</span> <span class="n">EM_RC_INIT_ERR</span><span class="p">);</span>
+
+	<span class="k">return</span> <span class="n">m_render_ptr</span><span class="o">-&gt;</span><span class="n">RenderData</span><span class="p">(</span><span class="n">i_pData</span><span class="p">);</span>
+<span class="p">}</span>
+ 
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：修改成员输出位置</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">ERetCode</span> <span class="n">MediaRender</span><span class="o">::</span><span class="n">ModifySrcOutRect</span><span class="p">(</span><span class="kt">int</span> <span class="n">i_src_id</span><span class="p">,</span> <span class="n">TRect</span><span class="o">*</span> <span class="n">i_rect_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">m_render_ptr</span><span class="p">,</span> <span class="n">EM_RC_INIT_ERR</span><span class="p">);</span>
+
+	<span class="k">return</span> <span class="n">m_render_ptr</span><span class="o">-&gt;</span><span class="n">ModifySrcOutRect</span><span class="p">(</span><span class="n">i_src_id</span><span class="p">,</span> <span class="n">i_rect_ptr</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：修改成员层级</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">ERetCode</span> <span class="n">MediaRender</span><span class="o">::</span><span class="n">ModifySrcLevel</span><span class="p">(</span><span class="kt">int</span> <span class="n">i_src_id</span><span class="p">,</span> <span class="n">EVMixLevel</span> <span class="n">i_level</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">m_render_ptr</span><span class="p">,</span> <span class="n">EM_RC_INIT_ERR</span><span class="p">);</span>
+
+	<span class="k">return</span> <span class="n">m_render_ptr</span><span class="o">-&gt;</span><span class="n">ModifySrcLevel</span><span class="p">(</span><span class="n">i_src_id</span><span class="p">,</span> <span class="n">i_level</span><span class="p">);</span>
+<span class="p">}</span>
+ 
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：修改输入源</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">ERetCode</span> <span class="n">MediaRender</span><span class="o">::</span><span class="n">ModifySrcSource</span><span class="p">(</span><span class="kt">int</span> <span class="n">i_src_id</span><span class="p">,</span> <span class="n">ISource</span><span class="o">*</span> <span class="n">i_source_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">m_render_ptr</span><span class="p">,</span> <span class="n">EM_RC_INIT_ERR</span><span class="p">);</span>
+
+	<span class="k">return</span> <span class="n">m_render_ptr</span><span class="o">-&gt;</span><span class="n">ModifySrcSource</span><span class="p">(</span><span class="n">i_src_id</span><span class="p">,</span> <span class="n">i_source_ptr</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：修改渲染器背景尺寸</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">ERetCode</span> <span class="n">MediaRender</span><span class="o">::</span><span class="n">ModifyRenderSize</span><span class="p">(</span><span class="n">TSize</span><span class="o">*</span> <span class="n">i_size_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">i_size_ptr</span><span class="p">,</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">);</span>
+	<span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">m_render_ptr</span><span class="p">,</span> <span class="n">EM_RC_INIT_ERR</span><span class="p">);</span>
+
+	<span class="k">return</span> <span class="n">m_render_ptr</span><span class="o">-&gt;</span><span class="n">ModifyRenderSize</span><span class="p">(</span><span class="n">i_size_ptr</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：设置分辨率和名字</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">ERetCode</span> <span class="n">MediaRender</span><span class="o">::</span><span class="n">SetCurResolution</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">i_output_name_ptr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_width</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_height</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">i_output_name_ptr</span><span class="p">,</span> <span class="n">EM_RC_INIT_ERR</span><span class="p">);</span>
+	<span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">m_render_ptr</span><span class="p">,</span> <span class="n">EM_RC_INIT_ERR</span><span class="p">);</span>
+
+	<span class="k">return</span> <span class="n">m_render_ptr</span><span class="o">-&gt;</span><span class="n">SetCurResolution</span><span class="p">(</span><span class="n">i_output_name_ptr</span><span class="p">,</span> <span class="n">i_width</span><span class="p">,</span> <span class="n">i_height</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：获取显示器支持的分辨率</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">ERetCode</span> <span class="n">MediaRender</span><span class="o">::</span><span class="n">GetSurportResolutionList</span><span class="p">(</span><span class="n">TOutputResolutions</span> <span class="o">**</span><span class="n">o_resolution_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">m_render_ptr</span><span class="p">,</span> <span class="n">EM_RC_INIT_ERR</span><span class="p">);</span>
+
+	<span class="k">return</span> <span class="n">m_render_ptr</span><span class="o">-&gt;</span><span class="n">GetSurportResolutionList</span><span class="p">(</span><span class="n">o_resolution_ptr</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：释放分辨率列表</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="kt">void</span> <span class="n">MediaRender</span><span class="o">::</span><span class="n">FreeSurportResolutionList</span><span class="p">(</span><span class="n">TOutputResolutions</span> <span class="o">*</span><span class="n">i_resolution_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span> <span class="n">m_render_ptr</span> <span class="p">)</span>
+		<span class="k">return</span> <span class="n">m_render_ptr</span><span class="o">-&gt;</span><span class="n">FreeSurportResolutionList</span><span class="p">(</span><span class="n">i_resolution_ptr</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：销毁渲染器</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">ERetCode</span> <span class="n">MediaRender</span><span class="o">::</span><span class="n">DestroyRender</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">m_render_ptr</span><span class="p">,</span> <span class="n">EM_RC_INIT_ERR</span><span class="p">);</span>
+
+	<span class="n">m_render_ptr</span><span class="o">-&gt;</span><span class="n">DestroyRender</span><span class="p">();</span>
+	<span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">m_render_ptr</span><span class="p">);</span>
+
+	<span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</body>
+</html>

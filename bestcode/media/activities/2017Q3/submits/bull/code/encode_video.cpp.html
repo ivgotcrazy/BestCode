@@ -1,0 +1,379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #333333 }
+body  { background: #111111; color: #ffffff }
+body .c { color: #008800; font-style: italic; background-color: #0f140f } /* Comment */
+body .err { color: #ffffff } /* Error */
+body .esc { color: #ffffff } /* Escape */
+body .g { color: #ffffff } /* Generic */
+body .k { color: #fb660a; font-weight: bold } /* Keyword */
+body .l { color: #ffffff } /* Literal */
+body .n { color: #ffffff } /* Name */
+body .o { color: #ffffff } /* Operator */
+body .x { color: #ffffff } /* Other */
+body .p { color: #ffffff } /* Punctuation */
+body .ch { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Hashbang */
+body .cm { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Multiline */
+body .cp { color: #ff0007; font-weight: bold; font-style: italic; background-color: #0f140f } /* Comment.Preproc */
+body .cpf { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.PreprocFile */
+body .c1 { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Single */
+body .cs { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Special */
+body .gd { color: #ffffff } /* Generic.Deleted */
+body .ge { color: #ffffff } /* Generic.Emph */
+body .gr { color: #ffffff } /* Generic.Error */
+body .gh { color: #ffffff; font-weight: bold } /* Generic.Heading */
+body .gi { color: #ffffff } /* Generic.Inserted */
+body .go { color: #444444; background-color: #222222 } /* Generic.Output */
+body .gp { color: #ffffff } /* Generic.Prompt */
+body .gs { color: #ffffff } /* Generic.Strong */
+body .gu { color: #ffffff; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #ffffff } /* Generic.Traceback */
+body .kc { color: #fb660a; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #fb660a; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #fb660a; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #fb660a } /* Keyword.Pseudo */
+body .kr { color: #fb660a; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #cdcaa9; font-weight: bold } /* Keyword.Type */
+body .ld { color: #ffffff } /* Literal.Date */
+body .m { color: #0086f7; font-weight: bold } /* Literal.Number */
+body .s { color: #0086d2 } /* Literal.String */
+body .na { color: #ff0086; font-weight: bold } /* Name.Attribute */
+body .nb { color: #ffffff } /* Name.Builtin */
+body .nc { color: #ffffff } /* Name.Class */
+body .no { color: #0086d2 } /* Name.Constant */
+body .nd { color: #ffffff } /* Name.Decorator */
+body .ni { color: #ffffff } /* Name.Entity */
+body .ne { color: #ffffff } /* Name.Exception */
+body .nf { color: #ff0086; font-weight: bold } /* Name.Function */
+body .nl { color: #ffffff } /* Name.Label */
+body .nn { color: #ffffff } /* Name.Namespace */
+body .nx { color: #ffffff } /* Name.Other */
+body .py { color: #ffffff } /* Name.Property */
+body .nt { color: #fb660a; font-weight: bold } /* Name.Tag */
+body .nv { color: #fb660a } /* Name.Variable */
+body .ow { color: #ffffff } /* Operator.Word */
+body .w { color: #888888 } /* Text.Whitespace */
+body .mb { color: #0086f7; font-weight: bold } /* Literal.Number.Bin */
+body .mf { color: #0086f7; font-weight: bold } /* Literal.Number.Float */
+body .mh { color: #0086f7; font-weight: bold } /* Literal.Number.Hex */
+body .mi { color: #0086f7; font-weight: bold } /* Literal.Number.Integer */
+body .mo { color: #0086f7; font-weight: bold } /* Literal.Number.Oct */
+body .sa { color: #0086d2 } /* Literal.String.Affix */
+body .sb { color: #0086d2 } /* Literal.String.Backtick */
+body .sc { color: #0086d2 } /* Literal.String.Char */
+body .dl { color: #0086d2 } /* Literal.String.Delimiter */
+body .sd { color: #0086d2 } /* Literal.String.Doc */
+body .s2 { color: #0086d2 } /* Literal.String.Double */
+body .se { color: #0086d2 } /* Literal.String.Escape */
+body .sh { color: #0086d2 } /* Literal.String.Heredoc */
+body .si { color: #0086d2 } /* Literal.String.Interpol */
+body .sx { color: #0086d2 } /* Literal.String.Other */
+body .sr { color: #0086d2 } /* Literal.String.Regex */
+body .s1 { color: #0086d2 } /* Literal.String.Single */
+body .ss { color: #0086d2 } /* Literal.String.Symbol */
+body .bp { color: #ffffff } /* Name.Builtin.Pseudo */
+body .fm { color: #ff0086; font-weight: bold } /* Name.Function.Magic */
+body .vc { color: #fb660a } /* Name.Variable.Class */
+body .vg { color: #fb660a } /* Name.Variable.Global */
+body .vi { color: #fb660a } /* Name.Variable.Instance */
+body .vm { color: #fb660a } /* Name.Variable.Magic */
+body .il { color: #0086f7; font-weight: bold } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="cm">/*##############################################################################</span>
+<span class="cm">* 文件：EncodeVideo.cpp</span>
+<span class="cm">* 描述：编码H264视频的函数定义</span>
+<span class="cm">* 作者：bull</span>
+<span class="cm">* 时间：2017年9月14日</span>
+<span class="cm">* 版权：Copyright(C) 2017 Fsmeeting.com. All rights reserved.</span>
+<span class="cm">#############################################################################*/</span>
+
+<span class="cm">/**************************** 条件编译选项和头文件 ****************************/</span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;encode_video.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;BaseFileFunction.h&quot;</span><span class="cp"></span>
+
+<span class="cm">/********************************** 类实现 ***********************************/</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 描  述: 创建编码器</span>
+<span class="cm">* 参  数: i_enc_props_ptr: 视频编码的参数</span>
+<span class="cm">* 返回值: 成功：enumRC_OK  失败：XX</span>
+<span class="cm">* 时  间: 2015年10月31日</span>
+<span class="cm">* 作  者: Arthur</span>
+<span class="cm">********************************************************************************/</span>
+<span class="c1">// 创建、并启动</span>
+<span class="n">ERetCode</span> <span class="n">EncodeVideo</span><span class="o">::</span><span class="n">CreateEncoder</span><span class="p">(</span><span class="n">TEncInfo</span><span class="o">*</span> <span class="n">i_enc_props_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">i_enc_props_ptr</span><span class="p">,</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_is_inited</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">LOG_ERROR</span><span class="p">(</span><span class="s">&quot;Have inited h264 encode!&quot;</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">EM_RC_ENC_INITED_ERR</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">m_codec_ptr</span> <span class="o">=</span> <span class="n">avcodec_find_encoder</span><span class="p">(</span><span class="n">AV_CODEC_ID_H264</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_codec_ptr</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">LOG_ERROR</span><span class="p">(</span><span class="s">&quot;Not find h264 encode!&quot;</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">EM_RC_ENC_NOTFIND_ERR</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">m_codec_ctx_ptr</span> <span class="o">=</span> <span class="n">avcodec_alloc_context3</span><span class="p">(</span><span class="n">m_codec_ptr</span><span class="p">);</span>
+
+    <span class="c1">//输入的尺寸必须是32的整数倍，否则会打开编码器失败</span>
+    <span class="n">m_codec_ctx_ptr</span><span class="o">-&gt;</span><span class="n">width</span> <span class="o">=</span> <span class="n">i_enc_props_ptr</span><span class="o">-&gt;</span><span class="n">encode_size</span><span class="p">.</span><span class="n">width</span><span class="p">;</span>
+    <span class="n">m_codec_ctx_ptr</span><span class="o">-&gt;</span><span class="n">height</span> <span class="o">=</span> <span class="n">i_enc_props_ptr</span><span class="o">-&gt;</span><span class="n">encode_size</span><span class="p">.</span><span class="n">height</span><span class="p">;</span>
+    <span class="n">m_codec_ctx_ptr</span><span class="o">-&gt;</span><span class="n">time_base</span><span class="p">.</span><span class="n">num</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">m_codec_ctx_ptr</span><span class="o">-&gt;</span><span class="n">time_base</span><span class="p">.</span><span class="n">den</span> <span class="o">=</span> <span class="n">i_enc_props_ptr</span><span class="o">-&gt;</span><span class="n">fps</span><span class="p">;</span>
+    <span class="n">m_codec_ctx_ptr</span><span class="o">-&gt;</span><span class="n">gop_size</span> <span class="o">=</span> <span class="n">i_enc_props_ptr</span><span class="o">-&gt;</span><span class="n">fps</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="n">m_codec_ctx_ptr</span><span class="o">-&gt;</span><span class="n">bit_rate</span> <span class="o">=</span> <span class="n">i_enc_props_ptr</span><span class="o">-&gt;</span><span class="n">bitrate</span><span class="p">;</span>
+    <span class="n">m_codec_ctx_ptr</span><span class="o">-&gt;</span><span class="n">max_b_frames</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">m_codec_ctx_ptr</span><span class="o">-&gt;</span><span class="n">pix_fmt</span> <span class="o">=</span> <span class="n">AV_PIX_FMT_YUV420P</span><span class="p">;</span>
+
+    <span class="n">av_opt_set</span><span class="p">(</span><span class="n">m_codec_ctx_ptr</span><span class="o">-&gt;</span><span class="n">priv_data</span><span class="p">,</span> <span class="s">&quot;preset&quot;</span><span class="p">,</span> <span class="s">&quot;veryfast&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>	<span class="c1">//编码速度较快且能支持固定码率、帧率</span>
+    <span class="c1">//av_opt_set(m_pCodecCtx-&gt;priv_data, &quot;preset&quot;,  &quot;ultrafast&quot;,    0);</span>
+    <span class="n">av_opt_set</span><span class="p">(</span><span class="n">m_codec_ctx_ptr</span><span class="o">-&gt;</span><span class="n">priv_data</span><span class="p">,</span> <span class="s">&quot;tune&quot;</span><span class="p">,</span> <span class="s">&quot;zerolatency&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>	<span class="c1">//编码零延迟</span>
+    <span class="n">av_opt_set</span><span class="p">(</span><span class="n">m_codec_ctx_ptr</span><span class="o">-&gt;</span><span class="n">priv_data</span><span class="p">,</span> <span class="s">&quot;profile&quot;</span><span class="p">,</span> <span class="s">&quot;main&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>	<span class="c1">//main用于数字视频存储</span>
+
+    <span class="n">m_codec_ctx_ptr</span><span class="o">-&gt;</span><span class="n">thread_count</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">avcodec_open2</span><span class="p">(</span><span class="n">m_codec_ctx_ptr</span><span class="p">,</span> <span class="n">m_codec_ptr</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">LOG_ERROR</span><span class="p">(</span><span class="s">&quot;Open H264Encode[%dx%d] Fail!&quot;</span><span class="p">,</span> <span class="n">i_enc_props_ptr</span><span class="o">-&gt;</span><span class="n">encode_size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">i_enc_props_ptr</span><span class="o">-&gt;</span><span class="n">encode_size</span><span class="p">.</span><span class="n">height</span><span class="p">);</span>
+        <span class="n">avcodec_free_context</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_codec_ctx_ptr</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">m_frame_ptr</span> <span class="o">=</span> <span class="n">av_frame_alloc</span><span class="p">();</span>
+    <span class="n">m_frame_buffer_ptr</span> <span class="o">=</span> <span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span><span class="p">)</span><span class="n">av_malloc</span><span class="p">(</span>
+        <span class="n">av_image_get_buffer_size</span><span class="p">(</span><span class="n">AV_PIX_FMT_YUV420P</span><span class="p">,</span> <span class="n">m_codec_ctx_ptr</span><span class="o">-&gt;</span><span class="n">width</span><span class="p">,</span> <span class="n">m_codec_ctx_ptr</span><span class="o">-&gt;</span><span class="n">height</span><span class="p">,</span> <span class="mi">1</span><span class="p">));</span>
+    <span class="n">av_image_fill_arrays</span><span class="p">(</span><span class="n">m_frame_ptr</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">,</span> <span class="n">m_frame_ptr</span><span class="o">-&gt;</span><span class="n">linesize</span><span class="p">,</span> <span class="n">m_frame_buffer_ptr</span><span class="p">,</span>
+        <span class="n">AV_PIX_FMT_YUV420P</span><span class="p">,</span> <span class="n">m_codec_ctx_ptr</span><span class="o">-&gt;</span><span class="n">width</span><span class="p">,</span> <span class="n">m_codec_ctx_ptr</span><span class="o">-&gt;</span><span class="n">height</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+
+    <span class="n">m_frame_ptr</span><span class="o">-&gt;</span><span class="n">format</span> <span class="o">=</span> <span class="n">AV_PIX_FMT_YUV420P</span><span class="p">;</span>
+    <span class="n">m_frame_ptr</span><span class="o">-&gt;</span><span class="n">width</span> <span class="o">=</span> <span class="n">m_codec_ctx_ptr</span><span class="o">-&gt;</span><span class="n">width</span><span class="p">;</span>
+    <span class="n">m_frame_ptr</span><span class="o">-&gt;</span><span class="n">height</span> <span class="o">=</span> <span class="n">m_codec_ctx_ptr</span><span class="o">-&gt;</span><span class="n">height</span><span class="p">;</span>
+
+    <span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">m_enc_frame</span><span class="p">.</span><span class="n">frame_data_ptr</span><span class="p">);</span>
+    <span class="n">m_enc_frame</span><span class="p">.</span><span class="n">frame_data_ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">uint8_t</span><span class="p">[</span><span class="n">COMMON_SIZE_4M</span><span class="p">];</span>
+
+    <span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">m_yuv_frame</span><span class="p">.</span><span class="n">frame_data_ptr</span><span class="p">);</span>
+    <span class="n">m_yuv_frame</span><span class="p">.</span><span class="n">frame_data_ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">uint8_t</span><span class="p">[</span><span class="n">COMMON_SIZE_4M</span><span class="p">];</span>
+
+    <span class="n">m_buffer_ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">uint8_t</span><span class="p">[</span><span class="n">COMMON_SIZE_4M</span><span class="p">];</span>
+
+    <span class="n">m_enc_props</span> <span class="o">=</span> <span class="o">*</span><span class="n">i_enc_props_ptr</span><span class="p">;</span>
+
+    <span class="n">m_media_tool_ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MediaTool</span><span class="p">(</span><span class="n">g_rbs_Log_ptr</span><span class="p">);</span>
+
+    <span class="n">m_enc_frame</span><span class="p">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">m_enc_props</span><span class="p">.</span><span class="n">encode_size</span><span class="p">.</span><span class="n">width</span><span class="p">;</span>
+    <span class="n">m_enc_frame</span><span class="p">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">m_enc_props</span><span class="p">.</span><span class="n">encode_size</span><span class="p">.</span><span class="n">height</span><span class="p">;</span>
+
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Create The Width:Height [%d:%d] Encoder [%d] Success&quot;</span><span class="p">,</span>
+        <span class="n">m_enc_props</span><span class="p">.</span><span class="n">encode_size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">m_enc_props</span><span class="p">.</span><span class="n">encode_size</span><span class="p">.</span><span class="n">height</span><span class="p">,</span> <span class="n">m_enc_props</span><span class="p">.</span><span class="n">userdata</span><span class="p">);</span>
+
+    <span class="n">m_is_inited</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nf">StartThread</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 描  述: 视频编码</span>
+<span class="cm">* 参  数: i_pData: 原始数据指针</span>
+<span class="cm">i_iLen: 数据长度</span>
+<span class="cm">o_pMediaPkt: 输出的编码数据缓冲区</span>
+<span class="cm">* 返回值: 成功：enumRC_OK  失败：XX</span>
+<span class="cm">* 时  间: 2015年10月31日</span>
+<span class="cm">* 作  者: Arthur</span>
+<span class="cm">********************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">EncodeVideo</span><span class="o">::</span><span class="n">EncodeData</span><span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span> <span class="n">i_data_ptr</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">i_len</span><span class="p">,</span> <span class="n">TOutFrame</span><span class="o">*</span> <span class="n">o_media_pkt_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">CHECK_POINTER</span><span class="p">(</span><span class="n">i_data_ptr</span><span class="p">,</span> <span class="n">EM_RC_PARAM_ERR</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">m_is_inited</span> <span class="o">||</span> <span class="n">m_codec_ctx_ptr</span> <span class="o">==</span> <span class="k">nullptr</span> <span class="o">||</span> <span class="n">m_frame_ptr</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">EM_RC_ENC_UNINIT_ERR</span><span class="p">;</span>
+
+    <span class="n">AVPacket</span> <span class="n">enc_pkt</span><span class="p">;</span>
+    <span class="n">av_init_packet</span><span class="p">(</span><span class="o">&amp;</span><span class="n">enc_pkt</span><span class="p">);</span>
+    <span class="n">enc_pkt</span><span class="p">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">m_enc_frame</span><span class="p">.</span><span class="n">frame_data_ptr</span><span class="p">;</span>
+    <span class="n">enc_pkt</span><span class="p">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">COMMON_SIZE_4M</span><span class="p">;</span>
+   
+    <span class="n">m_frame_ptr</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">i_data_ptr</span><span class="p">;</span>
+    <span class="n">m_frame_ptr</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">i_data_ptr</span> <span class="o">+</span> <span class="n">m_enc_props</span><span class="p">.</span><span class="n">encode_size</span><span class="p">.</span><span class="n">width</span><span class="o">*</span><span class="n">m_enc_props</span><span class="p">.</span><span class="n">encode_size</span><span class="p">.</span><span class="n">height</span><span class="p">;</span>
+    <span class="n">m_frame_ptr</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">i_data_ptr</span> <span class="o">+</span> <span class="n">m_enc_props</span><span class="p">.</span><span class="n">encode_size</span><span class="p">.</span><span class="n">width</span><span class="o">*</span><span class="n">m_enc_props</span><span class="p">.</span><span class="n">encode_size</span><span class="p">.</span><span class="n">height</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">/</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="n">m_frame_ptr</span><span class="o">-&gt;</span><span class="n">pts</span> <span class="o">=</span> <span class="n">m_enc_count</span><span class="o">++</span><span class="p">;</span>
+
+    <span class="kt">int</span> <span class="n">got_Picture</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">iEncRet</span> <span class="o">=</span> <span class="n">avcodec_encode_video2</span><span class="p">(</span><span class="n">m_codec_ctx_ptr</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">enc_pkt</span><span class="p">,</span> <span class="n">m_frame_ptr</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">got_Picture</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">iEncRet</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">EM_RC_ENC_ERR</span><span class="p">;</span>
+        
+    <span class="k">if</span> <span class="p">(</span><span class="n">o_media_pkt_ptr</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">got_Picture</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">m_enc_frame</span><span class="p">.</span><span class="n">data_len</span> <span class="o">=</span> <span class="n">enc_pkt</span><span class="p">.</span><span class="n">size</span><span class="p">;</span>
+            <span class="n">m_enc_frame</span><span class="p">.</span><span class="n">key_frame_flag</span> <span class="o">=</span> <span class="n">enc_pkt</span><span class="p">.</span><span class="n">flags</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">m_callBack_ptr</span><span class="p">)</span>
+                <span class="n">m_callBack_ptr</span><span class="o">-&gt;</span><span class="n">OnEncodeCallBack</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_enc_frame</span><span class="p">,</span> <span class="n">m_enc_props</span><span class="p">.</span><span class="n">userdata</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+            <span class="n">m_enc_frame</span><span class="p">.</span><span class="n">data_len</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">got_Picture</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">o_media_pkt_ptr</span><span class="o">-&gt;</span><span class="n">key_frame_flag</span> <span class="o">=</span> <span class="n">enc_pkt</span><span class="p">.</span><span class="n">flags</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="n">o_media_pkt_ptr</span><span class="o">-&gt;</span><span class="n">data_len</span> <span class="o">=</span> <span class="n">enc_pkt</span><span class="p">.</span><span class="n">size</span><span class="p">;</span>
+            <span class="n">memcpy</span><span class="p">(</span><span class="n">o_media_pkt_ptr</span><span class="o">-&gt;</span><span class="n">frame_data_ptr</span><span class="p">,</span> <span class="n">enc_pkt</span><span class="p">.</span><span class="n">data</span><span class="p">,</span> <span class="n">enc_pkt</span><span class="p">.</span><span class="n">size</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="n">o_media_pkt_ptr</span><span class="o">-&gt;</span><span class="n">data_len</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="n">av_packet_unref</span><span class="p">(</span><span class="o">&amp;</span><span class="n">enc_pkt</span><span class="p">);</span>
+            <span class="k">return</span> <span class="n">EM_RC_ENC_ERR</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">av_packet_unref</span><span class="p">(</span><span class="o">&amp;</span><span class="n">enc_pkt</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*******************************************************************************</span>
+<span class="cm">* 描  述: 反初始化编码器</span>
+<span class="cm">* 参  数: 无</span>
+<span class="cm">* 返回值: 成功：enumRC_OK  失败：XX</span>
+<span class="cm">* 时  间: 2015年10月31日</span>
+<span class="cm">* 作  者: Arthur</span>
+<span class="cm">********************************************************************************/</span>
+<span class="n">ERetCode</span> <span class="n">EncodeVideo</span><span class="o">::</span><span class="n">DestroyEncoder</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">m_is_inited</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">EM_RC_ENC_UNINIT_ERR</span><span class="p">;</span>
+
+    <span class="n">StopThread</span><span class="p">();</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_codec_ctx_ptr</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">avcodec_close</span><span class="p">(</span><span class="n">m_codec_ctx_ptr</span><span class="p">);</span>
+        <span class="n">avcodec_free_context</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_codec_ctx_ptr</span><span class="p">);</span>
+        <span class="n">m_codec_ctx_ptr</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_frame_buffer_ptr</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">av_free</span><span class="p">(</span><span class="n">m_frame_buffer_ptr</span><span class="p">);</span>
+        <span class="n">m_frame_buffer_ptr</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_frame_ptr</span><span class="p">)</span>
+        <span class="n">av_frame_free</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_frame_ptr</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_enc_frame</span><span class="p">.</span><span class="n">frame_data_ptr</span><span class="p">)</span>
+        <span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">m_enc_frame</span><span class="p">.</span><span class="n">frame_data_ptr</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_yuv_frame</span><span class="p">.</span><span class="n">frame_data_ptr</span><span class="p">)</span>
+        <span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">m_yuv_frame</span><span class="p">.</span><span class="n">frame_data_ptr</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_buffer_ptr</span><span class="p">)</span>
+        <span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">m_buffer_ptr</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_media_tool_ptr</span><span class="p">)</span>
+        <span class="n">SAFE_DELETE</span><span class="p">(</span><span class="n">m_media_tool_ptr</span><span class="p">);</span>
+
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Destroy Encoder [%d]&quot;</span><span class="p">,</span> <span class="n">m_enc_props</span><span class="p">.</span><span class="n">userdata</span><span class="p">);</span>
+
+    <span class="n">m_is_inited</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">m_enc_count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：设置编码数据回调对象</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">ERetCode</span> <span class="n">EncodeVideo</span><span class="o">::</span><span class="n">SetEncDataCallBack</span><span class="p">(</span><span class="n">IVCallBack</span><span class="o">*</span> <span class="n">i_callback_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">m_callBack_ptr</span> <span class="o">=</span> <span class="n">i_callback_ptr</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述： 设置输入源， 如果已存在，会覆盖原有的输入源</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">ERetCode</span> <span class="n">EncodeVideo</span><span class="o">::</span><span class="n">SetDataSource</span><span class="p">(</span><span class="n">ISource</span><span class="o">*</span> <span class="n">i_source_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">m_source_ptr</span> <span class="o">=</span> <span class="n">i_source_ptr</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：编码器线程</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">ERetCode</span> <span class="n">EncodeVideo</span><span class="o">::</span><span class="n">ThreadFuncProc</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">loop_num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">buffer_ptr</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+    <span class="kt">uint64_t</span> <span class="n">tick</span> <span class="o">=</span> <span class="n">stGetCurrentMicroSecond</span><span class="p">();</span>
+    <span class="kt">uint64_t</span> <span class="n">frame_timestamp</span> <span class="o">=</span> <span class="n">COMMON_TICK_BASE</span> <span class="o">/</span> <span class="n">COMMON_DEFAULT_FPS</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_enc_props</span><span class="p">.</span><span class="n">fps</span><span class="p">)</span>
+        <span class="n">frame_timestamp</span> <span class="o">=</span> <span class="n">COMMON_TICK_BASE</span> <span class="o">/</span> <span class="n">m_enc_props</span><span class="p">.</span><span class="n">fps</span><span class="p">;</span>
+
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Start EncodeThread[%d]&quot;</span><span class="p">,</span> <span class="n">m_enc_props</span><span class="p">.</span><span class="n">userdata</span><span class="p">);</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">m_exit_code</span> <span class="o">==</span> <span class="n">EM_TS_RUN</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">m_source_ptr</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">usleep</span><span class="p">(</span><span class="n">COMMON_TICK_SECOND</span><span class="p">);</span>
+            <span class="k">continue</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="n">VideoSrcImage</span> <span class="n">image_ptr</span> <span class="o">=</span> <span class="n">m_source_ptr</span><span class="o">-&gt;</span><span class="n">GetReadyImage</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_yuv_frame</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">image_ptr</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">usleep</span><span class="p">(</span><span class="mi">10</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">);</span>
+            <span class="k">continue</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">m_yuv_frame</span><span class="p">.</span><span class="n">width</span> <span class="o">!=</span> <span class="n">m_enc_props</span><span class="p">.</span><span class="n">encode_size</span><span class="p">.</span><span class="n">width</span> <span class="o">||</span> <span class="n">m_yuv_frame</span><span class="p">.</span><span class="n">height</span> <span class="o">!=</span> <span class="n">m_enc_props</span><span class="p">.</span><span class="n">encode_size</span><span class="p">.</span><span class="n">height</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">m_media_tool_ptr</span><span class="o">-&gt;</span><span class="n">DirectVideoScale</span><span class="p">(</span><span class="n">m_yuv_frame</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">m_yuv_frame</span><span class="p">.</span><span class="n">height</span><span class="p">,</span> <span class="n">m_yuv_frame</span><span class="p">.</span><span class="n">frame_data_ptr</span><span class="p">,</span>
+                <span class="n">m_enc_props</span><span class="p">.</span><span class="n">encode_size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">m_enc_props</span><span class="p">.</span><span class="n">encode_size</span><span class="p">.</span><span class="n">height</span><span class="p">,</span> <span class="n">m_buffer_ptr</span><span class="p">);</span>
+            <span class="n">buffer_ptr</span> <span class="o">=</span> <span class="n">m_buffer_ptr</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+            <span class="n">buffer_ptr</span> <span class="o">=</span> <span class="n">m_yuv_frame</span><span class="p">.</span><span class="n">frame_data_ptr</span><span class="p">;</span>
+
+        <span class="n">EncodeData</span><span class="p">(</span><span class="n">buffer_ptr</span><span class="p">,</span> <span class="n">m_enc_props</span><span class="p">.</span><span class="n">encode_size</span><span class="p">.</span><span class="n">width</span> <span class="o">*</span> <span class="n">m_enc_props</span><span class="p">.</span><span class="n">encode_size</span><span class="p">.</span><span class="n">height</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+
+        <span class="n">loop_num</span><span class="o">++</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">stGetCurrentMicroSecond</span><span class="p">()</span> <span class="o">-</span> <span class="n">tick</span> <span class="o">&lt;</span> <span class="n">loop_num</span> <span class="o">*</span> <span class="n">frame_timestamp</span><span class="p">)</span>
+            <span class="n">usleep</span><span class="p">(</span><span class="n">COMMON_TICK_SECOND</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">m_exit_code</span> <span class="o">=</span> <span class="n">EM_TS_STOP</span><span class="p">;</span>
+    <span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Stop EncodeThread[%ld]&quot;</span><span class="p">,</span> <span class="n">m_enc_props</span><span class="p">.</span><span class="n">userdata</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">EM_RC_OK</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</body>
+</html>

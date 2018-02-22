@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #333333 }
+body  { background: #111111; color: #ffffff }
+body .c { color: #008800; font-style: italic; background-color: #0f140f } /* Comment */
+body .err { color: #ffffff } /* Error */
+body .esc { color: #ffffff } /* Escape */
+body .g { color: #ffffff } /* Generic */
+body .k { color: #fb660a; font-weight: bold } /* Keyword */
+body .l { color: #ffffff } /* Literal */
+body .n { color: #ffffff } /* Name */
+body .o { color: #ffffff } /* Operator */
+body .x { color: #ffffff } /* Other */
+body .p { color: #ffffff } /* Punctuation */
+body .ch { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Hashbang */
+body .cm { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Multiline */
+body .cp { color: #ff0007; font-weight: bold; font-style: italic; background-color: #0f140f } /* Comment.Preproc */
+body .cpf { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.PreprocFile */
+body .c1 { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Single */
+body .cs { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Special */
+body .gd { color: #ffffff } /* Generic.Deleted */
+body .ge { color: #ffffff } /* Generic.Emph */
+body .gr { color: #ffffff } /* Generic.Error */
+body .gh { color: #ffffff; font-weight: bold } /* Generic.Heading */
+body .gi { color: #ffffff } /* Generic.Inserted */
+body .go { color: #444444; background-color: #222222 } /* Generic.Output */
+body .gp { color: #ffffff } /* Generic.Prompt */
+body .gs { color: #ffffff } /* Generic.Strong */
+body .gu { color: #ffffff; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #ffffff } /* Generic.Traceback */
+body .kc { color: #fb660a; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #fb660a; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #fb660a; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #fb660a } /* Keyword.Pseudo */
+body .kr { color: #fb660a; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #cdcaa9; font-weight: bold } /* Keyword.Type */
+body .ld { color: #ffffff } /* Literal.Date */
+body .m { color: #0086f7; font-weight: bold } /* Literal.Number */
+body .s { color: #0086d2 } /* Literal.String */
+body .na { color: #ff0086; font-weight: bold } /* Name.Attribute */
+body .nb { color: #ffffff } /* Name.Builtin */
+body .nc { color: #ffffff } /* Name.Class */
+body .no { color: #0086d2 } /* Name.Constant */
+body .nd { color: #ffffff } /* Name.Decorator */
+body .ni { color: #ffffff } /* Name.Entity */
+body .ne { color: #ffffff } /* Name.Exception */
+body .nf { color: #ff0086; font-weight: bold } /* Name.Function */
+body .nl { color: #ffffff } /* Name.Label */
+body .nn { color: #ffffff } /* Name.Namespace */
+body .nx { color: #ffffff } /* Name.Other */
+body .py { color: #ffffff } /* Name.Property */
+body .nt { color: #fb660a; font-weight: bold } /* Name.Tag */
+body .nv { color: #fb660a } /* Name.Variable */
+body .ow { color: #ffffff } /* Operator.Word */
+body .w { color: #888888 } /* Text.Whitespace */
+body .mb { color: #0086f7; font-weight: bold } /* Literal.Number.Bin */
+body .mf { color: #0086f7; font-weight: bold } /* Literal.Number.Float */
+body .mh { color: #0086f7; font-weight: bold } /* Literal.Number.Hex */
+body .mi { color: #0086f7; font-weight: bold } /* Literal.Number.Integer */
+body .mo { color: #0086f7; font-weight: bold } /* Literal.Number.Oct */
+body .sa { color: #0086d2 } /* Literal.String.Affix */
+body .sb { color: #0086d2 } /* Literal.String.Backtick */
+body .sc { color: #0086d2 } /* Literal.String.Char */
+body .dl { color: #0086d2 } /* Literal.String.Delimiter */
+body .sd { color: #0086d2 } /* Literal.String.Doc */
+body .s2 { color: #0086d2 } /* Literal.String.Double */
+body .se { color: #0086d2 } /* Literal.String.Escape */
+body .sh { color: #0086d2 } /* Literal.String.Heredoc */
+body .si { color: #0086d2 } /* Literal.String.Interpol */
+body .sx { color: #0086d2 } /* Literal.String.Other */
+body .sr { color: #0086d2 } /* Literal.String.Regex */
+body .s1 { color: #0086d2 } /* Literal.String.Single */
+body .ss { color: #0086d2 } /* Literal.String.Symbol */
+body .bp { color: #ffffff } /* Name.Builtin.Pseudo */
+body .fm { color: #ff0086; font-weight: bold } /* Name.Function.Magic */
+body .vc { color: #fb660a } /* Name.Variable.Class */
+body .vg { color: #fb660a } /* Name.Variable.Global */
+body .vi { color: #fb660a } /* Name.Variable.Instance */
+body .vm { color: #fb660a } /* Name.Variable.Magic */
+body .il { color: #0086f7; font-weight: bold } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="cm">/* </span>
+<span class="cm"> * h264bitstream - a library for reading and writing H.264 video</span>
+<span class="cm"> * Copyright (C) 2005-2007 Auroras Entertainment, LLC</span>
+<span class="cm"> * Copyright (C) 2008-2011 Avail-TVN</span>
+<span class="cm"> * </span>
+<span class="cm"> * Written by Alex Izvorski &lt;aizvorski@gmail.com&gt; and Alex Giladi &lt;alex.giladi@gmail.com&gt;</span>
+<span class="cm"> * </span>
+<span class="cm"> * This library is free software; you can redistribute it and/or</span>
+<span class="cm"> * modify it under the terms of the GNU Lesser General Public</span>
+<span class="cm"> * License as published by the Free Software Foundation; either</span>
+<span class="cm"> * version 2.1 of the License, or (at your option) any later version.</span>
+<span class="cm"> * </span>
+<span class="cm"> * This library is distributed in the hope that it will be useful,</span>
+<span class="cm"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="cm"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</span>
+<span class="cm"> * Lesser General Public License for more details.</span>
+<span class="cm"> * </span>
+<span class="cm"> * You should have received a copy of the GNU Lesser General Public</span>
+<span class="cm"> * License along with this library; if not, write to the Free Software</span>
+<span class="cm"> * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA</span>
+<span class="cm"> */</span>
+
+<span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt; // malloc</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string.h&gt; // memset</span><span class="cp"></span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;vamedia_bitstream.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;vamedia_stream_h264.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;vamedia_sei_h264.h&quot;</span><span class="cp"></span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：SEI信息分配</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="n">SEI</span><span class="o">*</span> <span class="nf">NewSEI</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">SEI</span><span class="o">*</span> <span class="n">s</span> <span class="o">=</span> <span class="p">(</span><span class="n">SEI</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">SEI</span><span class="p">));</span>
+    <span class="n">memset</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">SEI</span><span class="p">));</span>
+    <span class="n">s</span><span class="o">-&gt;</span><span class="n">payload_ptr</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">s</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：释放SEI信息</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="kt">void</span> <span class="nf">FreeSEI</span><span class="p">(</span><span class="n">SEI</span><span class="o">*</span> <span class="n">s_ptr</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="n">s_ptr</span><span class="o">-&gt;</span><span class="n">payload_ptr</span> <span class="o">!=</span> <span class="nb">NULL</span> <span class="p">)</span> <span class="n">free</span><span class="p">(</span><span class="n">s_ptr</span><span class="o">-&gt;</span><span class="n">payload_ptr</span><span class="p">);</span>
+    <span class="n">free</span><span class="p">(</span><span class="n">s_ptr</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：读取SEI位信息</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="kt">void</span> <span class="nf">ReadSEIEndBits</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h_ptr</span><span class="p">,</span> <span class="n">BS</span><span class="o">*</span> <span class="n">b_ptr</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// if the message doesn&#39;t end at a byte border</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="n">BSByteAligned</span><span class="p">(</span> <span class="n">b_ptr</span> <span class="p">)</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="n">BSReadU1</span><span class="p">(</span> <span class="n">b_ptr</span> <span class="p">)</span> <span class="p">)</span> <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">&quot;WARNING: bit_equal_to_one is 0!!!!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="k">while</span> <span class="p">(</span> <span class="o">!</span> <span class="n">BSByteAligned</span><span class="p">(</span> <span class="n">b_ptr</span> <span class="p">)</span> <span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span> <span class="n">BSReadU1</span><span class="p">(</span> <span class="n">b_ptr</span> <span class="p">)</span> <span class="p">)</span> <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">&quot;WARNING: bit_equal_to_zero is 1!!!!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">ReadRBSPTrailingBits</span><span class="p">(</span><span class="n">h_ptr</span><span class="p">,</span> <span class="n">b_ptr</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// D.1 SEI payload syntax</span>
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：读取SEI负载信息</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="kt">void</span> <span class="nf">ReadSEIPayload</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h_ptr</span><span class="p">,</span> <span class="n">BS</span><span class="o">*</span> <span class="n">b_ptr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">payload_type</span><span class="p">,</span> <span class="kt">int</span> <span class="n">payload_size</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">SEI</span><span class="o">*</span> <span class="n">s_ptr</span> <span class="o">=</span> <span class="n">h_ptr</span><span class="o">-&gt;</span><span class="n">sei</span><span class="p">;</span>
+    <span class="n">s_ptr</span><span class="o">-&gt;</span><span class="n">payload_ptr</span> <span class="o">=</span> <span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">payload_size</span><span class="p">);</span>
+
+    <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">payload_size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span>
+        <span class="n">s_ptr</span><span class="o">-&gt;</span><span class="n">payload_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">BSReadU</span><span class="p">(</span><span class="n">b_ptr</span><span class="p">,</span> <span class="mi">8</span><span class="p">);</span>
+        
+    <span class="n">ReadSEIEndBits</span><span class="p">(</span><span class="n">h_ptr</span><span class="p">,</span> <span class="n">b_ptr</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// D.1 SEI payload syntax</span>
+<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">* 描  述：写SEI位信息</span>
+<span class="cm">* 参  数：</span>
+<span class="cm">* 返回值：0 成功/非0 失败</span>
+<span class="cm">-----------------------------------------------------------------------------*/</span>
+<span class="kt">void</span> <span class="nf">WriteSEIPayload</span><span class="p">(</span><span class="n">H264Stream</span><span class="o">*</span> <span class="n">h_ptr</span><span class="p">,</span> <span class="n">BS</span><span class="o">*</span> <span class="n">b_ptr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">payload_type</span><span class="p">,</span> <span class="kt">int</span> <span class="n">payload_size</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">SEI</span><span class="o">*</span> <span class="n">s</span> <span class="o">=</span> <span class="n">h_ptr</span><span class="o">-&gt;</span><span class="n">sei</span><span class="p">;</span>
+
+    <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">s</span><span class="o">-&gt;</span><span class="n">payload_size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span>
+        <span class="n">BSWriteU</span><span class="p">(</span><span class="n">b_ptr</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="n">s</span><span class="o">-&gt;</span><span class="n">payload_ptr</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="p">}</span>
+</pre></div>
+</body>
+</html>

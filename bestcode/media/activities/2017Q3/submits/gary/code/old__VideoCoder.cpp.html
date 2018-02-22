@@ -1,0 +1,441 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #333333 }
+body  { background: #111111; color: #ffffff }
+body .c { color: #008800; font-style: italic; background-color: #0f140f } /* Comment */
+body .err { color: #ffffff } /* Error */
+body .esc { color: #ffffff } /* Escape */
+body .g { color: #ffffff } /* Generic */
+body .k { color: #fb660a; font-weight: bold } /* Keyword */
+body .l { color: #ffffff } /* Literal */
+body .n { color: #ffffff } /* Name */
+body .o { color: #ffffff } /* Operator */
+body .x { color: #ffffff } /* Other */
+body .p { color: #ffffff } /* Punctuation */
+body .ch { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Hashbang */
+body .cm { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Multiline */
+body .cp { color: #ff0007; font-weight: bold; font-style: italic; background-color: #0f140f } /* Comment.Preproc */
+body .cpf { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.PreprocFile */
+body .c1 { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Single */
+body .cs { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Special */
+body .gd { color: #ffffff } /* Generic.Deleted */
+body .ge { color: #ffffff } /* Generic.Emph */
+body .gr { color: #ffffff } /* Generic.Error */
+body .gh { color: #ffffff; font-weight: bold } /* Generic.Heading */
+body .gi { color: #ffffff } /* Generic.Inserted */
+body .go { color: #444444; background-color: #222222 } /* Generic.Output */
+body .gp { color: #ffffff } /* Generic.Prompt */
+body .gs { color: #ffffff } /* Generic.Strong */
+body .gu { color: #ffffff; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #ffffff } /* Generic.Traceback */
+body .kc { color: #fb660a; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #fb660a; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #fb660a; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #fb660a } /* Keyword.Pseudo */
+body .kr { color: #fb660a; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #cdcaa9; font-weight: bold } /* Keyword.Type */
+body .ld { color: #ffffff } /* Literal.Date */
+body .m { color: #0086f7; font-weight: bold } /* Literal.Number */
+body .s { color: #0086d2 } /* Literal.String */
+body .na { color: #ff0086; font-weight: bold } /* Name.Attribute */
+body .nb { color: #ffffff } /* Name.Builtin */
+body .nc { color: #ffffff } /* Name.Class */
+body .no { color: #0086d2 } /* Name.Constant */
+body .nd { color: #ffffff } /* Name.Decorator */
+body .ni { color: #ffffff } /* Name.Entity */
+body .ne { color: #ffffff } /* Name.Exception */
+body .nf { color: #ff0086; font-weight: bold } /* Name.Function */
+body .nl { color: #ffffff } /* Name.Label */
+body .nn { color: #ffffff } /* Name.Namespace */
+body .nx { color: #ffffff } /* Name.Other */
+body .py { color: #ffffff } /* Name.Property */
+body .nt { color: #fb660a; font-weight: bold } /* Name.Tag */
+body .nv { color: #fb660a } /* Name.Variable */
+body .ow { color: #ffffff } /* Operator.Word */
+body .w { color: #888888 } /* Text.Whitespace */
+body .mb { color: #0086f7; font-weight: bold } /* Literal.Number.Bin */
+body .mf { color: #0086f7; font-weight: bold } /* Literal.Number.Float */
+body .mh { color: #0086f7; font-weight: bold } /* Literal.Number.Hex */
+body .mi { color: #0086f7; font-weight: bold } /* Literal.Number.Integer */
+body .mo { color: #0086f7; font-weight: bold } /* Literal.Number.Oct */
+body .sa { color: #0086d2 } /* Literal.String.Affix */
+body .sb { color: #0086d2 } /* Literal.String.Backtick */
+body .sc { color: #0086d2 } /* Literal.String.Char */
+body .dl { color: #0086d2 } /* Literal.String.Delimiter */
+body .sd { color: #0086d2 } /* Literal.String.Doc */
+body .s2 { color: #0086d2 } /* Literal.String.Double */
+body .se { color: #0086d2 } /* Literal.String.Escape */
+body .sh { color: #0086d2 } /* Literal.String.Heredoc */
+body .si { color: #0086d2 } /* Literal.String.Interpol */
+body .sx { color: #0086d2 } /* Literal.String.Other */
+body .sr { color: #0086d2 } /* Literal.String.Regex */
+body .s1 { color: #0086d2 } /* Literal.String.Single */
+body .ss { color: #0086d2 } /* Literal.String.Symbol */
+body .bp { color: #ffffff } /* Name.Builtin.Pseudo */
+body .fm { color: #ff0086; font-weight: bold } /* Name.Function.Magic */
+body .vc { color: #fb660a } /* Name.Variable.Class */
+body .vg { color: #fb660a } /* Name.Variable.Global */
+body .vi { color: #fb660a } /* Name.Variable.Instance */
+body .vm { color: #fb660a } /* Name.Variable.Magic */
+body .il { color: #0086f7; font-weight: bold } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;StdAfxWV.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;VideoCoder.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;VideoEncoder.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;VideoDecoder.h&quot;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">WVideo</span><span class="p">;</span> <span class="c1">//NOLINT</span>
+
+<span class="cp">#if USE_MSWMV9ENC</span>
+ 	<span class="cp">#include</span> <span class="cpf">&quot;videoencoderwmv9.h&quot;</span><span class="cp"></span>
+<span class="cp">#endif</span>
+<span class="cp">#if USE_MSWMV9DEC</span>
+	<span class="cp">#include</span> <span class="cpf">&quot;videodecoderwmv9.h&quot;</span><span class="cp"></span>
+<span class="cp">#endif</span>
+<span class="cp">#if USE_XVIDCODEC</span>
+	<span class="cp">#include</span> <span class="cpf">&quot;XvidConfig.h&quot;</span><span class="cp"></span>
+	<span class="cp">#include</span> <span class="cpf">&quot;VideoEncoderXvid.h&quot;</span><span class="cp"></span>
+    <span class="n">CXvidConfig</span>	<span class="n">g_XvidConfig</span><span class="p">;</span>
+<span class="cp">#endif</span>
+<span class="cp">#if USE_DIVXCODEC</span>
+    <span class="cp">#include</span> <span class="cpf">&quot;videodecoderdivx.h&quot;</span><span class="cp"></span>
+	<span class="cp">#include</span> <span class="cpf">&quot;videoencoderdivx.h&quot;</span><span class="cp"></span>
+	<span class="cp">#include</span> <span class="cpf">&quot;DivxConfig.h&quot;</span><span class="cp"></span>
+	<span class="n">CDivxConfig</span> <span class="n">g_DivxConfig</span><span class="p">;</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#if USE_VPXVP9CODEC</span>
+<span class="cp">#include</span> <span class="cpf">&quot;VideoEncoderVP9.h&quot;</span><span class="cp"></span>
+<span class="cp">#endif</span>
+<span class="cp">#if USE_VPXVP8ENC</span>
+<span class="cp">#include</span> <span class="cpf">&quot;VideoEncoderVP8.h&quot;</span><span class="cp"></span>
+<span class="cp">#endif</span>
+
+<span class="cp">#if USE_VPXVP9CODEC || USE_VPXVP8ENC || USE_VPXVP8DEC</span>
+<span class="cp">#include</span> <span class="cpf">&quot;VP8Config.h&quot;</span><span class="cp"></span>
+<span class="n">CVP8Config</span>	<span class="n">g_VP8Config</span><span class="p">;</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#if USE_X264ENC</span>
+<span class="cp">#include</span> <span class="cpf">&quot;VideoEncoderX264.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;H264Config.h&quot;</span><span class="cp"></span>
+<span class="n">CH264Config</span> <span class="n">g_H264Config</span><span class="p">;</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#if USE_H264IOSHDENC</span>
+<span class="cp">#include</span> <span class="cpf">&quot;VideoEncoderH264IOSHD.h&quot;</span><span class="cp"></span>
+<span class="cp">#endif</span>
+
+<span class="cp">#ifdef ANDROID</span>
+<span class="cp">#include</span> <span class="cpf">&quot;VideoEncoderH264AndroidHD.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;VideoDecoderH264AndroidHD.h&quot;</span><span class="cp"></span>
+<span class="cp">#endif</span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;VideoPluginCodecWrap.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;FFDecConfig.h&quot;</span><span class="cp"></span>
+<span class="n">CFFDecConfig</span> <span class="n">g_ffDecConfig</span><span class="p">;</span>
+
+<span class="cp">#ifdef _FS_OS_WIN</span>
+<span class="cp">#include</span> <span class="cpf">&quot;IntelCodecConfig.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;VideoEncoderIntelH264.h&quot;</span><span class="cp"></span>
+<span class="n">CIntelCodecConfig</span> <span class="n">g_IntelCodecConfig</span><span class="p">;</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;HWAccEncodeControl.h&quot;</span><span class="cp"></span>
+<span class="k">static</span> <span class="n">CHWAccEncodeControl</span>	<span class="n">g_hwaccEncodeControl</span><span class="p">;</span>
+
+<span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span> <span class="c1">//NOLINT</span>
+	<span class="kt">int</span>		<span class="n">nCodecID</span><span class="p">;</span>
+	<span class="n">WCHAR</span>   <span class="n">wszCodecName</span><span class="p">[</span><span class="mi">64</span><span class="p">];</span>
+<span class="p">}</span><span class="n">VideoCodecInfo</span><span class="p">;</span>
+
+<span class="k">const</span> <span class="n">VideoCodecInfo</span> <span class="n">g_VideoCodeArray</span><span class="p">[]</span> <span class="o">=</span>
+<span class="p">{</span>
+	<span class="p">{</span> <span class="n">VIDEO_CODEC_DIVX</span><span class="p">,</span> <span class="sa">L</span><span class="s">&quot;Mpeg4 Codec 1&quot;</span> <span class="p">},</span>
+	<span class="p">{</span> <span class="n">VIDEO_CODEC_WMV9</span><span class="p">,</span><span class="sa">L</span><span class="s">&quot;Mpeg4 Codec 2&quot;</span><span class="p">},</span>
+	<span class="p">{</span> <span class="n">VIDEO_CODEC_H264</span><span class="p">,</span><span class="sa">L</span><span class="s">&quot;H264 Codec&quot;</span><span class="p">},</span>
+<span class="c1">//	{ VIDEO_CODEC_H264PLUS,L&quot;H264 Codec Plus&quot;},</span>
+	<span class="p">{</span> <span class="n">VIDEO_CODEC_H264PLUS</span><span class="p">,</span><span class="sa">L</span><span class="s">&quot;TIVC Codec&quot;</span><span class="p">},</span>
+	<span class="p">{</span> <span class="n">VIDEO_CODEC_XVID</span><span class="p">,</span><span class="sa">L</span><span class="s">&quot;XVID Codec&quot;</span><span class="p">},</span>
+	<span class="p">{</span> <span class="n">VIDEO_CODEC_VP8</span><span class="p">,</span><span class="sa">L</span><span class="s">&quot;VP8 Codec&quot;</span><span class="p">},</span>
+	<span class="p">{</span> <span class="n">VIDEO_CODEC_VP9</span><span class="p">,</span><span class="sa">L</span><span class="s">&quot;VP9 Codec&quot;</span><span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">//---------------------</span>
+<span class="c1">//获取编码器个数</span>
+<span class="c1">//---------------------</span>
+<span class="kt">int</span> 	<span class="nf">VIDEO_Codec_GetCount</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="k">return</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">g_VideoCodeArray</span><span class="p">)</span><span class="o">/</span><span class="k">sizeof</span><span class="p">(</span><span class="n">VideoCodecInfo</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//---------------------</span>
+<span class="c1">//获取编码器名称</span>
+<span class="c1">//---------------------</span>
+<span class="n">FS_UINT</span>    <span class="nf">VIDEO_Codec_GetInfo</span><span class="p">(</span><span class="kt">int</span> <span class="n">nIndex</span><span class="p">,</span> <span class="n">WCHAR</span> <span class="o">*</span><span class="n">wszName</span><span class="p">,</span> <span class="n">FS_UINT</span> <span class="n">nSize</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">nCodecID</span><span class="p">)</span> <span class="c1">//NOLINT</span>
+<span class="p">{</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">nIndex</span> <span class="o">&gt;=</span> <span class="n">VIDEO_Codec_GetCount</span><span class="p">()</span> <span class="p">)</span>
+		<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	
+	<span class="k">if</span><span class="p">(</span> <span class="n">nSize</span> <span class="o">&lt;=</span> <span class="n">wcslen</span><span class="p">(</span><span class="n">g_VideoCodeArray</span><span class="p">[</span><span class="n">nIndex</span><span class="p">].</span><span class="n">wszCodecName</span><span class="p">))</span>
+		<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	
+	<span class="n">wcscpy</span><span class="p">(</span> <span class="n">wszName</span><span class="p">,</span><span class="n">g_VideoCodeArray</span><span class="p">[</span><span class="n">nIndex</span><span class="p">].</span><span class="n">wszCodecName</span> <span class="p">);</span>
+	<span class="n">nCodecID</span> <span class="o">=</span> <span class="n">g_VideoCodeArray</span><span class="p">[</span><span class="n">nIndex</span><span class="p">].</span><span class="n">nCodecID</span><span class="p">;</span>
+	
+	<span class="k">return</span> <span class="n">wcslen</span><span class="p">(</span> <span class="n">wszName</span> <span class="p">);</span>	
+<span class="p">}</span>
+
+<span class="c1">//---------------------</span>
+<span class="c1">//创建压缩器</span>
+<span class="c1">//EncodeType: 压缩器类型</span>
+<span class="c1">//lpbiIn:压缩前位图格式</span>
+<span class="c1">//Return:压缩器句柄</span>
+<span class="c1">//-------------------</span>
+<span class="n">HANDLE</span>	<span class="nf">VIDEO_Encode_StartCompress</span><span class="p">(</span> <span class="k">const</span> <span class="n">Video_Encoder_Param</span> <span class="o">&amp;</span><span class="n">param</span><span class="p">,</span><span class="k">const</span> <span class="n">BITMAPINFOHEADER</span> <span class="o">&amp;</span><span class="n">biIn</span> <span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">CVideoEncoder</span> <span class="o">*</span><span class="n">pEncoder</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="k">switch</span><span class="p">(</span> <span class="n">param</span><span class="p">.</span><span class="n">nEncoderID</span> <span class="p">)</span> 
+	<span class="p">{</span>
+<span class="cp">#if USE_DIVXCODEC</span>
+	<span class="k">case</span> <span class="nl">VIDEO_CODEC_DIVX</span><span class="p">:</span>
+		<span class="n">pEncoder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CVideoEncoderDivX</span><span class="p">;</span>
+		<span class="k">break</span><span class="p">;</span>
+<span class="cp">#endif</span>
+<span class="cp">#if USE_MSWMV9ENC</span>
+	<span class="k">case</span> <span class="nl">VIDEO_CODEC_WMV9</span><span class="p">:</span>
+		<span class="n">pEncoder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CVideoEncoderWMV9</span><span class="p">;</span>
+		<span class="k">break</span><span class="p">;</span>
+<span class="cp">#endif</span>
+<span class="cp">#if USE_XVIDCODEC</span>
+	<span class="k">case</span> <span class="nl">VIDEO_CODEC_XVID</span><span class="p">:</span>
+		<span class="n">pEncoder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CVideoEncoderXvid</span><span class="p">;</span>
+		<span class="k">break</span><span class="p">;</span>
+<span class="cp">#endif		</span>
+<span class="cp">#if USE_VPXVP8ENC</span>
+	<span class="k">case</span> <span class="nl">VIDEO_CODEC_VP8</span><span class="p">:</span>
+		<span class="n">pEncoder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CVideoEncoderVP8</span><span class="p">;</span>
+		<span class="k">break</span><span class="p">;</span>
+<span class="cp">#endif</span>
+<span class="cp">#if USE_VPXVP9CODEC</span>
+	<span class="k">case</span> <span class="nl">VIDEO_CODEC_VP9</span><span class="p">:</span>
+		<span class="n">pEncoder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CVideoEncoderVP9</span><span class="p">;</span>
+		<span class="k">break</span><span class="p">;</span>
+<span class="cp">#endif</span>
+    <span class="k">case</span> <span class="nl">VIDEO_CODEC_H264</span><span class="p">:</span>
+        <span class="p">{</span>
+<span class="cp">#ifdef _FS_OS_WIN</span>
+			<span class="k">if</span><span class="p">(</span><span class="n">g_IntelCodecConfig</span><span class="p">.</span><span class="n">m_bUsable</span> <span class="o">&amp;&amp;</span> <span class="n">g_hwaccEncodeControl</span><span class="p">.</span><span class="n">IncreaseCurHWAccEncoder</span><span class="p">())</span>
+			<span class="p">{</span>
+				<span class="n">LOG</span><span class="p">(</span><span class="s">&quot;INF:VIDEO_Encode_StartCompress intel hardware encoder create!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+				<span class="n">pEncoder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CVideoEncoderIntelH264</span><span class="p">;</span>
+			<span class="p">}</span>
+<span class="cp">#endif</span>
+<span class="cp">#if USE_H264IOSHDENC</span>
+            <span class="k">extern</span> <span class="kt">double</span> <span class="n">GetIOSSystemVersion</span><span class="p">();</span>
+            <span class="k">extern</span> <span class="kt">bool</span> <span class="n">IsSupportH264HDEnc</span><span class="p">(</span> <span class="kt">int</span> <span class="n">nWidth</span><span class="p">,</span><span class="kt">int</span> <span class="n">nHeight</span> <span class="p">);</span>
+            <span class="k">if</span><span class="p">(</span> <span class="n">IsSupportH264HDEnc</span><span class="p">(</span> <span class="n">biIn</span><span class="p">.</span><span class="n">biWidth</span><span class="p">,</span><span class="n">biIn</span><span class="p">.</span><span class="n">biHeight</span> <span class="p">)</span> <span class="p">){</span>
+                <span class="n">pEncoder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CVideoEncoderH264IOSHD</span><span class="p">;</span>
+            <span class="p">}</span>
+<span class="cp">#endif</span>
+<span class="cp">#ifdef ANDROID</span>
+			<span class="c1">//pEncoder = new CVideoEncoderH264AndroidHD();</span>
+<span class="cp">#endif</span>
+<span class="cp">#if USE_X264ENC</span>
+            <span class="k">if</span><span class="p">(</span> <span class="nb">NULL</span> <span class="o">==</span> <span class="n">pEncoder</span> <span class="p">){</span>
+                <span class="n">pEncoder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CVideoEncoderX264</span><span class="p">;</span>
+            <span class="p">}</span>
+<span class="cp">#endif</span>
+        <span class="p">}</span>
+        <span class="k">break</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">if</span><span class="p">(</span> <span class="o">!</span><span class="n">pEncoder</span> <span class="p">){</span>
+		<span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="k">if</span><span class="p">(</span> <span class="o">!</span><span class="n">pEncoder</span><span class="o">-&gt;</span><span class="n">StartCompress</span><span class="p">(</span> <span class="n">biIn</span><span class="p">,</span><span class="n">param</span> <span class="p">)){</span>
+	
+		<span class="k">delete</span> <span class="n">pEncoder</span><span class="p">;</span>
+		<span class="n">pEncoder</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="cp">#if defined USE_X264ENC &amp;&amp; ( USE_H264IOSHDENC || defined ANDROID )</span>
+		<span class="k">if</span><span class="p">(</span> <span class="n">param</span><span class="p">.</span><span class="n">nEncoderID</span> <span class="o">==</span> <span class="n">VIDEO_CODEC_H264</span> <span class="p">){</span>
+            <span class="n">pEncoder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CVideoEncoderX264</span><span class="p">;</span>
+			<span class="k">if</span><span class="p">(</span> <span class="n">pEncoder</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">pEncoder</span><span class="o">-&gt;</span><span class="n">StartCompress</span><span class="p">(</span> <span class="n">biIn</span><span class="p">,</span><span class="n">param</span> <span class="p">)</span> <span class="p">){</span>
+				<span class="k">delete</span> <span class="n">pEncoder</span><span class="p">;</span>
+				<span class="n">pEncoder</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+<span class="cp">#endif</span>
+	<span class="p">}</span>
+
+	<span class="k">return</span> <span class="p">(</span><span class="n">HANDLE</span><span class="p">)</span><span class="n">pEncoder</span><span class="p">;</span>
+<span class="p">}</span> <span class="c1">//NOLINT</span>
+
+
+<span class="c1">//---------------------</span>
+<span class="c1">//压缩数据</span>
+<span class="c1">//frame：压缩数据包</span>
+<span class="c1">//Return:返回是否成功</span>
+<span class="c1">//----------------------</span>
+<span class="n">BOOL</span>	<span class="nf">VIDEO_Encode_Compress</span><span class="p">(</span><span class="n">HANDLE</span> <span class="n">hEncoder</span><span class="p">,</span> <span class="n">Video_Code_Frame</span> <span class="o">&amp;</span><span class="n">frame</span><span class="p">)</span> <span class="c1">//NOLINT</span>
+<span class="p">{</span>
+	<span class="k">if</span><span class="p">(</span> <span class="o">!</span><span class="n">hEncoder</span> <span class="p">)</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+
+	<span class="n">CVideoEncoder</span> <span class="o">*</span><span class="n">pEncoder</span> <span class="o">=</span> <span class="p">(</span><span class="n">CVideoEncoder</span><span class="o">*</span><span class="p">)</span><span class="n">hEncoder</span><span class="p">;</span>
+	<span class="k">return</span> <span class="n">pEncoder</span><span class="o">-&gt;</span><span class="n">Compress</span><span class="p">(</span> <span class="n">frame</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//--------------------</span>
+<span class="c1">//停止压缩器</span>
+<span class="c1">//hEncoder: 压缩器句柄</span>
+<span class="c1">//--------------------</span>
+<span class="n">VOID</span>	<span class="nf">VIDEO_Encode_StopCompress</span><span class="p">(</span><span class="n">HANDLE</span> <span class="o">&amp;</span><span class="n">hEncoder</span><span class="p">)</span> <span class="c1">//NOLINT</span>
+<span class="p">{</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">hEncoder</span> <span class="p">){</span>
+		<span class="n">CVideoEncoder</span> <span class="o">*</span><span class="n">pEncoder</span> <span class="o">=</span> <span class="p">(</span><span class="n">CVideoEncoder</span><span class="o">*</span><span class="p">)</span><span class="n">hEncoder</span><span class="p">;</span>
+		<span class="n">pEncoder</span><span class="o">-&gt;</span><span class="n">StopCompress</span><span class="p">();</span>
+		<span class="k">if</span><span class="p">(</span><span class="n">pEncoder</span><span class="o">-&gt;</span><span class="n">IsHWAccUsed</span><span class="p">())</span>
+		<span class="p">{</span>
+			<span class="n">g_hwaccEncodeControl</span><span class="p">.</span><span class="n">DecreaseCurHWAccEncoder</span><span class="p">();</span>
+		<span class="p">}</span>
+		<span class="k">delete</span> <span class="n">pEncoder</span><span class="p">;</span>
+		<span class="n">hEncoder</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">VOID</span>	<span class="nf">VIDEO_Encode_SetMaxHWAccEncoder</span><span class="p">(</span><span class="n">DWORD</span> <span class="n">nMax</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">g_hwaccEncodeControl</span><span class="p">.</span><span class="n">SetMaxHWAccEncoder</span><span class="p">(</span><span class="n">nMax</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//---------------------</span>
+<span class="c1">//创建解压器</span>
+<span class="c1">//CodeType:解压器句柄</span>
+<span class="c1">//biOut:解压之后格式</span>
+<span class="c1">//Return: 解压器句柄</span>
+<span class="c1">//---------------------</span>
+<span class="n">HANDLE</span>	<span class="nf">VIDEO_Decode_StartDecompress</span><span class="p">(</span> <span class="kt">int</span> <span class="n">nCodeID</span><span class="p">,</span><span class="k">const</span> <span class="n">BITMAPINFOHEADER</span> <span class="o">&amp;</span><span class="n">biOut</span> <span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">CVideoDecoder</span> <span class="o">*</span><span class="n">pDecoder</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="n">LOG</span><span class="p">(</span><span class="s">&quot;INF:VIDEO_Decode_StartDecompress CodeID[%d].</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">nCodeID</span><span class="p">);</span>
+
+	<span class="k">switch</span><span class="p">(</span> <span class="n">nCodeID</span> <span class="p">)</span> 
+	<span class="p">{</span>
+<span class="cp">#if USE_FFWMV9DEC</span>
+	<span class="k">case</span> <span class="nl">VIDEO_CODEC_WMV9</span><span class="p">:</span>
+	    <span class="n">LOG</span><span class="p">(</span><span class="n">_T</span><span class="p">(</span><span class="s">&quot;INF:VIDEO_Decode_StartDecompress create CVideoDecoderFFWMV9!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">));</span>
+		<span class="n">pDecoder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CVideoDecoderFFWMV9</span><span class="p">;</span>
+		<span class="k">break</span><span class="p">;</span>
+<span class="cp">#endif</span>
+<span class="cp">#if USE_DIVXCODEC</span>
+	<span class="k">case</span> <span class="nl">VIDEO_CODEC_DIVX</span><span class="p">:</span>
+	    <span class="n">LOG</span><span class="p">(</span><span class="s">&quot;INF:VIDEO_Decode_StartDecompress create CVideoDecoderDivX!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+		<span class="n">pDecoder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CVideoDecoderDivX</span><span class="p">;</span>
+		<span class="k">break</span><span class="p">;</span>
+<span class="cp">#endif</span>
+<span class="cp">#if USE_MSWMV9DEC</span>
+	<span class="k">case</span> <span class="nl">VIDEO_CODEC_WMV9</span><span class="p">:</span>
+	    <span class="n">LOG</span><span class="p">(</span><span class="s">&quot;INF:VIDEO_Decode_StartDecompress create CVideoDecoderWMV9!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+		<span class="n">pDecoder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CVideoDecoderWMV9</span><span class="p">;</span>
+		<span class="k">break</span><span class="p">;</span>
+<span class="cp">#endif</span>
+<span class="cp">#if USE_XVIDCODEC</span>
+	<span class="k">case</span> <span class="nl">VIDEO_CODEC_XVID</span><span class="p">:</span>
+	    <span class="n">LOG</span><span class="p">(</span><span class="s">&quot;INF:VIDEO_Decode_StartDecompress create CVideoDecoderXvid!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+		<span class="n">pDecoder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CVideoDecoderXvid</span><span class="p">;</span>
+		<span class="k">break</span><span class="p">;</span>
+<span class="cp">#endif</span>
+<span class="cp">#if USE_VPXVP8DEC</span><span class="c1">//@@@fixme 这里怎么没打开，导致看android黑屏</span>
+	<span class="k">case</span> <span class="nl">VIDEO_CODEC_VP8</span><span class="p">:</span>
+	    <span class="n">LOG</span><span class="p">(</span><span class="s">&quot;INF:VIDEO_Decode_StartDecompress create CVideoDecoderVP8!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+		<span class="n">pDecoder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CVideoDecoderVP8</span><span class="p">;</span>
+		<span class="k">break</span><span class="p">;</span>
+<span class="cp">#endif</span>
+<span class="cp">#if USE_VPXVP9CODEC</span>
+	<span class="k">case</span> <span class="nl">VIDEO_CODEC_VP9</span><span class="p">:</span>
+	    <span class="n">LOG</span><span class="p">(</span><span class="s">&quot;INF:VIDEO_Decode_StartDecompress create CVideoDecoderVP9!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+		<span class="n">pDecoder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CVideoDecoderVP9</span><span class="p">;</span>
+		<span class="k">break</span><span class="p">;</span>
+<span class="cp">#endif</span>
+<span class="cp">#if USE_FFVP8DEC</span>
+    <span class="k">case</span> <span class="nl">VIDEO_CODEC_VP8</span><span class="p">:</span>
+        <span class="n">LOG</span><span class="p">(</span><span class="s">&quot;INF:VIDEO_Decode_StartDecompress create CVideoDecoderFFVP8!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="n">pDecoder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CVideoDecoderFFVP8</span><span class="p">;</span>
+        <span class="k">break</span><span class="p">;</span>
+<span class="cp">#endif</span>
+<span class="cp">#if USE_FFH264DEC</span>
+	<span class="k">case</span> <span class="nl">VIDEO_CODEC_H264</span><span class="p">:</span>
+	<span class="k">case</span> <span class="nl">VIDEO_CODEC_H264PLUS</span><span class="p">:</span>	    
+<span class="cp">#if USE_H264ANDROIDHDDEC</span>
+	    <span class="n">LOG</span><span class="p">(</span><span class="s">&quot;INF:VIDEO_Decode_StartDecompress create CVideoDecoderH264Android!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+	    <span class="n">pDecoder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CVideoDecoderH264Android</span><span class="p">;</span>
+<span class="cp">#else</span>
+	    <span class="n">LOG</span><span class="p">(</span><span class="s">&quot;INF:VIDEO_Decode_StartDecompress create CVideoDecoderFFH264!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+		<span class="n">pDecoder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CVideoDecoderFFH264</span><span class="p">;</span>
+<span class="cp">#endif</span>
+		<span class="k">break</span><span class="p">;</span>
+<span class="cp">#endif</span>
+	<span class="p">}</span>
+
+	<span class="k">if</span><span class="p">(</span> <span class="o">!</span><span class="n">pDecoder</span> <span class="p">)</span>
+	<span class="p">{</span>
+    	<span class="n">LOG</span><span class="p">(</span><span class="s">&quot;ERR:VIDEO_Decode_StartDecompress CodeID[%d] is not support!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">nCodeID</span><span class="p">);</span>
+		<span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="k">if</span><span class="p">(</span> <span class="o">!</span><span class="n">pDecoder</span><span class="o">-&gt;</span><span class="n">StartDecompress</span><span class="p">(</span> <span class="n">biOut</span> <span class="p">))</span>
+	<span class="p">{</span>
+	    <span class="n">LOG</span><span class="p">(</span><span class="s">&quot;ERR:VIDEO_Decode_StartDecompress StartDecompress[%d] Fail!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">nCodeID</span><span class="p">);</span>
+		<span class="k">delete</span> <span class="n">pDecoder</span><span class="p">;</span>
+		<span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="p">(</span><span class="n">HANDLE</span><span class="p">)</span><span class="n">pDecoder</span><span class="p">;</span>
+<span class="p">}</span> <span class="c1">//NOLINT</span>
+
+
+<span class="c1">//-------------------</span>
+<span class="c1">//解压图象</span>
+<span class="c1">//hDecoder:解压器句柄</span>
+<span class="c1">//frame:解压包</span>
+<span class="c1">//Return: 是否解压成功</span>
+<span class="c1">//--------------------</span>
+<span class="n">BOOL</span>	<span class="nf">VIDEO_Decode_Decompress</span><span class="p">(</span><span class="n">HANDLE</span> <span class="n">hDecoder</span><span class="p">,</span> <span class="n">Video_Code_Frame</span> <span class="o">&amp;</span><span class="n">frame</span><span class="p">)</span> <span class="c1">//NOLINT</span>
+<span class="p">{</span>
+	<span class="k">if</span><span class="p">(</span> <span class="o">!</span><span class="n">hDecoder</span> <span class="p">)</span>
+		<span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+
+	<span class="n">CVideoDecoder</span> <span class="o">*</span><span class="n">pDecoder</span> <span class="o">=</span> <span class="p">(</span><span class="n">CVideoDecoder</span><span class="o">*</span><span class="p">)</span><span class="n">hDecoder</span><span class="p">;</span>
+	<span class="k">return</span> <span class="n">pDecoder</span><span class="o">-&gt;</span><span class="n">Decompress</span><span class="p">(</span> <span class="n">frame</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//---------------------</span>
+<span class="c1">//停止压缩器</span>
+<span class="c1">//hDecoder:解压器句柄</span>
+<span class="c1">//--------------------</span>
+<span class="n">VOID</span>	<span class="nf">VIDEO_Decode_StopDecompress</span><span class="p">(</span><span class="n">HANDLE</span> <span class="o">&amp;</span><span class="n">hDecoder</span><span class="p">)</span> <span class="c1">//NOLINT</span>
+<span class="p">{</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">hDecoder</span> <span class="p">){</span>
+		<span class="n">CVideoDecoder</span> <span class="o">*</span><span class="n">pDecoder</span> <span class="o">=</span> <span class="p">(</span><span class="n">CVideoDecoder</span> <span class="o">*</span><span class="p">)</span><span class="n">hDecoder</span><span class="p">;</span>
+		<span class="n">pDecoder</span><span class="o">-&gt;</span><span class="n">StopDecompress</span><span class="p">();</span>
+		<span class="k">delete</span> <span class="n">pDecoder</span><span class="p">;</span>
+		<span class="n">hDecoder</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</body>
+</html>

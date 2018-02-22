@@ -14,20 +14,29 @@ def submit(request, submit_id):
 	user_submit.save()
 
 	# code description file
-	code_desc_file = models.SubmitFile.objects.filter(submit_id=submit_id).get(submit_file_type__submit_file_type_name='desc')
+	code_desc_file = {}
+	try:
+		code_desc_file = models.SubmitFile.objects.filter(submit_id=submit_id).get(submit_file_type__submit_file_type_name='desc')
+		#code_desc_file = 2
+	except:
+		pass
 
 	# source code files
-	src_code_files = models.SubmitFile.objects.filter(submit_id=submit_id).filter(submit_file_type__submit_file_type_name='code') 
+	src_code_files = []
+	try:
+		src_code_files = models.SubmitFile.objects.filter(submit_id=submit_id).filter(submit_file_type__submit_file_type_name='code') 
+	except:
+		pass
 
 	# code review result file
-	code_review_file = None
+	code_review_file = {}
 	try:
 		code_review_file = models.SubmitFile.objects.filter(submit_id=submit_id).get(submit_file_type__submit_file_type_name='review')
 	except:
 		pass
 
 	# code comment file
-	code_comment_file = None
+	code_comment_file = {}
 	try:
 		code_comment_file = models.SubmitFile.objects.filter(submit_id=submit_id).get(submit_file_type__submit_file_type_name="comment")
 	except:
@@ -36,6 +45,12 @@ def submit(request, submit_id):
 	# breadcrumbs
 	breadcrumbs.JumpTo(request, ('%s的提交' % user_name), request.get_full_path())
 	request.session.modified = True
+
+	# this is a ugly adaption to absolute path and relative path, i just dont want to explain why.
+	if user_submit.activity_user.photo.__str__()[0] != '/':
+		user_submit.activity_user.photo = ("/media/%s" % user_submit.activity_user.photo)
+	if user_submit.submit_reviewer.photo.__str__()[0] != '/':
+		user_submit.submit_reviewer.photo = ("/media/%s" % user_submit.submit_reviewer.photo)
 	
 	context = {
 		'nav_items': breadcrumbs.GetNavItems(request),

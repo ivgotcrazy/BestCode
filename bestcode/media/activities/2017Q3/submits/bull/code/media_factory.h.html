@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #333333 }
+body  { background: #111111; color: #ffffff }
+body .c { color: #008800; font-style: italic; background-color: #0f140f } /* Comment */
+body .err { color: #ffffff } /* Error */
+body .esc { color: #ffffff } /* Escape */
+body .g { color: #ffffff } /* Generic */
+body .k { color: #fb660a; font-weight: bold } /* Keyword */
+body .l { color: #ffffff } /* Literal */
+body .n { color: #ffffff } /* Name */
+body .o { color: #ffffff } /* Operator */
+body .x { color: #ffffff } /* Other */
+body .p { color: #ffffff } /* Punctuation */
+body .ch { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Hashbang */
+body .cm { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Multiline */
+body .cp { color: #ff0007; font-weight: bold; font-style: italic; background-color: #0f140f } /* Comment.Preproc */
+body .cpf { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.PreprocFile */
+body .c1 { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Single */
+body .cs { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Special */
+body .gd { color: #ffffff } /* Generic.Deleted */
+body .ge { color: #ffffff } /* Generic.Emph */
+body .gr { color: #ffffff } /* Generic.Error */
+body .gh { color: #ffffff; font-weight: bold } /* Generic.Heading */
+body .gi { color: #ffffff } /* Generic.Inserted */
+body .go { color: #444444; background-color: #222222 } /* Generic.Output */
+body .gp { color: #ffffff } /* Generic.Prompt */
+body .gs { color: #ffffff } /* Generic.Strong */
+body .gu { color: #ffffff; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #ffffff } /* Generic.Traceback */
+body .kc { color: #fb660a; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #fb660a; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #fb660a; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #fb660a } /* Keyword.Pseudo */
+body .kr { color: #fb660a; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #cdcaa9; font-weight: bold } /* Keyword.Type */
+body .ld { color: #ffffff } /* Literal.Date */
+body .m { color: #0086f7; font-weight: bold } /* Literal.Number */
+body .s { color: #0086d2 } /* Literal.String */
+body .na { color: #ff0086; font-weight: bold } /* Name.Attribute */
+body .nb { color: #ffffff } /* Name.Builtin */
+body .nc { color: #ffffff } /* Name.Class */
+body .no { color: #0086d2 } /* Name.Constant */
+body .nd { color: #ffffff } /* Name.Decorator */
+body .ni { color: #ffffff } /* Name.Entity */
+body .ne { color: #ffffff } /* Name.Exception */
+body .nf { color: #ff0086; font-weight: bold } /* Name.Function */
+body .nl { color: #ffffff } /* Name.Label */
+body .nn { color: #ffffff } /* Name.Namespace */
+body .nx { color: #ffffff } /* Name.Other */
+body .py { color: #ffffff } /* Name.Property */
+body .nt { color: #fb660a; font-weight: bold } /* Name.Tag */
+body .nv { color: #fb660a } /* Name.Variable */
+body .ow { color: #ffffff } /* Operator.Word */
+body .w { color: #888888 } /* Text.Whitespace */
+body .mb { color: #0086f7; font-weight: bold } /* Literal.Number.Bin */
+body .mf { color: #0086f7; font-weight: bold } /* Literal.Number.Float */
+body .mh { color: #0086f7; font-weight: bold } /* Literal.Number.Hex */
+body .mi { color: #0086f7; font-weight: bold } /* Literal.Number.Integer */
+body .mo { color: #0086f7; font-weight: bold } /* Literal.Number.Oct */
+body .sa { color: #0086d2 } /* Literal.String.Affix */
+body .sb { color: #0086d2 } /* Literal.String.Backtick */
+body .sc { color: #0086d2 } /* Literal.String.Char */
+body .dl { color: #0086d2 } /* Literal.String.Delimiter */
+body .sd { color: #0086d2 } /* Literal.String.Doc */
+body .s2 { color: #0086d2 } /* Literal.String.Double */
+body .se { color: #0086d2 } /* Literal.String.Escape */
+body .sh { color: #0086d2 } /* Literal.String.Heredoc */
+body .si { color: #0086d2 } /* Literal.String.Interpol */
+body .sx { color: #0086d2 } /* Literal.String.Other */
+body .sr { color: #0086d2 } /* Literal.String.Regex */
+body .s1 { color: #0086d2 } /* Literal.String.Single */
+body .ss { color: #0086d2 } /* Literal.String.Symbol */
+body .bp { color: #ffffff } /* Name.Builtin.Pseudo */
+body .fm { color: #ff0086; font-weight: bold } /* Name.Function.Magic */
+body .vc { color: #fb660a } /* Name.Variable.Class */
+body .vg { color: #fb660a } /* Name.Variable.Global */
+body .vi { color: #fb660a } /* Name.Variable.Instance */
+body .vm { color: #fb660a } /* Name.Variable.Magic */
+body .il { color: #0086f7; font-weight: bold } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="cm">/*******************************************************************************</span>
+<span class="cm">* 文  件: media_factory.h </span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">* 创  建: 2015年12月07日</span>
+<span class="cm">* 版  权: CopyRight(C) 2015 Fsmeeting.com. All rights reserved.</span>
+<span class="cm">* 描  述: 软件编解码和硬件编解码库接口</span>
+<span class="cm">* 版  本     时间        修改</span>
+<span class="cm">  1.0.0   2015.12.07    原始版本</span>
+<span class="cm">  1.0.1   2016.03.21    VACreateBuffer后，调用VADestroyBuffer不会释放内存，仅在关闭时统一释放;</span>
+<span class="cm">                        避免内存泄漏需要修改为： VACreateBuffer使用NULL指针创建，成功后，使用</span>
+<span class="cm">                        vaMapBuffer来映射内存，使用完后调用vaUnMapBuffer即可释放，同时必须调用</span>
+<span class="cm">                        VADestroyBuffer来关闭Buffer。</span>
+<span class="cm">  1.0.2   2016.06.15    弃用x11启动vaapi，改为drm(为初始化驱动失败导致无法编解码问题)</span>
+<span class="cm">                        显示模块使用libXv，不再使用vaPutSurface</span>
+<span class="cm">  1.0.3   2016.06.23    修改VaBase初始化时调用XOpenDisplay但是未释放，导致的句柄泄漏</span>
+<span class="cm">  1.0.4   2016.07.25    1、增加VARawSource类来管理合成时原始数据的处理；合成修改为异步模式。</span>
+<span class="cm">                        2、弃用VAMedia库的编码合成回调参数， 改为使用回调基类IVACallBack.</span>
+<span class="cm">                        3、合成、编码参数中删除回调函数指针，修改lpoint为uiUserData</span>
+<span class="cm">  1.1.0   2016.09.08    RawSource对象不再每次mapbuffer，获取image内存，使用后再释放。</span>
+<span class="cm">                        改为初始化时map出内存指针，关闭时再释放；</span>
+<span class="cm">                        修改VADestroyImage的参数错误： image_id使用的buffer_id导致内存泄漏的问题</span>
+<span class="cm">  1.2.0   2017.03.02    1、VAMedia可以创建VAHandle，也可以外部传入VAHandle; </span>
+<span class="cm">                           VAMedia内部的各模块都是用VAMedia对象中的VAHandle；</span>
+<span class="cm">                        2、移除VABase基类，改为VADecode(解码基类)/VAEncode(编码基类)</span>
+<span class="cm">                        3、显示类改名为VARenderX11, 支持VADecode解码后直接渲染</span>
+<span class="cm">                        4、VAAdmix中支持传入创建的VADecode对象进行合成</span>
+<span class="cm">  1.3.0    2017.09.25   1.增加软编，软合成和软渲染的处理逻辑</span>
+<span class="cm">********************************************************************************/</span>
+
+<span class="cp">#pragma once</span>
+
+<span class="cm">/**************************** 条件编译选项和头文件 ****************************/</span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;isource.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;iencoder.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;idecoder.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;ivrender.h&quot;</span><span class="cp"></span>
+
+<span class="cm">/********************************** 常量和宏 **********************************/</span>
+
+<span class="cm">/********************************** 数据类型 **********************************/</span>
+
+<span class="cm">/**********************************   变量   **********************************/</span>
+
+<span class="cm">/********************************** 函数声明 **********************************/</span>
+
+<span class="cm">/**********************************  类声明  ***********************************/</span>
+
+<span class="n">class</span> <span class="n">BaseLog</span><span class="p">;</span>
+<span class="n">class</span> <span class="n">MediaFactory</span>
+<span class="p">{</span>
+<span class="nl">public</span><span class="p">:</span> 
+    
+    <span class="n">MediaFactory</span><span class="p">();</span>
+    <span class="o">~</span><span class="n">MediaFactory</span><span class="p">();</span>
+
+<span class="nl">public</span><span class="p">:</span>
+	<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">	* 描  述：初始化媒体工厂，同时初始化VA渲染器相关设备</span>
+<span class="cm">	* 参  数：[in] i_log_ptr 外部日志指针 </span>
+<span class="cm">	* 返回值：0 成功/非0 失败</span>
+<span class="cm">	-----------------------------------------------------------------------------*/</span>
+    <span class="k">static</span> <span class="n">ERetCode</span> <span class="n">InitFactory</span><span class="p">(</span><span class="n">BaseLog</span><span class="o">*</span> <span class="n">i_log_ptr</span> <span class="o">=</span> <span class="n">nullptr</span><span class="p">);</span>
+
+	<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">	* 描  述：反初始化媒体工厂</span>
+<span class="cm">	* 参  数：无</span>
+<span class="cm">	* 返回值：0 成功/非0 失败</span>
+<span class="cm">	-----------------------------------------------------------------------------*/</span>
+    <span class="k">static</span> <span class="n">ERetCode</span> <span class="nf">UnInitFactory</span><span class="p">();</span>
+
+	<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">	* 描  述：创建数据源(根据参数创建软处理源或者硬处理源)</span>
+<span class="cm">	* 参  数：[in] i_src_props_ptr 数据源属性</span>
+<span class="cm">	* 参  数：[out] o_source_ptr   创建的数据源</span>
+<span class="cm">	* 返回值：0 成功/非0 失败</span>
+<span class="cm">	-----------------------------------------------------------------------------*/</span>
+    <span class="k">static</span> <span class="n">ERetCode</span> <span class="nf">CreateSource</span><span class="p">(</span><span class="n">TSourceProps</span><span class="o">*</span> <span class="n">i_src_props_ptr</span><span class="p">,</span> <span class="n">ISource</span><span class="o">**</span> <span class="n">o_source_ptr</span><span class="p">);</span>
+
+	<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">	* 描  述：销数据源</span>
+<span class="cm">	* 参  数：[in] i_source_ptr 待销毁的数据源</span>
+<span class="cm">	* 返回值：0 成功/非0 失败</span>
+<span class="cm">	-----------------------------------------------------------------------------*/</span>
+	<span class="k">static</span> <span class="n">ERetCode</span> <span class="nf">DestroySource</span><span class="p">(</span><span class="n">ISource</span><span class="o">**</span> <span class="n">i_source_ptr</span><span class="p">);</span>
+
+	<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">	* 描  述：创建合成数据源(根据参数创建软处理源或者硬处理源)</span>
+<span class="cm">	* 参  数：[in] i_src_props_ptr       合成数据源属性</span>
+<span class="cm">	* 参  数：[out] o_mixer_source_ptr   创建的合成数据源</span>
+<span class="cm">	* 返回值：0 成功/非0 失败</span>
+<span class="cm">	-----------------------------------------------------------------------------*/</span>
+	<span class="k">static</span> <span class="n">ERetCode</span> <span class="nf">CreateMixerSource</span><span class="p">(</span><span class="n">TSourceProps</span><span class="o">*</span> <span class="n">i_src_props_ptr</span><span class="p">,</span> <span class="n">IMixerSource</span><span class="o">**</span> <span class="n">o_mixer_source_ptr</span><span class="p">);</span>
+
+	<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">	* 描  述：销毁合成数据源</span>
+<span class="cm">	* 参  数：[in] i_mixer_source_ptr 待销毁的合成数据源</span>
+<span class="cm">	* 返回值：0 成功/非0 失败</span>
+<span class="cm">	-----------------------------------------------------------------------------*/</span>
+	<span class="k">static</span> <span class="n">ERetCode</span> <span class="nf">DestroyMixerSource</span><span class="p">(</span><span class="n">IMixerSource</span><span class="o">**</span> <span class="n">i_mixer_source_ptr</span><span class="p">);</span>
+
+	<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">	* 描  述：创建编码器(根据参数创建软编码器或者硬编码器)</span>
+<span class="cm">	* 参  数：[in] i_enc_props_ptr 编码器属性</span>
+<span class="cm">	* 参  数：[out] o_encoder_ptr  创建的编码器</span>
+<span class="cm">	* 返回值：0 成功/非0 失败</span>
+<span class="cm">	-----------------------------------------------------------------------------*/</span>
+    <span class="k">static</span> <span class="n">ERetCode</span> <span class="nf">CreateEncoder</span><span class="p">(</span><span class="n">TEncInfo</span><span class="o">*</span> <span class="n">i_enc_props_ptr</span><span class="p">,</span> <span class="n">IEncoder</span><span class="o">**</span> <span class="n">o_encoder_ptr</span><span class="p">);</span>
+
+	<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">	* 描  述：销毁编码器</span>
+<span class="cm">	* 参  数：[in] i_mixer_source_ptr 待销毁的编码器</span>
+<span class="cm">	* 返回值：0 成功/非0 失败</span>
+<span class="cm">	-----------------------------------------------------------------------------*/</span>
+	<span class="k">static</span> <span class="n">ERetCode</span> <span class="nf">DestroyEncoder</span><span class="p">(</span><span class="n">IEncoder</span> <span class="o">**</span><span class="n">i_encoder_ptr</span><span class="p">);</span>
+
+	<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">	* 描  述：创建解码器</span>
+<span class="cm">	* 参  数：[in] i_dec_props_ptr 解码器的属性</span>
+<span class="cm">	* 参  数：[out] o_decoder_ptr  创建的解码器</span>
+<span class="cm">	* 返回值：0 成功/非0 失败</span>
+<span class="cm">	-----------------------------------------------------------------------------*/</span>
+	<span class="k">static</span> <span class="n">ERetCode</span> <span class="nf">CreateDecoder</span><span class="p">(</span><span class="n">TSourceProps</span><span class="o">*</span> <span class="n">i_dec_props_ptr</span><span class="p">,</span> <span class="n">IDecoder</span><span class="o">**</span> <span class="n">o_decoder_ptr</span><span class="p">);</span>
+
+	<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">	* 描  述：销毁解码器</span>
+<span class="cm">	* 参  数：[in] i_decoder_ptr 待销毁的解码器</span>
+<span class="cm">	* 返回值：0 成功/非0 失败</span>
+<span class="cm">	-----------------------------------------------------------------------------*/</span>
+	<span class="k">static</span> <span class="n">ERetCode</span> <span class="nf">DestroyDecoder</span><span class="p">(</span><span class="n">IDecoder</span><span class="o">**</span> <span class="n">i_decoder_ptr</span><span class="p">);</span>
+
+	<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">	* 描  述：创建渲染器</span>
+<span class="cm">	* 参  数：[in] i_render_props_ptr 渲染器的属性</span>
+<span class="cm">	* 参  数：[out] o_decoder_ptr  创建的渲染器</span>
+<span class="cm">	* 返回值：0 成功/非0 失败</span>
+<span class="cm">	-----------------------------------------------------------------------------*/</span>
+	<span class="k">static</span> <span class="n">ERetCode</span> <span class="nf">CreateRender</span><span class="p">(</span><span class="n">TMediaRenderProps</span><span class="o">*</span> <span class="n">i_render_props_ptr</span><span class="p">,</span> <span class="n">IVRender</span><span class="o">**</span> <span class="n">o_render_ptr</span><span class="p">);</span>
+
+	<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">	* 描  述：销毁渲染器</span>
+<span class="cm">	* 参  数：[in] i_render_ptr 待销毁的渲染器</span>
+<span class="cm">	* 返回值：0 成功/非0 失败</span>
+<span class="cm">	-----------------------------------------------------------------------------*/</span>
+	<span class="k">static</span> <span class="n">ERetCode</span> <span class="nf">DestroyRender</span><span class="p">(</span><span class="n">IVRender</span><span class="o">**</span> <span class="n">i_render_ptr</span><span class="p">);</span>
+    
+<span class="nl">private</span><span class="p">:</span>
+
+    <span class="k">static</span> <span class="kt">uint8_t</span> <span class="n">m_is_create_Log</span><span class="p">;</span>     <span class="c1">// 创建日志标志</span>
+<span class="p">};</span>
+</pre></div>
+</body>
+</html>

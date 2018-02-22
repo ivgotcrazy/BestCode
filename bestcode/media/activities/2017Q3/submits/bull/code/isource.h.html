@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #333333 }
+body  { background: #111111; color: #ffffff }
+body .c { color: #008800; font-style: italic; background-color: #0f140f } /* Comment */
+body .err { color: #ffffff } /* Error */
+body .esc { color: #ffffff } /* Escape */
+body .g { color: #ffffff } /* Generic */
+body .k { color: #fb660a; font-weight: bold } /* Keyword */
+body .l { color: #ffffff } /* Literal */
+body .n { color: #ffffff } /* Name */
+body .o { color: #ffffff } /* Operator */
+body .x { color: #ffffff } /* Other */
+body .p { color: #ffffff } /* Punctuation */
+body .ch { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Hashbang */
+body .cm { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Multiline */
+body .cp { color: #ff0007; font-weight: bold; font-style: italic; background-color: #0f140f } /* Comment.Preproc */
+body .cpf { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.PreprocFile */
+body .c1 { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Single */
+body .cs { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Special */
+body .gd { color: #ffffff } /* Generic.Deleted */
+body .ge { color: #ffffff } /* Generic.Emph */
+body .gr { color: #ffffff } /* Generic.Error */
+body .gh { color: #ffffff; font-weight: bold } /* Generic.Heading */
+body .gi { color: #ffffff } /* Generic.Inserted */
+body .go { color: #444444; background-color: #222222 } /* Generic.Output */
+body .gp { color: #ffffff } /* Generic.Prompt */
+body .gs { color: #ffffff } /* Generic.Strong */
+body .gu { color: #ffffff; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #ffffff } /* Generic.Traceback */
+body .kc { color: #fb660a; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #fb660a; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #fb660a; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #fb660a } /* Keyword.Pseudo */
+body .kr { color: #fb660a; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #cdcaa9; font-weight: bold } /* Keyword.Type */
+body .ld { color: #ffffff } /* Literal.Date */
+body .m { color: #0086f7; font-weight: bold } /* Literal.Number */
+body .s { color: #0086d2 } /* Literal.String */
+body .na { color: #ff0086; font-weight: bold } /* Name.Attribute */
+body .nb { color: #ffffff } /* Name.Builtin */
+body .nc { color: #ffffff } /* Name.Class */
+body .no { color: #0086d2 } /* Name.Constant */
+body .nd { color: #ffffff } /* Name.Decorator */
+body .ni { color: #ffffff } /* Name.Entity */
+body .ne { color: #ffffff } /* Name.Exception */
+body .nf { color: #ff0086; font-weight: bold } /* Name.Function */
+body .nl { color: #ffffff } /* Name.Label */
+body .nn { color: #ffffff } /* Name.Namespace */
+body .nx { color: #ffffff } /* Name.Other */
+body .py { color: #ffffff } /* Name.Property */
+body .nt { color: #fb660a; font-weight: bold } /* Name.Tag */
+body .nv { color: #fb660a } /* Name.Variable */
+body .ow { color: #ffffff } /* Operator.Word */
+body .w { color: #888888 } /* Text.Whitespace */
+body .mb { color: #0086f7; font-weight: bold } /* Literal.Number.Bin */
+body .mf { color: #0086f7; font-weight: bold } /* Literal.Number.Float */
+body .mh { color: #0086f7; font-weight: bold } /* Literal.Number.Hex */
+body .mi { color: #0086f7; font-weight: bold } /* Literal.Number.Integer */
+body .mo { color: #0086f7; font-weight: bold } /* Literal.Number.Oct */
+body .sa { color: #0086d2 } /* Literal.String.Affix */
+body .sb { color: #0086d2 } /* Literal.String.Backtick */
+body .sc { color: #0086d2 } /* Literal.String.Char */
+body .dl { color: #0086d2 } /* Literal.String.Delimiter */
+body .sd { color: #0086d2 } /* Literal.String.Doc */
+body .s2 { color: #0086d2 } /* Literal.String.Double */
+body .se { color: #0086d2 } /* Literal.String.Escape */
+body .sh { color: #0086d2 } /* Literal.String.Heredoc */
+body .si { color: #0086d2 } /* Literal.String.Interpol */
+body .sx { color: #0086d2 } /* Literal.String.Other */
+body .sr { color: #0086d2 } /* Literal.String.Regex */
+body .s1 { color: #0086d2 } /* Literal.String.Single */
+body .ss { color: #0086d2 } /* Literal.String.Symbol */
+body .bp { color: #ffffff } /* Name.Builtin.Pseudo */
+body .fm { color: #ff0086; font-weight: bold } /* Name.Function.Magic */
+body .vc { color: #fb660a } /* Name.Variable.Class */
+body .vg { color: #fb660a } /* Name.Variable.Global */
+body .vi { color: #fb660a } /* Name.Variable.Instance */
+body .vm { color: #fb660a } /* Name.Variable.Magic */
+body .il { color: #0086f7; font-weight: bold } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="cm">/*******************************************************************************</span>
+<span class="cm">* 文  件: isource.h </span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">* 创  建: 17年06月02日</span>
+<span class="cm">* 版  权: CopyRight(C) 2015 Fsmeeting.com. All rights reserved.</span>
+<span class="cm">* 描  述: 输入源抽象类</span>
+<span class="cm">*******************************************************************************/</span>
+
+<span class="cp">#pragma once</span>
+
+<span class="cm">/***************************** 条件编译选项和头文件 *****************************/</span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;media_def.h&quot;</span><span class="cp"></span>
+
+<span class="cm">/*********************************** 常量和宏 **********************************/</span>
+
+<span class="cm">/*********************************** 数据类型 **********************************/</span>
+
+<span class="cm">/*********************************** 变量声明 **********************************/</span>
+
+<span class="cm">/*********************************** 函数声明 **********************************/</span>
+
+<span class="cm">/***********************************  类声明  **********************************/</span>
+
+<span class="n">class</span> <span class="n">ISource</span>
+<span class="p">{</span>
+<span class="nl">public</span><span class="p">:</span>
+    
+    <span class="n">virtual</span> <span class="o">~</span><span class="n">ISource</span><span class="p">(){};</span>
+
+	<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">	* 描  述： 创建数据源对象</span>
+<span class="cm">	* 参  数：[in] i_src_props_ptr 解码器属性</span>
+<span class="cm">	* 返回值：0 成功/非0 失败</span>
+<span class="cm">	-----------------------------------------------------------------------------*/</span>
+    <span class="n">virtual</span> <span class="n">ERetCode</span> <span class="nf">CreateSource</span><span class="p">(</span><span class="n">TSourceProps</span><span class="o">*</span> <span class="n">i_src_props_ptr</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+	<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">	* 描  述： 输入数据</span>
+<span class="cm">	* 参  数：[in] i_src_data_ptr 媒体数据</span>
+<span class="cm">	* 参  数：[in] i_data_len     媒体数据大小</span>
+<span class="cm">	* 返回值：0 成功/非0 失败</span>
+<span class="cm">	-----------------------------------------------------------------------------*/</span>
+    <span class="n">virtual</span> <span class="n">ERetCode</span> <span class="nf">InputSrcData</span><span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span> <span class="n">i_src_data_ptr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_data_len</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        
+	<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">	* 描  述： 销毁源对象</span>
+<span class="cm">	* 参  数：[in] 无</span>
+<span class="cm">	* 返回值：0 成功/非0 失败</span>
+<span class="cm">	-----------------------------------------------------------------------------*/</span>
+    <span class="n">virtual</span> <span class="n">ERetCode</span> <span class="nf">DestroySource</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    
+	<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">	* 描  述： 设置字幕（合成源才会使用此接口）</span>
+<span class="cm">	* 参  数：[in] i_text_info_ptr nullptr表示删除, 反之则添加</span>
+<span class="cm">	* 返回值：0 成功/非0 失败</span>
+<span class="cm">	-----------------------------------------------------------------------------*/</span>
+	<span class="n">virtual</span> <span class="n">ERetCode</span> <span class="nf">SetSubTitle</span><span class="p">(</span><span class="n">TTextInfo</span><span class="o">*</span> <span class="n">i_text_info_ptr</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+	<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">	* 描  述： 设置台标（合成源才会使用此接口）</span>
+<span class="cm">	* 参  数：[in] i_logo_info_ptr nullptr表示删除, 反之则添加</span>
+<span class="cm">	* 返回值：0 成功/非0 失败</span>
+<span class="cm">	-----------------------------------------------------------------------------*/</span>
+	<span class="n">virtual</span> <span class="n">ERetCode</span> <span class="nf">SetLogo</span><span class="p">(</span><span class="n">TLogoInfo</span><span class="o">*</span> <span class="n">i_logo_info_ptr</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+	<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">	* 描  述： 设置特效（合成源才会使用此接口）</span>
+<span class="cm">	* 参  数：[in] i_effect 特效类型</span>
+<span class="cm">	* 返回值：0 成功/非0 失败</span>
+<span class="cm">	-----------------------------------------------------------------------------*/</span>
+    <span class="n">virtual</span> <span class="n">ERetCode</span> <span class="nf">SetEffect</span><span class="p">(</span><span class="n">EEffectType</span> <span class="n">i_effect</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+	<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">	* 描  述： 启动特效（合成源才会使用此接口）</span>
+<span class="cm">	* 参  数：[in] 无</span>
+<span class="cm">	* 返回值：0 成功/非0 失败</span>
+<span class="cm">	-----------------------------------------------------------------------------*/</span>
+    <span class="n">virtual</span> <span class="n">ERetCode</span> <span class="nf">RunEffect</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+	<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">	* 描  述： VAImage锁处理，硬处理源使用</span>
+<span class="cm">	* 参  数：[in] 无</span>
+<span class="cm">	* 返回值：0 成功/非0 失败</span>
+<span class="cm">	-----------------------------------------------------------------------------*/</span>
+    <span class="n">virtual</span> <span class="kt">void</span> <span class="nf">LockReadyImage</span><span class="p">()</span>   <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>    
+
+	<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">	* 描  述： 获取图像数据（o_data_ptr为null时，返回值为VAImage，否则o_data_ptr为YUV数据）</span>
+<span class="cm">	* 参  数：[in] 无</span>
+<span class="cm">	* 返回值：0 成功/非0 失败</span>
+<span class="cm">	-----------------------------------------------------------------------------*/</span>
+	<span class="n">virtual</span> <span class="n">VideoSrcImage</span> <span class="nf">GetReadyImage</span><span class="p">(</span><span class="n">TOutFrame</span><span class="o">*</span> <span class="n">o_data_ptr</span> <span class="o">=</span> <span class="n">nullptr</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+	<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">	* 描  述： VAImage解锁处理，硬处理源使用</span>
+<span class="cm">	* 参  数：[in] 无</span>
+<span class="cm">	* 返回值：0 成功/非0 失败</span>
+<span class="cm">	-----------------------------------------------------------------------------*/</span>
+    <span class="n">virtual</span> <span class="kt">void</span> <span class="nf">UnLockReadyImage</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+	<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">	* 描  述： 注册媒体输出（硬源输出软源数据，软源输出硬源数据）</span>
+<span class="cm">	* 参  数：[in] i_media_mode 媒体模式（资源媒体模式和导播源媒体模式不同才需要使用此接口）</span>
+<span class="cm">	* 返回值：0 成功/非0 失败</span>
+<span class="cm">	-----------------------------------------------------------------------------*/</span>
+	<span class="n">virtual</span> <span class="n">ERetCode</span> <span class="nf">RegisterMediaProc</span><span class="p">(</span><span class="n">EMediaMode</span> <span class="n">i_media_mode</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+	<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">	* 描  述： 设置解码回调</span>
+<span class="cm">	* 参  数：[in] i_callback_ptr  解码回调对象</span>
+<span class="cm">	* 参  数：[in] i_dec_param_ptr 解码参数</span>
+<span class="cm">	* 返回值：0 成功/非0 失败</span>
+<span class="cm">	-----------------------------------------------------------------------------*/</span>
+	<span class="n">virtual</span> <span class="n">ERetCode</span> <span class="nf">SetDecCallBack</span><span class="p">(</span><span class="n">IVCallBack</span><span class="o">*</span> <span class="n">i_callback_ptr</span><span class="p">,</span> <span class="n">TDecOutProps</span><span class="o">*</span> <span class="n">i_dec_param_ptr</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+	<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">	* 描  述： 获取源属性</span>
+<span class="cm">	* 参  数：[in] 无</span>
+<span class="cm">	* 返回值：0 成功/非0 失败</span>
+<span class="cm">	-----------------------------------------------------------------------------*/</span>
+    <span class="n">virtual</span> <span class="n">TSourceProps</span><span class="o">*</span> <span class="nf">GetSrcProps</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span> <span class="n">TProcItem</span>
+<span class="p">{</span>
+    <span class="n">TRect</span>      <span class="n">rect</span><span class="p">;</span>                       <span class="c1">//输出区域</span>
+    <span class="n">ISource</span><span class="o">*</span> <span class="n">source_ptr</span> <span class="o">=</span> <span class="n">nullptr</span><span class="p">;</span>         <span class="c1">//数据源指针</span>
+    <span class="n">EVMixLevel</span> <span class="n">level</span> <span class="o">=</span> <span class="n">EM_VML_NONE</span><span class="p">;</span>        <span class="c1">//层级</span>
+    <span class="kt">int</span>        <span class="n">tile_flag</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>              <span class="c1">// 是否平铺，1表示是，铺满指定位置，0表示保持比例</span>
+<span class="p">};</span>
+
+<span class="n">class</span> <span class="n">ISrcProc</span>
+<span class="p">{</span>    
+<span class="nl">public</span><span class="p">:</span>
+    
+    <span class="n">virtual</span> <span class="o">~</span><span class="n">ISrcProc</span><span class="p">(){};</span>
+
+	<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">	* 描  述：  添加数据源 </span>
+<span class="cm">	* 参  数：[in] i_src_id   源ID</span>
+<span class="cm">	* 参  数：[in] i_item_ptr 源的布局信息</span>
+<span class="cm">	* 返回值：0 成功/非0 失败</span>
+<span class="cm">	-----------------------------------------------------------------------------*/</span>
+    <span class="n">virtual</span> <span class="n">ERetCode</span> <span class="nf">AddSource</span><span class="p">(</span><span class="kt">int</span> <span class="n">i_src_id</span><span class="p">,</span> <span class="n">TProcItem</span><span class="o">*</span> <span class="n">i_item_ptr</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+	<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">	* 描  述：删除输入源</span>
+<span class="cm">	* 参  数：[in] i_src_id   源ID</span>
+<span class="cm">	* 返回值：0 成功/非0 失败</span>
+<span class="cm">	-----------------------------------------------------------------------------*/</span>
+    <span class="n">virtual</span> <span class="n">ERetCode</span> <span class="nf">DelSource</span><span class="p">(</span><span class="kt">int</span> <span class="n">i_src_id</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+	<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">	* 描  述：  修改成员输出位置</span>
+<span class="cm">	* 参  数：[in] i_src_id       源ID</span>
+<span class="cm">	* 参  数：[in] i_out_rect_ptr 源的布局信息</span>
+<span class="cm">	* 返回值：0 成功/非0 失败</span>
+<span class="cm">	-----------------------------------------------------------------------------*/</span>
+	<span class="n">virtual</span> <span class="n">ERetCode</span> <span class="nf">ModifySrcOutRect</span><span class="p">(</span><span class="kt">int</span> <span class="n">i_src_id</span><span class="p">,</span> <span class="n">TRect</span><span class="o">*</span> <span class="n">i_out_rect_ptr</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+	<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">	* 描  述： 修改成员层级</span>
+<span class="cm">	* 参  数：[in] i_src_id       源ID</span>
+<span class="cm">	* 参  数：[in] i_level		  源的层级</span>
+<span class="cm">	* 返回值：0 成功/非0 失败</span>
+<span class="cm">	-----------------------------------------------------------------------------*/</span>
+	<span class="n">virtual</span> <span class="n">ERetCode</span> <span class="nf">ModifySrcLevel</span><span class="p">(</span><span class="kt">int</span> <span class="n">i_src_id</span><span class="p">,</span> <span class="n">EVMixLevel</span> <span class="n">i_level</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+	<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">	* 描  述： 修改输入源</span>
+<span class="cm">	* 参  数：[in] i_src_id       源ID</span>
+<span class="cm">	* 参  数：[in] i_source_ptr	  新的源</span>
+<span class="cm">	* 返回值：0 成功/非0 失败</span>
+<span class="cm">	-----------------------------------------------------------------------------*/</span>
+	<span class="n">virtual</span> <span class="n">ERetCode</span> <span class="nf">ModifySrcSource</span><span class="p">(</span><span class="kt">int</span> <span class="n">i_src_id</span><span class="p">,</span> <span class="n">ISource</span><span class="o">*</span> <span class="n">i_source_ptr</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// 虚拟合成源对象，由IVASource派生类合成，支持添加、删除、修改Source合成属性</span>
+<span class="n">class</span> <span class="nl">IMixerSource</span> <span class="p">:</span> <span class="n">public</span> <span class="n">ISource</span><span class="p">,</span> <span class="n">public</span> <span class="n">ISrcProc</span>
+<span class="p">{</span>
+<span class="nl">public</span><span class="p">:</span>
+	<span class="n">virtual</span> <span class="o">~</span><span class="n">IMixerSource</span><span class="p">(){};</span>
+
+	<span class="cm">/*------------------------------------------------------------------------------</span>
+<span class="cm">	* 描  述： 修改合成的大小</span>
+<span class="cm">	* 参  数：[in] i_size_ptr       合成源大小</span>
+<span class="cm">	* 返回值：0 成功/非0 失败</span>
+<span class="cm">	-----------------------------------------------------------------------------*/</span>
+    <span class="n">virtual</span> <span class="n">ERetCode</span> <span class="nf">ModifyMixerSize</span><span class="p">(</span><span class="n">TSize</span><span class="o">*</span> <span class="n">i_size_ptr</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</body>
+</html>

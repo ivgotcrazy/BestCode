@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #333333 }
+body  { background: #111111; color: #ffffff }
+body .c { color: #008800; font-style: italic; background-color: #0f140f } /* Comment */
+body .err { color: #ffffff } /* Error */
+body .esc { color: #ffffff } /* Escape */
+body .g { color: #ffffff } /* Generic */
+body .k { color: #fb660a; font-weight: bold } /* Keyword */
+body .l { color: #ffffff } /* Literal */
+body .n { color: #ffffff } /* Name */
+body .o { color: #ffffff } /* Operator */
+body .x { color: #ffffff } /* Other */
+body .p { color: #ffffff } /* Punctuation */
+body .ch { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Hashbang */
+body .cm { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Multiline */
+body .cp { color: #ff0007; font-weight: bold; font-style: italic; background-color: #0f140f } /* Comment.Preproc */
+body .cpf { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.PreprocFile */
+body .c1 { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Single */
+body .cs { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Special */
+body .gd { color: #ffffff } /* Generic.Deleted */
+body .ge { color: #ffffff } /* Generic.Emph */
+body .gr { color: #ffffff } /* Generic.Error */
+body .gh { color: #ffffff; font-weight: bold } /* Generic.Heading */
+body .gi { color: #ffffff } /* Generic.Inserted */
+body .go { color: #444444; background-color: #222222 } /* Generic.Output */
+body .gp { color: #ffffff } /* Generic.Prompt */
+body .gs { color: #ffffff } /* Generic.Strong */
+body .gu { color: #ffffff; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #ffffff } /* Generic.Traceback */
+body .kc { color: #fb660a; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #fb660a; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #fb660a; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #fb660a } /* Keyword.Pseudo */
+body .kr { color: #fb660a; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #cdcaa9; font-weight: bold } /* Keyword.Type */
+body .ld { color: #ffffff } /* Literal.Date */
+body .m { color: #0086f7; font-weight: bold } /* Literal.Number */
+body .s { color: #0086d2 } /* Literal.String */
+body .na { color: #ff0086; font-weight: bold } /* Name.Attribute */
+body .nb { color: #ffffff } /* Name.Builtin */
+body .nc { color: #ffffff } /* Name.Class */
+body .no { color: #0086d2 } /* Name.Constant */
+body .nd { color: #ffffff } /* Name.Decorator */
+body .ni { color: #ffffff } /* Name.Entity */
+body .ne { color: #ffffff } /* Name.Exception */
+body .nf { color: #ff0086; font-weight: bold } /* Name.Function */
+body .nl { color: #ffffff } /* Name.Label */
+body .nn { color: #ffffff } /* Name.Namespace */
+body .nx { color: #ffffff } /* Name.Other */
+body .py { color: #ffffff } /* Name.Property */
+body .nt { color: #fb660a; font-weight: bold } /* Name.Tag */
+body .nv { color: #fb660a } /* Name.Variable */
+body .ow { color: #ffffff } /* Operator.Word */
+body .w { color: #888888 } /* Text.Whitespace */
+body .mb { color: #0086f7; font-weight: bold } /* Literal.Number.Bin */
+body .mf { color: #0086f7; font-weight: bold } /* Literal.Number.Float */
+body .mh { color: #0086f7; font-weight: bold } /* Literal.Number.Hex */
+body .mi { color: #0086f7; font-weight: bold } /* Literal.Number.Integer */
+body .mo { color: #0086f7; font-weight: bold } /* Literal.Number.Oct */
+body .sa { color: #0086d2 } /* Literal.String.Affix */
+body .sb { color: #0086d2 } /* Literal.String.Backtick */
+body .sc { color: #0086d2 } /* Literal.String.Char */
+body .dl { color: #0086d2 } /* Literal.String.Delimiter */
+body .sd { color: #0086d2 } /* Literal.String.Doc */
+body .s2 { color: #0086d2 } /* Literal.String.Double */
+body .se { color: #0086d2 } /* Literal.String.Escape */
+body .sh { color: #0086d2 } /* Literal.String.Heredoc */
+body .si { color: #0086d2 } /* Literal.String.Interpol */
+body .sx { color: #0086d2 } /* Literal.String.Other */
+body .sr { color: #0086d2 } /* Literal.String.Regex */
+body .s1 { color: #0086d2 } /* Literal.String.Single */
+body .ss { color: #0086d2 } /* Literal.String.Symbol */
+body .bp { color: #ffffff } /* Name.Builtin.Pseudo */
+body .fm { color: #ff0086; font-weight: bold } /* Name.Function.Magic */
+body .vc { color: #fb660a } /* Name.Variable.Class */
+body .vg { color: #fb660a } /* Name.Variable.Global */
+body .vi { color: #fb660a } /* Name.Variable.Instance */
+body .vm { color: #fb660a } /* Name.Variable.Magic */
+body .il { color: #0086f7; font-weight: bold } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="cm">/*******************************************************************************</span>
+<span class="cm">* 文  件: va_media_define.h </span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">* 创  建: 2015年11月11日</span>
+<span class="cm">* 版  权: CopyRight(C) 2015 Fsmeeting.com. All rights reserved.</span>
+<span class="cm">* 描  述: vamedia的结构、宏定义头文件</span>
+<span class="cm">********************************************************************************/</span>
+
+<span class="cp">#pragma once</span>
+
+<span class="cm">/**************************** 条件编译选项和头文件 ****************************/</span>
+
+<span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;sys/types.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;sys/stat.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;fcntl.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;assert.h&gt;</span><span class="cp"></span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;BaseLog.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;pthread.h&quot;</span><span class="cp"></span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;media_def.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;ConfDefine.h&quot;</span><span class="cp"></span>
+
+<span class="k">extern</span> <span class="s">&quot;C&quot;</span>
+<span class="p">{</span>
+    <span class="cp">#include</span> <span class="cpf">&quot;sysdeps.h&quot;    </span><span class="cp"></span>
+    <span class="cp">#include</span> <span class="cpf">&quot;X11/Xlib.h&quot;</span><span class="cp"></span>
+    <span class="cp">#include</span> <span class="cpf">&quot;va/va.h&quot;</span><span class="cp"></span>
+    <span class="cp">#include</span> <span class="cpf">&quot;va/va_drm.h&quot;</span><span class="cp"></span>
+    <span class="cp">#include</span> <span class="cpf">&quot;va/va_x11.h&quot;    </span><span class="cp"></span>
+    <span class="cp">#include</span> <span class="cpf">&quot;va/va_enc_h264.h&quot;    </span><span class="cp"></span>
+<span class="p">}</span>
+
+<span class="cm">/********************************** 常量和宏 **********************************/</span>
+
+<span class="cp">#ifdef _RBS_OS_LINUX</span>
+<span class="cp">#define CHECK_VASTATUS(va_status,func)                                  \</span>
+<span class="cp">    if (va_status != VA_STATUS_SUCCESS) {                                   \</span>
+<span class="cp">    LOG_ERROR(&quot;%s:%s (%d) failed,return: %d&quot;, __func__, func, __LINE__,va_status); \</span>
+<span class="cp">    return EM_RC_VA_CHECK_ERR;                                                            \</span>
+<span class="cp">    }</span>
+<span class="cp">#else</span>
+<span class="cp">#define CHECK_VASTATUS(va_status,func)                                  \</span>
+<span class="cp">    if (va_status != VA_STATUS_SUCCESS) {                                   \</span>
+<span class="cp">    LOG_ERROR(&quot;%s failed,return&quot;,func); \</span>
+<span class="cp">    return EM_RC_VA_CHECK_ERR;                                                            \</span>
+<span class="cp">    }</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#define		BITSTREAM_ALLOCATE_STEPPING			COMMON_SIZE_4K</span>
+
+<span class="cp">#define PARTITION(ref, field, key, ascending)   \</span>
+<span class="cp">    while (i &lt;= j) {                            \</span>
+<span class="cp">    if (ascending) {                        \</span>
+<span class="cp">    while (ref[i].field &lt; key)          \</span>
+<span class="cp">    i++;                            \</span>
+<span class="cp">    while (ref[j].field &gt; key)          \</span>
+<span class="cp">    j--;                            \</span>
+<span class="cp">    } else {                                \</span>
+<span class="cp">    while (ref[i].field &gt; key)          \</span>
+<span class="cp">    i++;                            \</span>
+<span class="cp">    while (ref[j].field &lt; key)          \</span>
+<span class="cp">    j--;                            \</span>
+<span class="cp">    }                                       \</span>
+<span class="cp">    if (i &lt;= j) {                           \</span>
+<span class="cp">    tmp = ref[i];                       \</span>
+<span class="cp">    ref[i] = ref[j];                    \</span>
+<span class="cp">    ref[j] = tmp;                       \</span>
+<span class="cp">    i++;                                \</span>
+<span class="cp">    j--;                                \</span>
+<span class="cp">    }                                       \</span>
+<span class="cp">    }                                           \</span>
+
+<span class="cp">#define     NAL_REF_IDC_NONE         0</span>
+<span class="cp">#define     NAL_REF_IDC_LOW          1</span>
+<span class="cp">#define     NAL_REF_IDC_MEDIUM       2</span>
+<span class="cp">#define     NAL_REF_IDC_HIGH         3</span>
+
+<span class="cp">#define     NAL_NON_IDR              1</span>
+<span class="cp">#define     NAL_IDR                  5</span>
+<span class="cp">#define     NAL_SPS                  7</span>
+<span class="cp">#define     NAL_PPS                  8</span>
+<span class="cp">#define     NAL_SEI                  6</span>
+
+<span class="cp">#define     SLICE_TYPE_P             0</span>
+<span class="cp">#define     SLICE_TYPE_B             1</span>
+<span class="cp">#define     SLICE_TYPE_I             2</span>
+
+<span class="cp">#define     IS_P_SLICE(type)         (SLICE_TYPE_P == (type))</span>
+<span class="cp">#define     IS_B_SLICE(type)         (SLICE_TYPE_B == (type))</span>
+<span class="cp">#define     IS_I_SLICE(type)         (SLICE_TYPE_I == (type))</span>
+
+<span class="cp">#define     ENTROPY_MODE_CAVLC       0</span>
+<span class="cp">#define     ENTROPY_MODE_CABAC       1</span>
+
+<span class="cp">#define     PROFILE_IDC_BASELINE     66</span>
+<span class="cp">#define     PROFILE_IDC_MAIN         77</span>
+<span class="cp">#define     PROFILE_IDC_HIGH         100</span>
+ 
+<span class="cp">#define     FRAME_P                  0</span>
+<span class="cp">#define     FRAME_B                  1</span>
+<span class="cp">#define     FRAME_I                  2</span>
+<span class="cp">#define     FRAME_IDR                7</span>
+
+<span class="cp">#define     MAX_ENC_FRAMES_NUM       0xfffffff</span>
+
+<span class="cp">#define     MIN(a, b)                ((a)&gt;(b)?(b):(a))</span>
+<span class="cp">#define     MAX(a, b)                ((a)&gt;(b)?(a):(b))</span>
+
+<span class="cp">#define     VA_SOURCE_RING_SIZE      COMMON_SIZE_4</span>
+<span class="cp">#define     VA_SURFACE_SIZE          COMMON_SIZE_16 </span><span class="c1">//  设置为8时，解码失败(无效surface)</span>
+<span class="cp">#define     VA_MAX_SOURCE_COUNT		 COMMON_SIZE_32</span>
+<span class="cp">#define     CURR_SLOT(a)             (a % VA_SURFACE_SIZE)</span>
+
+<span class="cp">#define     SRC_SURFACE_IN_ENCODING  0</span>
+<span class="cp">#define     SRC_SURFACE_IN_STORAGE   1</span>
+
+<span class="cp">#define     EFFECT_EVEN( x )         (((x)&amp;0x01)==1)? (x) + 1 : (x)  </span>
+
+<span class="cp">#define     EFFECT_SHUTTER_COUNT     12      </span><span class="c1">// 百叶窗分割数 </span>
+<span class="cp">#define     EFFECT_RUN_COUNT         24      </span><span class="c1">// 特效处理帧数</span>
+<span class="cp">#define     EFFECT_ALPHA_COUNT       100     </span><span class="c1">// 透明度上限</span>
+
+<span class="cm">/**********************************   数据类型   **********************************/</span>
+
+<span class="k">enum</span> <span class="n">EReadyState</span>
+<span class="p">{</span>
+	<span class="n">EM_RS_UNREADY</span><span class="p">,</span>       <span class="c1">// 不能使用，未创建img对象</span>
+	<span class="n">EM_RS_PRE_READY</span><span class="p">,</span>      <span class="c1">// 已创建img对象</span>
+	<span class="n">EM_RS_BUFFER</span><span class="p">,</span>        <span class="c1">// 数据缓存准备好， 等待传输</span>
+	<span class="n">EM_RS_UPDATING</span><span class="p">,</span>      <span class="c1">// 数据传输到显存中</span>
+	<span class="n">EM_RS_READY</span><span class="p">,</span>         <span class="c1">// 已完成传输，img准备好    </span>
+<span class="p">};</span>
+
+
+<span class="k">struct</span> <span class="n">TReadySource</span>
+<span class="p">{</span>
+    <span class="n">VAImage</span><span class="o">*</span>      <span class="n">va_image_ptr</span> <span class="o">=</span> <span class="n">nullptr</span><span class="p">;</span>  <span class="c1">//图像对象</span>
+    <span class="kt">uint8_t</span><span class="o">*</span>      <span class="n">image_buf_ptr</span> <span class="o">=</span> <span class="n">nullptr</span><span class="p">;</span> <span class="c1">//图像缓冲</span>
+    <span class="kt">uint8_t</span><span class="o">*</span>      <span class="n">src_data_ptr</span> <span class="o">=</span> <span class="n">nullptr</span><span class="p">;</span>  <span class="c1">//图像数据</span>
+
+    <span class="n">TReadySource</span><span class="o">*</span> <span class="n">pre_ptr</span> <span class="o">=</span> <span class="n">nullptr</span><span class="p">;</span>       <span class="c1">//前一指针</span>
+    <span class="n">TReadySource</span><span class="o">*</span> <span class="n">next_ptr</span> <span class="o">=</span> <span class="n">nullptr</span><span class="p">;</span>      <span class="c1">//后一指针</span>
+
+    <span class="n">EReadyState</span>   <span class="n">state</span> <span class="o">=</span> <span class="n">EM_RS_UNREADY</span><span class="p">;</span>   <span class="c1">//当前状态</span>
+<span class="p">};</span>
+
+<span class="k">struct</span> <span class="n">TFourccMap</span>
+<span class="p">{</span>
+    <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">ac_string</span><span class="p">;</span>      <span class="c1">//名字</span>
+    <span class="n">EYUVFormat</span> <span class="n">format</span><span class="p">;</span>          <span class="c1">//自定义枚举</span>
+    <span class="kt">uint32_t</span>    <span class="n">fourcc</span><span class="p">;</span>         <span class="c1">//va的枚举</span>
+<span class="p">};</span>
+
+<span class="k">extern</span> <span class="n">TFourccMap</span> <span class="n">g_fourcc_map</span><span class="p">[];</span>
+
+<span class="k">struct</span> <span class="n">TEncTaskList</span>
+<span class="p">{</span>
+    <span class="kt">void</span><span class="o">*</span>    <span class="n">next_ptr</span><span class="p">;</span>
+    <span class="kt">uint64_t</span> <span class="n">task_order</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span> <span class="n">BitStream</span>
+<span class="p">{</span>
+    <span class="kt">uint32_t</span> <span class="o">*</span><span class="n">buffer</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">bit_offset</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">max_size_in_dword</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="cm">/**********************************   变量   **********************************/</span>
+
+<span class="k">extern</span> <span class="n">VADisplay</span> <span class="n">g_va_display</span><span class="p">;</span>
+<span class="k">extern</span> <span class="n">Display</span><span class="o">*</span>  <span class="n">g_display_ptr</span><span class="p">;</span>
+
+<span class="k">extern</span> <span class="kt">int</span> <span class="n">g_ref</span><span class="p">;</span>
+<span class="k">extern</span> <span class="n">pthread_mutex_t</span> <span class="n">g_display_mtx</span><span class="p">;</span>
+
+<span class="cm">/********************************** 函数声明 **********************************/</span>
+
+<span class="c1">//格式字符串与标识符的获取接口</span>
+<span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="nf">GetStringFromFourcc</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">i_fourcc</span><span class="p">);</span>
+<span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="nf">GetStringFromFormat</span><span class="p">(</span><span class="n">EYUVFormat</span> <span class="n">i_format</span><span class="p">);</span>
+<span class="kt">uint32_t</span> <span class="nf">GetFourccFromFormat</span><span class="p">(</span><span class="n">EYUVFormat</span> <span class="n">i_format</span><span class="p">);</span>
+<span class="n">EYUVFormat</span> <span class="nf">GetFormatFromFourcc</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">i_fourcc</span><span class="p">);</span>
+
+<span class="c1">// 下载yuv数据</span>
+<span class="kt">int</span> <span class="nf">DownYUVDataFromImage</span><span class="p">(</span><span class="n">VAImage</span><span class="o">*</span> <span class="n">i_va_image_ptr</span><span class="p">,</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">o_dst_buf_ptr</span><span class="p">);</span>
+
+<span class="c1">// 下载Y数据</span>
+<span class="kt">int</span> <span class="nf">DownYDataFromImage</span><span class="p">(</span><span class="n">VAImage</span><span class="o">*</span> <span class="n">i_va_image_ptr</span><span class="p">,</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">o_dst_buf_ptr</span><span class="p">);</span>
+
+<span class="c1">// 直接把数据转为NV12，传到NV12格式的Image中</span>
+<span class="n">ERetCode</span> <span class="nf">UploadDataToImage</span><span class="p">(</span><span class="n">VAImage</span><span class="o">*</span> <span class="n">i_va_image_ptr</span><span class="p">,</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">i_surf_ptr</span><span class="p">,</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">i_src_data_ptr</span><span class="p">,</span>
+    <span class="n">EYUVFormat</span> <span class="n">i_format</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_src_width</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_src_height</span><span class="p">);</span>
+
+<span class="c1">// NV12数据传到image</span>
+<span class="kt">int</span> <span class="nf">UploadNV12ToImage</span><span class="p">(</span><span class="n">VAImage</span><span class="o">*</span> <span class="n">i_va_image_ptr</span><span class="p">,</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">i_surf_ptr</span><span class="p">,</span><span class="kt">uint8_t</span><span class="o">*</span> <span class="n">i_src_data_ptr</span><span class="p">,</span><span class="kt">int</span> <span class="n">i_src_width</span><span class="p">,</span><span class="kt">int</span> <span class="n">i_src_height</span><span class="p">);</span>
+
+<span class="c1">// iyuv数据传到IMAGE(测试发现不支持iyuv表面，按yv12格式上传)</span>
+<span class="kt">int</span> <span class="nf">UploadIYUVToImage</span><span class="p">(</span><span class="n">VAImage</span><span class="o">*</span> <span class="n">i_va_image_ptr</span><span class="p">,</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">i_surf_ptr</span><span class="p">,</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">i_src_data_ptr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_src_width</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_src_height</span><span class="p">);</span>
+
+<span class="c1">// YV12数据传到IMAGE</span>
+<span class="kt">int</span> <span class="nf">UploadYV12ToImage</span><span class="p">(</span><span class="n">VAImage</span><span class="o">*</span> <span class="n">i_va_image_ptr</span><span class="p">,</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">i_surf_ptr</span><span class="p">,</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">i_src_data_ptr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_src_width</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_src_height</span><span class="p">);</span>
+
+<span class="c1">// yuyv数据传到yuyv格式的image中</span>
+<span class="kt">int</span> <span class="nf">UploadYUYVToImage</span><span class="p">(</span><span class="n">VAImage</span><span class="o">*</span> <span class="n">i_va_image_ptr</span><span class="p">,</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">i_surf_ptr</span><span class="p">,</span> <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">i_src_data_ptr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_src_width</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_src_height</span><span class="p">);</span>
+
+
+<span class="c1">// BitStream系列操作</span>
+<span class="kt">void</span> <span class="nf">BitStreamStart</span><span class="p">(</span><span class="n">BitStream</span> <span class="o">*</span><span class="n">i_bs_ptr</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">BitStreamEnd</span><span class="p">(</span><span class="n">BitStream</span> <span class="o">*</span><span class="n">i_bs_ptr</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">BitStreamPutUI</span><span class="p">(</span><span class="n">BitStream</span> <span class="o">*</span><span class="n">i_bs_ptr</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">i_val</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_size_in_bits</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">BitStreamPutUE</span><span class="p">(</span><span class="n">BitStream</span> <span class="o">*</span><span class="n">i_bs_ptr</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">i_val</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">BitStreamPutSE</span><span class="p">(</span><span class="n">BitStream</span> <span class="o">*</span><span class="n">i_bs_ptr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_val</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">BitStreamByteAligning</span><span class="p">(</span><span class="n">BitStream</span> <span class="o">*</span><span class="n">i_bs_ptr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">bit</span><span class="p">);</span>
+
+<span class="kt">void</span> <span class="nf">RBSPTrailingBits</span><span class="p">(</span><span class="n">BitStream</span> <span class="o">*</span><span class="n">i_bs_ptr</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">NalStartCodePrefix</span><span class="p">(</span><span class="n">BitStream</span> <span class="o">*</span><span class="n">i_bs_ptr</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">NalHeader</span><span class="p">(</span><span class="n">BitStream</span> <span class="o">*</span><span class="n">i_bs_ptr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_nal_ref_idc</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_nal_unit_type</span><span class="p">);</span>
+
+<span class="kt">void</span> <span class="nf">SortOne</span><span class="p">(</span><span class="n">VAPictureH264</span> <span class="n">ref</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">i_left</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_right</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_ascending</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_frame_idx</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">SortTwo</span><span class="p">(</span><span class="n">VAPictureH264</span> <span class="n">ref</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">i_left</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_right</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">i_key</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">i_frame_idx</span><span class="p">,</span>
+	<span class="kt">int</span> <span class="n">i_partition_ascending</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_list0_ascending</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_list1_ascending</span><span class="p">);</span>
+
+<span class="kt">uint32_t</span> <span class="nf">VASWAP32</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">i_val</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">AlignSize</span><span class="p">(</span><span class="kt">int</span> <span class="n">i_iSize</span><span class="p">);</span>
+
+<span class="c1">//VA相关操作</span>
+<span class="n">ERetCode</span> <span class="nf">VACreateDisplayDrm</span><span class="p">();</span>
+<span class="n">ERetCode</span> <span class="nf">VACreateDisplayX11</span><span class="p">();</span>
+<span class="n">ERetCode</span> <span class="nf">VADestroyDisplay</span><span class="p">();</span>
+<span class="n">VAProfile</span> <span class="nf">VAGetProfile</span><span class="p">(</span><span class="n">EProfile</span> <span class="n">i_profile</span><span class="p">);</span>
+<span class="kt">int</span>       <span class="nf">VAGetRateControl</span><span class="p">(</span><span class="n">EEncodeMode</span> <span class="n">i_mode</span><span class="p">);</span>
+</pre></div>
+</body>
+</html>

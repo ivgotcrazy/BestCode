@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #333333 }
+body  { background: #111111; color: #ffffff }
+body .c { color: #008800; font-style: italic; background-color: #0f140f } /* Comment */
+body .err { color: #ffffff } /* Error */
+body .esc { color: #ffffff } /* Escape */
+body .g { color: #ffffff } /* Generic */
+body .k { color: #fb660a; font-weight: bold } /* Keyword */
+body .l { color: #ffffff } /* Literal */
+body .n { color: #ffffff } /* Name */
+body .o { color: #ffffff } /* Operator */
+body .x { color: #ffffff } /* Other */
+body .p { color: #ffffff } /* Punctuation */
+body .ch { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Hashbang */
+body .cm { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Multiline */
+body .cp { color: #ff0007; font-weight: bold; font-style: italic; background-color: #0f140f } /* Comment.Preproc */
+body .cpf { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.PreprocFile */
+body .c1 { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Single */
+body .cs { color: #008800; font-style: italic; background-color: #0f140f } /* Comment.Special */
+body .gd { color: #ffffff } /* Generic.Deleted */
+body .ge { color: #ffffff } /* Generic.Emph */
+body .gr { color: #ffffff } /* Generic.Error */
+body .gh { color: #ffffff; font-weight: bold } /* Generic.Heading */
+body .gi { color: #ffffff } /* Generic.Inserted */
+body .go { color: #444444; background-color: #222222 } /* Generic.Output */
+body .gp { color: #ffffff } /* Generic.Prompt */
+body .gs { color: #ffffff } /* Generic.Strong */
+body .gu { color: #ffffff; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #ffffff } /* Generic.Traceback */
+body .kc { color: #fb660a; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #fb660a; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #fb660a; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #fb660a } /* Keyword.Pseudo */
+body .kr { color: #fb660a; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #cdcaa9; font-weight: bold } /* Keyword.Type */
+body .ld { color: #ffffff } /* Literal.Date */
+body .m { color: #0086f7; font-weight: bold } /* Literal.Number */
+body .s { color: #0086d2 } /* Literal.String */
+body .na { color: #ff0086; font-weight: bold } /* Name.Attribute */
+body .nb { color: #ffffff } /* Name.Builtin */
+body .nc { color: #ffffff } /* Name.Class */
+body .no { color: #0086d2 } /* Name.Constant */
+body .nd { color: #ffffff } /* Name.Decorator */
+body .ni { color: #ffffff } /* Name.Entity */
+body .ne { color: #ffffff } /* Name.Exception */
+body .nf { color: #ff0086; font-weight: bold } /* Name.Function */
+body .nl { color: #ffffff } /* Name.Label */
+body .nn { color: #ffffff } /* Name.Namespace */
+body .nx { color: #ffffff } /* Name.Other */
+body .py { color: #ffffff } /* Name.Property */
+body .nt { color: #fb660a; font-weight: bold } /* Name.Tag */
+body .nv { color: #fb660a } /* Name.Variable */
+body .ow { color: #ffffff } /* Operator.Word */
+body .w { color: #888888 } /* Text.Whitespace */
+body .mb { color: #0086f7; font-weight: bold } /* Literal.Number.Bin */
+body .mf { color: #0086f7; font-weight: bold } /* Literal.Number.Float */
+body .mh { color: #0086f7; font-weight: bold } /* Literal.Number.Hex */
+body .mi { color: #0086f7; font-weight: bold } /* Literal.Number.Integer */
+body .mo { color: #0086f7; font-weight: bold } /* Literal.Number.Oct */
+body .sa { color: #0086d2 } /* Literal.String.Affix */
+body .sb { color: #0086d2 } /* Literal.String.Backtick */
+body .sc { color: #0086d2 } /* Literal.String.Char */
+body .dl { color: #0086d2 } /* Literal.String.Delimiter */
+body .sd { color: #0086d2 } /* Literal.String.Doc */
+body .s2 { color: #0086d2 } /* Literal.String.Double */
+body .se { color: #0086d2 } /* Literal.String.Escape */
+body .sh { color: #0086d2 } /* Literal.String.Heredoc */
+body .si { color: #0086d2 } /* Literal.String.Interpol */
+body .sx { color: #0086d2 } /* Literal.String.Other */
+body .sr { color: #0086d2 } /* Literal.String.Regex */
+body .s1 { color: #0086d2 } /* Literal.String.Single */
+body .ss { color: #0086d2 } /* Literal.String.Symbol */
+body .bp { color: #ffffff } /* Name.Builtin.Pseudo */
+body .fm { color: #ff0086; font-weight: bold } /* Name.Function.Magic */
+body .vc { color: #fb660a } /* Name.Variable.Class */
+body .vg { color: #fb660a } /* Name.Variable.Global */
+body .vi { color: #fb660a } /* Name.Variable.Instance */
+body .vm { color: #fb660a } /* Name.Variable.Magic */
+body .il { color: #0086f7; font-weight: bold } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="cm">/*******************************************************************************</span>
+<span class="cm">* 文  件: va_render_x11.h </span>
+<span class="cm">* 作  者: 刘峰(Arthur)</span>
+<span class="cm">* 创  建: 2015年12月16日</span>
+<span class="cm">* 版  权: CopyRight(C) 2015 Fsmeeting.com. All rights reserved.</span>
+<span class="cm">* 描  述: yuv数据显示类,使用X11模式</span>
+<span class="cm">********************************************************************************/</span>
+
+<span class="cp">#pragma once</span>
+
+<span class="cm">/**************************** 条件编译选项和头文件 ****************************/</span>
+
+<span class="cp">#include</span> <span class="cpf">&lt;map&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;mutex&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;BaseThread.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;isource.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;ivrender.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;vamedia_define.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;X11/extensions/Xrandr.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;X11/extensions/Xrender.h&gt;</span><span class="cp"></span>
+
+<span class="cm">/********************************** 常量和宏 **********************************/</span>
+
+<span class="cm">/********************************** 数据类型 **********************************/</span>
+
+<span class="k">struct</span> <span class="n">TRenderMember</span>
+<span class="p">{</span>
+    <span class="kt">int</span>            <span class="n">render_state</span> <span class="o">=</span> <span class="n">EM_SS_NONE</span><span class="p">;</span>  <span class="c1">//渲染状态</span>
+    <span class="n">EVMixLevel</span>     <span class="n">level</span> <span class="o">=</span> <span class="n">EM_VML_NONE</span><span class="p">;</span>        <span class="c1">//层级</span>
+
+    <span class="n">TRect</span>          <span class="n">rect</span><span class="p">;</span>                       <span class="c1">//渲染区域</span>
+    <span class="n">TRenderMember</span><span class="o">*</span> <span class="n">tmp_ptr</span> <span class="o">=</span> <span class="n">nullptr</span><span class="p">;</span>          <span class="c1">//渲染过度变量</span>
+    <span class="n">ISource</span><span class="o">*</span>     <span class="n">source_ptr</span> <span class="o">=</span> <span class="n">nullptr</span><span class="p">;</span>         <span class="c1">//数据源指针</span>
+<span class="p">};</span>
+
+<span class="k">typedef</span> <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">TRenderMember</span><span class="o">*&gt;</span> <span class="n">MapRenderMember</span><span class="p">;</span>
+
+<span class="cm">/**********************************   变量   **********************************/</span>
+
+<span class="cm">/********************************** 函数声明 **********************************/</span>
+
+<span class="cm">/**********************************  类声明  ***********************************/</span>
+
+<span class="n">class</span> <span class="nl">VARenderX11</span> <span class="p">:</span> <span class="n">public</span> <span class="n">BaseThread</span><span class="p">,</span> <span class="n">public</span> <span class="n">IVRender</span>
+<span class="p">{</span>
+<span class="nl">public</span><span class="p">:</span>
+
+    <span class="n">VARenderX11</span><span class="p">();</span>
+    <span class="n">virtual</span> <span class="o">~</span><span class="n">VARenderX11</span><span class="p">();</span>
+
+<span class="nl">public</span><span class="p">:</span>
+    
+	<span class="c1">//渲染器相关接口</span>
+	<span class="n">ERetCode</span> <span class="n">CreateRender</span><span class="p">(</span><span class="n">TMediaRenderProps</span><span class="o">*</span> <span class="n">i_render_props_ptr</span><span class="p">);</span>
+
+    <span class="n">ERetCode</span> <span class="nf">ModifyRenderSize</span><span class="p">(</span><span class="n">TSize</span><span class="o">*</span> <span class="n">i_size_ptr</span><span class="p">);</span>
+
+	<span class="n">ERetCode</span> <span class="nf">RenderData</span><span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span> <span class="n">i_data_ptr</span><span class="p">);</span>
+
+	<span class="n">ERetCode</span> <span class="nf">DestroyRender</span><span class="p">();</span>
+
+	<span class="c1">//数据源相关接口</span>
+    <span class="n">ERetCode</span> <span class="nf">AddSource</span><span class="p">(</span><span class="kt">int</span> <span class="n">i_src_id</span><span class="p">,</span> <span class="n">TProcItem</span><span class="o">*</span> <span class="n">i_item_ptr</span><span class="p">);</span>
+
+    <span class="n">ERetCode</span> <span class="nf">DelSource</span><span class="p">(</span><span class="kt">int</span> <span class="n">i_src_id</span><span class="p">);</span> 
+        
+    <span class="n">ERetCode</span> <span class="nf">ModifySrcOutRect</span><span class="p">(</span><span class="kt">int</span> <span class="n">i_src_id</span><span class="p">,</span> <span class="n">TRect</span><span class="o">*</span> <span class="n">i_rect_ptr</span><span class="p">);</span>
+
+    <span class="n">ERetCode</span> <span class="nf">ModifySrcLevel</span><span class="p">(</span><span class="kt">int</span> <span class="n">i_src_id</span><span class="p">,</span> <span class="n">EVMixLevel</span> <span class="n">i_level</span><span class="p">);</span>
+    
+    <span class="n">ERetCode</span> <span class="nf">ModifySrcSource</span><span class="p">(</span><span class="kt">int</span> <span class="n">i_src_id</span><span class="p">,</span> <span class="n">ISource</span><span class="o">*</span> <span class="n">i_source_ptr</span><span class="p">);</span>
+
+	<span class="c1">//显示器接口</span>
+    <span class="n">ERetCode</span> <span class="nf">GetSurportResolutionList</span><span class="p">(</span><span class="n">TOutputResolutions</span> <span class="o">**</span><span class="n">o_resolution_ptr</span><span class="p">);</span>
+
+    <span class="kt">void</span> <span class="nf">FreeSurportResolutionList</span><span class="p">(</span><span class="n">TOutputResolutions</span> <span class="o">*</span><span class="n">i_resolution_ptr</span><span class="p">);</span>
+
+    <span class="n">ERetCode</span> <span class="nf">SetCurResolution</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">i_output_name_ptr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_width</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_height</span><span class="p">);</span>
+
+<span class="nl">private</span><span class="p">:</span>
+
+    <span class="n">ERetCode</span> <span class="n">CreateRenderWindow</span><span class="p">(</span><span class="n">TRect</span><span class="o">*</span> <span class="n">i_rect_ptr</span><span class="p">);</span>
+        
+    <span class="n">ERetCode</span> <span class="nf">ThreadFuncProc</span><span class="p">();</span>
+
+    <span class="n">ERetCode</span> <span class="nf">CheckRootWindowSize</span><span class="p">();</span>
+
+    <span class="n">ERetCode</span> <span class="nf">CheckSourceState</span><span class="p">();</span>
+
+    <span class="n">ERetCode</span> <span class="nf">RunRenderTask</span><span class="p">();</span>
+
+    <span class="kt">int</span> <span class="nf">GetOutputConnectionCount</span><span class="p">();</span>
+
+    <span class="kt">void</span> <span class="nf">StartHotPlugMonitor</span><span class="p">();</span>
+
+    <span class="k">static</span> <span class="kt">void</span> <span class="o">*</span><span class="nf">HotPlugMonitorThreadAdapter</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">i_thread_arg_ptr</span><span class="p">);</span>
+
+    <span class="kt">void</span> <span class="nf">HotPlugMonitorThread</span><span class="p">();</span>
+    
+    <span class="n">XRRModeInfo</span><span class="o">*</span> <span class="nf">FindModeByXID</span><span class="p">(</span><span class="n">XRRScreenResources</span> <span class="o">*</span><span class="n">i_screen_res_ptr</span><span class="p">,</span> <span class="n">RRMode</span> <span class="n">i_xid_mode</span><span class="p">);</span>
+    
+    <span class="n">XRRCrtcInfo</span><span class="o">*</span> <span class="nf">GetCrtcByXID</span><span class="p">(</span><span class="n">XRRScreenResources</span> <span class="o">*</span><span class="n">i_screen_res_ptr</span><span class="p">,</span> <span class="n">RRCrtc</span> <span class="n">i_xid_crtc</span><span class="p">);</span>
+
+    <span class="kt">void</span> <span class="nf">FreeCrtcInfo</span><span class="p">(</span><span class="n">XRRCrtcInfo</span> <span class="o">*</span><span class="n">i_crtc_ptr</span><span class="p">);</span>
+    
+    <span class="n">ERetCode</span> <span class="nf">SetScreenSize</span><span class="p">(</span><span class="n">XRROutputInfo</span> <span class="o">*</span><span class="n">i_output_info_ptr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_width</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i_height</span><span class="p">);</span>
+    
+    <span class="kt">void</span> <span class="nf">OpenConnectedMonitor</span><span class="p">();</span>
+
+    <span class="kt">void</span> <span class="nf">CloseUnConnectedMonitor</span><span class="p">();</span>
+
+<span class="nl">private</span><span class="p">:</span>
+        
+    <span class="kt">int</span>             <span class="n">m_use_surf_id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>                      <span class="c1">// 使用的ID索引</span>
+    <span class="n">Window</span>          <span class="n">m_wnd_root</span><span class="p">;</span>                             <span class="c1">// root窗口</span>
+    <span class="n">Window</span>          <span class="n">m_wnd_render</span> <span class="o">=</span> <span class="n">None</span><span class="p">;</span>                    <span class="c1">// 渲染窗口</span>
+	
+    <span class="n">EYUVFormat</span>      <span class="n">m_yuv_format</span> <span class="o">=</span> <span class="n">EM_YUV_FORMAT_YV12</span><span class="p">;</span>      <span class="c1">//图像格式</span>
+    <span class="n">VAConfigID</span>      <span class="n">m_va_config_id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>                     <span class="c1">//ID</span>
+    <span class="n">VASurfaceID</span>     <span class="n">m_va_surface_id</span><span class="p">[</span><span class="n">COMMON_SIZE_4</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span> <span class="p">};</span> <span class="c1">//surfaceID数组</span>
+    <span class="n">TRect</span>           <span class="n">m_render_rect</span><span class="p">;</span>						    <span class="c1">//渲染区域</span>
+    <span class="n">TSize</span>           <span class="n">m_render_size</span><span class="p">;</span>						    <span class="c1">//渲染大小</span>
+    <span class="n">TSize</span>           <span class="n">m_root_wnd_size</span><span class="p">;</span>                        <span class="c1">//窗口大小</span>
+    <span class="n">TSize</span>           <span class="n">m_update_size</span><span class="p">;</span>                          <span class="c1">//更新大小</span>
+    <span class="n">TSize</span>           <span class="n">m_cur_screen_size</span><span class="p">;</span>                      <span class="c1">//当前屏幕大小</span>
+    <span class="n">TRect</span>           <span class="n">m_tmp_rect</span><span class="p">;</span>                             <span class="c1">//临时区域</span>
+    <span class="n">TSize</span>           <span class="n">m_tmp_size</span><span class="p">;</span>                             <span class="c1">//临时大小</span>
+    
+    <span class="n">MapRenderMember</span> <span class="n">m_render_map</span><span class="p">;</span>					        <span class="c1">//渲染成员</span>
+    <span class="n">pthread_mutex_t</span> <span class="n">m_render_mtx</span><span class="p">;</span>                           <span class="c1">//渲染锁</span>
+    <span class="n">EThreadState</span>    <span class="n">m_monitor_thread_state</span> <span class="o">=</span> <span class="n">EM_TS_STOP</span><span class="p">;</span>    <span class="c1">//监视线程状态</span>
+
+	<span class="n">std</span><span class="o">::</span><span class="n">mutex</span>      <span class="n">m_render_surface_mtx</span><span class="p">;</span>                   <span class="c1">//surface渲染锁</span>
+
+    <span class="kt">int</span> <span class="n">m_is_inited</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>                                    <span class="c1">//是否初始化</span>
+<span class="p">};</span>
+</pre></div>
+</body>
+</html>
